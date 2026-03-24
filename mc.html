@@ -129,18 +129,38 @@
           });
           appearancesStatusEl.textContent = `${appearances.length}大会を表示`;
 
-          wins.forEach((item) => {
-            const li = document.createElement("li");
-            li.textContent = `${item.opponent_name || "不明"}｜${item.event_name || item.event_id}｜${item.round_name || ""}`;
-            winsListEl.appendChild(li);
-          });
+wins.forEach((item) => {
+  const li = document.createElement("li");
+
+  const main = document.createElement("div");
+  main.className = "record-main";
+  main.textContent = item.opponent_name || "不明";
+
+  const sub = document.createElement("div");
+  sub.className = "record-sub";
+  sub.textContent = `${item.event_name || item.event_id}${item.round_name ? "｜" + item.round_name : ""}`;
+
+  li.appendChild(main);
+  li.appendChild(sub);
+  winsListEl.appendChild(li);
+});
           winsStatusEl.textContent = `${wins.length}件を表示`;
 
-          losses.forEach((item) => {
-            const li = document.createElement("li");
-            li.textContent = `${item.opponent_name || "不明"}｜${item.event_name || item.event_id}｜${item.round_name || ""}`;
-            lossesListEl.appendChild(li);
-          });
+losses.forEach((item) => {
+  const li = document.createElement("li");
+
+  const main = document.createElement("div");
+  main.className = "record-main";
+  main.textContent = item.opponent_name || "不明";
+
+  const sub = document.createElement("div");
+  sub.className = "record-sub";
+  sub.textContent = `${item.event_name || item.event_id}${item.round_name ? "｜" + item.round_name : ""}`;
+
+  li.appendChild(main);
+  li.appendChild(sub);
+  lossesListEl.appendChild(li);
+});
           lossesStatusEl.textContent = `${losses.length}件を表示`;
         } catch (err) {
           console.error(err);
