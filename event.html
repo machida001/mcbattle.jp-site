@@ -122,13 +122,61 @@
             infoListEl.appendChild(li);
           });
 
-          matches.forEach((match) => {
-            const li = document.createElement("li");
-            li.textContent = `${match.round_name || ""}｜${match.winner_name || ""} × ${match.loser_name || ""}｜${match.judge_method || ""}`;
-            matchesListEl.appendChild(li);
-          });
+const grouped = {};
 
-          matchesStatusEl.textContent = `${matches.length}試合を表示`;
+matches.forEach((match) => {
+  const roundName = match.round_name || "ラウンド不明";
+  if (!grouped[roundName]) grouped[roundName] = [];
+  grouped[roundName].push(match);
+});
+
+const roundOrder = [
+  "1回戦",
+  "2回戦",
+  "3回戦",
+  "ベスト64",
+  "ベスト48",
+  "ベスト32",
+  "ベスト16",
+  "準々決勝",
+  "ベスト8",
+  "準決勝",
+  "決勝",
+  "決勝トーナメント準決勝",
+  "シード戦"
+];
+
+const sortedRoundNames = Object.keys(grouped).sort((a, b) => {
+  const ai = roundOrder.indexOf(a);
+  const bi = roundOrder.indexOf(b);
+
+  if (ai === -1 && bi === -1) return a.localeCompare(b, "ja");
+  if (ai === -1) return 1;
+  if (bi === -1) return -1;
+  return ai - bi;
+});
+
+sortedRoundNames.forEach((roundName) => {
+  const sectionLi = document.createElement("li");
+  sectionLi.style.listStyle = "none";
+  sectionLi.style.marginTop = "16px";
+  sectionLi.style.fontWeight = "bold";
+  sectionLi.textContent = roundName;
+  matchesListEl.appendChild(sectionLi);
+
+  grouped[roundName].forEach((match) => {
+    const li = document.createElement("li");
+
+    const loserName = match.loser_name || "不明";
+    const winnerName = match.winner_name || "不明";
+    const judgeMethod = match.judge_method || "";
+
+    li.textContent = `【✕】${loserName} × ${winnerName}【◯】｜${judgeMethod}`;
+    matchesListEl.appendChild(li);
+  });
+});
+
+matchesStatusEl.textContent = `${matches.length}試合を表示`;
         } catch (err) {
           console.error(err);
           titleEl.textContent = "大会情報の描画に失敗しました";
