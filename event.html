@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>大会記録 | MC Battle DB</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+      line-height: 1.6;
+      color: #111;
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    .muted {
+      color: #666;
+      font-size: 14px;
+    }
+    .error {
+      color: #b00020;
+      font-weight: bold;
+    }
+    a {
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <p><a href="./">← トップへ戻る</a></p>
+
+  <header>
+    <h1 id="event-title">大会情報を読み込み中...</h1>
+    <p id="event-meta" class="muted"></p>
+  </header>
+
+  <section class="card">
+    <h2>このページについて</h2>
+    <p>
+      これは大会詳細ページの土台です。まずはURLから <code>event_id</code> を受け取って、
+      その値を表示するところまで作っています。
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>event_id</h2>
+    <p id="event-id-value">取得中...</p>
+  </section>
+
+  <script>
+    function getEventIdFromQuery() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("event_id");
+    }
+
+    const eventId = getEventIdFromQuery();
+
+    const titleEl = document.getElementById("event-title");
+    const metaEl = document.getElementById("event-meta");
+    const eventIdEl = document.getElementById("event-id-value");
+
+    if (!eventId) {
+      titleEl.textContent = "大会IDが指定されていません";
+      metaEl.textContent = "";
+      eventIdEl.textContent = "event_id が見つかりませんでした。";
+      eventIdEl.classList.add("error");
+    } else {
+      titleEl.textContent = "大会記録ページ（構築中）";
+      metaEl.textContent = "次の段階で、この event_id を使って大会情報を読み込みます。";
+      eventIdEl.textContent = eventId;
+    }
+  </script>
+</body>
+</html>
