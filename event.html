@@ -132,12 +132,16 @@ const sortedRoundNames = Object.keys(grouped).sort((a, b) => {
 });
 
 sortedRoundNames.forEach((roundName) => {
-  const sectionLi = document.createElement("li");
-  sectionLi.style.listStyle = "none";
-  sectionLi.style.marginTop = "16px";
-  sectionLi.style.fontWeight = "bold";
-  sectionLi.textContent = roundName;
-  matchesListEl.appendChild(sectionLi);
+  const block = document.createElement("div");
+  block.className = "round-block";
+
+  const heading = document.createElement("h3");
+  heading.className = "round-heading";
+  heading.textContent = roundName;
+  block.appendChild(heading);
+
+  const ul = document.createElement("ul");
+  ul.className = "match-list";
 
   grouped[roundName].forEach((match) => {
     const li = document.createElement("li");
@@ -150,8 +154,11 @@ sortedRoundNames.forEach((roundName) => {
       ? `【✕】${loserName} × ${winnerName}【◯】｜${judgeMethod}`
       : `【✕】${loserName} × ${winnerName}【◯】`;
 
-    matchesListEl.appendChild(li);
+    ul.appendChild(li);
   });
+
+  block.appendChild(ul);
+  matchesListEl.appendChild(block);
 });
 
 const warningMessages = [];
