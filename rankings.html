@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ランキング | MC Battle DB</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+      line-height: 1.6;
+      color: #111;
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    .muted {
+      color: #666;
+      font-size: 14px;
+    }
+    .error {
+      color: #b00020;
+      font-weight: bold;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+    th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 8px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f7f7f7;
+    }
+    a {
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <p><a href="./">← トップへ戻る</a></p>
+
+  <header>
+    <h1>ランキング Top100</h1>
+    <p class="muted">現行の v2 スコアに基づく順位です。</p>
+  </header>
+
+  <section class="card">
+    <p id="rankings-status" class="muted">読み込み中...</p>
+    <table>
+      <thead>
+        <tr>
+          <th>順位</th>
+          <th>MC名</th>
+          <th>スコア</th>
+        </tr>
+      </thead>
+      <tbody id="rankings-body"></tbody>
+    </table>
+  </section>
+
+  <script>
+    const API_URL = "ここにあなたの /exec URL を貼る";
+
+    function loadRankingsPage() {
+      const callbackName = "mcBattleRankingsPageCallback";
+      const statusEl = document.getElementById("rankings-status");
+      const bodyEl = document.getElementById("rankings-body");
+
+      window[callbackName] = function(data) {
+        console.log("rankings page:", data);
+
+        bodyEl.innerHTML = "";
+
+        try {
+          if (data.error) {
+            statusEl.textContent = "ランキングの取得に失敗しました: " + (data.message || "");
+            statusEl.classList.add("error");
+            return;
+          }
+
+          const rankings = Array.isArray(data.rankings) ? data.rankings.slice(0, 100) : [];
+
+          rankings.forEach((item, index) => {
+            const tr = document.createElement("tr");
+
+            const rankTd = document.createElement("td");
+            const nameTd = document.createElement("td");
+            const scoreTd = document.createElement("td");
+
+            const rank = item.rank || (index + 1);
+            const mcId = item.mc_id || "";
+            const mcName = item.mc_name || "名前不明";
+
+            const rawScore = item.current_strength_score_v2 ?? item.current_strength_score ?? "";
+            const score = rawScore !== "" && !isNaN(Number(rawScore))
+              ? Number(rawScore).toFixed(2)
+              : String(rawScore);
+
+            rankTd.textContent = rank;
+
+            const a = document.createElement("a");
+            a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
+            a.textContent = mcName;
+            nameTd.appendChild(a);
+
+            scoreTd.textContent = score;
+
+            tr.appendChild(rankTd);
+            tr.appendChild(nameTd);
+            tr.appendChild(scoreTd);
+
+            bodyEl.appendChild(tr);
+          });
+
+          statusEl.textContent = `${rankings.length}名を表示`;
+        } catch (err) {
+          console.error(err);
+          statusEl.textContent = "ランキングの描画に失敗しました";
+          statusEl.classList.add("error");
+        }
+      };
+
+      const script = document.createElement("script");
+      script.src = `${API_URL}?callback=${callbackName}`;
+      script.onerror = function() {
+        statusEl.textContent = "ランキングの読み込みに失敗しました";
+        statusEl.classList.add("error");
+      };
+
+      document.body.appendChild(script);
+    }
+
+    loadRankingsPage();
+  </script>
+</body>
+</html>S
