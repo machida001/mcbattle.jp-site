@@ -82,6 +82,71 @@
       return `<a href="./event.html?event_id=${encodeURIComponent(safeId)}">${label}</a>`;
     }
 
+    function getRoundSortValue(roundName) {
+      const name = String(roundName || "").trim();
+
+      const orderMap = {
+        "決勝": 1000,
+        "FINAL": 1000,
+        "Final": 1000,
+        "final": 1000,
+        "準決勝": 900,
+        "決勝トーナメント準決勝": 900,
+        "ベスト4": 900,
+        "準々決勝": 800,
+        "ベスト8": 800,
+        "ベスト16": 700,
+        "ベスト32": 600,
+        "ベスト48": 550,
+        "ベスト64": 500,
+        "4回戦": 400,
+        "3回戦": 300,
+        "2回戦": 200,
+        "1回戦": 100,
+        "シード戦": 50
+      };
+
+      if (orderMap[name] != null) return orderMap[name];
+
+      const bestMatch = name.match(/^ベスト(\d+)$/);
+      if (bestMatch) {
+        return 1000 - Number(bestMatch[1]);
+      }
+
+      const roundMatch = name.match(/^(\d+)回戦$/);
+      if (roundMatch) {
+        return Number(roundMatch[1]) * 100;
+      }
+
+      return 0;
+    }
+
+    function sortMatchHistory(items) {
+      return [...items].sort((a, b) => {
+        const dateA = String(a.event_date || "");
+        const dateB = String(b.event_date || "");
+        if (dateA !== dateB) {
+          return dateB.localeCompare(dateA);
+        }
+
+        const roundA = getRoundSortValue(a.round_name);
+        const roundB = getRoundSortValue(b.round_name);
+        if (roundA !== roundB) {
+          return roundB - roundA;
+        }
+
+        const eventA = String(a.event_name || "");
+        const eventB = String(b.event_name || "");
+        if (eventA !== eventB) {
+          return eventA.localeCompare(eventB, "ja");
+        }
+
+        const oppA = String(a.opponent_name || "");
+        const oppB = String(b.opponent_name || "");
+        return oppA.localeCompare(oppB, "ja");
+      });
+    }
+
     function loadMcDetail() {
       const mcId = getMcIdFromQuery();
 
@@ -142,8 +207,8 @@
           const mc = data.mc || {};
           const ranking = data.ranking || {};
           const appearances = Array.isArray(data.appearances) ? data.appearances : [];
-          const wins = Array.isArray(data.wins) ? data.wins : [];
-          const losses = Array.isArray(data.losses) ? data.losses : [];
+          const wins = sortMatchHistory(Array.isArray(data.wins) ? data.wins : []);
+          const losses = sortMatchHistory(Array.isArray(data.losses) ? data.losses : []);
 
           titleEl.textContent = mc.mc_name || "MC名不明";
           metaEl.textContent = "";
