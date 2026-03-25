@@ -49,12 +49,30 @@
         .replace(/'/g, "&#39;");
     }
 
-    function getChampionName(matches) {
-      if (!Array.isArray(matches) || matches.length === 0) return "";
+    function renderMcLink(name, mcId) {
+      const safeName = escapeHtml(name || "");
+      const safeId = String(mcId || "").trim();
+
+      if (!safeName) return "";
+
+      if (!safeId) {
+        return `<span>${safeName}</span>`;
+      }
+
+      return `<a href="./mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
+    }
+
+    function getChampionInfo(matches) {
+      if (!Array.isArray(matches) || matches.length === 0) {
+        return { name: "", id: "" };
+      }
 
       const finalMatch = matches.find((match) => String(match.round_name || "").trim() === "決勝");
       if (finalMatch && finalMatch.winner_name) {
-        return finalMatch.winner_name;
+        return {
+          name: finalMatch.winner_name || "",
+          id: finalMatch.winner_id || ""
+        };
       }
 
       const normalizedFinalMatch = matches.find((match) => {
@@ -62,11 +80,21 @@
         return round === "FINAL" || round === "Final" || round === "final";
       });
       if (normalizedFinalMatch && normalizedFinalMatch.winner_name) {
-        return normalizedFinalMatch.winner_name;
+        return {
+          name: normalizedFinalMatch.winner_name || "",
+          id: normalizedFinalMatch.winner_id || ""
+        };
       }
 
       const lastWinner = [...matches].reverse().find((match) => match && match.winner_name);
-      return lastWinner ? lastWinner.winner_name : "";
+      if (lastWinner) {
+        return {
+          name: lastWinner.winner_name || "",
+          id: lastWinner.winner_id || ""
+        };
+      }
+
+      return { name: "", id: "" };
     }
 
     function ensureMatchRowStyles() {
@@ -131,6 +159,12 @@
           overflow-wrap: anywhere;
           word-break: break-word;
           color: inherit;
+        }
+
+        .name a,
+        .meta-list a {
+          color: inherit;
+          text-decoration: underline;
         }
 
         .vs-part {
@@ -219,29 +253,29 @@
 
           const event = data.event || {};
           const matches = Array.isArray(data.matches) ? data.matches : [];
-          const championName = getChampionName(matches);
+          const champion = getChampionInfo(matches);
           const formattedWinnerPrize = formatNumberWithComma(event.prize_money_winner);
 
           titleEl.textContent = event.event_name || "大会名不明";
           metaEl.textContent = `${event.event_date || ""} ${event.event_category || ""}`.trim();
 
           const infoItems = [
-            ["開催日", event.event_date || ""],
-            ["カテゴリ", event.event_category || ""],
-            ["会場", event.event_stage || ""],
-            ["優勝者", championName || ""],
-            ["優勝賞金", formattedWinnerPrize || ""]
+            { label: "開催日", html: escapeHtml(event.event_date || "") },
+            { label: "カテゴリ", html: escapeHtml(event.event_category || "") },
+            { label: "会場", html: escapeHtml(event.event_stage || "") },
+            { label: "優勝者", html: renderMcLink(champion.name || "", champion.id || "") },
+            { label: "優勝賞金", html: escapeHtml(formattedWinnerPrize || "") }
           ];
 
-          infoItems.forEach(([label, value]) => {
+          infoItems.forEach((item) => {
             const li = document.createElement("li");
 
             const labelEl = document.createElement("span");
             labelEl.className = "meta-label";
-            labelEl.textContent = label;
+            labelEl.textContent = item.label;
 
             const valueEl = document.createElement("span");
-            valueEl.textContent = value || "";
+            valueEl.innerHTML = item.html || "";
 
             li.appendChild(labelEl);
             li.appendChild(valueEl);
@@ -308,16 +342,16 @@
               const li = document.createElement("li");
               li.className = "match-row-wrap";
 
-              const loserName = escapeHtml(match.loser_name || "不明");
-              const winnerName = escapeHtml(match.winner_name || "不明");
+              const loserHtml = renderMcLink(match.loser_name || "不明", match.loser_id || "");
+              const winnerHtml = renderMcLink(match.winner_name || "不明", match.winner_id || "");
               const judgeMethod = escapeHtml(String(match.judge_method || "").trim());
 
               li.innerHTML = `
                 <div class="match-row">
                   <span class="mark mark-loser">【✕】</span>
-                  <span class="name name-loser">${loserName}</span>
+                  <span class="name name-loser">${loserHtml}</span>
                   <span class="vs-part">×</span>
-                  <span class="name name-winner">${winnerName}</span>
+                  <span class="name name-winner">${winnerHtml}</span>
                   <span class="mark mark-winner">【◯】</span>
                 </div>
                 ${judgeMethod ? `<div class="judge-method">判定: ${judgeMethod}</div>` : ""}
