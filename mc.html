@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MCページ | MC Battle DB</title>
-<link rel="stylesheet" href="style.css" />
+  <title>MC記録 | MC Battle DB</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <p><a href="./">← トップへ戻る</a> / <a href="mcs.html">MC一覧へ</a></p>
+  <p><a href="./">← トップへ戻る</a></p>
 
   <header>
     <h1 id="mc-title">MC情報を読み込み中...</h1>
@@ -15,29 +15,27 @@
   </header>
 
   <section class="card">
-    <h2>基本情報</h2>
-    <ul id="mc-info-list"></ul>
+    <h2>MC情報</h2>
+    <ul id="mc-info-list" class="meta-list"></ul>
   </section>
 
   <section class="card">
-    <h2>出演大会一覧</h2>
+    <h2>出場大会</h2>
     <p id="appearances-status" class="muted">読み込み中...</p>
-    <ul id="appearances-list"></ul>
+    <ul id="appearances-list" class="list-tight"></ul>
   </section>
 
-  <div class="mc-sections">
   <section class="card">
-    <h2>このMCが勝った相手</h2>
+    <h2>勝った相手</h2>
     <p id="wins-status" class="muted">読み込み中...</p>
-    <ul id="wins-list" class="record-list"></ul>
+    <ul id="wins-list" class="list-tight"></ul>
   </section>
 
   <section class="card">
-    <h2>このMCが負けた相手</h2>
+    <h2>負けた相手</h2>
     <p id="losses-status" class="muted">読み込み中...</p>
-    <ul id="losses-list" class="record-list"></ul>
+    <ul id="losses-list" class="list-tight"></ul>
   </section>
-</div>
 
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
@@ -45,6 +43,43 @@
     function getMcIdFromQuery() {
       const params = new URLSearchParams(window.location.search);
       return params.get("mc_id");
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function formatScore(value) {
+      if (value === null || value === undefined || value === "") return "";
+      if (isNaN(Number(value))) return String(value);
+      return Number(value).toFixed(2);
+    }
+
+    function renderMcLink(name, mcId) {
+      const safeName = escapeHtml(name || "");
+      const safeId = String(mcId || "").trim();
+
+      if (!safeName) return "";
+      if (!safeId) return `<span>${safeName}</span>`;
+
+      return `<a href="./mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
+    }
+
+    function renderEventLink(name, eventId, eventDate) {
+      const safeName = escapeHtml(name || "");
+      const safeDate = escapeHtml(eventDate || "");
+      const safeId = String(eventId || "").trim();
+      const label = `${safeDate} ${safeName}`.trim();
+
+      if (!label) return "";
+      if (!safeId) return `<span>${label}</span>`;
+
+      return `<a href="./event.html?event_id=${encodeURIComponent(safeId)}">${label}</a>`;
     }
 
     function loadMcDetail() {
@@ -68,6 +103,8 @@
         metaEl.textContent = "";
         appearancesStatusEl.textContent = "mc_id が見つかりませんでした。";
         appearancesStatusEl.classList.add("error");
+        winsStatusEl.textContent = "";
+        lossesStatusEl.textContent = "";
         return;
       }
 
@@ -81,96 +118,105 @@
         winsListEl.innerHTML = "";
         lossesListEl.innerHTML = "";
 
+        appearancesStatusEl.classList.remove("error");
+        winsStatusEl.classList.remove("error");
+        lossesStatusEl.classList.remove("error");
+
         try {
+          if (!data) {
+            titleEl.textContent = "MC情報の取得に失敗しました";
+            metaEl.textContent = "";
+            appearancesStatusEl.textContent = "レスポンスが空です";
+            appearancesStatusEl.classList.add("error");
+            return;
+          }
+
           if (data.error) {
             titleEl.textContent = "MC情報の取得に失敗しました";
             metaEl.textContent = data.message || "";
             appearancesStatusEl.textContent = "データ取得エラー";
             appearancesStatusEl.classList.add("error");
-            winsStatusEl.textContent = "データ取得エラー";
-            winsStatusEl.classList.add("error");
-            lossesStatusEl.textContent = "データ取得エラー";
-            lossesStatusEl.classList.add("error");
             return;
           }
 
           const mc = data.mc || {};
-          const ranking = data.ranking || null;
+          const ranking = data.ranking || {};
           const appearances = Array.isArray(data.appearances) ? data.appearances : [];
           const wins = Array.isArray(data.wins) ? data.wins : [];
           const losses = Array.isArray(data.losses) ? data.losses : [];
 
           titleEl.textContent = mc.mc_name || "MC名不明";
-          metaEl.textContent = mc.mc_yomi || "";
+          metaEl.textContent = "";
 
           const infoItems = [
-            ["MC ID", mc.mc_id || ""],
-            ["読み", mc.mc_yomi || ""],
-            ["順位", ranking && ranking.rank ? ranking.rank : ""],
-            ["スコア", ranking && ranking.current_strength_score_v2 ? ranking.current_strength_score_v2 : ""],
-            ["総試合数", ranking && ranking.total_matches ? ranking.total_matches : ""],
-            ["勝ち", ranking && ranking.wins ? ranking.wins : ""],
-            ["負け", ranking && ranking.losses ? ranking.losses : ""]
+            ["MCBattle Rank順位", ranking.rank || ""],
+            ["スコア", formatScore(ranking.current_strength_score_v2)],
+            ["総試合数", ranking.total_matches || ""],
+            ["勝利数", ranking.wins || ""],
+            ["敗北数", ranking.losses || ""]
           ];
 
           infoItems.forEach(([label, value]) => {
             const li = document.createElement("li");
-            li.textContent = `${label}: ${value}`;
+
+            const labelEl = document.createElement("span");
+            labelEl.className = "meta-label";
+            labelEl.textContent = label;
+
+            const valueEl = document.createElement("span");
+            valueEl.textContent = value || "";
+
+            li.appendChild(labelEl);
+            li.appendChild(valueEl);
             infoListEl.appendChild(li);
           });
 
-          appearances.forEach((event) => {
+          appearances.forEach((item) => {
             const li = document.createElement("li");
-            const a = document.createElement("a");
-            a.href = `event.html?event_id=${encodeURIComponent(event.event_id)}`;
-            a.textContent = `${event.event_date || ""} ${event.event_name || event.event_id}`.trim();
-            li.appendChild(a);
+            li.innerHTML = renderEventLink(item.event_name || "", item.event_id || "", item.event_date || "");
             appearancesListEl.appendChild(li);
           });
-          appearancesStatusEl.textContent = `${appearances.length}大会を表示`;
 
-wins.forEach((item) => {
-  const li = document.createElement("li");
+          wins.forEach((item) => {
+            const li = document.createElement("li");
+            const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "");
+            const eventHtml = renderEventLink(item.event_name || "", item.event_id || "", item.event_date || "");
+            const roundName = escapeHtml(item.round_name || "");
 
-  const main = document.createElement("div");
-  main.className = "record-main";
-  main.textContent = item.opponent_name || "不明";
+            li.innerHTML = `
+              ${opponentHtml}
+              ${roundName ? `｜${roundName}` : ""}
+              ${eventHtml ? `｜${eventHtml}` : ""}
+            `;
+            winsListEl.appendChild(li);
+          });
 
-  const sub = document.createElement("div");
-  sub.className = "record-sub";
-  sub.textContent = `${item.event_name || item.event_id}${item.round_name ? "｜" + item.round_name : ""}`;
+          losses.forEach((item) => {
+            const li = document.createElement("li");
+            const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "");
+            const eventHtml = renderEventLink(item.event_name || "", item.event_id || "", item.event_date || "");
+            const roundName = escapeHtml(item.round_name || "");
 
-  li.appendChild(main);
-  li.appendChild(sub);
-  winsListEl.appendChild(li);
-});
+            li.innerHTML = `
+              ${opponentHtml}
+              ${roundName ? `｜${roundName}` : ""}
+              ${eventHtml ? `｜${eventHtml}` : ""}
+            `;
+            lossesListEl.appendChild(li);
+          });
+
+          appearancesStatusEl.textContent = `${appearances.length}件を表示`;
           winsStatusEl.textContent = `${wins.length}件を表示`;
-
-losses.forEach((item) => {
-  const li = document.createElement("li");
-
-  const main = document.createElement("div");
-  main.className = "record-main";
-  main.textContent = item.opponent_name || "不明";
-
-  const sub = document.createElement("div");
-  sub.className = "record-sub";
-  sub.textContent = `${item.event_name || item.event_id}${item.round_name ? "｜" + item.round_name : ""}`;
-
-  li.appendChild(main);
-  li.appendChild(sub);
-  lossesListEl.appendChild(li);
-});
           lossesStatusEl.textContent = `${losses.length}件を表示`;
+
+          if (appearances.length === 0) appearancesStatusEl.textContent = "出場大会がありません";
+          if (wins.length === 0) winsStatusEl.textContent = "勝利記録がありません";
+          if (losses.length === 0) lossesStatusEl.textContent = "敗北記録がありません";
         } catch (err) {
           console.error(err);
           titleEl.textContent = "MC情報の描画に失敗しました";
           appearancesStatusEl.textContent = "描画エラー";
           appearancesStatusEl.classList.add("error");
-          winsStatusEl.textContent = "描画エラー";
-          winsStatusEl.classList.add("error");
-          lossesStatusEl.textContent = "描画エラー";
-          lossesStatusEl.classList.add("error");
         }
       };
 
@@ -180,10 +226,6 @@ losses.forEach((item) => {
         titleEl.textContent = "MC情報の読み込みに失敗しました";
         appearancesStatusEl.textContent = "JSONP読み込み失敗";
         appearancesStatusEl.classList.add("error");
-        winsStatusEl.textContent = "JSONP読み込み失敗";
-        winsStatusEl.classList.add("error");
-        lossesStatusEl.textContent = "JSONP読み込み失敗";
-        lossesStatusEl.classList.add("error");
       };
 
       document.body.appendChild(script);
