@@ -97,7 +97,18 @@
 
               const rankName = document.createElement("span");
               rankName.className = "rank-name";
-              rankName.textContent = item.mc_name ? String(item.mc_name) : "名前不明";
+
+              const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
+              const mcId = item.mc_id ? String(item.mc_id) : "";
+
+              if (mcId) {
+                const a = document.createElement("a");
+                a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
+                a.textContent = mcName;
+                rankName.appendChild(a);
+              } else {
+                rankName.textContent = mcName;
+              }
 
               const rankScore = document.createElement("span");
               rankScore.className = "rank-score";
