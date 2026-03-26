@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MC Battle DB</title>
+  <title>MCBattle.jp</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     .home-shell {
@@ -56,17 +56,20 @@
 
     .home-title {
       margin: 0;
-      font-size: clamp(2.6rem, 6vw, 4.8rem);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      font-weight: 900;
-    }
-
-    .home-title-sub {
-      margin-top: 14px;
-      max-width: 760px;
-      font-size: 1.02rem;
-      color: var(--muted);
+      font-size: clamp(2.8rem, 6vw, 5.1rem);
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      font-weight: 700;
+      color: var(--accent);
+      font-family:
+        "Times New Roman",
+        Georgia,
+        "Baskerville",
+        "Hiragino Mincho ProN",
+        "Yu Mincho",
+        serif;
+      font-style: italic;
+      text-shadow: 0 0 24px rgba(150, 190, 255, 0.08);
     }
 
     .home-lead-grid {
@@ -277,30 +280,6 @@
       white-space: nowrap;
     }
 
-    .home-bottom-links {
-      margin-top: 22px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .home-bottom-links a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 42px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .home-bottom-links a:hover {
-      text-decoration: none;
-      background: rgba(255,255,255,0.06);
-    }
-
     @media (max-width: 900px) {
       .home-lead-grid,
       .home-main-grid {
@@ -320,7 +299,7 @@
       }
 
       .home-title {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
       }
 
       .home-panel,
@@ -346,10 +325,7 @@
       <div class="home-hero-top">
         <div>
           <span class="home-kicker">JAPANESE MC BATTLE ARCHIVE</span>
-          <h1 class="home-title">MC Battle DB</h1>
-          <p class="home-title-sub">
-            国内主要MCバトルの本戦結果をベースに、記録・検索・ランキングを横断できるデータベース。
-          </p>
+          <h1 class="home-title">MCBattle.jp</h1>
         </div>
       </div>
 
@@ -396,12 +372,6 @@
         <ol id="ranking-list" class="home-ranking-list"></ol>
       </section>
     </main>
-
-    <div class="home-bottom-links">
-      <a href="rankings.html">Top100を見る</a>
-      <a href="events.html">大会一覧から探す</a>
-      <a href="mcs.html">MC一覧から探す</a>
-    </div>
   </div>
 
   <script>
