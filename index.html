@@ -9,13 +9,13 @@
     .home-shell {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 28px 16px 72px;
+      padding: 18px 16px 72px;
     }
 
     .home-hero {
       position: relative;
       overflow: hidden;
-      padding: 34px 28px 26px;
+      padding: 22px 28px 26px;
       border: 1px solid var(--line);
       border-radius: 24px;
       background:
@@ -38,26 +38,13 @@
 
     .home-hero-top {
       display: block;
-      margin-bottom: 18px;
-    }
-
-    .home-kicker {
-      display: inline-block;
-      padding: 4px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--accent-soft);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: rgba(255,255,255,0.04);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .home-title {
       margin: 0;
-      font-size: clamp(2.8rem, 6vw, 5.1rem);
-      line-height: 0.92;
+      font-size: clamp(2.1rem, 4.6vw, 3.6rem);
+      line-height: 0.95;
       letter-spacing: -0.035em;
       font-weight: 700;
       color: var(--accent);
@@ -76,7 +63,7 @@
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 18px;
-      margin-top: 22px;
+      margin-top: 18px;
     }
 
     .home-panel {
@@ -106,7 +93,8 @@
     .home-action-btn {
       display: inline-flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
+      text-align: center;
       min-height: 48px;
       min-width: 180px;
       padding: 0 18px;
@@ -172,7 +160,7 @@
 
     .home-card-head {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       gap: 14px;
       margin-bottom: 10px;
@@ -183,16 +171,6 @@
       font-size: 1.15rem;
       font-weight: 800;
       letter-spacing: 0.02em;
-    }
-
-    .home-card-sub {
-      font-size: 0.8rem;
-      color: var(--accent-soft);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 4px 10px;
-      background: rgba(255,255,255,0.04);
-      white-space: nowrap;
     }
 
     .home-status {
@@ -386,16 +364,16 @@
 
     @media (max-width: 640px) {
       .home-shell {
-        padding: 18px 12px 52px;
+        padding: 14px 12px 52px;
       }
 
       .home-hero {
-        padding: 22px 16px 18px;
+        padding: 18px 16px 18px;
         border-radius: 20px;
       }
 
       .home-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
 
       .home-panel,
@@ -439,7 +417,6 @@
     <header class="home-hero">
       <div class="home-hero-top">
         <div>
-          <span class="home-kicker">JAPANESE MC BATTLE ARCHIVE</span>
           <h1 class="home-title">MCBattle.jp</h1>
         </div>
       </div>
@@ -472,7 +449,6 @@
       <section class="home-card home-events-card">
         <div class="home-card-head">
           <h2 class="home-card-title">直近の大会</h2>
-          <span class="home-card-sub">Latest 5</span>
         </div>
         <p id="events-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
         <ul id="recent-events-list" class="home-events-list"></ul>
@@ -481,7 +457,6 @@
       <section class="home-card home-ranking-card">
         <div class="home-card-head">
           <h2 class="home-card-title">スコアランキング Top10</h2>
-          <span class="home-card-sub">Current v2</span>
         </div>
         <p id="ranking-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
         <ol id="ranking-list" class="home-ranking-list"></ol>
@@ -490,7 +465,6 @@
       <section class="home-card home-prize-card">
         <div class="home-card-head">
           <h2 class="home-card-title">獲得賞金ランキング Top10</h2>
-          <span class="home-card-sub">Winner Prize</span>
         </div>
         <p id="prize-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
         <ol id="prize-list" class="home-prize-list"></ol>
