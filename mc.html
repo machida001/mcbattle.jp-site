@@ -44,7 +44,6 @@
 
     <section class="card">
       <div class="mc-card-inner">
-        <h2>MC情報</h2>
         <ul id="mc-info-list" class="meta-list"></ul>
       </div>
     </section>
@@ -251,11 +250,11 @@
           metaEl.textContent = "";
 
           const infoItems = [
-            ["MCBattle Rank順位", ranking.rank || ""],
-            ["スコア", formatScore(ranking.current_strength_score_v2)],
-            ["総試合数", ranking.total_matches || ""],
-            ["勝利数", ranking.wins || ""],
-            ["敗北数", ranking.losses || ""]
+            ["MCBattle Rank順位", ranking.rank || "−"],
+            ["スコア", formatScore(ranking.current_strength_score_v2) || "−"],
+            ["総試合数", ranking.total_matches || "−"],
+            ["勝利数", ranking.wins || "−"],
+            ["敗北数", ranking.losses || "−"]
           ];
 
           infoItems.forEach(([label, value]) => {
@@ -263,10 +262,10 @@
 
             const labelEl = document.createElement("span");
             labelEl.className = "meta-label";
-            labelEl.textContent = label;
+            labelEl.textContent = `${label}：`;
 
             const valueEl = document.createElement("span");
-            valueEl.textContent = value || "";
+            valueEl.textContent = value || "−";
 
             li.appendChild(labelEl);
             li.appendChild(valueEl);
@@ -279,41 +278,51 @@
             appearancesListEl.appendChild(li);
           });
 
-          wins.forEach((item) => {
+          if (wins.length === 0) {
             const li = document.createElement("li");
-            const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "");
-            const eventHtml = renderEventLink(item.event_name || "", item.event_id || "", item.event_date || "");
-            const roundName = escapeHtml(item.round_name || "");
-
-            li.innerHTML = `
-              ${opponentHtml}
-              ${roundName ? `｜${roundName}` : ""}
-              ${eventHtml ? `｜${eventHtml}` : ""}
-            `;
+            li.textContent = "−";
             winsListEl.appendChild(li);
-          });
+          } else {
+            wins.forEach((item) => {
+              const li = document.createElement("li");
+              const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "");
+              const eventHtml = renderEventLink(item.event_name || "", item.event_id || "", item.event_date || "");
+              const roundName = escapeHtml(item.round_name || "");
 
-          losses.forEach((item) => {
+              li.innerHTML = `
+                ${opponentHtml}
+                ${roundName ? `｜${roundName}` : ""}
+                ${eventHtml ? `｜${eventHtml}` : ""}
+              `;
+              winsListEl.appendChild(li);
+            });
+          }
+
+          if (losses.length === 0) {
             const li = document.createElement("li");
-            const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "");
-            const eventHtml = renderEventLink(item.event_name || "", item.event_id || "", item.event_date || "");
-            const roundName = escapeHtml(item.round_name || "");
-
-            li.innerHTML = `
-              ${opponentHtml}
-              ${roundName ? `｜${roundName}` : ""}
-              ${eventHtml ? `｜${eventHtml}` : ""}
-            `;
+            li.textContent = "−";
             lossesListEl.appendChild(li);
-          });
+          } else {
+            losses.forEach((item) => {
+              const li = document.createElement("li");
+              const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "");
+              const eventHtml = renderEventLink(item.event_name || "", item.event_id || "", item.event_date || "");
+              const roundName = escapeHtml(item.round_name || "");
 
-          appearancesStatusEl.textContent = `${appearances.length}件を表示`;
-          winsStatusEl.textContent = `${wins.length}件を表示`;
-          lossesStatusEl.textContent = `${losses.length}件を表示`;
+              li.innerHTML = `
+                ${opponentHtml}
+                ${roundName ? `｜${roundName}` : ""}
+                ${eventHtml ? `｜${eventHtml}` : ""}
+              `;
+              lossesListEl.appendChild(li);
+            });
+          }
+
+          appearancesStatusEl.textContent = "";
+          winsStatusEl.textContent = "";
+          lossesStatusEl.textContent = "";
 
           if (appearances.length === 0) appearancesStatusEl.textContent = "出場大会がありません";
-          if (wins.length === 0) winsStatusEl.textContent = "勝利記録がありません";
-          if (losses.length === 0) lossesStatusEl.textContent = "敗北記録がありません";
         } catch (err) {
           console.error(err);
           titleEl.textContent = "MC情報の描画に失敗しました";
