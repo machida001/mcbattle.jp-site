@@ -127,3 +127,29 @@ a:hover {
 .top-link {
   display: inline-block;
   margin-bottom: 18
+  
+  .site-mini-logo {
+  display: inline-block;
+  font-family:
+    "Times New Roman",
+    Georgia,
+    "Baskerville",
+    "Hiragino Mincho ProN",
+    "Yu Mincho",
+    serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--accent);
+  text-decoration: none;
+  text-shadow: 0 0 18px rgba(150, 190, 255, 0.06);
+}
+
+.site-mini-logo:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+  
+  
