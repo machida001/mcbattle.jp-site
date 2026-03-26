@@ -290,11 +290,10 @@
           metaEl.textContent = `${event.event_date || ""} ${event.event_category || ""}`.trim();
 
           const infoItems = [
-            { label: "開催日", html: escapeHtml(event.event_date || "") },
-            { label: "カテゴリ", html: escapeHtml(event.event_category || "") },
-            { label: "会場", html: escapeHtml(event.event_stage || "") },
-            { label: "優勝者", html: renderMcLink(champion.name || "", champion.id || "") },
-            { label: "優勝賞金", html: escapeHtml(formattedWinnerPrize || "") }
+            { label: "開催日：", html: escapeHtml(event.event_date || "") },
+            { label: "カテゴリ：", html: escapeHtml(event.event_category || "") },
+            { label: "優勝者：", html: renderMcLink(champion.name || "", champion.id || "") },
+            { label: "優勝賞金：", html: escapeHtml(formattedWinnerPrize || "") }
           ];
 
           infoItems.forEach((item) => {
