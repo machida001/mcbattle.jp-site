@@ -54,10 +54,7 @@
       const safeId = String(mcId || "").trim();
 
       if (!safeName) return "";
-
-      if (!safeId) {
-        return `<span>${safeName}</span>`;
-      }
+      if (!safeId) return `<span>${safeName}</span>`;
 
       return `<a href="./mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
     }
@@ -283,10 +280,22 @@
           });
 
           const roundDisplayMap = {
-            "ベスト8": "準々決勝",
-            "準々決勝": "準々決勝",
+            "決勝": "決勝",
+            "FINAL": "決勝",
+            "Final": "決勝",
+            "final": "決勝",
+
+            "準決勝": "準決勝",
             "決勝トーナメント準決勝": "準決勝",
-            "準決勝": "準決勝"
+            "ベスト4": "準決勝",
+
+            "準々決勝": "ベスト8",
+            "ベスト8": "ベスト8",
+
+            "ベスト16": "ベスト16",
+            "ベスト32": "ベスト32",
+            "ベスト48": "ベスト48",
+            "ベスト64": "ベスト64"
           };
 
           function normalizeDisplayRound(roundName) {
@@ -305,7 +314,7 @@
           const roundOrder = [
             "決勝",
             "準決勝",
-            "準々決勝",
+            "ベスト8",
             "ベスト16",
             "ベスト32",
             "ベスト48",
@@ -372,8 +381,8 @@
           if (grouped["準決勝"] && grouped["準決勝"].length > 2) {
             warningMessages.push(`準決勝が ${grouped["準決勝"].length} 試合あります`);
           }
-          if (grouped["準々決勝"] && grouped["準々決勝"].length > 4) {
-            warningMessages.push(`準々決勝が ${grouped["準々決勝"].length} 試合あります`);
+          if (grouped["ベスト8"] && grouped["ベスト8"].length > 4) {
+            warningMessages.push(`ベスト8が ${grouped["ベスト8"].length} 試合あります`);
           }
 
           matchesStatusEl.textContent = `${matches.length}試合を表示`;
