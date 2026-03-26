@@ -6,6 +6,21 @@
   <title>大会一覧 | MC Battle DB</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    .events-page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 16px 72px;
+    }
+
+    .events-list-wrap {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    #events-status {
+      margin-bottom: 12px;
+    }
+
     .events-list {
       list-style: none;
       padding: 0;
@@ -15,31 +30,37 @@
     .events-list li {
       margin: 0;
       padding: 0;
-      border-bottom: 1px solid currentColor;
-      border-color: rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid var(--line);
     }
 
     .events-list li:last-child {
       border-bottom: none;
     }
 
-    .event-link {
+    .event-link,
+    .event-link-static {
       display: block;
-      padding: 10px 0;
+      padding: 11px 0;
       color: inherit;
+      border-radius: 8px;
       text-decoration: none;
     }
 
     .event-link:hover {
-      opacity: 0.88;
+      opacity: 0.9;
+      background: rgba(255,255,255,0.03);
+      text-decoration: none;
     }
 
     .event-date {
       white-space: nowrap;
       margin-right: 0.45em;
+      color: var(--accent-dim);
+      font-variant-numeric: tabular-nums;
     }
 
     .event-name {
+      color: var(--accent);
       text-decoration: underline;
       text-underline-offset: 0.15em;
     }
@@ -48,27 +69,41 @@
       opacity: 0.8;
       margin-left: 0.45em;
       white-space: nowrap;
+      color: var(--muted);
     }
 
     @media (max-width: 640px) {
-      .event-link {
-        padding: 8px 0;
+      .events-page {
+        padding: 20px 12px 56px;
+      }
+
+      .events-list-wrap {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .event-link,
+      .event-link-static {
+        padding: 9px 0;
       }
     }
   </style>
 </head>
 <body>
-  <p><a href="./">← トップへ戻る</a></p>
+  <div class="events-page">
+    <p><a href="./">← トップへ戻る</a></p>
 
-  <header>
-    <h1>大会一覧</h1>
-    <p class="muted">新しい大会から順に表示しています。</p>
-  </header>
+    <header>
+      <h1>大会一覧</h1>
+    </header>
 
-  <section class="card">
-    <p id="events-status" class="muted">読み込み中...</p>
-    <ul id="events-list" class="events-list"></ul>
-  </section>
+    <section class="card">
+      <div class="events-list-wrap">
+        <p id="events-status" class="muted">読み込み中...</p>
+        <ul id="events-list" class="events-list"></ul>
+      </div>
+    </section>
+  </div>
 
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
@@ -120,7 +155,7 @@
               `;
             } else {
               li.innerHTML = `
-                <span class="event-link">
+                <span class="event-link-static">
                   <span class="event-date">${escapeHtml(date)}</span>
                   <span class="event-name">${escapeHtml(name)}</span>
                   ${category ? `<span class="event-category">/ ${escapeHtml(category)}</span>` : ""}
