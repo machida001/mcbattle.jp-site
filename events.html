@@ -4,7 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>大会一覧 | MC Battle DB</title>
-<link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .events-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .events-list li {
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid currentColor;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .events-list li:last-child {
+      border-bottom: none;
+    }
+
+    .event-link {
+      display: block;
+      padding: 10px 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .event-link:hover {
+      opacity: 0.88;
+    }
+
+    .event-date {
+      white-space: nowrap;
+      margin-right: 0.45em;
+    }
+
+    .event-name {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
+    .event-category {
+      opacity: 0.8;
+      margin-left: 0.45em;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .event-link {
+        padding: 8px 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <p><a href="./">← トップへ戻る</a></p>
@@ -16,11 +67,20 @@
 
   <section class="card">
     <p id="events-status" class="muted">読み込み中...</p>
-    <ul id="events-list"></ul>
+    <ul id="events-list" class="events-list"></ul>
   </section>
 
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
 
     function loadEventsList() {
       const callbackName = "mcBattleEventsCallback";
@@ -31,6 +91,7 @@
         console.log("events list:", data);
 
         listEl.innerHTML = "";
+        statusEl.classList.remove("error");
 
         try {
           if (data.error) {
@@ -43,17 +104,30 @@
 
           events.forEach((event) => {
             const li = document.createElement("li");
-            const a = document.createElement("a");
 
-            a.href = `event.html?event_id=${encodeURIComponent(event.event_id)}`;
-
+            const eventId = event.event_id ? String(event.event_id) : "";
             const date = event.event_date ? String(event.event_date) : "";
             const name = event.event_name ? String(event.event_name) : "大会名不明";
-            const category = event.event_category ? ` / ${event.event_category}` : "";
+            const category = event.event_category ? String(event.event_category) : "";
 
-            a.textContent = `${date} ${name}${category}`.trim();
+            if (eventId) {
+              li.innerHTML = `
+                <a class="event-link" href="event.html?event_id=${encodeURIComponent(eventId)}">
+                  <span class="event-date">${escapeHtml(date)}</span>
+                  <span class="event-name">${escapeHtml(name)}</span>
+                  ${category ? `<span class="event-category">/ ${escapeHtml(category)}</span>` : ""}
+                </a>
+              `;
+            } else {
+              li.innerHTML = `
+                <span class="event-link">
+                  <span class="event-date">${escapeHtml(date)}</span>
+                  <span class="event-name">${escapeHtml(name)}</span>
+                  ${category ? `<span class="event-category">/ ${escapeHtml(category)}</span>` : ""}
+                </span>
+              `;
+            }
 
-            li.appendChild(a);
             listEl.appendChild(li);
           });
 
