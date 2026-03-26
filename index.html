@@ -135,7 +135,7 @@
 
     .home-main-grid {
       display: grid;
-      grid-template-columns: minmax(320px, 0.95fr) minmax(320px, 1.05fr);
+      grid-template-columns: minmax(360px, 1fr) minmax(280px, 360px);
       gap: 18px;
       margin-top: 22px;
       align-items: start;
@@ -159,6 +159,12 @@
       height: 1px;
       background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
       pointer-events: none;
+    }
+
+    .home-ranking-card {
+      width: fit-content;
+      min-width: 0;
+      justify-self: start;
     }
 
     .home-card-head {
@@ -242,16 +248,17 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      counter-reset: rank;
+      width: fit-content;
     }
 
     .home-ranking-list li {
       display: grid;
-      grid-template-columns: 52px minmax(0, 8.5em) auto;
-      gap: 10px;
+      grid-template-columns: 44px minmax(0, 7.2em) auto;
+      gap: 8px;
       align-items: center;
-      padding: 11px 0;
+      padding: 10px 0;
       border-bottom: 1px solid var(--line);
+      width: fit-content;
     }
 
     .home-ranking-list li:last-child {
@@ -260,10 +267,11 @@
 
     .home-rank-no {
       font-variant-numeric: tabular-nums;
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 900;
       color: var(--accent-dim);
       letter-spacing: 0.02em;
+      text-align: right;
     }
 
     .home-ranking-list li:nth-child(1) .home-rank-no,
@@ -274,13 +282,13 @@
 
     .home-rank-name {
       min-width: 0;
-      max-width: 8.5em;
+      max-width: 7.2em;
     }
 
     .home-rank-name a,
     .home-rank-name span {
       display: inline-block;
-      max-width: 8.5em;
+      max-width: 7.2em;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -305,6 +313,26 @@
         grid-template-columns: 1fr;
         display: grid;
       }
+
+      .home-ranking-card {
+        width: auto;
+        justify-self: stretch;
+      }
+
+      .home-ranking-list {
+        width: 100%;
+      }
+
+      .home-ranking-list li {
+        width: 100%;
+        grid-template-columns: 42px minmax(0, 8em) auto;
+      }
+
+      .home-rank-name,
+      .home-rank-name a,
+      .home-rank-name span {
+        max-width: 8em;
+      }
     }
 
     @media (max-width: 640px) {
@@ -328,14 +356,14 @@
       }
 
       .home-ranking-list li {
-        grid-template-columns: 42px minmax(0, 6.8em) auto;
-        gap: 8px;
+        grid-template-columns: 38px minmax(0, 6.2em) auto;
+        gap: 7px;
       }
 
       .home-rank-name,
       .home-rank-name a,
       .home-rank-name span {
-        max-width: 6.8em;
+        max-width: 6.2em;
       }
 
       .home-rank-score {
@@ -392,7 +420,7 @@
         <ul id="recent-events-list" class="home-events-list"></ul>
       </section>
 
-      <section class="home-card">
+      <section class="home-card home-ranking-card">
         <div class="home-card-head">
           <h2 class="home-card-title">ランキング Top20</h2>
           <span class="home-card-sub">Current v2</span>
