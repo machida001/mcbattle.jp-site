@@ -6,6 +6,15 @@
   <title>MC一覧 | MC Battle DB</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    header h1,
+    header .muted {
+      padding-left: 12px;
+    }
+
+    #mcs-status {
+      padding-left: 12px;
+    }
+
     .mcs-list {
       list-style: none;
       padding: 0;
@@ -46,6 +55,12 @@
     }
 
     @media (max-width: 640px) {
+      header h1,
+      header .muted,
+      #mcs-status {
+        padding-left: 10px;
+      }
+
       .mc-link,
       .mc-link-static {
         padding: 9px 10px;
