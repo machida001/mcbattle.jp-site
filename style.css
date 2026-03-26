@@ -119,7 +119,8 @@ a:hover {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding-left: 20px;
 }
@@ -135,7 +136,8 @@ table {
   font-size: 0.96rem;
 }
 
-th, td {
+th,
+td {
   padding: 10px 8px;
   border-bottom: 1px solid var(--line);
   text-align: left;
@@ -171,12 +173,6 @@ th {
   gap: 18px;
 }
 
-@media (min-width: 960px) {
-  .top-grid {
-    grid-template-columns: 0.95fr 1.05fr;
-  }
-}
-
 .list-tight li {
   margin-bottom: 6px;
 }
@@ -199,6 +195,10 @@ th {
   height: 8px;
 }
 
+.spacer-md {
+  height: 16px;
+}
+
 .section-title-row {
   display: flex;
   align-items: center;
@@ -215,14 +215,6 @@ th {
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
-}
-
-@media (min-width: 960px) {
-  .top-grid {
-    grid-template-columns: minmax(320px, 420px) minmax(360px, 460px);
-    justify-content: center;
-    gap: 20px;
-  }
 }
 
 .top-stack {
@@ -353,12 +345,6 @@ th {
   gap: 18px;
 }
 
-@media (min-width: 960px) {
-  .mc-sections {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .table-rank td:first-child,
 .table-rank td:last-child {
   font-variant-numeric: tabular-nums;
@@ -370,10 +356,6 @@ th {
 
 .table-rank th:last-child {
   text-align: right;
-}
-
-.spacer-md {
-  height: 16px;
 }
 
 .lead-block {
@@ -432,4 +414,132 @@ th {
   padding: 16px;
 }
 
+/* rankings.html / events.html / mcs.html 用の共通調整 */
 
+.table-rank {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.table-rank th,
+.table-rank td {
+  white-space: nowrap;
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+
+.table-rank th:nth-child(1),
+.table-rank td:nth-child(1) {
+  width: 1%;
+  text-align: right;
+}
+
+.table-rank th:nth-child(2),
+.table-rank td:nth-child(2) {
+  width: auto;
+}
+
+.table-rank th:nth-child(3),
+.table-rank td:nth-child(3) {
+  width: 1%;
+  text-align: right;
+}
+
+.table-rank tbody tr:hover {
+  opacity: 0.92;
+}
+
+.rank-name-link {
+  display: inline-block;
+  padding: 2px 0;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  white-space: nowrap;
+}
+
+.rank-name-link:hover {
+  opacity: 0.85;
+}
+
+.events-list,
+.mcs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.events-list li,
+.mcs-list li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.events-list li:last-child,
+.mcs-list li:last-child {
+  border-bottom: none;
+}
+
+.event-link,
+.mc-link {
+  display: block;
+  padding: 10px 0;
+  color: inherit;
+}
+
+.event-link:hover,
+.mc-link:hover {
+  opacity: 0.88;
+}
+
+.event-link {
+  text-decoration: none;
+}
+
+.mc-link {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.event-date {
+  white-space: nowrap;
+  margin-right: 0.45em;
+}
+
+.event-name {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.event-category {
+  opacity: 0.8;
+  margin-left: 0.45em;
+  white-space: nowrap;
+}
+
+@media (min-width: 960px) {
+  .top-grid {
+    grid-template-columns: minmax(320px, 420px) minmax(360px, 460px);
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .mc-sections {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .table-rank th,
+  .table-rank td {
+    padding: 6px 8px;
+    font-size: 0.95rem;
+  }
+
+  .event-link,
+  .mc-link {
+    padding: 8px 0;
+  }
+}
