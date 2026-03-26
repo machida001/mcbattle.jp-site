@@ -1,1 +1,176 @@
-.
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>獲得賞金ランキング | MCBattle.jp</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .prize-page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 16px 72px;
+    }
+
+    .prize-table-wrap {
+      overflow-x: auto;
+    }
+
+    .prize-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .prize-table th,
+    .prize-table td {
+      white-space: nowrap;
+      padding: 8px 10px;
+      vertical-align: middle;
+    }
+
+    .prize-table th:nth-child(1),
+    .prize-table td:nth-child(1),
+    .prize-table th:nth-child(3),
+    .prize-table td:nth-child(3),
+    .prize-table th:nth-child(4),
+    .prize-table td:nth-child(4) {
+      text-align: right;
+      width: 1%;
+    }
+
+    .prize-table th:nth-child(2),
+    .prize-table td:nth-child(2) {
+      width: auto;
+    }
+
+    .prize-name-link {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
+    .prize-name-link:hover {
+      opacity: 0.85;
+    }
+
+    @media (max-width: 640px) {
+      .prize-page {
+        padding: 20px 12px 56px;
+      }
+
+      .prize-table th,
+      .prize-table td {
+        padding: 6px 8px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="prize-page">
+    <p><a href="./">← トップへ戻る</a></p>
+
+    <header>
+      <h1>獲得賞金ランキング</h1>
+      <p class="muted">各大会の優勝賞金を、優勝者の獲得額として集計しています。</p>
+    </header>
+
+    <section class="card">
+      <p id="prize-status" class="muted">読み込み中...</p>
+      <div class="prize-table-wrap">
+        <table class="prize-table">
+          <thead>
+            <tr>
+              <th>順位</th>
+              <th>MC名</th>
+              <th>獲得賞金</th>
+              <th>優勝回数</th>
+            </tr>
+          </thead>
+          <tbody id="prize-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const API_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
+
+    function formatYen(value) {
+      const num = Number(value || 0);
+      return num.toLocaleString("ja-JP");
+    }
+
+    function loadPrizeRankings() {
+      const callbackName = "mcBattlePrizeRankingCallback";
+      const statusEl = document.getElementById("prize-status");
+      const bodyEl = document.getElementById("prize-body");
+
+      window[callbackName] = function(data) {
+        console.log("prize rankings:", data);
+
+        bodyEl.innerHTML = "";
+        statusEl.classList.remove("error");
+
+        try {
+          if (data.error) {
+            statusEl.textContent = "獲得賞金ランキングの取得に失敗しました: " + (data.message || "");
+            statusEl.classList.add("error");
+            return;
+          }
+
+          const rankings = Array.isArray(data.prize_rankings) ? data.prize_rankings : [];
+
+          rankings.forEach((item, index) => {
+            const tr = document.createElement("tr");
+
+            const rankTd = document.createElement("td");
+            const nameTd = document.createElement("td");
+            const prizeTd = document.createElement("td");
+            const titlesTd = document.createElement("td");
+
+            rankTd.textContent = item.rank || (index + 1);
+
+            if (item.mc_id) {
+              const a = document.createElement("a");
+              a.href = `mc.html?mc_id=${encodeURIComponent(item.mc_id)}`;
+              a.textContent = item.mc_name || "名前不明";
+              a.className = "prize-name-link";
+              nameTd.appendChild(a);
+            } else {
+              nameTd.textContent = item.mc_name || "名前不明";
+            }
+
+            prizeTd.textContent = formatYen(item.total_prize_money || 0);
+            titlesTd.textContent = item.titles || 0;
+
+            tr.appendChild(rankTd);
+            tr.appendChild(nameTd);
+            tr.appendChild(prizeTd);
+            tr.appendChild(titlesTd);
+
+            bodyEl.appendChild(tr);
+          });
+
+          statusEl.textContent = `${rankings.length}名を表示`;
+        } catch (err) {
+          console.error(err);
+          statusEl.textContent = "獲得賞金ランキングの描画に失敗しました";
+          statusEl.classList.add("error");
+        }
+      };
+
+      const script = document.createElement("script");
+      script.src = `${API_URL}?mode=prize_ranking&callback=${callbackName}`;
+      script.onerror = function() {
+        statusEl.textContent = "獲得賞金ランキングの読み込みに失敗しました";
+        statusEl.classList.add("error");
+      };
+
+      document.body.appendChild(script);
+    }
+
+    loadPrizeRankings();
+  </script>
+</body>
+</html>
