@@ -17,8 +17,41 @@
       padding-right: 12px;
     }
 
+    .mcs-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .mcs-tab {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .mcs-tab:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .mcs-tab.is-active {
+      background: rgba(255,255,255,0.10);
+      border-color: var(--line-strong);
+    }
+
     #mcs-status {
       margin-bottom: 12px;
+    }
+
+    .mcs-section-title {
+      margin: 14px 0 8px;
+      font-size: 1rem;
+      color: var(--accent-soft);
     }
 
     .mcs-list {
@@ -60,6 +93,11 @@
       text-decoration: none;
     }
 
+    .mcs-empty {
+      color: var(--muted);
+      padding: 8px 0;
+    }
+
     @media (max-width: 640px) {
       .mcs-page {
         padding: 20px 12px 56px;
@@ -74,6 +112,10 @@
       .mc-link-static {
         padding: 9px 0;
       }
+
+      .mcs-tab {
+        padding: 6px 10px;
+      }
     }
   </style>
 </head>
@@ -87,14 +129,17 @@
 
     <section class="card">
       <div class="mcs-list-wrap">
+        <div id="mcs-tabs" class="mcs-tabs"></div>
         <p id="mcs-status" class="muted">読み込み中...</p>
-        <ul id="mcs-list" class="mcs-list"></ul>
+        <div id="mcs-panel"></div>
       </div>
     </section>
   </div>
 
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
+
+    const TAB_ORDER = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ", "その他"];
 
     function escapeHtml(value) {
       return String(value ?? "")
@@ -105,15 +150,104 @@
         .replace(/'/g, "&#39;");
     }
 
+    function toHiragana(str) {
+      return String(str || "").replace(/[\u30a1-\u30f6]/g, ch =>
+        String.fromCharCode(ch.charCodeAt(0) - 0x60)
+      );
+    }
+
+    function getTabGroup(mc) {
+      const yomi = toHiragana(String(mc.mc_yomi || mc.mc_name || "").trim());
+      const first = yomi.charAt(0);
+
+      if ("あいうえお".includes(first)) return "あ";
+      if ("かきくけこがぎぐげご".includes(first)) return "か";
+      if ("さしすせそざじずぜぞ".includes(first)) return "さ";
+      if ("たちつてとだぢづでど".includes(first)) return "た";
+      if ("なにぬねの".includes(first)) return "な";
+      if ("はひふへほばびぶべぼぱぴぷぺぽ".includes(first)) return "は";
+      if ("まみむめも".includes(first)) return "ま";
+      if ("やゆよ".includes(first)) return "や";
+      if ("らりるれろ".includes(first)) return "ら";
+      if ("わをん".includes(first)) return "わ";
+
+      return "その他";
+    }
+
+    function sortMcs(mcs) {
+      return [...mcs].sort((a, b) => {
+        const ay = String(a.mc_yomi || a.mc_name || "");
+        const by = String(b.mc_yomi || b.mc_name || "");
+        const yomiCompare = ay.localeCompare(by, "ja");
+        if (yomiCompare !== 0) return yomiCompare;
+
+        return String(a.mc_name || "").localeCompare(String(b.mc_name || ""), "ja");
+      });
+    }
+
+    function renderTabs(groups, activeTab) {
+      const tabsEl = document.getElementById("mcs-tabs");
+      tabsEl.innerHTML = "";
+
+      TAB_ORDER.forEach(tabName => {
+        if (!groups[tabName] || groups[tabName].length === 0) return;
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "mcs-tab" + (tabName === activeTab ? " is-active" : "");
+        btn.textContent = tabName;
+        btn.addEventListener("click", () => renderPanel(groups, tabName));
+        tabsEl.appendChild(btn);
+      });
+    }
+
+    function renderPanel(groups, activeTab) {
+      renderTabs(groups, activeTab);
+
+      const panelEl = document.getElementById("mcs-panel");
+      panelEl.innerHTML = "";
+
+      const sectionTitle = document.createElement("h2");
+      sectionTitle.className = "mcs-section-title";
+      sectionTitle.textContent = `${activeTab}行`;
+      panelEl.appendChild(sectionTitle);
+
+      const list = document.createElement("ul");
+      list.className = "mcs-list";
+
+      const target = groups[activeTab] || [];
+      if (target.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "mcs-empty";
+        empty.textContent = "該当するMCがいません";
+        panelEl.appendChild(empty);
+        return;
+      }
+
+      target.forEach(mc => {
+        const li = document.createElement("li");
+        const mcId = String(mc.mc_id || "");
+        const name = String(mc.mc_name || "MC名不明");
+
+        if (mcId) {
+          li.innerHTML = `<a class="mc-link" href="mc.html?mc_id=${encodeURIComponent(mcId)}">${escapeHtml(name)}</a>`;
+        } else {
+          li.innerHTML = `<span class="mc-link-static">${escapeHtml(name)}</span>`;
+        }
+
+        list.appendChild(li);
+      });
+
+      panelEl.appendChild(list);
+    }
+
     function loadMcsList() {
       const callbackName = "mcBattleMcsCallback";
       const statusEl = document.getElementById("mcs-status");
-      const listEl = document.getElementById("mcs-list");
 
       window[callbackName] = function(data) {
         console.log("mcs list:", data);
 
-        listEl.innerHTML = "";
         statusEl.classList.remove("error");
 
         try {
@@ -123,23 +257,20 @@
             return;
           }
 
-          const mcs = Array.isArray(data.mcs) ? data.mcs : [];
+          const mcs = Array.isArray(data.mcs) ? sortMcs(data.mcs) : [];
+          const groups = {};
 
-          mcs.forEach((mc) => {
-            const li = document.createElement("li");
-
-            const mcId = mc.mc_id ? String(mc.mc_id) : "";
-            const name = mc.mc_name ? String(mc.mc_name) : "MC名不明";
-
-            if (mcId) {
-              li.innerHTML = `<a class="mc-link" href="mc.html?mc_id=${encodeURIComponent(mcId)}">${escapeHtml(name)}</a>`;
-            } else {
-              li.innerHTML = `<span class="mc-link-static">${escapeHtml(name)}</span>`;
-            }
-
-            listEl.appendChild(li);
+          TAB_ORDER.forEach(tab => {
+            groups[tab] = [];
           });
 
+          mcs.forEach(mc => {
+            const group = getTabGroup(mc);
+            groups[group].push(mc);
+          });
+
+          const firstTab = TAB_ORDER.find(tab => groups[tab] && groups[tab].length > 0) || "あ";
+          renderPanel(groups, firstTab);
           statusEl.textContent = `${mcs.length}名を表示`;
         } catch (err) {
           console.error(err);
