@@ -135,7 +135,7 @@
 
     .home-main-grid {
       display: grid;
-      grid-template-columns: minmax(260px, 320px) minmax(280px, 360px);
+      grid-template-columns: minmax(260px, 320px) minmax(280px, 360px) minmax(280px, 360px);
       gap: 18px;
       margin-top: 22px;
       align-items: start;
@@ -163,7 +163,8 @@
     }
 
     .home-events-card,
-    .home-ranking-card {
+    .home-ranking-card,
+    .home-prize-card {
       width: fit-content;
       min-width: 0;
       justify-self: start;
@@ -251,16 +252,17 @@
       word-break: break-word;
     }
 
-    .home-ranking-list {
+    .home-ranking-list,
+    .home-prize-list {
       list-style: none;
       padding: 0;
       margin: 0;
       width: fit-content;
     }
 
-    .home-ranking-list li {
+    .home-ranking-list li,
+    .home-prize-list li {
       display: grid;
-      grid-template-columns: 44px minmax(0, 7.2em) auto;
       gap: 8px;
       align-items: center;
       padding: 10px 0;
@@ -268,11 +270,21 @@
       width: fit-content;
     }
 
-    .home-ranking-list li:last-child {
+    .home-ranking-list li {
+      grid-template-columns: 44px minmax(0, 7.2em) auto;
+    }
+
+    .home-prize-list li {
+      grid-template-columns: 44px minmax(0, 7.2em) auto;
+    }
+
+    .home-ranking-list li:last-child,
+    .home-prize-list li:last-child {
       border-bottom: none;
     }
 
-    .home-rank-no {
+    .home-rank-no,
+    .home-prize-no {
       font-variant-numeric: tabular-nums;
       font-size: 0.98rem;
       font-weight: 900;
@@ -283,17 +295,23 @@
 
     .home-ranking-list li:nth-child(1) .home-rank-no,
     .home-ranking-list li:nth-child(2) .home-rank-no,
-    .home-ranking-list li:nth-child(3) .home-rank-no {
+    .home-ranking-list li:nth-child(3) .home-rank-no,
+    .home-prize-list li:nth-child(1) .home-prize-no,
+    .home-prize-list li:nth-child(2) .home-prize-no,
+    .home-prize-list li:nth-child(3) .home-prize-no {
       color: var(--accent);
     }
 
-    .home-rank-name {
+    .home-rank-name,
+    .home-prize-name {
       min-width: 0;
       max-width: 7.2em;
     }
 
     .home-rank-name a,
-    .home-rank-name span {
+    .home-rank-name span,
+    .home-prize-name a,
+    .home-prize-name span {
       display: inline-block;
       max-width: 7.2em;
       overflow: hidden;
@@ -306,12 +324,19 @@
       vertical-align: bottom;
     }
 
-    .home-rank-score {
+    .home-rank-score,
+    .home-prize-money {
       font-variant-numeric: tabular-nums;
       color: var(--accent-soft);
       font-weight: 700;
       white-space: nowrap;
       text-align: right;
+    }
+
+    @media (max-width: 1100px) {
+      .home-main-grid {
+        grid-template-columns: minmax(260px, 320px) minmax(280px, 360px);
+      }
     }
 
     @media (max-width: 900px) {
@@ -322,13 +347,15 @@
       }
 
       .home-events-card,
-      .home-ranking-card {
+      .home-ranking-card,
+      .home-prize-card {
         width: auto;
         justify-self: stretch;
       }
 
       .home-events-list,
-      .home-ranking-list {
+      .home-ranking-list,
+      .home-prize-list {
         width: 100%;
       }
 
@@ -341,14 +368,18 @@
         max-width: 100%;
       }
 
-      .home-ranking-list li {
+      .home-ranking-list li,
+      .home-prize-list li {
         width: 100%;
         grid-template-columns: 42px minmax(0, 8em) auto;
       }
 
       .home-rank-name,
       .home-rank-name a,
-      .home-rank-name span {
+      .home-rank-name span,
+      .home-prize-name,
+      .home-prize-name a,
+      .home-prize-name span {
         max-width: 8em;
       }
     }
@@ -377,18 +408,23 @@
         max-width: 100%;
       }
 
-      .home-ranking-list li {
+      .home-ranking-list li,
+      .home-prize-list li {
         grid-template-columns: 38px minmax(0, 6.2em) auto;
         gap: 7px;
       }
 
       .home-rank-name,
       .home-rank-name a,
-      .home-rank-name span {
+      .home-rank-name span,
+      .home-prize-name,
+      .home-prize-name a,
+      .home-prize-name span {
         max-width: 6.2em;
       }
 
-      .home-rank-score {
+      .home-rank-score,
+      .home-prize-money {
         font-size: 0.92rem;
       }
 
@@ -425,10 +461,10 @@
       </div>
 
       <div class="home-actions">
-        <a class="home-action-btn" href="rankings.html">ランキングを見る</a>
-        <a class="home-action-btn" href="prize_rankings.html">獲得賞金ランキングを見る</a>
-        <a class="home-action-btn" href="events.html">大会一覧を見る</a>
-        <a class="home-action-btn" href="mcs.html">MC一覧を見る</a>
+        <a class="home-action-btn" href="rankings.html">スコアランキング</a>
+        <a class="home-action-btn" href="prize_rankings.html">獲得賞金ランキング</a>
+        <a class="home-action-btn" href="events.html">大会一覧</a>
+        <a class="home-action-btn" href="mcs.html">MC一覧</a>
       </div>
     </header>
 
@@ -444,28 +480,45 @@
 
       <section class="home-card home-ranking-card">
         <div class="home-card-head">
-          <h2 class="home-card-title">ランキング Top20</h2>
+          <h2 class="home-card-title">スコアランキング Top20</h2>
           <span class="home-card-sub">Current v2</span>
         </div>
         <p id="ranking-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
         <ol id="ranking-list" class="home-ranking-list"></ol>
       </section>
+
+      <section class="home-card home-prize-card">
+        <div class="home-card-head">
+          <h2 class="home-card-title">獲得賞金ランキング Top20</h2>
+          <span class="home-card-sub">Winner Prize</span>
+        </div>
+        <p id="prize-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
+        <ol id="prize-list" class="home-prize-list"></ol>
+      </section>
     </main>
   </div>
 
   <script>
-    const RANKING_API_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
+    const API_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
 
-    function loadDataJsonp() {
-      const callbackName = "mcBattleDataCallback";
+    function formatYen(value) {
+      const num = Number(value || 0);
+      return num.toLocaleString("ja-JP");
+    }
+
+    function loadHomeData() {
+      const rankingCallbackName = "mcBattleDataCallback";
+      const prizeCallbackName = "mcBattlePrizeHomeCallback";
 
       const rankingStatusEl = document.getElementById("ranking-status");
       const rankingListEl = document.getElementById("ranking-list");
       const eventsStatusEl = document.getElementById("events-status");
       const recentEventsListEl = document.getElementById("recent-events-list");
+      const prizeStatusEl = document.getElementById("prize-status");
+      const prizeListEl = document.getElementById("prize-list");
 
-      window[callbackName] = function(data) {
-        console.log("JSONP data:", data);
+      window[rankingCallbackName] = function(data) {
+        console.log("home base data:", data);
 
         rankingListEl.innerHTML = "";
         recentEventsListEl.innerHTML = "";
@@ -547,7 +600,7 @@
 
           eventsStatusEl.textContent = `直近${recentEvents.length}件を表示`;
         } catch (err) {
-          console.error("render error:", err);
+          console.error("home base render error:", err);
           rankingStatusEl.textContent = "ランキング描画エラー";
           rankingStatusEl.classList.add("error");
           eventsStatusEl.textContent = "大会描画エラー";
@@ -555,29 +608,85 @@
         }
       };
 
-      const script = document.createElement("script");
-      script.src = `${RANKING_API_URL}?callback=${callbackName}`;
+      window[prizeCallbackName] = function(data) {
+        console.log("home prize data:", data);
 
-      script.onload = function() {
-        if (rankingListEl.children.length === 0 && recentEventsListEl.children.length === 0) {
-          rankingStatusEl.textContent = "JSONPは読み込めたが callback が実行されていません";
-          rankingStatusEl.classList.add("error");
-          eventsStatusEl.textContent = "JSONPは読み込めたが callback が実行されていません";
-          eventsStatusEl.classList.add("error");
+        prizeListEl.innerHTML = "";
+
+        try {
+          if (data.error) {
+            prizeStatusEl.textContent = "獲得賞金ランキング取得エラー";
+            prizeStatusEl.classList.add("error");
+            return;
+          }
+
+          const rankings = Array.isArray(data.prize_rankings) ? data.prize_rankings.slice(0, 20) : [];
+
+          rankings.forEach((item, index) => {
+            const li = document.createElement("li");
+
+            const rankNo = document.createElement("span");
+            rankNo.className = "home-prize-no";
+            rankNo.textContent = `${item.rank || index + 1}.`;
+
+            const nameEl = document.createElement("span");
+            nameEl.className = "home-prize-name";
+
+            const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
+            const mcId = item.mc_id ? String(item.mc_id) : "";
+
+            if (mcId) {
+              const a = document.createElement("a");
+              a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
+              a.textContent = mcName;
+              a.title = mcName;
+              nameEl.appendChild(a);
+            } else {
+              const span = document.createElement("span");
+              span.textContent = mcName;
+              span.title = mcName;
+              nameEl.appendChild(span);
+            }
+
+            const moneyEl = document.createElement("span");
+            moneyEl.className = "home-prize-money";
+            moneyEl.textContent = formatYen(item.total_prize_money || 0);
+
+            li.appendChild(rankNo);
+            li.appendChild(nameEl);
+            li.appendChild(moneyEl);
+
+            prizeListEl.appendChild(li);
+          });
+
+          prizeStatusEl.textContent = `Top${rankings.length}を表示`;
+        } catch (err) {
+          console.error("home prize render error:", err);
+          prizeStatusEl.textContent = "獲得賞金ランキング描画エラー";
+          prizeStatusEl.classList.add("error");
         }
       };
 
-      script.onerror = function() {
+      const rankingScript = document.createElement("script");
+      rankingScript.src = `${API_URL}?callback=${rankingCallbackName}`;
+      rankingScript.onerror = function() {
         rankingStatusEl.textContent = "JSONP読み込み失敗";
         rankingStatusEl.classList.add("error");
         eventsStatusEl.textContent = "JSONP読み込み失敗";
         eventsStatusEl.classList.add("error");
       };
+      document.body.appendChild(rankingScript);
 
-      document.body.appendChild(script);
+      const prizeScript = document.createElement("script");
+      prizeScript.src = `${API_URL}?mode=prize_ranking&callback=${prizeCallbackName}`;
+      prizeScript.onerror = function() {
+        prizeStatusEl.textContent = "JSONP読み込み失敗";
+        prizeStatusEl.classList.add("error");
+      };
+      document.body.appendChild(prizeScript);
     }
 
-    loadDataJsonp();
+    loadHomeData();
   </script>
 </body>
 </html>
