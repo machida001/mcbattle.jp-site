@@ -7,7 +7,7 @@
   <style>
     :root {
       --bg: #111418;
-      --bg-soft: #1a1f26;
+      --bg-2: #171c24;
       --card: #202631;
       --card-2: #262e3b;
       --text: #f3f5f7;
@@ -25,7 +25,8 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       background: linear-gradient(180deg, #0f1115 0%, #161b22 100%);
@@ -98,8 +99,19 @@
       padding: 28px 20px 64px;
     }
 
+    .back-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
     .page-hero {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .page-title {
@@ -115,24 +127,6 @@
       color: var(--muted);
       line-height: 1.7;
       font-size: 0.98rem;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 18px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .back-link:hover {
-      color: #fff;
-    }
-
-    .main-grid {
-      display: grid;
-      grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
-      gap: 22px;
-      align-items: start;
     }
 
     .panel {
@@ -166,7 +160,7 @@
     }
 
     .status-box {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       padding: 12px 14px;
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.04);
@@ -174,9 +168,21 @@
       font-size: 0.93rem;
       line-height: 1.6;
       min-height: 48px;
+      white-space: pre-wrap;
+      word-break: break-word;
     }
 
-    .search-box {
+    .status-box.error {
+      background: rgba(255, 107, 107, 0.12);
+      color: #ffdada;
+      border: 1px solid rgba(255, 107, 107, 0.28);
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: minmax(240px, 1fr) auto auto;
+      gap: 10px;
+      align-items: center;
       margin-bottom: 16px;
     }
 
@@ -195,73 +201,13 @@
       box-shadow: 0 0 0 4px rgba(91, 140, 255, 0.14);
     }
 
-    .selected-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .selected-title {
-      font-size: 0.98rem;
-      font-weight: 700;
-    }
-
-    .selected-count {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .selected-mcs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-      min-height: 20px;
-    }
-
-    .selected-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
+    .count-badge {
+      padding: 10px 14px;
       border-radius: 999px;
-      background: linear-gradient(135deg, rgba(91, 140, 255, 0.2), rgba(124, 77, 255, 0.2));
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      max-width: 100%;
-    }
-
-    .selected-chip-name {
-      font-size: 0.93rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      font-size: 0.92rem;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 210px;
-    }
-
-    .selected-chip-remove {
-      appearance: none;
-      border: none;
-      background: transparent;
-      color: #fff;
-      font-size: 1rem;
-      line-height: 1;
-      cursor: pointer;
-      padding: 0;
-      opacity: 0.9;
-    }
-
-    .selected-chip-remove:hover {
-      opacity: 1;
-      color: #ffd4d4;
-    }
-
-    .action-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
     }
 
     .btn {
@@ -272,6 +218,7 @@
       cursor: pointer;
       transition: 0.2s ease;
       font-weight: 700;
+      white-space: nowrap;
     }
 
     .btn-primary {
@@ -279,7 +226,7 @@
       color: #fff;
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover:not(:disabled) {
       transform: translateY(-1px);
       filter: brightness(1.05);
     }
@@ -289,7 +236,7 @@
       color: var(--text);
     }
 
-    .btn-secondary:hover {
+    .btn-secondary:hover:not(:disabled) {
       background: rgba(255, 255, 255, 0.13);
     }
 
@@ -300,27 +247,113 @@
       filter: none;
     }
 
+    .selected-area {
+      margin-bottom: 18px;
+    }
+
+    .selected-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .selected-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+    }
+
+    .selected-sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .selected-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .selected-slot {
+      min-height: 72px;
+      border-radius: 14px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .selected-slot.empty {
+      color: #7e8997;
+      justify-content: center;
+    }
+
+    .selected-slot-name {
+      font-size: 0.96rem;
+      font-weight: 700;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .selected-slot-remove {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: #fff;
+      font-size: 1rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0;
+      opacity: 0.9;
+      flex-shrink: 0;
+    }
+
+    .selected-slot-remove:hover {
+      opacity: 1;
+      color: #ffd4d4;
+    }
+
+    .candidate-area {
+      margin-top: 6px;
+    }
+
+    .candidate-title {
+      margin: 0 0 12px;
+      font-size: 0.98rem;
+      font-weight: 700;
+    }
+
     .candidate-list {
       display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 10px;
-      max-height: 680px;
+      max-height: 420px;
       overflow-y: auto;
       padding-right: 4px;
     }
 
     .candidate-item {
       width: 100%;
-      text-align: left;
-      padding: 14px 14px;
+      text-align: center;
+      padding: 14px 10px;
       border-radius: 14px;
       border: 1px solid rgba(255, 255, 255, 0.07);
       background: rgba(255, 255, 255, 0.04);
       color: var(--text);
       cursor: pointer;
       transition: 0.18s ease;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .candidate-item:hover {
+    .candidate-item:hover:not(:disabled) {
       background: rgba(91, 140, 255, 0.12);
       border-color: rgba(91, 140, 255, 0.35);
       transform: translateY(-1px);
@@ -336,128 +369,88 @@
     .candidate-name {
       display: block;
       font-weight: 700;
-      font-size: 0.98rem;
-      line-height: 1.45;
-      margin-bottom: 4px;
-    }
-
-    .candidate-meta {
-      display: block;
-      color: var(--muted);
-      font-size: 0.85rem;
-      line-height: 1.45;
-    }
-
-    .tournament-wrap {
-      display: grid;
-      gap: 18px;
-    }
-
-    .tournament-topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .tournament-note {
-      color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.6;
-    }
-
-    .tournament-board {
-      overflow-x: auto;
-      padding-bottom: 6px;
-    }
-
-    .bracket {
-      min-width: 760px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 20px;
-      align-items: start;
-    }
-
-    .round-column {
-      display: grid;
-      gap: 16px;
-    }
-
-    .round-title {
-      font-size: 1rem;
-      font-weight: 800;
-      margin: 0;
-      color: #fff;
-    }
-
-    .match-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 16px;
-      padding: 12px;
-      display: grid;
-      gap: 10px;
-      min-height: 126px;
-    }
-
-    .match-label {
-      font-size: 0.8rem;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-    }
-
-    .slot {
-      min-height: 42px;
-      border-radius: 12px;
-      padding: 10px 12px;
-      background: rgba(0, 0, 0, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      display: flex;
-      align-items: center;
       font-size: 0.95rem;
-      font-weight: 600;
-      line-height: 1.4;
+      line-height: 1.5;
+      word-break: break-word;
     }
 
-    .slot.empty {
-      color: #7e8997;
-      font-weight: 500;
+    .result-panel {
+      margin-top: 22px;
     }
 
-    .final-card {
-      min-height: 220px;
-      display: grid;
-      align-content: center;
+    .result-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
     }
 
-    .winner-box {
-      margin-top: 10px;
-      padding: 16px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(91, 140, 255, 0.18), rgba(124, 77, 255, 0.18));
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .result-summary {
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(91, 140, 255, 0.13), rgba(124, 77, 255, 0.13));
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      display: none;
     }
 
-    .winner-label {
+    .result-summary.show {
+      display: block;
+    }
+
+    .result-summary-label {
       display: block;
       color: var(--muted);
       font-size: 0.84rem;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
-    .winner-name {
-      display: block;
-      font-size: 1.1rem;
+    .result-summary-winner {
+      font-size: 1.2rem;
       font-weight: 800;
     }
 
-    .empty-message {
+    .round-result {
+      display: none;
+      margin-top: 16px;
+    }
+
+    .round-result.show {
+      display: block;
+    }
+
+    .round-title-lg {
+      margin: 0 0 12px;
+      font-size: 1.02rem;
+      font-weight: 800;
+    }
+
+    .match-result-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .match-result-item {
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .match-result-label {
       color: var(--muted);
-      font-size: 0.93rem;
+      font-size: 0.84rem;
+      margin-bottom: 6px;
+    }
+
+    .match-result-text {
+      font-size: 0.97rem;
       line-height: 1.7;
-      padding: 12px 0 0;
+    }
+
+    .winner-text {
+      font-weight: 800;
+      color: #fff;
     }
 
     .site-footer {
@@ -468,26 +461,27 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 920px) {
-      .main-grid {
+    @media (max-width: 980px) {
+      .candidate-list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .selected-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .search-row {
         grid-template-columns: 1fr;
       }
 
       .candidate-list {
-        max-height: 420px;
-      }
-
-      .site-header-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .site-nav {
-        width: 100%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 560px) {
       .container {
         padding: 22px 14px 56px;
       }
@@ -502,11 +496,20 @@
         padding-right: 14px;
       }
 
-      .action-row {
+      .selected-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .candidate-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .site-header-inner {
+        align-items: flex-start;
         flex-direction: column;
       }
 
-      .btn {
+      .site-nav {
         width: 100%;
       }
     }
@@ -532,133 +535,72 @@
     <section class="page-hero">
       <h1 class="page-title">仮想MCバトルシミュレーション</h1>
       <p class="page-subtitle">
-        MC一覧から8人を選んで、仮想トーナメントの参加者を作成できます。<br>
-        まずは参加者選択とトーナメント表表示までの実装です。
+        8人のMCを選んで、仮想トーナメントをシミュレーションできます。<br>
+        8人そろったら「結果を見る」を押して、Best8から順に結果を表示します。
       </p>
     </section>
 
-    <section class="main-grid">
-      <div class="panel">
-        <div class="panel-header">
-          <h2 class="panel-title">参加MCを8人選ぶ</h2>
-          <p class="panel-subtitle">
-            シートの <strong>MC_Master</strong> から候補を全件取得します。名前・読みで検索できます。
-          </p>
-        </div>
-
-        <div class="panel-body">
-          <div id="status" class="status-box">参加候補を読み込みます。</div>
-
-          <div class="search-box">
-            <input
-              id="mc-search"
-              class="search-input"
-              type="text"
-              placeholder="MC名・読み・IDで検索"
-              autocomplete="off"
-            />
-          </div>
-
-          <div class="selected-header">
-            <div class="selected-title">選択中の8人</div>
-            <div id="selected-count" class="selected-count">0 / 8</div>
-          </div>
-
-          <div id="selected-mcs" class="selected-mcs"></div>
-
-          <div class="action-row">
-            <button id="fill-random-btn" class="btn btn-primary" type="button">不足分をランダム補完</button>
-            <button id="clear-btn" class="btn btn-secondary" type="button">選択をクリア</button>
-          </div>
-
-          <div id="candidate-list" class="candidate-list"></div>
-        </div>
+    <section class="panel">
+      <div class="panel-header">
+        <h2 class="panel-title">参加MCを選ぶ</h2>
+        <p class="panel-subtitle">
+          上から順に、まず8人を選択し、そのあと結果を見る流れです。
+        </p>
       </div>
 
-      <div class="panel">
-        <div class="panel-header">
-          <div class="tournament-topbar">
-            <div>
-              <h2 class="panel-title">トーナメント表</h2>
-              <p class="panel-subtitle">選んだ8人を左から順に準々決勝へ配置します。</p>
-            </div>
-          </div>
+      <div class="panel-body">
+        <div id="status" class="status-box">参加候補を読み込みます。</div>
+
+        <div class="search-row">
+          <input
+            id="mc-search"
+            class="search-input"
+            type="text"
+            placeholder="MC名で検索"
+            autocomplete="off"
+          />
+          <div id="selected-count" class="count-badge">0 / 8</div>
+          <button id="clear-btn" class="btn btn-secondary" type="button">選択をクリア</button>
         </div>
 
-        <div class="panel-body">
-          <div class="tournament-wrap">
-            <div class="tournament-note">
-              8人そろうと、準々決勝・準決勝・決勝の枠に名前が入ります。<br>
-              勝敗自動計算は次段階で実装します。
-            </div>
+        <div class="selected-area">
+          <div class="selected-header">
+            <div class="selected-title">選択中の8人</div>
+            <div class="selected-sub">8人そろうと結果ボタンが有効になります</div>
+          </div>
 
-            <div class="tournament-board">
-              <div class="bracket">
-                <div class="round-column">
-                  <h3 class="round-title">準々決勝</h3>
+          <div id="selected-grid" class="selected-grid"></div>
+        </div>
 
-                  <div class="match-card">
-                    <div class="match-label">QF1</div>
-                    <div id="qf1-a" class="slot empty">未選択</div>
-                    <div id="qf1-b" class="slot empty">未選択</div>
-                  </div>
+        <div class="candidate-area">
+          <h3 class="candidate-title">MC候補</h3>
+          <div id="candidate-list" class="candidate-list"></div>
+        </div>
 
-                  <div class="match-card">
-                    <div class="match-label">QF2</div>
-                    <div id="qf2-a" class="slot empty">未選択</div>
-                    <div id="qf2-b" class="slot empty">未選択</div>
-                  </div>
+        <div class="result-panel">
+          <div class="result-actions">
+            <button id="simulate-btn" class="btn btn-primary" type="button" disabled>結果を見る</button>
+            <button id="reshuffle-btn" class="btn btn-secondary" type="button" disabled>もう一度結果を出す</button>
+          </div>
 
-                  <div class="match-card">
-                    <div class="match-label">QF3</div>
-                    <div id="qf3-a" class="slot empty">未選択</div>
-                    <div id="qf3-b" class="slot empty">未選択</div>
-                  </div>
+          <div id="result-summary" class="result-summary">
+            <span class="result-summary-label">優勝者</span>
+            <span id="result-summary-winner" class="result-summary-winner">未決定</span>
+          </div>
 
-                  <div class="match-card">
-                    <div class="match-label">QF4</div>
-                    <div id="qf4-a" class="slot empty">未選択</div>
-                    <div id="qf4-b" class="slot empty">未選択</div>
-                  </div>
-                </div>
+          <div id="round-best8" class="round-result">
+            <h3 class="round-title-lg">Best8 の結果</h3>
+            <div id="best8-list" class="match-result-list"></div>
+          </div>
 
-                <div class="round-column">
-                  <h3 class="round-title">準決勝</h3>
+          <div id="round-best4" class="round-result">
+            <h3 class="round-title-lg">Best4 の結果</h3>
+            <div id="best4-list" class="match-result-list"></div>
+          </div>
 
-                  <div class="match-card">
-                    <div class="match-label">SF1</div>
-                    <div id="sf1-a" class="slot empty">QF1勝者</div>
-                    <div id="sf1-b" class="slot empty">QF2勝者</div>
-                  </div>
-
-                  <div class="match-card">
-                    <div class="match-label">SF2</div>
-                    <div id="sf2-a" class="slot empty">QF3勝者</div>
-                    <div id="sf2-b" class="slot empty">QF4勝者</div>
-                  </div>
-                </div>
-
-                <div class="round-column">
-                  <h3 class="round-title">決勝</h3>
-
-                  <div class="match-card final-card">
-                    <div class="match-label">FINAL</div>
-                    <div id="final-a" class="slot empty">SF1勝者</div>
-                    <div id="final-b" class="slot empty">SF2勝者</div>
-
-                    <div class="winner-box">
-                      <span class="winner-label">優勝者</span>
-                      <span id="winner-name" class="winner-name">未決定</span>
-                    </div>
-                  </div>
-
-                  <div id="bracket-empty-message" class="empty-message">
-                    まだ8人そろっていません。左側から参加MCを選んでください。
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div id="round-final" class="round-result">
+            <h3 class="round-title-lg">決勝 の結果</h3>
+            <div id="final-list" class="match-result-list"></div>
           </div>
         </div>
       </div>
@@ -670,11 +612,12 @@
   </main>
 
   <script>
-    const API_URL = 'https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec';
+    const API_URL = 'YOUR_APPS_SCRIPT_EXEC_URL_HERE';
 
     let allCandidates = [];
     let filteredCandidates = [];
     let selectedMCs = [];
+    let lastSimulationResult = null;
 
     function escapeHtml(str) {
       return String(str)
@@ -689,14 +632,24 @@
       return (text || '').toString().toLowerCase().trim();
     }
 
+    function showStatus(message, isError) {
+      const el = document.getElementById('status');
+      el.textContent = message;
+      if (isError) {
+        el.classList.add('error');
+      } else {
+        el.classList.remove('error');
+      }
+    }
+
     function loadJsonp(url) {
       return new Promise((resolve, reject) => {
         const callbackName = 'jsonp_callback_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
-
+        const timeoutMs = 15000;
+        let settled = false;
         const script = document.createElement('script');
 
-        window[callbackName] = function(data) {
-          resolve(data);
+        function cleanup() {
           try {
             delete window[callbackName];
           } catch (e) {
@@ -705,19 +658,30 @@
           if (script.parentNode) {
             script.parentNode.removeChild(script);
           }
+        }
+
+        const timer = setTimeout(() => {
+          if (settled) return;
+          settled = true;
+          cleanup();
+          reject(new Error('JSONPタイムアウト: ' + url));
+        }, timeoutMs);
+
+        window[callbackName] = function(data) {
+          if (settled) return;
+          settled = true;
+          clearTimeout(timer);
+          cleanup();
+          resolve(data);
         };
 
         script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
         script.onerror = function() {
-          reject(new Error('候補データの取得に失敗しました。'));
-          try {
-            delete window[callbackName];
-          } catch (e) {
-            window[callbackName] = undefined;
-          }
-          if (script.parentNode) {
-            script.parentNode.removeChild(script);
-          }
+          if (settled) return;
+          settled = true;
+          clearTimeout(timer);
+          cleanup();
+          reject(new Error('script読込失敗: ' + script.src));
         };
 
         document.body.appendChild(script);
@@ -725,25 +689,38 @@
     }
 
     async function fetchVirtualCandidates() {
-      const statusEl = document.getElementById('status');
+      if (!API_URL || API_URL.indexOf('YOUR_APPS_SCRIPT_EXEC_URL_HERE') !== -1) {
+        showStatus('API_URL が未設定です。virtual_tournament.html 内の API_URL を Apps Script の exec URL に置き換えてください。', true);
+        return;
+      }
 
-      statusEl.textContent = '参加候補を読み込み中...';
+      const url = API_URL + '?mode=virtual_candidates';
+      showStatus('参加候補を読み込み中...', false);
 
       try {
-        const data = await loadJsonp(API_URL + '?mode=virtual_candidates');
+        const data = await loadJsonp(url);
 
         if (data && data.error) {
-          throw new Error(data.message || '候補データ取得エラー');
+          throw new Error('Apps Script エラー: ' + (data.message || 'unknown'));
         }
 
         allCandidates = Array.isArray(data.candidates) ? data.candidates.slice() : [];
         filteredCandidates = allCandidates.slice();
 
-        statusEl.textContent = '候補 ' + allCandidates.length + ' 名を読み込みました。';
-
+        showStatus('候補 ' + allCandidates.length + ' 名を読み込みました。', false);
         renderCandidateList(filteredCandidates);
+        renderSelectedGrid();
+        updateButtons();
       } catch (err) {
-        statusEl.textContent = err && err.message ? err.message : '候補データの取得に失敗しました。';
+        showStatus(
+          '候補データの取得に失敗しました。\n\n' +
+          '確認してください:\n' +
+          '1. API_URL が正しいか\n' +
+          '2. Apps Script を再デプロイしたか\n' +
+          '3. Webアプリ公開範囲が「全員」か\n\n' +
+          '詳細:\n' + (err && err.message ? err.message : String(err)),
+          true
+        );
       }
     }
 
@@ -752,7 +729,7 @@
       container.innerHTML = '';
 
       if (!list.length) {
-        container.innerHTML = '<div class="empty-message">該当するMCが見つかりません。</div>';
+        container.innerHTML = '<div style="color: var(--muted); padding: 8px 0;">該当するMCが見つかりません。</div>';
         return;
       }
 
@@ -767,21 +744,7 @@
         button.type = 'button';
         button.className = 'candidate-item';
         button.disabled = disabled;
-
-        let metaText = '';
-        if (mc.mc_yomi && mc.mc_id) {
-          metaText = mc.mc_yomi + ' / ID: ' + mc.mc_id;
-        } else if (mc.mc_yomi) {
-          metaText = mc.mc_yomi;
-        } else if (mc.mc_id) {
-          metaText = 'ID: ' + mc.mc_id;
-        } else {
-          metaText = '';
-        }
-
-        button.innerHTML =
-          '<span class="candidate-name">' + escapeHtml(mc.mc_name || '') + '</span>' +
-          '<span class="candidate-meta">' + escapeHtml(metaText) + '</span>';
+        button.innerHTML = '<span class="candidate-name">' + escapeHtml(mc.mc_name || '') + '</span>';
 
         button.addEventListener('click', function() {
           addSelectedMc(mc);
@@ -799,9 +762,7 @@
       } else {
         filteredCandidates = allCandidates.filter(function(mc) {
           const name = normalizeText(mc.mc_name);
-          const yomi = normalizeText(mc.mc_yomi);
-          const id = normalizeText(mc.mc_id);
-          return name.includes(q) || yomi.includes(q) || id.includes(q);
+          return name.includes(q);
         });
       }
 
@@ -813,9 +774,11 @@
       if (selectedMCs.some(function(item) { return item.mc_id === mc.mc_id; })) return;
 
       selectedMCs.push(mc);
-      renderSelectedMCs();
-      renderBracket();
+      lastSimulationResult = null;
+      renderSelectedGrid();
       refreshCandidateView();
+      updateButtons();
+      clearResultsView();
     }
 
     function removeSelectedMc(mcId) {
@@ -823,81 +786,61 @@
         return mc.mc_id !== mcId;
       });
 
-      renderSelectedMCs();
-      renderBracket();
+      lastSimulationResult = null;
+      renderSelectedGrid();
       refreshCandidateView();
+      updateButtons();
+      clearResultsView();
     }
 
     function clearSelectedMCs() {
       selectedMCs = [];
-      renderSelectedMCs();
-      renderBracket();
+      lastSimulationResult = null;
+      renderSelectedGrid();
       refreshCandidateView();
+      updateButtons();
+      clearResultsView();
     }
 
-    function fillRandomRemaining() {
-      if (selectedMCs.length >= 8) return;
-
-      const selectedIds = {};
-      selectedMCs.forEach(function(mc) {
-        selectedIds[mc.mc_id] = true;
-      });
-
-      const remaining = allCandidates.filter(function(mc) {
-        return !selectedIds[mc.mc_id];
-      });
-
-      shuffleArray(remaining);
-
-      const needed = 8 - selectedMCs.length;
-      const toAdd = remaining.slice(0, needed);
-
-      selectedMCs = selectedMCs.concat(toAdd);
-
-      renderSelectedMCs();
-      renderBracket();
-      refreshCandidateView();
-    }
-
-    function shuffleArray(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
-      }
-    }
-
-    function renderSelectedMCs() {
-      const container = document.getElementById('selected-mcs');
+    function renderSelectedGrid() {
+      const container = document.getElementById('selected-grid');
       const countEl = document.getElementById('selected-count');
 
       container.innerHTML = '';
 
-      selectedMCs.forEach(function(mc) {
-        const chip = document.createElement('div');
-        chip.className = 'selected-chip';
+      for (let i = 0; i < 8; i++) {
+        const mc = selectedMCs[i];
+        const slot = document.createElement('div');
 
-        chip.innerHTML =
-          '<span class="selected-chip-name">' + escapeHtml(mc.mc_name || '') + '</span>' +
-          '<button class="selected-chip-remove" type="button" aria-label="削除">×</button>';
+        if (mc) {
+          slot.className = 'selected-slot';
+          slot.innerHTML =
+            '<div class="selected-slot-name">' + escapeHtml(mc.mc_name || '') + '</div>' +
+            '<button class="selected-slot-remove" type="button" aria-label="削除">×</button>';
 
-        chip.querySelector('.selected-chip-remove').addEventListener('click', function() {
-          removeSelectedMc(mc.mc_id);
-        });
+          slot.querySelector('.selected-slot-remove').addEventListener('click', function() {
+            removeSelectedMc(mc.mc_id);
+          });
+        } else {
+          slot.className = 'selected-slot empty';
+          slot.textContent = (i + 1) + '人目';
+        }
 
-        container.appendChild(chip);
-      });
+        container.appendChild(slot);
+      }
 
       countEl.textContent = selectedMCs.length + ' / 8';
-      updateActionButtons();
     }
 
-    function updateActionButtons() {
-      const fillBtn = document.getElementById('fill-random-btn');
+    function updateButtons() {
+      const simulateBtn = document.getElementById('simulate-btn');
+      const reshuffleBtn = document.getElementById('reshuffle-btn');
       const clearBtn = document.getElementById('clear-btn');
 
-      fillBtn.disabled = allCandidates.length === 0 || selectedMCs.length >= 8;
+      const ready = selectedMCs.length === 8;
+
+      simulateBtn.disabled = !ready;
+      reshuffleBtn.disabled = !ready;
       clearBtn.disabled = selectedMCs.length === 0;
     }
 
@@ -906,76 +849,116 @@
       filterCandidates(input ? input.value : '');
     }
 
-    function setSlot(id, text, isEmpty) {
-      const el = document.getElementById(id);
-      if (!el) return;
-
-      el.textContent = text;
-
-      if (isEmpty) {
-        el.classList.add('empty');
-      } else {
-        el.classList.remove('empty');
-      }
+    function pickWinner(a, b) {
+      return Math.random() < 0.5 ? a : b;
     }
 
-    function renderBracket() {
-      const names = selectedMCs.map(function(mc) {
-        return mc.mc_name || '';
+    function simulateTournament() {
+      if (selectedMCs.length !== 8) return null;
+
+      const qf1 = { a: selectedMCs[0], b: selectedMCs[1] };
+      const qf2 = { a: selectedMCs[2], b: selectedMCs[3] };
+      const qf3 = { a: selectedMCs[4], b: selectedMCs[5] };
+      const qf4 = { a: selectedMCs[6], b: selectedMCs[7] };
+
+      qf1.winner = pickWinner(qf1.a, qf1.b);
+      qf2.winner = pickWinner(qf2.a, qf2.b);
+      qf3.winner = pickWinner(qf3.a, qf3.b);
+      qf4.winner = pickWinner(qf4.a, qf4.b);
+
+      const sf1 = { a: qf1.winner, b: qf2.winner };
+      const sf2 = { a: qf3.winner, b: qf4.winner };
+
+      sf1.winner = pickWinner(sf1.a, sf1.b);
+      sf2.winner = pickWinner(sf2.a, sf2.b);
+
+      const final = { a: sf1.winner, b: sf2.winner };
+      final.winner = pickWinner(final.a, final.b);
+
+      return {
+        best8: [qf1, qf2, qf3, qf4],
+        best4: [sf1, sf2],
+        final: [final],
+        champion: final.winner
+      };
+    }
+
+    function renderRoundList(containerId, matches, labelPrefix) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+
+      matches.forEach(function(match, index) {
+        const loser = match.winner.mc_id === match.a.mc_id ? match.b : match.a;
+
+        const item = document.createElement('div');
+        item.className = 'match-result-item';
+        item.innerHTML =
+          '<div class="match-result-label">' + escapeHtml(labelPrefix + ' ' + (index + 1)) + '</div>' +
+          '<div class="match-result-text">' +
+            escapeHtml(match.a.mc_name || '') + ' vs ' + escapeHtml(match.b.mc_name || '') +
+            ' → <span class="winner-text">' + escapeHtml(match.winner.mc_name || '') + '</span> 勝利' +
+          '</div>';
+
+        container.appendChild(item);
       });
+    }
 
-      setSlot('qf1-a', names[0] || '未選択', !names[0]);
-      setSlot('qf1-b', names[1] || '未選択', !names[1]);
-      setSlot('qf2-a', names[2] || '未選択', !names[2]);
-      setSlot('qf2-b', names[3] || '未選択', !names[3]);
-      setSlot('qf3-a', names[4] || '未選択', !names[4]);
-      setSlot('qf3-b', names[5] || '未選択', !names[5]);
-      setSlot('qf4-a', names[6] || '未選択', !names[6]);
-      setSlot('qf4-b', names[7] || '未選択', !names[7]);
+    function renderResults(result) {
+      if (!result) return;
 
-      const isFull = selectedMCs.length === 8;
+      document.getElementById('result-summary').classList.add('show');
+      document.getElementById('round-best8').classList.add('show');
+      document.getElementById('round-best4').classList.add('show');
+      document.getElementById('round-final').classList.add('show');
 
-      setSlot('sf1-a', isFull ? 'QF1勝者' : 'QF1勝者', true);
-      setSlot('sf1-b', isFull ? 'QF2勝者' : 'QF2勝者', true);
-      setSlot('sf2-a', isFull ? 'QF3勝者' : 'QF3勝者', true);
-      setSlot('sf2-b', isFull ? 'QF4勝者' : 'QF4勝者', true);
-      setSlot('final-a', isFull ? 'SF1勝者' : 'SF1勝者', true);
-      setSlot('final-b', isFull ? 'SF2勝者' : 'SF2勝者', true);
+      document.getElementById('result-summary-winner').textContent = result.champion.mc_name || '未決定';
 
-      const winnerEl = document.getElementById('winner-name');
-      const emptyMessageEl = document.getElementById('bracket-empty-message');
+      renderRoundList('best8-list', result.best8, 'Best8');
+      renderRoundList('best4-list', result.best4, 'Best4');
+      renderRoundList('final-list', result.final, 'Final');
+    }
 
-      winnerEl.textContent = '未決定';
+    function clearResultsView() {
+      document.getElementById('result-summary').classList.remove('show');
+      document.getElementById('round-best8').classList.remove('show');
+      document.getElementById('round-best4').classList.remove('show');
+      document.getElementById('round-final').classList.remove('show');
 
-      if (isFull) {
-        emptyMessageEl.textContent = '8人の参加者がそろいました。次段階で勝敗自動計算やシード機能を追加できます。';
-      } else {
-        emptyMessageEl.textContent = 'まだ8人そろっていません。左側から参加MCを選んでください。';
-      }
+      document.getElementById('result-summary-winner').textContent = '未決定';
+      document.getElementById('best8-list').innerHTML = '';
+      document.getElementById('best4-list').innerHTML = '';
+      document.getElementById('final-list').innerHTML = '';
+    }
+
+    function handleSimulate() {
+      if (selectedMCs.length !== 8) return;
+      lastSimulationResult = simulateTournament();
+      renderResults(lastSimulationResult);
     }
 
     function initEvents() {
-      const searchInput = document.getElementById('mc-search');
-      const fillBtn = document.getElementById('fill-random-btn');
-      const clearBtn = document.getElementById('clear-btn');
-
-      searchInput.addEventListener('input', function() {
-        filterCandidates(searchInput.value);
+      document.getElementById('mc-search').addEventListener('input', function(e) {
+        filterCandidates(e.target.value);
       });
 
-      fillBtn.addEventListener('click', function() {
-        fillRandomRemaining();
-      });
-
-      clearBtn.addEventListener('click', function() {
+      document.getElementById('clear-btn').addEventListener('click', function() {
         clearSelectedMCs();
+      });
+
+      document.getElementById('simulate-btn').addEventListener('click', function() {
+        handleSimulate();
+      });
+
+      document.getElementById('reshuffle-btn').addEventListener('click', function() {
+        handleSimulate();
       });
     }
 
     document.addEventListener('DOMContentLoaded', function() {
       initEvents();
-      renderSelectedMCs();
-      renderBracket();
+      renderSelectedGrid();
+      updateButtons();
+      clearResultsView();
       fetchVirtualCandidates();
     });
   </script>
