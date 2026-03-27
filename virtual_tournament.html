@@ -3,941 +3,981 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>仮想トーナメント | MCBattle.jp</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>仮想MCバトルシミュレーション | MCBattle.jp</title>
   <style>
-    .vt-page {
+    :root {
+      --bg: #111418;
+      --bg-soft: #1a1f26;
+      --card: #202631;
+      --card-2: #262e3b;
+      --text: #f3f5f7;
+      --muted: #aeb7c2;
+      --line: #3a4658;
+      --accent: #5b8cff;
+      --accent-2: #7c4dff;
+      --danger: #ff6b6b;
+      --success: #42c27f;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #0f1115 0%, #161b22 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .site-header {
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(15, 17, 21, 0.92);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .site-header-inner {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 24px 16px 72px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    .vt-hero {
-      margin-bottom: 20px;
+    .site-logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
     }
 
-    .vt-hero p:last-child {
-      margin-bottom: 0;
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .vt-layout {
+    .site-nav a {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a.active {
+      background: rgba(91, 140, 255, 0.18);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    .page-hero {
+      margin-bottom: 24px;
+    }
+
+    .page-title {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .page-subtitle {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
+    .main-grid {
       display: grid;
-      grid-template-columns: minmax(320px, 440px) minmax(0, 1fr);
-      gap: 18px;
+      grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+      gap: 22px;
       align-items: start;
     }
 
-    .vt-card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%),
-        linear-gradient(180deg, var(--panel) 0%, rgba(14, 18, 28, 0.98) 100%);
+    .panel {
+      background: rgba(32, 38, 49, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 18px;
-      min-width: 0;
+      overflow: hidden;
     }
 
-    .vt-card h2 {
+    .panel-header {
+      padding: 18px 18px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .panel-subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .panel-body {
+      padding: 18px;
+    }
+
+    .status-box {
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.6;
+      min-height: 48px;
+    }
+
+    .search-box {
+      margin-bottom: 16px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #151a21;
+      color: var(--text);
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: rgba(91, 140, 255, 0.7);
+      box-shadow: 0 0 0 4px rgba(91, 140, 255, 0.14);
+    }
+
+    .selected-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
       margin-bottom: 12px;
     }
 
-    .vt-card h3 {
-      margin: 20px 0 10px;
-      font-size: 1rem;
-      line-height: 1.35;
-      font-weight: 750;
-      color: var(--accent);
+    .selected-title {
+      font-size: 0.98rem;
+      font-weight: 700;
     }
 
-    .vt-card h3:first-of-type {
-      margin-top: 0;
-    }
-
-    .vt-mode-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .vt-mode-option {
-      position: relative;
-    }
-
-    .vt-mode-option input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .vt-mode-option label {
-      display: block;
-      padding: 14px 14px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.03);
-      cursor: pointer;
-      transition:
-        transform 0.18s ease,
-        border-color 0.18s ease,
-        background-color 0.18s ease,
-        box-shadow 0.18s ease;
-    }
-
-    .vt-mode-option label strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .vt-mode-option label span {
-      display: block;
+    .selected-count {
+      font-size: 0.92rem;
       color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
     }
 
-    .vt-mode-option input:checked + label {
-      border-color: var(--line-strong);
-      background: rgba(255,255,255,0.08);
-      box-shadow: 0 0 0 3px rgba(135, 164, 255, 0.08);
-      transform: translateY(-1px);
-    }
-
-    .vt-entry-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .vt-field {
-      min-width: 0;
-    }
-
-    .vt-field label {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--accent-soft);
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
-
-    .vt-search-wrap {
-      position: relative;
-    }
-
-    .vt-search-input {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      font: inherit;
-      min-width: 0;
-    }
-
-    .vt-search-input:focus {
-      outline: none;
-      border-color: var(--line-strong);
-      box-shadow: 0 0 0 3px rgba(135, 164, 255, 0.08);
-    }
-
-    .vt-selected-chip {
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      min-height: 46px;
-      padding: 10px 12px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(255,255,255,0.06);
-    }
-
-    .vt-selected-chip.is-active {
+    .selected-mcs {
       display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      min-height: 20px;
     }
 
-    .vt-selected-name {
-      font-weight: 700;
-      color: var(--accent);
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    .vt-clear-one {
+    .selected-chip {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      min-width: 32px;
-      height: 32px;
-      padding: 0 8px;
-      border: 1px solid var(--line);
+      gap: 8px;
+      padding: 10px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      color: var(--accent);
-      cursor: pointer;
-      font-weight: 700;
+      background: linear-gradient(135deg, rgba(91, 140, 255, 0.2), rgba(124, 77, 255, 0.2));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      max-width: 100%;
     }
 
-    .vt-clear-one:hover {
-      background: rgba(255,255,255,0.08);
+    .selected-chip-name {
+      font-size: 0.93rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 210px;
     }
 
-    .vt-candidate-list {
-      display: none;
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
-      right: 0;
-      max-height: 220px;
-      overflow-y: auto;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background:
-        linear-gradient(180deg, rgba(22, 27, 39, 0.98) 0%, rgba(14, 18, 28, 0.99) 100%);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
-      z-index: 30;
-      padding: 6px;
-    }
-
-    .vt-candidate-list.is-open {
-      display: block;
-    }
-
-    .vt-candidate-item {
-      display: block;
-      width: 100%;
-      text-align: left;
-      padding: 10px 12px;
+    .selected-chip-remove {
+      appearance: none;
       border: none;
-      border-radius: 10px;
       background: transparent;
-      color: var(--text);
+      color: #fff;
+      font-size: 1rem;
+      line-height: 1;
       cursor: pointer;
-      font: inherit;
+      padding: 0;
+      opacity: 0.9;
     }
 
-    .vt-candidate-item:hover {
-      background: rgba(255,255,255,0.06);
+    .selected-chip-remove:hover {
+      opacity: 1;
+      color: #ffd4d4;
     }
 
-    .vt-candidate-main {
-      display: block;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .vt-candidate-sub {
-      display: block;
-      margin-top: 2px;
-      font-size: 0.84rem;
-      color: var(--muted);
-    }
-
-    .vt-no-result {
-      padding: 10px 12px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .vt-inline-row {
+    .action-row {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-top: 14px;
+      margin-bottom: 18px;
     }
 
-    .vt-chip-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 38px;
-      padding: 0 14px;
-      border: 1px solid var(--line);
+    .btn {
+      appearance: none;
+      border: none;
       border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      color: var(--accent);
+      padding: 12px 18px;
+      cursor: pointer;
+      transition: 0.2s ease;
       font-weight: 700;
-      cursor: pointer;
-      transition:
-        transform 0.18s ease,
-        border-color 0.18s ease,
-        background-color 0.18s ease,
-        box-shadow 0.18s ease;
     }
 
-    .vt-chip-btn:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: var(--line-strong);
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+    }
+
+    .btn-primary:hover {
       transform: translateY(-1px);
+      filter: brightness(1.05);
     }
 
-    .vt-main-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 999px;
-      background: rgba(70, 70, 78, 0.92);
-      color: #f3f4f6;
-      font-weight: 800;
-      cursor: pointer;
-      transition:
-        transform 0.18s ease,
-        opacity 0.18s ease,
-        border-color 0.18s ease,
-        background-color 0.18s ease,
-        box-shadow 0.18s ease;
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
     }
 
-    .vt-main-btn:hover {
-      transform: translateY(-1px);
-      opacity: 0.98;
-      background: rgba(92, 92, 102, 0.96);
-      border-color: rgba(255,255,255,0.22);
-      box-shadow: 0 0 18px rgba(0, 0, 0, 0.18);
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.13);
     }
 
-    .vt-main-btn:disabled {
-      opacity: 0.55;
+    .btn:disabled {
+      opacity: 0.45;
       cursor: not-allowed;
       transform: none;
-      box-shadow: none;
+      filter: none;
     }
 
-    .vt-note {
+    .candidate-list {
+      display: grid;
+      gap: 10px;
+      max-height: 680px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .candidate-item {
+      width: 100%;
+      text-align: left;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .candidate-item:hover {
+      background: rgba(91, 140, 255, 0.12);
+      border-color: rgba(91, 140, 255, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .candidate-item:disabled {
+      cursor: not-allowed;
+      opacity: 0.45;
+      transform: none;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .candidate-name {
+      display: block;
+      font-weight: 700;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      margin-bottom: 4px;
+    }
+
+    .candidate-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.45;
+    }
+
+    .tournament-wrap {
+      display: grid;
+      gap: 18px;
+    }
+
+    .tournament-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tournament-note {
       color: var(--muted);
       font-size: 0.93rem;
       line-height: 1.6;
     }
 
-    .vt-bracket-grid {
+    .tournament-board {
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+
+    .bracket {
+      min-width: 760px;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
       align-items: start;
     }
 
-    .vt-round {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(255,255,255,0.03);
-      min-width: 0;
+    .round-column {
+      display: grid;
+      gap: 16px;
     }
 
-    .vt-round h3 {
-      margin: 0 0 12px;
+    .round-title {
       font-size: 1rem;
+      font-weight: 800;
+      margin: 0;
+      color: #fff;
     }
 
-    .vt-match {
-      border: 1px solid var(--line);
-      border-radius: 14px;
+    .match-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+      min-height: 126px;
+    }
+
+    .match-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .slot {
+      min-height: 42px;
+      border-radius: 12px;
       padding: 10px 12px;
-      background: rgba(255,255,255,0.03);
-      margin-bottom: 10px;
+      background: rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
     }
 
-    .vt-match:last-child {
-      margin-bottom: 0;
+    .slot.empty {
+      color: #7e8997;
+      font-weight: 500;
     }
 
-    .vt-match-label {
+    .final-card {
+      min-height: 220px;
+      display: grid;
+      align-content: center;
+    }
+
+    .winner-box {
+      margin-top: 10px;
+      padding: 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(91, 140, 255, 0.18), rgba(124, 77, 255, 0.18));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .winner-label {
       display: block;
       color: var(--muted);
       font-size: 0.84rem;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
-    .vt-player {
+    .winner-name {
       display: block;
-      padding: 6px 0;
-      font-weight: 700;
-      color: var(--accent);
-      overflow-wrap: anywhere;
-      word-break: break-word;
+      font-size: 1.1rem;
+      font-weight: 800;
     }
 
-    .vt-result-grid {
-      display: grid;
-      grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
-      gap: 14px;
-      margin-top: 18px;
+    .empty-message {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.7;
+      padding: 12px 0 0;
     }
 
-    .vt-winner-box {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      background: rgba(255,255,255,0.04);
-    }
-
-    .vt-winner-label {
-      display: block;
+    .site-footer {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       color: var(--muted);
       font-size: 0.9rem;
-      margin-bottom: 6px;
     }
 
-    .vt-winner-name {
-      display: block;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1.3;
-    }
-
-    .vt-table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .vt-table {
-      width: 100%;
-      min-width: 480px;
-      border-collapse: collapse;
-    }
-
-    .vt-table th,
-    .vt-table td {
-      padding: 11px 12px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-
-    .vt-table th {
-      background: rgba(255,255,255,0.03);
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .vt-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .vt-sim-log {
-      margin-top: 18px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(255,255,255,0.03);
-    }
-
-    .vt-sim-log ul {
-      margin: 0;
-      padding-left: 1.2em;
-    }
-
-    .vt-sim-log li {
-      margin: 0 0 8px;
-    }
-
-    .vt-placeholder {
-      color: var(--muted);
-    }
-
-    @media (max-width: 980px) {
-      .vt-layout {
+    @media (max-width: 920px) {
+      .main-grid {
         grid-template-columns: 1fr;
       }
 
-      .vt-result-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .vt-entry-grid {
-        grid-template-columns: 1fr;
+      .candidate-list {
+        max-height: 420px;
       }
 
-      .vt-bracket-grid {
-        grid-template-columns: 1fr;
+      .site-header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .site-nav {
+        width: 100%;
       }
     }
 
     @media (max-width: 640px) {
-      .vt-page {
-        padding: 18px 12px 56px;
+      .container {
+        padding: 22px 14px 56px;
       }
 
-      .vt-card {
-        padding: 14px;
+      .page-title {
+        font-size: 1.55rem;
       }
 
-      .vt-mode-grid {
-        grid-template-columns: 1fr;
+      .panel-body,
+      .panel-header {
+        padding-left: 14px;
+        padding-right: 14px;
       }
 
-      .vt-table {
-        min-width: 420px;
+      .action-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="vt-page">
-    <p><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
-
-    <header class="vt-hero">
-      <h1>仮想トーナメント</h1>
-      <p class="muted">
-        8人のMCを選んで、仮想的なトーナメント結果を表示する画面です。
-      </p>
-      <p class="muted">
-        現在は見た目と選択UIまでの仮画面です。計算処理はまだ入れていません。
-      </p>
-    </header>
-
-    <div class="vt-layout">
-      <section class="vt-card">
-        <h2>シミュレーション条件</h2>
-
-        <div class="vt-mode-grid">
-          <div class="vt-mode-option">
-            <input type="radio" id="mode-current" name="sim_mode" checked />
-            <label for="mode-current">
-              <strong>現在の強さ</strong>
-              <span>最近の試合を重視した、現在のスコアを使います。</span>
-            </label>
-          </div>
-
-          <div class="vt-mode-option">
-            <input type="radio" id="mode-peak" name="sim_mode" />
-            <label for="mode-peak">
-              <strong>全盛期</strong>
-              <span>全盛期スコアを使う想定のモードです。</span>
-            </label>
-          </div>
-        </div>
-
-        <h3>出場MCを選ぶ</h3>
-        <div id="vt-entry-grid" class="vt-entry-grid"></div>
-
-        <h3>シミュレーション回数</h3>
-        <div class="vt-field">
-          <label for="sim-count">回数</label>
-          <input id="sim-count" type="text" value="1000回" readonly />
-        </div>
-
-        <div class="vt-inline-row">
-          <button id="random-fill-btn" class="vt-chip-btn" type="button">ランダムで8人選ぶ</button>
-          <button id="clear-all-btn" class="vt-chip-btn" type="button">クリア</button>
-        </div>
-
-        <div class="vt-inline-row">
-          <button id="run-demo-btn" class="vt-main-btn" type="button" disabled>シミュレーション開始</button>
-        </div>
-
-        <p class="vt-note" style="margin-top:14px;">
-          検索欄にMC名または読みを入力すると候補が出ます。選択済みのMCは他の欄の候補から自動で除外されます。
-        </p>
-      </section>
-
-      <section class="vt-card">
-        <h2>トーナメント表</h2>
-
-        <div class="vt-bracket-grid">
-          <div class="vt-round">
-            <h3>準々決勝</h3>
-
-            <div class="vt-match">
-              <span class="vt-match-label">QF1</span>
-              <span id="slot-qf-1a" class="vt-player vt-placeholder">参加者1</span>
-              <span id="slot-qf-1b" class="vt-player vt-placeholder">参加者2</span>
-            </div>
-
-            <div class="vt-match">
-              <span class="vt-match-label">QF2</span>
-              <span id="slot-qf-2a" class="vt-player vt-placeholder">参加者3</span>
-              <span id="slot-qf-2b" class="vt-player vt-placeholder">参加者4</span>
-            </div>
-
-            <div class="vt-match">
-              <span class="vt-match-label">QF3</span>
-              <span id="slot-qf-3a" class="vt-player vt-placeholder">参加者5</span>
-              <span id="slot-qf-3b" class="vt-player vt-placeholder">参加者6</span>
-            </div>
-
-            <div class="vt-match">
-              <span class="vt-match-label">QF4</span>
-              <span id="slot-qf-4a" class="vt-player vt-placeholder">参加者7</span>
-              <span id="slot-qf-4b" class="vt-player vt-placeholder">参加者8</span>
-            </div>
-          </div>
-
-          <div class="vt-round">
-            <h3>準決勝</h3>
-
-            <div class="vt-match">
-              <span class="vt-match-label">SF1</span>
-              <span class="vt-player vt-placeholder">QF1の勝者</span>
-              <span class="vt-player vt-placeholder">QF2の勝者</span>
-            </div>
-
-            <div class="vt-match">
-              <span class="vt-match-label">SF2</span>
-              <span class="vt-player vt-placeholder">QF3の勝者</span>
-              <span class="vt-player vt-placeholder">QF4の勝者</span>
-            </div>
-          </div>
-
-          <div class="vt-round">
-            <h3>決勝</h3>
-
-            <div class="vt-match">
-              <span class="vt-match-label">Final</span>
-              <span class="vt-player vt-placeholder">SF1の勝者</span>
-              <span class="vt-player vt-placeholder">SF2の勝者</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="vt-result-grid">
-          <div class="vt-winner-box">
-            <span class="vt-winner-label">仮想優勝</span>
-            <span id="vt-winner-name" class="vt-winner-name">未実行</span>
-          </div>
-
-          <div class="vt-table-wrap">
-            <table class="vt-table">
-              <thead>
-                <tr>
-                  <th>MC</th>
-                  <th>優勝確率</th>
-                  <th>決勝進出率</th>
-                  <th>ベスト4進出率</th>
-                </tr>
-              </thead>
-              <tbody id="vt-prob-body">
-                <tr>
-                  <td colspan="4" class="vt-placeholder">8人を選ぶと、ここに結果を表示する想定です。</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="vt-sim-log">
-          <h3>今回の勝ち上がり結果</h3>
-          <ul id="vt-log-list">
-            <li class="vt-placeholder">シミュレーション未実行です。</li>
-          </ul>
-        </div>
-      </section>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-logo">MCBattle.jp</a>
+      <nav class="site-nav">
+        <a href="index.html">トップ</a>
+        <a href="ranking.html">ランキング</a>
+        <a href="events.html">大会一覧</a>
+        <a href="mcs.html">MC一覧</a>
+        <a href="virtual_tournament.html" class="active">仮想シミュレーション</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <script>
-    const MC_OPTIONS = [
-      { id: "MC0001", name: "Authority", yomi: "おーそりてぃ" },
-      { id: "MC0002", name: "呂布カルマ", yomi: "りょふかるま" },
-      { id: "MC0003", name: "裂固", yomi: "れっこ" },
-      { id: "MC0004", name: "FORK", yomi: "ふぉーく" },
-      { id: "MC0005", name: "ACE", yomi: "えーす" },
-      { id: "MC0006", name: "輪入道", yomi: "わにゅうどう" },
-      { id: "MC0007", name: "TKda黒ぶち", yomi: "てぃーけーだくろぶち" },
-      { id: "MC0008", name: "DOTAMA", yomi: "どたま" },
-      { id: "MC0009", name: "R-指定", yomi: "あーるしてい" },
-      { id: "MC0010", name: "崇勲", yomi: "すうくん" },
-      { id: "MC0011", name: "GADORO", yomi: "がどろ" },
-      { id: "MC0012", name: "poney", yomi: "ぽにー" },
-      { id: "MC0013", name: "ID", yomi: "あいでぃー" },
-      { id: "MC0014", name: "NAIKA MC", yomi: "ないかえむしー" },
-      { id: "MC0015", name: "KOPERU", yomi: "こぺる" },
-      { id: "MC0016", name: "MOL53", yomi: "もるごーさん" },
-      { id: "MC0017", name: "RAWAXXX(MOL53)", yomi: "ろーわっくすもるごーさん" },
-      { id: "MC0018", name: "晋平太", yomi: "しんぺいた" },
-      { id: "MC0019", name: "SIMON JAP", yomi: "さいもんじゃっぷ" },
-      { id: "MC0020", name: "ミメイ", yomi: "みめい" },
-      { id: "MC0021", name: "MU-TON", yomi: "むーとん" },
-      { id: "MC0022", name: "百足", yomi: "むかで" },
-      { id: "MC0023", name: "梵頭", yomi: "ぼんず" },
-      { id: "MC0024", name: "じょう", yomi: "じょう" },
-      { id: "MC0025", name: "Charlu", yomi: "しゃるる" },
-      { id: "MC0026", name: "SKRYU", yomi: "すくりゅー" }
-    ];
+  <main class="container">
+    <a href="index.html" class="back-link">← MCBattle.jp に戻る</a>
 
-    const selectedEntries = new Array(8).fill(null);
-    const entryGridEl = document.getElementById("vt-entry-grid");
-    const runBtn = document.getElementById("run-demo-btn");
-    const winnerNameEl = document.getElementById("vt-winner-name");
-    const logListEl = document.getElementById("vt-log-list");
-    const probBodyEl = document.getElementById("vt-prob-body");
+    <section class="page-hero">
+      <h1 class="page-title">仮想MCバトルシミュレーション</h1>
+      <p class="page-subtitle">
+        MC一覧から8人を選んで、仮想トーナメントの参加者を作成できます。<br>
+        まずは参加者選択とトーナメント表表示までの実装です。
+      </p>
+    </section>
 
-    function normalize(text) {
-      return String(text || "").trim().toLowerCase();
-    }
+    <section class="main-grid">
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">参加MCを8人選ぶ</h2>
+          <p class="panel-subtitle">
+            シートの <strong>MC_Master</strong> から候補を全件取得します。名前・読みで検索できます。
+          </p>
+        </div>
 
-    function buildEntryFields() {
-      entryGridEl.innerHTML = "";
+        <div class="panel-body">
+          <div id="status" class="status-box">参加候補を読み込みます。</div>
 
-      for (let i = 0; i < 8; i += 1) {
-        const field = document.createElement("div");
-        field.className = "vt-field";
-        field.innerHTML = `
-          <label for="vt-search-${i}">参加者${i + 1}</label>
-          <div class="vt-search-wrap" data-index="${i}">
+          <div class="search-box">
             <input
-              id="vt-search-${i}"
-              class="vt-search-input"
+              id="mc-search"
+              class="search-input"
               type="text"
-              placeholder="MC名または読みで検索"
+              placeholder="MC名・読み・IDで検索"
               autocomplete="off"
             />
-            <div class="vt-selected-chip" id="vt-selected-${i}">
-              <span class="vt-selected-name" id="vt-selected-name-${i}"></span>
-              <button type="button" class="vt-clear-one" data-clear-index="${i}">×</button>
-            </div>
-            <div class="vt-candidate-list" id="vt-candidates-${i}"></div>
           </div>
-        `;
-        entryGridEl.appendChild(field);
+
+          <div class="selected-header">
+            <div class="selected-title">選択中の8人</div>
+            <div id="selected-count" class="selected-count">0 / 8</div>
+          </div>
+
+          <div id="selected-mcs" class="selected-mcs"></div>
+
+          <div class="action-row">
+            <button id="fill-random-btn" class="btn btn-primary" type="button">不足分をランダム補完</button>
+            <button id="clear-btn" class="btn btn-secondary" type="button">選択をクリア</button>
+          </div>
+
+          <div id="candidate-list" class="candidate-list"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <div class="tournament-topbar">
+            <div>
+              <h2 class="panel-title">トーナメント表</h2>
+              <p class="panel-subtitle">選んだ8人を左から順に準々決勝へ配置します。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div class="tournament-wrap">
+            <div class="tournament-note">
+              8人そろうと、準々決勝・準決勝・決勝の枠に名前が入ります。<br>
+              勝敗自動計算は次段階で実装します。
+            </div>
+
+            <div class="tournament-board">
+              <div class="bracket">
+                <div class="round-column">
+                  <h3 class="round-title">準々決勝</h3>
+
+                  <div class="match-card">
+                    <div class="match-label">QF1</div>
+                    <div id="qf1-a" class="slot empty">未選択</div>
+                    <div id="qf1-b" class="slot empty">未選択</div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-label">QF2</div>
+                    <div id="qf2-a" class="slot empty">未選択</div>
+                    <div id="qf2-b" class="slot empty">未選択</div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-label">QF3</div>
+                    <div id="qf3-a" class="slot empty">未選択</div>
+                    <div id="qf3-b" class="slot empty">未選択</div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-label">QF4</div>
+                    <div id="qf4-a" class="slot empty">未選択</div>
+                    <div id="qf4-b" class="slot empty">未選択</div>
+                  </div>
+                </div>
+
+                <div class="round-column">
+                  <h3 class="round-title">準決勝</h3>
+
+                  <div class="match-card">
+                    <div class="match-label">SF1</div>
+                    <div id="sf1-a" class="slot empty">QF1勝者</div>
+                    <div id="sf1-b" class="slot empty">QF2勝者</div>
+                  </div>
+
+                  <div class="match-card">
+                    <div class="match-label">SF2</div>
+                    <div id="sf2-a" class="slot empty">QF3勝者</div>
+                    <div id="sf2-b" class="slot empty">QF4勝者</div>
+                  </div>
+                </div>
+
+                <div class="round-column">
+                  <h3 class="round-title">決勝</h3>
+
+                  <div class="match-card final-card">
+                    <div class="match-label">FINAL</div>
+                    <div id="final-a" class="slot empty">SF1勝者</div>
+                    <div id="final-b" class="slot empty">SF2勝者</div>
+
+                    <div class="winner-box">
+                      <span class="winner-label">優勝者</span>
+                      <span id="winner-name" class="winner-name">未決定</span>
+                    </div>
+                  </div>
+
+                  <div id="bracket-empty-message" class="empty-message">
+                    まだ8人そろっていません。左側から参加MCを選んでください。
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      MCBattle.jp / Virtual Tournament
+    </footer>
+  </main>
+
+  <script>
+    const API_URL = 'YOUR_APPS_SCRIPT_EXEC_URL_HERE';
+
+    let allCandidates = [];
+    let filteredCandidates = [];
+    let selectedMCs = [];
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function normalizeText(text) {
+      return (text || '').toString().toLowerCase().trim();
+    }
+
+    function loadJsonp(url) {
+      return new Promise((resolve, reject) => {
+        const callbackName = 'jsonp_callback_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
+
+        const script = document.createElement('script');
+
+        window[callbackName] = function(data) {
+          resolve(data);
+          try {
+            delete window[callbackName];
+          } catch (e) {
+            window[callbackName] = undefined;
+          }
+          if (script.parentNode) {
+            script.parentNode.removeChild(script);
+          }
+        };
+
+        script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
+        script.onerror = function() {
+          reject(new Error('候補データの取得に失敗しました。'));
+          try {
+            delete window[callbackName];
+          } catch (e) {
+            window[callbackName] = undefined;
+          }
+          if (script.parentNode) {
+            script.parentNode.removeChild(script);
+          }
+        };
+
+        document.body.appendChild(script);
+      });
+    }
+
+    async function fetchVirtualCandidates() {
+      const statusEl = document.getElementById('status');
+
+      statusEl.textContent = '参加候補を読み込み中...';
+
+      try {
+        const data = await loadJsonp(API_URL + '?mode=virtual_candidates');
+
+        if (data && data.error) {
+          throw new Error(data.message || '候補データ取得エラー');
+        }
+
+        allCandidates = Array.isArray(data.candidates) ? data.candidates.slice() : [];
+        filteredCandidates = allCandidates.slice();
+
+        statusEl.textContent = '候補 ' + allCandidates.length + ' 名を読み込みました。';
+
+        renderCandidateList(filteredCandidates);
+      } catch (err) {
+        statusEl.textContent = err && err.message ? err.message : '候補データの取得に失敗しました。';
       }
     }
 
-    function getSelectedIdsExcept(exceptIndex) {
-      return selectedEntries
-        .map((item, idx) => (idx === exceptIndex || !item ? null : item.id))
-        .filter(Boolean);
+    function renderCandidateList(list) {
+      const container = document.getElementById('candidate-list');
+      container.innerHTML = '';
+
+      if (!list.length) {
+        container.innerHTML = '<div class="empty-message">該当するMCが見つかりません。</div>';
+        return;
+      }
+
+      list.forEach(function(mc) {
+        const alreadySelected = selectedMCs.some(function(selected) {
+          return selected.mc_id === mc.mc_id;
+        });
+
+        const disabled = alreadySelected || selectedMCs.length >= 8;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'candidate-item';
+        button.disabled = disabled;
+
+        let metaText = '';
+        if (mc.mc_yomi && mc.mc_id) {
+          metaText = mc.mc_yomi + ' / ID: ' + mc.mc_id;
+        } else if (mc.mc_yomi) {
+          metaText = mc.mc_yomi;
+        } else if (mc.mc_id) {
+          metaText = 'ID: ' + mc.mc_id;
+        } else {
+          metaText = '';
+        }
+
+        button.innerHTML =
+          '<span class="candidate-name">' + escapeHtml(mc.mc_name || '') + '</span>' +
+          '<span class="candidate-meta">' + escapeHtml(metaText) + '</span>';
+
+        button.addEventListener('click', function() {
+          addSelectedMc(mc);
+        });
+
+        container.appendChild(button);
+      });
     }
 
-    function getFilteredCandidates(query, index) {
-      const q = normalize(query);
-      const selectedIds = new Set(getSelectedIdsExcept(index));
-
-      let list = MC_OPTIONS.filter(item => !selectedIds.has(item.id));
+    function filterCandidates(keyword) {
+      const q = normalizeText(keyword);
 
       if (!q) {
-        return list.slice(0, 12);
-      }
-
-      const starts = [];
-      const includes = [];
-
-      list.forEach(item => {
-        const name = normalize(item.name);
-        const yomi = normalize(item.yomi);
-        if (name.startsWith(q) || yomi.startsWith(q)) {
-          starts.push(item);
-        } else if (name.includes(q) || yomi.includes(q)) {
-          includes.push(item);
-        }
-      });
-
-      return [...starts, ...includes].slice(0, 12);
-    }
-
-    function renderCandidates(index, query) {
-      const listEl = document.getElementById(`vt-candidates-${index}`);
-      const candidates = getFilteredCandidates(query, index);
-
-      if (candidates.length === 0) {
-        listEl.innerHTML = `<div class="vt-no-result">一致する候補がありません</div>`;
+        filteredCandidates = allCandidates.slice();
       } else {
-        listEl.innerHTML = candidates.map(item => `
-          <button type="button" class="vt-candidate-item" data-index="${index}" data-id="${item.id}">
-            <span class="vt-candidate-main">${escapeHtml(item.name)}</span>
-            <span class="vt-candidate-sub">${escapeHtml(item.yomi || "")}</span>
-          </button>
-        `).join("");
+        filteredCandidates = allCandidates.filter(function(mc) {
+          const name = normalizeText(mc.mc_name);
+          const yomi = normalizeText(mc.mc_yomi);
+          const id = normalizeText(mc.mc_id);
+          return name.includes(q) || yomi.includes(q) || id.includes(q);
+        });
       }
 
-      listEl.classList.add("is-open");
+      renderCandidateList(filteredCandidates);
     }
 
-    function closeCandidates(index) {
-      const listEl = document.getElementById(`vt-candidates-${index}`);
-      if (listEl) listEl.classList.remove("is-open");
+    function addSelectedMc(mc) {
+      if (selectedMCs.length >= 8) return;
+      if (selectedMCs.some(function(item) { return item.mc_id === mc.mc_id; })) return;
+
+      selectedMCs.push(mc);
+      renderSelectedMCs();
+      renderBracket();
+      refreshCandidateView();
     }
 
-    function closeAllCandidates() {
-      for (let i = 0; i < 8; i += 1) {
-        closeCandidates(i);
+    function removeSelectedMc(mcId) {
+      selectedMCs = selectedMCs.filter(function(mc) {
+        return mc.mc_id !== mcId;
+      });
+
+      renderSelectedMCs();
+      renderBracket();
+      refreshCandidateView();
+    }
+
+    function clearSelectedMCs() {
+      selectedMCs = [];
+      renderSelectedMCs();
+      renderBracket();
+      refreshCandidateView();
+    }
+
+    function fillRandomRemaining() {
+      if (selectedMCs.length >= 8) return;
+
+      const selectedIds = {};
+      selectedMCs.forEach(function(mc) {
+        selectedIds[mc.mc_id] = true;
+      });
+
+      const remaining = allCandidates.filter(function(mc) {
+        return !selectedIds[mc.mc_id];
+      });
+
+      shuffleArray(remaining);
+
+      const needed = 8 - selectedMCs.length;
+      const toAdd = remaining.slice(0, needed);
+
+      selectedMCs = selectedMCs.concat(toAdd);
+
+      renderSelectedMCs();
+      renderBracket();
+      refreshCandidateView();
+    }
+
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
       }
     }
 
-    function updateEntryView(index) {
-      const inputEl = document.getElementById(`vt-search-${index}`);
-      const chipEl = document.getElementById(`vt-selected-${index}`);
-      const chipNameEl = document.getElementById(`vt-selected-name-${index}`);
+    function renderSelectedMCs() {
+      const container = document.getElementById('selected-mcs');
+      const countEl = document.getElementById('selected-count');
 
-      const item = selectedEntries[index];
+      container.innerHTML = '';
 
-      if (item) {
-        inputEl.style.display = "none";
-        chipEl.classList.add("is-active");
-        chipNameEl.textContent = item.name;
+      selectedMCs.forEach(function(mc) {
+        const chip = document.createElement('div');
+        chip.className = 'selected-chip';
+
+        chip.innerHTML =
+          '<span class="selected-chip-name">' + escapeHtml(mc.mc_name || '') + '</span>' +
+          '<button class="selected-chip-remove" type="button" aria-label="削除">×</button>';
+
+        chip.querySelector('.selected-chip-remove').addEventListener('click', function() {
+          removeSelectedMc(mc.mc_id);
+        });
+
+        container.appendChild(chip);
+      });
+
+      countEl.textContent = selectedMCs.length + ' / 8';
+      updateActionButtons();
+    }
+
+    function updateActionButtons() {
+      const fillBtn = document.getElementById('fill-random-btn');
+      const clearBtn = document.getElementById('clear-btn');
+
+      fillBtn.disabled = allCandidates.length === 0 || selectedMCs.length >= 8;
+      clearBtn.disabled = selectedMCs.length === 0;
+    }
+
+    function refreshCandidateView() {
+      const input = document.getElementById('mc-search');
+      filterCandidates(input ? input.value : '');
+    }
+
+    function setSlot(id, text, isEmpty) {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      el.textContent = text;
+
+      if (isEmpty) {
+        el.classList.add('empty');
       } else {
-        inputEl.style.display = "block";
-        inputEl.value = "";
-        chipEl.classList.remove("is-active");
-        chipNameEl.textContent = "";
+        el.classList.remove('empty');
       }
     }
 
-    function updateAllEntryViews() {
-      for (let i = 0; i < 8; i += 1) {
-        updateEntryView(i);
+    function renderBracket() {
+      const names = selectedMCs.map(function(mc) {
+        return mc.mc_name || '';
+      });
+
+      setSlot('qf1-a', names[0] || '未選択', !names[0]);
+      setSlot('qf1-b', names[1] || '未選択', !names[1]);
+      setSlot('qf2-a', names[2] || '未選択', !names[2]);
+      setSlot('qf2-b', names[3] || '未選択', !names[3]);
+      setSlot('qf3-a', names[4] || '未選択', !names[4]);
+      setSlot('qf3-b', names[5] || '未選択', !names[5]);
+      setSlot('qf4-a', names[6] || '未選択', !names[6]);
+      setSlot('qf4-b', names[7] || '未選択', !names[7]);
+
+      const isFull = selectedMCs.length === 8;
+
+      setSlot('sf1-a', isFull ? 'QF1勝者' : 'QF1勝者', true);
+      setSlot('sf1-b', isFull ? 'QF2勝者' : 'QF2勝者', true);
+      setSlot('sf2-a', isFull ? 'QF3勝者' : 'QF3勝者', true);
+      setSlot('sf2-b', isFull ? 'QF4勝者' : 'QF4勝者', true);
+      setSlot('final-a', isFull ? 'SF1勝者' : 'SF1勝者', true);
+      setSlot('final-b', isFull ? 'SF2勝者' : 'SF2勝者', true);
+
+      const winnerEl = document.getElementById('winner-name');
+      const emptyMessageEl = document.getElementById('bracket-empty-message');
+
+      winnerEl.textContent = '未決定';
+
+      if (isFull) {
+        emptyMessageEl.textContent = '8人の参加者がそろいました。次段階で勝敗自動計算やシード機能を追加できます。';
+      } else {
+        emptyMessageEl.textContent = 'まだ8人そろっていません。左側から参加MCを選んでください。';
       }
-      updateBracketSlots();
-      updateRunButtonState();
     }
 
-    function updateBracketSlots() {
-      const slotMap = [
-        ["slot-qf-1a", 0],
-        ["slot-qf-1b", 1],
-        ["slot-qf-2a", 2],
-        ["slot-qf-2b", 3],
-        ["slot-qf-3a", 4],
-        ["slot-qf-3b", 5],
-        ["slot-qf-4a", 6],
-        ["slot-qf-4b", 7]
-      ];
+    function initEvents() {
+      const searchInput = document.getElementById('mc-search');
+      const fillBtn = document.getElementById('fill-random-btn');
+      const clearBtn = document.getElementById('clear-btn');
 
-      slotMap.forEach(([id, idx]) => {
-        const el = document.getElementById(id);
-        const item = selectedEntries[idx];
-        if (!el) return;
+      searchInput.addEventListener('input', function() {
+        filterCandidates(searchInput.value);
+      });
 
-        if (item) {
-          el.textContent = item.name;
-          el.classList.remove("vt-placeholder");
-        } else {
-          el.textContent = `参加者${idx + 1}`;
-          el.classList.add("vt-placeholder");
-        }
+      fillBtn.addEventListener('click', function() {
+        fillRandomRemaining();
+      });
+
+      clearBtn.addEventListener('click', function() {
+        clearSelectedMCs();
       });
     }
 
-    function updateRunButtonState() {
-      const complete = selectedEntries.every(Boolean);
-      runBtn.disabled = !complete;
-    }
-
-    function setEntry(index, mcId) {
-      const item = MC_OPTIONS.find(mc => mc.id === mcId);
-      if (!item) return;
-
-      selectedEntries[index] = item;
-      closeCandidates(index);
-      updateAllEntryViews();
-    }
-
-    function clearEntry(index) {
-      selectedEntries[index] = null;
-      closeCandidates(index);
-      updateAllEntryViews();
-    }
-
-    function escapeHtml(value) {
-      return String(value ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-    }
-
-    function bindEntryEvents() {
-      for (let i = 0; i < 8; i += 1) {
-        const inputEl = document.getElementById(`vt-search-${i}`);
-        const listEl = document.getElementById(`vt-candidates-${i}`);
-        const clearBtn = document.querySelector(`[data-clear-index="${i}"]`);
-
-        inputEl.addEventListener("focus", () => {
-          closeAllCandidates();
-          renderCandidates(i, inputEl.value);
-        });
-
-        inputEl.addEventListener("input", () => {
-          renderCandidates(i, inputEl.value);
-        });
-
-        inputEl.addEventListener("keydown", (event) => {
-          if (event.key === "Escape") {
-            closeCandidates(i);
-          }
-        });
-
-        listEl.addEventListener("click", (event) => {
-          const btn = event.target.closest(".vt-candidate-item");
-          if (!btn) return;
-          setEntry(i, btn.dataset.id);
-        });
-
-        clearBtn.addEventListener("click", () => {
-          clearEntry(i);
-          document.getElementById(`vt-search-${i}`).focus();
-        });
-      }
-
-      document.addEventListener("click", (event) => {
-        if (!event.target.closest(".vt-search-wrap")) {
-          closeAllCandidates();
-        }
-      });
-    }
-
-    function fillRandomEntries() {
-      const shuffled = [...MC_OPTIONS].sort(() => Math.random() - 0.5).slice(0, 8);
-      for (let i = 0; i < 8; i += 1) {
-        selectedEntries[i] = shuffled[i] || null;
-      }
-      closeAllCandidates();
-      updateAllEntryViews();
-    }
-
-    function clearAllEntries() {
-      for (let i = 0; i < 8; i += 1) {
-        selectedEntries[i] = null;
-      }
-      closeAllCandidates();
-      updateAllEntryViews();
-      winnerNameEl.textContent = "未実行";
-      logListEl.innerHTML = `<li class="vt-placeholder">シミュレーション未実行です。</li>`;
-      probBodyEl.innerHTML = `<tr><td colspan="4" class="vt-placeholder">8人を選ぶと、ここに結果を表示する想定です。</td></tr>`;
-    }
-
-    function runDemoSimulation() {
-      const names = selectedEntries.map(item => item.name);
-      winnerNameEl.textContent = names[0] || "未実行";
-
-      logListEl.innerHTML = `
-        <li>QF1: ${escapeHtml(names[0])} def. ${escapeHtml(names[1])}</li>
-        <li>QF2: ${escapeHtml(names[2])} def. ${escapeHtml(names[3])}</li>
-        <li>QF3: ${escapeHtml(names[4])} def. ${escapeHtml(names[5])}</li>
-        <li>QF4: ${escapeHtml(names[6])} def. ${escapeHtml(names[7])}</li>
-        <li>SF1: ${escapeHtml(names[0])} def. ${escapeHtml(names[2])}</li>
-        <li>SF2: ${escapeHtml(names[4])} def. ${escapeHtml(names[6])}</li>
-        <li>Final: ${escapeHtml(names[0])} def. ${escapeHtml(names[4])}</li>
-      `;
-
-      probBodyEl.innerHTML = names.map((name, idx) => `
-        <tr>
-          <td>${escapeHtml(name)}</td>
-          <td>${idx === 0 ? "28%" : idx === 1 ? "19%" : idx === 2 ? "14%" : idx === 3 ? "11%" : idx === 4 ? "9%" : idx === 5 ? "8%" : idx === 6 ? "6%" : "5%"}</td>
-          <td>${idx === 0 ? "44%" : idx === 1 ? "33%" : idx === 2 ? "27%" : idx === 3 ? "24%" : idx === 4 ? "21%" : idx === 5 ? "18%" : idx === 6 ? "15%" : "12%"}</td>
-          <td>${idx === 0 ? "68%" : idx === 1 ? "61%" : idx === 2 ? "56%" : idx === 3 ? "52%" : idx === 4 ? "49%" : idx === 5 ? "46%" : idx === 6 ? "41%" : "39%"}</td>
-        </tr>
-      `).join("");
-    }
-
-    document.getElementById("random-fill-btn").addEventListener("click", fillRandomEntries);
-    document.getElementById("clear-all-btn").addEventListener("click", clearAllEntries);
-    runBtn.addEventListener("click", runDemoSimulation);
-
-    buildEntryFields();
-    bindEntryEvents();
-    updateAllEntryViews();
+    document.addEventListener('DOMContentLoaded', function() {
+      initEvents();
+      renderSelectedMCs();
+      renderBracket();
+      fetchVirtualCandidates();
+    });
   </script>
 </body>
 </html>
