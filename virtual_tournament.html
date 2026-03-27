@@ -22,7 +22,7 @@
 
     .vt-layout {
       display: grid;
-      grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+      grid-template-columns: minmax(320px, 440px) minmax(0, 1fr);
       gap: 18px;
       align-items: start;
     }
@@ -109,6 +109,10 @@
       gap: 12px;
     }
 
+    .vt-field {
+      min-width: 0;
+    }
+
     .vt-field label {
       display: block;
       margin-bottom: 6px;
@@ -117,8 +121,11 @@
       font-weight: 700;
     }
 
-    .vt-field select,
-    .vt-field input {
+    .vt-search-wrap {
+      position: relative;
+    }
+
+    .vt-search-input {
       width: 100%;
       padding: 10px 12px;
       border: 1px solid var(--line);
@@ -129,11 +136,109 @@
       min-width: 0;
     }
 
-    .vt-field select:focus,
-    .vt-field input:focus {
+    .vt-search-input:focus {
       outline: none;
       border-color: var(--line-strong);
       box-shadow: 0 0 0 3px rgba(135, 164, 255, 0.08);
+    }
+
+    .vt-selected-chip {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 46px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .vt-selected-chip.is-active {
+      display: flex;
+    }
+
+    .vt-selected-name {
+      font-weight: 700;
+      color: var(--accent);
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .vt-clear-one {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      height: 32px;
+      padding: 0 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--accent);
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .vt-clear-one:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .vt-candidate-list {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      max-height: 220px;
+      overflow-y: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background:
+        linear-gradient(180deg, rgba(22, 27, 39, 0.98) 0%, rgba(14, 18, 28, 0.99) 100%);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
+      z-index: 30;
+      padding: 6px;
+    }
+
+    .vt-candidate-list.is-open {
+      display: block;
+    }
+
+    .vt-candidate-item {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .vt-candidate-item:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .vt-candidate-main {
+      display: block;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .vt-candidate-sub {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .vt-no-result {
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
     .vt-inline-row {
@@ -194,6 +299,13 @@
       background: rgba(92, 92, 102, 0.96);
       border-color: rgba(255,255,255,0.22);
       box-shadow: 0 0 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .vt-main-btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
 
     .vt-note {
@@ -380,7 +492,7 @@
         8人のMCを選んで、仮想的なトーナメント結果を表示する画面です。
       </p>
       <p class="muted">
-        現在は見た目だけの仮画面です。計算処理はまだ入れていません。
+        現在は見た目と選択UIまでの仮画面です。計算処理はまだ入れていません。
       </p>
     </header>
 
@@ -407,119 +519,25 @@
         </div>
 
         <h3>出場MCを選ぶ</h3>
-        <div class="vt-entry-grid">
-          <div class="vt-field">
-            <label for="mc1">参加者1</label>
-            <select id="mc1">
-              <option>Authority</option>
-              <option>呂布カルマ</option>
-              <option>裂固</option>
-              <option>FORK</option>
-              <option>ACE</option>
-              <option>輪入道</option>
-            </select>
-          </div>
-          <div class="vt-field">
-            <label for="mc2">参加者2</label>
-            <select id="mc2">
-              <option>呂布カルマ</option>
-              <option>Authority</option>
-              <option>裂固</option>
-              <option>FORK</option>
-              <option>ACE</option>
-              <option>輪入道</option>
-            </select>
-          </div>
-          <div class="vt-field">
-            <label for="mc3">参加者3</label>
-            <select id="mc3">
-              <option>裂固</option>
-              <option>Authority</option>
-              <option>呂布カルマ</option>
-              <option>FORK</option>
-              <option>ACE</option>
-              <option>輪入道</option>
-            </select>
-          </div>
-          <div class="vt-field">
-            <label for="mc4">参加者4</label>
-            <select id="mc4">
-              <option>FORK</option>
-              <option>Authority</option>
-              <option>呂布カルマ</option>
-              <option>裂固</option>
-              <option>ACE</option>
-              <option>輪入道</option>
-            </select>
-          </div>
-          <div class="vt-field">
-            <label for="mc5">参加者5</label>
-            <select id="mc5">
-              <option>ACE</option>
-              <option>Authority</option>
-              <option>呂布カルマ</option>
-              <option>裂固</option>
-              <option>FORK</option>
-              <option>輪入道</option>
-            </select>
-          </div>
-          <div class="vt-field">
-            <label for="mc6">参加者6</label>
-            <select id="mc6">
-              <option>輪入道</option>
-              <option>Authority</option>
-              <option>呂布カルマ</option>
-              <option>裂固</option>
-              <option>FORK</option>
-              <option>ACE</option>
-            </select>
-          </div>
-          <div class="vt-field">
-            <label for="mc7">参加者7</label>
-            <select id="mc7">
-              <option>TKda黒ぶち</option>
-              <option>Authority</option>
-              <option>呂布カルマ</option>
-              <option>裂固</option>
-              <option>FORK</option>
-              <option>ACE</option>
-            </select>
-          </div>
-          <div class="vt-field">
-            <label for="mc8">参加者8</label>
-            <select id="mc8">
-              <option>DOTAMA</option>
-              <option>Authority</option>
-              <option>呂布カルマ</option>
-              <option>裂固</option>
-              <option>FORK</option>
-              <option>ACE</option>
-            </select>
-          </div>
-        </div>
+        <div id="vt-entry-grid" class="vt-entry-grid"></div>
 
         <h3>シミュレーション回数</h3>
         <div class="vt-field">
-          <select id="sim-count">
-            <option>1回だけ</option>
-            <option>100回</option>
-            <option selected>1000回</option>
-            <option>10000回</option>
-          </select>
+          <label for="sim-count">回数</label>
+          <input id="sim-count" type="text" value="1000回" readonly />
         </div>
 
         <div class="vt-inline-row">
-          <button class="vt-chip-btn" type="button">ランダムで8人選ぶ</button>
-          <button class="vt-chip-btn" type="button">上位8人を入れる</button>
-          <button class="vt-chip-btn" type="button">クリア</button>
+          <button id="random-fill-btn" class="vt-chip-btn" type="button">ランダムで8人選ぶ</button>
+          <button id="clear-all-btn" class="vt-chip-btn" type="button">クリア</button>
         </div>
 
         <div class="vt-inline-row">
-          <button id="run-demo-btn" class="vt-main-btn" type="button">シミュレーション開始</button>
+          <button id="run-demo-btn" class="vt-main-btn" type="button" disabled>シミュレーション開始</button>
         </div>
 
         <p class="vt-note" style="margin-top:14px;">
-          実装後は、選択した8人・組み合わせ・モードに応じて仮想トーナメント結果を表示します。
+          検索欄にMC名または読みを入力すると候補が出ます。選択済みのMCは他の欄の候補から自動で除外されます。
         </p>
       </section>
 
@@ -532,26 +550,26 @@
 
             <div class="vt-match">
               <span class="vt-match-label">QF1</span>
-              <span class="vt-player">Authority</span>
-              <span class="vt-player">呂布カルマ</span>
+              <span id="slot-qf-1a" class="vt-player vt-placeholder">参加者1</span>
+              <span id="slot-qf-1b" class="vt-player vt-placeholder">参加者2</span>
             </div>
 
             <div class="vt-match">
               <span class="vt-match-label">QF2</span>
-              <span class="vt-player">裂固</span>
-              <span class="vt-player">FORK</span>
+              <span id="slot-qf-2a" class="vt-player vt-placeholder">参加者3</span>
+              <span id="slot-qf-2b" class="vt-player vt-placeholder">参加者4</span>
             </div>
 
             <div class="vt-match">
               <span class="vt-match-label">QF3</span>
-              <span class="vt-player">ACE</span>
-              <span class="vt-player">輪入道</span>
+              <span id="slot-qf-3a" class="vt-player vt-placeholder">参加者5</span>
+              <span id="slot-qf-3b" class="vt-player vt-placeholder">参加者6</span>
             </div>
 
             <div class="vt-match">
               <span class="vt-match-label">QF4</span>
-              <span class="vt-player">TKda黒ぶち</span>
-              <span class="vt-player">DOTAMA</span>
+              <span id="slot-qf-4a" class="vt-player vt-placeholder">参加者7</span>
+              <span id="slot-qf-4b" class="vt-player vt-placeholder">参加者8</span>
             </div>
           </div>
 
@@ -600,52 +618,7 @@
               </thead>
               <tbody id="vt-prob-body">
                 <tr>
-                  <td>Authority</td>
-                  <td>--</td>
-                  <td>--</td>
-                  <td>--</td>
-                </tr>
-                <tr>
-                  <td>呂布カルマ</td>
-                  <td>--</td>
-                  <td>--</td>
-                  <td>--</td>
-                </tr>
-                <tr>
-                  <td>裂固</td>
-                  <td>--</td>
-                  <td>--</td>
-                  <td>--</td>
-                </tr>
-                <tr>
-                  <td>FORK</td>
-                  <td>--</td>
-                  <td>--</td>
-                  <td>--</td>
-                </tr>
-                <tr>
-                  <td>ACE</td>
-                  <td>--</td>
-                  <td>--</td>
-                  <td>--</td>
-                </tr>
-                <tr>
-                  <td>輪入道</td>
-                  <td>--</td>
-                  <td>--</td>
-                  <td>--</td>
-                </tr>
-                <tr>
-                  <td>TKda黒ぶち</td>
-                  <td>--</td>
-                  <td>--</td>
-                  <td>--</td>
-                </tr>
-                <tr>
-                  <td>DOTAMA</td>
-                  <td>--</td>
-                  <td>--</td>
-                  <td>--</td>
+                  <td colspan="4" class="vt-placeholder">8人を選ぶと、ここに結果を表示する想定です。</td>
                 </tr>
               </tbody>
             </table>
@@ -663,35 +636,308 @@
   </div>
 
   <script>
+    const MC_OPTIONS = [
+      { id: "MC0001", name: "Authority", yomi: "おーそりてぃ" },
+      { id: "MC0002", name: "呂布カルマ", yomi: "りょふかるま" },
+      { id: "MC0003", name: "裂固", yomi: "れっこ" },
+      { id: "MC0004", name: "FORK", yomi: "ふぉーく" },
+      { id: "MC0005", name: "ACE", yomi: "えーす" },
+      { id: "MC0006", name: "輪入道", yomi: "わにゅうどう" },
+      { id: "MC0007", name: "TKda黒ぶち", yomi: "てぃーけーだくろぶち" },
+      { id: "MC0008", name: "DOTAMA", yomi: "どたま" },
+      { id: "MC0009", name: "R-指定", yomi: "あーるしてい" },
+      { id: "MC0010", name: "崇勲", yomi: "すうくん" },
+      { id: "MC0011", name: "GADORO", yomi: "がどろ" },
+      { id: "MC0012", name: "poney", yomi: "ぽにー" },
+      { id: "MC0013", name: "ID", yomi: "あいでぃー" },
+      { id: "MC0014", name: "NAIKA MC", yomi: "ないかえむしー" },
+      { id: "MC0015", name: "KOPERU", yomi: "こぺる" },
+      { id: "MC0016", name: "MOL53", yomi: "もるごーさん" },
+      { id: "MC0017", name: "RAWAXXX(MOL53)", yomi: "ろーわっくすもるごーさん" },
+      { id: "MC0018", name: "晋平太", yomi: "しんぺいた" },
+      { id: "MC0019", name: "SIMON JAP", yomi: "さいもんじゃっぷ" },
+      { id: "MC0020", name: "ミメイ", yomi: "みめい" },
+      { id: "MC0021", name: "MU-TON", yomi: "むーとん" },
+      { id: "MC0022", name: "百足", yomi: "むかで" },
+      { id: "MC0023", name: "梵頭", yomi: "ぼんず" },
+      { id: "MC0024", name: "じょう", yomi: "じょう" },
+      { id: "MC0025", name: "Charlu", yomi: "しゃるる" },
+      { id: "MC0026", name: "SKRYU", yomi: "すくりゅー" }
+    ];
+
+    const selectedEntries = new Array(8).fill(null);
+    const entryGridEl = document.getElementById("vt-entry-grid");
     const runBtn = document.getElementById("run-demo-btn");
     const winnerNameEl = document.getElementById("vt-winner-name");
     const logListEl = document.getElementById("vt-log-list");
     const probBodyEl = document.getElementById("vt-prob-body");
 
-    runBtn.addEventListener("click", () => {
-      winnerNameEl.textContent = "Authority";
+    function normalize(text) {
+      return String(text || "").trim().toLowerCase();
+    }
+
+    function buildEntryFields() {
+      entryGridEl.innerHTML = "";
+
+      for (let i = 0; i < 8; i += 1) {
+        const field = document.createElement("div");
+        field.className = "vt-field";
+        field.innerHTML = `
+          <label for="vt-search-${i}">参加者${i + 1}</label>
+          <div class="vt-search-wrap" data-index="${i}">
+            <input
+              id="vt-search-${i}"
+              class="vt-search-input"
+              type="text"
+              placeholder="MC名または読みで検索"
+              autocomplete="off"
+            />
+            <div class="vt-selected-chip" id="vt-selected-${i}">
+              <span class="vt-selected-name" id="vt-selected-name-${i}"></span>
+              <button type="button" class="vt-clear-one" data-clear-index="${i}">×</button>
+            </div>
+            <div class="vt-candidate-list" id="vt-candidates-${i}"></div>
+          </div>
+        `;
+        entryGridEl.appendChild(field);
+      }
+    }
+
+    function getSelectedIdsExcept(exceptIndex) {
+      return selectedEntries
+        .map((item, idx) => (idx === exceptIndex || !item ? null : item.id))
+        .filter(Boolean);
+    }
+
+    function getFilteredCandidates(query, index) {
+      const q = normalize(query);
+      const selectedIds = new Set(getSelectedIdsExcept(index));
+
+      let list = MC_OPTIONS.filter(item => !selectedIds.has(item.id));
+
+      if (!q) {
+        return list.slice(0, 12);
+      }
+
+      const starts = [];
+      const includes = [];
+
+      list.forEach(item => {
+        const name = normalize(item.name);
+        const yomi = normalize(item.yomi);
+        if (name.startsWith(q) || yomi.startsWith(q)) {
+          starts.push(item);
+        } else if (name.includes(q) || yomi.includes(q)) {
+          includes.push(item);
+        }
+      });
+
+      return [...starts, ...includes].slice(0, 12);
+    }
+
+    function renderCandidates(index, query) {
+      const listEl = document.getElementById(`vt-candidates-${index}`);
+      const candidates = getFilteredCandidates(query, index);
+
+      if (candidates.length === 0) {
+        listEl.innerHTML = `<div class="vt-no-result">一致する候補がありません</div>`;
+      } else {
+        listEl.innerHTML = candidates.map(item => `
+          <button type="button" class="vt-candidate-item" data-index="${index}" data-id="${item.id}">
+            <span class="vt-candidate-main">${escapeHtml(item.name)}</span>
+            <span class="vt-candidate-sub">${escapeHtml(item.yomi || "")}</span>
+          </button>
+        `).join("");
+      }
+
+      listEl.classList.add("is-open");
+    }
+
+    function closeCandidates(index) {
+      const listEl = document.getElementById(`vt-candidates-${index}`);
+      if (listEl) listEl.classList.remove("is-open");
+    }
+
+    function closeAllCandidates() {
+      for (let i = 0; i < 8; i += 1) {
+        closeCandidates(i);
+      }
+    }
+
+    function updateEntryView(index) {
+      const inputEl = document.getElementById(`vt-search-${index}`);
+      const chipEl = document.getElementById(`vt-selected-${index}`);
+      const chipNameEl = document.getElementById(`vt-selected-name-${index}`);
+
+      const item = selectedEntries[index];
+
+      if (item) {
+        inputEl.style.display = "none";
+        chipEl.classList.add("is-active");
+        chipNameEl.textContent = item.name;
+      } else {
+        inputEl.style.display = "block";
+        inputEl.value = "";
+        chipEl.classList.remove("is-active");
+        chipNameEl.textContent = "";
+      }
+    }
+
+    function updateAllEntryViews() {
+      for (let i = 0; i < 8; i += 1) {
+        updateEntryView(i);
+      }
+      updateBracketSlots();
+      updateRunButtonState();
+    }
+
+    function updateBracketSlots() {
+      const slotMap = [
+        ["slot-qf-1a", 0],
+        ["slot-qf-1b", 1],
+        ["slot-qf-2a", 2],
+        ["slot-qf-2b", 3],
+        ["slot-qf-3a", 4],
+        ["slot-qf-3b", 5],
+        ["slot-qf-4a", 6],
+        ["slot-qf-4b", 7]
+      ];
+
+      slotMap.forEach(([id, idx]) => {
+        const el = document.getElementById(id);
+        const item = selectedEntries[idx];
+        if (!el) return;
+
+        if (item) {
+          el.textContent = item.name;
+          el.classList.remove("vt-placeholder");
+        } else {
+          el.textContent = `参加者${idx + 1}`;
+          el.classList.add("vt-placeholder");
+        }
+      });
+    }
+
+    function updateRunButtonState() {
+      const complete = selectedEntries.every(Boolean);
+      runBtn.disabled = !complete;
+    }
+
+    function setEntry(index, mcId) {
+      const item = MC_OPTIONS.find(mc => mc.id === mcId);
+      if (!item) return;
+
+      selectedEntries[index] = item;
+      closeCandidates(index);
+      updateAllEntryViews();
+    }
+
+    function clearEntry(index) {
+      selectedEntries[index] = null;
+      closeCandidates(index);
+      updateAllEntryViews();
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function bindEntryEvents() {
+      for (let i = 0; i < 8; i += 1) {
+        const inputEl = document.getElementById(`vt-search-${i}`);
+        const listEl = document.getElementById(`vt-candidates-${i}`);
+        const clearBtn = document.querySelector(`[data-clear-index="${i}"]`);
+
+        inputEl.addEventListener("focus", () => {
+          closeAllCandidates();
+          renderCandidates(i, inputEl.value);
+        });
+
+        inputEl.addEventListener("input", () => {
+          renderCandidates(i, inputEl.value);
+        });
+
+        inputEl.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeCandidates(i);
+          }
+        });
+
+        listEl.addEventListener("click", (event) => {
+          const btn = event.target.closest(".vt-candidate-item");
+          if (!btn) return;
+          setEntry(i, btn.dataset.id);
+        });
+
+        clearBtn.addEventListener("click", () => {
+          clearEntry(i);
+          document.getElementById(`vt-search-${i}`).focus();
+        });
+      }
+
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".vt-search-wrap")) {
+          closeAllCandidates();
+        }
+      });
+    }
+
+    function fillRandomEntries() {
+      const shuffled = [...MC_OPTIONS].sort(() => Math.random() - 0.5).slice(0, 8);
+      for (let i = 0; i < 8; i += 1) {
+        selectedEntries[i] = shuffled[i] || null;
+      }
+      closeAllCandidates();
+      updateAllEntryViews();
+    }
+
+    function clearAllEntries() {
+      for (let i = 0; i < 8; i += 1) {
+        selectedEntries[i] = null;
+      }
+      closeAllCandidates();
+      updateAllEntryViews();
+      winnerNameEl.textContent = "未実行";
+      logListEl.innerHTML = `<li class="vt-placeholder">シミュレーション未実行です。</li>`;
+      probBodyEl.innerHTML = `<tr><td colspan="4" class="vt-placeholder">8人を選ぶと、ここに結果を表示する想定です。</td></tr>`;
+    }
+
+    function runDemoSimulation() {
+      const names = selectedEntries.map(item => item.name);
+      winnerNameEl.textContent = names[0] || "未実行";
 
       logListEl.innerHTML = `
-        <li>QF1: Authority def. 呂布カルマ</li>
-        <li>QF2: 裂固 def. FORK</li>
-        <li>QF3: ACE def. 輪入道</li>
-        <li>QF4: DOTAMA def. TKda黒ぶち</li>
-        <li>SF1: Authority def. 裂固</li>
-        <li>SF2: ACE def. DOTAMA</li>
-        <li>Final: Authority def. ACE</li>
+        <li>QF1: ${escapeHtml(names[0])} def. ${escapeHtml(names[1])}</li>
+        <li>QF2: ${escapeHtml(names[2])} def. ${escapeHtml(names[3])}</li>
+        <li>QF3: ${escapeHtml(names[4])} def. ${escapeHtml(names[5])}</li>
+        <li>QF4: ${escapeHtml(names[6])} def. ${escapeHtml(names[7])}</li>
+        <li>SF1: ${escapeHtml(names[0])} def. ${escapeHtml(names[2])}</li>
+        <li>SF2: ${escapeHtml(names[4])} def. ${escapeHtml(names[6])}</li>
+        <li>Final: ${escapeHtml(names[0])} def. ${escapeHtml(names[4])}</li>
       `;
 
-      probBodyEl.innerHTML = `
-        <tr><td>Authority</td><td>28%</td><td>44%</td><td>68%</td></tr>
-        <tr><td>ACE</td><td>19%</td><td>33%</td><td>58%</td></tr>
-        <tr><td>裂固</td><td>16%</td><td>29%</td><td>55%</td></tr>
-        <tr><td>FORK</td><td>12%</td><td>23%</td><td>50%</td></tr>
-        <tr><td>呂布カルマ</td><td>10%</td><td>21%</td><td>49%</td></tr>
-        <tr><td>DOTAMA</td><td>7%</td><td>17%</td><td>43%</td></tr>
-        <tr><td>輪入道</td><td>5%</td><td>14%</td><td>39%</td></tr>
-        <tr><td>TKda黒ぶち</td><td>3%</td><td>9%</td><td>34%</td></tr>
-      `;
-    });
+      probBodyEl.innerHTML = names.map((name, idx) => `
+        <tr>
+          <td>${escapeHtml(name)}</td>
+          <td>${idx === 0 ? "28%" : idx === 1 ? "19%" : idx === 2 ? "14%" : idx === 3 ? "11%" : idx === 4 ? "9%" : idx === 5 ? "8%" : idx === 6 ? "6%" : "5%"}</td>
+          <td>${idx === 0 ? "44%" : idx === 1 ? "33%" : idx === 2 ? "27%" : idx === 3 ? "24%" : idx === 4 ? "21%" : idx === 5 ? "18%" : idx === 6 ? "15%" : "12%"}</td>
+          <td>${idx === 0 ? "68%" : idx === 1 ? "61%" : idx === 2 ? "56%" : idx === 3 ? "52%" : idx === 4 ? "49%" : idx === 5 ? "46%" : idx === 6 ? "41%" : "39%"}</td>
+        </tr>
+      `).join("");
+    }
+
+    document.getElementById("random-fill-btn").addEventListener("click", fillRandomEntries);
+    document.getElementById("clear-all-btn").addEventListener("click", clearAllEntries);
+    runBtn.addEventListener("click", runDemoSimulation);
+
+    buildEntryFields();
+    bindEntryEvents();
+    updateAllEntryViews();
   </script>
 </body>
 </html>
