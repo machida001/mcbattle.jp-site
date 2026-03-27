@@ -689,7 +689,7 @@
     }
 
     async function fetchVirtualCandidates() {
-      if (!API_URL || API_URL.indexOf('YOUR_APPS_SCRIPT_EXEC_URL_HERE') !== -1) {
+      if (!API_URL || API_URL.indexOf('https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec') !== -1) {
         showStatus('API_URL が未設定です。virtual_tournament.html 内の API_URL を Apps Script の exec URL に置き換えてください。', true);
         return;
       }
