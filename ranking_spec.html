@@ -80,39 +80,6 @@
       word-break: break-word;
     }
 
-    .spec-table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.02);
-      max-width: 100%;
-    }
-
-    .spec-table {
-      width: 100%;
-      min-width: 420px;
-      border-collapse: collapse;
-    }
-
-    .spec-table th,
-    .spec-table td {
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-
-    .spec-table th {
-      background: rgba(255,255,255,0.03);
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .spec-table tr:last-child td {
-      border-bottom: none;
-    }
-
     .spec-link-row {
       display: flex;
       gap: 10px;
@@ -133,6 +100,47 @@
       font-weight: 700;
     }
 
+    .form-card {
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .form-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .form-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(70, 70, 78, 0.92);
+      color: #f3f4f6;
+      text-decoration: none;
+      font-weight: 700;
+      transition:
+        transform 0.18s ease,
+        opacity 0.18s ease,
+        border-color 0.18s ease,
+        background-color 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .form-link:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      opacity: 0.98;
+      background: rgba(92, 92, 102, 0.96);
+      border-color: rgba(255,255,255,0.22);
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.18);
+    }
+
     @media (max-width: 640px) {
       .spec-page {
         padding: 18px 10px 52px;
@@ -149,18 +157,16 @@
         line-height: 1.7;
       }
 
-      .spec-table {
-        min-width: 420px;
-      }
-
-      .spec-table th,
-      .spec-table td {
-        padding: 10px 10px;
-        font-size: 0.92rem;
-      }
-
       .spec-chip {
         font-size: 0.86rem;
+      }
+
+      .form-card {
+        padding: 14px;
+      }
+
+      .form-link {
+        width: 100%;
       }
     }
   </style>
@@ -240,34 +246,6 @@ baseK = 24</div>
           同じ勝ちでも、深いラウンドほど重く扱います。決勝に近い勝利の方が更新量が大きくなります。
           1回戦の係数1.00から決勝の係数1.42まで、徐々に重みが付くようになっています。
         </p>
-
-        <div class="spec-table-wrap">
-          <table class="spec-table">
-            <thead>
-              <tr>
-                <th>ラウンド</th>
-                <th>係数</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>1回戦</td><td>1.00</td></tr>
-              <tr><td>2回戦</td><td>1.03</td></tr>
-              <tr><td>3回戦</td><td>1.06</td></tr>
-              <tr><td>4回戦</td><td>1.09</td></tr>
-              <tr><td>ベスト64</td><td>1.05</td></tr>
-              <tr><td>ベスト48</td><td>1.07</td></tr>
-              <tr><td>ベスト32</td><td>1.10</td></tr>
-              <tr><td>ベスト16</td><td>1.16</td></tr>
-              <tr><td>ベスト8</td><td>1.23</td></tr>
-              <tr><td>準決勝</td><td>1.31</td></tr>
-              <tr><td>決勝</td><td>1.42</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p>
-          実装上は、FINAL / Final / final は「決勝」、ベスト4は「準決勝」、準々決勝は「ベスト8」としてまとめて扱っています。
-        </p>
       </section>
 
       <section class="spec-card">
@@ -275,25 +253,14 @@ baseK = 24</div>
         <p>
           このランキングは「今強いか」を見たいので、古い試合より最近の試合を重く扱います。
         </p>
-
-        <div class="spec-table-wrap">
-          <table class="spec-table">
-            <thead>
-              <tr>
-                <th>試合からの経過</th>
-                <th>係数</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>3か月以内</td><td>1.30</td></tr>
-              <tr><td>6か月以内</td><td>1.20</td></tr>
-              <tr><td>12か月以内</td><td>1.10</td></tr>
-              <tr><td>24か月以内</td><td>1.00</td></tr>
-              <tr><td>36か月以内</td><td>0.92</td></tr>
-              <tr><td>それより古い</td><td>0.85</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <ul class="spec-list">
+          <li>3か月以内：1.30</li>
+          <li>6か月以内：1.20</li>
+          <li>12か月以内：1.10</li>
+          <li>24か月以内：1.00</li>
+          <li>36か月以内：0.92</li>
+          <li>それより古い：0.85</li>
+        </ul>
 
         <p>
           つまり、昔の大勝ちがずっと効き続けるよりも、最近の実戦結果がやや強く反映される設計です。
@@ -350,6 +317,11 @@ baseK = 24</div>
         <p>
           このMCが高すぎる/低すぎるというだけでも構いません、ご意見があればフォームからお便りをいただけると助かります。
         </p>
+
+        <div class="form-card">
+          <p>ご意見フォーム</p>
+          <a href="#" class="form-link">フォームはこちら</a>
+        </div>
       </section>
     </div>
   </div>
