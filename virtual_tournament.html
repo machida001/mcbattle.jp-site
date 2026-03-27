@@ -178,6 +178,56 @@
       border: 1px solid rgba(255, 107, 107, 0.28);
     }
 
+    .mode-section {
+      margin-bottom: 18px;
+    }
+
+    .mode-title {
+      margin: 0 0 12px;
+      font-size: 0.98rem;
+      font-weight: 700;
+    }
+
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .mode-card {
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .mode-card:hover {
+      border-color: rgba(91, 140, 255, 0.35);
+      background: rgba(91, 140, 255, 0.09);
+    }
+
+    .mode-card.active {
+      border-color: rgba(91, 140, 255, 0.65);
+      background: linear-gradient(135deg, rgba(91, 140, 255, 0.16), rgba(124, 77, 255, 0.16));
+    }
+
+    .mode-card-title {
+      display: block;
+      font-size: 0.97rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .mode-card-desc {
+      display: block;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
     .search-row {
       display: grid;
       grid-template-columns: minmax(240px, 1fr) auto auto;
@@ -328,6 +378,13 @@
       font-weight: 700;
     }
 
+    .candidate-note {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
     .candidate-list {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -374,6 +431,13 @@
       word-break: break-word;
     }
 
+    .candidate-empty {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      padding: 12px 0;
+    }
+
     .result-panel {
       margin-top: 22px;
     }
@@ -408,6 +472,13 @@
     .result-summary-winner {
       font-size: 1.2rem;
       font-weight: 800;
+    }
+
+    .result-mode-note {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.6;
     }
 
     .round-result {
@@ -479,6 +550,10 @@
       .candidate-list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
+
+      .mode-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 560px) {
@@ -536,7 +611,7 @@
       <h1 class="page-title">仮想MCバトルシミュレーション</h1>
       <p class="page-subtitle">
         8人のMCを選んで、仮想トーナメントをシミュレーションできます。<br>
-        8人そろったら「結果を見る」を押して、Best8から順に結果を表示します。
+        まずモードを選び、8人そろったら「結果を見る」を押してください。
       </p>
     </section>
 
@@ -544,19 +619,33 @@
       <div class="panel-header">
         <h2 class="panel-title">参加MCを選ぶ</h2>
         <p class="panel-subtitle">
-          上から順に、まず8人を選択し、そのあと結果を見る流れです。
+          よみがなでも検索できます。候補は2文字以上入力した時だけ表示します。
         </p>
       </div>
 
       <div class="panel-body">
         <div id="status" class="status-box">参加候補を読み込みます。</div>
 
+        <div class="mode-section">
+          <h3 class="mode-title">シミュレーションモード</h3>
+          <div class="mode-grid">
+            <div id="mode-current" class="mode-card active" role="button" tabindex="0">
+              <span class="mode-card-title">今の強さでシミュレーションする</span>
+              <span class="mode-card-desc">現在ランキングを使って、現時点の強さ寄りで勝敗を計算します。</span>
+            </div>
+            <div id="mode-peak" class="mode-card" role="button" tabindex="0">
+              <span class="mode-card-title">全盛期の強さでシミュレーションする</span>
+              <span class="mode-card-desc">全盛期モード用UIです。現時点では内部計算は暫定で現行スコアを使います。</span>
+            </div>
+          </div>
+        </div>
+
         <div class="search-row">
           <input
             id="mc-search"
             class="search-input"
             type="text"
-            placeholder="MC名で検索"
+            placeholder="MC名またはよみがなで検索（2文字以上）"
             autocomplete="off"
           />
           <div id="selected-count" class="count-badge">0 / 8</div>
@@ -574,6 +663,9 @@
 
         <div class="candidate-area">
           <h3 class="candidate-title">MC候補</h3>
+          <div class="candidate-note">
+            検索文字数が 0〜1文字の時は候補を表示しません。
+          </div>
           <div id="candidate-list" class="candidate-list"></div>
         </div>
 
@@ -586,6 +678,7 @@
           <div id="result-summary" class="result-summary">
             <span class="result-summary-label">優勝者</span>
             <span id="result-summary-winner" class="result-summary-winner">未決定</span>
+            <div id="result-mode-note" class="result-mode-note"></div>
           </div>
 
           <div id="round-best8" class="round-result">
@@ -617,6 +710,9 @@
     let allCandidates = [];
     let filteredCandidates = [];
     let selectedMCs = [];
+    let currentMode = 'current';
+    let ratingMapCurrent = {};
+    let ratingMapPeak = {};
     let lastSimulationResult = null;
 
     function escapeHtml(str) {
@@ -688,27 +784,37 @@
       });
     }
 
-    async function fetchVirtualCandidates() {
-      const url = API_URL + '?mode=virtual_candidates';
-      showStatus('参加候補を読み込み中...', false);
+    async function fetchInitialData() {
+      showStatus('参加候補とランキングを読み込み中...', false);
 
       try {
-        const data = await loadJsonp(url);
+        const [candidateData, rankingData] = await Promise.all([
+          loadJsonp(API_URL + '?mode=virtual_candidates'),
+          loadJsonp(API_URL + '?mode=rankings')
+        ]);
 
-        if (data && data.error) {
-          throw new Error('Apps Script エラー: ' + (data.message || 'unknown'));
+        if (candidateData && candidateData.error) {
+          throw new Error('候補取得エラー: ' + (candidateData.message || 'unknown'));
+        }
+        if (rankingData && rankingData.error) {
+          throw new Error('ランキング取得エラー: ' + (rankingData.message || 'unknown'));
         }
 
-        allCandidates = Array.isArray(data.candidates) ? data.candidates.slice() : [];
-        filteredCandidates = allCandidates.slice();
+        allCandidates = Array.isArray(candidateData.candidates) ? candidateData.candidates.slice() : [];
+        buildRatingMaps(rankingData);
 
-        showStatus('候補 ' + allCandidates.length + ' 名を読み込みました。', false);
+        filteredCandidates = [];
         renderCandidateList(filteredCandidates);
         renderSelectedGrid();
         updateButtons();
+
+        showStatus(
+          '候補 ' + allCandidates.length + ' 名を読み込みました。検索欄に2文字以上入れると候補が表示されます。',
+          false
+        );
       } catch (err) {
         showStatus(
-          '候補データの取得に失敗しました。\n\n' +
+          'データの取得に失敗しました。\n\n' +
           '確認してください:\n' +
           '1. Apps Script を再デプロイしたか\n' +
           '2. Webアプリ公開範囲が「全員」か\n\n' +
@@ -718,12 +824,58 @@
       }
     }
 
+    function buildRatingMaps(rankingData) {
+      ratingMapCurrent = {};
+      ratingMapPeak = {};
+
+      const rankings = Array.isArray(rankingData && rankingData.rankings) ? rankingData.rankings : [];
+
+      rankings.forEach(function(row) {
+        const mcId = String(row.mc_id || '');
+        if (!mcId) return;
+
+        const score = Number(row.score);
+        const safeScore = isNaN(score) ? 1500 : score;
+
+        ratingMapCurrent[mcId] = safeScore;
+
+        /* 
+          全盛期用の専用指標APIがまだないため、現時点では暫定で同じ値を入れる。
+          後で peak_score 等のAPIができたらここだけ差し替えればよい。
+        */
+        ratingMapPeak[mcId] = safeScore;
+      });
+    }
+
+    function getModeLabel(mode) {
+      return mode === 'peak'
+        ? '全盛期の強さモード'
+        : '今の強さモード';
+    }
+
+    function setMode(mode) {
+      currentMode = mode;
+
+      document.getElementById('mode-current').classList.toggle('active', mode === 'current');
+      document.getElementById('mode-peak').classList.toggle('active', mode === 'peak');
+
+      lastSimulationResult = null;
+      clearResultsView();
+    }
+
     function renderCandidateList(list) {
       const container = document.getElementById('candidate-list');
       container.innerHTML = '';
 
       if (!list.length) {
-        container.innerHTML = '<div style="color: var(--muted); padding: 8px 0;">該当するMCが見つかりません。</div>';
+        const keyword = document.getElementById('mc-search').value || '';
+        const q = normalizeText(keyword);
+
+        if (q.length < 2) {
+          container.innerHTML = '<div class="candidate-empty">2文字以上入力すると候補が表示されます。</div>';
+        } else {
+          container.innerHTML = '<div class="candidate-empty">該当するMCが見つかりません。</div>';
+        }
         return;
       }
 
@@ -751,14 +903,17 @@
     function filterCandidates(keyword) {
       const q = normalizeText(keyword);
 
-      if (!q) {
-        filteredCandidates = allCandidates.slice();
-      } else {
-        filteredCandidates = allCandidates.filter(function(mc) {
-          const name = normalizeText(mc.mc_name);
-          return name.includes(q);
-        });
+      if (q.length < 2) {
+        filteredCandidates = [];
+        renderCandidateList(filteredCandidates);
+        return;
       }
+
+      filteredCandidates = allCandidates.filter(function(mc) {
+        const name = normalizeText(mc.mc_name);
+        const yomi = normalizeText(mc.mc_yomi);
+        return name.includes(q) || yomi.includes(q);
+      });
 
       renderCandidateList(filteredCandidates);
     }
@@ -843,8 +998,24 @@
       filterCandidates(input ? input.value : '');
     }
 
+    function getRatingForMc(mc) {
+      const mcId = String(mc && mc.mc_id ? mc.mc_id : '');
+
+      if (currentMode === 'peak') {
+        return ratingMapPeak[mcId] || 1500;
+      }
+
+      return ratingMapCurrent[mcId] || 1500;
+    }
+
     function pickWinner(a, b) {
-      return Math.random() < 0.5 ? a : b;
+      const ratingA = getRatingForMc(a);
+      const ratingB = getRatingForMc(b);
+
+      const probA = 1 / (1 + Math.pow(10, (ratingB - ratingA) / 400));
+      const randomValue = Math.random();
+
+      return randomValue < probA ? a : b;
     }
 
     function simulateTournament() {
@@ -870,6 +1041,7 @@
       final.winner = pickWinner(final.a, final.b);
 
       return {
+        mode: currentMode,
         best8: [qf1, qf2, qf3, qf4],
         best4: [sf1, sf2],
         final: [final],
@@ -905,6 +1077,14 @@
 
       document.getElementById('result-summary-winner').textContent = result.champion.mc_name || '未決定';
 
+      if (result.mode === 'peak') {
+        document.getElementById('result-mode-note').textContent =
+          '現在は全盛期専用の指標APIが未実装のため、内部計算は暫定で現行スコアを使っています。';
+      } else {
+        document.getElementById('result-mode-note').textContent =
+          '現在ランキングのスコア差を使って勝敗をシミュレーションしています。';
+      }
+
       renderRoundList('best8-list', result.best8, 'Best8');
       renderRoundList('best4-list', result.best4, 'Best4');
       renderRoundList('final-list', result.final, 'Final');
@@ -917,6 +1097,7 @@
       document.getElementById('round-final').classList.remove('show');
 
       document.getElementById('result-summary-winner').textContent = '未決定';
+      document.getElementById('result-mode-note').textContent = '';
       document.getElementById('best8-list').innerHTML = '';
       document.getElementById('best4-list').innerHTML = '';
       document.getElementById('final-list').innerHTML = '';
@@ -926,6 +1107,33 @@
       if (selectedMCs.length !== 8) return;
       lastSimulationResult = simulateTournament();
       renderResults(lastSimulationResult);
+    }
+
+    function initModeEvents() {
+      const currentEl = document.getElementById('mode-current');
+      const peakEl = document.getElementById('mode-peak');
+
+      currentEl.addEventListener('click', function() {
+        setMode('current');
+      });
+
+      peakEl.addEventListener('click', function() {
+        setMode('peak');
+      });
+
+      currentEl.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setMode('current');
+        }
+      });
+
+      peakEl.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setMode('peak');
+        }
+      });
     }
 
     function initEvents() {
@@ -944,6 +1152,8 @@
       document.getElementById('reshuffle-btn').addEventListener('click', function() {
         handleSimulate();
       });
+
+      initModeEvents();
     }
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -951,7 +1161,7 @@
       renderSelectedGrid();
       updateButtons();
       clearResultsView();
-      fetchVirtualCandidates();
+      fetchInitialData();
     });
   </script>
 </body>
