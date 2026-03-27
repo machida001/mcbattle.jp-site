@@ -523,12 +523,36 @@
       color: #fff;
     }
 
-    .probability-text {
+    .detail-text {
       display: block;
       margin-top: 6px;
       color: var(--muted);
       font-size: 0.85rem;
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    .prob-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .prob-table th,
+    .prob-table td {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 10px 8px;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .prob-table th {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .prob-table td.num {
+      text-align: right;
+      white-space: nowrap;
     }
 
     .site-footer {
@@ -594,6 +618,11 @@
       .site-nav {
         width: 100%;
       }
+
+      .prob-table th,
+      .prob-table td {
+        font-size: 0.84rem;
+      }
     }
   </style>
 </head>
@@ -617,8 +646,8 @@
     <section class="page-hero">
       <h1 class="page-title">仮想MCバトルシミュレーション</h1>
       <p class="page-subtitle">
-        8人のMCを選んで、仮想トーナメントをシミュレーションできます。<br>
-        試合数が少ないMCは補正され、内部はベストオブ3で勝敗を決めます。
+        同じ8人で100回トーナメントを行った場合の分布を表示します。<br>
+        単発の結果ではなく、どのMCがどれくらい優勝しやすいかを見ます。
       </p>
     </section>
 
@@ -638,11 +667,11 @@
           <div class="mode-grid">
             <div id="mode-current" class="mode-card active" role="button" tabindex="0">
               <span class="mode-card-title">今の強さでシミュレーションする</span>
-              <span class="mode-card-desc">current_score をベースに、試合数補正を入れて計算します。</span>
+              <span class="mode-card-desc">current_score を基準に、試合数補正込みで100回まわします。</span>
             </div>
             <div id="mode-peak" class="mode-card" role="button" tabindex="0">
               <span class="mode-card-title">全盛期の強さでシミュレーションする</span>
-              <span class="mode-card-desc">peak_score をベースに、試合数補正を入れて計算します。</span>
+              <span class="mode-card-desc">peak_score を基準に、試合数補正込みで100回まわします。</span>
             </div>
           </div>
         </div>
@@ -678,29 +707,34 @@
 
         <div class="result-panel">
           <div class="result-actions">
-            <button id="simulate-btn" class="btn btn-primary" type="button" disabled>結果を見る</button>
-            <button id="reshuffle-btn" class="btn btn-secondary" type="button" disabled>もう一度結果を出す</button>
+            <button id="simulate-btn" class="btn btn-primary" type="button" disabled>100回シミュレーションする</button>
+            <button id="reshuffle-btn" class="btn btn-secondary" type="button" disabled>もう一度100回まわす</button>
           </div>
 
           <div id="result-summary" class="result-summary">
-            <span class="result-summary-label">優勝者</span>
+            <span class="result-summary-label">最も優勝確率が高いMC</span>
             <span id="result-summary-winner" class="result-summary-winner">未決定</span>
             <div id="result-mode-note" class="result-mode-note"></div>
           </div>
 
           <div id="round-best8" class="round-result">
-            <h3 class="round-title-lg">Best8 の結果</h3>
+            <h3 class="round-title-lg">Best8 の対戦分布</h3>
             <div id="best8-list" class="match-result-list"></div>
           </div>
 
           <div id="round-best4" class="round-result">
-            <h3 class="round-title-lg">Best4 の結果</h3>
+            <h3 class="round-title-lg">Best4 の対戦分布</h3>
             <div id="best4-list" class="match-result-list"></div>
           </div>
 
           <div id="round-final" class="round-result">
-            <h3 class="round-title-lg">決勝 の結果</h3>
+            <h3 class="round-title-lg">決勝 の対戦分布</h3>
             <div id="final-list" class="match-result-list"></div>
+          </div>
+
+          <div id="overall-prob" class="round-result">
+            <h3 class="round-title-lg">全体分布</h3>
+            <div id="overall-prob-table"></div>
           </div>
         </div>
       </div>
@@ -713,6 +747,8 @@
 
   <script>
     const API_URL = 'https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec';
+    const TOURNAMENT_RUNS = 100;
+    const ELO_DENOMINATOR = 120;
 
     let allCandidates = [];
     let filteredCandidates = [];
@@ -854,16 +890,10 @@
       });
     }
 
-    function getModeLabel(mode) {
-      return mode === 'peak' ? '全盛期の強さモード' : '今の強さモード';
-    }
-
     function setMode(mode) {
       currentMode = mode;
-
       document.getElementById('mode-current').classList.toggle('active', mode === 'current');
       document.getElementById('mode-peak').classList.toggle('active', mode === 'peak');
-
       lastSimulationResult = null;
       clearResultsView();
     }
@@ -987,15 +1017,10 @@
     }
 
     function updateButtons() {
-      const simulateBtn = document.getElementById('simulate-btn');
-      const reshuffleBtn = document.getElementById('reshuffle-btn');
-      const clearBtn = document.getElementById('clear-btn');
-
       const ready = selectedMCs.length === 8;
-
-      simulateBtn.disabled = !ready;
-      reshuffleBtn.disabled = !ready;
-      clearBtn.disabled = selectedMCs.length === 0;
+      document.getElementById('simulate-btn').disabled = !ready;
+      document.getElementById('reshuffle-btn').disabled = !ready;
+      document.getElementById('clear-btn').disabled = selectedMCs.length === 0;
     }
 
     function refreshCandidateView() {
@@ -1032,9 +1057,7 @@
 
     function getBaseRatingForMc(mc) {
       const strength = getStrengthObject(mc);
-      return currentMode === 'peak'
-        ? strength.peak_score
-        : strength.current_score;
+      return currentMode === 'peak' ? strength.peak_score : strength.current_score;
     }
 
     function getAdjustedRatingForMc(mc) {
@@ -1045,7 +1068,7 @@
     }
 
     function calculateWinProbability(ratingA, ratingB) {
-      return 1 / (1 + Math.pow(10, (ratingB - ratingA) / 320));
+      return 1 / (1 + Math.pow(10, (ratingB - ratingA) / ELO_DENOMINATOR));
     }
 
     function playSingleBout(a, b) {
@@ -1053,6 +1076,7 @@
       const ratingB = getAdjustedRatingForMc(b);
       const probA = calculateWinProbability(ratingA, ratingB);
       const randomValue = Math.random();
+
       return {
         winner: randomValue < probA ? a : b,
         probability_a: probA,
@@ -1076,14 +1100,11 @@
         }
       }
 
-      const winner = winsA > winsB ? a : b;
-      const loser = winner.mc_id === a.mc_id ? b : a;
-
       return {
         a: a,
         b: b,
-        winner: winner,
-        loser: loser,
+        winner: winsA > winsB ? a : b,
+        loser: winsA > winsB ? b : a,
         rating_a: lastBout.rating_a,
         rating_b: lastBout.rating_b,
         probability_a: lastBout.probability_a,
@@ -1095,9 +1116,7 @@
       };
     }
 
-    function simulateTournament() {
-      if (selectedMCs.length !== 8) return null;
-
+    function runOneTournament() {
       const qf1 = createMatch(selectedMCs[0], selectedMCs[1]);
       const qf2 = createMatch(selectedMCs[2], selectedMCs[3]);
       const qf3 = createMatch(selectedMCs[4], selectedMCs[5]);
@@ -1109,11 +1128,113 @@
       const final = createMatch(sf1.winner, sf2.winner);
 
       return {
-        mode: currentMode,
         best8: [qf1, qf2, qf3, qf4],
         best4: [sf1, sf2],
         final: [final],
-        champion: final.winner
+        champion: final.winner,
+        runner_up: final.loser,
+        semifinal_losers: [sf1.loser, sf2.loser],
+        quarterfinal_losers: [qf1.loser, qf2.loser, qf3.loser, qf4.loser]
+      };
+    }
+
+    function initStageAggregate(matches) {
+      return matches.map(function(match) {
+        return {
+          a: match.a,
+          b: match.b,
+          wins_a: 0,
+          wins_b: 0,
+          total: 0,
+          avg_probability_a: 0,
+          avg_probability_b: 0,
+          avg_rating_a: 0,
+          avg_rating_b: 0,
+          total_matches_a: match.total_matches_a,
+          total_matches_b: match.total_matches_b
+        };
+      });
+    }
+
+    function addStageAggregate(target, source) {
+      source.forEach(function(match, idx) {
+        target[idx].wins_a += match.winner.mc_id === match.a.mc_id ? 1 : 0;
+        target[idx].wins_b += match.winner.mc_id === match.b.mc_id ? 1 : 0;
+        target[idx].total += 1;
+        target[idx].avg_probability_a += match.probability_a;
+        target[idx].avg_probability_b += match.probability_b;
+        target[idx].avg_rating_a += match.rating_a;
+        target[idx].avg_rating_b += match.rating_b;
+      });
+    }
+
+    function simulateTournamentDistribution() {
+      if (selectedMCs.length !== 8) return null;
+
+      const standings = {};
+      selectedMCs.forEach(function(mc) {
+        standings[mc.mc_id] = {
+          mc: mc,
+          champion: 0,
+          runner_up: 0,
+          best4: 0,
+          best8_exit: 0
+        };
+      });
+
+      let best8Agg = null;
+      let best4Agg = null;
+      let finalAgg = null;
+
+      for (let i = 0; i < TOURNAMENT_RUNS; i++) {
+        const one = runOneTournament();
+
+        standings[one.champion.mc_id].champion += 1;
+        standings[one.runner_up.mc_id].runner_up += 1;
+        one.semifinal_losers.forEach(function(mc) {
+          standings[mc.mc_id].best4 += 1;
+        });
+        one.quarterfinal_losers.forEach(function(mc) {
+          standings[mc.mc_id].best8_exit += 1;
+        });
+
+        if (!best8Agg) {
+          best8Agg = initStageAggregate(one.best8);
+          best4Agg = initStageAggregate(one.best4);
+          finalAgg = initStageAggregate(one.final);
+        }
+
+        addStageAggregate(best8Agg, one.best8);
+        addStageAggregate(best4Agg, one.best4);
+        addStageAggregate(finalAgg, one.final);
+      }
+
+      const overall = Object.keys(standings).map(function(mcId) {
+        const row = standings[mcId];
+        return {
+          mc: row.mc,
+          champion: row.champion,
+          runner_up: row.runner_up,
+          best4: row.best4,
+          best8_exit: row.best8_exit,
+          champion_rate: row.champion / TOURNAMENT_RUNS,
+          runner_up_rate: row.runner_up / TOURNAMENT_RUNS,
+          best4_rate: row.best4 / TOURNAMENT_RUNS,
+          best8_exit_rate: row.best8_exit / TOURNAMENT_RUNS
+        };
+      }).sort(function(a, b) {
+        if (b.champion_rate !== a.champion_rate) return b.champion_rate - a.champion_rate;
+        if (b.runner_up_rate !== a.runner_up_rate) return b.runner_up_rate - a.runner_up_rate;
+        return a.mc.mc_name.localeCompare(b.mc.mc_name, 'ja');
+      });
+
+      return {
+        mode: currentMode,
+        best8: best8Agg,
+        best4: best4Agg,
+        final: finalAgg,
+        overall: overall,
+        favorite: overall.length ? overall[0].mc : null
       };
     }
 
@@ -1121,33 +1242,83 @@
       return Math.round(value * 100);
     }
 
+    function formatRateFromCount(count) {
+      return Math.round((count / TOURNAMENT_RUNS) * 100);
+    }
+
     function formatRating(value) {
       return Math.round(value);
     }
 
-    function renderRoundList(containerId, matches, labelPrefix) {
+    function renderStageDistribution(containerId, rows, labelPrefix) {
       const container = document.getElementById(containerId);
       container.innerHTML = '';
 
-      matches.forEach(function(match, index) {
+      rows.forEach(function(row, index) {
+        const avgProbA = row.total ? row.avg_probability_a / row.total : 0;
+        const avgProbB = row.total ? row.avg_probability_b / row.total : 0;
+        const avgRatingA = row.total ? row.avg_rating_a / row.total : 1500;
+        const avgRatingB = row.total ? row.avg_rating_b / row.total : 1500;
+
         const item = document.createElement('div');
         item.className = 'match-result-item';
         item.innerHTML =
           '<div class="match-result-label">' + escapeHtml(labelPrefix + ' ' + (index + 1)) + '</div>' +
           '<div class="match-result-text">' +
-            escapeHtml(match.a.mc_name || '') + ' vs ' + escapeHtml(match.b.mc_name || '') +
-            ' → <span class="winner-text">' + escapeHtml(match.winner.mc_name || '') + '</span> 勝利' +
-            '（' + match.wins_a + '-' + match.wins_b + '）' +
+            escapeHtml(row.a.mc_name || '') + ' 勝利 ' + row.wins_a + '回 / ' +
+            escapeHtml(row.b.mc_name || '') + ' 勝利 ' + row.wins_b + '回' +
           '</div>' +
-          '<span class="probability-text">' +
-            escapeHtml(match.a.mc_name || '') + ' 勝率 ' + formatPercent(match.probability_a) + '% / ' +
-            escapeHtml(match.b.mc_name || '') + ' 勝率 ' + formatPercent(match.probability_b) + '%' +
-            ' ｜ 補正後レート ' + formatRating(match.rating_a) + ' vs ' + formatRating(match.rating_b) +
-            ' ｜ 総試合数 ' + match.total_matches_a + ' vs ' + match.total_matches_b +
+          '<span class="detail-text">' +
+            '平均勝率 ' + escapeHtml(row.a.mc_name || '') + ' ' + formatPercent(avgProbA) + '% / ' +
+            escapeHtml(row.b.mc_name || '') + ' ' + formatPercent(avgProbB) + '%' +
+            ' ｜ 平均補正後レート ' + formatRating(avgRatingA) + ' vs ' + formatRating(avgRatingB) +
+            ' ｜ 総試合数 ' + row.total_matches_a + ' vs ' + row.total_matches_b +
           '</span>';
 
         container.appendChild(item);
       });
+    }
+
+    function renderOverallTable(rows) {
+      const container = document.getElementById('overall-prob-table');
+      const tableRows = rows.map(function(row) {
+        const strength = getStrengthObject(row.mc);
+        const baseRating = currentMode === 'peak' ? strength.peak_score : strength.current_score;
+        const adjustedRating = getAdjustedRatingForMc(row.mc);
+
+        return `
+          <tr>
+            <td>${escapeHtml(row.mc.mc_name || '')}</td>
+            <td class="num">${formatRateFromCount(row.champion)}%</td>
+            <td class="num">${formatRateFromCount(row.runner_up)}%</td>
+            <td class="num">${formatRateFromCount(row.best4)}%</td>
+            <td class="num">${formatRateFromCount(row.best8_exit)}%</td>
+            <td class="num">${strength.total_matches}</td>
+            <td class="num">${formatRating(baseRating)}</td>
+            <td class="num">${formatRating(adjustedRating)}</td>
+          </tr>
+        `;
+      }).join('');
+
+      container.innerHTML = `
+        <table class="prob-table">
+          <thead>
+            <tr>
+              <th>MC</th>
+              <th class="num">優勝</th>
+              <th class="num">準優勝</th>
+              <th class="num">Best4敗退</th>
+              <th class="num">Best8敗退</th>
+              <th class="num">総試合数</th>
+              <th class="num">元レート</th>
+              <th class="num">補正後</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${tableRows}
+          </tbody>
+        </table>
+      `;
     }
 
     function renderResults(result) {
@@ -1157,17 +1328,19 @@
       document.getElementById('round-best8').classList.add('show');
       document.getElementById('round-best4').classList.add('show');
       document.getElementById('round-final').classList.add('show');
+      document.getElementById('overall-prob').classList.add('show');
 
-      document.getElementById('result-summary-winner').textContent = result.champion.mc_name || '未決定';
-
+      document.getElementById('result-summary-winner').textContent = result.favorite ? result.favorite.mc_name : '未決定';
       document.getElementById('result-mode-note').textContent =
-        result.mode === 'peak'
-          ? 'peak_score を基準にしつつ、試合数補正と内部ベストオブ3でシミュレーションしています。'
-          : 'current_score を基準にしつつ、試合数補正と内部ベストオブ3でシミュレーションしています。';
+        (result.mode === 'peak'
+          ? 'peak_score'
+          : 'current_score') +
+        ' を基準に、試合数補正・内部ベストオブ3・100回シミュレーションで集計しています。';
 
-      renderRoundList('best8-list', result.best8, 'Best8');
-      renderRoundList('best4-list', result.best4, 'Best4');
-      renderRoundList('final-list', result.final, 'Final');
+      renderStageDistribution('best8-list', result.best8, 'Best8');
+      renderStageDistribution('best4-list', result.best4, 'Best4');
+      renderStageDistribution('final-list', result.final, 'Final');
+      renderOverallTable(result.overall);
     }
 
     function clearResultsView() {
@@ -1175,17 +1348,19 @@
       document.getElementById('round-best8').classList.remove('show');
       document.getElementById('round-best4').classList.remove('show');
       document.getElementById('round-final').classList.remove('show');
+      document.getElementById('overall-prob').classList.remove('show');
 
       document.getElementById('result-summary-winner').textContent = '未決定';
       document.getElementById('result-mode-note').textContent = '';
       document.getElementById('best8-list').innerHTML = '';
       document.getElementById('best4-list').innerHTML = '';
       document.getElementById('final-list').innerHTML = '';
+      document.getElementById('overall-prob-table').innerHTML = '';
     }
 
     function handleSimulate() {
       if (selectedMCs.length !== 8) return;
-      lastSimulationResult = simulateTournament();
+      lastSimulationResult = simulateTournamentDistribution();
       renderResults(lastSimulationResult);
     }
 
