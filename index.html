@@ -311,6 +311,101 @@
       text-align: right;
     }
 
+    .sp-ranking-wrap {
+      display: none;
+      margin-top: 18px;
+    }
+
+    .sp-accordion {
+      display: block;
+      margin-bottom: 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%),
+        linear-gradient(180deg, rgba(18, 22, 31, 0.96) 0%, rgba(14, 18, 28, 0.98) 100%);
+      box-shadow: 0 18px 48px rgba(0,0,0,0.22);
+      overflow: hidden;
+    }
+
+    .sp-accordion summary {
+      position: relative;
+      list-style: none;
+      cursor: pointer;
+      padding: 15px 44px 15px 16px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent);
+      user-select: none;
+    }
+
+    .sp-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .sp-accordion summary::after {
+      content: "＋";
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-soft);
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .sp-accordion[open] summary::after {
+      content: "−";
+    }
+
+    .sp-accordion-body {
+      padding: 0 16px 14px;
+    }
+
+    .sp-accordion-body .home-status {
+      margin-top: 0;
+    }
+
+    .sp-ranking-list,
+    .sp-prize-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .sp-ranking-list li,
+    .sp-prize-list li {
+      display: grid;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      width: 100%;
+    }
+
+    .sp-ranking-list li {
+      grid-template-columns: 40px minmax(0, 1fr) auto;
+    }
+
+    .sp-prize-list li {
+      grid-template-columns: 40px minmax(0, 1fr) auto;
+    }
+
+    .sp-ranking-list li:last-child,
+    .sp-prize-list li:last-child {
+      border-bottom: none;
+    }
+
+    .sp-ranking-list .home-rank-name,
+    .sp-ranking-list .home-rank-name a,
+    .sp-ranking-list .home-rank-name span,
+    .sp-prize-list .home-prize-name,
+    .sp-prize-list .home-prize-name a,
+    .sp-prize-list .home-prize-name span {
+      max-width: 100%;
+    }
+
     @media (max-width: 1100px) {
       .home-main-grid {
         grid-template-columns: minmax(260px, 320px) minmax(280px, 360px);
@@ -382,25 +477,6 @@
         border-radius: 18px;
       }
 
-      .home-event-name {
-        max-width: 100%;
-      }
-
-      .home-ranking-list li,
-      .home-prize-list li {
-        grid-template-columns: 38px minmax(0, 6.2em) auto;
-        gap: 7px;
-      }
-
-      .home-rank-name,
-      .home-rank-name a,
-      .home-rank-name span,
-      .home-prize-name,
-      .home-prize-name a,
-      .home-prize-name span {
-        max-width: 6.2em;
-      }
-
       .home-rank-score,
       .home-prize-money {
         font-size: 0.92rem;
@@ -408,6 +484,15 @@
 
       .home-action-btn {
         min-width: 100%;
+      }
+
+      .home-ranking-card,
+      .home-prize-card {
+        display: none;
+      }
+
+      .sp-ranking-wrap {
+        display: block;
       }
     }
   </style>
@@ -470,6 +555,24 @@
         <ol id="prize-list" class="home-prize-list"></ol>
       </section>
     </main>
+
+    <section class="sp-ranking-wrap">
+      <details class="sp-accordion">
+        <summary>スコアランキング Top10</summary>
+        <div class="sp-accordion-body">
+          <p id="sp-ranking-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
+          <ol id="sp-ranking-list" class="sp-ranking-list"></ol>
+        </div>
+      </details>
+
+      <details class="sp-accordion">
+        <summary>獲得賞金ランキング Top10</summary>
+        <div class="sp-accordion-body">
+          <p id="sp-prize-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
+          <ol id="sp-prize-list" class="sp-prize-list"></ol>
+        </div>
+      </details>
+    </section>
   </div>
 
   <script>
@@ -480,27 +583,103 @@
       return num.toLocaleString("ja-JP");
     }
 
+    function createMcNameElement(mcName, mcId, className) {
+      const nameEl = document.createElement("span");
+      nameEl.className = className;
+
+      if (mcId) {
+        const a = document.createElement("a");
+        a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
+        a.textContent = mcName;
+        a.title = mcName;
+        nameEl.appendChild(a);
+      } else {
+        const span = document.createElement("span");
+        span.textContent = mcName;
+        span.title = mcName;
+        nameEl.appendChild(span);
+      }
+
+      return nameEl;
+    }
+
+    function appendRankingItem(listEl, item, index) {
+      const li = document.createElement("li");
+
+      const rankNo = document.createElement("span");
+      rankNo.className = "home-rank-no";
+      rankNo.textContent = `${item.rank || index + 1}.`;
+
+      const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
+      const mcId = item.mc_id ? String(item.mc_id) : "";
+      const rankName = createMcNameElement(mcName, mcId, "home-rank-name");
+
+      const rankScore = document.createElement("span");
+      rankScore.className = "home-rank-score";
+
+      const rawScore = item.current_strength_score_v2 ?? "";
+      rankScore.textContent =
+        rawScore !== "" && !isNaN(Number(rawScore))
+          ? Number(rawScore).toFixed(2)
+          : String(rawScore);
+
+      li.appendChild(rankNo);
+      li.appendChild(rankName);
+      li.appendChild(rankScore);
+      listEl.appendChild(li);
+    }
+
+    function appendPrizeItem(listEl, item, index) {
+      const li = document.createElement("li");
+
+      const rankNo = document.createElement("span");
+      rankNo.className = "home-prize-no";
+      rankNo.textContent = `${item.rank || index + 1}.`;
+
+      const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
+      const mcId = item.mc_id ? String(item.mc_id) : "";
+      const nameEl = createMcNameElement(mcName, mcId, "home-prize-name");
+
+      const moneyEl = document.createElement("span");
+      moneyEl.className = "home-prize-money";
+      moneyEl.textContent = formatYen(item.total_prize_money || 0);
+
+      li.appendChild(rankNo);
+      li.appendChild(nameEl);
+      li.appendChild(moneyEl);
+      listEl.appendChild(li);
+    }
+
     function loadHomeData() {
       const rankingCallbackName = "mcBattleDataCallback";
       const prizeCallbackName = "mcBattlePrizeHomeCallback";
 
       const rankingStatusEl = document.getElementById("ranking-status");
       const rankingListEl = document.getElementById("ranking-list");
+      const spRankingStatusEl = document.getElementById("sp-ranking-status");
+      const spRankingListEl = document.getElementById("sp-ranking-list");
+
       const eventsStatusEl = document.getElementById("events-status");
       const recentEventsListEl = document.getElementById("recent-events-list");
+
       const prizeStatusEl = document.getElementById("prize-status");
       const prizeListEl = document.getElementById("prize-list");
+      const spPrizeStatusEl = document.getElementById("sp-prize-status");
+      const spPrizeListEl = document.getElementById("sp-prize-list");
 
       window[rankingCallbackName] = function(data) {
         console.log("home base data:", data);
 
         rankingListEl.innerHTML = "";
+        spRankingListEl.innerHTML = "";
         recentEventsListEl.innerHTML = "";
 
         try {
           if (data.error) {
             rankingStatusEl.textContent = "データ取得エラー: " + (data.message || "unknown error");
             rankingStatusEl.classList.add("error");
+            spRankingStatusEl.textContent = "データ取得エラー: " + (data.message || "unknown error");
+            spRankingStatusEl.classList.add("error");
             eventsStatusEl.textContent = "データ取得エラー";
             eventsStatusEl.classList.add("error");
             return;
@@ -509,48 +688,12 @@
           const rankings = Array.isArray(data.rankings) ? data.rankings.slice(0, 10) : [];
 
           rankings.forEach((item, index) => {
-            const li = document.createElement("li");
-
-            const rankNo = document.createElement("span");
-            rankNo.className = "home-rank-no";
-            rankNo.textContent = `${item.rank || index + 1}.`;
-
-            const rankName = document.createElement("span");
-            rankName.className = "home-rank-name";
-
-            const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
-            const mcId = item.mc_id ? String(item.mc_id) : "";
-
-            if (mcId) {
-              const a = document.createElement("a");
-              a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
-              a.textContent = mcName;
-              a.title = mcName;
-              rankName.appendChild(a);
-            } else {
-              const span = document.createElement("span");
-              span.textContent = mcName;
-              span.title = mcName;
-              rankName.appendChild(span);
-            }
-
-            const rankScore = document.createElement("span");
-            rankScore.className = "home-rank-score";
-
-            const rawScore = item.current_strength_score_v2 ?? "";
-            rankScore.textContent =
-              rawScore !== "" && !isNaN(Number(rawScore))
-                ? Number(rawScore).toFixed(2)
-                : String(rawScore);
-
-            li.appendChild(rankNo);
-            li.appendChild(rankName);
-            li.appendChild(rankScore);
-
-            rankingListEl.appendChild(li);
+            appendRankingItem(rankingListEl, item, index);
+            appendRankingItem(spRankingListEl, item, index);
           });
 
           rankingStatusEl.textContent = `Top${rankings.length}を表示`;
+          spRankingStatusEl.textContent = `Top${rankings.length}を表示`;
 
           const recentEvents = Array.isArray(data.recent_events) ? data.recent_events.slice(0, 5) : [];
 
@@ -577,6 +720,8 @@
           console.error("home base render error:", err);
           rankingStatusEl.textContent = "ランキング描画エラー";
           rankingStatusEl.classList.add("error");
+          spRankingStatusEl.textContent = "ランキング描画エラー";
+          spRankingStatusEl.classList.add("error");
           eventsStatusEl.textContent = "大会描画エラー";
           eventsStatusEl.classList.add("error");
         }
@@ -586,58 +731,32 @@
         console.log("home prize data:", data);
 
         prizeListEl.innerHTML = "";
+        spPrizeListEl.innerHTML = "";
 
         try {
           if (data.error) {
             prizeStatusEl.textContent = "獲得賞金ランキング取得エラー";
             prizeStatusEl.classList.add("error");
+            spPrizeStatusEl.textContent = "獲得賞金ランキング取得エラー";
+            spPrizeStatusEl.classList.add("error");
             return;
           }
 
           const rankings = Array.isArray(data.prize_rankings) ? data.prize_rankings.slice(0, 10) : [];
 
           rankings.forEach((item, index) => {
-            const li = document.createElement("li");
-
-            const rankNo = document.createElement("span");
-            rankNo.className = "home-prize-no";
-            rankNo.textContent = `${item.rank || index + 1}.`;
-
-            const nameEl = document.createElement("span");
-            nameEl.className = "home-prize-name";
-
-            const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
-            const mcId = item.mc_id ? String(item.mc_id) : "";
-
-            if (mcId) {
-              const a = document.createElement("a");
-              a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
-              a.textContent = mcName;
-              a.title = mcName;
-              nameEl.appendChild(a);
-            } else {
-              const span = document.createElement("span");
-              span.textContent = mcName;
-              span.title = mcName;
-              nameEl.appendChild(span);
-            }
-
-            const moneyEl = document.createElement("span");
-            moneyEl.className = "home-prize-money";
-            moneyEl.textContent = formatYen(item.total_prize_money || 0);
-
-            li.appendChild(rankNo);
-            li.appendChild(nameEl);
-            li.appendChild(moneyEl);
-
-            prizeListEl.appendChild(li);
+            appendPrizeItem(prizeListEl, item, index);
+            appendPrizeItem(spPrizeListEl, item, index);
           });
 
           prizeStatusEl.textContent = `Top${rankings.length}を表示`;
+          spPrizeStatusEl.textContent = `Top${rankings.length}を表示`;
         } catch (err) {
           console.error("home prize render error:", err);
           prizeStatusEl.textContent = "獲得賞金ランキング描画エラー";
           prizeStatusEl.classList.add("error");
+          spPrizeStatusEl.textContent = "獲得賞金ランキング描画エラー";
+          spPrizeStatusEl.classList.add("error");
         }
       };
 
@@ -646,6 +765,8 @@
       rankingScript.onerror = function() {
         rankingStatusEl.textContent = "JSONP読み込み失敗";
         rankingStatusEl.classList.add("error");
+        spRankingStatusEl.textContent = "JSONP読み込み失敗";
+        spRankingStatusEl.classList.add("error");
         eventsStatusEl.textContent = "JSONP読み込み失敗";
         eventsStatusEl.classList.add("error");
       };
@@ -656,6 +777,8 @@
       prizeScript.onerror = function() {
         prizeStatusEl.textContent = "JSONP読み込み失敗";
         prizeStatusEl.classList.add("error");
+        spPrizeStatusEl.textContent = "JSONP読み込み失敗";
+        spPrizeStatusEl.classList.add("error");
       };
       document.body.appendChild(prizeScript);
     }
