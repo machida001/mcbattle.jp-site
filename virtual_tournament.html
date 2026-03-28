@@ -387,19 +387,19 @@
     .selected-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
+      gap: 8px;
     }
 
     .selected-slot {
-      min-height: 72px;
-      border-radius: 14px;
-      padding: 12px;
+      min-height: 50px;
+      border-radius: 12px;
+      padding: 8px 10px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.07);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 8px;
     }
 
     .selected-slot.empty {
@@ -408,9 +408,9 @@
     }
 
     .selected-slot-name {
-      font-size: 0.96rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      line-height: 1.45;
+      line-height: 1.25;
       word-break: break-word;
     }
 
@@ -419,7 +419,7 @@
       border: none;
       background: transparent;
       color: #fff;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1;
       cursor: pointer;
       padding: 0;
@@ -1168,9 +1168,7 @@
       return {
         winner: randomValue < probA ? a : b,
         probability_a: probA,
-        probability_b: 1 - probA,
-        rating_a: ratingA,
-        rating_b: ratingB
+        probability_b: 1 - probA
       };
     }
 
@@ -1192,8 +1190,6 @@
         a: a,
         b: b,
         winner: winsA > winsB ? a : b,
-        rating_a: lastBout.rating_a,
-        rating_b: lastBout.rating_b,
         probability_a: lastBout.probability_a,
         probability_b: lastBout.probability_b
       };
@@ -1363,8 +1359,6 @@
     function renderOverallTable(rows) {
       const container = document.getElementById('overall-prob-table');
       const tableRows = rows.map(function(row) {
-        const adjustedRating = getAdjustedRatingForMc(row.mc);
-
         return `
           <tr>
             <td>${escapeHtml(row.mc.mc_name || '')}</td>
@@ -1372,7 +1366,6 @@
             <td class="num">${formatRateFromCount(row.runner_up)}%</td>
             <td class="num">${formatRateFromCount(row.best4)}%</td>
             <td class="num">${formatRateFromCount(row.best8_exit)}%</td>
-            <td class="num">${Math.round(adjustedRating)}</td>
           </tr>
         `;
       }).join('');
@@ -1386,7 +1379,6 @@
               <th class="num">準優勝</th>
               <th class="num">Best4敗退</th>
               <th class="num">Best8敗退</th>
-              <th class="num">補正後</th>
             </tr>
           </thead>
           <tbody>
@@ -1406,9 +1398,7 @@
       document.getElementById('round-final').classList.add('show');
 
       document.getElementById('result-summary-winner').textContent = result.favorite ? result.favorite.mc_name : '未決定';
-      document.getElementById('result-mode-note').textContent =
-        (result.mode === 'peak' ? '全盛期モード' : '今の強さモード') +
-        ' / 試合数補正・内部ベストオブ3・100回シミュレーション';
+      document.getElementById('result-mode-note').textContent = '';
 
       renderOverallTable(result.overall);
       renderStageDistribution('best8-list', result.best8, 'Best8');
