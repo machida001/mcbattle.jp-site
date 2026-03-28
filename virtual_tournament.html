@@ -178,13 +178,7 @@
     }
 
     .mode-section {
-      margin-bottom: 18px;
-    }
-
-    .mode-title {
-      margin: 0 0 12px;
-      font-size: 0.98rem;
-      font-weight: 700;
+      margin-bottom: 20px;
     }
 
     .mode-grid {
@@ -217,6 +211,16 @@
       font-size: 0.97rem;
       font-weight: 800;
       margin-bottom: 0;
+    }
+
+    .selector-section {
+      margin-bottom: 18px;
+    }
+
+    .selector-label {
+      margin: 0 0 12px;
+      font-size: 0.98rem;
+      font-weight: 700;
     }
 
     .search-row {
@@ -292,19 +296,6 @@
 
     .candidate-area {
       margin-bottom: 18px;
-    }
-
-    .candidate-title {
-      margin: 0 0 8px;
-      font-size: 0.98rem;
-      font-weight: 700;
-    }
-
-    .candidate-note {
-      color: var(--muted);
-      font-size: 0.88rem;
-      margin-bottom: 10px;
-      line-height: 1.6;
     }
 
     .candidate-list {
@@ -707,17 +698,14 @@
 
     <section class="panel">
       <div class="panel-header">
-        <h2 class="panel-title">参加MCを選ぶ</h2>
-        <p class="panel-subtitle">
-          よみがなでも検索できます。候補は2文字以上入力した時だけ表示します。
-        </p>
+        <h2 class="panel-title">仮想MCバトルを作る</h2>
       </div>
 
       <div class="panel-body">
         <div id="status" class="status-box">参加候補を読み込みます。</div>
 
         <div class="mode-section">
-          <h3 class="mode-title">シミュレーションモード</h3>
+          <h3 class="selector-label">モードを選ぶ</h3>
           <div class="mode-grid">
             <div id="mode-current" class="mode-card active" role="button" tabindex="0">
               <span class="mode-card-title">今の強さでシミュレーションする</span>
@@ -728,33 +716,33 @@
           </div>
         </div>
 
-        <div class="search-row">
-          <input
-            id="mc-search"
-            class="search-input"
-            type="text"
-            placeholder="MC名またはよみがなで検索（2文字以上）"
-            autocomplete="off"
-          />
-          <div id="selected-count" class="count-badge">0/8</div>
-          <button id="fill-top100-btn" class="btn btn-secondary" type="button">残りを上位100位からランダム入力</button>
-        </div>
+        <div class="selector-section">
+          <h3 class="selector-label">MCを選ぶ</h3>
 
-        <div class="candidate-area">
-          <h3 class="candidate-title">MC候補</h3>
-          <div class="candidate-note">
-            検索文字数が 0〜1文字の時は候補を表示しません。
-          </div>
-          <div id="candidate-list" class="candidate-list"></div>
-        </div>
-
-        <div class="selected-area">
-          <div class="selected-header">
-            <div class="selected-title">選択中の8人</div>
-            <div class="selected-sub">戦績0のMCは候補に出していません</div>
+          <div class="search-row">
+            <input
+              id="mc-search"
+              class="search-input"
+              type="text"
+              placeholder="MC名またはよみがなで検索"
+              autocomplete="off"
+            />
+            <div id="selected-count" class="count-badge">0/8</div>
+            <button id="fill-top100-btn" class="btn btn-secondary" type="button">残りを上位100位からランダム入力</button>
           </div>
 
-          <div id="selected-grid" class="selected-grid"></div>
+          <div class="candidate-area">
+            <div id="candidate-list" class="candidate-list"></div>
+          </div>
+
+          <div class="selected-area">
+            <div class="selected-header">
+              <div class="selected-title">選択中の8人</div>
+              <div class="selected-sub">戦績0のMCは候補に出していません</div>
+            </div>
+
+            <div id="selected-grid" class="selected-grid"></div>
+          </div>
         </div>
 
         <div class="result-panel">
@@ -906,7 +894,7 @@
         updateButtons();
 
         showStatus(
-          '候補 ' + allCandidates.length + ' 名を読み込みました。検索欄に2文字以上入れると候補が表示されます。',
+          '候補 ' + allCandidates.length + ' 名を読み込みました。',
           false
         );
       } catch (err) {
@@ -974,7 +962,7 @@
         const q = normalizeText(keyword);
 
         if (q.length < 2) {
-          container.innerHTML = '<div class="candidate-empty">2文字以上入力すると候補が表示されます。</div>';
+          container.innerHTML = '<div class="candidate-empty">候補を表示するには2文字以上入力してください。</div>';
         } else {
           container.innerHTML = '<div class="candidate-empty">該当するMCが見つかりません。</div>';
         }
