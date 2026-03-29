@@ -96,6 +96,11 @@
       return Number(value).toFixed(2);
     }
 
+    function formatYen(value) {
+      const num = Number(value || 0);
+      return num.toLocaleString("ja-JP");
+    }
+
     function displayValue(value) {
       return (value === null || value === undefined || value === "") ? "−" : value;
     }
@@ -124,8 +129,7 @@
       const label = `${safeDate} ${safeName}`.trim();
 
       if (!label) return "";
-      if (!safeId) return `<span>${label}</span>`;
-
+      if (!safeId) return `<a href="./event.html?event_id=${encodeURIComponent(safeId)}">${label}</a>`;
       return `<a href="./event.html?event_id=${encodeURIComponent(safeId)}">${label}</a>`;
     }
 
@@ -256,16 +260,30 @@
           const appearances = Array.isArray(data.participated_events) ? data.participated_events : [];
           const wins = sortMatchHistory(Array.isArray(data.wins_against) ? data.wins_against : []);
           const losses = sortMatchHistory(Array.isArray(data.losses_against) ? data.losses_against : []);
+          const championships = Array.isArray(data.championships) ? data.championships : [];
+          const totalPrizeMoney = data.total_prize_money ?? 0;
 
           titleEl.textContent = mc.mc_name || "MC名不明";
           metaEl.textContent = mc.mc_yomi ? `よみ：${mc.mc_yomi}` : "";
+
+          const championshipText = championships.length
+            ? championships.map((item) => {
+                const label = `${item.event_name || ""}（${formatYen(item.prize_money_winner || 0)}円）`;
+                if (item.event_id) {
+                  return `<a href="./event.html?event_id=${encodeURIComponent(item.event_id)}">${escapeHtml(label)}</a>`;
+                }
+                return escapeHtml(label);
+              }).join("<br>")
+            : "−";
 
           const infoItems = [
             ["MCBattle Rank順位", getRankLabel(ranking.rank)],
             ["スコア", displayValue(formatScore(ranking.current_score ?? ranking.score))],
             ["総試合数", displayValue(ranking.total_matches)],
             ["勝利数", displayValue(ranking.wins)],
-            ["敗北数", displayValue(ranking.losses)]
+            ["敗北数", displayValue(ranking.losses)],
+            ["これまで優勝した大会", championshipText],
+            ["獲得賞金総額", `${formatYen(totalPrizeMoney)}円`]
           ];
 
           infoItems.forEach(([label, value]) => {
@@ -276,7 +294,7 @@
             labelEl.textContent = `${label}：`;
 
             const valueEl = document.createElement("span");
-            valueEl.textContent = value;
+            valueEl.innerHTML = value;
 
             li.appendChild(labelEl);
             li.appendChild(valueEl);
