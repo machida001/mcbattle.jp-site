@@ -21,6 +21,23 @@
       margin-bottom: 12px;
     }
 
+    .result-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .result-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.6;
+    }
+
+    .result-medal {
+      flex: 0 0 auto;
+    }
+
     @media (max-width: 640px) {
       .event-page {
         padding: 20px 12px 56px;
@@ -201,6 +218,67 @@
       document.head.appendChild(style);
     }
 
+    function getMatchGroupsMap(groupedMatches) {
+      const map = {};
+      groupedMatches.forEach((group) => {
+        const key = String(group.round_name || "").trim();
+        map[key] = Array.isArray(group.matches) ? group.matches : [];
+      });
+      return map;
+    }
+
+    function getResultHtml(groupedMatches) {
+      const groupMap = getMatchGroupsMap(groupedMatches);
+
+      const finalMatches =
+        groupMap["決勝"] ||
+        groupMap["FINAL"] ||
+        groupMap["Final"] ||
+        groupMap["final"] ||
+        [];
+
+      const semiMatches =
+        groupMap["準決勝"] ||
+        [];
+
+      let championHtml = "不明";
+      let runnerUpHtml = "不明";
+      let best4Html = "不明";
+
+      if (finalMatches.length > 0) {
+        const finalMatch = finalMatches[0];
+        championHtml = renderMcLink(finalMatch.winner_name || "不明", finalMatch.winner_mc_id || "");
+        runnerUpHtml = renderMcLink(finalMatch.loser_name || "不明", finalMatch.loser_mc_id || "");
+      }
+
+      if (semiMatches.length > 0) {
+        const losers = semiMatches
+          .map((match) => renderMcLink(match.loser_name || "不明", match.loser_mc_id || ""))
+          .filter(Boolean);
+
+        if (losers.length > 0) {
+          best4Html = losers.join(" / ");
+        }
+      }
+
+      return `
+        <div class="result-lines">
+          <div class="result-line">
+            <span class="result-medal">🥇</span>
+            <span>${championHtml}</span>
+          </div>
+          <div class="result-line">
+            <span class="result-medal">🥈</span>
+            <span>${runnerUpHtml}</span>
+          </div>
+          <div class="result-line">
+            <span class="result-medal">🥉</span>
+            <span>${best4Html}</span>
+          </div>
+        </div>
+      `;
+    }
+
     function loadEventDetail() {
       const eventId = getEventIdFromQuery();
 
@@ -256,7 +334,7 @@
           const infoItems = [
             { label: "開催日：", html: escapeHtml(event.event_date || "") },
             { label: "カテゴリ：", html: escapeHtml(event.event_category || "") },
-            { label: "優勝者：", html: renderMcLink(event.winner_name || "", "") },
+            { label: "結果：", html: getResultHtml(groupedMatches) },
             { label: "優勝賞金：", html: escapeHtml(formattedWinnerPrize ? `${formattedWinnerPrize}円` : "") }
           ];
 
@@ -331,14 +409,14 @@
             }
           });
 
-          matchesStatusEl.textContent = `${totalMatchCount}試合を表示`;
+          matchesStatusEl.textContent = "";
 
           if (warningMessages.length > 0) {
             const note = document.createElement("div");
             note.className = "note-box";
             note.textContent = `注意: ${warningMessages.join("、")}`;
             matchesListEl.prepend(note);
-            matchesStatusEl.textContent = `${totalMatchCount}試合を表示 / 注意: ${warningMessages.join("、")}`;
+            matchesStatusEl.textContent = `注意: ${warningMessages.join("、")}`;
           }
 
           if (totalMatchCount === 0) {
