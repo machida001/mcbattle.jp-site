@@ -168,7 +168,7 @@
             return;
           }
 
-          const rankings = Array.isArray(data.prize_rankings) ? data.prize_rankings : [];
+          const rankings = Array.isArray(data.rankings) ? data.rankings : [];
 
           rankings.forEach((item, index) => {
             const li = document.createElement("li");
@@ -218,7 +218,7 @@
       };
 
       const script = document.createElement("script");
-      script.src = `${API_URL}?mode=prize_ranking&callback=${callbackName}`;
+      script.src = `${API_URL}?mode=prize_rankings&callback=${callbackName}`;
       script.onerror = function() {
         statusEl.textContent = "JSONP読み込み失敗";
         statusEl.classList.add("error");
