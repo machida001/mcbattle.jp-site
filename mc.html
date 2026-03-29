@@ -50,15 +50,7 @@
 
     <section class="card">
       <div class="mc-card-inner">
-        <h2>出場大会</h2>
-        <p id="appearances-status" class="muted">読み込み中...</p>
-        <ul id="appearances-list" class="list-tight"></ul>
-      </div>
-    </section>
-
-    <section class="card">
-      <div class="mc-card-inner">
-        <h2>勝った相手</h2>
+        <h2 id="wins-heading">勝った相手</h2>
         <p id="wins-status" class="muted">読み込み中...</p>
         <ul id="wins-list" class="list-tight"></ul>
       </div>
@@ -66,9 +58,17 @@
 
     <section class="card">
       <div class="mc-card-inner">
-        <h2>負けた相手</h2>
+        <h2 id="losses-heading">負けた相手</h2>
         <p id="losses-status" class="muted">読み込み中...</p>
         <ul id="losses-list" class="list-tight"></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="mc-card-inner">
+        <h2>出場大会</h2>
+        <p id="appearances-status" class="muted">読み込み中...</p>
+        <ul id="appearances-list" class="list-tight"></ul>
       </div>
     </section>
   </div>
@@ -206,14 +206,16 @@
       const metaEl = document.getElementById("mc-meta");
       const infoListEl = document.getElementById("mc-info-list");
 
-      const appearancesStatusEl = document.getElementById("appearances-status");
-      const appearancesListEl = document.getElementById("appearances-list");
-
+      const winsHeadingEl = document.getElementById("wins-heading");
       const winsStatusEl = document.getElementById("wins-status");
       const winsListEl = document.getElementById("wins-list");
 
+      const lossesHeadingEl = document.getElementById("losses-heading");
       const lossesStatusEl = document.getElementById("losses-status");
       const lossesListEl = document.getElementById("losses-list");
+
+      const appearancesStatusEl = document.getElementById("appearances-status");
+      const appearancesListEl = document.getElementById("appearances-list");
 
       if (!mcId) {
         titleEl.textContent = "MC IDが指定されていません";
@@ -264,9 +266,13 @@
           const losses = sortMatchHistory(Array.isArray(data.losses_against) ? data.losses_against : []);
           const championships = Array.isArray(data.championships) ? data.championships : [];
           const totalPrizeMoney = data.total_prize_money ?? 0;
+          const mcName = mc.mc_name || "このMC";
 
-          titleEl.textContent = mc.mc_name || "MC名不明";
-          metaEl.textContent = mc.mc_yomi ? `よみ：${mc.mc_yomi}` : "";
+          titleEl.textContent = mcName;
+          metaEl.textContent = "";
+
+          winsHeadingEl.textContent = `${mcName}が勝った対戦相手`;
+          lossesHeadingEl.textContent = `${mcName}が負けた対戦相手`;
 
           const championshipText = championships.length
             ? championships.map((item) => {
@@ -317,13 +323,13 @@
             wins.forEach((item) => {
               const li = document.createElement("li");
               const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "");
-              const eventHtml = renderEventLink(item.event_name || "", item.event_id || "", item.event_date || "");
+              const eventName = escapeHtml(item.event_name || "");
               const roundName = escapeHtml(item.round_name || "");
 
               li.innerHTML = `
                 ${opponentHtml}
                 ${roundName ? `｜${roundName}` : ""}
-                ${eventHtml ? `｜${eventHtml}` : ""}
+                ${eventName ? `｜${eventName}` : ""}
               `;
               winsListEl.appendChild(li);
             });
@@ -337,13 +343,13 @@
             losses.forEach((item) => {
               const li = document.createElement("li");
               const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "");
-              const eventHtml = renderEventLink(item.event_name || "", item.event_id || "", item.event_date || "");
+              const eventName = escapeHtml(item.event_name || "");
               const roundName = escapeHtml(item.round_name || "");
 
               li.innerHTML = `
                 ${opponentHtml}
                 ${roundName ? `｜${roundName}` : ""}
-                ${eventHtml ? `｜${eventHtml}` : ""}
+                ${eventName ? `｜${eventName}` : ""}
               `;
               lossesListEl.appendChild(li);
             });
