@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MCBattle.jp</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <style>
     :root{
       --bg:#0f1014;
@@ -16,7 +14,6 @@
       --muted:#b2b8c7;
       --accent:#d8b46a;
       --accent-2:#8fb3ff;
-      --accent-3:#8dd3a7;
       --danger:#d97f7f;
       --shadow:0 18px 48px rgba(0,0,0,.28);
       --radius:22px;
@@ -60,7 +57,14 @@
     }
 
     .hero{
-      padding:8px 0 12px;
+      padding:8px 0 18px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.3fr .95fr;
+      gap:18px;
+      align-items:stretch;
     }
 
     .panel{
@@ -70,13 +74,13 @@
       box-shadow:var(--shadow);
     }
 
-    .hero-panel{
-      padding:28px 30px;
+    .hero-main{
+      padding:30px;
     }
 
     .lead-title{
       margin:0 0 12px;
-      font-size:22px;
+      font-size:24px;
       font-weight:700;
       letter-spacing:.02em;
     }
@@ -87,74 +91,15 @@
       font-size:15px;
     }
 
-    .criteria-wrap{
-      margin-top:16px;
-    }
-
-    .criteria-panel{
-      padding:22px 24px;
-    }
-
-    .section-label{
-      margin:0 0 10px;
-      font-size:18px;
-      font-weight:700;
-      letter-spacing:.02em;
-    }
-
-    .criteria-text{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .spec-card{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:16px 18px;
-      border:1px solid rgba(216,180,106,.28);
-      background:linear-gradient(180deg, rgba(216,180,106,.12), rgba(216,180,106,.05));
-      border-radius:18px;
-      transition:.18s ease;
-    }
-
-    .spec-card:hover,
-    .link-card:hover,
-    .sim-card:hover,
-    .list-row:hover{
-      transform:translateY(-1px);
-    }
-
-    .spec-card-title{
-      margin:0 0 4px;
-      font-size:15px;
-      font-weight:700;
-    }
-
-    .spec-card-sub{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .spec-card-arrow{
-      color:var(--accent);
-      font-size:22px;
-      line-height:1;
-      flex:0 0 auto;
-    }
-
     .link-grid{
+      margin-top:22px;
       display:grid;
-      grid-template-columns:repeat(4, minmax(0, 1fr));
-      gap:14px;
-      margin-top:16px;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
     }
 
     .link-card{
-      min-height:86px;
+      min-height:84px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -168,17 +113,63 @@
       transition:.18s ease;
     }
 
-    .sim-wrap{
-      margin-top:16px;
+    .hero-side{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .section-label{
+      margin:0 0 10px;
+      font-size:17px;
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+
+    .criteria-text{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .spec-card,
+    .sim-card{
+      display:block;
+      padding:18px 18px;
+      border-radius:18px;
+      transition:.18s ease;
+    }
+
+    .spec-card{
+      border:1px solid rgba(216,180,106,.28);
+      background:linear-gradient(180deg, rgba(216,180,106,.12), rgba(216,180,106,.05));
     }
 
     .sim-card{
-      display:block;
-      padding:20px 22px;
-      border-radius:20px;
       border:1px solid rgba(143,179,255,.3);
       background:linear-gradient(180deg, rgba(143,179,255,.16), rgba(143,179,255,.06));
-      transition:.18s ease;
+    }
+
+    .spec-card:hover,
+    .sim-card:hover,
+    .link-card:hover,
+    .list-row:hover{
+      transform:translateY(-1px);
+    }
+
+    .spec-title,
+    .sim-title{
+      margin:0 0 6px;
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .spec-sub,
+    .sim-sub{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
     }
 
     .sim-kicker{
@@ -190,31 +181,19 @@
       font-weight:700;
     }
 
-    .sim-title{
-      margin:0 0 6px;
-      font-size:18px;
-      font-weight:800;
-    }
-
-    .sim-sub{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-    }
-
     .dashboard{
-      padding:30px 0 48px;
+      padding:8px 0 48px;
     }
 
     .dashboard-grid{
       display:grid;
-      grid-template-columns:repeat(4, minmax(0, 1fr));
+      grid-template-columns:repeat(2, minmax(0, 1fr));
       gap:18px;
       align-items:start;
     }
 
     .dashboard-card{
-      padding:20px 20px 14px;
+      padding:22px 22px 14px;
       min-width:0;
     }
 
@@ -303,35 +282,26 @@
       height:28px;
     }
 
-    @media (max-width:1080px){
-      .dashboard-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
+    @media (max-width:980px){
+      .hero-grid{
+        grid-template-columns:1fr;
       }
-    }
-
-    @media (max-width:800px){
-      .container{
-        width:min(calc(100% - 28px), var(--max));
-      }
-
-      .hero-panel{
-        padding:22px 18px;
-      }
-
-      .criteria-panel{
-        padding:18px 16px;
-      }
-
-      .link-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
-      }
-
       .dashboard-grid{
         grid-template-columns:1fr;
       }
     }
 
-    @media (max-width:560px){
+    @media (max-width:640px){
+      .container{
+        width:min(calc(100% - 28px), var(--max));
+      }
+
+      .hero-main,
+      .hero-side,
+      .dashboard-card{
+        padding:18px 16px 14px;
+      }
+
       .link-grid{
         grid-template-columns:1fr;
       }
@@ -352,42 +322,40 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="panel hero-panel">
-          <h2 class="lead-title">単純な勝敗数ではなく、「誰に勝ったか」「どのラウンドで勝ったか」「どれくらい最近か」をもとに、国内主要1on1 MCバトルの記録を整理しています。</h2>
-          <p class="lead-text">
-            大会記録・MCごとの戦績・スコアランキング・獲得賞金ランキングを横断して見られる、国内MCバトル記録サイトです。
-          </p>
+        <div class="hero-grid">
+          <section class="panel hero-main">
+            <h2 class="lead-title">単純な勝敗数ではなく、「誰に勝ったか」「どのラウンドで勝ったか」「どれくらい最近か」をもとに、国内主要1on1 MCバトルの記録を整理しています。</h2>
+            <p class="lead-text">
+              大会記録・MCごとの戦績・スコアランキング・獲得賞金ランキングを横断して見られる、国内MCバトル記録サイトです。
+            </p>
 
-          <div class="criteria-wrap">
-            <div class="panel criteria-panel">
+            <div class="link-grid">
+              <a class="link-card" href="rankings.html">スコアランキング</a>
+              <a class="link-card" href="prize_rankings.html">獲得賞金ランキング</a>
+              <a class="link-card" href="events.html">大会一覧</a>
+              <a class="link-card" href="mcs.html">MC一覧</a>
+            </div>
+          </section>
+
+          <aside class="panel hero-side">
+            <div>
               <h3 class="section-label">公開基準</h3>
               <p class="criteria-text">
                 国内主要な1on1 MCバトルを対象に、原則として本戦のみを掲載しています。予選・不戦勝・2on2 / 団体戦・エキシビションは除外しています。
               </p>
-              <a class="spec-card" href="ranking_spec.html">
-                <div>
-                  <p class="spec-card-title">ランキング仕様について</p>
-                  <p class="spec-card-sub">集計対象・評価軸・除外基準を見る</p>
-                </div>
-                <span class="spec-card-arrow">→</span>
-              </a>
             </div>
-          </div>
 
-          <div class="link-grid">
-            <a class="link-card" href="ranking.html">スコアランキング</a>
-            <a class="link-card" href="prize_rankings.html">獲得賞金ランキング</a>
-            <a class="link-card" href="events.html">大会一覧</a>
-            <a class="link-card" href="mcs.html">MC一覧</a>
-          </div>
+            <a class="spec-card" href="ranking_spec.html">
+              <h3 class="spec-title">ランキング仕様について</h3>
+              <p class="spec-sub">集計対象・評価軸・除外基準を見る</p>
+            </a>
 
-          <div class="sim-wrap">
             <a class="sim-card" href="virtual_tournament.html">
               <span class="sim-kicker">8人のMCを選んで戦わせる</span>
               <h3 class="sim-title">仮想MCバトルシミュレーション</h3>
-              <p class="sim-sub">選んだ8人で100回トーナメントを回し、優勝・準優勝・Best4 などの分布を確認できます。</p>
+              <p class="sim-sub">選んだ8人で100回トーナメントを回し、優勝・準優勝・Best4などの分布を確認できます。</p>
             </a>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -439,7 +407,6 @@
 
     function formatDateJP(raw) {
       if (!raw) return "";
-
       const s = String(raw).trim();
 
       if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
@@ -465,11 +432,9 @@
 
     function parseDate(raw) {
       if (!raw) return null;
-
       if (Object.prototype.toString.call(raw) === "[object Date]" && !Number.isNaN(raw.getTime())) {
         return raw;
       }
-
       const s = String(raw).trim().replace(/\./g, "-").replace(/\//g, "-");
       const date = new Date(s);
       return Number.isNaN(date.getTime()) ? null : date;
@@ -646,14 +611,7 @@
         const payload = await jsonp(API_URL);
         if (payload?.error) throw new Error(payload.message || "top data error");
 
-        const rankingsSource =
-          payload?.rankings ||
-          payload?.ranking ||
-          payload?.top_rankings ||
-          payload?.items ||
-          [];
-
-        const rankings = Array.isArray(rankingsSource) ? rankingsSource.slice(0, 10) : [];
+        const rankings = Array.isArray(payload?.rankings) ? payload.rankings.slice(0, 10) : [];
         const recentEventsRaw = Array.isArray(payload?.recent_events) ? payload.recent_events : [];
 
         renderScoreRanking("score-ranking", rankings, "データがありません");
