@@ -4,1047 +4,698 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MCBattle.jp</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <style>
-    .home-shell {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 18px 16px 72px;
+    :root{
+      --bg:#0f1014;
+      --panel:#171922;
+      --panel-2:#1c1f2a;
+      --line:#2a3040;
+      --text:#f4f5f7;
+      --muted:#b2b8c7;
+      --accent:#d8b46a;
+      --accent-2:#8fb3ff;
+      --accent-3:#8dd3a7;
+      --danger:#d97f7f;
+      --shadow:0 18px 48px rgba(0,0,0,.28);
+      --radius:22px;
+      --max:1180px;
     }
 
-    .home-hero {
-      position: relative;
-      overflow: hidden;
-      padding: 22px 28px 26px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
       background:
-        radial-gradient(circle at top right, rgba(120, 160, 255, 0.18), transparent 28%),
-        radial-gradient(circle at left center, rgba(180, 220, 255, 0.08), transparent 24%),
-        linear-gradient(180deg, rgba(22, 27, 39, 0.96) 0%, rgba(14, 18, 28, 0.98) 100%);
-      box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.38),
-        inset 0 1px 0 rgba(255,255,255,0.04);
+        radial-gradient(circle at top, rgba(216,180,106,.08), transparent 28%),
+        linear-gradient(180deg, #11131a 0%, #0c0d12 100%);
+      color:var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height:1.65;
     }
 
-    .home-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%);
-      pointer-events: none;
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
-    .home-hero-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 12px;
+    .container{
+      width:min(calc(100% - 48px), var(--max));
+      margin:0 auto;
     }
 
-    .home-title {
-      margin: 0;
-      font-size: clamp(2.1rem, 4.6vw, 3.6rem);
-      line-height: 0.95;
-      letter-spacing: -0.035em;
-      font-weight: 700;
-      color: var(--accent);
-      font-family:
-        "Times New Roman",
-        Georgia,
-        "Baskerville",
-        "Hiragino Mincho ProN",
-        "Yu Mincho",
-        serif;
+    .site-header{
+      padding:28px 0 14px;
+    }
+
+    .site-title{
+      display:inline-block;
+      font-family: "Times New Roman", Georgia, "Baskerville", serif;
       font-style: italic;
-      text-shadow: 0 0 24px rgba(150, 190, 255, 0.08);
-    }
-
-    .hamburger-wrap {
-      display: none;
-      position: relative;
-      z-index: 20;
-    }
-
-    .hamburger-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(255,255,255,0.04);
-      color: var(--accent);
-      cursor: pointer;
-      font-size: 1.3rem;
-      line-height: 1;
-    }
-
-    .hamburger-btn:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hamburger-menu {
-      display: none;
-      position: absolute;
-      top: 52px;
-      left: 0;
-      min-width: 240px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background:
-        linear-gradient(180deg, rgba(22, 27, 39, 0.98) 0%, rgba(14, 18, 28, 0.99) 100%);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
-      padding: 10px;
-    }
-
-    .hamburger-menu.is-open {
-      display: block;
-    }
-
-    .hamburger-menu a {
-      display: block;
-      padding: 12px 14px;
-      border-radius: 10px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .hamburger-menu a:hover {
-      background: rgba(255,255,255,0.06);
-      text-decoration: none;
-    }
-
-    .home-lead-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .home-panel {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-      background: rgba(255,255,255,0.03);
-      min-width: 0;
-    }
-
-    .home-panel h2 {
-      margin: 0 0 10px;
-      font-size: 1rem;
-      letter-spacing: 0.03em;
-    }
-
-    .home-panel p:last-child {
-      margin-bottom: 0;
-    }
-
-    .spec-link-card {
-      display: block;
-      width: 100%;
-      margin: 14px 0;
-      padding: 14px 16px;
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 14px;
-      background: rgba(70, 70, 78, 0.92);
-      color: #f3f4f6;
-      text-decoration: none;
-      font-weight: 700;
-      transition:
-        transform 0.18s ease,
-        opacity 0.18s ease,
-        border-color 0.18s ease,
-        background-color 0.18s ease,
-        box-shadow 0.18s ease;
-    }
-
-    .spec-link-card:hover {
-      text-decoration: none;
-      transform: translateY(-1px);
-      opacity: 0.98;
-      background: rgba(92, 92, 102, 0.96);
-      border-color: rgba(255,255,255,0.22);
-      box-shadow: 0 0 18px rgba(0, 0, 0, 0.18);
-    }
-
-    .sim-link-card {
-      display: block;
-      width: 100%;
-      margin: 14px 0;
-      padding: 14px 16px;
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(116, 88, 220, 0.92), rgba(62, 120, 214, 0.92));
-      color: #f7f9ff;
-      text-decoration: none;
-      font-weight: 800;
-      box-shadow: 0 8px 24px rgba(66, 95, 190, 0.22);
-      transition:
-        transform 0.18s ease,
-        opacity 0.18s ease,
-        border-color 0.18s ease,
-        box-shadow 0.18s ease,
-        filter 0.18s ease;
-    }
-
-    .sim-link-card:hover {
-      text-decoration: none;
-      transform: translateY(-1px);
-      opacity: 0.99;
-      border-color: rgba(255,255,255,0.28);
-      box-shadow: 0 12px 28px rgba(66, 95, 190, 0.28);
-      filter: brightness(1.03);
-    }
-
-    .sim-link-card-small {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.82rem;
-      line-height: 1.45;
+      font-size: clamp(36px, 5vw, 56px);
       font-weight: 600;
-      color: rgba(247, 249, 255, 0.86);
+      letter-spacing: .03em;
+      color: var(--text);
+      margin:0;
     }
 
-    .sim-link-card-main {
-      display: block;
-      font-size: 1rem;
-      line-height: 1.45;
-      font-weight: 800;
-      color: #f7f9ff;
+    .hero{
+      padding: 8px 0 12px;
     }
 
-    .home-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    .home-action-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 48px;
-      min-width: 180px;
-      padding: 0 18px;
-      border-radius: 999px;
+    .hero-panel{
+      padding: 28px 30px;
+    }
+
+    .lead-title{
+      margin:0 0 12px;
+      font-size: 22px;
       font-weight: 700;
-      text-decoration: none;
-      color: var(--accent);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line);
-      transition:
-        transform 0.18s ease,
-        opacity 0.18s ease,
-        border-color 0.18s ease,
-        background-color 0.18s ease,
-        box-shadow 0.18s ease;
+      letter-spacing:.02em;
     }
 
-    .home-action-btn:hover {
-      text-decoration: none;
-      transform: translateY(-1px);
-      opacity: 0.95;
-      background: rgba(255,255,255,0.07);
-      border-color: var(--line-strong);
-      box-shadow: 0 0 18px rgba(135, 164, 255, 0.08);
+    .lead-text{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
     }
 
-    .home-main-grid {
-      display: grid;
-      grid-template-columns: minmax(260px, 320px) minmax(260px, 320px) minmax(280px, 360px) minmax(280px, 360px);
-      gap: 18px;
-      margin-top: 22px;
-      align-items: start;
-      justify-content: start;
+    .criteria-wrap{
+      margin-top:16px;
     }
 
-    .home-card {
-      position: relative;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 18px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%),
-        linear-gradient(180deg, rgba(18, 22, 31, 0.96) 0%, rgba(14, 18, 28, 0.98) 100%);
-      box-shadow: 0 18px 48px rgba(0,0,0,0.28);
-      min-width: 0;
+    .criteria-panel{
+      padding:22px 24px;
     }
 
-    .home-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
-      pointer-events: none;
+    .section-label{
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:.02em;
     }
 
-    .home-upcoming-card,
-    .home-events-card,
-    .home-ranking-card,
-    .home-prize-card {
-      width: fit-content;
-      min-width: 0;
-      justify-self: start;
+    .criteria-text{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
     }
 
-    .home-card-head {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 10px;
+    .spec-card{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:16px 18px;
+      border:1px solid rgba(216,180,106,.28);
+      background: linear-gradient(180deg, rgba(216,180,106,.12), rgba(216,180,106,.05));
+      border-radius:18px;
+      transition:.18s ease;
     }
 
-    .home-card-title {
-      margin: 0;
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: 0.02em;
+    .spec-card:hover,
+    .link-card:hover,
+    .sim-card:hover,
+    .list-row:hover{
+      transform:translateY(-1px);
     }
 
-    .home-status {
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-size: 0.92rem;
+    .spec-card-title{
+      margin:0 0 4px;
+      font-size:15px;
+      font-weight:700;
     }
 
-    .home-upcoming-list,
-    .home-events-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      width: fit-content;
+    .spec-card-sub{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
     }
 
-    .home-upcoming-list li,
-    .home-events-list li {
-      margin: 0;
-      border-bottom: 1px solid var(--line);
-      width: fit-content;
+    .spec-card-arrow{
+      color:var(--accent);
+      font-size:22px;
+      line-height:1;
+      flex:0 0 auto;
     }
 
-    .home-upcoming-list li:last-child,
-    .home-events-list li:last-child {
-      border-bottom: none;
+    .link-grid{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap:14px;
+      margin-top:16px;
     }
 
-    .home-upcoming-list a,
-    .home-events-list a {
-      display: block;
-      width: fit-content;
-      padding: 11px 0;
-      color: inherit;
-      text-decoration: none;
+    .link-card{
+      min-height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:18px 16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, #242936, #1c202b);
+      font-weight:700;
+      font-size:15px;
+      transition:.18s ease;
     }
 
-    .home-upcoming-list a:hover,
-    .home-events-list a:hover {
-      text-decoration: none;
-      opacity: 0.9;
+    .sim-wrap{
+      margin-top:16px;
     }
 
-    .home-event-date {
-      display: block;
-      color: var(--accent-dim);
-      font-size: 0.84rem;
+    .sim-card{
+      display:block;
+      padding:20px 22px;
+      border-radius:20px;
+      border:1px solid rgba(143,179,255,.3);
+      background: linear-gradient(180deg, rgba(143,179,255,.16), rgba(143,179,255,.06));
+      transition:.18s ease;
+    }
+
+    .sim-kicker{
+      display:block;
+      margin-bottom:4px;
+      color:#c7d8ff;
+      font-size:12px;
+      letter-spacing:.08em;
+      font-weight:700;
+    }
+
+    .sim-title{
+      margin:0 0 6px;
+      font-size:18px;
+      font-weight:800;
+    }
+
+    .sim-sub{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .dashboard{
+      padding: 30px 0 48px;
+    }
+
+    .dashboard-grid{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap:18px;
+      align-items:start;
+    }
+
+    .dashboard-card{
+      padding:20px 20px 14px;
+      min-width:0;
+    }
+
+    .dashboard-title{
+      margin:0 0 14px;
+      font-size:17px;
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+
+    .dashboard-list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .list-row{
+      display:block;
+      padding:12px 12px 11px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.025);
+      transition:.18s ease;
+      min-width:0;
+    }
+
+    .event-date{
+      display:block;
+      color:var(--accent);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+      margin-bottom:4px;
+    }
+
+    .event-name{
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      line-height:1.45;
+      word-break:break-word;
+    }
+
+    .rank-row{
+      display:grid;
+      grid-template-columns: 42px minmax(0,1fr) auto;
+      gap:10px;
+      align-items:center;
+    }
+
+    .rank-num{
+      font-family: "Times New Roman", Georgia, serif;
+      font-style:italic;
+      font-size:20px;
+      color:var(--accent);
+      text-align:center;
+    }
+
+    .rank-name{
+      min-width:0;
+      font-size:14px;
+      font-weight:700;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .rank-score{
+      color:var(--muted);
+      font-size:12px;
       font-variant-numeric: tabular-nums;
-      line-height: 1.35;
-      margin-bottom: 2px;
-      white-space: nowrap;
+      white-space:nowrap;
     }
 
-    .home-event-name {
-      display: block;
-      max-width: 14em;
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 0.14em;
-      line-height: 1.45;
-      overflow-wrap: anywhere;
-      word-break: break-word;
+    .status{
+      color:var(--muted);
+      font-size:13px;
+      padding:4px 2px 2px;
     }
 
-    .home-ranking-list,
-    .home-prize-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      width: fit-content;
+    .status.error{
+      color:var(--danger);
     }
 
-    .home-ranking-list li,
-    .home-prize-list li,
-    .sp-upcoming-list li,
-    .sp-events-list li,
-    .sp-ranking-list li,
-    .sp-prize-list li {
-      display: grid;
-      gap: 8px;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-      width: 100%;
+    .footer-space{
+      height:28px;
     }
 
-    .home-ranking-list li,
-    .home-prize-list li {
-      width: fit-content;
-    }
-
-    .home-ranking-list li {
-      grid-template-columns: 44px minmax(0, 7.2em) auto;
-    }
-
-    .home-prize-list li {
-      grid-template-columns: 44px minmax(0, 7.2em) auto;
-    }
-
-    .sp-ranking-list li,
-    .sp-prize-list li {
-      grid-template-columns: 40px minmax(0, 1fr) auto;
-    }
-
-    .home-ranking-list li:last-child,
-    .home-prize-list li:last-child,
-    .sp-upcoming-list li:last-child,
-    .sp-events-list li:last-child,
-    .sp-ranking-list li:last-child,
-    .sp-prize-list li:last-child {
-      border-bottom: none;
-    }
-
-    .home-rank-no,
-    .home-prize-no {
-      font-variant-numeric: tabular-nums;
-      font-size: 0.98rem;
-      font-weight: 900;
-      color: var(--accent-dim);
-      letter-spacing: 0.02em;
-      text-align: right;
-    }
-
-    .home-ranking-list li:nth-child(1) .home-rank-no,
-    .home-ranking-list li:nth-child(2) .home-rank-no,
-    .home-ranking-list li:nth-child(3) .home-rank-no,
-    .home-prize-list li:nth-child(1) .home-prize-no,
-    .home-prize-list li:nth-child(2) .home-prize-no,
-    .home-prize-list li:nth-child(3) .home-prize-no,
-    .sp-ranking-list li:nth-child(1) .home-rank-no,
-    .sp-ranking-list li:nth-child(2) .home-rank-no,
-    .sp-ranking-list li:nth-child(3) .home-rank-no,
-    .sp-prize-list li:nth-child(1) .home-prize-no,
-    .sp-prize-list li:nth-child(2) .home-prize-no,
-    .sp-prize-list li:nth-child(3) .home-prize-no {
-      color: var(--accent);
-    }
-
-    .home-rank-name,
-    .home-prize-name {
-      min-width: 0;
-      max-width: 7.2em;
-    }
-
-    .home-rank-name a,
-    .home-rank-name span,
-    .home-prize-name a,
-    .home-prize-name span,
-    .sp-upcoming-list a,
-    .sp-events-list a {
-      display: inline-block;
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 0.14em;
-      font-weight: 700;
-      vertical-align: bottom;
-    }
-
-    .home-rank-name a,
-    .home-rank-name span,
-    .home-prize-name a,
-    .home-prize-name span {
-      max-width: 7.2em;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .home-rank-score,
-    .home-prize-money {
-      font-variant-numeric: tabular-nums;
-      color: var(--accent-soft);
-      font-weight: 700;
-      white-space: nowrap;
-      text-align: right;
-    }
-
-    .sp-collapsible-wrap {
-      display: none;
-      margin-top: 18px;
-    }
-
-    .sp-accordion {
-      display: block;
-      margin-bottom: 14px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%),
-        linear-gradient(180deg, rgba(18, 22, 31, 0.96) 0%, rgba(14, 18, 28, 0.98) 100%);
-      box-shadow: 0 18px 48px rgba(0,0,0,0.22);
-      overflow: hidden;
-    }
-
-    .sp-accordion summary {
-      position: relative;
-      list-style: none;
-      cursor: pointer;
-      padding: 15px 44px 15px 16px;
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--accent);
-      user-select: none;
-    }
-
-    .sp-accordion summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .sp-accordion summary::after {
-      content: "＋";
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--accent-soft);
-      font-size: 1.1rem;
-      line-height: 1;
-    }
-
-    .sp-accordion[open] summary::after {
-      content: "−";
-    }
-
-    .sp-accordion-body {
-      padding: 0 16px 14px;
-    }
-
-    .sp-accordion-body .home-status {
-      margin-top: 0;
-    }
-
-    .sp-upcoming-list,
-    .sp-events-list,
-    .sp-ranking-list,
-    .sp-prize-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-    }
-
-    .sp-upcoming-list a,
-    .sp-events-list a {
-      display: block;
-      width: 100%;
-      padding: 0;
-      text-decoration: none;
-    }
-
-    .sp-upcoming-list a:hover,
-    .sp-events-list a:hover {
-      text-decoration: none;
-      opacity: 0.9;
-    }
-
-    .sp-upcoming-list .home-event-name,
-    .sp-events-list .home-event-name {
-      max-width: 100%;
-    }
-
-    @media (max-width: 1300px) {
-      .home-main-grid {
-        grid-template-columns: minmax(260px, 320px) minmax(260px, 320px) minmax(280px, 360px);
+    @media (max-width: 1080px){
+      .dashboard-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 1100px) {
-      .home-main-grid {
-        grid-template-columns: minmax(260px, 320px) minmax(280px, 360px);
+    @media (max-width: 800px){
+      .container{
+        width:min(calc(100% - 28px), var(--max));
+      }
+      .hero-panel{
+        padding:22px 18px;
+      }
+      .criteria-panel{
+        padding:18px 16px;
+      }
+      .link-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .dashboard-grid{
+        grid-template-columns:1fr;
       }
     }
 
-    @media (max-width: 900px) {
-      .home-lead-grid,
-      .home-main-grid {
-        grid-template-columns: 1fr;
-        display: grid;
+    @media (max-width: 560px){
+      .link-grid{
+        grid-template-columns:1fr;
       }
-
-      .home-upcoming-card,
-      .home-events-card,
-      .home-ranking-card,
-      .home-prize-card {
-        width: auto;
-        justify-self: stretch;
-      }
-
-      .home-upcoming-list,
-      .home-events-list,
-      .home-ranking-list,
-      .home-prize-list {
-        width: 100%;
-      }
-
-      .home-upcoming-list li,
-      .home-upcoming-list a,
-      .home-events-list li,
-      .home-events-list a {
-        width: 100%;
-      }
-
-      .home-event-name {
-        max-width: 100%;
-      }
-
-      .home-ranking-list li,
-      .home-prize-list li {
-        width: 100%;
-        grid-template-columns: 42px minmax(0, 8em) auto;
-      }
-
-      .home-rank-name,
-      .home-rank-name a,
-      .home-rank-name span,
-      .home-prize-name,
-      .home-prize-name a,
-      .home-prize-name span {
-        max-width: 8em;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .home-shell {
-        padding: 14px 12px 52px;
-      }
-
-      .home-hero {
-        padding: 14px 14px 18px;
-        border-radius: 20px;
-      }
-
-      .home-title {
-        font-size: 1.65rem;
-      }
-
-      .home-panel,
-      .home-card {
-        padding: 14px;
-        border-radius: 18px;
-      }
-
-      .home-rank-score,
-      .home-prize-money {
-        font-size: 0.92rem;
-      }
-
-      .home-actions {
-        display: none;
-      }
-
-      .hamburger-wrap {
-        display: block;
-      }
-
-      .home-upcoming-card,
-      .home-events-card,
-      .home-ranking-card,
-      .home-prize-card {
-        display: none;
-      }
-
-      .sp-collapsible-wrap {
-        display: block;
-      }
-
-      .home-lead-grid {
-        margin-top: 12px;
-        gap: 12px;
-      }
-
-      .sim-link-card-small {
-        font-size: 0.78rem;
-      }
-
-      .sim-link-card-main {
-        font-size: 0.94rem;
+      .rank-row{
+        grid-template-columns:34px minmax(0,1fr) auto;
       }
     }
   </style>
 </head>
 <body>
-  <div class="home-shell">
-    <header class="home-hero">
-      <div class="home-hero-top">
-        <div class="hamburger-wrap">
-          <button id="hamburger-btn" class="hamburger-btn" type="button" aria-label="メニューを開く">☰</button>
-          <nav id="hamburger-menu" class="hamburger-menu">
-            <a href="rankings.html">スコアランキング(全件)</a>
-            <a href="prize_rankings.html">獲得賞金ランキング(全件)</a>
-            <a href="events.html">大会一覧</a>
-            <a href="mcs.html">MC一覧</a>
-          </nav>
-        </div>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">MCBattle.jp</h1>
+    </div>
+  </header>
 
-        <div>
-          <h1 class="home-title">MCBattle.jp</h1>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="panel hero-panel">
+          <h2 class="lead-title">単純な勝敗数ではなく、「誰に勝ったか」「どのラウンドで勝ったか」「どれくらい最近か」をもとに、国内主要1on1 MCバトルの記録を整理しています。</h2>
+          <p class="lead-text">
+            大会記録・MCごとの戦績・スコアランキング・獲得賞金ランキングを横断して見られる、国内MCバトル記録サイトです。
+          </p>
+
+          <div class="criteria-wrap">
+            <div class="panel criteria-panel">
+              <h3 class="section-label">公開基準</h3>
+              <p class="criteria-text">
+                国内主要な1on1 MCバトルを対象に、原則として本戦のみを掲載しています。予選・不戦勝・2on2 / 団体戦・エキシビションは除外しています。
+              </p>
+              <a class="spec-card" href="ranking_spec.html">
+                <div>
+                  <p class="spec-card-title">ランキング仕様について</p>
+                  <p class="spec-card-sub">集計対象・評価軸・除外基準を見る</p>
+                </div>
+                <span class="spec-card-arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="link-grid">
+            <a class="link-card" href="rankings.html">スコアランキング</a>
+            <a class="link-card" href="prize_rankings.html">獲得賞金ランキング</a>
+            <a class="link-card" href="events.html">大会一覧</a>
+            <a class="link-card" href="mcs.html">MC一覧</a>
+          </div>
+
+          <div class="sim-wrap">
+            <a class="sim-card" href="virtual_tournament.html">
+              <span class="sim-kicker">8人のMCを選んで戦わせる</span>
+              <h3 class="sim-title">仮想MCバトルシミュレーション</h3>
+              <p class="sim-sub">選んだ8人で100回トーナメントを回し、優勝・準優勝・Best4 などの分布を確認できます。</p>
+            </a>
+          </div>
         </div>
       </div>
-
-      <div class="home-lead-grid">
-        <div class="home-panel">
-          <p>
-            単純な優勝回数や賞金総額ではなく、対戦相手の強さ、ラウンド、大会強度、直近の結果などを踏まえて
-            <strong>「今どれだけ強いか」</strong> を可視化することを目指しています。
-          </p>
-        </div>
-
-        <div class="home-panel">
-          <h2>公開基準</h2>
-          <p>
-            現在のランキング仕様はこちらです。FSLスコアや個人の印象と異なる場合があります。
-          </p>
-          <a href="ranking_spec.html" class="spec-link-card">ランキング仕様について</a>
-          <a href="virtual_tournament.html" class="sim-link-card">
-            <span class="sim-link-card-small">8人のMCを選んで戦わせる</span>
-            <span class="sim-link-card-main">仮想MCバトルシミュレーション</span>
-          </a>
-          <p>
-            この仕様は都度改善を加えていくので、ご意見があればフォームからお便りを下さい。
-          </p>
-        </div>
-      </div>
-
-      <div class="home-actions">
-        <a class="home-action-btn" href="rankings.html">スコアランキング</a>
-        <a class="home-action-btn" href="prize_rankings.html">獲得賞金ランキング</a>
-        <a class="home-action-btn" href="events.html">大会一覧</a>
-        <a class="home-action-btn" href="mcs.html">MC一覧</a>
-      </div>
-    </header>
-
-    <main class="home-main-grid">
-      <section class="home-card home-upcoming-card">
-        <div class="home-card-head">
-          <h2 class="home-card-title">今後開催される大会</h2>
-        </div>
-        <p id="upcoming-status" class="home-status">中身は後ほど追加予定です</p>
-        <ul id="upcoming-events-list" class="home-upcoming-list"></ul>
-      </section>
-
-      <section class="home-card home-events-card">
-        <div class="home-card-head">
-          <h2 class="home-card-title">直近開催された大会</h2>
-        </div>
-        <p id="events-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
-        <ul id="recent-events-list" class="home-events-list"></ul>
-      </section>
-
-      <section class="home-card home-ranking-card">
-        <div class="home-card-head">
-          <h2 class="home-card-title">スコアランキング Top10</h2>
-        </div>
-        <p id="ranking-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
-        <ol id="ranking-list" class="home-ranking-list"></ol>
-      </section>
-
-      <section class="home-card home-prize-card">
-        <div class="home-card-head">
-          <h2 class="home-card-title">獲得賞金ランキング Top10</h2>
-        </div>
-        <p id="prize-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
-        <ol id="prize-list" class="home-prize-list"></ol>
-      </section>
-    </main>
-
-    <section class="sp-collapsible-wrap">
-      <details class="sp-accordion">
-        <summary>今後開催される大会</summary>
-        <div class="sp-accordion-body">
-          <p id="sp-upcoming-status" class="home-status">中身は後ほど追加予定です</p>
-          <ul id="sp-upcoming-events-list" class="sp-upcoming-list"></ul>
-        </div>
-      </details>
-
-      <details class="sp-accordion">
-        <summary>直近開催された大会</summary>
-        <div class="sp-accordion-body">
-          <p id="sp-events-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
-          <ul id="sp-recent-events-list" class="sp-events-list"></ul>
-        </div>
-      </details>
-
-      <details class="sp-accordion">
-        <summary>スコアランキング Top10</summary>
-        <div class="sp-accordion-body">
-          <p id="sp-ranking-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
-          <ol id="sp-ranking-list" class="sp-ranking-list"></ol>
-        </div>
-      </details>
-
-      <details class="sp-accordion">
-        <summary>獲得賞金ランキング Top10</summary>
-        <div class="sp-accordion-body">
-          <p id="sp-prize-status" class="home-status">読み込み中...（数秒かかることがあります）</p>
-          <ol id="sp-prize-list" class="sp-prize-list"></ol>
-        </div>
-      </details>
     </section>
-  </div>
+
+    <section class="dashboard">
+      <div class="container">
+        <div class="dashboard-grid">
+          <section class="panel dashboard-card">
+            <h2 class="dashboard-title">今後開催予定の大会</h2>
+            <div id="future-events" class="dashboard-list"></div>
+            <div id="future-events-status" class="status">読み込み中…</div>
+          </section>
+
+          <section class="panel dashboard-card">
+            <h2 class="dashboard-title">直近開催された大会</h2>
+            <div id="recent-events" class="dashboard-list"></div>
+            <div id="recent-events-status" class="status">読み込み中…</div>
+          </section>
+
+          <section class="panel dashboard-card">
+            <h2 class="dashboard-title">スコアランキング</h2>
+            <div id="score-ranking" class="dashboard-list"></div>
+            <div id="score-ranking-status" class="status">読み込み中…</div>
+          </section>
+
+          <section class="panel dashboard-card">
+            <h2 class="dashboard-title">獲得賞金ランキング</h2>
+            <div id="prize-ranking" class="dashboard-list"></div>
+            <div id="prize-ranking-status" class="status">読み込み中…</div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-space"></div>
+  </main>
 
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
 
-    function formatYen(value) {
-      const num = Number(value || 0);
-      return num.toLocaleString("ja-JP");
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
     }
 
-    function createMcNameElement(mcName, mcId, className) {
-      const nameEl = document.createElement("span");
-      nameEl.className = className;
+    function formatDateJP(raw) {
+      if (!raw) return "";
+      const s = String(raw).trim();
 
-      if (mcId) {
-        const a = document.createElement("a");
-        a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
-        a.textContent = mcName;
-        a.title = mcName;
-        nameEl.appendChild(a);
-      } else {
-        const span = document.createElement("span");
-        span.textContent = mcName;
-        span.title = mcName;
-        nameEl.appendChild(span);
+      if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+        const [y, m, d] = s.split("-");
+        return `${y}.${m}.${d}`;
       }
 
-      return nameEl;
+      if (/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(s)) {
+        const [y, m, d] = s.split("/");
+        return `${y}.${String(m).padStart(2, "0")}.${String(d).padStart(2, "0")}`;
+      }
+
+      const date = new Date(s);
+      if (!Number.isNaN(date.getTime())) {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, "0");
+        const d = String(date.getDate()).padStart(2, "0");
+        return `${y}.${m}.${d}`;
+      }
+
+      return s;
     }
 
-    function appendRankingItem(listEl, item, index) {
-      const li = document.createElement("li");
-
-      const rankNo = document.createElement("span");
-      rankNo.className = "home-rank-no";
-      rankNo.textContent = `${item.rank || index + 1}.`;
-
-      const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
-      const mcId = item.mc_id ? String(item.mc_id) : "";
-      const rankName = createMcNameElement(mcName, mcId, "home-rank-name");
-
-      const rankScore = document.createElement("span");
-      rankScore.className = "home-rank-score";
-
-      const rawScore = item.current_strength_score_v2 ?? "";
-      rankScore.textContent =
-        rawScore !== "" && !isNaN(Number(rawScore))
-          ? Number(rawScore).toFixed(2)
-          : String(rawScore);
-
-      li.appendChild(rankNo);
-      li.appendChild(rankName);
-      li.appendChild(rankScore);
-      listEl.appendChild(li);
+    function parseDate(raw) {
+      if (!raw) return null;
+      if (Object.prototype.toString.call(raw) === "[object Date]" && !Number.isNaN(raw.getTime())) {
+        return raw;
+      }
+      const s = String(raw).trim().replace(/\./g, "-").replace(/\//g, "-");
+      const date = new Date(s);
+      return Number.isNaN(date.getTime()) ? null : date;
     }
 
-    function appendPrizeItem(listEl, item, index) {
-      const li = document.createElement("li");
-
-      const rankNo = document.createElement("span");
-      rankNo.className = "home-prize-no";
-      rankNo.textContent = `${item.rank || index + 1}.`;
-
-      const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
-      const mcId = item.mc_id ? String(item.mc_id) : "";
-      const nameEl = createMcNameElement(mcName, mcId, "home-prize-name");
-
-      const moneyEl = document.createElement("span");
-      moneyEl.className = "home-prize-money";
-      moneyEl.textContent = formatYen(item.total_prize_money || 0);
-
-      li.appendChild(rankNo);
-      li.appendChild(nameEl);
-      li.appendChild(moneyEl);
-      listEl.appendChild(li);
+    function getEventId(event) {
+      return event.event_id || event.id || event.eventId || "";
     }
 
-    function appendEventItem(listEl, event) {
-      const li = document.createElement("li");
-      const a = document.createElement("a");
-
-      a.href = `event.html?event_id=${encodeURIComponent(event.event_id)}`;
-
-      const date = event.event_date ? String(event.event_date) : "";
-      const name = event.event_name ? String(event.event_name) : "大会名不明";
-
-      a.innerHTML = `
-        <span class="home-event-date">${date}</span>
-        <span class="home-event-name">${name}</span>
-      `;
-
-      li.appendChild(a);
-      listEl.appendChild(li);
+    function getEventName(event) {
+      return event.event_name || event.name || event.title || "";
     }
 
-    function loadHomeData() {
-      const rankingCallbackName = "mcBattleDataCallback";
-      const prizeCallbackName = "mcBattlePrizeHomeCallback";
+    function getEventDate(event) {
+      return event.event_date || event.date || event.EventDate || "";
+    }
 
-      const rankingStatusEl = document.getElementById("ranking-status");
-      const rankingListEl = document.getElementById("ranking-list");
-      const spRankingStatusEl = document.getElementById("sp-ranking-status");
-      const spRankingListEl = document.getElementById("sp-ranking-list");
+    function getMcId(item) {
+      return item.mc_id || item.id || item.mcId || "";
+    }
 
-      const eventsStatusEl = document.getElementById("events-status");
-      const recentEventsListEl = document.getElementById("recent-events-list");
-      const spEventsStatusEl = document.getElementById("sp-events-status");
-      const spRecentEventsListEl = document.getElementById("sp-recent-events-list");
+    function getMcName(item) {
+      return item.mc_name || item.name || item.mc || "";
+    }
 
-      const prizeStatusEl = document.getElementById("prize-status");
-      const prizeListEl = document.getElementById("prize-list");
-      const spPrizeStatusEl = document.getElementById("sp-prize-status");
-      const spPrizeListEl = document.getElementById("sp-prize-list");
+    function getRank(item, index) {
+      return item.rank || item.ranking || item.position || (index + 1);
+    }
 
-      window[rankingCallbackName] = function(data) {
-        rankingListEl.innerHTML = "";
-        spRankingListEl.innerHTML = "";
-        recentEventsListEl.innerHTML = "";
-        spRecentEventsListEl.innerHTML = "";
+    function getScore(item) {
+      const raw =
+        item.current_strength_score_v2 ??
+        item.score ??
+        item.current_strength_score ??
+        item.rating ??
+        "";
+      const num = Number(raw);
+      if (Number.isFinite(num)) return num.toFixed(2);
+      return raw ? String(raw) : "";
+    }
 
-        try {
-          if (data.error) {
-            rankingStatusEl.textContent = "データ取得エラー: " + (data.message || "unknown error");
-            rankingStatusEl.classList.add("error");
-            spRankingStatusEl.textContent = "データ取得エラー: " + (data.message || "unknown error");
-            spRankingStatusEl.classList.add("error");
-            eventsStatusEl.textContent = "データ取得エラー";
-            eventsStatusEl.classList.add("error");
-            spEventsStatusEl.textContent = "データ取得エラー";
-            spEventsStatusEl.classList.add("error");
-            return;
-          }
+    function getPrize(item) {
+      const raw =
+        item.total_prize_money ??
+        item.prize_money ??
+        item.prize ??
+        item.total ??
+        "";
+      const num = Number(raw);
+      if (Number.isFinite(num)) return "¥" + num.toLocaleString("ja-JP");
+      return raw ? String(raw) : "";
+    }
 
-          const rankings = Array.isArray(data.rankings) ? data.rankings.slice(0, 10) : [];
+    function setStatus(id, message, isError = false) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = message;
+      el.classList.toggle("error", !!isError);
+    }
 
-          rankings.forEach((item, index) => {
-            appendRankingItem(rankingListEl, item, index);
-            appendRankingItem(spRankingListEl, item, index);
-          });
+    function jsonp(url) {
+      return new Promise((resolve, reject) => {
+        const callbackName = "__jsonp_cb_" + Math.random().toString(36).slice(2);
+        const script = document.createElement("script");
+        const sep = url.includes("?") ? "&" : "?";
+        const timer = setTimeout(() => {
+          cleanup();
+          reject(new Error("timeout"));
+        }, 15000);
 
-          rankingStatusEl.textContent = `Top${rankings.length}を表示`;
-          spRankingStatusEl.textContent = `Top${rankings.length}を表示`;
-
-          const recentEvents = Array.isArray(data.recent_events) ? data.recent_events.slice(0, 5) : [];
-
-          recentEvents.forEach((event) => {
-            appendEventItem(recentEventsListEl, event);
-            appendEventItem(spRecentEventsListEl, event);
-          });
-
-          eventsStatusEl.textContent = `直近${recentEvents.length}件を表示`;
-          spEventsStatusEl.textContent = `直近${recentEvents.length}件を表示`;
-        } catch (err) {
-          rankingStatusEl.textContent = "ランキング描画エラー";
-          rankingStatusEl.classList.add("error");
-          spRankingStatusEl.textContent = "ランキング描画エラー";
-          spRankingStatusEl.classList.add("error");
-          eventsStatusEl.textContent = "大会描画エラー";
-          eventsStatusEl.classList.add("error");
-          spEventsStatusEl.textContent = "大会描画エラー";
-          spEventsStatusEl.classList.add("error");
+        function cleanup() {
+          clearTimeout(timer);
+          delete window[callbackName];
+          script.remove();
         }
-      };
 
-      window[prizeCallbackName] = function(data) {
-        prizeListEl.innerHTML = "";
-        spPrizeListEl.innerHTML = "";
+        window[callbackName] = (data) => {
+          cleanup();
+          resolve(data);
+        };
 
-        try {
-          if (data.error) {
-            prizeStatusEl.textContent = "獲得賞金ランキング取得エラー";
-            prizeStatusEl.classList.add("error");
-            spPrizeStatusEl.textContent = "獲得賞金ランキング取得エラー";
-            spPrizeStatusEl.classList.add("error");
-            return;
-          }
+        script.src = `${url}${sep}callback=${callbackName}`;
+        script.onerror = () => {
+          cleanup();
+          reject(new Error("load error"));
+        };
 
-          const rankings = Array.isArray(data.prize_rankings) ? data.prize_rankings.slice(0, 10) : [];
-
-          rankings.forEach((item, index) => {
-            appendPrizeItem(prizeListEl, item, index);
-            appendPrizeItem(spPrizeListEl, item, index);
-          });
-
-          prizeStatusEl.textContent = `Top${rankings.length}を表示`;
-          spPrizeStatusEl.textContent = `Top${rankings.length}を表示`;
-        } catch (err) {
-          prizeStatusEl.textContent = "獲得賞金ランキング描画エラー";
-          prizeStatusEl.classList.add("error");
-          spPrizeStatusEl.textContent = "獲得賞金ランキング描画エラー";
-          spPrizeStatusEl.classList.add("error");
-        }
-      };
-
-      const rankingScript = document.createElement("script");
-      rankingScript.src = `${API_URL}?callback=${rankingCallbackName}`;
-      rankingScript.onerror = function() {
-        rankingStatusEl.textContent = "JSONP読み込み失敗";
-        rankingStatusEl.classList.add("error");
-        spRankingStatusEl.textContent = "JSONP読み込み失敗";
-        spRankingStatusEl.classList.add("error");
-        eventsStatusEl.textContent = "JSONP読み込み失敗";
-        eventsStatusEl.classList.add("error");
-        spEventsStatusEl.textContent = "JSONP読み込み失敗";
-        spEventsStatusEl.classList.add("error");
-      };
-      document.body.appendChild(rankingScript);
-
-      const prizeScript = document.createElement("script");
-      prizeScript.src = `${API_URL}?mode=prize_ranking&callback=${prizeCallbackName}`;
-      prizeScript.onerror = function() {
-        prizeStatusEl.textContent = "JSONP読み込み失敗";
-        prizeStatusEl.classList.add("error");
-        spPrizeStatusEl.textContent = "JSONP読み込み失敗";
-        spPrizeStatusEl.classList.add("error");
-      };
-      document.body.appendChild(prizeScript);
-    }
-
-    function initHamburgerMenu() {
-      const btn = document.getElementById("hamburger-btn");
-      const menu = document.getElementById("hamburger-menu");
-      if (!btn || !menu) return;
-
-      btn.addEventListener("click", function(event) {
-        event.stopPropagation();
-        menu.classList.toggle("is-open");
-      });
-
-      document.addEventListener("click", function(event) {
-        if (!menu.contains(event.target) && event.target !== btn) {
-          menu.classList.remove("is-open");
-        }
+        document.body.appendChild(script);
       });
     }
 
-    initHamburgerMenu();
-    loadHomeData();
+    function renderEventList(containerId, items, emptyMessage) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      if (!items.length) {
+        container.innerHTML = `<div class="status">${escapeHtml(emptyMessage)}</div>`;
+        return;
+      }
+
+      container.innerHTML = items.map((event) => {
+        const eventId = getEventId(event);
+        const name = getEventName(event);
+        const date = formatDateJP(getEventDate(event));
+        const href = eventId ? `event.html?event_id=${encodeURIComponent(eventId)}` : "events.html";
+
+        return `
+          <a class="list-row" href="${href}">
+            <span class="event-date">${escapeHtml(date)}</span>
+            <span class="event-name">${escapeHtml(name)}</span>
+          </a>
+        `;
+      }).join("");
+    }
+
+    function renderScoreRanking(containerId, items, emptyMessage) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      if (!items.length) {
+        container.innerHTML = `<div class="status">${escapeHtml(emptyMessage)}</div>`;
+        return;
+      }
+
+      container.innerHTML = items.map((item, index) => {
+        const mcId = getMcId(item);
+        const name = getMcName(item);
+        const rank = getRank(item, index);
+        const score = getScore(item);
+        const href = mcId ? `mc.html?mc_id=${encodeURIComponent(mcId)}` : "mcs.html";
+
+        return `
+          <a class="list-row" href="${href}">
+            <div class="rank-row">
+              <div class="rank-num">${escapeHtml(rank)}</div>
+              <div class="rank-name">${escapeHtml(name)}</div>
+              <div class="rank-score">${escapeHtml(score)}</div>
+            </div>
+          </a>
+        `;
+      }).join("");
+    }
+
+    function renderPrizeRanking(containerId, items, emptyMessage) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      if (!items.length) {
+        container.innerHTML = `<div class="status">${escapeHtml(emptyMessage)}</div>`;
+        return;
+      }
+
+      container.innerHTML = items.map((item, index) => {
+        const mcId = getMcId(item);
+        const name = getMcName(item);
+        const rank = getRank(item, index);
+        const prize = getPrize(item);
+        const href = mcId ? `mc.html?mc_id=${encodeURIComponent(mcId)}` : "mcs.html";
+
+        return `
+          <a class="list-row" href="${href}">
+            <div class="rank-row">
+              <div class="rank-num">${escapeHtml(rank)}</div>
+              <div class="rank-name">${escapeHtml(name)}</div>
+              <div class="rank-score">${escapeHtml(prize)}</div>
+            </div>
+          </a>
+        `;
+      }).join("");
+    }
+
+    async function loadTopData() {
+      try {
+        const payload = await jsonp(API_URL);
+        if (payload?.error) throw new Error(payload.message || "top data error");
+
+        const rankings = Array.isArray(payload?.rankings) ? payload.rankings.slice(0, 10) : [];
+        const recentEventsRaw = Array.isArray(payload?.recent_events) ? payload.recent_events : [];
+
+        renderScoreRanking("score-ranking", rankings, "データがありません");
+        setStatus("score-ranking-status", rankings.length ? "" : "データがありません");
+
+        const recentEvents = recentEventsRaw.slice(0, 5);
+        renderEventList("recent-events", recentEvents, "データがありません");
+        setStatus("recent-events-status", recentEvents.length ? "" : "データがありません");
+      } catch (error) {
+        console.error(error);
+        setStatus("score-ranking-status", "スコアランキングの読み込みに失敗しました。", true);
+        setStatus("recent-events-status", "直近大会の読み込みに失敗しました。", true);
+      }
+    }
+
+    async function loadEventsData() {
+      try {
+        const payload = await jsonp(`${API_URL}?mode=events`);
+        if (payload?.error) throw new Error(payload.message || "events error");
+
+        const events = Array.isArray(payload?.events) ? payload.events : [];
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const futureEvents = events
+          .map((event) => ({ ...event, __date: parseDate(getEventDate(event)) }))
+          .filter((event) => event.__date && event.__date >= today)
+          .sort((a, b) => a.__date - b.__date)
+          .slice(0, 5);
+
+        renderEventList("future-events", futureEvents, "今後開催予定の大会はありません");
+        setStatus("future-events-status", futureEvents.length ? "" : "今後開催予定の大会はありません");
+      } catch (error) {
+        console.error(error);
+        setStatus("future-events-status", "今後開催予定の大会の読み込みに失敗しました。", true);
+      }
+    }
+
+    async function loadPrizeRanking() {
+      try {
+        const payload = await jsonp(`${API_URL}?mode=prize_ranking`);
+        if (payload?.error) throw new Error(payload.message || "prize ranking error");
+
+        const items = Array.isArray(payload?.prize_rankings) ? payload.prize_rankings.slice(0, 10) : [];
+        renderPrizeRanking("prize-ranking", items, "データがありません");
+        setStatus("prize-ranking-status", items.length ? "" : "データがありません");
+      } catch (error) {
+        console.error(error);
+        setStatus("prize-ranking-status", "獲得賞金ランキングの読み込みに失敗しました。", true);
+      }
+    }
+
+    Promise.allSettled([
+      loadTopData(),
+      loadEventsData(),
+      loadPrizeRanking()
+    ]);
   </script>
 </body>
 </html>
