@@ -96,6 +96,10 @@
       return Number(value).toFixed(2);
     }
 
+    function displayValue(value) {
+      return (value === null || value === undefined || value === "") ? "−" : value;
+    }
+
     function renderMcLink(name, mcId) {
       const safeName = escapeHtml(name || "");
       const safeId = String(mcId || "").trim();
@@ -242,19 +246,19 @@
 
           const mc = data.mc || {};
           const ranking = data.ranking || {};
-          const appearances = Array.isArray(data.appearances) ? data.appearances : [];
-          const wins = sortMatchHistory(Array.isArray(data.wins) ? data.wins : []);
-          const losses = sortMatchHistory(Array.isArray(data.losses) ? data.losses : []);
+          const appearances = Array.isArray(data.participated_events) ? data.participated_events : [];
+          const wins = sortMatchHistory(Array.isArray(data.wins_against) ? data.wins_against : []);
+          const losses = sortMatchHistory(Array.isArray(data.losses_against) ? data.losses_against : []);
 
           titleEl.textContent = mc.mc_name || "MC名不明";
-          metaEl.textContent = "";
+          metaEl.textContent = mc.mc_yomi ? `よみ：${mc.mc_yomi}` : "";
 
           const infoItems = [
-            ["MCBattle Rank順位", ranking.rank || "−"],
-            ["スコア", formatScore(ranking.current_strength_score_v2) || "−"],
-            ["総試合数", ranking.total_matches || "−"],
-            ["勝利数", ranking.wins || "−"],
-            ["敗北数", ranking.losses || "−"]
+            ["MCBattle Rank順位", displayValue(ranking.rank)],
+            ["スコア", displayValue(formatScore(ranking.current_score ?? ranking.score))],
+            ["総試合数", displayValue(ranking.total_matches)],
+            ["勝利数", displayValue(ranking.wins)],
+            ["敗北数", displayValue(ranking.losses)]
           ];
 
           infoItems.forEach(([label, value]) => {
@@ -265,7 +269,7 @@
             labelEl.textContent = `${label}：`;
 
             const valueEl = document.createElement("span");
-            valueEl.textContent = value || "−";
+            valueEl.textContent = value;
 
             li.appendChild(labelEl);
             li.appendChild(valueEl);
