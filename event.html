@@ -162,12 +162,9 @@
 
         .match-row {
           display: grid;
-          grid-template-columns: 44px minmax(120px, 220px) 24px minmax(120px, 220px) 44px;
+          grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr) auto;
           gap: 8px;
           align-items: center;
-          justify-content: start;
-          width: fit-content;
-          max-width: 100%;
           color: inherit;
         }
 
@@ -210,7 +207,7 @@
         .judge-method {
           margin-top: 6px;
           font-size: 0.9em;
-          text-align: left;
+          text-align: center;
           color: inherit;
           opacity: 0.8;
         }
@@ -224,19 +221,11 @@
           color: inherit;
         }
 
-        @media (max-width: 860px) {
-          .match-row {
-            grid-template-columns: 40px minmax(100px, 1fr) 22px minmax(100px, 1fr) 40px;
-            width: 100%;
-          }
-        }
-
         @media (max-width: 640px) {
           .match-row {
             grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr) auto;
             gap: 6px;
             font-size: 0.95rem;
-            width: 100%;
           }
 
           .match-list > li {
