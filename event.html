@@ -21,23 +21,6 @@
       margin-bottom: 12px;
     }
 
-    .result-lines {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .result-line {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      line-height: 1.6;
-    }
-
-    .result-medal {
-      flex: 0 0 auto;
-    }
-
     @media (max-width: 640px) {
       .event-page {
         padding: 20px 12px 56px;
@@ -86,7 +69,7 @@
     function formatNumberWithComma(value) {
       if (value === null || value === undefined || value === "") return "";
       const normalized = String(value).replace(/,/g, "").trim();
-      if (!/^\d+(\.\d+)?$/.test(normalized)) return String(value);
+      if (!/^\d+$/.test(normalized)) return String(value);
       return Number(normalized).toLocaleString("ja-JP");
     }
 
@@ -107,6 +90,77 @@
       if (!safeId) return `<span>${safeName}</span>`;
 
       return `<a href="./mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
+    }
+
+    function getChampionInfo(matches) {
+      if (!Array.isArray(matches) || matches.length === 0) {
+        return { name: "", id: "" };
+      }
+
+      const finalMatch = matches.find((match) => String(match.round_name || "").trim() === "決勝");
+      if (finalMatch && finalMatch.winner_name) {
+        return {
+          name: finalMatch.winner_name || "",
+          id: finalMatch.winner_id || finalMatch.winner_mc_id || ""
+        };
+      }
+
+      const normalizedFinalMatch = matches.find((match) => {
+        const round = String(match.round_name || "").trim();
+        return round === "FINAL" || round === "Final" || round === "final";
+      });
+      if (normalizedFinalMatch && normalizedFinalMatch.winner_name) {
+        return {
+          name: normalizedFinalMatch.winner_name || "",
+          id: normalizedFinalMatch.winner_id || normalizedFinalMatch.winner_mc_id || ""
+        };
+      }
+
+      const lastWinner = [...matches].reverse().find((match) => match && match.winner_name);
+      if (lastWinner) {
+        return {
+          name: lastWinner.winner_name || "",
+          id: lastWinner.winner_id || lastWinner.winner_mc_id || ""
+        };
+      }
+
+      return { name: "", id: "" };
+    }
+
+    function getRunnerUpInfo(matches) {
+      if (!Array.isArray(matches) || matches.length === 0) {
+        return { name: "", id: "" };
+      }
+
+      const finalMatch = matches.find((match) => {
+        const round = String(match.round_name || "").trim();
+        return round === "決勝" || round === "FINAL" || round === "Final" || round === "final";
+      });
+
+      if (finalMatch && finalMatch.loser_name) {
+        return {
+          name: finalMatch.loser_name || "",
+          id: finalMatch.loser_id || finalMatch.loser_mc_id || ""
+        };
+      }
+
+      return { name: "", id: "" };
+    }
+
+    function getBest4Losers(matches) {
+      if (!Array.isArray(matches) || matches.length === 0) return [];
+
+      const semis = matches.filter((match) => {
+        const round = String(match.round_name || "").trim();
+        return round === "準決勝" || round === "決勝トーナメント準決勝" || round === "ベスト4";
+      });
+
+      return semis
+        .filter((match) => match.loser_name)
+        .map((match) => ({
+          name: match.loser_name || "",
+          id: match.loser_id || match.loser_mc_id || ""
+        }));
     }
 
     function ensureMatchRowStyles() {
@@ -144,9 +198,12 @@
 
         .match-row {
           display: grid;
-          grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr) auto;
+          grid-template-columns: 48px minmax(140px, 220px) 28px minmax(140px, 220px) 48px;
           gap: 8px;
           align-items: center;
+          justify-content: start;
+          width: fit-content;
+          max-width: 100%;
           color: inherit;
         }
 
@@ -188,8 +245,11 @@
 
         .judge-method {
           margin-top: 6px;
+          margin-left: 0;
+          width: fit-content;
+          max-width: 100%;
           font-size: 0.9em;
-          text-align: center;
+          text-align: left;
           color: inherit;
           opacity: 0.8;
         }
@@ -203,80 +263,54 @@
           color: inherit;
         }
 
+        .results-medal-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .results-medal-list li {
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
+          margin-bottom: 6px;
+        }
+
+        .results-medal-icon {
+          width: 1.4em;
+          text-align: center;
+          flex: 0 0 auto;
+        }
+
+        .results-medal-text {
+          min-width: 0;
+        }
+
+        @media (max-width: 860px) {
+          .match-row {
+            grid-template-columns: 42px minmax(110px, 1fr) 24px minmax(110px, 1fr) 42px;
+            width: 100%;
+          }
+        }
+
         @media (max-width: 640px) {
           .match-row {
             grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr) auto;
             gap: 6px;
             font-size: 0.95rem;
+            width: 100%;
           }
 
           .match-list > li {
             padding: 8px 10px;
           }
+
+          .judge-method {
+            width: 100%;
+          }
         }
       `;
       document.head.appendChild(style);
-    }
-
-    function getMatchGroupsMap(groupedMatches) {
-      const map = {};
-      groupedMatches.forEach((group) => {
-        const key = String(group.round_name || "").trim();
-        map[key] = Array.isArray(group.matches) ? group.matches : [];
-      });
-      return map;
-    }
-
-    function getResultHtml(groupedMatches) {
-      const groupMap = getMatchGroupsMap(groupedMatches);
-
-      const finalMatches =
-        groupMap["決勝"] ||
-        groupMap["FINAL"] ||
-        groupMap["Final"] ||
-        groupMap["final"] ||
-        [];
-
-      const semiMatches =
-        groupMap["準決勝"] ||
-        [];
-
-      let championHtml = "不明";
-      let runnerUpHtml = "不明";
-      let best4Html = "不明";
-
-      if (finalMatches.length > 0) {
-        const finalMatch = finalMatches[0];
-        championHtml = renderMcLink(finalMatch.winner_name || "不明", finalMatch.winner_mc_id || "");
-        runnerUpHtml = renderMcLink(finalMatch.loser_name || "不明", finalMatch.loser_mc_id || "");
-      }
-
-      if (semiMatches.length > 0) {
-        const losers = semiMatches
-          .map((match) => renderMcLink(match.loser_name || "不明", match.loser_mc_id || ""))
-          .filter(Boolean);
-
-        if (losers.length > 0) {
-          best4Html = losers.join(" / ");
-        }
-      }
-
-      return `
-        <div class="result-lines">
-          <div class="result-line">
-            <span class="result-medal">🥇</span>
-            <span>${championHtml}</span>
-          </div>
-          <div class="result-line">
-            <span class="result-medal">🥈</span>
-            <span>${runnerUpHtml}</span>
-          </div>
-          <div class="result-line">
-            <span class="result-medal">🥉</span>
-            <span>${best4Html}</span>
-          </div>
-        </div>
-      `;
     }
 
     function loadEventDetail() {
@@ -325,17 +359,52 @@
           }
 
           const event = data.event || {};
-          const groupedMatches = Array.isArray(data.grouped_matches) ? data.grouped_matches : [];
+          const matches = Array.isArray(data.matches) ? data.matches : [];
+
+          const champion = getChampionInfo(matches);
+          const runnerUp = getRunnerUpInfo(matches);
+          const best4Losers = getBest4Losers(matches);
           const formattedWinnerPrize = formatNumberWithComma(event.prize_money_winner);
 
           titleEl.textContent = event.event_name || "大会名不明";
           metaEl.textContent = `${event.event_date || ""} ${event.event_category || ""}`.trim();
 
+          const resultHtmlParts = [];
+
+          if (champion.name) {
+            resultHtmlParts.push(`
+              <li>
+                <span class="results-medal-icon">🥇</span>
+                <span class="results-medal-text">${renderMcLink(champion.name, champion.id)}</span>
+              </li>
+            `);
+          }
+
+          if (runnerUp.name) {
+            resultHtmlParts.push(`
+              <li>
+                <span class="results-medal-icon">🥈</span>
+                <span class="results-medal-text">${renderMcLink(runnerUp.name, runnerUp.id)}</span>
+              </li>
+            `);
+          }
+
+          if (best4Losers.length > 0) {
+            best4Losers.forEach((mc) => {
+              resultHtmlParts.push(`
+                <li>
+                  <span class="results-medal-icon">🥉</span>
+                  <span class="results-medal-text">${renderMcLink(mc.name, mc.id)}</span>
+                </li>
+              `);
+            });
+          }
+
           const infoItems = [
             { label: "開催日：", html: escapeHtml(event.event_date || "") },
             { label: "カテゴリ：", html: escapeHtml(event.event_category || "") },
-            { label: "結果：", html: getResultHtml(groupedMatches) },
-            { label: "優勝賞金：", html: escapeHtml(formattedWinnerPrize ? `${formattedWinnerPrize}円` : "") }
+            { label: "結果：", html: `<ul class="results-medal-list">${resultHtmlParts.join("")}</ul>` },
+            { label: "優勝賞金：", html: escapeHtml(formattedWinnerPrize || "") }
           ];
 
           infoItems.forEach((item) => {
@@ -353,15 +422,56 @@
             infoListEl.appendChild(li);
           });
 
-          const warningMessages = [];
-          let totalMatchCount = 0;
+          const roundDisplayMap = {
+            "決勝": "決勝",
+            "FINAL": "決勝",
+            "Final": "決勝",
+            "final": "決勝",
+            "準決勝": "準決勝",
+            "決勝トーナメント準決勝": "準決勝",
+            "ベスト4": "準決勝",
+            "準々決勝": "ベスト8",
+            "ベスト8": "ベスト8"
+          };
 
-          groupedMatches.forEach((group) => {
-            const roundName = String(group.round_name || "ラウンド不明").trim();
-            const matches = Array.isArray(group.matches) ? group.matches : [];
+          function normalizeDisplayRound(roundName) {
+            const name = String(roundName || "").trim();
+            return roundDisplayMap[name] || name || "ラウンド不明";
+          }
 
-            totalMatchCount += matches.length;
+          const grouped = {};
 
+          matches.forEach((match) => {
+            const displayRound = normalizeDisplayRound(match.round_name);
+            if (!grouped[displayRound]) grouped[displayRound] = [];
+            grouped[displayRound].push(match);
+          });
+
+          const roundOrder = [
+            "決勝",
+            "準決勝",
+            "ベスト8",
+            "ベスト16",
+            "ベスト32",
+            "ベスト48",
+            "ベスト64",
+            "3回戦",
+            "2回戦",
+            "1回戦",
+            "シード戦"
+          ];
+
+          const sortedRoundNames = Object.keys(grouped).sort((a, b) => {
+            const ai = roundOrder.indexOf(a);
+            const bi = roundOrder.indexOf(b);
+
+            if (ai === -1 && bi === -1) return a.localeCompare(b, "ja");
+            if (ai === -1) return 1;
+            if (bi === -1) return -1;
+            return ai - bi;
+          });
+
+          sortedRoundNames.forEach((roundName) => {
             const block = document.createElement("div");
             block.className = "round-block";
 
@@ -373,12 +483,18 @@
             const ul = document.createElement("ul");
             ul.className = "match-list";
 
-            matches.forEach((match) => {
+            grouped[roundName].forEach((match) => {
               const li = document.createElement("li");
               li.className = "match-row-wrap";
 
-              const loserHtml = renderMcLink(match.loser_name || "不明", match.loser_mc_id || "");
-              const winnerHtml = renderMcLink(match.winner_name || "不明", match.winner_mc_id || "");
+              const loserHtml = renderMcLink(
+                match.loser_name || "不明",
+                match.loser_id || match.loser_mc_id || ""
+              );
+              const winnerHtml = renderMcLink(
+                match.winner_name || "不明",
+                match.winner_id || match.winner_mc_id || ""
+              );
               const judgeMethod = escapeHtml(String(match.judge_method || "").trim());
 
               li.innerHTML = `
@@ -397,29 +513,30 @@
 
             block.appendChild(ul);
             matchesListEl.appendChild(block);
-
-            if (roundName === "決勝" && matches.length !== 1) {
-              warningMessages.push(`決勝が ${matches.length} 試合あります`);
-            }
-            if (roundName === "準決勝" && matches.length > 2) {
-              warningMessages.push(`準決勝が ${matches.length} 試合あります`);
-            }
-            if (roundName === "Best8" && matches.length > 4) {
-              warningMessages.push(`Best8が ${matches.length} 試合あります`);
-            }
           });
 
-          matchesStatusEl.textContent = "";
+          const warningMessages = [];
+
+          if (grouped["決勝"] && grouped["決勝"].length !== 1) {
+            warningMessages.push(`決勝が ${grouped["決勝"].length} 試合あります`);
+          }
+          if (grouped["準決勝"] && grouped["準決勝"].length > 2) {
+            warningMessages.push(`準決勝が ${grouped["準決勝"].length} 試合あります`);
+          }
+          if (grouped["ベスト8"] && grouped["ベスト8"].length > 4) {
+            warningMessages.push(`ベスト8が ${grouped["ベスト8"].length} 試合あります`);
+          }
 
           if (warningMessages.length > 0) {
             const note = document.createElement("div");
             note.className = "note-box";
             note.textContent = `注意: ${warningMessages.join("、")}`;
             matchesListEl.prepend(note);
-            matchesStatusEl.textContent = `注意: ${warningMessages.join("、")}`;
           }
 
-          if (totalMatchCount === 0) {
+          matchesStatusEl.textContent = "";
+
+          if (matches.length === 0) {
             matchesStatusEl.textContent = "試合結果がありません";
           }
         } catch (err) {
