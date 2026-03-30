@@ -131,7 +131,8 @@
             return;
           }
 
-          const rankings = Array.isArray(data.rankings) ? data.rankings : [];
+       
+const rankings = Array.isArray(data.rankings) ? data.rankings.slice(0, 100) : [];
 
           rankings.forEach((item, index) => {
             const tr = document.createElement("tr");
