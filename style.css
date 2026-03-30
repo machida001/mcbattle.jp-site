@@ -19,6 +19,13 @@
   --shadow:
     0 10px 30px rgba(0, 0, 0, 0.32),
     0 0 0 1px rgba(255,255,255,0.02);
+
+  /* ===== レイアウト制御（ここだけ触ればOK） ===== */
+  --content-max: 1000px;
+  --pc-left-gutter: 80px;
+  --page-gutter: 16px;
+
+  /* 既存 */
   --max: 940px;
 }
 
@@ -44,10 +51,19 @@ body {
   min-height: 100vh;
 }
 
-.page {
+/* ===== 共通レイアウト ===== */
+
+.page,
+.event-page,
+.mc-page,
+.ranking-page,
+.rankings-page,
+.events-page,
+.mcs-page {
   max-width: var(--max);
-  margin: 0 auto;
-  padding: 28px 16px 80px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 28px var(--page-gutter) 80px;
 }
 
 header.page-header {
@@ -56,32 +72,56 @@ header.page-header {
 
 header:not(.page-header) {
   max-width: var(--max);
-  margin: 0 auto 22px;
-  padding: 28px 16px 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 28px var(--page-gutter) 0;
 }
 
 body > p:first-of-type {
   max-width: var(--max);
-  margin: 0 auto;
-  padding: 20px 16px 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px var(--page-gutter) 0;
 }
+
+/* ===== PCだけ左寄せ（ここが本体） ===== */
+
+@media (min-width: 1024px) {
+
+  .page,
+  .event-page,
+  .mc-page,
+  .ranking-page,
+  .rankings-page,
+  .events-page,
+  .mcs-page {
+    max-width: var(--content-max);
+    margin-left: var(--pc-left-gutter);
+    margin-right: auto;
+  }
+
+  header:not(.page-header),
+  body > p:first-of-type {
+    max-width: var(--content-max);
+    margin-left: var(--pc-left-gutter);
+    margin-right: auto;
+  }
+}
+
+/* ===== タイポ ===== */
 
 h1 {
   margin: 0 0 10px;
   font-size: clamp(2.1rem, 4vw, 3.25rem);
   line-height: 1.04;
-  letter-spacing: 0.01em;
   font-weight: 800;
   color: var(--accent);
-  text-wrap: balance;
 }
 
 h2 {
   margin: 0 0 12px;
   font-size: 1.14rem;
-  line-height: 1.3;
   font-weight: 750;
-  letter-spacing: 0.02em;
   color: var(--accent);
 }
 
@@ -107,58 +147,23 @@ strong {
   font-weight: 700;
 }
 
+/* ===== リンク ===== */
+
 a {
   color: var(--accent);
   text-decoration: none;
-  transition:
-    color 0.18s ease,
-    opacity 0.18s ease,
-    border-color 0.18s ease,
-    background-color 0.18s ease,
-    box-shadow 0.18s ease,
-    transform 0.18s ease;
 }
 
 a:hover {
   text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
-.top-link {
-  display: inline-block;
-  margin-bottom: 18px;
-}
-
-.site-mini-logo {
-  display: inline-block;
-  font-family:
-    "Times New Roman",
-    Georgia,
-    "Baskerville",
-    "Hiragino Mincho ProN",
-    "Yu Mincho",
-    serif;
-  font-style: italic;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  font-size: 1rem;
-  line-height: 1;
-  color: var(--accent);
-  text-decoration: none;
-  text-shadow: 0 0 18px rgba(150, 190, 255, 0.06);
-}
-
-.site-mini-logo:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
+/* ===== UI ===== */
 
 .card {
   border: 1px solid var(--line);
   border-radius: calc(var(--radius) + 2px);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%),
-    linear-gradient(180deg, var(--panel) 0%, rgba(14, 18, 28, 0.98) 100%);
+  background: var(--panel);
   box-shadow: var(--shadow);
   padding: 18px;
 }
@@ -171,34 +176,14 @@ a:hover {
 
 .meta-list li {
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
   padding: 8px 0;
   border-bottom: 1px solid var(--line);
 }
 
-.meta-list li:last-child {
-  border-bottom: none;
-}
-
 .meta-label {
   color: var(--muted);
   font-weight: 700;
-}
-
-.list-tight {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.list-tight li {
-  padding: 8px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.list-tight li:last-child {
-  border-bottom: none;
 }
 
 .button-like-link {
@@ -210,51 +195,15 @@ a:hover {
   border-radius: 999px;
   border: 1px solid var(--line);
   background: rgba(255,255,255,0.04);
-  color: var(--accent);
   font-weight: 700;
-  text-decoration: none;
 }
 
-.button-like-link:hover {
-  text-decoration: none;
-  background: rgba(255,255,255,0.07);
-  border-color: var(--line-strong);
-  box-shadow: 0 0 18px rgba(135, 164, 255, 0.08);
-  transform: translateY(-1px);
-}
-
-.spec-link-card {
-  display: block;
-  margin: 14px 0;
-  padding: 14px 16px;
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 14px;
-  background: rgba(70, 70, 78, 0.92);
-  color: #f3f4f6;
-  text-decoration: none;
-  font-weight: 700;
-  transition:
-    transform 0.18s ease,
-    opacity 0.18s ease,
-    border-color 0.18s ease,
-    background-color 0.18s ease,
-    box-shadow 0.18s ease;
-}
-
-.spec-link-card:hover {
-  text-decoration: none;
-  transform: translateY(-1px);
-  opacity: 0.98;
-  background: rgba(92, 92, 102, 0.96);
-  border-color: rgba(255,255,255,0.22);
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.18);
-}
+/* ===== テーブル ===== */
 
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(255,255,255,0.02);
 }
 
 table {
@@ -267,123 +216,27 @@ th,
 td {
   padding: 12px 14px;
   border-bottom: 1px solid var(--line);
-  text-align: left;
-  vertical-align: top;
 }
 
-th {
-  color: var(--accent);
-  font-weight: 800;
-  background: rgba(255,255,255,0.03);
-}
+/* ===== モバイル ===== */
 
-tr:last-child td {
-  border-bottom: none;
-}
+@media (max-width: 640px) {
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 28px;
-  padding: 0 10px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,0.04);
-  color: var(--accent-soft);
-  font-size: 0.88rem;
-  font-weight: 700;
-}
-
-.input,
-select,
-textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  background: rgba(255,255,255,0.04);
-  color: var(--text);
-  outline: none;
-}
-
-.input:focus,
-select:focus,
-textarea:focus {
-  border-color: var(--line-strong);
-  box-shadow: 0 0 0 3px rgba(135, 164, 255, 0.10);
-}
-
-hr {
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 24px 0;
-}
-
-/* ===== PCだけ 左寄せ＋右余白（疑似2カラム） ===== */
-@media (min-width: 1024px) {
-  .page {
-    max-width: 1000px;
-    margin-left: 80px;
-    margin-right: auto;
-  }
-
-  header:not(.page-header) {
-    max-width: 1000px;
-    margin-left: 80px;
-    margin-right: auto;
-  }
-
-  body > p:first-of-type {
-    max-width: 1000px;
-    margin-left: 80px;
-    margin-right: auto;
-  }
-
+  .page,
   .event-page,
   .mc-page,
   .ranking-page,
   .rankings-page,
   .events-page,
   .mcs-page {
-    max-width: 1000px;
-    margin-left: 80px;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 640px) {
-  .page {
     padding: 20px 12px 56px;
-  }
-
-  header:not(.page-header) {
-    padding: 20px 12px 0;
-  }
-
-  body > p:first-of-type {
-    padding: 16px 12px 0;
   }
 
   h1 {
     font-size: clamp(1.8rem, 8vw, 2.4rem);
   }
 
-  h2 {
-    font-size: 1.02rem;
-  }
-
   .card {
     padding: 14px;
-    border-radius: 14px;
-  }
-
-  th,
-  td {
-    padding: 10px 10px;
-  }
-
-  .site-mini-logo {
-    font-size: 0.95rem;
   }
 }
