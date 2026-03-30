@@ -437,12 +437,57 @@
       display: flex;
     }
 
+    .countdown-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
     .countdown-number {
       font-size: clamp(72px, 18vw, 180px);
       font-weight: 900;
       line-height: 1;
       letter-spacing: 0.02em;
       animation: popPulse 1s ease both;
+    }
+
+    .countdown-clock {
+      position: relative;
+      width: clamp(38px, 6vw, 56px);
+      height: clamp(38px, 6vw, 56px);
+      flex: 0 0 auto;
+    }
+
+    .countdown-clock-face {
+      position: absolute;
+      inset: 0;
+      border: 3px solid rgba(255, 255, 255, 0.82);
+      border-radius: 50%;
+    }
+
+    .countdown-clock-hand {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 3px;
+      height: 36%;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 999px;
+      transform-origin: 50% 100%;
+      transform: translate(-50%, -100%) rotate(0deg);
+      animation: clockSpin 1s linear infinite;
+    }
+
+    .countdown-clock-center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      transform: translate(-50%, -50%);
     }
 
     .countdown-label {
@@ -470,6 +515,15 @@
       100% {
         transform: scale(0.92);
         opacity: 0.15;
+      }
+    }
+
+    @keyframes clockSpin {
+      from {
+        transform: translate(-50%, -100%) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, -100%) rotate(360deg);
       }
     }
 
@@ -653,8 +707,15 @@
 </head>
 <body>
   <div id="countdown-overlay" class="countdown-overlay" aria-hidden="true">
-    <div id="countdown-number" class="countdown-number">5</div>
-    <div class="countdown-label">シミュレーション中…</div>
+    <div class="countdown-main">
+      <div id="countdown-number" class="countdown-number">5</div>
+      <div class="countdown-clock" aria-hidden="true">
+        <div class="countdown-clock-face"></div>
+        <div class="countdown-clock-hand"></div>
+        <div class="countdown-clock-center"></div>
+      </div>
+    </div>
+    <div class="countdown-label">100回戦ってもらっています</div>
   </div>
 
   <header class="site-header">
