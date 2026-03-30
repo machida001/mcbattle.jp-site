@@ -320,6 +320,38 @@ hr {
   margin: 24px 0;
 }
 
+/* ===== PCだけ 左寄せ＋右余白（疑似2カラム） ===== */
+@media (min-width: 1024px) {
+  .page {
+    max-width: 1000px;
+    margin-left: 80px;
+    margin-right: auto;
+  }
+
+  header:not(.page-header) {
+    max-width: 1000px;
+    margin-left: 80px;
+    margin-right: auto;
+  }
+
+  body > p:first-of-type {
+    max-width: 1000px;
+    margin-left: 80px;
+    margin-right: auto;
+  }
+
+  .event-page,
+  .mc-page,
+  .ranking-page,
+  .rankings-page,
+  .events-page,
+  .mcs-page {
+    max-width: 1000px;
+    margin-left: 80px;
+    margin-right: auto;
+  }
+}
+
 @media (max-width: 640px) {
   .page {
     padding: 20px 12px 56px;
