@@ -18,12 +18,12 @@
       --shadow:0 18px 48px rgba(0,0,0,.28);
       --radius:22px;
 
-      /* レイアウト管理用 */
+      /* layout */
       --content-max: 1000px;
-      --page-gutter: 24px;
       --pc-left-gutter: 80px;
+      --page-gutter: 24px;
 
-      /* index固有 */
+      /* index local */
       --max: 1180px;
     }
 
@@ -43,10 +43,6 @@
       text-decoration:none;
     }
 
-    /* 共通コンテナ
-       - モバイル/タブレット: 中央寄せ
-       - PC: 左寄せ＋右余白
-       将来は他ページもこの思想に合わせれば一律管理しやすい */
     .container{
       width:min(calc(100% - (var(--page-gutter) * 2)), var(--max));
       margin-left:auto;
