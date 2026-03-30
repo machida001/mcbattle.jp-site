@@ -120,6 +120,7 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow: hidden;
+      margin-bottom: 18px;
     }
 
     .panel-body { padding: 18px; }
@@ -144,8 +145,6 @@
       color: #ffdada;
       border: 1px solid rgba(255, 107, 107, 0.28);
     }
-
-    .mode-section { margin-bottom: 20px; }
 
     .mode-grid {
       display: grid;
@@ -179,9 +178,7 @@
       margin-bottom: 0;
     }
 
-    .selector-section { margin-bottom: 18px; }
-
-    .selector-label {
+    .section-title {
       margin: 0 0 12px;
       font-size: 0.98rem;
       font-weight: 700;
@@ -314,8 +311,6 @@
       padding: 12px 0;
     }
 
-    .selected-area { margin-bottom: 18px; }
-
     .selected-header {
       display: flex;
       align-items: center;
@@ -382,8 +377,6 @@
       opacity: 1;
       color: #ffd4d4;
     }
-
-    .result-panel { margin-top: 22px; }
 
     .result-actions {
       display: flex;
@@ -546,18 +539,28 @@
       font-weight: 800;
     }
 
+    .prob-table-wrap {
+      max-width: 760px;
+    }
+
     .prob-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 8px;
+      table-layout: fixed;
     }
 
     .prob-table th,
     .prob-table td {
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 10px 8px;
+      padding: 8px 6px;
       text-align: left;
-      font-size: 0.92rem;
+      font-size: 0.85rem;
+    }
+
+    .prob-table th:first-child,
+    .prob-table td:first-child {
+      width: 34%;
     }
 
     .prob-table th {
@@ -565,9 +568,11 @@
       font-weight: 600;
     }
 
-    .prob-table td.num {
+    .prob-table td.num,
+    .prob-table th.num {
       text-align: right;
       white-space: nowrap;
+      width: 16.5%;
     }
 
     .site-footer {
@@ -581,6 +586,7 @@
     @media (max-width: 980px) {
       .candidate-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       .selected-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .prob-table-wrap { max-width: 100%; }
     }
 
     @media (max-width: 760px) {
@@ -609,7 +615,11 @@
       }
       .site-nav { width: 100%; }
       .prob-table th,
-      .prob-table td { font-size: 0.84rem; }
+      .prob-table td { font-size: 0.8rem; }
+      .prob-table th:first-child,
+      .prob-table td:first-child { width: 40%; }
+      .prob-table td.num,
+      .prob-table th.num { width: 15%; }
     }
   </style>
 </head>
@@ -650,73 +660,77 @@
       </p>
     </section>
 
+    <div id="status" class="status-box hidden">参加候補を読み込みます。</div>
+
     <section class="panel">
       <div class="panel-body">
-        <div id="status" class="status-box hidden">参加候補を読み込みます。</div>
-
-        <div class="mode-section">
-          <h3 class="selector-label">モードを選ぶ</h3>
-          <div class="mode-grid">
-            <div id="mode-current" class="mode-card active" role="button" tabindex="0">
-              <span class="mode-card-title">今の強さでシミュレーションする</span>
-            </div>
-            <div id="mode-peak" class="mode-card" role="button" tabindex="0">
-              <span class="mode-card-title">全盛期の強さでシミュレーションする</span>
-            </div>
+        <h3 class="section-title">①モードを選ぶ</h3>
+        <div class="mode-grid">
+          <div id="mode-current" class="mode-card active" role="button" tabindex="0">
+            <span class="mode-card-title">今の強さでシミュレーションする</span>
+          </div>
+          <div id="mode-peak" class="mode-card" role="button" tabindex="0">
+            <span class="mode-card-title">全盛期の強さでシミュレーションする</span>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="selector-section">
-          <h3 class="selector-label">MCを選ぶ</h3>
+    <section class="panel">
+      <div class="panel-body">
+        <h3 class="section-title">②MCを選ぶ</h3>
 
-          <div class="search-row">
-            <input
-              id="mc-search"
-              class="search-input"
-              type="text"
-              placeholder="MC名またはよみがなで検索"
-              autocomplete="off"
-            />
-            <div id="selected-count" class="count-badge">0/8</div>
-            <button id="fill-top100-btn" class="btn btn-secondary" type="button">残りを上位100位からランダム入力</button>
-            <button id="clear-selected-btn" class="btn btn-secondary btn-clear" type="button">全クリア</button>
-          </div>
-
-          <div class="candidate-area">
-            <div id="candidate-list" class="candidate-list"></div>
-          </div>
-
-          <div class="selected-area">
-            <div class="selected-header">
-              <div class="selected-title">選択中の8人</div>
-              <div class="selected-sub">戦績0のMCは候補に出していません</div>
-            </div>
-
-            <div id="selected-grid" class="selected-grid"></div>
-          </div>
+        <div class="search-row">
+          <input
+            id="mc-search"
+            class="search-input"
+            type="text"
+            placeholder="MC名またはよみがなで検索"
+            autocomplete="off"
+          />
+          <div id="selected-count" class="count-badge">0/8</div>
+          <button id="fill-top100-btn" class="btn btn-secondary" type="button">残りを上位100位からランダム入力</button>
+          <button id="clear-selected-btn" class="btn btn-secondary btn-clear" type="button">全クリア</button>
         </div>
 
-        <div class="result-panel">
-          <div class="result-actions">
-            <button id="simulate-btn" class="btn btn-primary" type="button" disabled>100回シミュレーションする</button>
-          </div>
+        <div class="candidate-area">
+          <div id="candidate-list" class="candidate-list"></div>
+        </div>
 
-          <div id="result-summary" class="result-summary">
-            <span class="result-summary-label">最も優勝確率が高いMC</span>
-            <span id="result-summary-winner" class="result-summary-winner">未決定</span>
-            <div id="result-mode-note" class="result-mode-note"></div>
-          </div>
+        <div class="selected-header">
+          <div class="selected-title">選択中の8人</div>
+          <div class="selected-sub">戦績0のMCは候補に出していません</div>
+        </div>
 
-          <section id="summary-panel" class="summary-panel">
-            <h3 class="summary-title">結果サマリー</h3>
-            <div id="summary-text" class="summary-text"></div>
-          </section>
+        <div id="selected-grid" class="selected-grid"></div>
+      </div>
+    </section>
 
-          <section id="overall-panel" class="overall-panel">
-            <h3 class="overall-title">全体分布</h3>
+    <section class="panel">
+      <div class="panel-body">
+        <h3 class="section-title">結果</h3>
+
+        <div class="result-actions">
+          <button id="simulate-btn" class="btn btn-primary" type="button" disabled>100回シミュレーションする</button>
+        </div>
+
+        <div id="result-summary" class="result-summary">
+          <span class="result-summary-label">最も優勝確率が高いMC</span>
+          <span id="result-summary-winner" class="result-summary-winner">未決定</span>
+          <div id="result-mode-note" class="result-mode-note"></div>
+        </div>
+
+        <section id="summary-panel" class="summary-panel">
+          <h3 class="summary-title">結果サマリー</h3>
+          <div id="summary-text" class="summary-text"></div>
+        </section>
+
+        <section id="overall-panel" class="overall-panel">
+          <h3 class="overall-title">全体分布</h3>
+          <div class="prob-table-wrap">
             <div id="overall-prob-table"></div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -769,11 +783,8 @@
       el.textContent = message;
       el.classList.remove('hidden');
 
-      if (isError) {
-        el.classList.add('error');
-      } else {
-        el.classList.remove('error');
-      }
+      if (isError) el.classList.add('error');
+      else el.classList.remove('error');
     }
 
     function loadJsonp(url) {
@@ -784,14 +795,8 @@
         const script = document.createElement('script');
 
         function cleanup() {
-          try {
-            delete window[callbackName];
-          } catch (e) {
-            window[callbackName] = undefined;
-          }
-          if (script.parentNode) {
-            script.parentNode.removeChild(script);
-          }
+          try { delete window[callbackName]; } catch (e) { window[callbackName] = undefined; }
+          if (script.parentNode) script.parentNode.removeChild(script);
         }
 
         const timer = setTimeout(() => {
@@ -860,9 +865,7 @@
 
     function buildStrengthMap(strengthData) {
       strengthMap = {};
-      const rows = Array.isArray(strengthData && strengthData.strengths)
-        ? strengthData.strengths
-        : [];
+      const rows = Array.isArray(strengthData && strengthData.strengths) ? strengthData.strengths : [];
 
       rows.forEach(function(row) {
         const mcId = String(row.mc_id || '');
@@ -892,7 +895,6 @@
 
     function setMode(mode) {
       if (isAnimating) return;
-
       currentMode = mode;
       document.getElementById('mode-current').classList.toggle('active', mode === 'current');
       document.getElementById('mode-peak').classList.toggle('active', mode === 'peak');
@@ -909,11 +911,8 @@
         const keyword = document.getElementById('mc-search').value || '';
         const q = normalizeText(keyword);
 
-        if (q.length < 2) {
-          container.innerHTML = '<div class="candidate-empty">候補を表示するには2文字以上入力してください。</div>';
-        } else {
-          container.innerHTML = '<div class="candidate-empty">該当するMCが見つかりません。</div>';
-        }
+        if (q.length < 2) container.innerHTML = '<div class="candidate-empty">候補を表示するには2文字以上入力してください。</div>';
+        else container.innerHTML = '<div class="candidate-empty">該当するMCが見つかりません。</div>';
         return;
       }
 
@@ -929,11 +928,7 @@
         button.className = 'candidate-item';
         button.disabled = disabled;
         button.innerHTML = '<span class="candidate-name">' + escapeHtml(mc.mc_name || '') + '</span>';
-
-        button.addEventListener('click', function() {
-          addSelectedMc(mc);
-        });
-
+        button.addEventListener('click', function() { addSelectedMc(mc); });
         container.appendChild(button);
       });
     }
@@ -971,11 +966,7 @@
 
     function removeSelectedMc(mcId) {
       if (isAnimating) return;
-
-      selectedMCs = selectedMCs.filter(function(mc) {
-        return mc.mc_id !== mcId;
-      });
-
+      selectedMCs = selectedMCs.filter(function(mc) { return mc.mc_id !== mcId; });
       lastSimulationResult = null;
       renderSelectedGrid();
       refreshCandidateView();
@@ -986,7 +977,6 @@
     function clearSelectedMCs() {
       if (isAnimating) return;
       if (selectedMCs.length === 0) return;
-
       selectedMCs = [];
       lastSimulationResult = null;
       renderSelectedGrid();
@@ -1026,7 +1016,6 @@
     function renderSelectedGrid() {
       const container = document.getElementById('selected-grid');
       const countEl = document.getElementById('selected-count');
-
       container.innerHTML = '';
 
       for (let i = 0; i < 8; i++) {
@@ -1038,7 +1027,6 @@
           slot.innerHTML =
             '<div class="selected-slot-name">' + escapeHtml(mc.mc_name || '') + '</div>' +
             '<button class="selected-slot-remove" type="button" aria-label="削除">×</button>';
-
           slot.querySelector('.selected-slot-remove').addEventListener('click', function() {
             removeSelectedMc(mc.mc_id);
           });
@@ -1113,10 +1101,7 @@
       const ratingB = getAdjustedRatingForMc(b);
       const probA = calculateWinProbability(ratingA, ratingB);
       const randomValue = Math.random();
-
-      return {
-        winner: randomValue < probA ? a : b
-      };
+      return { winner: randomValue < probA ? a : b };
     }
 
     function createMatch(a, b) {
@@ -1125,18 +1110,11 @@
 
       while (winsA < 2 && winsB < 2) {
         const bout = playSingleBout(a, b);
-        if (bout.winner.mc_id === a.mc_id) {
-          winsA += 1;
-        } else {
-          winsB += 1;
-        }
+        if (bout.winner.mc_id === a.mc_id) winsA += 1;
+        else winsB += 1;
       }
 
-      return {
-        a: a,
-        b: b,
-        winner: winsA > winsB ? a : b
-      };
+      return { a: a, b: b, winner: winsA > winsB ? a : b };
     }
 
     function runOneTournament() {
@@ -1186,15 +1164,10 @@
 
       for (let i = 0; i < TOURNAMENT_RUNS; i++) {
         const one = runOneTournament();
-
         standings[one.champion.mc_id].champion += 1;
         standings[one.runner_up.mc_id].runner_up += 1;
-        one.semifinal_losers.forEach(function(mc) {
-          standings[mc.mc_id].best4 += 1;
-        });
-        one.quarterfinal_losers.forEach(function(mc) {
-          standings[mc.mc_id].best8_exit += 1;
-        });
+        one.semifinal_losers.forEach(function(mc) { standings[mc.mc_id].best4 += 1; });
+        one.quarterfinal_losers.forEach(function(mc) { standings[mc.mc_id].best8_exit += 1; });
       }
 
       const overall = Object.keys(standings).map(function(mcId) {
@@ -1216,11 +1189,7 @@
         return a.mc.mc_name.localeCompare(b.mc.mc_name, 'ja');
       });
 
-      return {
-        mode: currentMode,
-        overall: overall,
-        favorite: overall.length ? overall[0].mc : null
-      };
+      return { mode: currentMode, overall: overall, favorite: overall.length ? overall[0].mc : null };
     }
 
     function formatRateFromCount(count) {
@@ -1392,15 +1361,12 @@
 
     function renderResults(result) {
       if (!result) return;
-
       document.getElementById('result-summary').classList.add('show');
       document.getElementById('summary-panel').classList.add('show');
       document.getElementById('overall-panel').classList.add('show');
-
       document.getElementById('result-summary-winner').textContent = result.favorite ? result.favorite.mc_name : '未決定';
       document.getElementById('result-mode-note').textContent = '';
       document.getElementById('summary-text').textContent = buildSummaryText(result);
-
       renderOverallTable(result.overall);
     }
 
@@ -1408,7 +1374,6 @@
       document.getElementById('result-summary').classList.remove('show');
       document.getElementById('summary-panel').classList.remove('show');
       document.getElementById('overall-panel').classList.remove('show');
-
       document.getElementById('result-summary-winner').textContent = '未決定';
       document.getElementById('result-mode-note').textContent = '';
       document.getElementById('summary-text').textContent = '';
@@ -1416,9 +1381,7 @@
     }
 
     function sleep(ms) {
-      return new Promise(function(resolve) {
-        setTimeout(resolve, ms);
-      });
+      return new Promise(function(resolve) { setTimeout(resolve, ms); });
     }
 
     async function playCountdown() {
@@ -1460,13 +1423,8 @@
       const currentEl = document.getElementById('mode-current');
       const peakEl = document.getElementById('mode-peak');
 
-      currentEl.addEventListener('click', function() {
-        setMode('current');
-      });
-
-      peakEl.addEventListener('click', function() {
-        setMode('peak');
-      });
+      currentEl.addEventListener('click', function() { setMode('current'); });
+      peakEl.addEventListener('click', function() { setMode('peak'); });
 
       currentEl.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
