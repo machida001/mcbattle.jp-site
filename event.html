@@ -15,6 +15,20 @@
       margin-bottom: 12px;
     }
 
+    .result-block {
+      display: block;
+      line-height: 1.9;
+    }
+
+    .result-line {
+      display: block;
+    }
+
+    .result-line a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
     @media (max-width: 640px) {
       .event-card-inner {
         padding-left: 10px;
@@ -307,6 +321,51 @@
       });
     }
 
+    function getRoundMatches(groupedMatches, roundLabel) {
+      const group = groupedMatches.find((g) => normalizeDisplayRound(g.round_name) === roundLabel);
+      return group && Array.isArray(group.matches) ? group.matches : [];
+    }
+
+    function buildResultsHtml(event, groupedMatches) {
+      const finalMatches = getRoundMatches(groupedMatches, "決勝");
+      const semiMatches = getRoundMatches(groupedMatches, "準決勝");
+
+      const winnerName = event.winner_name || (finalMatches[0] ? finalMatches[0].winner_name : "");
+      const winnerMcId = event.winner_mc_id || (finalMatches[0] ? finalMatches[0].winner_mc_id : "");
+
+      const runnerUpName = finalMatches[0] ? (finalMatches[0].loser_name || "") : "";
+      const runnerUpMcId = finalMatches[0] ? (finalMatches[0].loser_mc_id || "") : "";
+
+      const best4List = semiMatches
+        .map(match => {
+          const name = match.loser_name || "";
+          const mcId = match.loser_mc_id || "";
+          if (!name) return "";
+          return `🥉 ${renderMcLink(name, mcId)}`;
+        })
+        .filter(Boolean);
+
+      const lines = [];
+
+      if (winnerName) {
+        lines.push(`<span class="result-line">🥇 ${renderMcLink(winnerName, winnerMcId)}</span>`);
+      }
+
+      if (runnerUpName) {
+        lines.push(`<span class="result-line">🥈 ${renderMcLink(runnerUpName, runnerUpMcId)}</span>`);
+      }
+
+      best4List.forEach(line => {
+        lines.push(`<span class="result-line">${line}</span>`);
+      });
+
+      if (!lines.length) {
+        return "−";
+      }
+
+      return `<span class="result-block">${lines.join("")}</span>`;
+    }
+
     async function loadEventDetail() {
       const eventId = getEventIdFromQuery();
 
@@ -355,6 +414,7 @@
         const groupedMatches = Array.isArray(data.grouped_matches) ? data.grouped_matches : [];
         const totalMatches = Number(data.total_matches || 0);
         const formattedWinnerPrize = formatNumberWithComma(event.prize_money_winner);
+        const resultsHtml = buildResultsHtml(event, groupedMatches);
 
         titleEl.textContent = event.event_name_full || event.event_name || "大会名不明";
         metaEl.textContent = `${event.event_date || ""} ${event.event_category || ""}`.trim();
@@ -362,8 +422,7 @@
         const infoItems = [
           { label: "開催日：", html: escapeHtml(event.event_date || "") },
           { label: "カテゴリ：", html: escapeHtml(event.event_category || "") },
-          { label: "会場：", html: escapeHtml(event.event_stage || "") },
-          { label: "優勝者：", html: escapeHtml(event.winner_name || "") },
+          { label: "結果：", html: resultsHtml },
           { label: "優勝賞金：", html: escapeHtml(formattedWinnerPrize || "") }
         ].filter((item) => item.html !== "");
 
