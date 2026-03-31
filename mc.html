@@ -148,6 +148,20 @@
       return n <= 100 ? String(n) : "圏外";
     }
 
+    function getRankDisplay(ranking) {
+      if (ranking.rank_display !== null && ranking.rank_display !== undefined && ranking.rank_display !== "") {
+        return String(ranking.rank_display);
+      }
+      return getRankLabel(ranking.rank);
+    }
+
+    function getScoreDisplay(ranking) {
+      if (ranking.score_display !== null && ranking.score_display !== undefined && ranking.score_display !== "") {
+        return String(ranking.score_display);
+      }
+      return formatScore(ranking.current_score ?? ranking.score);
+    }
+
     function renderMcLink(name, mcId) {
       const safeName = escapeHtml(name || "");
       const safeId = String(mcId || "").trim();
@@ -381,13 +395,16 @@
               }).join("<br>")
             : "−";
 
-          appendInfoRow(infoListEl, "MCBattle Rank順位", displayValue(getRankLabel(ranking.rank)));
-          appendInfoRow(infoListEl, "スコア", displayValue(formatScore(ranking.current_score ?? ranking.score)));
-          appendInfoRow(infoListEl, "総試合数", displayValue(summary.total_matches));
-          appendInfoRow(infoListEl, "勝利数", displayValue(summary.wins));
-          appendInfoRow(infoListEl, "敗北数", displayValue(summary.losses));
+          const rankDisplay = getRankDisplay(ranking);
+          const scoreDisplay = getScoreDisplay(ranking);
+
+          appendInfoRow(infoListEl, "MCBattle Rank順位", escapeHtml(displayValue(rankDisplay)));
+          appendInfoRow(infoListEl, "スコア", escapeHtml(displayValue(scoreDisplay)));
+          appendInfoRow(infoListEl, "総試合数", escapeHtml(displayValue(summary.total_matches)));
+          appendInfoRow(infoListEl, "勝利数", escapeHtml(displayValue(summary.wins)));
+          appendInfoRow(infoListEl, "敗北数", escapeHtml(displayValue(summary.losses)));
           appendInfoRow(infoListEl, "これまで優勝した大会", championshipText, { block: true });
-          appendInfoRow(infoListEl, "獲得賞金総額", `${formatYen(totalPrizeMoney)}円`);
+          appendInfoRow(infoListEl, "獲得賞金総額", escapeHtml(`${formatYen(totalPrizeMoney)}円`));
 
           appearances.forEach((item) => {
             const li = document.createElement("li");
