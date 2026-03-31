@@ -6,6 +6,78 @@
   <title>大会一覧 | MCBattle.jp</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    .event-group-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .event-group {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+      overflow: hidden;
+    }
+
+    .event-group-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border: none;
+      background: rgba(255,255,255,0.025);
+      color: var(--accent);
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .event-group-toggle:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .event-group-left {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .event-group-name {
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.4;
+      color: var(--accent);
+      word-break: break-word;
+    }
+
+    .event-group-count {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .event-group-icon {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: transform 0.18s ease;
+    }
+
+    .event-group.is-open .event-group-icon {
+      transform: rotate(180deg);
+    }
+
+    .event-group-body {
+      display: none;
+      padding: 0 12px 12px;
+    }
+
+    .event-group.is-open .event-group-body {
+      display: block;
+    }
+
     .event-list {
       display: flex;
       flex-direction: column;
@@ -49,6 +121,28 @@
     .status.error {
       color: var(--danger);
     }
+
+    @media (max-width: 640px) {
+      .event-group-toggle {
+        padding: 13px 14px;
+      }
+
+      .event-group-body {
+        padding: 0 10px 10px;
+      }
+
+      .event-row {
+        padding: 12px;
+      }
+
+      .event-group-name {
+        font-size: 0.97rem;
+      }
+
+      .event-name {
+        font-size: 0.96rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -57,7 +151,7 @@
 
     <h1>大会一覧</h1>
 
-    <div id="event-list" class="event-list"></div>
+    <div id="event-list" class="event-group-list"></div>
     <p id="status" class="status">読み込み中…</p>
   </div>
 
@@ -68,7 +162,9 @@
       return String(v ?? "")
         .replace(/&/g,"&amp;")
         .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;");
+        .replace(/>/g,"&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
     }
 
     function formatDate(v){
@@ -80,6 +176,64 @@
 
     function getName(e){
       return e.event_name_full || e.event_name || "";
+    }
+
+    function getCategory(e){
+      return String(e.event_category || "").trim() || "その他";
+    }
+
+    function getDateValue(v) {
+      if (!v) return null;
+      const d = new Date(v);
+      return isNaN(d) ? null : d;
+    }
+
+    function compareEventsByDateDesc(a, b) {
+      const da = getDateValue(a.event_date);
+      const db = getDateValue(b.event_date);
+
+      if (da && db) return db - da;
+      if (da) return -1;
+      if (db) return 1;
+
+      return String(getName(a)).localeCompare(String(getName(b)), "ja");
+    }
+
+    function groupEvents(events) {
+      const map = new Map();
+
+      events.forEach(event => {
+        const category = getCategory(event);
+        if (!map.has(category)) {
+          map.set(category, []);
+        }
+        map.get(category).push(event);
+      });
+
+      const groups = Array.from(map.entries()).map(([category, items]) => {
+        const sortedItems = items.slice().sort(compareEventsByDateDesc);
+
+        let newestDate = null;
+        sortedItems.forEach(item => {
+          const d = getDateValue(item.event_date);
+          if (d && (!newestDate || d > newestDate)) newestDate = d;
+        });
+
+        return {
+          category,
+          items: sortedItems,
+          newestDate
+        };
+      });
+
+      groups.sort((a, b) => {
+        if (a.newestDate && b.newestDate) return b.newestDate - a.newestDate;
+        if (a.newestDate) return -1;
+        if (b.newestDate) return 1;
+        return a.category.localeCompare(b.category, "ja");
+      });
+
+      return groups;
     }
 
     function jsonp(url){
@@ -104,6 +258,33 @@
       });
     }
 
+    function buildEventRow(e) {
+      const id = e.event_id || "";
+      const name = getName(e);
+      const date = formatDate(e.event_date);
+
+      return `
+        <a class="event-row" href="event.html?event_id=${encodeURIComponent(id)}">
+          <div class="event-date">${escapeHtml(date)}</div>
+          <div class="event-name">${escapeHtml(name)}</div>
+        </a>
+      `;
+    }
+
+    function attachAccordionEvents() {
+      const toggles = document.querySelectorAll(".event-group-toggle");
+      toggles.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const group = btn.closest(".event-group");
+          if (!group) return;
+          group.classList.toggle("is-open");
+
+          const expanded = group.classList.contains("is-open");
+          btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+        });
+      });
+    }
+
     async function load(){
       const listEl = document.getElementById("event-list");
       const statusEl = document.getElementById("status");
@@ -120,19 +301,36 @@
           return;
         }
 
-        listEl.innerHTML = events.map(e=>{
-          const id = e.event_id || "";
-          const name = getName(e);
-          const date = formatDate(e.event_date);
+        const groups = groupEvents(events);
+
+        listEl.innerHTML = groups.map((group, index) => {
+          const bodyId = `event-group-body-${index}`;
+          const rows = group.items.map(buildEventRow).join("");
 
           return `
-            <a class="event-row" href="event.html?event_id=${encodeURIComponent(id)}">
-              <div class="event-date">${escapeHtml(date)}</div>
-              <div class="event-name">${escapeHtml(name)}</div>
-            </a>
+            <section class="event-group">
+              <button
+                class="event-group-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="${bodyId}"
+              >
+                <span class="event-group-left">
+                  <span class="event-group-name">${escapeHtml(group.category)}</span>
+                  <span class="event-group-count">${group.items.length}大会</span>
+                </span>
+                <span class="event-group-icon">▼</span>
+              </button>
+              <div id="${bodyId}" class="event-group-body">
+                <div class="event-list">
+                  ${rows}
+                </div>
+              </div>
+            </section>
           `;
         }).join("");
 
+        attachAccordionEvents();
         statusEl.textContent = "";
 
       }catch(e){
