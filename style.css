@@ -48,6 +48,21 @@ body {
   min-height: 100vh;
 }
 
+/* iPhone長押し時の強いハイライトを抑える */
+a,
+button,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 /* ===== 共通レイアウト ===== */
 
 .page,
