@@ -267,39 +267,6 @@
       document.head.appendChild(style);
     }
 
-    function normalizeDisplayRound(roundName) {
-      const roundDisplayMap = {
-        "決勝": "決勝",
-        "FINAL": "決勝",
-        "Final": "決勝",
-        "final": "決勝",
-        "準決勝": "準決勝",
-        "決勝トーナメント準決勝": "準決勝",
-        "ベスト4": "準決勝",
-        "Best4": "準決勝",
-        "BEST4": "準決勝",
-        "準々決勝": "ベスト8",
-        "ベスト8": "ベスト8",
-        "Best8": "ベスト8",
-        "BEST8": "ベスト8",
-        "ベスト16": "ベスト16",
-        "Best16": "ベスト16",
-        "BEST16": "ベスト16",
-        "ベスト32": "ベスト32",
-        "Best32": "ベスト32",
-        "BEST32": "ベスト32",
-        "ベスト48": "ベスト48",
-        "Best48": "ベスト48",
-        "BEST48": "ベスト48",
-        "ベスト64": "ベスト64",
-        "Best64": "ベスト64",
-        "BEST64": "ベスト64"
-      };
-
-      const name = String(roundName || "").trim();
-      return roundDisplayMap[name] || name || "ラウンド不明";
-    }
-
     function loadJsonp(url) {
       return new Promise((resolve, reject) => {
         const callbackName = "mcBattleEventCallback_" + Date.now() + "_" + Math.floor(Math.random() * 100000);
@@ -347,13 +314,13 @@
     }
 
     function getRoundMatches(groupedMatches, roundLabel) {
-      const group = groupedMatches.find((g) => normalizeDisplayRound(g.round_name) === roundLabel);
+      const group = groupedMatches.find((g) => String(g.round_name || "").trim() === roundLabel);
       return group && Array.isArray(group.matches) ? group.matches : [];
     }
 
     function buildResultsHtml(event, groupedMatches) {
-      const finalMatches = getRoundMatches(groupedMatches, "決勝");
-      const semiMatches = getRoundMatches(groupedMatches, "準決勝");
+      const finalMatches = getRoundMatches(groupedMatches, "Final");
+      const semiMatches = getRoundMatches(groupedMatches, "Best4");
 
       const winnerName = event.winner_name || (finalMatches[0] ? finalMatches[0].winner_name : "");
       const winnerMcId = event.winner_mc_id || (finalMatches[0] ? finalMatches[0].winner_mc_id : "");
@@ -467,7 +434,7 @@
         });
 
         groupedMatches.forEach((group) => {
-          const roundName = normalizeDisplayRound(group.round_name);
+          const roundName = String(group.round_name || "").trim() || "ラウンド不明";
 
           const block = document.createElement("div");
           block.className = "round-block";
@@ -519,18 +486,18 @@
         });
 
         const warningMessages = [];
-        const finals = groupedMatches.find((g) => normalizeDisplayRound(g.round_name) === "決勝");
-        const semis = groupedMatches.find((g) => normalizeDisplayRound(g.round_name) === "準決勝");
-        const best8 = groupedMatches.find((g) => normalizeDisplayRound(g.round_name) === "ベスト8");
+        const finals = groupedMatches.find((g) => String(g.round_name || "").trim() === "Final");
+        const semis = groupedMatches.find((g) => String(g.round_name || "").trim() === "Best4");
+        const best8 = groupedMatches.find((g) => String(g.round_name || "").trim() === "Best8");
 
         if (finals && Array.isArray(finals.matches) && finals.matches.length !== 1) {
-          warningMessages.push(`決勝が ${finals.matches.length} 試合あります`);
+          warningMessages.push(`Final が ${finals.matches.length} 試合あります`);
         }
         if (semis && Array.isArray(semis.matches) && semis.matches.length > 2) {
-          warningMessages.push(`準決勝が ${semis.matches.length} 試合あります`);
+          warningMessages.push(`Best4 が ${semis.matches.length} 試合あります`);
         }
         if (best8 && Array.isArray(best8.matches) && best8.matches.length > 4) {
-          warningMessages.push(`ベスト8が ${best8.matches.length} 試合あります`);
+          warningMessages.push(`Best8 が ${best8.matches.length} 試合あります`);
         }
 
         matchesStatusEl.textContent = `${totalMatches}試合を表示`;
