@@ -149,6 +149,10 @@
           color: inherit;
         }
 
+        .match-line {
+          display: none;
+        }
+
         .mark {
           white-space: nowrap;
           font-weight: 700;
@@ -228,12 +232,7 @@
           }
 
           .match-row {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 6px;
-            width: 100%;
-            font-size: 0.95rem;
+            display: none;
           }
 
           .match-line {
@@ -241,6 +240,10 @@
             align-items: flex-start;
             gap: 6px;
             min-width: 0;
+          }
+
+          .match-line + .match-line {
+            margin-top: 4px;
           }
 
           .match-line .mark {
