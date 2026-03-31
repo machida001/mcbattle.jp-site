@@ -104,15 +104,24 @@
 
         .match-list > li {
           margin: 0 0 10px 0;
-          padding: 10px 12px;
-          border-radius: 8px;
+          padding: 0;
           background: transparent;
-          border: 1px solid currentColor;
+          border: none;
           color: inherit;
         }
 
         .match-row-wrap {
           display: block;
+        }
+
+        .match-row-box {
+          display: inline-block;
+          max-width: 100%;
+          padding: 10px 12px;
+          border-radius: 8px;
+          background: transparent;
+          border: 1px solid currentColor;
+          color: inherit;
         }
 
         .match-row {
@@ -182,6 +191,11 @@
         }
 
         @media (max-width: 900px) {
+          .match-row-box {
+            display: block;
+            width: 100%;
+          }
+
           .match-row {
             grid-template-columns: 34px minmax(90px, 1fr) 18px minmax(90px, 1fr) 34px;
             width: 100%;
@@ -193,15 +207,17 @@
         }
 
         @media (max-width: 640px) {
+          .match-row-box {
+            display: block;
+            width: 100%;
+            padding: 8px 10px;
+          }
+
           .match-row {
             grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr) auto;
             gap: 6px;
             font-size: 0.95rem;
             width: 100%;
-          }
-
-          .match-list > li {
-            padding: 8px 10px;
           }
 
           .judge-method {
@@ -391,14 +407,16 @@
             const judgeMethod = escapeHtml(String(match.judge_method || "").trim());
 
             li.innerHTML = `
-              <div class="match-row">
-                <span class="mark mark-loser">【✕】</span>
-                <span class="name name-loser">${loserHtml}</span>
-                <span class="vs-part">×</span>
-                <span class="name name-winner">${winnerHtml}</span>
-                <span class="mark mark-winner">【◯】</span>
+              <div class="match-row-box">
+                <div class="match-row">
+                  <span class="mark mark-loser">【✕】</span>
+                  <span class="name name-loser">${loserHtml}</span>
+                  <span class="vs-part">×</span>
+                  <span class="name name-winner">${winnerHtml}</span>
+                  <span class="mark mark-winner">【◯】</span>
+                </div>
+                ${judgeMethod ? `<div class="judge-method">判定: ${judgeMethod}</div>` : ""}
               </div>
-              ${judgeMethod ? `<div class="judge-method">判定: ${judgeMethod}</div>` : ""}
             `;
 
             ul.appendChild(li);
