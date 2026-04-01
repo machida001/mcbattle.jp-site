@@ -128,93 +128,97 @@
   </div>
 
   <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
+    const PRIZE_RANKINGS_JSON_URL = "./data/prize_rankings.json";
 
     function formatYen(value) {
       const num = Number(value || 0);
       return num.toLocaleString("ja-JP");
     }
 
+    async function loadPrizeRankingsJson() {
+      const res = await fetch(PRIZE_RANKINGS_JSON_URL, { cache: "no-store" });
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      return await res.json();
+    }
+
     function loadPrizeRankings() {
-      const callbackName = "mcBattlePrizeRankingPageCallback";
       const statusEl = document.getElementById("ranking-status");
       const listEl = document.getElementById("ranking-list");
 
-      window[callbackName] = function(data) {
-        console.log("prize ranking page:", data);
-        listEl.innerHTML = "";
-        statusEl.classList.remove("error");
+      loadPrizeRankingsJson()
+        .then((data) => {
+          console.log("prize ranking page:", data);
+          listEl.innerHTML = "";
+          statusEl.classList.remove("error");
 
-        try {
-          if (!data) {
-            statusEl.textContent = "レスポンスが空です";
-            statusEl.classList.add("error");
-            return;
-          }
-
-          if (data.error) {
-            statusEl.textContent = "データ取得エラー";
-            statusEl.classList.add("error");
-            return;
-          }
-
-          const rankings = Array.isArray(data.rankings) ? data.rankings : [];
-
-          rankings.forEach((item, index) => {
-            const li = document.createElement("li");
-
-            const rankNo = document.createElement("span");
-            rankNo.className = "rank-no";
-            rankNo.textContent = `${item.rank || index + 1}.`;
-
-            const nameEl = document.createElement("span");
-            nameEl.className = "rank-name";
-
-            const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
-            const mcId = item.mc_id ? String(item.mc_id) : "";
-
-            if (mcId) {
-              const a = document.createElement("a");
-              a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
-              a.textContent = mcName;
-              a.title = mcName;
-              nameEl.appendChild(a);
-            } else {
-              const span = document.createElement("span");
-              span.textContent = mcName;
-              span.title = mcName;
-              nameEl.appendChild(span);
+          try {
+            if (!data) {
+              statusEl.textContent = "レスポンスが空です";
+              statusEl.classList.add("error");
+              return;
             }
 
-            const moneyEl = document.createElement("span");
-            moneyEl.className = "rank-money";
-            moneyEl.textContent = formatYen(item.total_prize_money || 0);
+            if (data.error) {
+              statusEl.textContent = "データ取得エラー";
+              statusEl.classList.add("error");
+              return;
+            }
 
-            li.appendChild(rankNo);
-            li.appendChild(nameEl);
-            li.appendChild(moneyEl);
-            listEl.appendChild(li);
-          });
+            const rankings = Array.isArray(data.rankings) ? data.rankings : [];
 
-          statusEl.textContent = `${rankings.length}件を表示`;
-          if (rankings.length === 0) {
-            statusEl.textContent = "表示できるデータがありません";
+            rankings.forEach((item, index) => {
+              const li = document.createElement("li");
+
+              const rankNo = document.createElement("span");
+              rankNo.className = "rank-no";
+              rankNo.textContent = `${item.rank || index + 1}.`;
+
+              const nameEl = document.createElement("span");
+              nameEl.className = "rank-name";
+
+              const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
+              const mcId = item.mc_id ? String(item.mc_id) : "";
+
+              if (mcId) {
+                const a = document.createElement("a");
+                a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
+                a.textContent = mcName;
+                a.title = mcName;
+                nameEl.appendChild(a);
+              } else {
+                const span = document.createElement("span");
+                span.textContent = mcName;
+                span.title = mcName;
+                nameEl.appendChild(span);
+              }
+
+              const moneyEl = document.createElement("span");
+              moneyEl.className = "rank-money";
+              moneyEl.textContent = formatYen(item.total_prize_money || 0);
+
+              li.appendChild(rankNo);
+              li.appendChild(nameEl);
+              li.appendChild(moneyEl);
+              listEl.appendChild(li);
+            });
+
+            statusEl.textContent = `${rankings.length}件を表示`;
+            if (rankings.length === 0) {
+              statusEl.textContent = "表示できるデータがありません";
+            }
+          } catch (err) {
+            console.error(err);
+            statusEl.textContent = "描画エラー";
+            statusEl.classList.add("error");
           }
-        } catch (err) {
+        })
+        .catch((err) => {
           console.error(err);
-          statusEl.textContent = "描画エラー";
+          statusEl.textContent = "読み込みに失敗しました";
           statusEl.classList.add("error");
-        }
-      };
-
-      const script = document.createElement("script");
-      script.src = `${API_URL}?mode=prize_rankings&callback=${callbackName}`;
-      script.onerror = function() {
-        statusEl.textContent = "JSONP読み込み失敗";
-        statusEl.classList.add("error");
-      };
-
-      document.body.appendChild(script);
+        });
     }
 
     loadPrizeRankings();
