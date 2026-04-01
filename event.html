@@ -63,7 +63,7 @@
   </div>
 
   <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
+    const EVENT_DETAILS_ALL_JSON_URL = "./data/event_details_all.json";
 
     function getEventIdFromQuery() {
       const params = new URLSearchParams(window.location.search);
@@ -91,7 +91,7 @@
       const safeId = String(mcId || "").trim();
 
       if (!safeName) return "";
-      if (!safeId) return `<a href="./mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
+      if (!safeId) return `<span>${safeName}</span>`;
 
       return `<a href="./mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
     }
@@ -267,50 +267,12 @@
       document.head.appendChild(style);
     }
 
-    function loadJsonp(url) {
-      return new Promise((resolve, reject) => {
-        const callbackName = "mcBattleEventCallback_" + Date.now() + "_" + Math.floor(Math.random() * 100000);
-        const script = document.createElement("script");
-        const timeoutMs = 15000;
-        let settled = false;
-
-        function cleanup() {
-          try {
-            delete window[callbackName];
-          } catch (e) {
-            window[callbackName] = undefined;
-          }
-          if (script.parentNode) {
-            script.parentNode.removeChild(script);
-          }
-        }
-
-        const timer = setTimeout(() => {
-          if (settled) return;
-          settled = true;
-          cleanup();
-          reject(new Error("timeout"));
-        }, timeoutMs);
-
-        window[callbackName] = function(data) {
-          if (settled) return;
-          settled = true;
-          clearTimeout(timer);
-          cleanup();
-          resolve(data);
-        };
-
-        script.onerror = function() {
-          if (settled) return;
-          settled = true;
-          clearTimeout(timer);
-          cleanup();
-          reject(new Error("load error"));
-        };
-
-        script.src = url + (url.includes("?") ? "&" : "?") + "callback=" + callbackName;
-        document.body.appendChild(script);
-      });
+    async function loadEventDetailsAllJson() {
+      const res = await fetch(EVENT_DETAILS_ALL_JSON_URL, { cache: "no-store" });
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      return await res.json();
     }
 
     function getRoundMatches(groupedMatches, roundLabel) {
@@ -378,7 +340,9 @@
       }
 
       try {
-        const data = await loadJsonp(`${API_URL}?mode=event_detail&event_id=${encodeURIComponent(eventId)}`);
+        const allData = await loadEventDetailsAllJson();
+        const detailMap = allData && allData.event_details ? allData.event_details : {};
+        const data = detailMap[eventId] || null;
 
         console.log("event detail:", data);
 
@@ -389,7 +353,7 @@
         if (!data) {
           titleEl.textContent = "大会情報の取得に失敗しました";
           metaEl.textContent = "";
-          matchesStatusEl.textContent = "レスポンスが空です";
+          matchesStatusEl.textContent = "指定された大会データが見つかりません";
           matchesStatusEl.classList.add("error");
           return;
         }
@@ -517,7 +481,7 @@
         console.error(err);
         titleEl.textContent = "大会情報の読み込みに失敗しました";
         metaEl.textContent = "";
-        matchesStatusEl.textContent = "JSONP読み込み失敗";
+        matchesStatusEl.textContent = "読み込み失敗";
         matchesStatusEl.classList.add("error");
       }
     }
