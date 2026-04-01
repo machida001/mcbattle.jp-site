@@ -5,511 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>大会記録 | MC Battle DB</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .event-card-inner {
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-
-    .event-card-inner .muted {
-      margin-bottom: 12px;
-    }
-
-    .result-block {
-      display: block;
-      line-height: 1.9;
-    }
-
-    .result-line {
-      display: block;
-    }
-
-    .result-line a {
-      color: inherit;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 640px) {
-      .event-card-inner {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="event-page">
     <p><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
-
-    <header>
-      <h1 id="event-title">大会情報を読み込み中...</h1>
-      <p id="event-meta" class="muted"></p>
-    </header>
-
-    <section class="card">
-      <div class="event-card-inner">
-        <h2>大会情報</h2>
-        <ul id="event-info-list" class="meta-list"></ul>
-      </div>
-    </section>
-
-    <section class="card">
-      <div class="event-card-inner">
-        <h2>試合結果</h2>
-        <p id="matches-status" class="muted">読み込み中...</p>
-        <div id="matches-list"></div>
-      </div>
-    </section>
+    <h1 id="event-title">debug</h1>
+    <p id="debug-line">starting...</p>
+    <pre id="debug-json" style="white-space: pre-wrap; word-break: break-word;"></pre>
   </div>
 
   <script>
-    function getEventIdFromQuery() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("event_id");
-    }
-
-    function formatNumberWithComma(value) {
-      if (value === null || value === undefined || value === "") return "";
-      const normalized = String(value).replace(/,/g, "").trim();
-      if (!/^\d+$/.test(normalized)) return String(value);
-      return Number(normalized).toLocaleString("ja-JP");
-    }
-
-    function escapeHtml(value) {
-      return String(value ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-    }
-
-    function renderMcLink(name, mcId) {
-      const safeName = escapeHtml(name || "");
-      const safeId = String(mcId || "").trim();
-
-      if (!safeName) return "";
-      if (!safeId) return `<span>${safeName}</span>`;
-
-      return `<a href="./mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
-    }
-
-    function ensureMatchRowStyles() {
-      if (document.getElementById("event-match-row-style")) return;
-
-      const style = document.createElement("style");
-      style.id = "event-match-row-style";
-      style.textContent = `
-        .round-block {
-          margin-top: 20px;
-        }
-
-        .round-heading {
-          margin-bottom: 10px;
-        }
-
-        .match-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .match-list > li {
-          margin: 0 0 10px 0;
-          padding: 0;
-          background: transparent;
-          border: none;
-          color: inherit;
-        }
-
-        .match-row-wrap {
-          display: block;
-        }
-
-        .match-row-box {
-          display: inline-block;
-          max-width: 100%;
-          padding: 10px 12px;
-          border-radius: 8px;
-          background: transparent;
-          border: 1px solid currentColor;
-          color: inherit;
-        }
-
-        .match-row {
-          display: grid;
-          grid-template-columns: 34px minmax(140px, 210px) 20px 34px minmax(140px, 210px);
-          gap: 6px;
-          align-items: center;
-          justify-content: start;
-          width: fit-content;
-          max-width: 100%;
-          color: inherit;
-        }
-
-        .match-line {
-          display: none;
-        }
-
-        .mark {
-          white-space: nowrap;
-          font-weight: 700;
-          color: inherit;
-        }
-
-        .mark-winner,
-        .name-winner {
-          text-align: left;
-        }
-
-        .mark-loser,
-        .name-loser {
-          text-align: left;
-        }
-
-        .name {
-          min-width: 0;
-          overflow-wrap: anywhere;
-          word-break: break-word;
-          color: inherit;
-        }
-
-        .name a,
-        .meta-list a {
-          color: inherit;
-          text-decoration: underline;
-        }
-
-        .vs-part {
-          white-space: nowrap;
-          text-align: center;
-          font-weight: 700;
-          color: inherit;
-        }
-
-        .judge-method {
-          margin-top: 6px;
-          width: fit-content;
-          max-width: 100%;
-          font-size: 0.9em;
-          text-align: left;
-          color: inherit;
-          opacity: 0.8;
-        }
-
-        .note-box {
-          margin-bottom: 12px;
-          padding: 10px 12px;
-          border-radius: 8px;
-          background: transparent;
-          border: 1px solid currentColor;
-          color: inherit;
-        }
-
-        @media (max-width: 900px) {
-          .match-row-box {
-            display: block;
-            width: 100%;
-          }
-
-          .match-row {
-            grid-template-columns: 34px minmax(110px, 1fr) 18px 34px minmax(110px, 1fr);
-            width: 100%;
-          }
-
-          .judge-method {
-            width: 100%;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .match-row-box {
-            display: block;
-            width: 100%;
-            padding: 8px 10px;
-          }
-
-          .match-row {
-            display: none;
-          }
-
-          .match-line {
-            display: flex;
-            align-items: flex-start;
-            gap: 6px;
-            min-width: 0;
-          }
-
-          .match-line + .match-line {
-            margin-top: 4px;
-          }
-
-          .match-line .mark {
-            flex: 0 0 auto;
-          }
-
-          .match-line .name {
-            flex: 1 1 auto;
-            min-width: 0;
-          }
-
-          .vs-part {
-            display: none;
-          }
-
-          .judge-method {
-            text-align: center;
-          }
-        }
-      `;
-      document.head.appendChild(style);
-    }
-
-    function normalizeRoundLabel(roundName) {
-      const name = String(roundName || "").trim();
-
-      if (!name) return "";
-
-      if (/^final$/i.test(name) || name === "決勝") return "Final";
-
-      if (/^best\s*4$/i.test(name) || name === "準決勝" || name === "ベスト4") return "Best4";
-      if (/^best\s*8$/i.test(name) || name === "準々決勝" || name === "ベスト8") return "Best8";
-      if (/^best\s*16$/i.test(name) || name === "ベスト16") return "Best16";
-      if (/^best\s*32$/i.test(name) || name === "ベスト32") return "Best32";
-      if (/^best\s*48$/i.test(name) || name === "ベスト48") return "Best48";
-      if (/^best\s*64$/i.test(name) || name === "ベスト64") return "Best64";
-
-      const jaBest = name.match(/^ベスト\s*(\d+)$/);
-      if (jaBest) return `Best${jaBest[1]}`;
-
-      const enBest = name.match(/^best\s*(\d+)$/i);
-      if (enBest) return `Best${enBest[1]}`;
-
-      return name;
-    }
-
-    async function loadEventDetailsAllJson() {
-      const url = "./data/event_details_all.json";
-      const res = await fetch(url);
-      if (!res.ok) {
-        throw new Error("HTTP " + res.status);
-      }
-      return await res.json();
-    }
-
-    function getRoundMatches(groupedMatches, roundLabel) {
-      const group = groupedMatches.find((g) => normalizeRoundLabel(g.round_name) === roundLabel);
-      return group && Array.isArray(group.matches) ? group.matches : [];
-    }
-
-    function buildResultsHtml(event, groupedMatches) {
-      const finalMatches = getRoundMatches(groupedMatches, "Final");
-      const semiMatches = getRoundMatches(groupedMatches, "Best4");
-
-      const winnerName = event.winner_name || (finalMatches[0] ? finalMatches[0].winner_name : "");
-      const winnerMcId = event.winner_mc_id || (finalMatches[0] ? finalMatches[0].winner_mc_id : "");
-
-      const runnerUpName = finalMatches[0] ? (finalMatches[0].loser_name || "") : "";
-      const runnerUpMcId = finalMatches[0] ? (finalMatches[0].loser_mc_id || "") : "";
-
-      const best4List = semiMatches
-        .map(match => {
-          const name = match.loser_name || "";
-          const mcId = match.loser_mc_id || "";
-          if (!name) return "";
-          return `🥉 ${renderMcLink(name, mcId)}`;
-        })
-        .filter(Boolean);
-
-      const lines = [];
-
-      if (winnerName) {
-        lines.push(`<span class="result-line">🥇 ${renderMcLink(winnerName, winnerMcId)}</span>`);
-      }
-
-      if (runnerUpName) {
-        lines.push(`<span class="result-line">🥈 ${renderMcLink(runnerUpName, runnerUpMcId)}</span>`);
-      }
-
-      best4List.forEach(line => {
-        lines.push(`<span class="result-line">${line}</span>`);
-      });
-
-      if (!lines.length) {
-        return "−";
-      }
-
-      return `<span class="result-block">${lines.join("")}</span>`;
-    }
-
-    async function loadEventDetail() {
-      const eventId = getEventIdFromQuery();
-
+    async function main() {
       const titleEl = document.getElementById("event-title");
-      const metaEl = document.getElementById("event-meta");
-      const infoListEl = document.getElementById("event-info-list");
-      const matchesStatusEl = document.getElementById("matches-status");
-      const matchesListEl = document.getElementById("matches-list");
-
-      ensureMatchRowStyles();
-
-      if (!eventId) {
-        titleEl.textContent = "大会IDが指定されていません";
-        metaEl.textContent = "";
-        matchesStatusEl.textContent = "event_id が見つかりませんでした。";
-        matchesStatusEl.classList.add("error");
-        return;
-      }
+      const lineEl = document.getElementById("debug-line");
+      const jsonEl = document.getElementById("debug-json");
 
       try {
-        const allData = await loadEventDetailsAllJson();
-        const detailMap = allData && allData.event_details ? allData.event_details : {};
-        const data = detailMap[eventId] || null;
+        lineEl.textContent = "step1: reading query";
+        const search = window.location.search;
+        const params = new URLSearchParams(search);
+        const eventId = params.get("event_id");
 
-        matchesStatusEl.textContent =
-          `debug: eventId=${eventId} / total=${allData?.total} / hasMap=${!!allData?.event_details} / hasData=${!!data}`;
+        titleEl.textContent = eventId || "no event_id";
+        lineEl.textContent = `step2: eventId=${eventId || "(none)"}`;
 
-        infoListEl.innerHTML = "";
-        matchesListEl.innerHTML = "";
-        matchesStatusEl.classList.remove("error");
+        const url = "./data/event_details_all.json";
+        lineEl.textContent = `step3: fetching ${url}`;
 
-        if (!data) {
-          titleEl.textContent = "大会情報の取得に失敗しました";
-          metaEl.textContent = "";
-          matchesStatusEl.textContent = `debug: eventId=${eventId} / total=${allData?.total} / hasMap=${!!allData?.event_details} / hasData=false`;
-          matchesStatusEl.classList.add("error");
-          return;
-        }
+        const res = await fetch(url);
+        lineEl.textContent = `step4: fetched status=${res.status}`;
 
-        if (data.error) {
-          titleEl.textContent = "大会情報の取得に失敗しました";
-          metaEl.textContent = data.message || "";
-          matchesStatusEl.textContent = "データ取得エラー";
-          matchesStatusEl.classList.add("error");
-          return;
-        }
+        const text = await res.text();
+        lineEl.textContent = `step5: text loaded length=${text.length}`;
 
-        const event = data.event || {};
-        const groupedMatches = Array.isArray(data.grouped_matches) ? data.grouped_matches : [];
-        const totalMatches = Number(data.total_matches || 0);
-        const formattedWinnerPrize = formatNumberWithComma(event.prize_money_winner);
-        const resultsHtml = buildResultsHtml(event, groupedMatches);
+        const data = JSON.parse(text);
+        lineEl.textContent = `step6: parsed total=${data && data.total}`;
 
-        titleEl.textContent = event.event_name_full || event.event_name || "大会名不明";
-        metaEl.textContent = `${event.event_date || ""} ${event.event_category || ""}`.trim();
+        const detailMap = data && data.event_details ? data.event_details : null;
+        const target = detailMap && eventId ? detailMap[eventId] : null;
 
-        const infoItems = [
-          { label: "開催日：", html: escapeHtml(event.event_date || "") },
-          { label: "カテゴリ：", html: escapeHtml(event.event_category || "") },
-          { label: "結果：", html: resultsHtml },
-          { label: "優勝賞金：", html: escapeHtml(formattedWinnerPrize || "") }
-        ].filter((item) => item.html !== "");
+        lineEl.textContent =
+          `step7: hasMap=${!!detailMap} / hasTarget=${!!target}`;
 
-        infoItems.forEach((item) => {
-          const li = document.createElement("li");
+        jsonEl.textContent = JSON.stringify({
+          eventId: eventId,
+          total: data ? data.total : null,
+          hasMap: !!detailMap,
+          hasTarget: !!target,
+          targetKeys: target ? Object.keys(target) : []
+        }, null, 2);
 
-          const labelEl = document.createElement("span");
-          labelEl.className = "meta-label";
-          labelEl.textContent = item.label;
-
-          const valueEl = document.createElement("span");
-          valueEl.innerHTML = item.html || "";
-
-          li.appendChild(labelEl);
-          li.appendChild(valueEl);
-          infoListEl.appendChild(li);
-        });
-
-        groupedMatches.forEach((group) => {
-          const roundName = String(group.round_name || "").trim() || "ラウンド不明";
-
-          const block = document.createElement("div");
-          block.className = "round-block";
-
-          const heading = document.createElement("h3");
-          heading.className = "round-heading";
-          heading.textContent = roundName;
-          block.appendChild(heading);
-
-          const ul = document.createElement("ul");
-          ul.className = "match-list";
-
-          const matches = Array.isArray(group.matches) ? group.matches : [];
-
-          matches.forEach((match) => {
-            const li = document.createElement("li");
-            li.className = "match-row-wrap";
-
-            const winnerHtml = renderMcLink(match.winner_name || "不明", match.winner_mc_id || "");
-            const loserHtml = renderMcLink(match.loser_name || "不明", match.loser_mc_id || "");
-            const judgeMethod = escapeHtml(String(match.judge_method || "").trim());
-
-            li.innerHTML = `
-              <div class="match-row-box">
-                <div class="match-row">
-                  <span class="mark mark-winner">【◯】</span>
-                  <span class="name name-winner">${winnerHtml}</span>
-                  <span class="vs-part">×</span>
-                  <span class="mark mark-loser">【✕】</span>
-                  <span class="name name-loser">${loserHtml}</span>
-                </div>
-                <div class="match-line match-line-winner">
-                  <span class="mark mark-winner">【◯】</span>
-                  <span class="name name-winner">${winnerHtml}</span>
-                </div>
-                <div class="match-line match-line-loser">
-                  <span class="mark mark-loser">【✕】</span>
-                  <span class="name name-loser">${loserHtml}</span>
-                </div>
-                ${judgeMethod ? `<div class="judge-method">判定: ${judgeMethod}</div>` : ""}
-              </div>
-            `;
-
-            ul.appendChild(li);
-          });
-
-          block.appendChild(ul);
-          matchesListEl.appendChild(block);
-        });
-
-        const warningMessages = [];
-        const finals = groupedMatches.find((g) => normalizeRoundLabel(g.round_name) === "Final");
-        const semis = groupedMatches.find((g) => normalizeRoundLabel(g.round_name) === "Best4");
-        const best8 = groupedMatches.find((g) => normalizeRoundLabel(g.round_name) === "Best8");
-
-        if (finals && Array.isArray(finals.matches) && finals.matches.length !== 1) {
-          warningMessages.push(`Final が ${finals.matches.length} 試合あります`);
-        }
-        if (semis && Array.isArray(semis.matches) && semis.matches.length > 2) {
-          warningMessages.push(`Best4 が ${semis.matches.length} 試合あります`);
-        }
-        if (best8 && Array.isArray(best8.matches) && best8.matches.length > 4) {
-          warningMessages.push(`Best8 が ${best8.matches.length} 試合あります`);
-        }
-
-        matchesStatusEl.textContent = `${totalMatches}試合を表示`;
-
-        if (warningMessages.length > 0) {
-          const note = document.createElement("div");
-          note.className = "note-box";
-          note.textContent = `注意: ${warningMessages.join("、")}`;
-          matchesListEl.prepend(note);
-          matchesStatusEl.textContent = `${totalMatches}試合を表示 / 注意: ${warningMessages.join("、")}`;
-        }
-
-        if (totalMatches === 0) {
-          matchesStatusEl.textContent = "試合結果がありません";
-        }
       } catch (err) {
-        console.error(err);
-        titleEl.textContent = "大会情報の読み込みに失敗しました";
-        metaEl.textContent = "";
-        matchesStatusEl.textContent = `読み込み失敗: ${err && err.message ? err.message : err}`;
-        matchesStatusEl.classList.add("error");
+        titleEl.textContent = "error";
+        lineEl.textContent = "FAILED";
+        jsonEl.textContent = String(err && err.message ? err.message : err);
       }
     }
 
-    loadEventDetail();
+    main();
   </script>
 </body>
 </html>
