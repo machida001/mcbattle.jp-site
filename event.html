@@ -63,8 +63,6 @@
   </div>
 
   <script>
-    const EVENT_DETAILS_ALL_JSON_URL = "./data/event_details_all.json";
-
     function getEventIdFromQuery() {
       const params = new URLSearchParams(window.location.search);
       return params.get("event_id");
@@ -274,29 +272,12 @@
 
       if (/^final$/i.test(name) || name === "決勝") return "Final";
 
-      if (/^best\s*4$/i.test(name) || name === "準決勝" || name === "ベスト4") {
-        return "Best4";
-      }
-
-      if (/^best\s*8$/i.test(name) || name === "準々決勝" || name === "ベスト8") {
-        return "Best8";
-      }
-
-      if (/^best\s*16$/i.test(name) || name === "ベスト16") {
-        return "Best16";
-      }
-
-      if (/^best\s*32$/i.test(name) || name === "ベスト32") {
-        return "Best32";
-      }
-
-      if (/^best\s*48$/i.test(name) || name === "ベスト48") {
-        return "Best48";
-      }
-
-      if (/^best\s*64$/i.test(name) || name === "ベスト64") {
-        return "Best64";
-      }
+      if (/^best\s*4$/i.test(name) || name === "準決勝" || name === "ベスト4") return "Best4";
+      if (/^best\s*8$/i.test(name) || name === "準々決勝" || name === "ベスト8") return "Best8";
+      if (/^best\s*16$/i.test(name) || name === "ベスト16") return "Best16";
+      if (/^best\s*32$/i.test(name) || name === "ベスト32") return "Best32";
+      if (/^best\s*48$/i.test(name) || name === "ベスト48") return "Best48";
+      if (/^best\s*64$/i.test(name) || name === "ベスト64") return "Best64";
 
       const jaBest = name.match(/^ベスト\s*(\d+)$/);
       if (jaBest) return `Best${jaBest[1]}`;
@@ -308,9 +289,10 @@
     }
 
     async function loadEventDetailsAllJson() {
-      const res = await fetch(`${EVENT_DETAILS_ALL_JSON_URL}?v=${Date.now()}`, { cache: "no-store" });
+      const url = "./data/event_details_all.json";
+      const res = await fetch(url);
       if (!res.ok) {
-        throw new Error(`HTTP ${res.status}`);
+        throw new Error("HTTP " + res.status);
       }
       return await res.json();
     }
@@ -387,10 +369,6 @@
         matchesStatusEl.textContent =
           `debug: eventId=${eventId} / total=${allData?.total} / hasMap=${!!allData?.event_details} / hasData=${!!data}`;
 
-        console.log("event detail all:", allData);
-        console.log("event detail map:", detailMap);
-        console.log("event detail target:", data);
-
         infoListEl.innerHTML = "";
         matchesListEl.innerHTML = "";
         matchesStatusEl.classList.remove("error");
@@ -443,8 +421,7 @@
         });
 
         groupedMatches.forEach((group) => {
-          const rawRoundName = String(group.round_name || "").trim();
-          const roundName = rawRoundName || "ラウンド不明";
+          const roundName = String(group.round_name || "").trim() || "ラウンド不明";
 
           const block = document.createElement("div");
           block.className = "round-block";
