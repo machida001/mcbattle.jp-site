@@ -38,7 +38,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 0;
+      margin: 0 0 14px;
       max-width: 100%;
     }
 
@@ -78,31 +78,53 @@
       height: 0;
     }
 
+    .spec-card-link{
+      display: block;
+      margin-bottom: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      text-decoration: none;
+      transition:
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .spec-card-link:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.06);
+      border-color: var(--line-strong);
+      box-shadow: 0 0 18px rgba(135, 164, 255, 0.08);
+      text-decoration: none;
+    }
+
+    .spec-card-title{
+      margin: 0 0 4px;
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .spec-card-desc{
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
     .rankings-card-inner {
       padding-left: 12px;
       padding-right: 12px;
     }
 
     .rankings-card-head{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
       margin-bottom: 8px;
-    }
-
-    .rankings-spec-link{
-      display: inline-block;
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 0.15em;
-      font-size: 0.95rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .rankings-spec-link:hover{
-      opacity: 0.85;
     }
 
     .rankings-table-wrap {
@@ -202,11 +224,26 @@
 
       .page-nav-pills{
         gap: 7px;
+        margin-bottom: 12px;
       }
 
       .page-nav-pill{
         min-height: 34px;
         padding: 0 12px;
+        font-size: 0.86rem;
+      }
+
+      .spec-card-link{
+        margin-bottom: 12px;
+        padding: 12px 14px;
+        border-radius: 16px;
+      }
+
+      .spec-card-title{
+        font-size: 0.95rem;
+      }
+
+      .spec-card-desc{
         font-size: 0.86rem;
       }
 
@@ -217,10 +254,6 @@
 
       .rankings-card-head{
         margin-bottom: 6px;
-      }
-
-      .rankings-spec-link{
-        font-size: 0.88rem;
       }
 
       table.rankings-table col:nth-child(1) {
@@ -260,13 +293,17 @@
         <a class="page-nav-pill" href="prize_rankings.html">賞金ランキング</a>
         <a class="page-nav-pill" href="virtual_tournament.html">仮想シミュレーション</a>
       </nav>
+
+      <a class="spec-card-link" href="ranking_spec.html">
+        <p class="spec-card-title">スコアリング仕様</p>
+        <p class="spec-card-desc">現在のスコアの考え方、集計対象、重みづけの方針を見る</p>
+      </a>
     </div>
 
     <section class="card">
       <div class="rankings-card-inner">
         <div class="rankings-card-head">
           <p id="rankings-status" class="muted"></p>
-          <a class="rankings-spec-link" href="ranking_spec.html">ランキング仕様</a>
         </div>
 
         <div class="rankings-table-wrap">
@@ -320,7 +357,6 @@
             }
 
             const rankings = Array.isArray(data.rankings) ? data.rankings.slice(0, 100) : [];
-            statusEl.textContent = `${rankings.length}件`;
 
             rankings.forEach((item, index) => {
               const tr = document.createElement("tr");
@@ -367,6 +403,8 @@
 
               bodyEl.appendChild(tr);
             });
+
+            statusEl.textContent = "";
           } catch (err) {
             console.error(err);
             statusEl.textContent = "ランキングの描画に失敗しました";
