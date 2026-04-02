@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+　<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
@@ -173,8 +173,8 @@
     }
 
     .vt-candidate-list{
-      display:flex;
-      flex-direction:column;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
       gap:8px;
       margin-top:0;
     }
@@ -182,13 +182,13 @@
     .vt-candidate-btn{
       width:100%;
       min-height:44px;
-      padding:0 14px;
+      padding:0 12px;
       border-radius:15px;
       border:1px solid rgba(255,255,255,.16);
       background:rgba(255,255,255,.03);
       color:var(--text);
       font:inherit;
-      font-size:.92rem;
+      font-size:.9rem;
       font-weight:600;
       text-align:left;
       cursor:pointer;
@@ -197,6 +197,9 @@
         background-color .18s ease,
         border-color .18s ease,
         box-shadow .18s ease;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
     }
 
     .vt-candidate-btn:hover{
@@ -248,6 +251,14 @@
       border:2px solid rgba(255,255,255,.68);
       font-size:.98rem;
       font-weight:800;
+    }
+
+    .vt-main-button.is-disabled{
+      opacity:.45 !important;
+      cursor:default;
+      pointer-events:none;
+      box-shadow:none;
+      transform:none;
     }
 
     .vt-sub-button{
@@ -456,13 +467,55 @@
       text-align:center;
     }
 
-    .vt-overlay-spinner{
-      width:42px;
-      height:42px;
-      border-radius:50%;
-      border:4px solid rgba(255,255,255,.18);
-      border-top-color:#ffffff;
+    .vt-overlay-clock{
+      position:relative;
+      width:66px;
+      height:66px;
       animation:vt-spin 1s linear infinite;
+    }
+
+    .vt-overlay-clock-face{
+      position:absolute;
+      inset:0;
+      border-radius:50%;
+      border:4px solid rgba(255,255,255,.85);
+      box-sizing:border-box;
+    }
+
+    .vt-overlay-clock-center{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:8px;
+      height:8px;
+      margin-left:-4px;
+      margin-top:-4px;
+      border-radius:50%;
+      background:#ffffff;
+    }
+
+    .vt-overlay-hand-long,
+    .vt-overlay-hand-short{
+      position:absolute;
+      left:50%;
+      bottom:50%;
+      transform-origin:50% 100%;
+      background:#ffffff;
+      border-radius:999px;
+    }
+
+    .vt-overlay-hand-long{
+      width:4px;
+      height:22px;
+      margin-left:-2px;
+      transform:rotate(35deg);
+    }
+
+    .vt-overlay-hand-short{
+      width:4px;
+      height:15px;
+      margin-left:-2px;
+      transform:rotate(-55deg);
     }
 
     .vt-overlay-text{
@@ -526,6 +579,10 @@
       .vt-lead{
         font-size:.94rem;
         line-height:1.66;
+      }
+
+      .vt-candidate-list{
+        grid-template-columns:repeat(2, minmax(0,1fr));
       }
 
       .vt-overlay-count{
@@ -612,7 +669,12 @@
 
   <div id="sim-overlay" class="vt-overlay is-hidden" aria-hidden="true">
     <div class="vt-overlay-box">
-      <div class="vt-overlay-spinner" aria-hidden="true"></div>
+      <div class="vt-overlay-clock" aria-hidden="true">
+        <div class="vt-overlay-clock-face"></div>
+        <div class="vt-overlay-hand-long"></div>
+        <div class="vt-overlay-hand-short"></div>
+        <div class="vt-overlay-clock-center"></div>
+      </div>
       <p class="vt-overlay-text">100回戦ってもらっています</p>
       <p id="sim-overlay-count" class="vt-overlay-count">5</p>
     </div>
@@ -628,6 +690,7 @@
     let selectedMcs = [];
     let filteredCandidates = [];
     let overlayTimer = null;
+    let hasSimulatedCurrentSelection = false;
 
     async function loadJson(url) {
       const res = await fetch(url, { cache: "no-store" });
@@ -663,6 +726,10 @@
         .replace(/'/g, "&#39;");
     }
 
+    function markSelectionChanged() {
+      hasSimulatedCurrentSelection = false;
+    }
+
     function getTop100Pool() {
       return Object.values(strengthMap)
         .filter(item => item && item.mc_id && item.mc_name)
@@ -695,6 +762,7 @@
         btn.addEventListener("click", () => {
           const mcId = btn.getAttribute("data-remove-id");
           selectedMcs = selectedMcs.filter(mc => mc.mc_id !== mcId);
+          markSelectionChanged();
           renderSelected();
           renderCandidates();
           updateSimReadyState();
@@ -735,7 +803,7 @@
 
       empty.classList.add("is-hidden");
       list.innerHTML = filteredCandidates.map(mc => `
-        <button class="vt-candidate-btn" type="button" data-add-id="${escapeHtml(mc.mc_id)}">
+        <button class="vt-candidate-btn" type="button" data-add-id="${escapeHtml(mc.mc_id)}" title="${escapeHtml(mc.mc_name)}">
           ${escapeHtml(mc.mc_name)}
         </button>
       `).join("");
@@ -747,6 +815,7 @@
           const mc = allCandidates.find(item => item.mc_id === mcId);
           if (!mc) return;
           selectedMcs.push(mc);
+          markSelectionChanged();
           document.getElementById("mc-search-input").value = "";
           renderSelected();
           renderCandidates();
@@ -755,18 +824,26 @@
       });
     }
 
+    function updateRunButtonDisabledState(disabled) {
+      const runBtn = document.getElementById("run-sim-btn");
+      runBtn.disabled = disabled;
+      runBtn.classList.toggle("is-disabled", disabled);
+    }
+
     function updateSimReadyState() {
       const status = document.getElementById("sim-status");
-      const runBtn = document.getElementById("run-sim-btn");
 
       if (selectedMcs.length === MAX_SELECTED) {
-        status.textContent = "8人そろいました。シミュレーションできます。";
-        runBtn.disabled = false;
-        runBtn.style.opacity = "1";
+        if (hasSimulatedCurrentSelection) {
+          status.textContent = "この組み合わせはシミュレーション済みです。MCを変更すると再実行できます。";
+          updateRunButtonDisabledState(true);
+        } else {
+          status.textContent = "8人そろいました。シミュレーションできます。";
+          updateRunButtonDisabledState(false);
+        }
       } else {
         status.textContent = `あと${MAX_SELECTED - selectedMcs.length}人選んでください。`;
-        runBtn.disabled = true;
-        runBtn.style.opacity = "0.55";
+        updateRunButtonDisabledState(true);
       }
     }
 
@@ -900,10 +977,10 @@
 
     function startSimulationSequence() {
       if (selectedMcs.length !== MAX_SELECTED) return;
+      if (hasSimulatedCurrentSelection) return;
 
       const status = document.getElementById("sim-status");
       const countEl = document.getElementById("sim-overlay-count");
-      const runBtn = document.getElementById("run-sim-btn");
 
       if (overlayTimer) {
         clearInterval(overlayTimer);
@@ -914,8 +991,7 @@
       showOverlay();
       countEl.textContent = "5";
       status.textContent = "100回戦ってもらっています。";
-      runBtn.disabled = true;
-      runBtn.style.opacity = "0.55";
+      updateRunButtonDisabledState(true);
 
       let count = 5;
 
@@ -933,9 +1009,8 @@
         const results = runSimulationCore();
         hideOverlay();
         renderSimulationResults(results);
-        status.textContent = "シミュレーション結果を表示しています。";
-        runBtn.disabled = false;
-        runBtn.style.opacity = "1";
+        hasSimulatedCurrentSelection = true;
+        updateSimReadyState();
         scrollToResultPanel();
       }, 700);
     }
@@ -947,9 +1022,9 @@
           loadJson(STRENGTHS_URL)
         ]);
 
-        allCandidates = Array.isArray(mcsData.mcs) ? mcsData.mcs : [];
-
         const rankings = Array.isArray(rankingsData.rankings) ? rankingsData.rankings : [];
+        const rankingIds = new Set(rankings.map(item => item.mc_id).filter(Boolean));
+
         strengthMap = {};
         rankings.forEach(item => {
           strengthMap[item.mc_id] = {
@@ -959,13 +1034,18 @@
           };
         });
 
+        const rawMcs = Array.isArray(mcsData.mcs) ? mcsData.mcs : [];
+        allCandidates = rawMcs.filter(mc => rankingIds.has(mc.mc_id));
+
         renderSelected();
         renderCandidates();
         updateSimReadyState();
         hideSimulationResults();
         hideOverlay();
 
-        document.getElementById("mc-search-input").addEventListener("input", renderCandidates);
+        document.getElementById("mc-search-input").addEventListener("input", () => {
+          renderCandidates();
+        });
 
         document.getElementById("fill-random-btn").addEventListener("click", () => {
           const selectedIds = new Set(selectedMcs.map(mc => mc.mc_id));
@@ -976,6 +1056,7 @@
             selectedMcs.push(shuffled.shift());
           }
 
+          markSelectionChanged();
           renderSelected();
           renderCandidates();
           updateSimReadyState();
@@ -988,6 +1069,7 @@
             overlayTimer = null;
           }
           selectedMcs = [];
+          markSelectionChanged();
           renderSelected();
           renderCandidates();
           updateSimReadyState();
