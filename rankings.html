@@ -17,7 +17,7 @@
     .page-mini-logo .site-mini-logo{
       display: inline-block;
       text-decoration: none;
-      font-size: clamp(1.78rem, 6.7vw, 2.2rem);
+      font-size: clamp(1.56rem, 5.9vw, 1.96rem);
       line-height: 1.08;
       letter-spacing: -0.01em;
     }
@@ -28,10 +28,10 @@
 
     .page-header-block h1{
       margin: 0;
-      font-size: clamp(1.92rem, 7.2vw, 2.34rem);
+      font-size: clamp(1.72rem, 6.45vw, 2.08rem);
       line-height: 1.08;
       letter-spacing: -0.015em;
-      font-weight: 800;
+      font-weight: 750;
     }
 
     .page-nav-pills{
@@ -186,7 +186,7 @@
       }
 
       .page-mini-logo .site-mini-logo{
-        font-size: clamp(1.62rem, 6.9vw, 1.95rem);
+        font-size: clamp(1.42rem, 6.15vw, 1.74rem);
         line-height: 1.06;
       }
 
@@ -195,9 +195,9 @@
       }
 
       .page-header-block h1{
-        font-size: clamp(1.78rem, 7.35vw, 2.06rem);
+        font-size: clamp(1.58rem, 6.85vw, 1.9rem);
         line-height: 1.06;
-        font-weight: 800;
+        font-weight: 750;
       }
 
       .page-nav-pills{
@@ -287,101 +287,4 @@
           </table>
         </div>
       </div>
-    </section>
-  </div>
-
-  <script>
-    const RANKINGS_JSON_URL = "./data/rankings.json";
-
-    async function loadRankingsJson() {
-      const res = await fetch(RANKINGS_JSON_URL, { cache: "no-store" });
-      if (!res.ok) {
-        throw new Error(`HTTP ${res.status}`);
-      }
-      return await res.json();
-    }
-
-    function loadRankingsPage() {
-      const statusEl = document.getElementById("rankings-status");
-      const bodyEl = document.getElementById("rankings-body");
-
-      loadRankingsJson()
-        .then((data) => {
-          console.log("rankings page:", data);
-
-          bodyEl.innerHTML = "";
-          statusEl.classList.remove("error");
-
-          try {
-            if (data.error) {
-              statusEl.textContent = "ランキングの取得に失敗しました: " + (data.message || "");
-              statusEl.classList.add("error");
-              return;
-            }
-
-            const rankings = Array.isArray(data.rankings) ? data.rankings.slice(0, 100) : [];
-
-            rankings.forEach((item, index) => {
-              const tr = document.createElement("tr");
-
-              const rankTd = document.createElement("td");
-              const nameTd = document.createElement("td");
-              const scoreTd = document.createElement("td");
-
-              const rank = item.rank || (index + 1);
-              const mcId = item.mc_id || "";
-              const mcName = item.mc_name || "名前不明";
-
-              const rawScore =
-                item.current_strength_score_v2 ??
-                item.current_strength_score ??
-                item.current_score ??
-                item.score ??
-                "";
-
-              const score = rawScore !== "" && !isNaN(Number(rawScore))
-                ? Number(rawScore).toFixed(2)
-                : String(rawScore);
-
-              rankTd.textContent = rank;
-
-              if (mcId) {
-                const a = document.createElement("a");
-                a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
-                a.textContent = mcName;
-                a.className = "rank-name-link";
-                nameTd.appendChild(a);
-              } else {
-                const span = document.createElement("span");
-                span.textContent = mcName;
-                span.className = "rank-name-text";
-                nameTd.appendChild(span);
-              }
-
-              scoreTd.textContent = score;
-
-              tr.appendChild(rankTd);
-              tr.appendChild(nameTd);
-              tr.appendChild(scoreTd);
-
-              bodyEl.appendChild(tr);
-            });
-
-            statusEl.textContent = "";
-          } catch (err) {
-            console.error(err);
-            statusEl.textContent = "ランキングの描画に失敗しました";
-            statusEl.classList.add("error");
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-          statusEl.textContent = "ランキングの読み込みに失敗しました";
-          statusEl.classList.add("error");
-        });
-    }
-
-    loadRankingsPage();
-  </script>
-</body>
-</html>
+    </section
