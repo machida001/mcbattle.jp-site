@@ -6,6 +6,70 @@
   <title>MC一覧 | MC Battle DB</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    .page-top{
+      margin-bottom: 18px;
+    }
+
+    .page-mini-logo{
+      margin: 0 0 10px;
+    }
+
+    .page-mini-logo .site-mini-logo{
+      text-decoration: none;
+    }
+
+    .page-header-block{
+      margin-bottom: 14px;
+    }
+
+    .page-header-block h1{
+      margin: 0;
+    }
+
+    .page-nav-pills{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      max-width: 100%;
+    }
+
+    .page-nav-pill{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.93rem;
+      font-weight: 700;
+      line-height: 1.2;
+      transition:
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .page-nav-pill:hover{
+      text-decoration: none;
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.07);
+      border-color: var(--line-strong);
+      box-shadow: 0 0 18px rgba(135, 164, 255, 0.08);
+      opacity: 1;
+    }
+
+    .page-nav-break{
+      flex-basis: 100%;
+      height: 0;
+    }
+
     .mcs-list-wrap {
       padding-left: 12px;
       padding-right: 12px;
@@ -15,35 +79,55 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .mcs-tab {
       appearance: none;
+      min-width: 0;
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.03);
       color: var(--accent);
       border-radius: 999px;
-      padding: 7px 12px;
+      padding: 0;
+      width: 90px;
+      height: 58px;
       font: inherit;
+      font-size: 1.2rem;
+      line-height: 1;
       cursor: pointer;
+      transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
     }
 
     .mcs-tab:hover {
       background: rgba(255,255,255,0.06);
+      transform: translateY(-1px);
     }
 
     .mcs-tab.is-active {
       background: rgba(255,255,255,0.10);
       border-color: var(--line-strong);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+    }
+
+    .mcs-tab.is-wide {
+      width: 164px;
+      font-size: 1rem;
+      font-weight: 700;
     }
 
     #mcs-status {
-      margin-bottom: 12px;
+      display: none;
+      margin-bottom: 10px;
     }
 
     .mcs-section-title {
-      margin: 14px 0 8px;
+      margin: 6px 0 6px;
       font-size: 1rem;
       color: var(--accent-soft);
     }
@@ -67,9 +151,10 @@
     .mc-link,
     .mc-link-static {
       display: block;
-      padding: 11px 0;
+      padding: 9px 0;
       color: inherit;
       border-radius: 8px;
+      line-height: 1.32;
     }
 
     .mc-link {
@@ -93,29 +178,78 @@
     }
 
     @media (max-width: 640px) {
+      .page-top{
+        margin-bottom: 14px;
+      }
+
+      .page-mini-logo{
+        margin-bottom: 8px;
+      }
+
+      .page-header-block{
+        margin-bottom: 12px;
+      }
+
+      .page-nav-pills{
+        gap: 7px;
+      }
+
+      .page-nav-pill{
+        min-height: 34px;
+        padding: 0 12px;
+        font-size: 0.86rem;
+      }
+
       .mcs-list-wrap {
         padding-left: 10px;
         padding-right: 10px;
       }
 
-      .mc-link,
-      .mc-link-static {
-        padding: 9px 0;
+      .mcs-tabs {
+        gap: 10px;
+        margin-bottom: 10px;
       }
 
       .mcs-tab {
-        padding: 6px 10px;
+        width: 90px;
+        height: 66px;
+        font-size: 1.15rem;
+      }
+
+      .mcs-tab.is-wide {
+        width: 170px;
+        font-size: 0.98rem;
+      }
+
+      .mc-link,
+      .mc-link-static {
+        padding: 8px 0;
+      }
+
+      .mcs-section-title {
+        margin: 4px 0 5px;
+        font-size: 0.98rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="mcs-page">
-    <p><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
+    <div class="page-top">
+      <p class="page-mini-logo"><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
 
-    <header>
-      <h1>MC一覧</h1>
-    </header>
+      <div class="page-header-block">
+        <h1>MC一覧</h1>
+      </div>
+
+      <nav class="page-nav-pills" aria-label="主要メニュー">
+        <a class="page-nav-pill" href="events.html">大会一覧</a>
+        <a class="page-nav-pill" href="rankings.html">スコアランキング</a>
+        <span class="page-nav-break" aria-hidden="true"></span>
+        <a class="page-nav-pill" href="prize_rankings.html">賞金ランキング</a>
+        <a class="page-nav-pill" href="virtual_tournament.html">仮想シミュレーション</a>
+      </nav>
+    </div>
 
     <section class="card">
       <div class="mcs-list-wrap">
@@ -150,6 +284,7 @@
       const first = yomi.charAt(0);
 
       if ("あいうえお".includes(first)) return "あ";
+      if ("かきくけこがぎぐげござじずぜぞ".includes(first)) return "か".includes(first) ? "か" : "さ"; // fallback not used
       if ("かきくけこがぎぐげご".includes(first)) return "か";
       if ("さしすせそざじずぜぞ".includes(first)) return "さ";
       if ("たちつてとだぢづでど".includes(first)) return "た";
@@ -183,7 +318,7 @@
 
         const btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "mcs-tab" + (tabName === activeTab ? " is-active" : "");
+        btn.className = "mcs-tab" + (tabName === activeTab ? " is-active" : "") + (tabName === "その他" ? " is-wide" : "");
         btn.textContent = tabName;
         btn.addEventListener("click", () => renderPanel(groups, tabName));
         tabsEl.appendChild(btn);
@@ -247,6 +382,7 @@
         console.log("mcs list:", data);
 
         if (data.error) {
+          statusEl.style.display = "block";
           statusEl.textContent = "MC一覧の取得に失敗しました: " + (data.message || "");
           statusEl.classList.add("error");
           return;
@@ -266,9 +402,17 @@
 
         const firstTab = TAB_ORDER.find(tab => groups[tab] && groups[tab].length > 0) || "あ";
         renderPanel(groups, firstTab);
-        statusEl.textContent = `${mcs.length}名を表示`;
+
+        if (mcs.length === 0) {
+          statusEl.style.display = "block";
+          statusEl.textContent = "表示できるMCがいません";
+        } else {
+          statusEl.style.display = "none";
+          statusEl.textContent = "";
+        }
       } catch (err) {
         console.error(err);
+        statusEl.style.display = "block";
         statusEl.textContent = "MC一覧の読み込みに失敗しました";
         statusEl.classList.add("error");
       }
