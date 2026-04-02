@@ -137,13 +137,21 @@
       text-decoration: underline;
       text-underline-offset: 0.15em;
       white-space: normal;
-      overflow-wrap: anywhere;
-      word-break: normal;
+      overflow-wrap: normal;
+      word-break: keep-all;
       line-height: 1.35;
     }
 
     .rank-name-link:hover {
       opacity: 0.85;
+    }
+
+    .name-break{
+      display: inline;
+    }
+
+    .name-break.forced{
+      display: block;
     }
 
     @media (max-width: 640px) {
@@ -246,12 +254,33 @@
       return "¥" + num.toLocaleString("ja-JP");
     }
 
-    function addOptionalBreakPoints(name) {
-      return String(name || "")
-        .replace(/\(/g, "<wbr>(")
-        .replace(/\s+a\.k\.a\.\s+/gi, " <wbr>a.k.a. <wbr>")
-        .replace(/\s+feat\.\s+/gi, " <wbr>feat. <wbr>")
-        .replace(/\s*\/\s*/g, "<wbr> / <wbr>");
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function buildNameHtml(name) {
+      const s = String(name || "");
+
+      if (!s) return "";
+
+      if (s.includes("(")) {
+        const idx = s.indexOf("(");
+        const left = s.slice(0, idx).trimEnd();
+        const right = s.slice(idx);
+        return `${escapeHtml(left)}<span class="name-break forced"></span>${escapeHtml(right)}`;
+      }
+
+      const akaMatch = s.match(/^(.*?)(\s+a\.k\.a\.\s+.*)$/i);
+      if (akaMatch) {
+        return `${escapeHtml(akaMatch[1])}<span class="name-break forced"></span>${escapeHtml(akaMatch[2].trim())}`;
+      }
+
+      return escapeHtml(s);
     }
 
     async function loadPrizeRankingsJson() {
@@ -307,13 +336,13 @@
                 a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
                 a.className = "rank-name-link";
                 a.title = mcName;
-                a.innerHTML = addOptionalBreakPoints(mcName);
+                a.innerHTML = buildNameHtml(mcName);
                 nameTd.appendChild(a);
               } else {
                 const span = document.createElement("span");
                 span.className = "rank-name-text";
                 span.title = mcName;
-                span.innerHTML = addOptionalBreakPoints(mcName);
+                span.innerHTML = buildNameHtml(mcName);
                 nameTd.appendChild(span);
               }
 
