@@ -79,22 +79,20 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .mcs-tab {
       appearance: none;
-      min-width: 0;
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.03);
       color: var(--accent);
       border-radius: 999px;
-      padding: 0;
-      width: 90px;
-      height: 58px;
+      padding: 6px 12px;
+      min-width: 0;
+      min-height: 38px;
       font: inherit;
-      font-size: 1.2rem;
-      line-height: 1;
+      font-size: 0.98rem;
       cursor: pointer;
       transition:
         background-color 0.18s ease,
@@ -115,20 +113,14 @@
       box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
     }
 
-    .mcs-tab.is-wide {
-      width: 164px;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
     #mcs-status {
       display: none;
       margin-bottom: 10px;
     }
 
     .mcs-section-title {
-      margin: 6px 0 6px;
-      font-size: 1rem;
+      margin: 4px 0 6px;
+      font-size: 0.98rem;
       color: var(--accent-soft);
     }
 
@@ -206,19 +198,14 @@
       }
 
       .mcs-tabs {
-        gap: 10px;
-        margin-bottom: 10px;
+        gap: 7px;
+        margin-bottom: 9px;
       }
 
       .mcs-tab {
-        width: 90px;
-        height: 66px;
-        font-size: 1.15rem;
-      }
-
-      .mcs-tab.is-wide {
-        width: 170px;
-        font-size: 0.98rem;
+        padding: 5px 11px;
+        min-height: 34px;
+        font-size: 0.92rem;
       }
 
       .mc-link,
@@ -227,8 +214,8 @@
       }
 
       .mcs-section-title {
-        margin: 4px 0 5px;
-        font-size: 0.98rem;
+        margin: 3px 0 5px;
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -284,7 +271,6 @@
       const first = yomi.charAt(0);
 
       if ("あいうえお".includes(first)) return "あ";
-      if ("かきくけこがぎぐげござじずぜぞ".includes(first)) return "か".includes(first) ? "か" : "さ"; // fallback not used
       if ("かきくけこがぎぐげご".includes(first)) return "か";
       if ("さしすせそざじずぜぞ".includes(first)) return "さ";
       if ("たちつてとだぢづでど".includes(first)) return "た";
@@ -318,7 +304,7 @@
 
         const btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "mcs-tab" + (tabName === activeTab ? " is-active" : "") + (tabName === "その他" ? " is-wide" : "");
+        btn.className = "mcs-tab" + (tabName === activeTab ? " is-active" : "");
         btn.textContent = tabName;
         btn.addEventListener("click", () => renderPanel(groups, tabName));
         tabsEl.appendChild(btn);
