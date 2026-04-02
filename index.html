@@ -174,7 +174,7 @@
     }
 
     .sim-title{
-      margin:0 0 6px;
+      margin:0;
       font-size:16px;
       font-weight:800;
       transition:color .18s ease;
@@ -185,6 +185,7 @@
     }
 
     .sim-sub{
+      display:none;
       margin:0;
       color:var(--muted);
       font-size:13px;
@@ -421,7 +422,7 @@
         width:auto !important;
         max-width:none !important;
         margin:0 !important;
-        padding:24px 0 12px !important;
+        padding:20px 0 10px !important;
       }
 
       .site-header-inner{
@@ -430,12 +431,20 @@
       }
 
       .site-header-row{
+        gap:6px;
+      }
+
+      .site-title{
+        font-size:clamp(30px, 9vw, 44px);
+      }
+
+      .site-header-copy{
         gap:8px;
       }
 
       .header-message{
-        font-size:15px;
-        line-height:1.7;
+        font-size:14px;
+        line-height:1.55;
       }
 
       .header-spec-link{
@@ -443,12 +452,59 @@
         white-space:normal;
       }
 
+      .hero{
+        padding:4px 0 12px;
+      }
+
+      .hero-stack{
+        gap:12px;
+      }
+
+      .sim-card{
+        padding:14px 14px;
+        border-radius:16px;
+      }
+
+      .sim-kicker{
+        margin-bottom:2px;
+        font-size:12px;
+      }
+
+      .sim-title{
+        font-size:15px;
+        line-height:1.35;
+      }
+
       .link-grid{
         grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:10px;
+      }
+
+      .link-card{
+        min-height:66px;
+        padding:12px 10px;
+        border-radius:16px;
+        font-size:14px;
+        line-height:1.35;
+        overflow-wrap:anywhere;
+        word-break:break-word;
+      }
+
+      .dashboard{
+        padding:4px 0 40px;
+      }
+
+      .dashboard-grid{
+        gap:12px;
       }
 
       .dashboard-card{
-        padding:18px 16px 14px;
+        padding:16px 14px 12px;
+      }
+
+      .dashboard-title{
+        margin:0 0 10px;
+        font-size:16px;
       }
 
       .rank-row{
@@ -472,7 +528,7 @@
         <div class="site-header-row">
           <h1 class="site-title">MCBattle.jp</h1>
           <div class="site-header-copy">
-            <p class="header-message">日本一情報量の多いMCバトルポータル。<br>大会情報の記録や戦績に加え、独自の仕様で各MCのスコアリングをつけています。</p>
+            <p class="header-message">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
             <a class="header-spec-link" href="ranking_spec.html">スコアリング仕様を見る</a>
           </div>
         </div>
@@ -487,12 +543,12 @@
           <a class="sim-card" href="virtual_tournament.html">
             <span class="sim-kicker">現役勢の8人を選んで戦わせる</span>
             <h3 class="sim-title">仮想MCバトルシミュレーション</h3>
-            <p class="sim-sub">選んだ8人で100回トーナメントを回し、優勝・準優勝・Best4などの分布を確認できます。</p>
+            <p class="sim-sub"></p>
           </a>
 
           <div class="link-grid">
             <a class="link-card" href="rankings.html">スコアランキング</a>
-            <a class="link-card" href="prize_rankings.html">獲得賞金ランキング</a>
+            <a class="link-card" href="prize_rankings.html">賞金ランキング</a>
             <a class="link-card" href="events.html">大会一覧</a>
             <a class="link-card" href="mcs.html">MC一覧</a>
           </div>
@@ -522,7 +578,7 @@
           </section>
 
           <section class="panel dashboard-card">
-            <h2 class="dashboard-title">獲得賞金ランキング</h2>
+            <h2 class="dashboard-title">賞金ランキング</h2>
             <div id="prize-ranking" class="dashboard-list"></div>
             <div id="prize-ranking-status" class="status">読み込み中…</div>
           </section>
@@ -802,7 +858,7 @@
         setStatus("prize-ranking-status", items.length ? "" : "データがありません");
       } catch (error) {
         console.error(error);
-        setStatus("prize-ranking-status", "獲得賞金ランキングの読み込みに失敗しました。", true);
+        setStatus("prize-ranking-status", "賞金ランキングの読み込みに失敗しました。", true);
       }
     }
 
