@@ -6,6 +6,70 @@
   <title>大会一覧 | MCBattle.jp</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    .page-top{
+      margin-bottom: 18px;
+    }
+
+    .page-mini-logo{
+      margin: 0 0 10px;
+    }
+
+    .page-mini-logo .site-mini-logo{
+      text-decoration: none;
+    }
+
+    .page-header-block{
+      margin-bottom: 14px;
+    }
+
+    .page-header-block h1{
+      margin: 0;
+    }
+
+    .page-nav-pills{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      max-width: 100%;
+    }
+
+    .page-nav-pill{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.93rem;
+      font-weight: 700;
+      line-height: 1.2;
+      transition:
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .page-nav-pill:hover{
+      text-decoration: none;
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.07);
+      border-color: var(--line-strong);
+      box-shadow: 0 0 18px rgba(135, 164, 255, 0.08);
+      opacity: 1;
+    }
+
+    .page-nav-break{
+      flex-basis: 100%;
+      height: 0;
+    }
+
     .event-group-list {
       display: flex;
       flex-direction: column;
@@ -14,9 +78,10 @@
 
     .event-group {
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 18px;
       background: rgba(255,255,255,0.02);
       overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
     }
 
     .event-group-toggle {
@@ -25,7 +90,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      padding: 14px 16px;
+      padding: 13px 16px;
       border: none;
       background: rgba(255,255,255,0.025);
       color: var(--accent);
@@ -36,7 +101,8 @@
         background-color 0.18s ease,
         border-color 0.18s ease,
         box-shadow 0.18s ease,
-        color 0.18s ease;
+        color 0.18s ease,
+        transform 0.18s ease;
     }
 
     .event-group-toggle:hover {
@@ -47,13 +113,13 @@
       min-width: 0;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
     }
 
     .event-group-name {
       font-size: 1rem;
       font-weight: 800;
-      line-height: 1.4;
+      line-height: 1.35;
       color: var(--accent);
       word-break: break-word;
     }
@@ -66,7 +132,8 @@
     .event-group-icon {
       flex: 0 0 auto;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 1.05rem;
+      line-height: 1;
       transition: transform 0.18s ease;
     }
 
@@ -76,7 +143,7 @@
 
     .event-group-body {
       display: none;
-      padding: 0 12px 12px;
+      padding: 0 10px 10px;
     }
 
     .event-group.is-open .event-group-body {
@@ -86,7 +153,7 @@
     .event-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
     .event-row,
@@ -98,8 +165,8 @@
 
     .event-row {
       display: block;
-      padding: 14px;
-      border-radius: 14px;
+      padding: 10px 11px 9px;
+      border-radius: 13px;
       border: 1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.025);
       transition:
@@ -119,21 +186,23 @@
     }
 
     .event-date {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 4px;
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 3px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       transition: color 0.18s ease;
     }
 
     .event-row:hover .event-date {
-      color: #d7dee9;
+      color: #f0cd87;
     }
 
     .event-name {
-      font-size: 1rem;
+      font-size: 0.94rem;
       font-weight: 700;
       color: var(--accent);
-      line-height: 1.5;
+      line-height: 1.42;
       word-break: break-word;
       transition: color 0.18s ease;
     }
@@ -157,33 +226,85 @@
     }
 
     @media (max-width: 640px) {
+      .page-top{
+        margin-bottom: 14px;
+      }
+
+      .page-mini-logo{
+        margin-bottom: 8px;
+      }
+
+      .page-header-block{
+        margin-bottom: 12px;
+      }
+
+      .page-nav-pills{
+        gap: 7px;
+      }
+
+      .page-nav-pill{
+        min-height: 34px;
+        padding: 0 12px;
+        font-size: 0.86rem;
+      }
+
+      .event-group-list {
+        gap: 10px;
+      }
+
+      .event-group {
+        border-radius: 16px;
+      }
+
       .event-group-toggle {
-        padding: 13px 14px;
+        padding: 12px 14px;
       }
 
       .event-group-body {
-        padding: 0 10px 10px;
+        padding: 0 9px 9px;
       }
 
       .event-row {
-        padding: 12px;
+        padding: 9px 10px 8px;
+        border-radius: 12px;
       }
 
       .event-group-name {
-        font-size: 0.97rem;
+        font-size: 0.96rem;
+      }
+
+      .event-group-count {
+        font-size: 0.8rem;
+      }
+
+      .event-date {
+        font-size: 0.74rem;
       }
 
       .event-name {
-        font-size: 0.96rem;
+        font-size: 0.91rem;
+        line-height: 1.36;
       }
     }
   </style>
 </head>
 <body>
   <div class="events-page">
-    <p><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
+    <div class="page-top">
+      <p class="page-mini-logo"><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
 
-    <h1>大会一覧</h1>
+      <div class="page-header-block">
+        <h1>大会一覧</h1>
+      </div>
+
+      <nav class="page-nav-pills" aria-label="主要メニュー">
+        <a class="page-nav-pill" href="mcs.html">MC一覧</a>
+        <a class="page-nav-pill" href="rankings.html">スコアランキング</a>
+        <span class="page-nav-break" aria-hidden="true"></span>
+        <a class="page-nav-pill" href="prize_rankings.html">賞金ランキング</a>
+        <a class="page-nav-pill" href="virtual_tournament.html">仮想シミュレーション</a>
+      </nav>
+    </div>
 
     <div id="event-list" class="event-group-list"></div>
     <p id="status" class="status">読み込み中…</p>
