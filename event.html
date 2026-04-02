@@ -23,14 +23,7 @@
     }
 
     .page-header-block h1{
-      margin: 0 0 8px;
-    }
-
-    .page-header-meta{
       margin: 0;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.6;
     }
 
     .event-card-inner {
@@ -81,10 +74,6 @@
         margin-bottom: 12px;
       }
 
-      .page-header-meta{
-        font-size: 0.95rem;
-      }
-
       .event-card-inner {
         padding-left: 10px;
         padding-right: 10px;
@@ -99,7 +88,6 @@
 
       <div class="page-header-block">
         <h1 id="event-title">大会情報を読み込み中...</h1>
-        <p id="event-meta" class="page-header-meta"></p>
       </div>
     </div>
 
@@ -315,7 +303,6 @@
       const eventId = getEventIdFromQuery();
 
       const titleEl = document.getElementById("event-title");
-      const metaEl = document.getElementById("event-meta");
       const infoListEl = document.getElementById("event-info-list");
       const matchesStatusEl = document.getElementById("matches-status");
       const matchesListEl = document.getElementById("matches-list");
@@ -324,7 +311,6 @@
 
       if (!eventId) {
         titleEl.textContent = "大会IDが指定されていません";
-        metaEl.textContent = "";
         matchesStatusEl.textContent = "event_id が見つかりませんでした。";
         matchesStatusEl.classList.add("error");
         return;
@@ -341,7 +327,6 @@
 
         if (!data) {
           titleEl.textContent = "大会情報の取得に失敗しました";
-          metaEl.textContent = "";
           matchesStatusEl.textContent = "指定された大会データが見つかりません";
           matchesStatusEl.classList.add("error");
           return;
@@ -357,14 +342,8 @@
 
         titleEl.textContent = event.event_name_full || event.event_name || "大会名不明";
 
-        const metaParts = [];
-        if (event.event_date) metaParts.push(formatDateJP(event.event_date));
-        if (event.event_category) metaParts.push(event.event_category);
-        metaEl.textContent = metaParts.join(" / ");
-
         const infoItems = [
           { label: "開催日", html: escapeHtml(formatDateJP(event.event_date || "")) },
-          { label: "カテゴリ", html: escapeHtml(event.event_category || "") },
           { label: "結果", html: resultsHtml },
           { label: "優勝賞金", html: escapeHtml(formattedWinnerPrize || "") }
         ].filter((item) => item.html !== "");
@@ -429,7 +408,6 @@
       } catch (err) {
         console.error(err);
         titleEl.textContent = "大会情報の読み込みに失敗しました";
-        metaEl.textContent = "";
         matchesStatusEl.textContent = `読み込み失敗: ${err && err.message ? err.message : err}`;
         matchesStatusEl.classList.add("error");
       }
