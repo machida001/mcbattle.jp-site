@@ -70,84 +70,80 @@
       height: 0;
     }
 
-    .ranking-card {
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 18px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%),
-        linear-gradient(180deg, rgba(18, 22, 31, 0.96) 0%, rgba(14, 18, 28, 0.98) 100%);
-      box-shadow: 0 18px 48px rgba(0,0,0,0.22);
+    .rankings-card-inner {
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
-    .ranking-card-head{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
+    .rankings-table-wrap {
+      overflow-x: visible;
+      width: 100%;
     }
 
-    .ranking-status {
-      margin: 0;
-      color: var(--muted);
+    table.rankings-table {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin-top: 0;
     }
 
-    .ranking-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    table.rankings-table col:nth-child(1) {
+      width: 58px;
     }
 
-    .ranking-list li {
-      display: grid;
-      grid-template-columns: 56px minmax(0, 1fr) auto;
-      gap: 12px;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--line);
+    table.rankings-table col:nth-child(2) {
+      width: auto;
     }
 
-    .ranking-list li:last-child {
-      border-bottom: none;
+    table.rankings-table col:nth-child(3) {
+      width: 132px;
     }
 
-    .rank-no {
-      font-variant-numeric: tabular-nums;
-      font-size: 1rem;
-      font-weight: 900;
-      color: var(--accent-dim);
+    table.rankings-table th,
+    table.rankings-table td {
+      padding: 6px 8px;
+      vertical-align: middle;
+    }
+
+    table.rankings-table th:nth-child(1),
+    table.rankings-table td:nth-child(1) {
       text-align: right;
+      white-space: nowrap;
     }
 
-    .ranking-list li:nth-child(1) .rank-no,
-    .ranking-list li:nth-child(2) .rank-no,
-    .ranking-list li:nth-child(3) .rank-no {
-      color: var(--accent);
-    }
-
-    .rank-name {
+    table.rankings-table th:nth-child(2),
+    table.rankings-table td:nth-child(2) {
+      text-align: left;
       min-width: 0;
     }
 
-    .rank-name a,
-    .rank-name span {
-      display: inline-block;
-      max-width: 100%;
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 0.14em;
-      font-weight: 700;
-      overflow-wrap: anywhere;
-      word-break: break-word;
+    table.rankings-table th:nth-child(3),
+    table.rankings-table td:nth-child(3) {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
     }
 
-    .rank-money {
-      font-variant-numeric: tabular-nums;
-      color: var(--accent-soft);
-      font-weight: 700;
-      white-space: nowrap;
-      text-align: right;
+    table.rankings-table tbody tr:hover {
+      opacity: 0.92;
+    }
+
+    .rank-name-link,
+    .rank-name-text {
+      display: block;
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.35;
+    }
+
+    .rank-name-link:hover {
+      opacity: 0.85;
     }
 
     @media (max-width: 640px) {
@@ -173,32 +169,34 @@
         font-size: 0.86rem;
       }
 
-      .ranking-card {
-        padding: 14px;
-        border-radius: 18px;
+      .rankings-card-inner {
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
-      .ranking-card-head{
-        margin-bottom: 6px;
+      table.rankings-table col:nth-child(1) {
+        width: 42px;
       }
 
-      .ranking-list li {
-        grid-template-columns: 42px minmax(0, 1fr) auto;
-        gap: 8px;
+      table.rankings-table col:nth-child(3) {
+        width: 104px;
       }
 
-      .rank-no {
-        font-size: 0.95rem;
+      table.rankings-table th,
+      table.rankings-table td {
+        padding: 5px 4px;
+        font-size: 0.9rem;
       }
 
-      .rank-money {
-        font-size: 0.92rem;
+      .rank-name-link,
+      .rank-name-text {
+        line-height: 1.28;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page-shell rankings-page">
+  <div class="rankings-page">
     <div class="page-top">
       <p class="page-mini-logo"><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
 
@@ -215,12 +213,28 @@
       </nav>
     </div>
 
-    <section class="ranking-card">
-      <div class="ranking-card-head">
-        <p id="ranking-status" class="ranking-status"></p>
-        <a class="rank-name-link" href="ranking_spec.html">ランキング仕様</a>
+    <section class="card">
+      <div class="rankings-card-inner">
+        <p id="ranking-status" class="muted"></p>
+
+        <div class="rankings-table-wrap">
+          <table class="rankings-table">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>順位</th>
+                <th>MC名</th>
+                <th>賞金</th>
+              </tr>
+            </thead>
+            <tbody id="ranking-body"></tbody>
+          </table>
+        </div>
       </div>
-      <ol id="ranking-list" class="ranking-list"></ol>
     </section>
   </div>
 
@@ -229,7 +243,7 @@
 
     function formatYen(value) {
       const num = Number(value || 0);
-      return num.toLocaleString("ja-JP");
+      return "¥" + num.toLocaleString("ja-JP");
     }
 
     async function loadPrizeRankingsJson() {
@@ -242,12 +256,13 @@
 
     function loadPrizeRankings() {
       const statusEl = document.getElementById("ranking-status");
-      const listEl = document.getElementById("ranking-list");
+      const bodyEl = document.getElementById("ranking-body");
 
       loadPrizeRankingsJson()
         .then((data) => {
           console.log("prize ranking page:", data);
-          listEl.innerHTML = "";
+
+          bodyEl.innerHTML = "";
           statusEl.classList.remove("error");
 
           try {
@@ -266,39 +281,37 @@
             const rankings = Array.isArray(data.rankings) ? data.rankings : [];
 
             rankings.forEach((item, index) => {
-              const li = document.createElement("li");
+              const tr = document.createElement("tr");
 
-              const rankNo = document.createElement("span");
-              rankNo.className = "rank-no";
-              rankNo.textContent = `${item.rank || index + 1}.`;
+              const rankTd = document.createElement("td");
+              const nameTd = document.createElement("td");
+              const moneyTd = document.createElement("td");
 
-              const nameEl = document.createElement("span");
-              nameEl.className = "rank-name";
+              const rank = item.rank || (index + 1);
+              const mcId = item.mc_id || "";
+              const mcName = item.mc_name || "名前不明";
 
-              const mcName = item.mc_name ? String(item.mc_name) : "名前不明";
-              const mcId = item.mc_id ? String(item.mc_id) : "";
+              rankTd.textContent = rank;
+              moneyTd.textContent = formatYen(item.total_prize_money || 0);
 
               if (mcId) {
                 const a = document.createElement("a");
                 a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
                 a.textContent = mcName;
-                a.title = mcName;
-                nameEl.appendChild(a);
+                a.className = "rank-name-link";
+                nameTd.appendChild(a);
               } else {
                 const span = document.createElement("span");
                 span.textContent = mcName;
-                span.title = mcName;
-                nameEl.appendChild(span);
+                span.className = "rank-name-text";
+                nameTd.appendChild(span);
               }
 
-              const moneyEl = document.createElement("span");
-              moneyEl.className = "rank-money";
-              moneyEl.textContent = formatYen(item.total_prize_money || 0);
+              tr.appendChild(rankTd);
+              tr.appendChild(nameTd);
+              tr.appendChild(moneyTd);
 
-              li.appendChild(rankNo);
-              li.appendChild(nameEl);
-              li.appendChild(moneyEl);
-              listEl.appendChild(li);
+              bodyEl.appendChild(tr);
             });
 
             statusEl.textContent = "";
