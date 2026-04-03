@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>大会記録 | MC Battle DB</title>
+  <title>大会詳細 | MCBattle.jp</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     .page-top{
@@ -394,6 +394,7 @@
 
       if (!eventId) {
         titleEl.textContent = "大会IDが指定されていません";
+        document.title = "大会詳細 | MCBattle.jp";
         matchesStatusEl.textContent = "event_id が見つかりませんでした。";
         matchesStatusEl.classList.add("error");
         return;
@@ -410,6 +411,7 @@
 
         if (!data) {
           titleEl.textContent = "大会情報の取得に失敗しました";
+          document.title = "大会詳細 | MCBattle.jp";
           matchesStatusEl.textContent = "指定された大会データが見つかりません";
           matchesStatusEl.classList.add("error");
           return;
@@ -423,7 +425,9 @@
         const formattedWinnerPrize = formatPrizeYen(event.prize_money_winner);
         const resultsHtml = buildResultsHtml(event, groupedMatches);
 
-        titleEl.textContent = event.event_name_full || event.event_name || "大会名不明";
+        const eventTitle = event.event_name_full || event.event_name || "大会名不明";
+        titleEl.textContent = eventTitle;
+        document.title = `${eventTitle} | 大会結果・試合結果 | MCBattle.jp`;
 
         const infoItems = [
           { label: "開催日", html: escapeHtml(formatDateJP(event.event_date || "")) },
@@ -491,6 +495,7 @@
       } catch (err) {
         console.error(err);
         titleEl.textContent = "大会情報の読み込みに失敗しました";
+        document.title = "大会詳細 | MCBattle.jp";
         matchesStatusEl.textContent = `読み込み失敗: ${err && err.message ? err.message : err}`;
         matchesStatusEl.classList.add("error");
       }
