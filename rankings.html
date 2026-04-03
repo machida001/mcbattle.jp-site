@@ -39,6 +39,74 @@
       line-height: 1.3;
     }
 
+    .top3-wrap {
+      margin-bottom: 18px;
+    }
+
+    .top3-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .top3-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+    }
+
+    .top3-row + .top3-row {
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .top3-left {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      font-size: 1.12rem;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+    }
+
+    .top3-medal {
+      flex: 0 0 auto;
+      font-size: 0.96em;
+      line-height: 1;
+    }
+
+    .top3-name {
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .top3-name a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
+    .top3-name a:hover {
+      opacity: 0.85;
+    }
+
+    .top3-score {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 1.08rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+
     .rankings-card-inner {
       padding-left: 12px;
       padding-right: 12px;
@@ -74,33 +142,35 @@
       width: 84px;
     }
 
-    table.rankings-table th,
     table.rankings-table td {
-      padding: 6px 8px;
+      padding: 10px 8px;
       vertical-align: middle;
     }
 
-    table.rankings-table th:nth-child(1),
     table.rankings-table td:nth-child(1) {
       text-align: right;
       white-space: nowrap;
     }
 
-    table.rankings-table th:nth-child(2),
     table.rankings-table td:nth-child(2) {
       text-align: left;
       min-width: 0;
     }
 
-    table.rankings-table th:nth-child(3),
     table.rankings-table td:nth-child(3) {
       text-align: right;
       white-space: nowrap;
       font-variant-numeric: tabular-nums;
     }
 
-    table.rankings-table tbody tr:hover {
-      opacity: 0.92;
+    table.rankings-table tbody tr + tr {
+      border-top: 1px solid rgba(214,178,95,0.26);
+    }
+
+    .rank-rank {
+      color: #ffffff;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
     }
 
     .rank-name-link,
@@ -119,6 +189,14 @@
       opacity: 0.85;
     }
 
+    .rank-score {
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 1rem;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.01em;
+    }
+
     @media (max-width: 640px) {
       .spec-card-link{
         margin-bottom: 8px;
@@ -128,6 +206,24 @@
 
       .spec-card-title{
         font-size: 0.9rem;
+      }
+
+      .top3-row {
+        gap: 10px;
+        padding: 10px 0;
+      }
+
+      .top3-left {
+        gap: 7px;
+        font-size: 0.98rem;
+      }
+
+      .top3-medal {
+        font-size: 0.92em;
+      }
+
+      .top3-score {
+        font-size: 0.98rem;
       }
 
       .rankings-card-inner {
@@ -147,15 +243,18 @@
         width: 62px;
       }
 
-      table.rankings-table th,
       table.rankings-table td {
-        padding: 5px 4px;
+        padding: 8px 4px;
         font-size: 0.9rem;
       }
 
       .rank-name-link,
       .rank-name-text {
         line-height: 1.28;
+      }
+
+      .rank-score {
+        font-size: 0.94rem;
       }
     }
   </style>
@@ -182,6 +281,10 @@
       </a>
     </div>
 
+    <div class="top3-wrap">
+      <div id="top3" class="top3-list"></div>
+    </div>
+
     <section class="card">
       <div class="rankings-card-inner">
         <div class="rankings-card-head">
@@ -195,13 +298,6 @@
               <col />
               <col />
             </colgroup>
-            <thead>
-              <tr>
-                <th>順位</th>
-                <th>MC名</th>
-                <th>スコア</th>
-              </tr>
-            </thead>
             <tbody id="rankings-body"></tbody>
           </table>
         </div>
@@ -220,14 +316,79 @@
       return await res.json();
     }
 
+    function medalEmoji(rank) {
+      if (rank === 1) return "🥇";
+      if (rank === 2) return "🥈";
+      if (rank === 3) return "🥉";
+      return "";
+    }
+
+    function formatScore(value) {
+      return value !== "" && !isNaN(Number(value))
+        ? Number(value).toFixed(2)
+        : String(value);
+    }
+
+    function extractScore(item) {
+      return (
+        item.current_strength_score_v2 ??
+        item.current_strength_score ??
+        item.current_score ??
+        item.score ??
+        ""
+      );
+    }
+
+    function buildTop3(items) {
+      return items.map(item => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "top3-row";
+
+        const left = document.createElement("div");
+        left.className = "top3-left";
+
+        const medal = document.createElement("span");
+        medal.className = "top3-medal";
+        medal.setAttribute("aria-hidden", "true");
+        medal.textContent = medalEmoji(item.rank);
+
+        const nameWrap = document.createElement("span");
+        nameWrap.className = "top3-name";
+
+        if (item.mc_id) {
+          const a = document.createElement("a");
+          a.href = `mc.html?mc_id=${encodeURIComponent(item.mc_id)}`;
+          a.textContent = item.mc_name;
+          a.title = item.mc_name;
+          nameWrap.appendChild(a);
+        } else {
+          nameWrap.textContent = item.mc_name;
+          nameWrap.title = item.mc_name;
+        }
+
+        const score = document.createElement("div");
+        score.className = "top3-score";
+        score.textContent = formatScore(item.raw_score);
+
+        left.appendChild(medal);
+        left.appendChild(nameWrap);
+        wrapper.appendChild(left);
+        wrapper.appendChild(score);
+
+        return wrapper;
+      });
+    }
+
     function loadRankingsPage() {
       const statusEl = document.getElementById("rankings-status");
+      const top3El = document.getElementById("top3");
       const bodyEl = document.getElementById("rankings-body");
 
       loadRankingsJson()
         .then((data) => {
           console.log("rankings page:", data);
 
+          top3El.innerHTML = "";
           bodyEl.innerHTML = "";
           statusEl.classList.remove("error");
 
@@ -240,44 +401,43 @@
 
             const rankings = Array.isArray(data.rankings) ? data.rankings.slice(0, 100) : [];
 
-            rankings.forEach((item, index) => {
+            const normalized = rankings.map((item, index) => ({
+              rank: item.rank || (index + 1),
+              mc_id: item.mc_id || "",
+              mc_name: item.mc_name || "名前不明",
+              raw_score: extractScore(item)
+            }));
+
+            const top3 = normalized.slice(0, 3);
+            const rest = normalized.slice(3);
+
+            buildTop3(top3).forEach(node => top3El.appendChild(node));
+
+            rest.forEach((item) => {
               const tr = document.createElement("tr");
 
               const rankTd = document.createElement("td");
               const nameTd = document.createElement("td");
               const scoreTd = document.createElement("td");
 
-              const rank = item.rank || (index + 1);
-              const mcId = item.mc_id || "";
-              const mcName = item.mc_name || "名前不明";
+              rankTd.textContent = item.rank;
+              rankTd.className = "rank-rank";
 
-              const rawScore =
-                item.current_strength_score_v2 ??
-                item.current_strength_score ??
-                item.current_score ??
-                item.score ??
-                "";
-
-              const score = rawScore !== "" && !isNaN(Number(rawScore))
-                ? Number(rawScore).toFixed(2)
-                : String(rawScore);
-
-              rankTd.textContent = rank;
-
-              if (mcId) {
+              if (item.mc_id) {
                 const a = document.createElement("a");
-                a.href = `mc.html?mc_id=${encodeURIComponent(mcId)}`;
-                a.textContent = mcName;
+                a.href = `mc.html?mc_id=${encodeURIComponent(item.mc_id)}`;
+                a.textContent = item.mc_name;
                 a.className = "rank-name-link";
                 nameTd.appendChild(a);
               } else {
                 const span = document.createElement("span");
-                span.textContent = mcName;
+                span.textContent = item.mc_name;
                 span.className = "rank-name-text";
                 nameTd.appendChild(span);
               }
 
-              scoreTd.textContent = score;
+              scoreTd.textContent = formatScore(item.raw_score);
+              scoreTd.className = "rank-score";
 
               tr.appendChild(rankTd);
               tr.appendChild(nameTd);
