@@ -6,79 +6,6 @@
   <title>賞金ランキング | MCBattle.jp</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .prize-page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px 16px 56px;
-    }
-
-    .page-top {
-      margin-bottom: 20px;
-    }
-
-    .page-mini-logo {
-      margin: 0 0 14px;
-    }
-
-    .site-mini-logo {
-      display: inline-block;
-      font-size: clamp(2.05rem, 4.9vw, 3.15rem);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .site-mini-logo:hover {
-      opacity: 0.92;
-    }
-
-    .page-nav-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 14px;
-      margin-bottom: 18px;
-    }
-
-    .page-nav-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 28px;
-      border-radius: 999px;
-      border: 1px solid rgba(214, 178, 95, 0.22);
-      background: rgba(255,255,255,0.025);
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1rem;
-      line-height: 1;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
-      transition:
-        background-color 0.18s ease,
-        border-color 0.18s ease,
-        transform 0.18s ease,
-        box-shadow 0.18s ease,
-        color 0.18s ease;
-    }
-
-    .page-nav-pill:hover {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(214, 178, 95, 0.34);
-      transform: translateY(-1px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.16);
-    }
-
-    .page-header-block h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.35rem, 7vw, 4.3rem);
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-      color: #ffffff;
-    }
-
     .top3-wrap {
       margin-bottom: 18px;
     }
@@ -127,14 +54,12 @@
 
     .top3-name a {
       color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.55);
-      transition: border-color 0.18s ease, opacity 0.18s ease;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
     }
 
     .top3-name a:hover {
-      opacity: 0.92;
-      border-bottom-color: rgba(255,255,255,0.88);
+      opacity: 0.85;
     }
 
     .top3-amount {
@@ -148,49 +73,60 @@
       text-align: right;
     }
 
-    .ranking-panel {
-      border-radius: 26px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background:
-        radial-gradient(circle at top left, rgba(52, 76, 170, 0.08), transparent 36%),
-        rgba(255,255,255,0.03);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.03) inset,
-        0 24px 50px rgba(0,0,0,0.16);
-      padding: 8px 18px 14px;
+    .prize-card-inner {
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
-    .ranking-table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+    .prize-table-wrap {
+      overflow-x: visible;
+      width: 100%;
     }
 
     table.prize-table {
       width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      table-layout: fixed;
       border-collapse: collapse;
-      min-width: 560px;
+      margin-top: 0;
     }
 
-    .prize-table tbody tr {
-      border-bottom: 1px solid rgba(214,178,95,0.26);
+    table.prize-table col:nth-child(1) {
+      width: 58px;
     }
 
-    .prize-table tbody td {
-      padding: 18px 14px;
-      color: #ffffff;
-      font-size: 1rem;
+    table.prize-table col:nth-child(2) {
+      width: auto;
+    }
+
+    table.prize-table col:nth-child(3) {
+      width: 168px;
+    }
+
+    table.prize-table td {
+      padding: 10px 8px;
       vertical-align: middle;
     }
 
-    .prize-table tbody td:nth-child(1) {
-      width: 88px;
-      text-align: right;
-    }
-
-    .prize-table tbody td:nth-child(3) {
-      width: 220px;
+    table.prize-table td:nth-child(1) {
       text-align: right;
       white-space: nowrap;
+    }
+
+    table.prize-table td:nth-child(2) {
+      text-align: left;
+      min-width: 0;
+    }
+
+    table.prize-table td:nth-child(3) {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    table.prize-table tbody tr + tr {
+      border-top: 1px solid rgba(214,178,95,0.26);
     }
 
     .prize-rank {
@@ -199,16 +135,20 @@
       font-variant-numeric: tabular-nums;
     }
 
-    .prize-mc a {
-      color: #ffffff;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.55);
-      transition: border-color 0.18s ease, opacity 0.18s ease;
+    .prize-name-link,
+    .prize-name-text {
+      display: block;
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.35;
     }
 
-    .prize-mc a:hover {
-      opacity: 0.92;
-      border-bottom-color: rgba(255,255,255,0.88);
+    .prize-name-link:hover {
+      opacity: 0.85;
     }
 
     .prize-amount {
@@ -219,41 +159,7 @@
       letter-spacing: -0.01em;
     }
 
-    .status {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .status.error {
-      color: var(--danger);
-    }
-
-    .empty-note {
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.6;
-      padding: 10px 2px 2px;
-    }
-
     @media (max-width: 640px) {
-      .prize-page {
-        padding: 18px 14px 48px;
-      }
-
-      .page-nav-pills {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px 12px;
-      }
-
-      .page-nav-pill {
-        width: 100%;
-        min-height: 48px;
-        padding: 0 14px;
-        font-size: 0.96rem;
-      }
-
       .top3-row {
         gap: 10px;
         padding: 12px 0;
@@ -272,26 +178,27 @@
         font-size: 1.08rem;
       }
 
-      .ranking-panel {
-        border-radius: 22px;
-        padding: 4px 10px 12px;
+      .prize-card-inner {
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
-      table.prize-table {
-        min-width: 0;
+      table.prize-table col:nth-child(1) {
+        width: 42px;
       }
 
-      .prize-table tbody td {
-        padding: 14px 10px;
-        font-size: 0.94rem;
+      table.prize-table col:nth-child(3) {
+        width: 116px;
       }
 
-      .prize-table tbody td:nth-child(1) {
-        width: 54px;
+      table.prize-table td {
+        padding: 8px 4px;
+        font-size: 0.9rem;
       }
 
-      .prize-table tbody td:nth-child(3) {
-        width: 140px;
+      .prize-name-link,
+      .prize-name-text {
+        line-height: 1.28;
       }
 
       .prize-amount {
@@ -301,15 +208,16 @@
   </style>
 </head>
 <body>
-  <div class="prize-page">
+  <div class="rankings-page">
     <div class="page-top">
       <p class="page-mini-logo"><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
 
       <nav class="page-nav-pills" aria-label="主要メニュー">
         <a class="page-nav-pill" href="events.html">大会一覧</a>
         <a class="page-nav-pill" href="mcs.html">MC一覧</a>
-        <a class="page-nav-pill" href="rankings.html">スコア</a>
-        <a class="page-nav-pill" href="virtual_tournament.html">シミュレーション</a>
+        <span class="page-nav-break" aria-hidden="true"></span>
+        <a class="page-nav-pill" href="rankings.html">スコアランキング</a>
+        <a class="page-nav-pill" href="virtual_tournament.html">仮想シミュレーション</a>
       </nav>
 
       <div class="page-header-block">
@@ -317,27 +225,37 @@
       </div>
     </div>
 
-    <section class="top3-wrap">
+    <div class="top3-wrap">
       <div id="top3" class="top3-list"></div>
-    </section>
+    </div>
 
-    <section class="ranking-panel">
-      <div id="ranking-rest"></div>
-    </section>
+    <section class="card">
+      <div class="prize-card-inner">
+        <p id="prize-status" class="muted"></p>
 
-    <p id="status" class="status">読み込み中…</p>
+        <div class="prize-table-wrap">
+          <table class="prize-table">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <tbody id="prize-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
   </div>
 
   <script>
     const PRIZE_JSON_URL = "./data/prize_rankings.json";
 
-    function escapeHtml(v) {
-      return String(v ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
+    async function loadPrizeJson() {
+      const res = await fetch(PRIZE_JSON_URL, { cache: "no-store" });
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      return await res.json();
     }
 
     function toNumber(v) {
@@ -351,14 +269,6 @@
     function formatMoney(v) {
       const n = toNumber(v);
       return "¥" + (Number.isFinite(n) ? n : 0).toLocaleString("ja-JP");
-    }
-
-    function getMcId(item) {
-      return String(item.mc_id || "").trim();
-    }
-
-    function getMcName(item) {
-      return String(item.mc_name || item.name || "").trim();
     }
 
     function getPrizeAmount(item) {
@@ -382,22 +292,28 @@
         const n = toNumber(value);
         if (Number.isFinite(n)) return n;
       }
-
       return 0;
     }
 
-    function normalizeItems(raw) {
+    function medalEmoji(rank) {
+      if (rank === 1) return "🥇";
+      if (rank === 2) return "🥈";
+      if (rank === 3) return "🥉";
+      return "";
+    }
+
+    function normalizeItems(data) {
       const source =
-        Array.isArray(raw?.rankings) ? raw.rankings :
-        Array.isArray(raw?.items) ? raw.items :
-        Array.isArray(raw?.data) ? raw.data :
-        Array.isArray(raw) ? raw : [];
+        Array.isArray(data.rankings) ? data.rankings :
+        Array.isArray(data.items) ? data.items :
+        Array.isArray(data.data) ? data.data :
+        Array.isArray(data) ? data : [];
 
       return source
         .map((item, index) => ({
           rank: Number(item.rank) || (index + 1),
-          mc_id: getMcId(item),
-          mc_name: getMcName(item),
+          mc_id: item.mc_id || "",
+          mc_name: item.mc_name || item.name || "名前不明",
           amount: getPrizeAmount(item)
         }))
         .filter(item => item.mc_name)
@@ -411,95 +327,118 @@
         }));
     }
 
-    function mcLink(item) {
-      const name = escapeHtml(item.mc_name);
-      if (!item.mc_id) return name;
-      return `<a href="mc.html?mc_id=${encodeURIComponent(item.mc_id)}">${name}</a>`;
-    }
-
-    function medalEmoji(rank) {
-      if (rank === 1) return "🥇";
-      if (rank === 2) return "🥈";
-      if (rank === 3) return "🥉";
-      return "";
-    }
-
-    function buildTop3Row(item) {
-      return `
-        <div class="top3-row">
-          <div class="top3-left">
-            <span class="top3-medal" aria-hidden="true">${medalEmoji(item.rank)}</span>
-            <span class="top3-name">${mcLink(item)}</span>
-          </div>
-          <div class="top3-amount">${escapeHtml(formatMoney(item.amount))}</div>
-        </div>
-      `;
-    }
-
     function buildTop3(items) {
-      if (!items.length) {
-        return `<p class="empty-note">賞金データがありません。</p>`;
-      }
-      return items.map(buildTop3Row).join("");
-    }
+      return items.map(item => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "top3-row";
 
-    function buildRestTable(items) {
-      if (!items.length) {
-        return `<p class="empty-note">4位以降のデータはありません。</p>`;
-      }
+        const left = document.createElement("div");
+        left.className = "top3-left";
 
-      return `
-        <div class="ranking-table-wrap">
-          <table class="prize-table">
-            <tbody>
-              ${items.map(item => `
-                <tr>
-                  <td class="prize-rank">${item.rank}</td>
-                  <td class="prize-mc">${mcLink(item)}</td>
-                  <td class="prize-amount">${escapeHtml(formatMoney(item.amount))}</td>
-                </tr>
-              `).join("")}
-            </tbody>
-          </table>
-        </div>
-      `;
-    }
+        const medal = document.createElement("span");
+        medal.className = "top3-medal";
+        medal.setAttribute("aria-hidden", "true");
+        medal.textContent = medalEmoji(item.rank);
 
-    async function fetchPrizeData() {
-      const res = await fetch(PRIZE_JSON_URL, { cache: "no-store" });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return await res.json();
-    }
+        const nameWrap = document.createElement("span");
+        nameWrap.className = "top3-name";
 
-    async function load() {
-      const top3El = document.getElementById("top3");
-      const restEl = document.getElementById("ranking-rest");
-      const statusEl = document.getElementById("status");
-
-      try {
-        const raw = await fetchPrizeData();
-
-        if (raw && raw.error) {
-          throw new Error(raw.message || "data error");
+        if (item.mc_id) {
+          const a = document.createElement("a");
+          a.href = `mc.html?mc_id=${encodeURIComponent(item.mc_id)}`;
+          a.textContent = item.mc_name;
+          nameWrap.appendChild(a);
+        } else {
+          nameWrap.textContent = item.mc_name;
         }
 
-        const items = normalizeItems(raw);
-        const top3 = items.slice(0, 3);
-        const rest = items.slice(3);
+        const amount = document.createElement("div");
+        amount.className = "top3-amount";
+        amount.textContent = formatMoney(item.amount);
 
-        top3El.innerHTML = buildTop3(top3);
-        restEl.innerHTML = buildRestTable(rest);
-        statusEl.textContent = "";
-      } catch (err) {
-        console.error(err);
-        top3El.innerHTML = "";
-        restEl.innerHTML = "";
-        statusEl.textContent = "賞金ランキングの取得に失敗しました";
-        statusEl.classList.add("error");
-      }
+        left.appendChild(medal);
+        left.appendChild(nameWrap);
+        wrapper.appendChild(left);
+        wrapper.appendChild(amount);
+
+        return wrapper;
+      });
     }
 
-    load();
+    function loadPrizePage() {
+      const statusEl = document.getElementById("prize-status");
+      const top3El = document.getElementById("top3");
+      const bodyEl = document.getElementById("prize-body");
+
+      loadPrizeJson()
+        .then((data) => {
+          console.log("prize rankings page:", data);
+
+          top3El.innerHTML = "";
+          bodyEl.innerHTML = "";
+          statusEl.classList.remove("error");
+
+          try {
+            if (data.error) {
+              statusEl.textContent = "賞金ランキングの取得に失敗しました: " + (data.message || "");
+              statusEl.classList.add("error");
+              return;
+            }
+
+            const items = normalizeItems(data);
+            const top3 = items.slice(0, 3);
+            const rest = items.slice(3);
+
+            buildTop3(top3).forEach(node => top3El.appendChild(node));
+
+            rest.forEach((item) => {
+              const tr = document.createElement("tr");
+
+              const rankTd = document.createElement("td");
+              const nameTd = document.createElement("td");
+              const amountTd = document.createElement("td");
+
+              rankTd.textContent = item.rank;
+              rankTd.className = "prize-rank";
+
+              if (item.mc_id) {
+                const a = document.createElement("a");
+                a.href = `mc.html?mc_id=${encodeURIComponent(item.mc_id)}`;
+                a.textContent = item.mc_name;
+                a.className = "prize-name-link";
+                nameTd.appendChild(a);
+              } else {
+                const span = document.createElement("span");
+                span.textContent = item.mc_name;
+                span.className = "prize-name-text";
+                nameTd.appendChild(span);
+              }
+
+              amountTd.textContent = formatMoney(item.amount);
+              amountTd.className = "prize-amount";
+
+              tr.appendChild(rankTd);
+              tr.appendChild(nameTd);
+              tr.appendChild(amountTd);
+
+              bodyEl.appendChild(tr);
+            });
+
+            statusEl.textContent = "";
+          } catch (err) {
+            console.error(err);
+            statusEl.textContent = "賞金ランキングの描画に失敗しました";
+            statusEl.classList.add("error");
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          statusEl.textContent = "賞金ランキングの読み込みに失敗しました";
+          statusEl.classList.add("error");
+        });
+    }
+
+    loadPrizePage();
   </script>
 </body>
 </html>
