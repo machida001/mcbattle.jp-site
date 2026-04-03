@@ -138,7 +138,7 @@
     }
 
     .contact-textarea{
-      min-height:150px;
+      min-height:140px;
       padding:11px 13px;
       resize:vertical;
       line-height:1.7;
@@ -189,28 +189,6 @@
       background:rgba(216,180,106,.14);
       border-color:rgba(216,180,106,.34);
       box-shadow:0 0 14px rgba(216,180,106,.10);
-    }
-
-    .contact-back{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:40px;
-      padding:0 16px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.04);
-      color:var(--accent);
-      text-decoration:none;
-      font-weight:700;
-    }
-
-    .contact-back:hover{
-      text-decoration:none;
-      transform:translateY(-1px);
-      background:rgba(255,255,255,0.07);
-      border-color:var(--line-strong);
-      box-shadow:0 0 14px rgba(216,180,106,.08);
     }
 
     .contact-alert{
@@ -272,15 +250,11 @@
       }
 
       .contact-textarea{
-        min-height:140px;
+        min-height:130px;
       }
 
       .contact-submit{
         min-height:44px;
-      }
-
-      .contact-back{
-        min-height:38px;
       }
     }
   </style>
@@ -305,7 +279,7 @@
 
     <section class="contact-card">
       <p class="contact-lead">
-        スコアリング仕様や試合結果、MCデータに関するご意見を受け付けています。
+        ご意見、ご指摘、ご要望お気軽に連絡下さい。
       </p>
 
       <p id="contact-alert-success" class="contact-alert success honeypot">送信しました。ありがとうございます。</p>
@@ -323,6 +297,7 @@
             <option value="スコアリング仕様のご意見">スコアリング仕様のご意見</option>
             <option value="試合結果等のご意見">試合結果等のご意見</option>
             <option value="MCデータのご意見">MCデータのご意見</option>
+            <option value="その他">その他</option>
           </select>
         </div>
 
@@ -355,12 +330,11 @@
         <input type="hidden" name="redirect_error" value="https://machida001.github.io/mcbattle.jp-site/contact.html?error=1" />
 
         <p class="contact-help">
-          返信を約束するものではありませんが、内容は確認します。
+          内容は必ず確認いたしますが、内容により返信ができない場合があります。ご了承下さい。
         </p>
 
         <div class="contact-actions">
           <button class="contact-submit" type="submit">送信する</button>
-          <a class="contact-back" href="ranking_spec.html">スコアリング仕様へ戻る</a>
         </div>
       </form>
     </section>
