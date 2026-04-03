@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>仮想MCバトルシミュレーション | MCBattle.jp</title>
+  <title>バトルシュミレータ | MCBattle.jp</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     .vt-page{
@@ -11,6 +11,8 @@
       margin-left:auto;
       margin-right:auto;
       overflow-x:hidden;
+      padding-top:calc(20px + env(safe-area-inset-top));
+      padding-bottom:56px;
     }
 
     .vt-hero{
@@ -63,7 +65,7 @@
       margin:0 0 10px;
       font-size:1rem;
       font-weight:800;
-      color:#5a86ff;
+      color:var(--accent);
       letter-spacing:.01em;
     }
 
@@ -222,6 +224,7 @@
       font-size:1.04rem;
       line-height:1.2;
       font-weight:800;
+      color:var(--accent);
     }
 
     .vt-selected-grid{
@@ -292,8 +295,8 @@
     .vt-hero-result{
       padding:12px 14px 11px;
       border-radius:18px;
-      border:1px solid rgba(110,125,255,.14);
-      background:linear-gradient(180deg, rgba(106,110,218,.2), rgba(70,56,138,.18));
+      border:1px solid rgba(216,180,106,.16);
+      background:linear-gradient(180deg, rgba(216,180,106,.16), rgba(110,84,40,.12));
     }
 
     .vt-hero-result-label{
@@ -322,7 +325,7 @@
     .vt-summary-title,
     .vt-table-title{
       margin:0 0 10px;
-      color:#5a86ff;
+      color:var(--accent);
       font-size:1.22rem;
       line-height:1.15;
     }
@@ -493,6 +496,8 @@
         width:min(var(--content-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
         margin-left:var(--pc-left-gutter);
         margin-right:auto;
+        padding-top:calc(28px + env(safe-area-inset-top));
+        padding-bottom:72px;
       }
     }
 
@@ -530,7 +535,7 @@
       </nav>
 
       <div class="page-header-block">
-        <h1 class="vt-title">仮想MCバトルシミュレーション</h1>
+        <h1 class="vt-title">バトルシュミレータ</h1>
       </div>
     </div>
 
