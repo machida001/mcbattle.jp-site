@@ -68,6 +68,9 @@
 
     .page-header-block h1{
       margin: 0;
+      text-wrap: balance;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .event-card-inner {
@@ -81,15 +84,16 @@
 
     .result-block {
       display: block;
-      line-height: 1.7;
+      line-height: 1.72;
     }
 
     .result-line {
       display: block;
+      color: var(--text);
     }
 
     .result-line + .result-line {
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
     .result-line a {
@@ -99,7 +103,7 @@
     }
 
     .result-line.is-sub {
-      color: var(--muted);
+      color: var(--text);
     }
 
     .result-line.is-sub a {
@@ -297,9 +301,21 @@
       style.id = "event-match-row-style";
       style.textContent = `
         .round-block { margin-top: 18px; }
-        .round-heading { margin-bottom: 10px; }
-        .match-list { list-style: none; padding: 0; margin: 0; }
-        .match-list > li { margin: 0 0 10px 0; padding: 0; background: transparent; border: none; color: inherit; }
+        .round-heading {
+          margin: 0 0 8px;
+        }
+        .match-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .match-list > li {
+          margin: 0 0 10px 0;
+          padding: 0;
+          background: transparent;
+          border: none;
+          color: inherit;
+        }
         .match-row-wrap { display: block; }
         .match-row-box {
           display: block;
@@ -329,7 +345,7 @@
           line-height: 1.42;
         }
         .match-line-winner .name {
-          color: var(--accent);
+          color: var(--text);
           font-weight: 700;
         }
         .match-line-loser .name {
@@ -351,6 +367,9 @@
           color: var(--muted);
         }
         @media (max-width: 640px) {
+          .round-heading {
+            margin-bottom: 7px;
+          }
           .match-row-box {
             padding: 9px 10px;
             border-radius: 12px;
