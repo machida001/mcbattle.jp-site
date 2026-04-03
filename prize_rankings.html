@@ -91,61 +91,50 @@
     .top3-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .top3-row {
       display: grid;
-      grid-template-columns: 72px minmax(0, 1fr) auto;
+      grid-template-columns: 116px minmax(0, 1fr) auto;
       align-items: center;
-      gap: 14px;
-      padding: 16px 18px;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.03);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+      gap: 16px;
+      padding: 16px 2px;
+      background: transparent;
+      border: none;
+      box-shadow: none;
     }
 
-    .top3-row.rank-1 {
-      border-color: rgba(214,178,95,0.34);
-      background:
-        radial-gradient(circle at top left, rgba(214,178,95,0.10), transparent 44%),
-        rgba(255,255,255,0.04);
+    .top3-row + .top3-row {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 18px;
     }
 
-    .top3-row.rank-2,
-    .top3-row.rank-3 {
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.03), transparent 40%),
-        rgba(255,255,255,0.03);
-    }
-
-    .top3-rank {
+    .top3-medal {
       color: var(--accent);
-      font-weight: 900;
-      font-size: 1.4rem;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-align: right;
-      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
     }
 
-    .top3-row.rank-1 .top3-rank {
-      font-size: 1.65rem;
+    .top3-row.silver .top3-medal {
+      color: rgba(235,235,235,0.9);
+    }
+
+    .top3-row.bronze .top3-medal {
+      color: #c99a6b;
     }
 
     .top3-name {
       min-width: 0;
       color: #ffffff;
-      font-size: 1.42rem;
+      font-size: 1.52rem;
       font-weight: 800;
       line-height: 1.12;
       letter-spacing: -0.02em;
       word-break: break-word;
-    }
-
-    .top3-row.rank-1 .top3-name {
-      font-size: 1.78rem;
     }
 
     .top3-name a {
@@ -163,16 +152,12 @@
     .top3-amount {
       color: var(--accent);
       font-weight: 900;
-      font-size: 1.34rem;
+      font-size: 1.4rem;
       line-height: 1;
       letter-spacing: -0.03em;
       white-space: nowrap;
       font-variant-numeric: tabular-nums;
       text-align: right;
-    }
-
-    .top3-row.rank-1 .top3-amount {
-      font-size: 1.7rem;
     }
 
     .ranking-panel {
@@ -298,42 +283,31 @@
       }
 
       .top3-list {
-        gap: 9px;
+        gap: 0;
       }
 
       .top3-row {
-        grid-template-columns: 56px minmax(0, 1fr);
-        gap: 8px 12px;
-        padding: 14px 14px;
-        border-radius: 18px;
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 14px 0;
       }
 
-      .top3-rank {
-        font-size: 1.15rem;
-        text-align: left;
+      .top3-row + .top3-row {
+        padding-top: 14px;
       }
 
-      .top3-row.rank-1 .top3-rank {
-        font-size: 1.28rem;
+      .top3-medal {
+        font-size: 0.94rem;
       }
 
       .top3-name {
-        font-size: 1.22rem;
-      }
-
-      .top3-row.rank-1 .top3-name {
-        font-size: 1.42rem;
+        font-size: 1.28rem;
       }
 
       .top3-amount {
-        grid-column: 2 / 3;
         text-align: left;
         font-size: 1.2rem;
         white-space: normal;
-      }
-
-      .top3-row.rank-1 .top3-amount {
-        font-size: 1.42rem;
       }
 
       .ranking-panel {
@@ -490,10 +464,27 @@
       return `<a href="mc.html?mc_id=${encodeURIComponent(item.mc_id)}">${name}</a>`;
     }
 
+    function medalLabel(rank) {
+      if (rank === 1) return "金メダル";
+      if (rank === 2) return "銀メダル";
+      if (rank === 3) return "銅メダル";
+      return "";
+    }
+
+    function medalClass(rank) {
+      if (rank === 1) return "gold";
+      if (rank === 2) return "silver";
+      if (rank === 3) return "bronze";
+      return "";
+    }
+
     function buildTop3Row(item) {
+      const medal = medalLabel(item.rank);
+      const medalCls = medalClass(item.rank);
+
       return `
-        <div class="top3-row rank-${item.rank}">
-          <div class="top3-rank">#${item.rank}</div>
+        <div class="top3-row ${medalCls}">
+          <div class="top3-medal">${medal}</div>
           <div class="top3-name">${mcLink(item)}</div>
           <div class="top3-amount">${escapeHtml(formatMoney(item.amount))}</div>
         </div>
