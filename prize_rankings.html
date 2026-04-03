@@ -71,140 +71,17 @@
       box-shadow: 0 12px 24px rgba(0,0,0,0.16);
     }
 
-    .page-nav-pill.is-current {
-      background: rgba(214, 178, 95, 0.08);
-      border-color: rgba(214, 178, 95, 0.32);
-    }
-
     .page-nav-break {
       flex-basis: 100%;
       height: 0;
     }
 
     .page-header-block h1 {
-      margin: 0;
+      margin: 0 0 18px;
       font-size: clamp(2.35rem, 7vw, 4.3rem);
       line-height: 1.02;
       letter-spacing: -0.03em;
       color: #ffffff;
-    }
-
-    .hero-top3 {
-      margin-top: 18px;
-      margin-bottom: 18px;
-    }
-
-    .top3-grid {
-      display: grid;
-      grid-template-columns: 1.12fr 0.94fr 0.94fr;
-      gap: 14px;
-      align-items: stretch;
-    }
-
-    .top-card {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top left, rgba(214,178,95,0.08), transparent 46%),
-        rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.16);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.03) inset,
-        0 24px 50px rgba(0,0,0,0.18);
-      min-height: 210px;
-    }
-
-    .top-card.is-rank-1 {
-      border-color: rgba(214,178,95,0.34);
-      background:
-        radial-gradient(circle at top left, rgba(214,178,95,0.14), transparent 48%),
-        rgba(255,255,255,0.04);
-      min-height: 250px;
-    }
-
-    .top-card-inner {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 20px 20px 18px;
-      gap: 14px;
-    }
-
-    .top-rank-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: fit-content;
-      min-width: 58px;
-      height: 36px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(214,178,95,0.28);
-      background: rgba(255,255,255,0.045);
-      color: var(--accent);
-      font-size: 0.98rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
-
-    .top-card.is-rank-1 .top-rank-badge {
-      min-width: 64px;
-      height: 38px;
-      font-size: 1.04rem;
-    }
-
-    .top-card-main {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .top-card-name {
-      margin: 0;
-      font-size: 1.9rem;
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      font-weight: 800;
-      color: #ffffff;
-      word-break: break-word;
-    }
-
-    .top-card.is-rank-1 .top-card-name {
-      font-size: 2.35rem;
-      line-height: 1.02;
-    }
-
-    .top-card-name a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.55);
-      transition: border-color 0.18s ease, opacity 0.18s ease;
-    }
-
-    .top-card-name a:hover {
-      opacity: 0.92;
-      border-bottom-color: rgba(255,255,255,0.88);
-    }
-
-    .top-card-amount {
-      margin: 0;
-      font-size: 2rem;
-      line-height: 1;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: var(--accent);
-    }
-
-    .top-card.is-rank-1 .top-card-amount {
-      font-size: 2.7rem;
-    }
-
-    .top-card-note {
-      color: var(--muted);
-      font-size: 0.84rem;
-      line-height: 1.45;
     }
 
     .ranking-panel {
@@ -216,11 +93,94 @@
       box-shadow:
         0 0 0 1px rgba(255,255,255,0.03) inset,
         0 24px 50px rgba(0,0,0,0.16);
-      padding: 22px 18px 18px;
+      padding: 18px 18px 14px;
     }
 
-    .ranking-subtitle {
-      margin: 0 0 12px;
+    .top3-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .top3-row {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background:
+        radial-gradient(circle at top left, rgba(214,178,95,0.09), transparent 42%),
+        rgba(255,255,255,0.03);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+    }
+
+    .top3-row.rank-1 {
+      border-color: rgba(214,178,95,0.34);
+      background:
+        radial-gradient(circle at top left, rgba(214,178,95,0.14), transparent 46%),
+        rgba(255,255,255,0.04);
+    }
+
+    .top3-rank {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.45rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .top3-row.rank-1 .top3-rank {
+      font-size: 1.7rem;
+    }
+
+    .top3-name {
+      min-width: 0;
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1.14;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      word-break: break-word;
+    }
+
+    .top3-row.rank-1 .top3-name {
+      font-size: 1.9rem;
+    }
+
+    .top3-name a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.55);
+      transition: border-color 0.18s ease, opacity 0.18s ease;
+    }
+
+    .top3-name a:hover {
+      opacity: 0.92;
+      border-bottom-color: rgba(255,255,255,0.88);
+    }
+
+    .top3-amount {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.45rem;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+
+    .top3-row.rank-1 .top3-amount {
+      font-size: 1.85rem;
+    }
+
+    .rest-title {
+      margin: 4px 0 10px;
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.5;
@@ -314,33 +274,6 @@
       padding: 10px 2px 2px;
     }
 
-    @media (max-width: 900px) {
-      .top3-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .top-card,
-      .top-card.is-rank-1 {
-        min-height: auto;
-      }
-
-      .top-card.is-rank-1 .top-card-name {
-        font-size: 2.15rem;
-      }
-
-      .top-card-name {
-        font-size: 1.72rem;
-      }
-
-      .top-card.is-rank-1 .top-card-amount {
-        font-size: 2.4rem;
-      }
-
-      .top-card-amount {
-        font-size: 1.84rem;
-      }
-    }
-
     @media (max-width: 640px) {
       .prize-page {
         padding: 18px 14px 48px;
@@ -358,49 +291,47 @@
 
       .ranking-panel {
         border-radius: 22px;
-        padding: 14px 10px 12px;
+        padding: 12px 10px 12px;
       }
 
-      .top-card {
-        border-radius: 20px;
+      .top3-block {
+        gap: 10px;
+        margin-bottom: 14px;
       }
 
-      .top-card-inner {
-        padding: 16px 16px 15px;
-        gap: 12px;
+      .top3-row {
+        grid-template-columns: 56px minmax(0, 1fr);
+        gap: 10px 12px;
+        padding: 14px 14px;
+        border-radius: 18px;
       }
 
-      .top-rank-badge {
-        min-width: 54px;
-        height: 34px;
-        padding: 0 13px;
-        font-size: 0.92rem;
+      .top3-rank {
+        font-size: 1.18rem;
+        text-align: left;
       }
 
-      .top-card.is-rank-1 .top-rank-badge {
-        min-width: 58px;
-        height: 36px;
-        font-size: 0.96rem;
+      .top3-row.rank-1 .top3-rank {
+        font-size: 1.3rem;
       }
 
-      .top-card.is-rank-1 .top-card-name {
-        font-size: 1.95rem;
+      .top3-name {
+        font-size: 1.22rem;
       }
 
-      .top-card-name {
-        font-size: 1.56rem;
+      .top3-row.rank-1 .top3-name {
+        font-size: 1.46rem;
       }
 
-      .top-card.is-rank-1 .top-card-amount {
-        font-size: 2.08rem;
+      .top3-amount {
+        grid-column: 1 / -1;
+        text-align: left;
+        padding-left: 56px;
+        font-size: 1.26rem;
       }
 
-      .top-card-amount {
-        font-size: 1.66rem;
-      }
-
-      .top-card-note {
-        font-size: 0.8rem;
+      .top3-row.rank-1 .top3-amount {
+        font-size: 1.5rem;
       }
 
       table.prize-table {
@@ -451,10 +382,9 @@
       </div>
     </div>
 
-    <section class="hero-top3" id="hero-top3"></section>
-
     <section class="ranking-panel">
-      <p class="ranking-subtitle">4位以降</p>
+      <div id="top3" class="top3-block"></div>
+      <p class="rest-title">4位以降</p>
       <div id="ranking-rest"></div>
     </section>
 
@@ -474,12 +404,16 @@
     }
 
     function toNumber(v) {
-      const n = Number(v);
-      return Number.isFinite(n) ? n : 0;
+      if (v === null || v === undefined || v === "") return NaN;
+      if (typeof v === "number") return Number.isFinite(v) ? v : NaN;
+      const cleaned = String(v).replace(/[^\d.-]/g, "");
+      const n = Number(cleaned);
+      return Number.isFinite(n) ? n : NaN;
     }
 
     function formatMoney(v) {
-      return "¥" + toNumber(v).toLocaleString("ja-JP");
+      const n = toNumber(v);
+      return "¥" + (Number.isFinite(n) ? n : 0).toLocaleString("ja-JP");
     }
 
     function getMcId(item) {
@@ -487,34 +421,51 @@
     }
 
     function getMcName(item) {
-      return String(item.mc_name || item.name || "").trim();
+      return String(
+        item.mc_name ??
+        item.name ??
+        item.MC名 ??
+        ""
+      ).trim();
     }
 
-    function getPrizeAmount(item) {
-      return toNumber(
-        item.total_prize ??
-        item.prize_total ??
-        item.total_amount ??
-        item.amount ??
-        item.prize
-      );
+    function getPrizeAmountRaw(item) {
+      const candidates = [
+        item.total_prize,
+        item.prize_total,
+        item.total_amount,
+        item.amount,
+        item.prize,
+        item.prize_money,
+        item.totalPrize,
+        item.totalPrizeAmount,
+        item.winning_amount,
+        item.money,
+        item.賞金,
+        item.総賞金
+      ];
+
+      for (const v of candidates) {
+        const n = toNumber(v);
+        if (Number.isFinite(n)) return n;
+      }
+
+      return 0;
     }
 
     function normalizeItems(raw) {
-      const source = Array.isArray(raw?.rankings)
-        ? raw.rankings
-        : Array.isArray(raw?.items)
-        ? raw.items
-        : Array.isArray(raw)
-        ? raw
-        : [];
+      const source =
+        Array.isArray(raw?.rankings) ? raw.rankings :
+        Array.isArray(raw?.items) ? raw.items :
+        Array.isArray(raw?.data) ? raw.data :
+        Array.isArray(raw) ? raw : [];
 
       return source
         .map((item, index) => ({
           mc_id: getMcId(item),
           mc_name: getMcName(item),
-          amount: getPrizeAmount(item),
-          rank: Number(item.rank) || (index + 1)
+          amount: getPrizeAmountRaw(item),
+          rank: Number(item.rank || item.順位) || (index + 1)
         }))
         .filter(item => item.mc_name)
         .sort((a, b) => {
@@ -534,19 +485,13 @@
       return `<a href="mc.html?mc_id=${encodeURIComponent(mcId)}">${name}</a>`;
     }
 
-    function buildTopCard(item) {
+    function buildTop3Row(item) {
       return `
-        <article class="top-card is-rank-${item.rank}">
-          <div class="top-card-inner">
-            <div class="top-card-main">
-              <span class="top-rank-badge">#${item.rank}</span>
-              <h2 class="top-card-name">${mcLink(item)}</h2>
-            </div>
-            <div>
-              <p class="top-card-amount">${escapeHtml(formatMoney(item.amount))}</p>
-            </div>
-          </div>
-        </article>
+        <div class="top3-row rank-${item.rank}">
+          <div class="top3-rank">#${item.rank}</div>
+          <div class="top3-name">${mcLink(item)}</div>
+          <div class="top3-amount">${escapeHtml(formatMoney(item.amount))}</div>
+        </div>
       `;
     }
 
@@ -554,12 +499,7 @@
       if (!items.length) {
         return `<p class="empty-note">賞金データがありません。</p>`;
       }
-
-      return `
-        <div class="top3-grid">
-          ${items.map(buildTopCard).join("")}
-        </div>
-      `;
+      return items.map(buildTop3Row).join("");
     }
 
     function buildRestTable(items) {
@@ -598,7 +538,7 @@
     }
 
     async function load() {
-      const heroEl = document.getElementById("hero-top3");
+      const top3El = document.getElementById("top3");
       const restEl = document.getElementById("ranking-rest");
       const statusEl = document.getElementById("status");
 
@@ -613,12 +553,12 @@
         const top3 = items.slice(0, 3);
         const rest = items.slice(3);
 
-        heroEl.innerHTML = buildTop3(top3);
+        top3El.innerHTML = buildTop3(top3);
         restEl.innerHTML = buildRestTable(rest);
         statusEl.textContent = "";
       } catch (err) {
         console.error(err);
-        heroEl.innerHTML = "";
+        top3El.innerHTML = "";
         restEl.innerHTML = "";
         statusEl.textContent = "賞金ランキングの取得に失敗しました";
         statusEl.classList.add("error");
