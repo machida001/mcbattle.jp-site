@@ -1,7 +1,21 @@
 {
-  "updated_at": "2026-04-03T13:57:06.147Z",
-  "total": 90,
+  "updated_at": "2026-04-03T14:54:35.973Z",
+  "total": 91,
   "events": [
+    {
+      "event_id": "EVT0095",
+      "event_name": "Test",
+      "event_name_full": "Test",
+      "event_name_simple": "Test",
+      "event_date": "2026-10-02",
+      "prize_money_winner": 300000,
+      "prize_money_total": null,
+      "event_category": "",
+      "event_stage": "",
+      "organizer": "",
+      "notes": "",
+      "winner_name": ""
+    },
     {
       "event_id": "EVT0032",
       "event_name": "KOK2025 GrandChanpionShip",
