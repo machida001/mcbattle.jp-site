@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>大会詳細 | MCBattle.jp</title>
+  <meta name="description" content="国内MCバトル大会の開催日、優勝者、試合結果を掲載する大会詳細ページです。">
   <link rel="stylesheet" href="style.css" />
   <style>
     .page-top{
@@ -185,6 +186,16 @@
     function getEventIdFromQuery() {
       const params = new URLSearchParams(window.location.search);
       return params.get("event_id");
+    }
+
+    function setMetaDescription(content) {
+      let meta = document.querySelector('meta[name="description"]');
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute("name", "description");
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", content);
     }
 
     function formatNumberWithComma(value) {
@@ -395,6 +406,7 @@
       if (!eventId) {
         titleEl.textContent = "大会IDが指定されていません";
         document.title = "大会詳細 | MCBattle.jp";
+        setMetaDescription("国内MCバトル大会の開催日、優勝者、試合結果を掲載する大会詳細ページです。");
         matchesStatusEl.textContent = "event_id が見つかりませんでした。";
         matchesStatusEl.classList.add("error");
         return;
@@ -412,6 +424,7 @@
         if (!data) {
           titleEl.textContent = "大会情報の取得に失敗しました";
           document.title = "大会詳細 | MCBattle.jp";
+          setMetaDescription("国内MCバトル大会の開催日、優勝者、試合結果を掲載する大会詳細ページです。");
           matchesStatusEl.textContent = "指定された大会データが見つかりません";
           matchesStatusEl.classList.add("error");
           return;
@@ -426,8 +439,18 @@
         const resultsHtml = buildResultsHtml(event, groupedMatches);
 
         const eventTitle = event.event_name_full || event.event_name || "大会名不明";
+        const eventDateText = formatDateJP(event.event_date || "");
+        const winnerName = event.winner_name || "";
         titleEl.textContent = eventTitle;
         document.title = `${eventTitle} | 大会結果・試合結果 | MCBattle.jp`;
+
+        const descriptionParts = [
+          `${eventTitle}の大会詳細ページです。`,
+          eventDateText ? `開催日は${eventDateText}。` : "",
+          winnerName ? `優勝者は${winnerName}。` : "",
+          "試合結果を掲載しています。"
+        ].filter(Boolean);
+        setMetaDescription(descriptionParts.join(" "));
 
         const infoItems = [
           { label: "開催日", html: escapeHtml(formatDateJP(event.event_date || "")) },
@@ -496,6 +519,7 @@
         console.error(err);
         titleEl.textContent = "大会情報の読み込みに失敗しました";
         document.title = "大会詳細 | MCBattle.jp";
+        setMetaDescription("国内MCバトル大会の開催日、優勝者、試合結果を掲載する大会詳細ページです。");
         matchesStatusEl.textContent = `読み込み失敗: ${err && err.message ? err.message : err}`;
         matchesStatusEl.classList.add("error");
       }
