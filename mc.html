@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MC詳細 | MCBattle.jp</title>
+  <meta name="description" content="国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。">
   <link rel="stylesheet" href="style.css" />
   <style>
     .page-top{
@@ -397,6 +398,16 @@
       return params.get("mc_id");
     }
 
+    function setMetaDescription(content) {
+      let meta = document.querySelector('meta[name="description"]');
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute("name", "description");
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", content);
+    }
+
     function escapeHtml(value) {
       return String(value ?? "")
         .replace(/&/g, "&amp;")
@@ -680,6 +691,7 @@
       if (!mcId) {
         titleEl.textContent = "MC IDが指定されていません";
         document.title = "MC詳細 | MCBattle.jp";
+        setMetaDescription("国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。");
         metaEl.textContent = "";
         showErrorState("mc_id が見つかりませんでした。");
         return;
@@ -706,6 +718,7 @@
         if (!data) {
           titleEl.textContent = "MC情報の取得に失敗しました";
           document.title = "MC詳細 | MCBattle.jp";
+          setMetaDescription("国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。");
           metaEl.textContent = "";
           showErrorState("指定されたMCデータが見つかりません");
           return;
@@ -714,6 +727,7 @@
         if (data.error) {
           titleEl.textContent = "MC情報の取得に失敗しました";
           document.title = "MC詳細 | MCBattle.jp";
+          setMetaDescription("国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。");
           metaEl.textContent = data.message || "";
           showErrorState("データ取得エラー");
           return;
@@ -745,6 +759,15 @@
           : "−";
 
         const battleSummary = `${displayValue(summary.total_matches)}試合 ${displayValue(summary.wins)}勝 ${displayValue(summary.losses)}敗`;
+
+        const descriptionParts = [
+          `${mcName}のMC詳細ページです。`,
+          summary.total_matches !== null && summary.total_matches !== undefined ? `戦績は${displayValue(summary.total_matches)}試合${displayValue(summary.wins)}勝${displayValue(summary.losses)}敗。` : "",
+          championships.length ? `優勝歴${championships.length}回。` : "",
+          totalPrizeMoney ? `獲得賞金総額は¥${formatYen(totalPrizeMoney)}。` : "",
+          "出場大会とスコアを掲載しています。"
+        ].filter(Boolean);
+        setMetaDescription(descriptionParts.join(" "));
 
         appendInfoRow(infoListEl, "戦績", escapeHtml(battleSummary));
         appendInfoRow(infoListEl, "獲得賞金総額", escapeHtml(`¥${formatYen(totalPrizeMoney)}`));
@@ -812,6 +835,7 @@
         console.error(err);
         titleEl.textContent = "MC情報の読み込みに失敗しました";
         document.title = "MC詳細 | MCBattle.jp";
+        setMetaDescription("国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。");
         metaEl.textContent = "";
         showErrorState(`読み込み失敗: ${err && err.message ? err.message : err}`);
       }
