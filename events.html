@@ -3,231 +3,466 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>大会一覧 | MCBattle.jp</title>
+  <title>賞金ランキング | MCBattle.jp</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .event-group-list {
+    .prize-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 16px 56px;
+    }
+
+    .page-top {
+      margin-bottom: 20px;
+    }
+
+    .page-mini-logo {
+      margin: 0 0 14px;
+    }
+
+    .site-mini-logo {
+      display: inline-block;
+      font-size: clamp(2.05rem, 4.9vw, 3.15rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .site-mini-logo:hover {
+      opacity: 0.92;
+    }
+
+    .page-nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 14px;
+      margin-bottom: 18px;
+    }
+
+    .page-nav-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(214, 178, 95, 0.22);
+      background: rgba(255,255,255,0.025);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 1;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
+      transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        color 0.18s ease;
+    }
+
+    .page-nav-pill:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(214, 178, 95, 0.34);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.16);
+    }
+
+    .page-nav-pill.is-current {
+      background: rgba(214, 178, 95, 0.08);
+      border-color: rgba(214, 178, 95, 0.32);
+    }
+
+    .page-nav-break {
+      flex-basis: 100%;
+      height: 0;
+    }
+
+    .page-header-block h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 7vw, 4.3rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+    }
+
+    .hero-top3 {
+      margin-top: 18px;
+      margin-bottom: 18px;
+    }
+
+    .top3-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.94fr 0.94fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .top-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(214,178,95,0.08), transparent 46%),
+        rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.03) inset,
+        0 24px 50px rgba(0,0,0,0.18);
+      min-height: 210px;
+    }
+
+    .top-card.is-rank-1 {
+      border-color: rgba(214,178,95,0.34);
+      background:
+        radial-gradient(circle at top left, rgba(214,178,95,0.14), transparent 48%),
+        rgba(255,255,255,0.04);
+      min-height: 250px;
+    }
+
+    .top-card-inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 20px 18px;
+      gap: 14px;
+    }
+
+    .top-rank-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-width: 58px;
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(214,178,95,0.28);
+      background: rgba(255,255,255,0.045);
+      color: var(--accent);
+      font-size: 0.98rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .top-card.is-rank-1 .top-rank-badge {
+      min-width: 64px;
+      height: 38px;
+      font-size: 1.04rem;
+    }
+
+    .top-card-main {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
-    .event-group {
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      overflow: hidden;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset;
-    }
-
-    .event-group-toggle {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px 15px;
-      border: none;
-      background: rgba(255,255,255,0.035);
-      color: var(--accent);
-      text-align: left;
-      cursor: pointer;
-      font: inherit;
-      transition:
-        background-color 0.18s ease,
-        border-color 0.18s ease,
-        box-shadow 0.18s ease,
-        color 0.18s ease,
-        transform 0.18s ease;
-    }
-
-    .event-group-toggle:hover {
-      background: rgba(255,255,255,0.05);
-    }
-
-    .event-group-left {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .event-group-name {
-      font-size: 0.98rem;
+    .top-card-name {
+      margin: 0;
+      font-size: 1.9rem;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
       font-weight: 800;
-      line-height: 1.32;
-      color: var(--accent);
+      color: #ffffff;
       word-break: break-word;
     }
 
-    .event-group-count {
-      font-size: 0.82rem;
-      color: var(--muted);
+    .top-card.is-rank-1 .top-card-name {
+      font-size: 2.35rem;
+      line-height: 1.02;
     }
 
-    .event-group-icon {
-      flex: 0 0 auto;
-      color: var(--muted);
-      font-size: 1.02rem;
+    .top-card-name a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.55);
+      transition: border-color 0.18s ease, opacity 0.18s ease;
+    }
+
+    .top-card-name a:hover {
+      opacity: 0.92;
+      border-bottom-color: rgba(255,255,255,0.88);
+    }
+
+    .top-card-amount {
+      margin: 0;
+      font-size: 2rem;
       line-height: 1;
-      transition: transform 0.18s ease;
-    }
-
-    .event-group.is-open .event-group-icon {
-      transform: rotate(180deg);
-    }
-
-    .event-group-body {
-      display: none;
-      padding: 0 9px 9px;
-      border-top: 1px solid rgba(255,255,255,0.10);
-    }
-
-    .event-group.is-open .event-group-body {
-      display: block;
-    }
-
-    .event-list {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .event-row,
-    .event-row:hover,
-    .event-row *,
-    .event-row:hover * {
-      text-decoration: none !important;
-    }
-
-    .event-row {
-      display: block;
-      padding: 9px 10px 8px;
-      border-radius: 13px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.025);
-      transition:
-        transform 0.18s ease,
-        border-color 0.18s ease,
-        background-color 0.18s ease,
-        box-shadow 0.18s ease,
-        color 0.18s ease;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
-    }
-
-    .event-row:hover {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(255,255,255,0.24);
-      transform: translateY(-1px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.14);
-    }
-
-    .event-date {
-      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
       color: var(--accent);
-      margin-bottom: 3px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      transition: color 0.18s ease;
     }
 
-    .event-row:hover .event-date {
-      color: #f0cd87;
+    .top-card.is-rank-1 .top-card-amount {
+      font-size: 2.7rem;
     }
 
-    .event-name {
-      font-size: 0.92rem;
-      font-weight: 700;
+    .top-card-note {
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .ranking-panel {
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background:
+        radial-gradient(circle at top left, rgba(52, 76, 170, 0.08), transparent 36%),
+        rgba(255,255,255,0.03);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.03) inset,
+        0 24px 50px rgba(0,0,0,0.16);
+      padding: 22px 18px 18px;
+    }
+
+    .ranking-subtitle {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .ranking-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table.prize-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+    }
+
+    .prize-table thead th {
+      text-align: left;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 16px 14px;
+      background: rgba(255,255,255,0.035);
+      border-bottom: 1px solid rgba(214,178,95,0.34);
+    }
+
+    .prize-table thead th:nth-child(1),
+    .prize-table tbody td:nth-child(1) {
+      width: 88px;
+      text-align: right;
+    }
+
+    .prize-table thead th:nth-child(3),
+    .prize-table tbody td:nth-child(3) {
+      width: 220px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .prize-table tbody tr {
+      border-bottom: 1px solid rgba(214,178,95,0.26);
+    }
+
+    .prize-table tbody td {
+      padding: 18px 14px;
       color: #ffffff;
-      line-height: 1.38;
-      word-break: break-word;
-      transition: color 0.18s ease;
+      font-size: 1rem;
+      vertical-align: middle;
     }
 
-    .event-row:hover .event-name {
-      color: #ffffff;
-    }
-
-    .event-winner {
-      display: block;
+    .prize-rank {
       color: #ffffff;
       font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .prize-mc a {
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.55);
+      transition: border-color 0.18s ease, opacity 0.18s ease;
+    }
+
+    .prize-mc a:hover {
+      opacity: 0.92;
+      border-bottom-color: rgba(255,255,255,0.88);
+    }
+
+    .prize-amount {
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 1rem;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.01em;
     }
 
     .status {
-      margin-top: 8px;
+      margin-top: 10px;
       color: var(--muted);
+      font-size: 0.96rem;
     }
 
     .status.error {
       color: var(--danger);
     }
 
+    .empty-note {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      padding: 10px 2px 2px;
+    }
+
+    @media (max-width: 900px) {
+      .top3-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .top-card,
+      .top-card.is-rank-1 {
+        min-height: auto;
+      }
+
+      .top-card.is-rank-1 .top-card-name {
+        font-size: 2.15rem;
+      }
+
+      .top-card-name {
+        font-size: 1.72rem;
+      }
+
+      .top-card.is-rank-1 .top-card-amount {
+        font-size: 2.4rem;
+      }
+
+      .top-card-amount {
+        font-size: 1.84rem;
+      }
+    }
+
     @media (max-width: 640px) {
-      .event-group-list {
-        gap: 9px;
+      .prize-page {
+        padding: 18px 14px 48px;
       }
 
-      .event-group {
-        border-radius: 16px;
+      .page-nav-pills {
+        gap: 10px 12px;
       }
 
-      .event-group-toggle {
-        padding: 11px 13px;
+      .page-nav-pill {
+        min-height: 48px;
+        padding: 0 22px;
+        font-size: 0.96rem;
       }
 
-      .event-group-body {
-        padding: 0 8px 8px;
+      .ranking-panel {
+        border-radius: 22px;
+        padding: 14px 10px 12px;
       }
 
-      .event-row {
-        padding: 8px 9px 7px;
-        border-radius: 12px;
+      .top-card {
+        border-radius: 20px;
       }
 
-      .event-group-name {
+      .top-card-inner {
+        padding: 16px 16px 15px;
+        gap: 12px;
+      }
+
+      .top-rank-badge {
+        min-width: 54px;
+        height: 34px;
+        padding: 0 13px;
+        font-size: 0.92rem;
+      }
+
+      .top-card.is-rank-1 .top-rank-badge {
+        min-width: 58px;
+        height: 36px;
+        font-size: 0.96rem;
+      }
+
+      .top-card.is-rank-1 .top-card-name {
+        font-size: 1.95rem;
+      }
+
+      .top-card-name {
+        font-size: 1.56rem;
+      }
+
+      .top-card.is-rank-1 .top-card-amount {
+        font-size: 2.08rem;
+      }
+
+      .top-card-amount {
+        font-size: 1.66rem;
+      }
+
+      .top-card-note {
+        font-size: 0.8rem;
+      }
+
+      table.prize-table {
+        min-width: 0;
+      }
+
+      .prize-table thead th {
+        padding: 13px 10px;
+        font-size: 0.9rem;
+      }
+
+      .prize-table tbody td {
+        padding: 14px 10px;
         font-size: 0.94rem;
       }
 
-      .event-group-count {
-        font-size: 0.78rem;
+      .prize-table thead th:nth-child(1),
+      .prize-table tbody td:nth-child(1) {
+        width: 54px;
       }
 
-      .event-date {
-        font-size: 0.72rem;
+      .prize-table thead th:nth-child(3),
+      .prize-table tbody td:nth-child(3) {
+        width: 140px;
       }
 
-      .event-name {
-        font-size: 0.89rem;
-        line-height: 1.34;
+      .prize-amount {
+        font-size: 0.94rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="events-page">
+  <div class="prize-page">
     <div class="page-top">
       <p class="page-mini-logo"><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
 
       <nav class="page-nav-pills" aria-label="主要メニュー">
+        <a class="page-nav-pill" href="events.html">大会一覧</a>
         <a class="page-nav-pill" href="mcs.html">MC一覧</a>
-        <a class="page-nav-pill" href="rankings.html">スコアランキング</a>
         <span class="page-nav-break" aria-hidden="true"></span>
-        <a class="page-nav-pill" href="prize_rankings.html">賞金ランキング</a>
+        <a class="page-nav-pill" href="rankings.html">スコアランキング</a>
         <a class="page-nav-pill" href="virtual_tournament.html">仮想シミュレーション</a>
       </nav>
 
       <div class="page-header-block">
-        <h1>大会一覧</h1>
+        <h1>賞金ランキング</h1>
       </div>
     </div>
 
-    <div id="event-list" class="event-group-list"></div>
+    <section class="hero-top3" id="hero-top3"></section>
+
+    <section class="ranking-panel">
+      <p class="ranking-subtitle">4位以降</p>
+      <div id="ranking-rest"></div>
+    </section>
+
     <p id="status" class="status">読み込み中…</p>
   </div>
 
   <script>
-    const EVENTS_JSON_URL = "./data/events.json";
+    const PRIZE_JSON_URL = "./data/prize_rankings.json";
 
     function escapeHtml(v) {
       return String(v ?? "")
@@ -238,172 +473,154 @@
         .replace(/'/g, "&#39;");
     }
 
-    function formatDate(v) {
-      if (!v) return "";
-      const d = new Date(v);
-      if (isNaN(d)) return v;
-      return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
+    function toNumber(v) {
+      const n = Number(v);
+      return Number.isFinite(n) ? n : 0;
     }
 
-    function getName(e) {
-      return e.event_name_full || e.event_name || "";
+    function formatMoney(v) {
+      return "¥" + toNumber(v).toLocaleString("ja-JP");
     }
 
-    function getWinnerName(e) {
-      return String(e.winner_name || "").trim();
+    function getMcId(item) {
+      return String(item.mc_id || "").trim();
     }
 
-    function getCategory(e) {
-      return String(e.event_category || "").trim() || "その他";
+    function getMcName(item) {
+      return String(item.mc_name || item.name || "").trim();
     }
 
-    function getDateValue(v) {
-      if (!v) return null;
-      const d = new Date(v);
-      return isNaN(d) ? null : d;
+    function getPrizeAmount(item) {
+      return toNumber(
+        item.total_prize ??
+        item.prize_total ??
+        item.total_amount ??
+        item.amount ??
+        item.prize
+      );
     }
 
-    function compareEventsByDateDesc(a, b) {
-      const da = getDateValue(a.event_date);
-      const db = getDateValue(b.event_date);
+    function normalizeItems(raw) {
+      const source = Array.isArray(raw?.rankings)
+        ? raw.rankings
+        : Array.isArray(raw?.items)
+        ? raw.items
+        : Array.isArray(raw)
+        ? raw
+        : [];
 
-      if (da && db) return db - da;
-      if (da) return -1;
-      if (db) return 1;
-
-      return String(getName(a)).localeCompare(String(getName(b)), "ja");
+      return source
+        .map((item, index) => ({
+          mc_id: getMcId(item),
+          mc_name: getMcName(item),
+          amount: getPrizeAmount(item),
+          rank: Number(item.rank) || (index + 1)
+        }))
+        .filter(item => item.mc_name)
+        .sort((a, b) => {
+          if (b.amount !== a.amount) return b.amount - a.amount;
+          return a.rank - b.rank;
+        })
+        .map((item, index) => ({
+          ...item,
+          rank: index + 1
+        }));
     }
 
-    function groupEvents(events) {
-      const map = new Map();
-
-      events.forEach(event => {
-        const category = getCategory(event);
-        if (!map.has(category)) {
-          map.set(category, []);
-        }
-        map.get(category).push(event);
-      });
-
-      const groups = Array.from(map.entries()).map(([category, items]) => {
-        const sortedItems = items.slice().sort(compareEventsByDateDesc);
-
-        let newestDate = null;
-        sortedItems.forEach(item => {
-          const d = getDateValue(item.event_date);
-          if (d && (!newestDate || d > newestDate)) newestDate = d;
-        });
-
-        return {
-          category,
-          items: sortedItems,
-          newestDate
-        };
-      });
-
-      groups.sort((a, b) => {
-        if (a.newestDate && b.newestDate) return b.newestDate - a.newestDate;
-        if (a.newestDate) return -1;
-        if (b.newestDate) return 1;
-        return a.category.localeCompare(b.category, "ja");
-      });
-
-      return groups;
+    function mcLink(item) {
+      const name = escapeHtml(item.mc_name);
+      const mcId = item.mc_id;
+      if (!mcId) return name;
+      return `<a href="mc.html?mc_id=${encodeURIComponent(mcId)}">${name}</a>`;
     }
 
-    async function loadEventsJson() {
-      const res = await fetch(EVENTS_JSON_URL, { cache: "no-store" });
-      if (!res.ok) {
-        throw new Error(`HTTP ${res.status}`);
-      }
-      return await res.json();
-    }
-
-    function buildEventRow(e) {
-      const id = e.event_id || "";
-      const name = getName(e);
-      const winnerName = getWinnerName(e);
-      const date = formatDate(e.event_date);
-
-      const winnerHtml = winnerName
-        ? `<span class="event-winner">（${escapeHtml(winnerName)}）</span>`
-        : "";
-
+    function buildTopCard(item) {
       return `
-        <a class="event-row" href="event.html?event_id=${encodeURIComponent(id)}">
-          <div class="event-date">${escapeHtml(date)}</div>
-          <div class="event-name">
-            ${escapeHtml(name)}
-            ${winnerHtml}
+        <article class="top-card is-rank-${item.rank}">
+          <div class="top-card-inner">
+            <div class="top-card-main">
+              <span class="top-rank-badge">#${item.rank}</span>
+              <h2 class="top-card-name">${mcLink(item)}</h2>
+            </div>
+            <div>
+              <p class="top-card-amount">${escapeHtml(formatMoney(item.amount))}</p>
+            </div>
           </div>
-        </a>
+        </article>
       `;
     }
 
-    function attachAccordionEvents() {
-      const toggles = document.querySelectorAll(".event-group-toggle");
-      toggles.forEach(btn => {
-        btn.addEventListener("click", () => {
-          const group = btn.closest(".event-group");
-          if (!group) return;
-          group.classList.toggle("is-open");
+    function buildTop3(items) {
+      if (!items.length) {
+        return `<p class="empty-note">賞金データがありません。</p>`;
+      }
 
-          const expanded = group.classList.contains("is-open");
-          btn.setAttribute("aria-expanded", expanded ? "true" : "false");
-        });
-      });
+      return `
+        <div class="top3-grid">
+          ${items.map(buildTopCard).join("")}
+        </div>
+      `;
+    }
+
+    function buildRestTable(items) {
+      if (!items.length) {
+        return `<p class="empty-note">4位以降のデータはありません。</p>`;
+      }
+
+      return `
+        <div class="ranking-table-wrap">
+          <table class="prize-table">
+            <thead>
+              <tr>
+                <th>順位</th>
+                <th>MC名</th>
+                <th>賞金</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${items.map(item => `
+                <tr>
+                  <td class="prize-rank">${item.rank}</td>
+                  <td class="prize-mc">${mcLink(item)}</td>
+                  <td class="prize-amount">${escapeHtml(formatMoney(item.amount))}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    async function fetchPrizeData() {
+      const res = await fetch(PRIZE_JSON_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
     }
 
     async function load() {
-      const listEl = document.getElementById("event-list");
+      const heroEl = document.getElementById("hero-top3");
+      const restEl = document.getElementById("ranking-rest");
       const statusEl = document.getElementById("status");
 
       try {
-        const res = await loadEventsJson();
+        const raw = await fetchPrizeData();
 
-        if (res.error) throw new Error(res.message || "data error");
-
-        const events = Array.isArray(res.events) ? res.events : [];
-
-        if (!events.length) {
-          statusEl.textContent = "大会がありません";
-          return;
+        if (raw && raw.error) {
+          throw new Error(raw.message || "data error");
         }
 
-        const groups = groupEvents(events);
+        const items = normalizeItems(raw);
+        const top3 = items.slice(0, 3);
+        const rest = items.slice(3);
 
-        listEl.innerHTML = groups.map((group, index) => {
-          const bodyId = `event-group-body-${index}`;
-          const rows = group.items.map(buildEventRow).join("");
-
-          return `
-            <section class="event-group">
-              <button
-                class="event-group-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="${bodyId}"
-              >
-                <span class="event-group-left">
-                  <span class="event-group-name">${escapeHtml(group.category)}</span>
-                  <span class="event-group-count">${group.items.length}大会</span>
-                </span>
-                <span class="event-group-icon">▼</span>
-              </button>
-              <div id="${bodyId}" class="event-group-body">
-                <div class="event-list">
-                  ${rows}
-                </div>
-              </div>
-            </section>
-          `;
-        }).join("");
-
-        attachAccordionEvents();
+        heroEl.innerHTML = buildTop3(top3);
+        restEl.innerHTML = buildRestTable(rest);
         statusEl.textContent = "";
-      } catch (e) {
-        console.error(e);
-        statusEl.textContent = "大会一覧の取得に失敗しました";
+      } catch (err) {
+        console.error(err);
+        heroEl.innerHTML = "";
+        restEl.innerHTML = "";
+        statusEl.textContent = "賞金ランキングの取得に失敗しました";
         statusEl.classList.add("error");
       }
     }
