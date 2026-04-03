@@ -329,21 +329,27 @@
         <p>
           強い相手に勝つほど上がりやすく、同じ勝利でも大会終盤の勝利の方が重く評価されます。
         </p>
+        <p>
+          また、敗戦はそのまま同量を引くのではなく、<strong>勝利加点よりも小さい幅で減点</strong>されます。
+          現在は、敗者側の減点を勝者側加点の <strong>40%</strong> としています。
+        </p>
 
         <h3>基本式</h3>
         <div class="spec-formula">expectedWinner = 1 / (1 + 10 ^ ((loserRating - winnerRating) / 400))
 
 delta = K × roundWeight × recencyWeight × (1 - expectedWinner)
+loserDelta = delta × 0.40
 
 winnerRating = winnerRating + delta
-loserRating  = loserRating  - delta</div>
+loserRating  = loserRating  - loserDelta</div>
 
         <p>
           現在の再計算ロジックでは、初期値は <strong>1500</strong>、baseK は <strong>24</strong> です。
         </p>
 
         <div class="spec-formula">initialRating = 1500
-baseK = 24</div>
+baseK = 24
+lossPenaltyRate = 0.40</div>
       </section>
 
       <section class="spec-card">
@@ -368,13 +374,16 @@ baseK = 24</div>
         </p>
 
         <ul class="spec-list">
-          <li>3か月以内：1.30</li>
-          <li>6か月以内：1.20</li>
-          <li>12か月以内：1.10</li>
+          <li>3か月以内：1.15</li>
+          <li>6か月以内：1.10</li>
+          <li>12か月以内：1.05</li>
           <li>24か月以内：1.00</li>
-          <li>36か月以内：0.92</li>
-          <li>それより古い：0.85</li>
+          <li>36か月以内：0.95</li>
         </ul>
+
+        <p>
+          集計対象自体は直近3年以内の試合に限定しているため、36か月を超える試合はランキング計算に入りません。
+        </p>
       </section>
 
       <section class="spec-card">
@@ -384,10 +393,10 @@ baseK = 24</div>
           これは、大会終盤の勝利ほど価値が高いと考えるためです。
         </p>
         <p>
-          たとえば、1回戦の勝利よりも、準決勝や決勝での勝利の方がスコアに強く反映されます。
+          たとえば、序盤の勝利よりも、準決勝や決勝での勝利の方がスコアに強く反映されます。
         </p>
         <p>
-          現在は、1回戦を基準にして、決勝に近づくほど係数が上がる仕組みを採用しています。
+          現在は、<strong>Best64 を最小、Final を最大</strong>とする傾斜を置き、特に <strong>Best8以降</strong> の重要度がやや強く出るようにしています。
         </p>
       </section>
 
@@ -422,6 +431,9 @@ baseK = 24</div>
           <strong>「弱いからではなく、現役戦線ランキングの対象外だから載っていない」</strong>
           という扱いになります。
         </p>
+        <p>
+          加えて、現在は<strong>勝利の価値をやや強めに残す設計</strong>にしているため、強豪への大きな勝利は、数回の敗戦だけでは消えにくくなっています。
+        </p>
       </section>
 
       <section class="spec-card">
@@ -440,7 +452,7 @@ baseK = 24</div>
           スコアリングの考え方は今後も改善の余地があります。
         </p>
         <p>
-          特に、直近性の重さや、どこまでを「現在の強さ」とみなすかについては、継続的に見直していきます。
+          特に、敗戦の扱い、優勝の重み、どこまでを「現在の強さ」とみなすかについては、継続的に見直していきます。
         </p>
 
         <div class="form-card">
