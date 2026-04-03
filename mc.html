@@ -733,7 +733,7 @@
 
         const battleSummary = `${displayValue(summary.total_matches)}試合 ${displayValue(summary.wins)}勝 ${displayValue(summary.losses)}敗`;
 
-        appendInfoRow(infoListEl, "順位", escapeHtml(rankingStatus === "inactive_3y" ? "対象外" : displayValue(rankDisplay)));
+        appendInfoRow(infoListEl, "スコアランキング", escapeHtml(rankingStatus === "inactive_3y" ? "対象外" : displayValue(rankDisplay)));
         appendInfoRow(infoListEl, "スコア", escapeHtml(rankingStatus === "inactive_3y" ? "−" : displayValue(scoreDisplay)));
         if (rankingNote) {
           appendInfoRow(infoListEl, "補足", `<span class="mc-note">${escapeHtml(rankingNote)}</span>`);
