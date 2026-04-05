@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-04T15:08:26.936Z",
-  "total": 824,
+  "updated_at": "2026-04-05T13:08:13.596Z",
+  "total": 830,
   "mcs": [
     {
       "mc_id": "MC0040",
@@ -592,8 +592,8 @@
     },
     {
       "mc_id": "MC0691",
-      "mc_name": "egavvo",
-      "mc_yomi": "えがお",
+      "mc_name": "Egavvo(Mr.smile)",
+      "mc_yomi": "えがおみすたーすまいる",
       "notes": "追加投入",
       "kana_group": "あ"
     },
@@ -1326,6 +1326,13 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC0902",
+      "mc_name": "クフェア",
+      "mc_yomi": "くふぇあ",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0771",
       "mc_name": "クボタカイ",
       "mc_yomi": "くぼたかい",
@@ -1540,6 +1547,13 @@
       "mc_name": "KBD",
       "mc_yomi": "けーびーでぃー",
       "notes": "初期投入",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0905",
+      "mc_name": "chemicl",
+      "mc_yomi": "けみかる",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1967,6 +1981,13 @@
       "mc_name": "SEA-MEN",
       "mc_yomi": "しーめん",
       "notes": "初期投入",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0900",
+      "mc_name": "G YARD",
+      "mc_yomi": "じーやーど",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2911,6 +2932,13 @@
       "mc_id": "MC0576",
       "mc_name": "タムチャオTheニコミスタ",
       "mc_yomi": "たむちゃおtheにこみすた",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0903",
+      "mc_name": "Dumbperson",
+      "mc_yomi": "だむぱーそん",
       "notes": "",
       "kana_group": "た"
     },
@@ -3874,6 +3902,13 @@
       "kana_group": "は"
     },
     {
+      "mc_id": "MC0898",
+      "mc_name": "BHS",
+      "mc_yomi": "びーえいちえす",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
       "mc_id": "MC0048",
       "mc_name": "B-COSMO",
       "mc_yomi": "びーこすも",
@@ -3962,6 +3997,13 @@
       "mc_name": "ビッグサンフワラー",
       "mc_yomi": "びっぐさんふわら",
       "notes": "初期投入",
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0897",
+      "mc_name": "B.I.G JOE",
+      "mc_yomi": "びっぐじょー",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4749,20 +4791,6 @@
       "kana_group": "ま"
     },
     {
-      "mc_id": "MC0588",
-      "mc_name": "Mr. Smile",
-      "mc_yomi": "みすたす",
-      "notes": "Alias of MC0567 (Mr.Smile); alias unified 2026-03-23",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0567",
-      "mc_name": "Mr.Smile",
-      "mc_yomi": "みすたすまいる",
-      "notes": "Canonical for alias group [Mr.Smile / Mr. Smile] as of 2026-03-23",
-      "kana_group": "ま"
-    },
-    {
       "mc_id": "MC0600",
       "mc_name": "ミステリオ",
       "mc_yomi": "みすてりお",
@@ -4837,13 +4865,6 @@
       "mc_name": "Milky",
       "mc_yomi": "みるき",
       "notes": "Added for KOK national import",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0674",
-      "mc_name": "mu-ton",
-      "mc_yomi": "むーとん",
-      "notes": "追加投入; Alias of MC0216 (MU-TON); alias unified 2026-03-25",
       "kana_group": "ま"
     },
     {
@@ -4942,6 +4963,13 @@
       "mc_name": "素",
       "mc_yomi": "もと",
       "notes": "初期投入",
+      "kana_group": "ま"
+    },
+    {
+      "mc_id": "MC0899",
+      "mc_name": "MonyHorse",
+      "mc_yomi": "もにーほーす",
+      "notes": "",
       "kana_group": "ま"
     },
     {
@@ -5120,6 +5148,13 @@
       "kana_group": "や"
     },
     {
+      "mc_id": "MC0901",
+      "mc_name": "LARGE IRON",
+      "mc_yomi": "らーじあいあん",
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
       "mc_id": "MC0855",
       "mc_name": "LARD",
       "mc_yomi": "らーど",
@@ -5249,6 +5284,13 @@
       "mc_id": "MC0625",
       "mc_name": "RunLine",
       "mc_yomi": "らんらいん",
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC0904",
+      "mc_name": "risano",
+      "mc_yomi": "りさの",
       "notes": "",
       "kana_group": "ら"
     },
