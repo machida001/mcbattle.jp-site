@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MCバトルシミュレーター | MCBattle.jp</title>
+  <title>MCバトルシミュレーター | MCBattle.jp</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     .vt-hero{
@@ -275,6 +275,7 @@
       color: var(--muted);
       font-size: .9rem;
       line-height: 1.55;
+      white-space: pre-line;
     }
 
     .vt-run-area{
@@ -516,7 +517,7 @@
       </nav>
 
       <div class="page-header-block">
-        <h1 class="vt-title">バトルシュミレータ</h1>
+        <h1 class="vt-title">バトルシミュレータ</h1>
       </div>
     </div>
 
@@ -597,10 +598,13 @@
   <script>
     const CANDIDATES_URL = "./data/mcs.json";
     const STRENGTHS_URL = "./data/rankings.json";
+    const HEAD_TO_HEAD_URL = "./data/head_to_head.json";
     const MAX_SELECTED = 8;
+    const HEAD_TO_HEAD_SCORE_CAP = 50;
 
     let allCandidates = [];
     let strengthMap = {};
+    let headToHeadMap = {};
     let selectedMcs = [];
     let filteredCandidates = [];
     let overlayTimer = null;
@@ -651,6 +655,60 @@
         .slice(0, 100)
         .map(item => allCandidates.find(mc => mc.mc_id === item.mc_id))
         .filter(Boolean);
+    }
+
+    function getPairKey(mcIdA, mcIdB) {
+      const a = String(mcIdA || "");
+      const b = String(mcIdB || "");
+      return a <= b ? `${a}__${b}` : `${b}__${a}`;
+    }
+
+    function getHeadToHeadBonus(scoreA, scoreB) {
+      const winsA = Number(scoreA || 0);
+      const winsB = Number(scoreB || 0);
+      const total = winsA + winsB;
+
+      if (total < 2) return 0;
+      if (winsA === winsB) return 0;
+
+      const diff = Math.abs(winsA - winsB);
+      let bonus = 0;
+
+      if (diff === 1) {
+        bonus = 12;
+      } else if (diff === 2) {
+        bonus = 35;
+      } else {
+        bonus = 50;
+      }
+
+      if (bonus > HEAD_TO_HEAD_SCORE_CAP) {
+        bonus = HEAD_TO_HEAD_SCORE_CAP;
+      }
+
+      return winsA > winsB ? bonus : -bonus;
+    }
+
+    function getHeadToHeadScoreAdjustment(mcIdA, mcIdB) {
+      const key = getPairKey(mcIdA, mcIdB);
+      const pair = headToHeadMap[key];
+      if (!pair) return 0;
+
+      const idA = String(mcIdA || "");
+      const mcIdSmall = String(pair.mc_id_a || "");
+      const mcIdLarge = String(pair.mc_id_b || "");
+
+      const aWinsRaw = Number(pair.a_wins || 0);
+      const bWinsRaw = Number(pair.b_wins || 0);
+
+      if (idA === mcIdSmall) {
+        return getHeadToHeadBonus(aWinsRaw, bWinsRaw);
+      }
+      if (idA === mcIdLarge) {
+        return getHeadToHeadBonus(bWinsRaw, aWinsRaw);
+      }
+
+      return 0;
     }
 
     function renderSelected() {
@@ -765,8 +823,9 @@
       function playMatch(a, b) {
         const scoreA = strengthMap[a.mc_id]?.current_score ?? 1500;
         const scoreB = strengthMap[b.mc_id]?.current_score ?? 1500;
-        const diff = scoreA - scoreB;
-        const pA = 1 / (1 + Math.pow(10, -diff / 120));
+        const h2hAdjustA = getHeadToHeadScoreAdjustment(a.mc_id, b.mc_id);
+        const adjustedDiff = (scoreA + h2hAdjustA) - scoreB;
+        const pA = 1 / (1 + Math.pow(10, -adjustedDiff / 120));
         return Math.random() < pA ? a : b;
       }
 
@@ -904,7 +963,7 @@
       hideSimulationResults();
       showOverlay();
       countEl.textContent = "5";
-      status.textContent = "100回戦ってもらっています。<br>これまでの戦績を踏まえたスコアをベースにシミュレーションをしています。<br>実際の結果を保証するものではなく、数的理解に基づく確率論だと解釈して下さい。";
+      status.textContent = "100回戦ってもらっています。\nこれまでの戦績を踏まえたスコアをベースに、直接対戦の相性も少しだけ加味しています。\n実際の結果を保証するものではなく、数的理解に基づく確率論だと解釈して下さい。";
       updateRunButtonDisabledState(true);
 
       let count = 5;
@@ -931,9 +990,10 @@
 
     async function initPage() {
       try {
-        const [mcsData, rankingsData] = await Promise.all([
+        const [mcsData, rankingsData, headToHeadData] = await Promise.all([
           loadJson(CANDIDATES_URL),
-          loadJson(STRENGTHS_URL)
+          loadJson(STRENGTHS_URL),
+          loadJson(HEAD_TO_HEAD_URL)
         ]);
 
         const rankings = Array.isArray(rankingsData.rankings) ? rankingsData.rankings : [];
@@ -946,6 +1006,13 @@
             mc_name: item.mc_name,
             current_score: Number(item.current_score ?? item.score ?? 1500)
           };
+        });
+
+        headToHeadMap = {};
+        const summaries = Array.isArray(headToHeadData?.summaries) ? headToHeadData.summaries : [];
+        summaries.forEach(item => {
+          const key = getPairKey(item.mc_id_a, item.mc_id_b);
+          headToHeadMap[key] = item;
         });
 
         const rawMcs = Array.isArray(mcsData.mcs) ? mcsData.mcs : [];
