@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-06T03:31:46.731Z",
-  "total": 118,
+  "updated_at": "2026-04-06T13:22:03.130Z",
+  "total": 125,
   "events": [
     {
       "event_id": "EVT0032",
@@ -12,7 +12,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/img/1770210453-1tuvU6gfmjlrILSqDaEhGxAM.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "T-TANGG"
@@ -42,7 +42,7 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp Osaka Bayside",
       "organizer": "戦極MCBATTLE",
       "notes": "https://abema.tv/live-event/09d65a23-9261-4cc5-81d2-b1f7b9c5c88f | https://abema.tv/video/title/243-76?s=243-76_s3000 | https://x.com/sengokumc/status/1926221969537597605 | source image provided in chat",
       "winner_name": ""
@@ -57,7 +57,7 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "仙台PIT",
       "organizer": "戦極MCBATTLE",
       "notes": "https://sengokumc.exblog.jp/33498896/ | https://abema.tv/video/episode/243-76_s2000_p5",
       "winner_name": "Sitissy luvit"
@@ -72,7 +72,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/img/1742137940-vrFpI2atDfWLMi3QhsN1T56H.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "9for"
@@ -102,37 +102,37 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "KT Zepp Yokohama",
       "organizer": "戦極MCBATTLE",
       "notes": "https://sengokumc.exblog.jp/32653799/ | https://sengokumc.exblog.jp/32653792/ | https://x.com/sengokumc/status/1801494965480210503",
       "winner_name": "KOPERU"
     },
     {
       "event_id": "EVT0075",
-      "event_name": "凱旋MC battle THE GIANT KILLING 2 at 豊洲PIT",
-      "event_name_full": "凱旋MC battle THE GIANT KILLING 2 at 豊洲PIT",
+      "event_name": "凱旋MC battle THE GIANT KILLING 2",
+      "event_name_full": "凱旋MC battle THE GIANT KILLING 2",
       "event_name_simple": "凱旋MC battle THE GIANT KILLING 2 at 豊洲PIT",
       "event_date": "2024-03-16",
       "prize_money_winner": 300000,
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-tgk2",
       "winner_name": ""
     },
     {
       "event_id": "EVT0094",
-      "event_name": "渋谷レゲエ祭 vs 真ADRENALINE at CLUB CITTA'",
-      "event_name_full": "渋谷レゲエ祭 vs 真ADRENALINE at CLUB CITTA'",
+      "event_name": "渋谷レゲエ祭 vs 真ADRENALINE",
+      "event_name_full": "渋谷レゲエ祭 vs 真ADRENALINE",
       "event_name_simple": "渋谷レゲエ祭 vs 真ADRENALINE at CLUB CITTA'",
       "event_date": "2024-02-02",
       "prize_money_winner": 300000,
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "CLUB CITTA'",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/shinad-reggae",
       "winner_name": ""
@@ -147,7 +147,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/127039143/picture_pc_726bb5b485aca365a485cf3238f8efdb.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "RAWAXXX(MOL53)"
@@ -184,30 +184,30 @@
     },
     {
       "event_id": "EVT0093",
-      "event_name": "KING OF KINGS vs 真 ADRENALINE #6 at KT Zepp Yokohama",
-      "event_name_full": "KING OF KINGS vs 真 ADRENALINE #6 at KT Zepp Yokohama",
+      "event_name": "KING OF KINGS vs 真 ADRENALINE #6",
+      "event_name_full": "KING OF KINGS vs 真 ADRENALINE #6",
       "event_name_simple": "KING OF KINGS vs 真 ADRENALINE #6 at KT Zepp Yokohama",
       "event_date": "2023-12-17",
       "prize_money_winner": 300000,
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "KT Zepp Yokohama",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-ad-06",
       "winner_name": ""
     },
     {
       "event_id": "EVT0074",
-      "event_name": "凱旋MC battle 冬ノ陣2023 at Zepp Fukuoka",
-      "event_name_full": "凱旋MC battle 冬ノ陣2023 at Zepp Fukuoka",
+      "event_name": "凱旋MC battle 冬ノ陣2023",
+      "event_name_full": "凱旋MC battle 冬ノ陣2023",
       "event_name_simple": "凱旋MC battle 冬ノ陣2023 at Zepp Fukuoka",
       "event_date": "2023-12-10",
       "prize_money_winner": 300000,
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp Fukuoka",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-fukuoka",
       "winner_name": ""
@@ -222,7 +222,7 @@
       "prize_money_total": null,
       "event_category": "口喧嘩祭",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp Nagoya",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-2311",
       "winner_name": ""
@@ -237,7 +237,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Spotify O-EAST",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/sengoku-shinad",
       "winner_name": ""
@@ -252,25 +252,40 @@
       "prize_money_total": null,
       "event_category": "口喧嘩祭",
       "event_stage": "本戦",
-      "location": "",
+      "location": "club G",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-2309",
       "winner_name": ""
     },
     {
       "event_id": "EVT0073",
-      "event_name": "凱旋MC battle Special2023 東京ガーデンシアター",
-      "event_name_full": "凱旋MC battle Special2023 東京ガーデンシアター",
+      "event_name": "凱旋MC battle Special2023",
+      "event_name_full": "凱旋MC battle Special2023",
       "event_name_simple": "凱旋MC battle Special2023 東京ガーデンシアター",
       "event_date": "2023-08-27",
       "prize_money_winner": 1000000,
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "東京ガーデンシアター",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-sp2023",
       "winner_name": ""
+    },
+    {
+      "event_id": "EVT0129",
+      "event_name": "UMB 2023 THE CHOICE IS YOURS Vol.7",
+      "event_name_full": "UMB 2023 THE CHOICE IS YOURS Vol.7",
+      "event_name_simple": "UMB 2023 THE CHOICE IS YOURS Vol.7",
+      "event_date": "2023-08-20",
+      "prize_money_winner": 500000,
+      "prize_money_total": null,
+      "event_category": "",
+      "event_stage": "",
+      "location": "LIQUIDROOM",
+      "organizer": "",
+      "notes": "",
+      "winner_name": "GIL"
     },
     {
       "event_id": "EVT0091",
@@ -282,7 +297,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "CLUB CITTA'",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-ad-05",
       "winner_name": ""
@@ -297,22 +312,22 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "なんばHatch",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-osaka",
       "winner_name": ""
     },
     {
       "event_id": "EVT0071",
-      "event_name": "凱旋MC battle THE GIANT KILLING at 豊洲PIT",
-      "event_name_full": "凱旋MC battle THE GIANT KILLING at 豊洲PIT",
+      "event_name": "凱旋MC battle THE GIANT KILLING ",
+      "event_name_full": "凱旋MC battle THE GIANT KILLING ",
       "event_name_simple": "凱旋MC battle THE GIANT KILLING at 豊洲PIT",
       "event_date": "2023-04-29",
       "prize_money_winner": 300000,
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-tgk",
       "winner_name": ""
@@ -327,7 +342,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "渋谷WOMB",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-reggae3",
       "winner_name": ""
@@ -357,7 +372,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "仙台PIT",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-sendai2023",
       "winner_name": ""
@@ -372,7 +387,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "渋谷WOMB",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenalin-2302",
       "winner_name": ""
@@ -387,7 +402,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp Sapporo",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-hokkaido",
       "winner_name": ""
@@ -402,7 +417,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96441688/picture_pc_ff3ffc78302a73a5c964365deb686c9d.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "泰斗(裂固)"
@@ -417,7 +432,7 @@
       "prize_money_total": null,
       "event_category": "口喧嘩祭",
       "event_stage": "本戦",
-      "location": "",
+      "location": "CLUB CITTA'",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-2301",
       "winner_name": ""
@@ -462,7 +477,7 @@
       "prize_money_total": null,
       "event_category": "口喧嘩祭",
       "event_stage": "本戦",
-      "location": "",
+      "location": "club G",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-2210",
       "winner_name": ""
@@ -492,10 +507,25 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Spotify O-EAST",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-adrenaline-2210",
       "winner_name": ""
+    },
+    {
+      "event_id": "EVT0128",
+      "event_name": "UMB 2022 THE CHOICE IS YOURS Vol.6",
+      "event_name_full": "UMB 2022 THE CHOICE IS YOURS Vol.6",
+      "event_name_simple": "UMB 2022 THE CHOICE IS YOURS Vol.6",
+      "event_date": "2022-08-21",
+      "prize_money_winner": 500000,
+      "prize_money_total": null,
+      "event_category": "",
+      "event_stage": "",
+      "location": "LIQUIDROOM",
+      "organizer": "",
+      "notes": "",
+      "winner_name": "S-kainê"
     },
     {
       "event_id": "EVT0087",
@@ -507,7 +537,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "SOUND MUSEUM VISION",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-reggae2",
       "winner_name": ""
@@ -537,7 +567,7 @@
       "prize_money_total": null,
       "event_category": "口喧嘩祭",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp Nagoya",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-sp",
       "winner_name": ""
@@ -552,7 +582,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "さいたまスーパーアリーナ",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-arena2022",
       "winner_name": ""
@@ -567,7 +597,7 @@
       "prize_money_total": null,
       "event_category": "口喧嘩祭",
       "event_stage": "本戦",
-      "location": "",
+      "location": "TRIANGLE OSAKA",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-osaka",
       "winner_name": ""
@@ -582,7 +612,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "WOMB",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-22-3",
       "winner_name": ""
@@ -597,7 +627,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "渋谷HARLEM",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-22-1",
       "winner_name": ""
@@ -612,7 +642,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp DiverCity",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-adrenaline-2202",
       "winner_name": ""
@@ -627,7 +657,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96441263/picture_pc_4362c0343b9b2691d11468ed124a93a5.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "FORK"
@@ -672,7 +702,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-toyosu",
       "winner_name": ""
@@ -687,7 +717,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "仙台PIT",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-sendai",
       "winner_name": ""
@@ -702,7 +732,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "SOUND MUSEUM VISION",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-reggae",
       "winner_name": ""
@@ -732,7 +762,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp Fukuoka",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-fukuoka",
       "winner_name": ""
@@ -747,7 +777,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "KT Zepp Yokohama",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-adrenaline-2108",
       "winner_name": ""
@@ -762,7 +792,7 @@
       "prize_money_total": null,
       "event_category": "口喧嘩祭",
       "event_stage": "本戦",
-      "location": "",
+      "location": "club G",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-kok",
       "winner_name": ""
@@ -777,10 +807,25 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp Osaka Bayside",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-21osaka",
       "winner_name": ""
+    },
+    {
+      "event_id": "EVT0127",
+      "event_name": "UMB 2021 THE CHOICE IS YOURS Vol.5",
+      "event_name_full": "UMB 2021 THE CHOICE IS YOURS Vol.5",
+      "event_name_simple": "UMB 2021 THE CHOICE IS YOURS Vol.5",
+      "event_date": "2021-07-23",
+      "prize_money_winner": 500000,
+      "prize_money_total": null,
+      "event_category": "",
+      "event_stage": "",
+      "location": "LIQUIDROOM",
+      "organizer": "",
+      "notes": "",
+      "winner_name": "呂布カルマ"
     },
     {
       "event_id": "EVT0063",
@@ -792,7 +837,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zeep Fukuoka",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-21fukuoka",
       "winner_name": ""
@@ -807,7 +852,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp NAGOYA",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-21nagoya",
       "winner_name": ""
@@ -822,7 +867,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "KT Zepp Yokohama",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-21yokohama",
       "winner_name": ""
@@ -837,7 +882,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "SOUND MUSEUM VISION",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-vs-adrenaline",
       "winner_name": ""
@@ -867,7 +912,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "ぴあアリーナMM",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-arena",
       "winner_name": ""
@@ -882,7 +927,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "CLUB CITTA'",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-abema",
       "winner_name": ""
@@ -897,7 +942,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96441062/picture_pc_ba9bd2d4766ec33e2912386bda2701fb.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "呂布カルマ"
@@ -927,7 +972,7 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "TSUTAYA O-EAST",
       "organizer": "戦極MCBATTLE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/sengoku-22",
       "winner_name": ""
@@ -957,10 +1002,25 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "HARLEM Plus",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-abema",
       "winner_name": ""
+    },
+    {
+      "event_id": "EVT0126",
+      "event_name": "UMB 2020 THE CHOICE IS YOURS Vol.4",
+      "event_name_full": "UMB 2020 THE CHOICE IS YOURS Vol.4",
+      "event_name_simple": "UMB 2020 THE CHOICE IS YOURS Vol.4",
+      "event_date": "2020-11-08",
+      "prize_money_winner": 500000,
+      "prize_money_total": null,
+      "event_category": "",
+      "event_stage": "",
+      "location": "LIQUIDROOM",
+      "organizer": "",
+      "notes": "",
+      "winner_name": "鎮座DOPENESS"
     },
     {
       "event_id": "EVT0045",
@@ -972,7 +1032,7 @@
       "prize_money_total": null,
       "event_category": "口喧嘩祭",
       "event_stage": "本戦",
-      "location": "",
+      "location": "clubBLOCK",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka2020",
       "winner_name": ""
@@ -987,7 +1047,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "TSUTAYA O-EAST",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/shinado-2020aut",
       "winner_name": ""
@@ -1002,7 +1062,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "CLUB CITTA'",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-2020-summer-result",
       "winner_name": ""
@@ -1017,7 +1077,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "CLUB CITTA'",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/shin-adrenaline-2020summer",
       "winner_name": ""
@@ -1032,7 +1092,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "TSUTAYA O-EAST",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/shin-adrenaline-2020",
       "winner_name": ""
@@ -1062,7 +1122,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp DiverCity TOKYO",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-2020-winter",
       "winner_name": ""
@@ -1077,7 +1137,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96440768/picture_pc_c507b2d3248f828f0d4839653d65e590.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "RAWAXXX(MOL53)"
@@ -1122,7 +1182,7 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "渋谷TSUTAYA O-EAST",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-2019-summer",
       "winner_name": ""
@@ -1137,10 +1197,25 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "渋谷TSUTAYA O-EAST",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-2019-spring",
       "winner_name": ""
+    },
+    {
+      "event_id": "EVT0125",
+      "event_name": "UMB 2019 THE CHOICE IS YOURS Vol.3",
+      "event_name_full": "UMB 2019 THE CHOICE IS YOURS Vol.3",
+      "event_name_simple": "UMB 2019 THE CHOICE IS YOURS Vol.3",
+      "event_date": "2019-03-23",
+      "prize_money_winner": 1000000,
+      "prize_money_total": null,
+      "event_category": "",
+      "event_stage": "",
+      "location": "CLUB CITTA",
+      "organizer": "",
+      "notes": "",
+      "winner_name": "ふぁんく"
     },
     {
       "event_id": "EVT0025",
@@ -1152,7 +1227,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96440562/picture_pc_88da2af64bce7333e4d7997fb618340e.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "呂布カルマ"
@@ -1182,7 +1257,7 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp DiverCity",
       "organizer": "戦極MCBATTLE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/sengoku-18chapter",
       "winner_name": ""
@@ -1212,10 +1287,25 @@
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "VUENOS 渋谷",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-2018-0624",
       "winner_name": ""
+    },
+    {
+      "event_id": "EVT0124",
+      "event_name": "UMB 2018 THE CHOICE IS YOURS Vol.2",
+      "event_name_full": "UMB 2018 THE CHOICE IS YOURS Vol.2",
+      "event_name_simple": "UMB 2018 THE CHOICE IS YOURS Vol.2",
+      "event_date": "2018-03-20",
+      "prize_money_winner": 50000,
+      "prize_money_total": null,
+      "event_category": "",
+      "event_stage": "",
+      "location": "CLUB CITTA",
+      "organizer": "",
+      "notes": "",
+      "winner_name": "句潤"
     },
     {
       "event_id": "EVT0042",
@@ -1227,7 +1317,7 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp DiverCity（TOKYO）",
       "organizer": "戦極MCBATTLE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/sengoku-17chapter / 注: 2回戦にノーコンテストでSiva勝ち上がりあり",
       "winner_name": ""
@@ -1257,7 +1347,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "ZeppTokyo",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96440306/picture_pc_498917403e491082382196e64c5c61f2.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "GADORO"
@@ -1293,6 +1383,21 @@
       "winner_name": "RAWAXXX(MOL53)"
     },
     {
+      "event_id": "EVT0123",
+      "event_name": "UMB 2017 THE CHOICE IS YOURS Vol.1",
+      "event_name_full": "UMB 2017 THE CHOICE IS YOURS Vol.1",
+      "event_name_simple": "UMB 2017 THE CHOICE IS YOURS Vol.1",
+      "event_date": "2017-03-27",
+      "prize_money_winner": 0,
+      "prize_money_total": null,
+      "event_category": "",
+      "event_stage": "",
+      "location": "Zepp Tokyo",
+      "organizer": "",
+      "notes": "",
+      "winner_name": "RAWAXXX(MOL53)"
+    },
+    {
       "event_id": "EVT0023",
       "event_name": "KOK2016 GrandChanpionShip",
       "event_name_full": "KOK2016 GrandChanpionShip",
@@ -1302,7 +1407,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "ティファ有明",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96439896/picture_pc_a535db2b3995dc7e64215577da91410c.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "GADORO"
@@ -1332,7 +1437,7 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Shibuya O-EAST",
       "organizer": "戦極MCBATTLE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/sengoku-15chapter",
       "winner_name": ""
@@ -1377,7 +1482,7 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "TSUTAYA O-EAST",
       "organizer": "戦極MCBATTLE",
       "notes": "https://www.finance-accounting-value.com/entry/sengoku-13chapter",
       "winner_name": "NAIKA MC"
@@ -1407,7 +1512,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "新宿Reny",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96429956/picture_pc_b7e0b33c38eed88958da3f1db3f47592.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
       "winner_name": "崇勲"
@@ -1422,7 +1527,7 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "CLUB HARLEM",
       "organizer": "戦極MCBATTLE",
       "notes": "https://www.finance-accounting-value.com/entry/sengoku-12chapter",
       "winner_name": "呂布カルマ"
@@ -1497,7 +1602,7 @@
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "渋谷VUENOS",
       "organizer": "ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-2014",
       "winner_name": ""

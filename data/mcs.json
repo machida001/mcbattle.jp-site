@@ -1,54 +1,54 @@
 {
-  "updated_at": "2026-04-06T03:31:47.177Z",
-  "total": 840,
+  "updated_at": "2026-04-06T13:22:03.497Z",
+  "total": 823,
   "mcs": [
     {
       "mc_id": "MC0040",
       "mc_name": "ARKS",
       "mc_yomi": "あーくす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0803",
       "mc_name": "ARM STRONG",
       "mc_yomi": "あーむすとろんぐ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0021",
       "mc_name": "R-指定",
       "mc_yomi": "あーるしてい",
-      "notes": "初期投入; Alias of MC0022 (R指定); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0738",
       "mc_name": "Aicom",
       "mc_yomi": "あいこむ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0138",
       "mc_name": "IZ",
       "mc_yomi": "あいず",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0648",
       "mc_name": "ICEREY",
       "mc_yomi": "あいすりー",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0493",
       "mc_name": "ICE ROOL",
       "mc_yomi": "あいするーる",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -62,35 +62,35 @@
       "mc_id": "MC0135",
       "mc_name": "I.T.1",
       "mc_yomi": "あいてぃーわん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0834",
       "mc_name": "AILI a.k.a. 立仙愛理",
       "mc_yomi": "あいりりつせんえり",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0047",
       "mc_name": "AWAKE",
       "mc_yomi": "あうぇいく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0046",
       "mc_name": "Authority",
       "mc_yomi": "あうそりてぃ",
-      "notes": "初期投入; Canonical for alias group [AUTHORITY / Authority] as of 2026-03-25",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0038",
       "mc_name": "aonisai",
       "mc_yomi": "あおにさい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -104,14 +104,14 @@
       "mc_id": "MC0479",
       "mc_name": "AKI",
       "mc_yomi": "あき",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0812",
       "mc_name": "aqua",
       "mc_yomi": "あくあ",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -125,49 +125,49 @@
       "mc_id": "MC0804",
       "mc_name": "Acne",
       "mc_yomi": "あくね",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0028",
       "mc_name": "AKR5",
       "mc_yomi": "あくろ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0328",
       "mc_name": "あざいすと",
       "mc_yomi": "あざいすと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0441",
       "mc_name": "阿修羅",
       "mc_yomi": "あしゅら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0042",
       "mc_name": "ASS-B.Miller",
       "mc_yomi": "あすびーみらー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0747",
       "mc_name": "アスベスト",
       "mc_yomi": "あすべすと",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0657",
       "mc_name": "ADAM",
       "mc_yomi": "あだむ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -188,21 +188,21 @@
       "mc_id": "MC0043",
       "mc_name": "Atmoshiphere",
       "mc_yomi": "あともしふぃあ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0039",
       "mc_name": "APACHE",
       "mc_yomi": "あぱっち",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0777",
       "mc_name": "Avid",
-      "mc_yomi": "あびっど",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "mc_yomi": "あびど",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -216,21 +216,21 @@
       "mc_id": "MC0026",
       "mc_name": "ABLO",
       "mc_yomi": "あぶろ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0755",
       "mc_name": "APOLLO",
       "mc_yomi": "あぽろ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0041",
       "mc_name": "Armadillo",
       "mc_yomi": "あまでぃろ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -244,21 +244,21 @@
       "mc_id": "MC0380",
       "mc_name": "天邪鬼",
       "mc_yomi": "あまのじゃく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0036",
       "mc_name": "amida",
       "mc_yomi": "あみだ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0794",
       "mc_name": "亞夢",
       "mc_yomi": "あゆめ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -279,63 +279,63 @@
       "mc_id": "MC0847",
       "mc_name": "ARARE",
       "mc_yomi": "あられ",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0031",
       "mc_name": "ALICE",
       "mc_yomi": "ありす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0392",
       "mc_name": "或観樹",
       "mc_yomi": "あるかんじゅ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0030",
       "mc_name": "ALCI",
       "mc_yomi": "あるし",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0034",
       "mc_name": "ALSEAD",
       "mc_yomi": "あるしーど",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0029",
       "mc_name": "ALBA-TROSS",
       "mc_yomi": "あるばとろす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0032",
       "mc_name": "Alpha",
       "mc_yomi": "あるふぁ",
-      "notes": "初期投入; Canonical for alias group [Alpha / alpha / alpha（ex.ハテナ）] as of 2026-03-25",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0329",
       "mc_name": "あるま",
       "mc_yomi": "あるま",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0397",
       "mc_name": "杏地",
       "mc_yomi": "あんずち",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -349,14 +349,14 @@
       "mc_id": "MC0037",
       "mc_name": "ANCHAIN",
       "mc_yomi": "あんちぇいん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0433",
       "mc_name": "諳泰",
       "mc_yomi": "あんやすし",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -370,7 +370,7 @@
       "mc_id": "MC0820",
       "mc_name": "lame ass",
       "mc_yomi": "いあめあす",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -384,21 +384,21 @@
       "mc_id": "MC0684",
       "mc_name": "ELIONE",
       "mc_yomi": "いーらいわん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0563",
       "mc_name": "言×THEANSWER",
       "mc_yomi": "いうとぅざあんさー",
-      "notes": "Canonical for alias group [言×THEANSWER / 言×THE ANSWER] as of 2026-03-23",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0467",
       "mc_name": "Yella goat",
       "mc_yomi": "いぇらごーと",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -412,70 +412,70 @@
       "mc_id": "MC0453",
       "mc_name": "ISSUGI",
       "mc_yomi": "いすぎ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0403",
       "mc_name": "泉ピン太郎",
       "mc_yomi": "いずみぴんたろう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0413",
       "mc_name": "磯友",
       "mc_yomi": "いそとも",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0690",
       "mc_name": "Itaq",
       "mc_yomi": "いたっく",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0369",
       "mc_name": "一念",
       "mc_yomi": "いちねん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0757",
       "mc_name": "IKKEI",
       "mc_yomi": "いっけい",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0136",
       "mc_name": "ILL AIK",
       "mc_yomi": "いるあいく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0494",
       "mc_name": "ILL THE KID",
       "mc_yomi": "いるざきっど",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0003",
       "mc_name": "11’Back",
       "mc_yomi": "いれぶんばっく",
-      "notes": "初期投入; Canonical for alias group [11’Back / 11'Back / 11_Back] as of 2026-03-25",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0137",
       "mc_name": "ILOHA",
       "mc_yomi": "いろは",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -496,7 +496,7 @@
       "mc_id": "MC0697",
       "mc_name": "韻マン",
       "mc_yomi": "いんまん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -517,28 +517,28 @@
       "mc_id": "MC0531",
       "mc_name": "牛志",
       "mc_yomi": "うしこころざし",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0342",
       "mc_name": "ウジミツ",
       "mc_yomi": "うじみつ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0312",
       "mc_name": "USU a.k.a SQUEZ",
       "mc_yomi": "うす",
-      "notes": "初期投入; Canonical for alias group [USU / USU a.k.a SQUEZ] as of 2026-03-25",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0310",
       "mc_name": "USTR",
       "mc_yomi": "うすろら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -552,14 +552,14 @@
       "mc_id": "MC0822",
       "mc_name": "ウマバヒナタ",
       "mc_yomi": "うまばひなた",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0735",
       "mc_name": "EIEN",
       "mc_yomi": "えいえん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -580,77 +580,77 @@
       "mc_id": "MC0819",
       "mc_name": "eyden",
       "mc_yomi": "えいでん",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0644",
       "mc_name": "A-MEN",
       "mc_yomi": "えいめん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0035",
       "mc_name": "Amg",
       "mc_yomi": "えーえむじー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0027",
       "mc_name": "ACE",
       "mc_yomi": "えーす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0698",
       "mc_name": "A.P.L",
       "mc_yomi": "えーぴーえる",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0691",
       "mc_name": "Egavvo(Mr.smile)",
       "mc_yomi": "えがおみすたーすまいる",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0715",
       "mc_name": "SHJ",
       "mc_yomi": "えすえいちじぇー",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0023",
       "mc_name": "S-kainê",
       "mc_yomi": "えすかいね",
-      "notes": "初期投入; Canonical for alias group [S-kaine / S-kainê] as of 2026-03-25",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0269",
       "mc_name": "S-SENCE",
       "mc_yomi": "えすせんす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0464",
       "mc_name": "ST-C",
       "mc_yomi": "えすてぃし",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0268",
       "mc_name": "S-fuu",
       "mc_yomi": "えすふう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -664,42 +664,42 @@
       "mc_id": "MC0044",
       "mc_name": "aTp",
       "mc_yomi": "えてぃーぴー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0220",
       "mc_name": "n",
       "mc_yomi": "えぬ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0228",
       "mc_name": "nkm-Le0t0rio",
       "mc_yomi": "えぬけーえむれおとりお",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0104",
       "mc_name": "ENEMY",
       "mc_yomi": "えねみー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0102",
       "mc_name": "EFTRA",
       "mc_yomi": "えふとら",
-      "notes": "初期投入; Canonical for alias group [EFTRA / Eftra] as of 2026-03-23",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0107",
       "mc_name": "EVOL",
       "mc_yomi": "えぼる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -713,7 +713,7 @@
       "mc_id": "MC0734",
       "mc_name": "MK34 a.k.a.Young Blood",
       "mc_yomi": "えむけーさんじゅうよん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -727,42 +727,35 @@
       "mc_id": "MC0539",
       "mc_name": "MC KUREI",
       "mc_yomi": "えむしーくれい",
-      "notes": "Canonical for alias group [MC KUREI / MCKUREI] as of 2026-03-23",
-      "kana_group": "あ"
-    },
-    {
-      "mc_id": "MC0769",
-      "mc_name": "MCKUREI",
-      "mc_yomi": "えむしーくれい",
-      "notes": "Added from web result pages; Alias of MC0539 (MC KUREI); alias unified 2026-03-23",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0019",
       "mc_name": "MC小法師",
       "mc_yomi": "えむしーこぼうし",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0708",
       "mc_name": "MC SNOW",
       "mc_yomi": "えむしーすのう",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0662",
       "mc_name": "MCたっくん",
       "mc_yomi": "えむしーたっくん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0015",
       "mc_name": "MC☆ニガリ a.k.a 赤い稲妻",
       "mc_yomi": "えむしーにがり",
-      "notes": "初期投入; Canonical for alias group [MC☆ニガリ / MC☆ニガリ a.k.a 赤い稲妻 / MC☆ニガリa.k.a赤い稲妻 / MCニガリ / MCニガリ AKA 黒い稲妻] as of 2026-03-25",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -776,21 +769,21 @@
       "mc_id": "MC0710",
       "mc_name": "MC派遣社員",
       "mc_yomi": "えむしーはけんしゃいん",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0709",
       "mc_name": "MC frog",
       "mc_yomi": "えむしーふろっぐ",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0020",
       "mc_name": "MC松島",
       "mc_yomi": "えむしーまつしま",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -804,14 +797,14 @@
       "mc_id": "MC0668",
       "mc_name": "MC Mystie",
       "mc_yomi": "えむしーみすてぃ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0805",
       "mc_name": "MC MIRI",
       "mc_yomi": "えむしーみり",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -825,14 +818,14 @@
       "mc_id": "MC0210",
       "mc_name": "MC.YO",
       "mc_yomi": "えむしーよー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0018",
       "mc_name": "MCリトル",
       "mc_yomi": "えむしーりとる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -853,77 +846,77 @@
       "mc_id": "MC0806",
       "mc_name": "MY",
       "mc_yomi": "えむわい",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0838",
       "mc_name": "L-指定",
       "mc_yomi": "えるしてい",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0106",
       "mc_name": "ERONE",
       "mc_yomi": "えろーん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0105",
       "mc_name": "ENRA",
       "mc_yomi": "えんら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0473",
       "mc_name": "押忍マン",
       "mc_yomi": "おうにんまん",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0231",
       "mc_name": "O",
       "mc_yomi": "おー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0232",
       "mc_name": "O.G.K",
       "mc_yomi": "おーじーけー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0236",
       "mc_name": "OZY",
       "mc_yomi": "おーじーわい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0459",
       "mc_name": "OWG",
       "mc_yomi": "おーだぶるじー",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0775",
       "mc_name": "大平",
       "mc_yomi": "おおひら",
-      "notes": "Added during 2026-03 QA correction based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0723",
       "mc_name": "おざい",
       "mc_yomi": "おざい",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -944,70 +937,70 @@
       "mc_id": "MC0235",
       "mc_name": "OSCAR",
       "mc_yomi": "おすかー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0442",
       "mc_name": "雄猿",
       "mc_yomi": "おすざる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0694",
       "mc_name": "018",
       "mc_yomi": "おちば",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0443",
       "mc_name": "音主",
       "mc_yomi": "おとしゅ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0534",
       "mc_name": "鬼",
       "mc_yomi": "おに",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0792",
       "mc_name": "オニサワ",
       "mc_yomi": "おにさわ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0343",
       "mc_name": "オノダマン",
       "mc_yomi": "おのだまん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0506",
       "mc_name": "OMATA Longinus",
       "mc_yomi": "おまたろんぎぬす",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0233",
       "mc_name": "OLIVA",
       "mc_yomi": "おりば",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
       "mc_id": "MC0234",
       "mc_name": "ORYO",
       "mc_yomi": "おりょう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -1021,7 +1014,7 @@
       "mc_id": "MC0388",
       "mc_name": "御笑門",
       "mc_yomi": "おわらいもん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "あ"
     },
     {
@@ -1035,7 +1028,7 @@
       "mc_id": "MC0468",
       "mc_name": "がーどまん",
       "mc_yomi": "がーどまん",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1049,28 +1042,28 @@
       "mc_id": "MC0162",
       "mc_name": "KAI",
       "mc_yomi": "かい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0176",
       "mc_name": "Keyser",
       "mc_yomi": "かいざー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0389",
       "mc_name": "怪士",
       "mc_yomi": "かいさむらい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0163",
       "mc_name": "Kai-Tone",
       "mc_yomi": "かいとーん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1084,7 +1077,7 @@
       "mc_id": "MC0330",
       "mc_name": "かくてる",
       "mc_yomi": "かくてる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1098,7 +1091,7 @@
       "mc_id": "MC0765",
       "mc_name": "影賭",
       "mc_yomi": "かげかけ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1112,126 +1105,126 @@
       "mc_id": "MC0169",
       "mc_name": "Kascade",
       "mc_yomi": "かすけーど",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0164",
       "mc_name": "KAKKY",
       "mc_yomi": "かっきー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0122",
       "mc_name": "GOTIT",
       "mc_yomi": "がってぃ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0703",
       "mc_name": "KAD",
       "mc_yomi": "かっど",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0344",
       "mc_name": "カツヲ",
       "mc_yomi": "かつを",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0116",
       "mc_name": "GADORO",
       "mc_yomi": "がどろ",
-      "notes": "初期投入; Canonical for alias group [GADORO / Gadoro] as of 2026-03-25",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0167",
       "mc_name": "KaRaAgE",
       "mc_yomi": "からあげ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0168",
       "mc_name": "KARASS",
       "mc_yomi": "からす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0347",
       "mc_name": "ガーリー",
       "mc_yomi": "がり",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0345",
       "mc_name": "カルデラビスタ",
       "mc_yomi": "かるでらびすた",
-      "notes": "初期投入; Canonical for alias group [カルデラビスタ / カルデラピスタ] as of 2026-03-25",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0475",
       "mc_name": "漢 a.k.a. GAMI",
       "mc_yomi": "かんえーけーえーがみ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import; Alias of MC0660 (漢 a.k.a GAMI); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0165",
       "mc_name": "KANDAI",
       "mc_yomi": "かんだい",
-      "notes": "初期投入; Canonical for alias group [KANDAI / KANNDAI] as of 2026-03-25",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0705",
       "mc_name": "Kampf",
       "mc_yomi": "かんふ",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0175",
       "mc_name": "Key",
       "mc_yomi": "きー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0424",
       "mc_name": "菊蔵",
       "mc_yomi": "きくぞう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0842",
       "mc_name": "KIKUMARU",
       "mc_yomi": "きくまる",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0444",
       "mc_name": "黄猿",
       "mc_yomi": "きざる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0013",
       "mc_name": "Kizushi 命",
       "mc_yomi": "きずしいのち",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1245,49 +1238,49 @@
       "mc_id": "MC0349",
       "mc_name": "ギネス",
       "mc_yomi": "ぎねす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0523",
       "mc_name": "きばな",
       "mc_yomi": "きばな",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0073",
       "mc_name": "CASPER ACE",
       "mc_yomi": "きゃすぱーえーす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0187",
       "mc_name": "KYAPER",
       "mc_yomi": "きゃぱー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0072",
       "mc_name": "CANDLE",
       "mc_yomi": "きゃんどる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0688",
       "mc_name": "QN a.k.a Young 親方",
       "mc_yomi": "きゅーえぬ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0759",
       "mc_name": "KYO虎",
       "mc_yomi": "きょうこ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1308,56 +1301,56 @@
       "mc_id": "MC0667",
       "mc_name": "KIRRY",
       "mc_yomi": "きりー",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0157",
       "mc_name": "K'iLL",
       "mc_yomi": "きる",
-      "notes": "初期投入; Canonical for alias group [K'iLL / k'ill / K’iLL] as of 2026-03-25",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0118",
       "mc_name": "GIL",
       "mc_yomi": "ぎる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0375",
       "mc_name": "吟時",
       "mc_yomi": "ぎんとき",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0181",
       "mc_name": "KOOPA",
       "mc_yomi": "くーぱ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0248",
       "mc_name": "QUARK",
       "mc_yomi": "くおーく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0373",
       "mc_name": "句潤",
       "mc_yomi": "くじゅん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0084",
       "mc_name": "COOKIE",
       "mc_yomi": "くっきー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1371,98 +1364,91 @@
       "mc_id": "MC0771",
       "mc_name": "クボタカイ",
       "mc_yomi": "くぼたかい",
-      "notes": "Added from web result pages",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0408",
       "mc_name": "熊の皮",
       "mc_yomi": "くまのかわ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0186",
       "mc_name": "KUYA MIGUEL",
       "mc_yomi": "くやみげる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0183",
       "mc_name": "KRYZ",
       "mc_yomi": "くらいず",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0087",
       "mc_name": "CROWN-D",
       "mc_yomi": "くらうんでぃ",
-      "notes": "初期投入",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0799",
-      "mc_name": "KUREI",
-      "mc_yomi": "くれい",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0831",
       "mc_name": "Crazy-K（GREEN KIDS）",
       "mc_yomi": "くれいじーけー",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0086",
       "mc_name": "CRESS",
       "mc_yomi": "くれす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0416",
       "mc_name": "紅桜",
       "mc_yomi": "くれないざくら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0185",
       "mc_name": "KUREHA",
       "mc_yomi": "くれは",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0123",
       "mc_name": "Gremlin",
       "mc_yomi": "ぐれむりん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0417",
       "mc_name": "紅蓮",
       "mc_yomi": "ぐれん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0446",
       "mc_name": "黒さき海斗",
       "mc_yomi": "ぐろさきかいと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0445",
       "mc_name": "黒さき拓海",
       "mc_yomi": "ぐろさきたくみ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1476,56 +1462,56 @@
       "mc_id": "MC0160",
       "mc_name": "K.K FLOW",
       "mc_yomi": "けいけいふろう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0675",
       "mc_name": "桂枝太郎",
       "mc_yomi": "けいしたろう",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0704",
       "mc_name": "KEITH",
       "mc_yomi": "けいす",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0170",
       "mc_name": "KATY",
       "mc_yomi": "けいてぃー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0159",
       "mc_name": "K-rush",
       "mc_yomi": "けいらっしゅ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0161",
       "mc_name": "K.Lee",
       "mc_yomi": "けいりー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0158",
       "mc_name": "K-razy",
       "mc_yomi": "けいれいじー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0781",
       "mc_name": "Kill",
       "mc_yomi": "けーいる",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1539,21 +1525,21 @@
       "mc_id": "MC0828",
       "mc_name": "kkn",
       "mc_yomi": "けーけーえぬ",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0188",
       "mc_name": "KZ",
       "mc_yomi": "けーずぃー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0780",
       "mc_name": "K-spit",
       "mc_yomi": "けーすぴっと",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1564,24 +1550,24 @@
       "kana_group": "か"
     },
     {
-      "mc_id": "MC0754",
-      "mc_name": "KT",
-      "mc_yomi": "けーてぃ",
-      "notes": "追加投入",
-      "kana_group": "か"
-    },
-    {
       "mc_id": "MC0184",
       "mc_name": "KTSRO",
       "mc_yomi": "けーてぃーえすあーるおー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0171",
       "mc_name": "KBD",
       "mc_yomi": "けーびーでぃー",
-      "notes": "初期投入",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0602",
+      "mc_name": "Che-micl",
+      "mc_yomi": "けみかる",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1595,98 +1581,91 @@
       "mc_id": "MC0172",
       "mc_name": "KEN",
       "mc_yomi": "けん",
-      "notes": "初期投入",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0606",
-      "mc_name": "KENTHE390",
-      "mc_yomi": "けんざ",
-      "notes": "Alias of MC0173 (KEN THE 390); alias unified 2026-03-23; Alias of MC0173 (KEN THE 390); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0173",
       "mc_name": "KEN THE 390",
       "mc_yomi": "けんざさんきゅうまる",
-      "notes": "初期投入; Canonical for alias group [KEN THE 390 / KENTHE390] as of 2026-03-25",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0174",
       "mc_name": "KENSHIN",
       "mc_yomi": "けんしん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0758",
       "mc_name": "KENTY GROSS",
       "mc_yomi": "けんてぃぐろす",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0683",
       "mc_name": "Core-Boy",
       "mc_yomi": "こあぼーい",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0383",
       "mc_name": "小池潔宗",
       "mc_yomi": "こいけきよししゅう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0439",
       "mc_name": "鋼",
       "mc_yomi": "こう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0179",
       "mc_name": "KOKI",
       "mc_yomi": "こうき",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0182",
       "mc_name": "Kowree",
       "mc_yomi": "こうりー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0756",
       "mc_name": "COCRGI WHITE(MU-TON)",
       "mc_yomi": "こーぎーほわいとむーとん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0119",
       "mc_name": "GO MAD",
       "mc_yomi": "ごーまっど",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0841",
       "mc_name": "CORN HEAD",
       "mc_yomi": "こーんへっど",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0083",
       "mc_name": "COCORO",
       "mc_yomi": "こころ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1700,63 +1679,56 @@
       "mc_id": "MC0491",
       "mc_name": "GOSPO",
       "mc_yomi": "ごすぽ",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0350",
       "mc_name": "コズモ",
       "mc_yomi": "こずも",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0085",
       "mc_name": "cosmo da ug",
       "mc_yomi": "こすもだ",
-      "notes": "初期投入",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0535",
-      "mc_name": "C'O-Dabow",
-      "mc_yomi": "こだぼ",
-      "notes": "Added for KOK2025全国大会 update; Alias of MC0483 (CO-DAbow); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0483",
       "mc_name": "CO-DAbow",
       "mc_yomi": "こだぼ",
-      "notes": "Added for KOK national import; Canonical for alias group [CO-DAbow / C'O-Dabow] as of 2026-03-25",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0120",
       "mc_name": "GOCCI",
       "mc_yomi": "ごっち",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0082",
       "mc_name": "COBA5000",
       "mc_yomi": "こばごせん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0454",
       "mc_name": "KOPERU",
       "mc_yomi": "こぺる",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0409",
       "mc_name": "狛犬",
       "mc_yomi": "こまいぬ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1770,21 +1742,21 @@
       "mc_id": "MC0689",
       "mc_name": "GOMESS",
       "mc_yomi": "ごめす",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0829",
       "mc_name": "Colte",
       "mc_yomi": "こるて",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0121",
       "mc_name": "GOLBY",
       "mc_yomi": "ごるびー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
@@ -1797,7 +1769,7 @@
     {
       "mc_id": "MC0548",
       "mc_name": "CORON",
-      "mc_yomi": "ころんｎ",
+      "mc_yomi": "ころん",
       "notes": "",
       "kana_group": "か"
     },
@@ -1805,28 +1777,28 @@
       "mc_id": "MC0180",
       "mc_name": "KONG",
       "mc_yomi": "こんぐ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0477",
       "mc_name": "5NBI",
       "mc_yomi": "ごんび",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "か"
     },
     {
       "mc_id": "MC0387",
       "mc_name": "彩",
       "mc_yomi": "さい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0294",
       "mc_name": "SyAchi",
       "mc_yomi": "さいあち",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -1840,42 +1812,42 @@
       "mc_id": "MC0351",
       "mc_name": "サイプレス上野",
       "mc_yomi": "さいぷれすうえの",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0280",
       "mc_name": "SIMON JAP",
       "mc_yomi": "さいもんじゃっぷ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0279",
       "mc_name": "SILENT KILLA JOINT",
       "mc_yomi": "さいれんときら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0270",
       "mc_name": "SAKA THE GAMI",
       "mc_yomi": "さかざがみ",
-      "notes": "初期投入; Canonical for alias group [SAKA THE GAMI / SAKA theGAMI] as of 2026-03-25",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0352",
       "mc_name": "サクト",
       "mc_yomi": "さくと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0301",
       "mc_name": "THUG HEADS",
       "mc_yomi": "さぐへっず",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -1889,14 +1861,14 @@
       "mc_id": "MC0326",
       "mc_name": "zakky",
       "mc_yomi": "ざっきー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0823",
       "mc_name": "札幌のギャグ男",
       "mc_yomi": "さっぽろのぎゃぐおとこ",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -1910,35 +1882,35 @@
       "mc_id": "MC0470",
       "mc_name": "仙人掌",
       "mc_yomi": "さぼてん",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0271",
       "mc_name": "SAM",
       "mc_yomi": "さむ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0290",
       "mc_name": "SUMFLAT",
       "mc_yomi": "さむふらっと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0291",
       "mc_name": "SURRY",
       "mc_yomi": "さりー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0410",
       "mc_name": "猿tobi",
       "mc_yomi": "さるtobi",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -1952,28 +1924,28 @@
       "mc_id": "MC0809",
       "mc_name": "Salvador Mani",
       "mc_yomi": "さるばどーるまに",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0008",
       "mc_name": "35xv",
       "mc_yomi": "さんじゅうご",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0826",
       "mc_name": "SANTAWORLDVIEW",
       "mc_yomi": "さんたわーるどびゅー",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0484",
       "mc_name": "CRK",
       "mc_yomi": "しーあーるけー",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -1987,35 +1959,35 @@
       "mc_id": "MC0117",
       "mc_name": "GCI",
       "mc_yomi": "じーしーあい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0081",
       "mc_name": "CJ",
       "mc_yomi": "しーじぇー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0274",
       "mc_name": "SEED",
       "mc_yomi": "しーど",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0080",
       "mc_name": "CIMA",
       "mc_yomi": "しーま",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0273",
       "mc_name": "SEA-MEN",
       "mc_yomi": "しーめん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2029,42 +2001,42 @@
       "mc_id": "MC0779",
       "mc_name": "G-YARD",
       "mc_yomi": "じーやーど",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0517",
       "mc_name": "Zeal",
       "mc_yomi": "じーる",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0325",
       "mc_name": "Z-Loop",
       "mc_yomi": "じーるーぷ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0115",
       "mc_name": "G-ROD",
       "mc_yomi": "じーろっど",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0145",
       "mc_name": "JAKE",
       "mc_yomi": "じぇいく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0148",
       "mc_name": "JAYPAY",
       "mc_yomi": "じぇいぺい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2078,42 +2050,42 @@
       "mc_id": "MC0139",
       "mc_name": "J-MACK",
       "mc_yomi": "じぇいまっく",
-      "notes": "初期投入; Canonical for alias group [J-MACK / J-Mack] as of 2026-03-23; Alias of MC0140 (J-Mack); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0664",
       "mc_name": "JECT",
       "mc_yomi": "じぇくと",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0331",
       "mc_name": "しぇん",
       "mc_yomi": "しぇん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0332",
       "mc_name": "しおん",
       "mc_yomi": "しおん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0741",
       "mc_name": "式部",
       "mc_yomi": "しきぶ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0431",
       "mc_name": "詩言",
       "mc_yomi": "しげん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2127,7 +2099,7 @@
       "mc_id": "MC0724",
       "mc_name": "ししど",
       "mc_yomi": "ししど",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2141,131 +2113,124 @@
       "mc_id": "MC0430",
       "mc_name": "視聴覚アルピニスト（カツヲ）",
       "mc_yomi": "しちょうかくあるぴにすとかつを",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0466",
       "mc_name": "Sitissy luvit",
       "mc_yomi": "しってぃしぃ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0833",
       "mc_name": "死神紫郎",
       "mc_yomi": "しにがみむらさきろう",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0525",
       "mc_name": "シニピエa.k.a.泥牙-L",
       "mc_yomi": "しにぴえakaどろきばl",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0001",
       "mc_name": "$IVA",
       "mc_yomi": "しば",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0353",
       "mc_name": "シーモンキー",
       "mc_yomi": "しもんき",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0147",
       "mc_name": "JAVE",
       "mc_yomi": "じゃゔぇ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0384",
       "mc_name": "尺out2",
       "mc_yomi": "しゃくout2",
-      "notes": "初期投入",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0528",
-      "mc_name": "尺out3",
-      "mc_yomi": "しゃくout3",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0142",
       "mc_name": "JACKTER",
       "mc_yomi": "じゃくたー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0144",
       "mc_name": "JAG-ME",
       "mc_yomi": "じゃぐみー",
-      "notes": "初期投入",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0438",
-      "mc_name": "釈楽",
-      "mc_yomi": "しゃくらく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0141",
       "mc_name": "JACK-GX",
       "mc_yomi": "じゃっくじーえっくす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0786",
       "mc_name": "SHABAZ",
       "mc_yomi": "しゃばず",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0143",
       "mc_name": "Jafem",
       "mc_yomi": "じゃふぇむ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0736",
       "mc_name": "$hamis",
       "mc_yomi": "しゃみす",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0465",
       "mc_name": "Shamis",
       "mc_yomi": "しゃみす",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0275",
       "mc_name": "SHAMO",
       "mc_yomi": "しゃも",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0638",
       "mc_name": "写楽",
+      "mc_yomi": "しゃらく",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0438",
+      "mc_name": "釈楽",
       "mc_yomi": "しゃらく",
       "notes": "",
       "kana_group": "さ"
@@ -2278,38 +2243,31 @@
       "kana_group": "さ"
     },
     {
-      "mc_id": "MC0693",
-      "mc_name": "Charlu",
-      "mc_yomi": "しゃるる",
-      "notes": "追加投入",
-      "kana_group": "さ"
-    },
-    {
       "mc_id": "MC0156",
       "mc_name": "JUNKY",
       "mc_yomi": "じゃんきー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0146",
       "mc_name": "JANS",
       "mc_yomi": "じゃんず",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0702",
       "mc_name": "JUMBO MAATCH",
       "mc_yomi": "じゃんぼまーち",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0742",
       "mc_name": "SYUMA",
       "mc_yomi": "しゅうま",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2323,28 +2281,28 @@
       "mc_id": "MC0278",
       "mc_name": "SHUN-P",
       "mc_yomi": "しゅんぴー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0407",
       "mc_name": "照",
       "mc_yomi": "しょう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0334",
       "mc_name": "じょう",
       "mc_yomi": "じょう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0837",
       "mc_name": "SHOICHIRO",
       "mc_yomi": "しょういちろう",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2372,63 +2330,56 @@
       "mc_id": "MC0685",
       "mc_name": "SHOHEI",
       "mc_yomi": "しょうへい",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0150",
       "mc_name": "JOE",
       "mc_yomi": "じょー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0151",
       "mc_name": "Joker clown",
       "mc_yomi": "じょーかーくらうん",
-      "notes": "初期投入",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0471",
-      "mc_name": "喰吐",
-      "mc_yomi": "しょくと",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0153",
       "mc_name": "Jonny the Sonata",
       "mc_yomi": "じょにーざそのた",
-      "notes": "初期投入; Canonical for alias group [Jonny the Sonata / Jony the Sonata / Jony the sonata] as of 2026-03-25",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0277",
       "mc_name": "SHOYA",
       "mc_yomi": "しょや",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0152",
       "mc_name": "JOLLY BIG",
       "mc_yomi": "じょりーびっぐ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0728",
       "mc_name": "慈連",
       "mc_yomi": "じれん",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0333",
       "mc_name": "しろくま",
       "mc_yomi": "しろくま",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2442,28 +2393,28 @@
       "mc_id": "MC0276",
       "mc_name": "SHIN DA ENLARGEMEN.",
       "mc_yomi": "しんだえんらーじめん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0149",
       "mc_name": "JINTOKU",
       "mc_yomi": "じんとく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0395",
       "mc_name": "晋平太",
       "mc_yomi": "しんぺいた",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0751",
       "mc_name": "Jinmenusagi",
       "mc_yomi": "じんめんうさぎ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2477,42 +2428,42 @@
       "mc_id": "MC0436",
       "mc_name": "酔生夢",
       "mc_yomi": "すいせいゆめ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0472",
       "mc_name": "崇勲",
       "mc_yomi": "すうくん",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0716",
       "mc_name": "SKY C",
       "mc_yomi": "すかいしー",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0511",
       "mc_name": "Sugiyama",
       "mc_yomi": "すぎやま",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0272",
       "mc_name": "Scooby J",
       "mc_yomi": "すくーびーじぇい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0283",
       "mc_name": "SKRYU",
       "mc_yomi": "すくりゅ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2533,28 +2484,28 @@
       "mc_id": "MC0024",
       "mc_name": "STARGAZE［MC龍］",
       "mc_yomi": "すたーげいず",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0801",
       "mc_name": "スターク",
       "mc_yomi": "すたく",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0733",
       "mc_name": "STACK THE PINK",
       "mc_yomi": "すたっくざぴんく",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0289",
       "mc_name": "Strider",
       "mc_yomi": "すとらいだ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2565,52 +2516,38 @@
       "kana_group": "さ"
     },
     {
-      "mc_id": "MC0752",
-      "mc_name": "SNAFKN",
-      "mc_yomi": "すなふきん",
-      "notes": "追加投入; Alias of MC0354 (スナフキン); alias unified 2026-03-25",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0717",
-      "mc_name": "SNFKN",
-      "mc_yomi": "すなふきん",
-      "notes": "Auto-added from 口喧嘩祭 source; Alias of MC0354 (スナフキン); alias unified 2026-03-25",
-      "kana_group": "さ"
-    },
-    {
       "mc_id": "MC0354",
       "mc_name": "スナフキン",
       "mc_yomi": "すなふきん",
-      "notes": "初期投入; Canonical for alias group [SNAFKN / SNFKN / スナフキン] as of 2026-03-25",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0787",
       "mc_name": "SPIRAL",
       "mc_yomi": "すぱいらる",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0817",
       "mc_name": "Spada",
       "mc_yomi": "すぱだ",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0284",
       "mc_name": "SMARD",
       "mc_yomi": "すまーど",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0285",
       "mc_name": "Smill",
       "mc_yomi": "すみる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2631,21 +2568,21 @@
       "mc_id": "MC0767",
       "mc_name": "5LEEP3ALKER",
       "mc_yomi": "すりーぷうぉーかー",
-      "notes": "Added from web result pages",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0293",
       "mc_name": "SWANKY MONKEY",
       "mc_yomi": "すわんきーもんきー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0292",
       "mc_name": "SWAMP",
       "mc_yomi": "すわんぷ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
@@ -2659,161 +2596,154 @@
       "mc_id": "MC0390",
       "mc_name": "成",
       "mc_yomi": "せい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0518",
       "mc_name": "ZトN",
       "mc_yomi": "ぜっとん",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0372",
       "mc_name": "切刃",
       "mc_yomi": "せつは",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0355",
       "mc_name": "セブン",
       "mc_yomi": "せぶん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0790",
       "mc_name": "cemment",
       "mc_yomi": "せめんと",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0327",
       "mc_name": "ZERO",
       "mc_yomi": "ぜろ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0393",
       "mc_name": "早雲",
       "mc_yomi": "そううん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0288",
       "mc_name": "SOTA-LOW",
       "mc_yomi": "そたろう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0286",
       "mc_name": "SONNY",
       "mc_yomi": "そにー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0762",
       "mc_name": "SONOTA from おーるどにゅーすぺーぱー",
       "mc_yomi": "そのた",
-      "notes": "追加投入; Canonical for alias group [SONOTA from おーるどにゅーすぺーぱー / SONOTA from おーるどにゅーすぺーぱー] as of 2026-03-25",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0287",
       "mc_name": "SORA",
       "mc_yomi": "そら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0532",
       "mc_name": "空迴",
       "mc_yomi": "そらかい",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0425",
       "mc_name": "蘇流邪",
       "mc_yomi": "そりゅうじゃ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "さ"
     },
     {
       "mc_id": "MC0093",
       "mc_name": "DARK",
       "mc_yomi": "だーく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0356",
       "mc_name": "ダースレイダー",
       "mc_yomi": "だーすれいだー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0012",
       "mc_name": "Dar-Tなたでここ",
       "mc_yomi": "だーてぃな",
-      "notes": "初期投入; Canonical for alias group [Dar-T なたでここ / Dar-Tなたでここ] as of 2026-03-25",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0718",
       "mc_name": "TAIKI",
       "mc_yomi": "たいき",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0097",
       "mc_name": "DIE-K",
       "mc_yomi": "だいけー",
-      "notes": "初期投入",
-      "kana_group": "た"
-    },
-    {
-      "mc_id": "MC0298",
-      "mc_name": "Taic",
-      "mc_yomi": "たいし",
-      "notes": "初期投入; Canonical for alias group [Taic / TAIC] as of 2026-03-23; Alias of MC0665 (TAIC); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0665",
       "mc_name": "TAIC",
       "mc_yomi": "たいし",
-      "notes": "追加投入; Canonical for alias group [Taic / TAIC] as of 2026-03-25",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0379",
       "mc_name": "大将",
       "mc_yomi": "たいしょう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0825",
       "mc_name": "大神",
       "mc_yomi": "だいじん",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0091",
       "mc_name": "DAISEI",
       "mc_yomi": "だいせい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -2827,28 +2757,28 @@
       "mc_id": "MC0474",
       "mc_name": "泰斗(裂固)",
       "mc_yomi": "たいとakaれっこ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0437",
       "mc_name": "醍福",
       "mc_yomi": "だいふく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0719",
       "mc_name": "TyLa",
       "mc_yomi": "たいら",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0739",
       "mc_name": "瀧澤彩夏",
       "mc_yomi": "たきざわあやか",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -2869,56 +2799,42 @@
       "mc_id": "MC0687",
       "mc_name": "Takuya IDE",
       "mc_yomi": "たくやいで",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0487",
       "mc_name": "Da-Klow",
       "mc_yomi": "だくろう",
-      "notes": "Added for KOK national import",
-      "kana_group": "た"
-    },
-    {
-      "mc_id": "MC0814",
-      "mc_name": "丈",
-      "mc_yomi": "たけ",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0512",
       "mc_name": "T4kq",
       "mc_yomi": "たしっく",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0421",
       "mc_name": "脱走",
       "mc_yomi": "だっそう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0420",
       "mc_name": "脱兎",
       "mc_yomi": "だっと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0090",
       "mc_name": "DADDY MUM",
       "mc_yomi": "だでぃまむ",
-      "notes": "初期投入",
-      "kana_group": "た"
-    },
-    {
-      "mc_id": "MC0677",
-      "mc_name": "DA-Dee-MiX",
-      "mc_yomi": "だでぃみっくす",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -2932,49 +2848,49 @@
       "mc_id": "MC0412",
       "mc_name": "田中光",
       "mc_yomi": "たなかひかり",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0092",
       "mc_name": "DANNY",
       "mc_yomi": "だにー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0449",
       "mc_name": "DANIEL a.k.a 464underground",
       "mc_yomi": "だにえる",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0335",
       "mc_name": "だーひー",
       "mc_yomi": "だひ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0488",
       "mc_name": "Davy",
       "mc_yomi": "だびー",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0088",
       "mc_name": "d.a.b.d.e",
       "mc_yomi": "だぶで",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0297",
       "mc_name": "Tach-B",
       "mc_yomi": "たふびー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3002,14 +2918,14 @@
       "mc_id": "MC0094",
       "mc_name": "DAYO",
       "mc_yomi": "だよ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0485",
       "mc_name": "DA-RA",
       "mc_yomi": "だら",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3023,7 +2939,7 @@
       "mc_id": "MC0830",
       "mc_name": "TARO SOUL",
       "mc_yomi": "たろそうる",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3044,13 +2960,6 @@
       "mc_id": "MC0448",
       "mc_name": "CHEHON",
       "mc_yomi": "ちぇほん",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
-      "kana_group": "た"
-    },
-    {
-      "mc_id": "MC0602",
-      "mc_name": "Che-micl",
-      "mc_yomi": "ちぇみくる",
       "notes": "",
       "kana_group": "た"
     },
@@ -3058,14 +2967,14 @@
       "mc_id": "MC0076",
       "mc_name": "Cherry",
       "mc_yomi": "ちぇりー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0077",
       "mc_name": "CHICO CARLITO",
       "mc_yomi": "ちこかりーと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3079,77 +2988,77 @@
       "mc_id": "MC0357",
       "mc_name": "チプルソ",
       "mc_yomi": "ちぷるそ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0075",
       "mc_name": "CHARLIE",
       "mc_yomi": "ちゃーりー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0700",
       "mc_name": "CHAKRA",
       "mc_yomi": "ちゃくら",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0074",
       "mc_name": "Chakr@The3rd",
       "mc_yomi": "ちゃくらざさーど",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0079",
       "mc_name": "ChillER",
       "mc_yomi": "ちらー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0078",
       "mc_name": "CHILL B",
       "mc_yomi": "ちるびー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0440",
       "mc_name": "鎮座DOPENESS",
       "mc_yomi": "ちんざdopeness",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0007",
       "mc_name": "2SK",
       "mc_yomi": "つーえすけー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0725",
       "mc_name": "ツチヤチカら",
       "mc_yomi": "つちやちから",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0400",
       "mc_name": "椿",
       "mc_yomi": "つばき",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0005",
       "mc_name": "238",
       "mc_yomi": "つばさ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3163,91 +3072,91 @@
       "mc_id": "MC0682",
       "mc_name": "D96",
       "mc_yomi": "でぃーくろ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0025",
       "mc_name": "TKda黒ぶち",
       "mc_yomi": "てぃーけーだ",
-      "notes": "初期投入; Canonical for alias group [TK da 黒ぶち / TK DA 黒ぶち / TKda黒ぶち] as of 2026-03-25",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0655",
       "mc_name": "T-TONGUE（T-TANGG）",
       "mc_yomi": "てぃーたんぐ",
-      "notes": "追加投入; Alias of MC0296 (T-TANGG); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0478",
       "mc_name": ":DSLowvv",
       "mc_yomi": "でぃえすろー",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0099",
       "mc_name": "DISY",
       "mc_yomi": "でぃじー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0827",
       "mc_name": "DJCHARI",
       "mc_yomi": "でぃじぇーちあり",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0295",
       "mc_name": "T-STONE",
       "mc_yomi": "てぃすとん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0098",
       "mc_name": "Disry",
       "mc_yomi": "でぃすり",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0788",
       "mc_name": "T-swagg",
       "mc_yomi": "てぃすわっぐ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0296",
       "mc_name": "T-TANGG",
       "mc_yomi": "てぃたんぐ",
-      "notes": "初期投入; Canonical for alias group [T-TANGG / T-Tongue / T-TONGUE（T-TANGG）] as of 2026-03-25",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0089",
       "mc_name": "D.D.S",
       "mc_yomi": "でぃでぃえす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0770",
       "mc_name": "T-Pablow",
       "mc_yomi": "てぃぱぶろ",
-      "notes": "Added from web result pages",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0307",
       "mc_name": "TYK",
       "mc_yomi": "てぃわいけい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3261,7 +3170,7 @@
       "mc_id": "MC0095",
       "mc_name": "DEJI",
       "mc_yomi": "でじ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3275,21 +3184,21 @@
       "mc_id": "MC0643",
       "mc_name": "鉄ちゃん",
       "mc_yomi": "てつちゃん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0652",
       "mc_name": "掌幻",
       "mc_yomi": "てのひらまぼろし",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0096",
       "mc_name": "DEP FROG",
       "mc_yomi": "でぷふろっぐ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3303,28 +3212,28 @@
       "mc_id": "MC0300",
       "mc_name": "TERU",
       "mc_yomi": "てる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0810",
       "mc_name": "TERESA",
       "mc_yomi": "てれさ",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0299",
       "mc_name": "TENGG",
       "mc_yomi": "てんぐ",
-      "notes": "初期投入; Canonical for alias group [TENGG / TENNG] as of 2026-03-25",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0650",
       "mc_name": "TENNG",
       "mc_yomi": "てんぐ",
-      "notes": "追加投入; Alias of MC0299 (TENGG); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3338,21 +3247,21 @@
       "mc_id": "MC0522",
       "mc_name": "tenD",
       "mc_yomi": "てんど",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0651",
       "mc_name": "ドイケン",
       "mc_yomi": "どいけん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0405",
       "mc_name": "灯火",
       "mc_yomi": "とうか",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3366,56 +3275,56 @@
       "mc_id": "MC0306",
       "mc_name": "True or 4-SE",
       "mc_yomi": "とぅるーおあ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0696",
       "mc_name": "十影",
       "mc_yomi": "とかげ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0789",
       "mc_name": "ToK10",
       "mc_yomi": "ときお",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0303",
       "mc_name": "TOSHI",
       "mc_yomi": "とし",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0100",
       "mc_name": "DOTAMA",
       "mc_yomi": "どたま",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0304",
       "mc_name": "TOTOROW",
       "mc_yomi": "ととろう",
-      "notes": "初期投入; Canonical for alias group [TOTOROW / Totorow] as of 2026-03-25",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0450",
       "mc_name": "Donatello",
       "mc_yomi": "どなてろ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0336",
       "mc_name": "とびっきり",
       "mc_yomi": "とびっきり",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3429,42 +3338,42 @@
       "mc_id": "MC0382",
       "mc_name": "富博",
       "mc_yomi": "とみひろし",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0396",
       "mc_name": "智大",
       "mc_yomi": "ともひろ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0302",
       "mc_name": "TORA",
       "mc_yomi": "とら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0101",
       "mc_name": "Dragon One",
       "mc_yomi": "どらごんわん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0778",
       "mc_name": "D0raham",
       "mc_yomi": "どらはむ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "た"
     },
     {
       "mc_id": "MC0840",
       "mc_name": "TRIGA FINGA",
       "mc_yomi": "とりがふぃんが",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "た"
     },
     {
@@ -3478,84 +3387,84 @@
       "mc_id": "MC0816",
       "mc_name": "NARVE",
       "mc_yomi": "なーぶ",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0504",
       "mc_name": "NERVE",
       "mc_yomi": "なーぶ",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0222",
       "mc_name": "NAIKA MC",
       "mc_yomi": "ないかえむしー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0447",
       "mc_name": "9for",
       "mc_yomi": "ないんふぉー",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0748",
       "mc_name": "NAOMY",
       "mc_yomi": "なおみー",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0221",
       "mc_name": "NAGION",
       "mc_yomi": "なぎおん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0223",
       "mc_name": "NAJIMI",
       "mc_yomi": "なじみ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0760",
       "mc_name": "NASU",
       "mc_yomi": "なす",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0225",
       "mc_name": "NastyTEZ",
       "mc_yomi": "なすてぃーてず",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0009",
       "mc_name": "79",
       "mc_yomi": "なっく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0177",
       "mc_name": "kNaxx",
       "mc_yomi": "なっくす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0224",
       "mc_name": "NASSO",
       "mc_yomi": "なっそ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
@@ -3569,112 +3478,112 @@
       "mc_id": "MC0419",
       "mc_name": "肉切り包丁",
       "mc_yomi": "にくきりほうちょう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0669",
       "mc_name": "西",
       "mc_yomi": "にし",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0006",
       "mc_name": "25時の影絵",
       "mc_yomi": "にじゅうごじ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0226",
       "mc_name": "NICKA",
       "mc_yomi": "にっか",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0227",
       "mc_name": "NICKA BLACK",
       "mc_yomi": "にっかぶらっく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0178",
       "mc_name": "KNIC",
       "mc_yomi": "にっく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0695",
       "mc_name": "Nidra Assassin",
       "mc_yomi": "にどらあさしん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0458",
       "mc_name": "N1NYO",
       "mc_yomi": "ににょ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0663",
       "mc_name": "NIHA-C",
       "mc_yomi": "にはし",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0832",
       "mc_name": "NIHA-C from 電波少女",
       "mc_yomi": "にはし",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0784",
       "mc_name": "NillNico",
       "mc_yomi": "にるにこ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0230",
       "mc_name": "NYNJA",
       "mc_yomi": "にんじゃ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0521",
       "mc_name": "noizy",
       "mc_yomi": "のいじ",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0505",
       "mc_name": "NOID",
       "mc_yomi": "のいど",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0783",
       "mc_name": "N0uTY",
       "mc_yomi": "のうてぃ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0807",
       "mc_name": "Novel Core",
       "mc_yomi": "のべるこあ",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "な"
     },
     {
@@ -3688,56 +3597,56 @@
       "mc_id": "MC0229",
       "mc_name": "NONKEY",
       "mc_yomi": "のんきー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "な"
     },
     {
       "mc_id": "MC0720",
       "mc_name": "VAAK",
       "mc_yomi": "ばーく",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0672",
       "mc_name": "Hardy",
       "mc_yomi": "はーでぃ",
-      "notes": "追加投入; Alias of MC0452 (HARDY); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0452",
       "mc_name": "HARDY",
       "mc_yomi": "はーでぃ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import; Canonical for alias group [HARDY / Hardy] as of 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0125",
       "mc_name": "HARD VERK",
       "mc_yomi": "はーどゔぇるく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0054",
       "mc_name": "BARBER",
       "mc_yomi": "ばーばー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0240",
       "mc_name": "parmlight",
       "mc_yomi": "ぱーむらいと",
-      "notes": "初期投入; Alias of MC0239 (Parmlight); alias unified 2026-03-23",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0239",
       "mc_name": "Parmlight",
       "mc_yomi": "ぱーむらいと",
-      "notes": "初期投入; Canonical for alias group [Parmlight / parmlight] as of 2026-03-23",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -3755,24 +3664,17 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0566",
-      "mc_name": "HI-KING aka TAKASE",
-      "mc_yomi": "はいきんぐう",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC0128",
       "mc_name": "HI-KING TAKASE",
       "mc_yomi": "はいきんぐたかせ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0127",
       "mc_name": "HI-JET",
       "mc_yomi": "はいじぇっと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -3793,63 +3695,63 @@
       "mc_id": "MC0134",
       "mc_name": "HYPERNONMC",
       "mc_yomi": "はいぱーのんえむしー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0132",
       "mc_name": "HIGH BRIDG3",
       "mc_yomi": "はいぶりっじ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0358",
       "mc_name": "ハイロ",
       "mc_yomi": "はいろ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0848",
       "mc_name": "HOWZE",
       "mc_yomi": "はうぜ",
-      "notes": "Added during 2026-03 helper gap cleanup based on source page",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0658",
       "mc_name": "端雲 THE THIRD",
       "mc_yomi": "はじくもthethird",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0774",
       "mc_name": "BASIL",
       "mc_yomi": "ばじる",
-      "notes": "Added during 2026-03 QA correction based on source page",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0729",
       "mc_name": "蓮臥",
       "mc_yomi": "はすが",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0378",
       "mc_name": "外れクジ",
       "mc_yomi": "はずれくじ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0428",
       "mc_name": "裸武",
       "mc_yomi": "はだかたけし",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -3870,7 +3772,7 @@
       "mc_id": "MC0795",
       "mc_name": "八文字",
       "mc_yomi": "はちもじ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -3884,14 +3786,14 @@
       "mc_id": "MC0835",
       "mc_name": "バードフミヤ a.k.a. ヤムチャ",
       "mc_yomi": "ばどふみやakaやむちゃ",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0010",
       "mc_name": "BATTLE手裏剣",
       "mc_yomi": "ばとるしゅりけん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -3905,7 +3807,7 @@
       "mc_id": "MC0745",
       "mc_name": "VANILLA",
       "mc_yomi": "バニラ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "その他"
     },
     {
@@ -3919,21 +3821,21 @@
       "mc_id": "MC0423",
       "mc_name": "芭撫琉",
       "mc_yomi": "はぶりゅう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0050",
       "mc_name": "BALA a.k.a SBKN",
       "mc_yomi": "ばら",
-      "notes": "初期投入; Canonical for alias group [BALA a.k.a SBKN / BALA a.k.a.SBKN / BALA SBKN] as of 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0692",
       "mc_name": "POWER WAVE",
       "mc_yomi": "ぱわーうぇいぶ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -3947,35 +3849,35 @@
       "mc_id": "MC0776",
       "mc_name": "HANG",
       "mc_yomi": "はんぐ",
-      "notes": "Added during 2026-03 QA correction based on source page",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0844",
       "mc_name": "バン中村",
       "mc_yomi": "ばんなかむら",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0422",
       "mc_name": "般若",
       "mc_yomi": "はんにゃ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0247",
       "mc_name": "PUMPEE",
       "mc_yomi": "ぱんぴー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0053",
       "mc_name": "BAMBLE",
       "mc_yomi": "ばんぶる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -3989,91 +3891,91 @@
       "mc_id": "MC0048",
       "mc_name": "B-COSMO",
       "mc_yomi": "びーこすも",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0071",
       "mc_name": "BZN",
       "mc_yomi": "びーじーえぬ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0049",
       "mc_name": "B_ZERO",
       "mc_yomi": "びーぜろ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0238",
       "mc_name": "P-Pong",
       "mc_yomi": "ぴーぽん",
-      "notes": "初期投入; Alias of MC0237 (P-PONG); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0237",
       "mc_name": "P-PONG",
       "mc_yomi": "ぴーぽん",
-      "notes": "初期投入; Canonical for alias group [P-PONG / P-Pong] as of 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0730",
       "mc_name": "飛兎",
       "mc_yomi": "ひうさぎ",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0131",
       "mc_name": "hiero",
       "mc_yomi": "ひえろ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0727",
       "mc_name": "寿君",
       "mc_yomi": "ひさしくん",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0526",
       "mc_name": "ビシキマ",
       "mc_yomi": "びしきま",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0130",
       "mc_name": "HIDADDY",
       "mc_yomi": "ひだでぃー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0529",
       "mc_name": "左流",
       "mc_yomi": "ひだりりゅう",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0480",
       "mc_name": "B.I.G KID",
       "mc_yomi": "びっぐきっど",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0359",
       "mc_name": "ビッグサンフワラー",
       "mc_yomi": "びっぐさんふわら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4087,49 +3989,49 @@
       "mc_id": "MC0060",
       "mc_name": "BIG MOOLA",
       "mc_yomi": "びっぐもーら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0492",
       "mc_name": "Hinata",
       "mc_yomi": "ひなた",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0520",
       "mc_name": "hnt.",
       "mc_yomi": "ひなた",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0846",
       "mc_name": "ひばな",
       "mc_yomi": "ひばな",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0129",
       "mc_name": "HIBIKI",
       "mc_yomi": "ひびき",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0843",
       "mc_name": "Hibikilla",
       "mc_yomi": "ひびきら",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0744",
       "mc_name": "HIYADAM",
       "mc_yomi": "ひやだむ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4143,28 +4045,28 @@
       "mc_id": "MC0386",
       "mc_name": "弘明",
       "mc_yomi": "ひろあき",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0112",
       "mc_name": "Fugry",
       "mc_yomi": "ふぁぐりー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0113",
       "mc_name": "FURAIIR.C",
       "mc_yomi": "ふぁらいる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0337",
       "mc_name": "ふぁんく",
       "mc_yomi": "ふぁんく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4178,7 +4080,7 @@
       "mc_id": "MC0114",
       "mc_name": "fuuga",
       "mc_yomi": "ふうが",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4192,7 +4094,7 @@
       "mc_id": "MC0451",
       "mc_name": "Fuma no KTR",
       "mc_yomi": "ふーま",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4206,21 +4108,21 @@
       "mc_id": "MC0108",
       "mc_name": "FEIDA-WAN",
       "mc_yomi": "ふぇいだわん",
-      "notes": "初期投入; Canonical for alias group [FEIDA-WAN / FEIDAWAN] as of 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0490",
       "mc_name": "Feliz",
       "mc_yomi": "ふぇりず",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0111",
       "mc_name": "FORK",
       "mc_yomi": "ふぉーく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4234,7 +4136,7 @@
       "mc_id": "MC0110",
       "mc_name": "Folgoregia",
       "mc_yomi": "ふぉるごれじあ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4248,14 +4150,14 @@
       "mc_id": "MC0773",
       "mc_name": "藤KooS",
       "mc_yomi": "ふじkoos",
-      "notes": "Added from web result pages",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0070",
       "mc_name": "BUSS",
       "mc_yomi": "ぶす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4269,21 +4171,21 @@
       "mc_id": "MC0065",
       "mc_name": "BUCHI",
       "mc_yomi": "ぶち",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0066",
       "mc_name": "BUCHI DA MIC",
       "mc_yomi": "ぶちだまいく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0647",
       "mc_name": "ぶーちゃん",
       "mc_yomi": "ぶちゃん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4297,35 +4199,35 @@
       "mc_id": "MC0069",
       "mc_name": "Buppon",
       "mc_yomi": "ぶっぽん",
-      "notes": "初期投入; Alias of MC0068 (BUPPON); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0068",
       "mc_name": "BUPPON",
       "mc_yomi": "ぶっぽん",
-      "notes": "初期投入; Canonical for alias group [BUPPON / Buppon] as of 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0064",
       "mc_name": "BRAVOO",
       "mc_yomi": "ぶらぼ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0489",
       "mc_name": "FRank Logun",
       "mc_yomi": "ふらんくろぐん",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0676",
       "mc_name": "FRANKEN",
       "mc_yomi": "ふらんけん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4339,28 +4241,28 @@
       "mc_id": "MC0699",
       "mc_name": "BRU",
       "mc_yomi": "ぶる",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0067",
       "mc_name": "BULL",
       "mc_yomi": "ぶる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0061",
       "mc_name": "Bluek",
       "mc_yomi": "ぶるーく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0482",
       "mc_name": "Bullharts",
       "mc_yomi": "ぶるはつ",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4374,7 +4276,7 @@
       "mc_id": "MC0338",
       "mc_name": "ふーわ",
       "mc_yomi": "ふわ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4388,14 +4290,14 @@
       "mc_id": "MC0818",
       "mc_name": "buntes",
       "mc_yomi": "ぶんてす",
-      "notes": "Added during 2026-03 bracket completion based on source page; Alias of MC0550 (bunTes); alias unified 2026-03-23",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0550",
       "mc_name": "bunTes",
       "mc_yomi": "ぶんてす",
-      "notes": "Canonical for alias group [bunTes / buntes] as of 2026-03-23",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4409,63 +4311,63 @@
       "mc_id": "MC0242",
       "mc_name": "Pein Mirra",
       "mc_yomi": "ぺいんみら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0508",
       "mc_name": "Pain Reign",
       "mc_yomi": "ぺいんれいん",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0055",
       "mc_name": "BASE",
       "mc_yomi": "べーす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0732",
       "mc_name": "Bass",
       "mc_yomi": "べーす",
-      "notes": "追加投入; Canonical for alias group [Bass / BASS] as of 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0243",
       "mc_name": "peko",
       "mc_yomi": "ぺこ",
-      "notes": "初期投入; Canonical for alias group [peko / PEKO] as of 2026-03-23; Alias of MC0659 (PEKO); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0659",
       "mc_name": "PEKO",
       "mc_yomi": "ぺこ",
-      "notes": "追加投入; Canonical for alias group [peko / PEKO] as of 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0059",
       "mc_name": "BEZIRO",
       "mc_yomi": "べじろ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0058",
       "mc_name": "BES",
       "mc_yomi": "べす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0241",
       "mc_name": "PEDAL",
       "mc_yomi": "ぺだる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4486,126 +4388,126 @@
       "mc_id": "MC0721",
       "mc_name": "venom",
       "mc_yomi": "べのむ",
-      "notes": "Auto-added from 口喧嘩祭 source; Alias of MC0313 (VENOM); alias unified 2026-03-23",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0313",
       "mc_name": "VENOM",
       "mc_yomi": "べのむ",
-      "notes": "初期投入; Canonical for alias group [VENM / VENOM] as of 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0426",
       "mc_name": "蛇",
       "mc_yomi": "へび",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0507",
       "mc_name": "PAVYVIEW",
       "mc_yomi": "ぺびびゅー",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0726",
       "mc_name": "ベル",
       "mc_yomi": "べる",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0481",
       "mc_name": "BENKEI",
       "mc_yomi": "べんけい",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0057",
       "mc_name": "BENZO",
       "mc_yomi": "べんぞ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0056",
       "mc_name": "Bendy",
       "mc_yomi": "べんでぃ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0126",
       "mc_name": "Hawk-I",
       "mc_yomi": "ほーくあい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0063",
       "mc_name": "BOZ",
       "mc_yomi": "ぼず",
-      "notes": "初期投入; Canonical for alias group [BOZ / Boz] as of 2026-03-25",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0244",
       "mc_name": "POCKY",
       "mc_yomi": "ぽっきー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0701",
       "mc_name": "HOT PEPPER",
       "mc_yomi": "ほっとぺっぱー",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0245",
       "mc_name": "PONEY",
       "mc_yomi": "ぽにー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0402",
       "mc_name": "歩歩",
       "mc_yomi": "ほほ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0062",
       "mc_name": "BOBO",
       "mc_yomi": "ぼぼ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0133",
       "mc_name": "hoRao",
       "mc_yomi": "ほらお",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0360",
       "mc_name": "ホロンバイム",
       "mc_yomi": "ほろんばいむ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0399",
       "mc_name": "梵頭",
       "mc_yomi": "ぼんあたま",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "は"
     },
     {
@@ -4619,189 +4521,175 @@
       "mc_id": "MC0768",
       "mc_name": "Bonbero",
       "mc_yomi": "ぼんべろ",
-      "notes": "Added from web result pages",
+      "notes": "",
       "kana_group": "は"
     },
     {
       "mc_id": "MC0209",
       "mc_name": "MAVEL",
       "mc_yomi": "まーゔぇる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0211",
       "mc_name": "MERCY",
       "mc_yomi": "まーしー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0207",
       "mc_name": "marsh",
       "mc_yomi": "まーしゅ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0498",
       "mc_name": "MAIII",
       "mc_yomi": "まい",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0457",
       "mc_name": "Maiji",
       "mc_yomi": "まいじ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0204",
       "mc_name": "MAKA",
       "mc_yomi": "まか",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0205",
       "mc_name": "MAKI DA SHIT",
       "mc_yomi": "まきだしっと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0203",
       "mc_name": "MAG",
       "mc_yomi": "まぐ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0764",
       "mc_name": "孫GONG",
       "mc_yomi": "まごgong",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0772",
       "mc_name": "真ACE",
       "mc_yomi": "まことace",
-      "notes": "Added from web result pages",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0432",
       "mc_name": "誠 a.k.a JAFEM",
       "mc_yomi": "まことakajafem",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0798",
       "mc_name": "雅",
       "mc_yomi": "まさ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0679",
       "mc_name": "Masa & トラヴィス・スットコ",
       "mc_yomi": "まさあんど",
-      "notes": "追加投入; Canonical for alias group [Masa & トラヴィス・スットコ / Masa&トラヴィス・スットコ] as of 2026-03-23; Alias of MC0802 (Masa&トラヴィス・スットコ); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0802",
       "mc_name": "Masa&トラヴィス・スットコ",
       "mc_yomi": "まさあんど",
-      "notes": "Added during 2026-03 bracket expansion based on source page; Canonical for alias group [Masa & トラヴィス・スットコ / Masa&トラヴィス・スットコ] as of 2026-03-25",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0749",
       "mc_name": "MASARU",
       "mc_yomi": "まさる",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0339",
       "mc_name": "まーしゃる",
       "mc_yomi": "ましゃる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0743",
       "mc_name": "マスオマスター",
       "mc_yomi": "ますおますた",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0361",
       "mc_name": "マチネ",
       "mc_yomi": "まちね",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0649",
       "mc_name": "抹 a.k.a ナンブヒトシ",
       "mc_yomi": "まつakaなんぶひとし",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0200",
       "mc_name": "Mac Ass Tiger",
       "mc_yomi": "まっくあすたいがー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0201",
       "mc_name": "MAC-T",
       "mc_yomi": "まっくてぃー",
-      "notes": "初期投入",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0824",
-      "mc_name": "松島諒",
-      "mc_yomi": "まつしまりょう",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0208",
       "mc_name": "MATTO",
       "mc_yomi": "まっと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0202",
       "mc_name": "MAD ASH",
       "mc_yomi": "まっどあっしゅ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0217",
       "mc_name": "MUD ASH",
       "mc_yomi": "まっどあっしゅ",
-      "notes": "初期投入; Canonical for alias group [MUD ASH / Mud Ash / MUDASH] as of 2026-03-23",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0500",
-      "mc_name": "MUDASH",
-      "mc_yomi": "まっどあっしゅ",
-      "notes": "Added for KOK national import; Alias of MC0217 (MUD ASH); alias unified 2026-03-23",
+      "notes": "",
       "kana_group": "ま"
     },
     {
@@ -4815,28 +4703,28 @@
       "mc_id": "MC0398",
       "mc_name": "松元",
       "mc_yomi": "まつもと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0791",
       "mc_name": "まゆちゃむ",
       "mc_yomi": "まゆちゃむ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0362",
       "mc_name": "マユツバ",
       "mc_yomi": "まゆつば",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0370",
       "mc_name": "丸",
       "mc_yomi": "まる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
@@ -4850,13 +4738,6 @@
       "mc_id": "MC0206",
       "mc_name": "Manchies nice",
       "mc_yomi": "まんちーずないす",
-      "notes": "初期投入",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0577",
-      "mc_name": "魅RIン",
-      "mc_yomi": "みriん",
       "notes": "",
       "kana_group": "ま"
     },
@@ -4878,42 +4759,42 @@
       "mc_id": "MC0213",
       "mc_name": "mita beats",
       "mc_yomi": "みたびーつ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0381",
       "mc_name": "実成",
       "mc_yomi": "みつなり",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0530",
       "mc_name": "水無月",
       "mc_yomi": "みなつき",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0212",
       "mc_name": "miniRA",
       "mc_yomi": "みにら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0469",
       "mc_name": "ミメイ",
       "mc_yomi": "みめい",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0800",
       "mc_name": "Miracle",
       "mc_yomi": "みらくる",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "ま"
     },
     {
@@ -4924,59 +4805,59 @@
       "kana_group": "ま"
     },
     {
-      "mc_id": "MC0782",
-      "mc_name": "MIRIN",
+      "mc_id": "MC0577",
+      "mc_name": "魅RIン",
       "mc_yomi": "みりん",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0524",
       "mc_name": "みLL AuguSt.",
       "mc_yomi": "みるーが",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0501",
       "mc_name": "Milky",
       "mc_yomi": "みるき",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0503",
       "mc_name": "MuuNe",
       "mc_yomi": "むうね",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0686",
       "mc_name": "百足",
       "mc_yomi": "むかで",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0340",
       "mc_name": "むら",
       "mc_yomi": "むら",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0502",
       "mc_name": "Mura_halo",
       "mc_yomi": "むらはろ",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0219",
       "mc_name": "MULBE",
       "mc_yomi": "むるべ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
@@ -4997,21 +4878,21 @@
       "mc_id": "MC0711",
       "mc_name": "MEGA-G",
       "mc_yomi": "めがじー",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0364",
       "mc_name": "メシアTHEフライ",
       "mc_yomi": "めしあtheふらい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0499",
       "mc_name": "ME7O",
       "mc_yomi": "めぞ",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ま"
     },
     {
@@ -5032,21 +4913,21 @@
       "mc_id": "MC0673",
       "mc_name": "MOGURA",
       "mc_yomi": "もぐら",
-      "notes": "追加投入; Canonical for alias group [MOGURA / モグラ] as of 2026-03-25",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0199",
       "mc_name": "M.O.J.I.",
       "mc_yomi": "もじ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0418",
       "mc_name": "素",
       "mc_yomi": "もと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
@@ -5060,42 +4941,49 @@
       "mc_id": "MC0401",
       "mc_name": "楓",
       "mc_yomi": "もみじ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ま"
     },
     {
       "mc_id": "MC0406",
       "mc_name": "焼陣",
       "mc_yomi": "やきじん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0527",
       "mc_name": "夜叉郎",
       "mc_yomi": "やしゃろう",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0514",
       "mc_name": "YAS IS OVER",
       "mc_yomi": "やすいず",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0317",
       "mc_name": "YASSAN",
       "mc_yomi": "やっさん",
-      "notes": "初期投入",
+      "notes": "",
+      "kana_group": "や"
+    },
+    {
+      "mc_id": "MC0918",
+      "mc_name": "YAMAZIN",
+      "mc_yomi": "やまじん",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0385",
       "mc_name": "山本びんた",
       "mc_yomi": "やまもとびんた",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
@@ -5116,21 +5004,21 @@
       "mc_id": "MC0323",
       "mc_name": "YUKSTA-ILL",
       "mc_yomi": "ゆーくすたいる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0320",
       "mc_name": "YOUTH",
       "mc_yomi": "ゆーす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0309",
       "mc_name": "U-t.o.",
       "mc_yomi": "ゆーと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
@@ -5144,84 +5032,84 @@
       "mc_id": "MC0763",
       "mc_name": "U-mallow",
       "mc_yomi": "ゆーまろ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0366",
       "mc_name": "ユウヤキタイ",
       "mc_yomi": "ゆうやきたい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0308",
       "mc_name": "U-Road",
       "mc_yomi": "ゆーろーど",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0722",
       "mc_name": "yukarin",
       "mc_yomi": "ゆかりん",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0515",
       "mc_name": "YUSEI",
       "mc_yomi": "ゆせい",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0429",
       "mc_name": "要",
       "mc_yomi": "よう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0533",
       "mc_name": "陽",
       "mc_yomi": "よう",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0318",
       "mc_name": "YO-1",
       "mc_yomi": "よーいち",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0516",
       "mc_name": "Yoji",
       "mc_yomi": "よじ",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0374",
       "mc_name": "吉田のブービー",
       "mc_yomi": "よしだのぶび",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0678",
       "mc_name": "YOS-MAG",
       "mc_yomi": "よすまぐ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
       "mc_id": "MC0319",
       "mc_name": "YONA",
       "mc_yomi": "よな",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "や"
     },
     {
@@ -5249,14 +5137,14 @@
       "mc_id": "MC0189",
       "mc_name": "La-Men Dogg",
       "mc_yomi": "らーめんどっぐ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0254",
       "mc_name": "Raika",
       "mc_yomi": "らいか",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5270,28 +5158,28 @@
       "mc_id": "MC0256",
       "mc_name": "RHYME BOYA",
       "mc_yomi": "らいむぼーや",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0197",
       "mc_name": "Luvit",
       "mc_yomi": "らゔぃっと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0785",
       "mc_name": "RAU DEF",
       "mc_yomi": "らうでふ",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0253",
       "mc_name": "RAGA",
       "mc_yomi": "らが",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5305,14 +5193,14 @@
       "mc_id": "MC0263",
       "mc_name": "Rugshot",
       "mc_yomi": "らぐしょっと",
-      "notes": "初期投入; Alias of MC0261 (RUG SHOT); alias unified 2026-03-23",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0262",
       "mc_name": "RUGSHOT",
       "mc_yomi": "らぐしょっと",
-      "notes": "初期投入; Alias of MC0261 (RUG SHOT); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5326,7 +5214,7 @@
       "mc_id": "MC0250",
       "mc_name": "RACK",
       "mc_yomi": "らっく",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5340,28 +5228,28 @@
       "mc_id": "MC0496",
       "mc_name": "Laugh man",
       "mc_yomi": "らふまん",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0190",
       "mc_name": "LAFRAN",
       "mc_yomi": "らふらん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0839",
       "mc_name": "RAM HEAD",
       "mc_yomi": "らむへっど",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0462",
       "mc_name": "Randy Wati Sati",
       "mc_yomi": "らんでぃわてぃ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5382,49 +5270,49 @@
       "mc_id": "MC0257",
       "mc_name": "RISKY",
       "mc_yomi": "りすきー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0497",
       "mc_name": "Lildav",
       "mc_yomi": "りだぶ",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0761",
       "mc_name": "RYKEY DADDY DIRTY",
       "mc_yomi": "りっきーだでぃだーてぃ",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0808",
       "mc_name": "Rikki Swan",
       "mc_yomi": "りっきすわん",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0456",
       "mc_name": "Lick-G",
       "mc_yomi": "りっくじ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0258",
       "mc_name": "RITTO",
       "mc_yomi": "りっと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0815",
       "mc_name": "Lil SteeZ",
       "mc_yomi": "りっとすてぃーじー",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5438,21 +5326,21 @@
       "mc_id": "MC0740",
       "mc_name": "River kid",
       "mc_yomi": "りばーきっど",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0455",
       "mc_name": "L.B.R.L",
       "mc_yomi": "りべらる",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0267",
       "mc_name": "RYU",
       "mc_yomi": "りゅう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5466,14 +5354,14 @@
       "mc_id": "MC0653",
       "mc_name": "龍道",
       "mc_yomi": "りゅうみち",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0266",
       "mc_name": "Ryo",
       "mc_yomi": "りょう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5494,70 +5382,63 @@
       "mc_id": "MC0376",
       "mc_name": "呂布カルマ",
       "mc_yomi": "りょふかるま",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0264",
       "mc_name": "Ry-lax",
       "mc_yomi": "りらっくす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0198",
       "mc_name": "Lyrical",
       "mc_yomi": "りりかる",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0821",
       "mc_name": "rirugiliyangugili",
       "mc_yomi": "りるぎるやんぐぎり",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0845",
       "mc_name": "lil鉄火巻",
       "mc_yomi": "りるてっかまき",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0371",
       "mc_name": "凛",
       "mc_yomi": "りん",
-      "notes": "初期投入",
-      "kana_group": "ら"
-    },
-    {
-      "mc_id": "MC0707",
-      "mc_name": "Ling",
-      "mc_yomi": "りんぐ",
-      "notes": "Auto-added from 口喧嘩祭 source; Canonical for alias group [LIng / Ling] as of 2026-03-25",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0706",
       "mc_name": "LIng",
       "mc_yomi": "りんぐ",
-      "notes": "Auto-added from 口喧嘩祭 source; Canonical for alias group [LIng / Ling] as of 2026-03-23; Alias of MC0707 (Ling); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0193",
       "mc_name": "LINKRAZY",
       "mc_yomi": "りんくらいじー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0510",
       "mc_name": "RINDAMAN",
       "mc_yomi": "りんだまん",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5571,21 +5452,21 @@
       "mc_id": "MC0714",
       "mc_name": "Rin音",
       "mc_yomi": "りんね",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0536",
       "mc_name": "Luiz",
       "mc_yomi": "るいず",
-      "notes": "Canonical for alias group [Luiz / luiz] as of 2026-03-23",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0259",
       "mc_name": "Route",
       "mc_yomi": "るーと",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5606,14 +5487,14 @@
       "mc_id": "MC0476",
       "mc_name": "盧舎那",
       "mc_yomi": "るしゃな",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0753",
       "mc_name": "RAY",
       "mc_yomi": "れい",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5627,35 +5508,35 @@
       "mc_id": "MC0661",
       "mc_name": "LAYGAN",
       "mc_yomi": "れいがん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0367",
       "mc_name": "レイジ",
       "mc_yomi": "れいじ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0252",
       "mc_name": "Racy",
       "mc_yomi": "れいしー",
-      "notes": "初期投入; Alias of MC0251 (RACY); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0251",
       "mc_name": "RACY",
       "mc_yomi": "れいしー",
-      "notes": "初期投入; Canonical for alias group [RACY / Racy] as of 2026-03-25",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0191",
       "mc_name": "LAZY",
       "mc_yomi": "れいじー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5669,21 +5550,21 @@
       "mc_id": "MC0255",
       "mc_name": "REIDAM",
       "mc_yomi": "れいだむ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0411",
       "mc_name": "玲音",
       "mc_yomi": "れいね",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0713",
       "mc_name": "REO",
       "mc_yomi": "れお",
-      "notes": "Auto-added from 口喧嘩祭 source",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5697,21 +5578,21 @@
       "mc_id": "MC0192",
       "mc_name": "LEON",
       "mc_yomi": "れおん",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0461",
       "mc_name": "REDWING",
       "mc_yomi": "れっどうぃんぐ",
-      "notes": "Added for KOK GRAND CHAMPIONSHIP import",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0509",
       "mc_name": "RED STONE",
       "mc_yomi": "れっどすとーん",
-      "notes": "Added for KOK national import",
+      "notes": "",
       "kana_group": "ら"
     },
     {
@@ -5725,77 +5606,77 @@
       "mc_id": "MC0797",
       "mc_name": "炉馬",
       "mc_yomi": "ろうま",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0195",
       "mc_name": "LOWCH",
       "mc_yomi": "ろーち",
-      "notes": "初期投入; Canonical for alias group [LOWCH / Lowch] as of 2026-03-23; Alias of MC0196 (Lowch); alias unified 2026-03-25",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0214",
       "mc_name": "RAWAXXX(MOL53)",
       "mc_yomi": "ろーわっくす",
-      "notes": "初期投入; Canonical for alias/identity group [RAWAXXX / MOL53 / mol53 / RAWAXXX(MOL53)] as of 2026-03-26",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0249",
       "mc_name": "R.O.G",
       "mc_yomi": "ろぐ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0260",
       "mc_name": "Rozetta",
       "mc_yomi": "ろぜった",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0368",
       "mc_name": "ロープ",
       "mc_yomi": "ろぷ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0194",
       "mc_name": "lonelow",
       "mc_yomi": "ろんろー",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "ら"
     },
     {
       "mc_id": "MC0316",
       "mc_name": "Y.A.S",
       "mc_yomi": "わいえーえす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "わ"
     },
     {
       "mc_id": "MC0321",
       "mc_name": "YSK",
       "mc_yomi": "わいえすけー",
-      "notes": "初期投入; Canonical for alias group [YSK / ysk] as of 2026-03-25",
+      "notes": "",
       "kana_group": "わ"
     },
     {
       "mc_id": "MC0811",
       "mc_name": "Y-クルーズ・エンヤ",
       "mc_yomi": "わいくるーずえんや",
-      "notes": "Added during 2026-03 bracket completion based on source page",
+      "notes": "",
       "kana_group": "わ"
     },
     {
       "mc_id": "MC0793",
       "mc_name": "ワイジニアス",
       "mc_yomi": "わいじにあす",
-      "notes": "Added during 2026-03 bracket expansion based on source page",
+      "notes": "",
       "kana_group": "わ"
     },
     {
@@ -5809,7 +5690,7 @@
       "mc_id": "MC0750",
       "mc_name": "WATA the FreeMen",
       "mc_yomi": "わたざふりーまん",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "わ"
     },
     {
@@ -5823,35 +5704,35 @@
       "mc_id": "MC0746",
       "mc_name": "ワタル",
       "mc_yomi": "わたる",
-      "notes": "追加投入",
+      "notes": "",
       "kana_group": "わ"
     },
     {
       "mc_id": "MC0314",
       "mc_name": "wani galay mycel",
       "mc_yomi": "わにがれい",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "わ"
     },
     {
       "mc_id": "MC0434",
       "mc_name": "輪入道",
       "mc_yomi": "わにゅうどう",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "わ"
     },
     {
       "mc_id": "MC0415",
       "mc_name": "笑夢珈琲",
       "mc_yomi": "わらいゆめこひ",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "わ"
     },
     {
       "mc_id": "MC0391",
       "mc_name": "我次郎MIC",
       "mc_yomi": "われじろうmic",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "わ"
     },
     {
@@ -5865,14 +5746,14 @@
       "mc_id": "MC0004",
       "mc_name": "1horse",
       "mc_yomi": "わんほーす",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "わ"
     },
     {
       "mc_id": "MC0341",
       "mc_name": "ゐLL AuguSt.",
       "mc_yomi": "ゐllaugust",
-      "notes": "初期投入",
+      "notes": "",
       "kana_group": "その他"
     },
     {

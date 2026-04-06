@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-06T03:31:46.051Z",
+  "updated_at": "2026-04-06T13:22:02.395Z",
   "recent_events": [
     {
       "event_id": "EVT0032",
@@ -11,7 +11,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "winner_name": "T-TANGG"
     },
     {
@@ -37,7 +37,7 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "Zepp Osaka Bayside",
       "winner_name": ""
     },
     {
@@ -50,7 +50,7 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "仙台PIT",
       "winner_name": "Sitissy luvit"
     },
     {
@@ -63,7 +63,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "winner_name": "9for"
     },
     {
@@ -89,33 +89,33 @@
       "prize_money_total": null,
       "event_category": "戦極MCBATTLE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "KT Zepp Yokohama",
       "winner_name": "KOPERU"
     },
     {
       "event_id": "EVT0075",
-      "event_name": "凱旋MC battle THE GIANT KILLING 2 at 豊洲PIT",
-      "event_name_full": "凱旋MC battle THE GIANT KILLING 2 at 豊洲PIT",
+      "event_name": "凱旋MC battle THE GIANT KILLING 2",
+      "event_name_full": "凱旋MC battle THE GIANT KILLING 2",
       "event_name_simple": "凱旋MC battle THE GIANT KILLING 2 at 豊洲PIT",
       "event_date": "2024-03-16",
       "prize_money_winner": 300000,
       "prize_money_total": null,
       "event_category": "凱旋",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "winner_name": ""
     },
     {
       "event_id": "EVT0094",
-      "event_name": "渋谷レゲエ祭 vs 真ADRENALINE at CLUB CITTA'",
-      "event_name_full": "渋谷レゲエ祭 vs 真ADRENALINE at CLUB CITTA'",
+      "event_name": "渋谷レゲエ祭 vs 真ADRENALINE",
+      "event_name_full": "渋谷レゲエ祭 vs 真ADRENALINE",
       "event_name_simple": "渋谷レゲエ祭 vs 真ADRENALINE at CLUB CITTA'",
       "event_date": "2024-02-02",
       "prize_money_winner": 300000,
       "prize_money_total": null,
       "event_category": "ADRENALINE",
       "event_stage": "本戦",
-      "location": "",
+      "location": "CLUB CITTA'",
       "winner_name": ""
     },
     {
@@ -128,7 +128,7 @@
       "prize_money_total": null,
       "event_category": "KOK",
       "event_stage": "本戦",
-      "location": "",
+      "location": "豊洲PIT",
       "winner_name": "RAWAXXX(MOL53)"
     }
   ],
@@ -240,7 +240,7 @@
       "rank": 1,
       "mc_id": "MC0376",
       "mc_name": "呂布カルマ",
-      "total_prize_money": 9100000
+      "total_prize_money": 9600000
     },
     {
       "rank": 2,
