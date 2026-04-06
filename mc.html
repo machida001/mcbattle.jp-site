@@ -218,7 +218,7 @@
 
     .battle-event {
       display: block;
-      margin-top: 2px;
+      margin-top: 6px;
       color: #8f97aa;
       font-size: 0.93rem;
       line-height: 1.4;
@@ -226,10 +226,23 @@
     }
 
     .battle-event-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.32em;
       color: #8f97aa;
       text-decoration: none;
       border-bottom: none;
       cursor: pointer;
+      max-width: 100%;
+    }
+
+    .battle-event-link::after {
+      content: "›";
+      font-size: 0.95em;
+      line-height: 1;
+      opacity: 0.78;
+      transform: translateY(-0.02em);
+      flex: 0 0 auto;
     }
 
     .battle-event-link:visited {
@@ -238,13 +251,13 @@
     }
 
     .battle-event-link:hover {
-      color: #8f97aa;
+      color: #a3acc1;
       text-decoration: none;
-      opacity: 0.95;
+      opacity: 1;
     }
 
     .battle-event-link:active {
-      color: #8f97aa;
+      color: #aeb7cb;
       text-decoration: none;
     }
 
