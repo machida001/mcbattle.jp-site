@@ -143,8 +143,8 @@
       width: 100%;
       min-width: 0;
       border-radius: 16px;
-      background: transparent;
-      color: #ffffff;
+      background: #ffffff;
+      color: #11131a;
       font: inherit;
       cursor: pointer;
       transition:
@@ -154,14 +154,14 @@
         box-shadow .18s ease,
         opacity .18s ease;
       box-sizing: border-box;
-      border: 2px solid rgba(255,255,255,.88);
+      border: 2px solid rgba(255,255,255,.96);
     }
 
     .vt-main-button:hover,
     .vt-sub-button:hover{
       transform: translateY(-1px);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 0 20px rgba(255,255,255,.06);
+      background: #f3f4f6;
+      box-shadow: 0 0 20px rgba(255,255,255,.10);
     }
 
     .vt-main-button{
@@ -344,17 +344,17 @@
     .vt-dist-card-head,
     .vt-dist-row{
       display: grid;
-      grid-template-columns: minmax(0,1fr) 72px;
-      gap: 10px;
+      grid-template-columns: minmax(0,1fr) 52px 52px 58px;
+      gap: 8px;
       align-items: center;
     }
 
     .vt-dist-card-head{
-      padding: 12px 12px;
+      padding: 12px 10px;
       border-bottom: 1px solid var(--line);
       background: rgba(255,255,255,.03);
       color: #b8bfd0;
-      font-size: .88rem;
+      font-size: .83rem;
       font-weight: 800;
     }
 
@@ -364,7 +364,7 @@
     }
 
     .vt-dist-row{
-      padding: 12px 12px;
+      padding: 12px 10px;
       border-bottom: 1px solid var(--line);
     }
 
@@ -377,15 +377,15 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      font-size: .93rem;
+      font-size: .92rem;
       line-height: 1.35;
     }
 
-    .vt-dist-rate{
+    .vt-dist-metric{
       text-align: right;
       white-space: nowrap;
       font-variant-numeric: tabular-nums;
-      font-size: .93rem;
+      font-size: .9rem;
       line-height: 1.35;
     }
 
@@ -504,11 +504,39 @@
       }
 
       .vt-action-stack{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .vt-sub-button{
+        font-size: .82rem;
+        padding: 0 8px;
       }
 
       .vt-overlay-count{
         font-size: 2.8rem;
+      }
+
+      .vt-dist-card-head,
+      .vt-dist-row{
+        grid-template-columns: minmax(0,1fr) 42px 42px 50px;
+        gap: 6px;
+      }
+
+      .vt-dist-card-head{
+        padding: 10px 8px;
+        font-size: .74rem;
+      }
+
+      .vt-dist-row{
+        padding: 10px 8px;
+      }
+
+      .vt-dist-name{
+        font-size: .83rem;
+      }
+
+      .vt-dist-metric{
+        font-size: .8rem;
       }
     }
   </style>
@@ -577,7 +605,9 @@
             <h2 class="vt-table-title">全体分布</h2>
             <div class="vt-dist-card-head">
               <div>MC</div>
-              <div style="text-align:right;">優勝率</div>
+              <div style="text-align:right;">優勝</div>
+              <div style="text-align:right;">決勝</div>
+              <div style="text-align:right;">Best4</div>
             </div>
             <div id="dist-list" class="vt-dist-list"></div>
           </div>
@@ -615,6 +645,7 @@
     const HEAD_TO_HEAD_URL = "./data/head_to_head.json";
     const MAX_SELECTED = 8;
     const HEAD_TO_HEAD_SCORE_CAP = 50;
+    const SIM_COUNT = 100;
 
     let allCandidates = [];
     let strengthMap = {};
@@ -906,15 +937,23 @@
         return Math.random() < pA ? a : b;
       }
 
-      let round = [...participants];
-      while (round.length > 1) {
-        const nextRound = [];
-        for (let i = 0; i < round.length; i += 2) {
-          nextRound.push(playMatch(round[i], round[i + 1]));
-        }
-        round = nextRound;
+      const quarterWinners = [];
+      for (let i = 0; i < participants.length; i += 2) {
+        quarterWinners.push(playMatch(participants[i], participants[i + 1]));
       }
-      return round[0];
+
+      const semiWinners = [];
+      for (let i = 0; i < quarterWinners.length; i += 2) {
+        semiWinners.push(playMatch(quarterWinners[i], quarterWinners[i + 1]));
+      }
+
+      const champion = playMatch(semiWinners[0], semiWinners[1]);
+
+      return {
+        best4Ids: quarterWinners.map(mc => mc.mc_id),
+        finalIds: semiWinners.map(mc => mc.mc_id),
+        championId: champion.mc_id
+      };
     }
 
     function buildLongSummaryLines(sortedResults) {
@@ -925,20 +964,20 @@
       const lines = [];
 
       if (top) {
-        lines.push(`${top.mc_name} が最有力です。優勝回数は${top.wins}回、優勝率は${top.winRate}%でした。`);
+        lines.push(`${top.mc_name} が最有力です。優勝率は${top.championRate}%で、決勝到達率は${top.finalRate}%でした。`);
       }
 
       if (second || third) {
         const rivalParts = [];
-        if (second) rivalParts.push(`${second.mc_name}が対抗格で、優勝率は${second.winRate}%です。`);
-        if (third) rivalParts.push(`${third.mc_name}も射程圏にいて、優勝率は${third.winRate}%です。`);
+        if (second) rivalParts.push(`${second.mc_name}が対抗格で、優勝率は${second.championRate}%です。`);
+        if (third) rivalParts.push(`${third.mc_name}も射程圏にいて、優勝率は${third.championRate}%です。`);
         lines.push(rivalParts.join(" "));
       }
 
       if (top) {
-        if (top.winRate >= 50) {
+        if (top.championRate >= 50) {
           lines.push(`${top.mc_name}優勢がはっきり出ました。一強に近いシミュレーション結果です。`);
-        } else if (top.winRate >= 35) {
+        } else if (top.championRate >= 35) {
           lines.push(`${top.mc_name}は勝ち切る力に加えて、決勝まで行く安定感もあります。`);
         } else {
           lines.push(`上位が拮抗していて、組み合わせ次第で優勝が入れ替わる混戦傾向です。`);
@@ -961,7 +1000,7 @@
       const summaryLines = document.getElementById("summary-lines");
 
       const sortedResults = Object.values(results)
-        .sort((a, b) => b.winRate - a.winRate || a.mc_name.localeCompare(b.mc_name, "ja"));
+        .sort((a, b) => b.championRate - a.championRate || b.finalRate - a.finalRate || a.mc_name.localeCompare(b.mc_name, "ja"));
 
       if (sortedResults.length === 0) return;
 
@@ -971,7 +1010,9 @@
       distList.innerHTML = sortedResults.map(item => `
         <div class="vt-dist-row">
           <div class="vt-dist-name" title="${escapeHtml(item.mc_name)}">${escapeHtml(item.mc_name)}</div>
-          <div class="vt-dist-rate">${item.winRate}%</div>
+          <div class="vt-dist-metric">${item.championRate}%</div>
+          <div class="vt-dist-metric">${item.finalRate}%</div>
+          <div class="vt-dist-metric">${item.best4Rate}%</div>
         </div>
       `).join("");
       distCard.classList.remove("is-hidden");
@@ -1010,19 +1051,36 @@
         results[mc.mc_id] = {
           mc_id: mc.mc_id,
           mc_name: mc.mc_name,
-          wins: 0,
-          winRate: 0
+          championCount: 0,
+          finalCount: 0,
+          best4Count: 0,
+          championRate: 0,
+          finalRate: 0,
+          best4Rate: 0
         };
       });
 
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < SIM_COUNT; i++) {
         const shuffled = shuffleArray(selectedMcs);
-        const winner = simulateTournamentOnce(shuffled);
-        results[winner.mc_id].wins += 1;
+        const outcome = simulateTournamentOnce(shuffled);
+
+        outcome.best4Ids.forEach(id => {
+          if (results[id]) results[id].best4Count += 1;
+        });
+
+        outcome.finalIds.forEach(id => {
+          if (results[id]) results[id].finalCount += 1;
+        });
+
+        if (results[outcome.championId]) {
+          results[outcome.championId].championCount += 1;
+        }
       }
 
       Object.values(results).forEach(item => {
-        item.winRate = Math.round(item.wins);
+        item.championRate = Math.round((item.championCount / SIM_COUNT) * 100);
+        item.finalRate = Math.round((item.finalCount / SIM_COUNT) * 100);
+        item.best4Rate = Math.round((item.best4Count / SIM_COUNT) * 100);
       });
 
       return results;
