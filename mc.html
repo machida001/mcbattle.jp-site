@@ -69,33 +69,39 @@
 
     .page-header-block h1{
       margin: 0;
+      text-wrap: balance;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .page-header-meta{
-      margin: 10px 0 0;
+      margin: 8px 0 0;
       color: var(--muted);
-      font-size: 0.96rem;
-      line-height: 1.7;
+      font-size: 0.9rem;
+      line-height: 1.45;
     }
 
-    .mc-card-inner {
+    .mc-card-inner{
       padding-left: 12px;
       padding-right: 12px;
     }
 
-    .mc-card-inner .muted {
-      margin-bottom: 12px;
+    .mc-card-inner .muted{
+      margin-bottom: 9px;
+      font-size: 0.92rem;
+      line-height: 1.48;
     }
 
-    .more-button {
-      margin-top: 14px;
-      min-height: 44px;
-      padding: 0 18px;
+    .more-button{
+      margin-top: 12px;
+      min-height: 40px;
+      padding: 0 16px;
       border: 1px solid var(--line-strong);
-      border-radius: 12px;
+      border-radius: 11px;
       background: rgba(255,255,255,0.05);
       color: var(--text);
       font: inherit;
+      font-size: 0.92rem;
       font-weight: 700;
       cursor: pointer;
       transition:
@@ -106,75 +112,120 @@
         opacity 0.18s ease;
     }
 
-    .more-button:hover {
+    .more-button:hover{
       opacity: 1;
       transform: translateY(-1px);
       background: rgba(255,255,255,0.08);
       box-shadow: 0 0 18px rgba(135, 164, 255, 0.08);
     }
 
-    .is-hidden {
+    .is-hidden{
       display: none !important;
     }
 
-    .meta-list li.meta-list-block {
+    .meta-list{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta-list li{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.97rem;
+      line-height: 1.46;
+    }
+
+    .meta-list li:last-child{
+      border-bottom: none;
+      padding-bottom: 1px;
+    }
+
+    .meta-list .meta-label{
+      flex: 0 0 auto;
+      min-width: 6.2em;
+      color: #c7cedc;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .meta-list li > span:last-child{
+      flex: 1 1 auto;
+      min-width: 0;
+      color: var(--text);
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .meta-list li.meta-list-block{
       display: block;
     }
 
-    .meta-list-block .meta-label {
+    .meta-list-block .meta-label{
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+      min-width: 0;
     }
 
-    .meta-list-block .meta-value-block {
+    .meta-list-block .meta-value-block{
       display: block;
-      line-height: 1.8;
+      line-height: 1.52;
+      font-size: 0.95rem;
     }
 
     .meta-list-block .meta-value-block a,
-    .list-tight a {
+    .battle-list a,
+    .appearance-list a{
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 0.15em;
     }
 
-    .state-card-message {
+    .state-card-message{
       margin: 0;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.55;
+      font-size: 0.93rem;
     }
 
-    .state-card-message.error {
+    .state-card-message.error{
       color: var(--danger);
       font-weight: 700;
     }
 
-    .mc-note {
+    .mc-note{
       margin: 0;
       color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
 
-    .championship-line {
+    .championship-line{
       display: block;
-      line-height: 1.75;
+      line-height: 1.5;
     }
 
-    .championship-event-link {
+    .championship-line + .championship-line{
+      margin-top: 2px;
+    }
+
+    .championship-event-link{
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 0.15em;
     }
 
     .battle-section-heading,
-    .appearance-section-heading {
+    .appearance-section-heading{
       position: sticky;
       top: 8px;
       z-index: 5;
       display: inline-block;
-      margin: 0 0 10px;
-      padding: 7px 10px;
+      margin: 0 0 8px;
+      padding: 6px 9px;
       border: 1px solid rgba(216,180,106,0.18);
       border-radius: 10px;
       background:
@@ -187,45 +238,46 @@
         0 8px 18px rgba(0,0,0,0.12);
     }
 
-    .battle-list {
+    .battle-list,
+    .appearance-list{
       list-style: none;
       padding: 0;
       margin: 0;
     }
 
-    .battle-list li {
+    .battle-list li,
+    .appearance-list li{
       margin: 0;
-      padding: 12px 0;
+      padding: 10px 0;
       border-bottom: 1px solid var(--line);
     }
 
-    .battle-list li:last-child {
+    .battle-list li:last-child,
+    .appearance-list li:last-child{
       border-bottom: none;
     }
 
-    .battle-opponent {
+    .battle-opponent{
       display: block;
       min-width: 0;
-      line-height: 1.45;
-      font-weight: 500;
-    }
-
-    .battle-opponent a {
-      color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 0.15em;
-    }
-
-    .battle-event {
-      display: block;
-      margin-top: 6px;
-      color: #8f97aa;
-      font-size: 0.93rem;
-      line-height: 1.4;
+      line-height: 1.36;
+      font-size: 0.98rem;
+      font-weight: 600;
       word-break: break-word;
+      overflow-wrap: anywhere;
     }
 
-    .battle-event-link {
+    .battle-event{
+      display: block;
+      margin-top: 4px;
+      color: #8f97aa;
+      font-size: 0.88rem;
+      line-height: 1.34;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .battle-event-link{
       display: inline-flex;
       align-items: center;
       gap: 0.32em;
@@ -236,7 +288,7 @@
       max-width: 100%;
     }
 
-    .battle-event-link::after {
+    .battle-event-link::after{
       content: "›";
       font-size: 0.95em;
       line-height: 1;
@@ -245,63 +297,50 @@
       flex: 0 0 auto;
     }
 
-    .battle-event-link:visited {
+    .battle-event-link:visited{
       color: #8f97aa;
       text-decoration: none;
     }
 
-    .battle-event-link:hover {
+    .battle-event-link:hover{
       color: #a3acc1;
       text-decoration: none;
       opacity: 1;
     }
 
-    .battle-event-link:active {
+    .battle-event-link:active{
       color: #aeb7cb;
       text-decoration: none;
     }
 
-    .appearance-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .appearance-list li {
-      margin: 0;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .appearance-list li:last-child {
-      border-bottom: none;
-    }
-
     .appearance-link-wrap a,
-    .appearance-link-wrap span {
+    .appearance-link-wrap span{
       color: inherit;
       text-decoration: none;
       display: block;
     }
 
-    .appearance-link-wrap a:hover {
+    .appearance-link-wrap a:hover{
       opacity: 0.95;
     }
 
-    .appearance-name {
+    .appearance-name{
       display: block;
+      line-height: 1.34;
+      word-break: break-word;
+      overflow-wrap: anywhere;
       text-decoration: underline;
       text-underline-offset: 0.15em;
-      line-height: 1.4;
-      word-break: break-word;
+      font-size: 0.98rem;
+      font-weight: 500;
     }
 
-    .appearance-date {
+    .appearance-date{
       display: block;
       margin-top: 2px;
       color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.4;
+      font-size: 0.87rem;
+      line-height: 1.32;
     }
 
     @media (max-width: 640px) {
@@ -325,38 +364,106 @@
       }
 
       .page-header-block{
-        margin-bottom: 12px;
+        margin-bottom: 10px;
+      }
+
+      .page-header-block h1{
+        font-size: clamp(1.5rem, 5.3vw, 1.95rem);
+        line-height: 1.12;
       }
 
       .page-header-meta{
-        font-size: 0.92rem;
+        margin-top: 6px;
+        font-size: 0.82rem;
+        line-height: 1.34;
       }
 
-      .mc-card-inner {
+      .mc-card-inner{
         padding-left: 10px;
         padding-right: 10px;
       }
 
-      .meta-list-block .meta-label {
-        margin-bottom: 6px;
+      .mc-card-inner .muted{
+        margin-bottom: 7px;
+        font-size: 0.82rem;
+        line-height: 1.38;
       }
 
-      .battle-event,
-      .appearance-date,
-      .mc-note {
-        font-size: 0.9rem;
+      .meta-list li{
+        gap: 7px;
+        padding: 8px 0;
+        font-size: 0.87rem;
+        line-height: 1.34;
       }
 
-      .more-button {
-        min-height: 42px;
-        padding: 0 16px;
+      .meta-list li:last-child{
+        padding-bottom: 0;
+      }
+
+      .meta-list .meta-label{
+        min-width: 5em;
+        font-size: 0.85rem;
+      }
+
+      .meta-list-block .meta-label{
+        margin-bottom: 5px;
+      }
+
+      .meta-list-block .meta-value-block{
+        line-height: 1.42;
+        font-size: 0.86rem;
+      }
+
+      .state-card-message{
+        font-size: 0.82rem;
+        line-height: 1.38;
+      }
+
+      .mc-note{
+        font-size: 0.8rem;
+        line-height: 1.34;
       }
 
       .battle-section-heading,
-      .appearance-section-heading {
+      .appearance-section-heading{
         top: 6px;
-        margin-bottom: 8px;
-        padding: 6px 9px;
+        margin-bottom: 7px;
+        padding: 5px 8px;
+      }
+
+      .battle-list li,
+      .appearance-list li{
+        padding: 8px 0;
+      }
+
+      .battle-opponent{
+        font-size: 0.9rem;
+        line-height: 1.3;
+      }
+
+      .battle-event{
+        margin-top: 3px;
+        font-size: 0.8rem;
+        line-height: 1.28;
+      }
+
+      .appearance-name{
+        font-size: 0.9rem;
+        line-height: 1.3;
+      }
+
+      .appearance-date{
+        margin-top: 1px;
+        font-size: 0.79rem;
+        line-height: 1.26;
+      }
+
+      .more-button{
+        margin-top: 10px;
+        min-height: 38px;
+        padding: 0 14px;
+        border-radius: 10px;
+        font-size: 0.84rem;
       }
     }
   </style>
