@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-07T03:52:37.691Z",
+  "updated_at": "2026-04-08T03:32:09.956Z",
   "recent_events": [
     {
       "event_id": "EVT0032",
@@ -39,6 +39,19 @@
       "event_stage": "本戦",
       "location": "渋谷WOMB",
       "winner_name": "MC☆ニガリ a.k.a 赤い稲妻"
+    },
+    {
+      "event_id": "EVT0147",
+      "event_name": "Spotlight 2025",
+      "event_name_full": "Spotlight 2025",
+      "event_name_simple": "Spotlight 2025",
+      "event_date": "2025-12-20",
+      "prize_money_winner": 300000,
+      "prize_money_total": null,
+      "event_category": "Spotlight",
+      "event_stage": "本戦",
+      "location": "JOULE",
+      "winner_name": "レイジ"
     },
     {
       "event_id": "EVT0139",
@@ -117,19 +130,6 @@
       "event_stage": "本戦",
       "location": "HARLEM",
       "winner_name": "K-rush"
-    },
-    {
-      "event_id": "EVT0020",
-      "event_name": "UMB2024 GrandChanpionShip",
-      "event_name_full": "UMB2024 GrandChanpionShip",
-      "event_name_simple": "UMB2024本戦",
-      "event_date": "2024-12-28",
-      "prize_money_winner": 1000000,
-      "prize_money_total": null,
-      "event_category": "UMB 本戦",
-      "event_stage": "本戦",
-      "location": "Club CITTA",
-      "winner_name": "KOOPA"
     }
   ],
   "upcoming_events": [],
@@ -245,8 +245,8 @@
     {
       "rank": 2,
       "mc_id": "MC0046",
-      "mc_name": "Authority",
-      "total_prize_money": 12450000
+      "mc_name": "AUTHORITY",
+      "total_prize_money": 12550000
     },
     {
       "rank": 3,
@@ -258,7 +258,7 @@
       "rank": 4,
       "mc_id": "MC0214",
       "mc_name": "RAWAXXX(MOL53)",
-      "total_prize_money": 7500000
+      "total_prize_money": 7900000
     },
     {
       "rank": 5,
@@ -274,9 +274,9 @@
     },
     {
       "rank": 7,
-      "mc_id": "MC0756",
-      "mc_name": "COCRGI WHITE(MU-TON)",
-      "total_prize_money": 3700000
+      "mc_id": "MC0474",
+      "mc_name": "泰斗(裂固)",
+      "total_prize_money": 3600000
     },
     {
       "rank": 8,
@@ -286,9 +286,9 @@
     },
     {
       "rank": 9,
-      "mc_id": "MC0474",
-      "mc_name": "泰斗(裂固)",
-      "total_prize_money": 3300000
+      "mc_id": "MC0756",
+      "mc_name": "COCRGI WHITE(MU-TON)",
+      "total_prize_money": 3400000
     },
     {
       "rank": 10,

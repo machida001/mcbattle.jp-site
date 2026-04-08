@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-07T03:52:39.599Z",
-  "total": 871,
+  "updated_at": "2026-04-08T03:32:12.136Z",
+  "total": 899,
   "mcs": [
     {
       "mc_id": "MC0040",
@@ -20,6 +20,13 @@
       "mc_id": "MC0021",
       "mc_name": "R-指定",
       "mc_yomi": "あーるしてい",
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC0976",
+      "mc_name": "R-LINU$",
+      "mc_yomi": "あーるらいなす",
       "notes": "",
       "kana_group": "あ"
     },
@@ -101,9 +108,23 @@
       "kana_group": "あ"
     },
     {
+      "mc_id": "MC0967",
+      "mc_name": "天藍",
+      "mc_yomi": "あおりんご",
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
       "mc_id": "MC0479",
       "mc_name": "AKI",
       "mc_yomi": "あき",
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC0975",
+      "mc_name": "あきらめん",
+      "mc_yomi": "あきらめん",
       "notes": "",
       "kana_group": "あ"
     },
@@ -1361,6 +1382,13 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC0984",
+      "mc_name": "玉露",
+      "mc_yomi": "ぎょくろ",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0632",
       "mc_name": "Kyons",
       "mc_yomi": "きょんす",
@@ -1697,6 +1725,13 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC0985",
+      "mc_name": "けんしろー",
+      "mc_yomi": "けんしろー",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0174",
       "mc_name": "KENSHIN",
       "mc_yomi": "けんしん",
@@ -1977,6 +2012,13 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC0980",
+      "mc_name": "ZACK",
+      "mc_yomi": "ざっく",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0823",
       "mc_name": "札幌のギャグ男",
       "mc_yomi": "さっぽろのぎゃぐおとこ",
@@ -2148,6 +2190,13 @@
       "mc_id": "MC0145",
       "mc_name": "JAKE",
       "mc_yomi": "じぇいく",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0990",
+      "mc_name": "j-flag",
+      "mc_yomi": "じぇいふらっぐ",
       "notes": "",
       "kana_group": "さ"
     },
@@ -2684,6 +2733,20 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC0988",
+      "mc_name": "STEEL",
+      "mc_yomi": "すてぃーる",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0992",
+      "mc_name": "Sto$",
+      "mc_yomi": "すとす",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0289",
       "mc_name": "Strider",
       "mc_yomi": "すとらいだ",
@@ -2838,6 +2901,13 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC0986",
+      "mc_name": "sosume",
+      "mc_yomi": "そすめ",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0288",
       "mc_name": "SOTA-LOW",
       "mc_yomi": "そたろう",
@@ -2950,6 +3020,13 @@
       "kana_group": "た"
     },
     {
+      "mc_id": "MC0969",
+      "mc_name": "大超",
+      "mc_yomi": "たいちょう",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
       "mc_id": "MC0474",
       "mc_name": "泰斗(裂固)",
       "mc_yomi": "たいとakaれっこ",
@@ -2967,6 +3044,13 @@
       "mc_id": "MC0719",
       "mc_name": "TyLa",
       "mc_yomi": "たいら",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0983",
+      "mc_name": "道",
+      "mc_yomi": "たお",
       "notes": "",
       "kana_group": "た"
     },
@@ -3205,6 +3289,20 @@
       "mc_id": "MC0074",
       "mc_name": "Chakr@The3rd",
       "mc_yomi": "ちゃくらざさーど",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0970",
+      "mc_name": "ちゃくらメンソール",
+      "mc_yomi": "ちゃくらめんそーる",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0968",
+      "mc_name": "Chance",
+      "mc_yomi": "ちゃんす",
       "notes": "",
       "kana_group": "た"
     },
@@ -3601,6 +3699,13 @@
       "kana_group": "た"
     },
     {
+      "mc_id": "MC0979",
+      "mc_name": "ドルバケツ",
+      "mc_yomi": "どるばけつ",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
       "mc_id": "MC0630",
       "mc_name": "トンボの股間",
       "mc_yomi": "とんぼのこかん",
@@ -3632,6 +3737,13 @@
       "mc_id": "MC0960",
       "mc_name": "ナイトメア",
       "mc_yomi": "ないとめあ",
+      "notes": "",
+      "kana_group": "な"
+    },
+    {
+      "mc_id": "MC0994",
+      "mc_name": "9L!",
+      "mc_yomi": "ないんえる",
       "notes": "",
       "kana_group": "な"
     },
@@ -3804,6 +3916,13 @@
       "kana_group": "な"
     },
     {
+      "mc_id": "MC0972",
+      "mc_name": "ヌマバラルボール",
+      "mc_yomi": "ぬまばらるぼーる",
+      "notes": "",
+      "kana_group": "な"
+    },
+    {
       "mc_id": "MC0521",
       "mc_name": "noizy",
       "mc_yomi": "のいじ",
@@ -3930,6 +4049,13 @@
       "kana_group": "は"
     },
     {
+      "mc_id": "MC0991",
+      "mc_name": "VITE",
+      "mc_yomi": "ばいと",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
       "mc_id": "MC0915",
       "mc_name": "HYDRO",
       "mc_yomi": "はいどろ",
@@ -3965,6 +4091,13 @@
       "kana_group": "は"
     },
     {
+      "mc_id": "MC0987",
+      "mc_name": "PAW",
+      "mc_yomi": "ぱう",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
       "mc_id": "MC0848",
       "mc_name": "HOWZE",
       "mc_yomi": "はうぜ",
@@ -3975,6 +4108,13 @@
       "mc_id": "MC0658",
       "mc_name": "端雲 THE THIRD",
       "mc_yomi": "はじくもthethird",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0973",
+      "mc_name": "ハジメ",
+      "mc_yomi": "はじめ",
       "notes": "",
       "kana_group": "は"
     },
@@ -4318,6 +4458,13 @@
       "mc_id": "MC0386",
       "mc_name": "弘明",
       "mc_yomi": "ひろあき",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0981",
+      "mc_name": "binks",
+      "mc_yomi": "びんくす",
       "notes": "",
       "kana_group": "は"
     },
@@ -4840,6 +4987,13 @@
       "kana_group": "ま"
     },
     {
+      "mc_id": "MC0977",
+      "mc_name": "マーダー",
+      "mc_yomi": "まーだー",
+      "notes": "",
+      "kana_group": "ま"
+    },
+    {
       "mc_id": "MC0498",
       "mc_name": "MAIII",
       "mc_yomi": "まい",
@@ -4850,6 +5004,13 @@
       "mc_id": "MC0457",
       "mc_name": "Maiji",
       "mc_yomi": "まいじ",
+      "notes": "",
+      "kana_group": "ま"
+    },
+    {
+      "mc_id": "MC0978",
+      "mc_name": "mindboi",
+      "mc_yomi": "まいんどぼーい",
       "notes": "",
       "kana_group": "ま"
     },
@@ -5323,6 +5484,13 @@
       "kana_group": "や"
     },
     {
+      "mc_id": "MC0971",
+      "mc_name": "悠然",
+      "mc_yomi": "ゆうぜん",
+      "notes": "",
+      "kana_group": "や"
+    },
+    {
       "mc_id": "MC0309",
       "mc_name": "U-t.o.",
       "mc_yomi": "ゆーと",
@@ -5466,6 +5634,20 @@
       "mc_id": "MC0254",
       "mc_name": "Raika",
       "mc_yomi": "らいか",
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC0982",
+      "mc_name": "LITO",
+      "mc_yomi": "らいと",
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC0974",
+      "mc_name": "RIGHT",
+      "mc_yomi": "らいと",
       "notes": "",
       "kana_group": "ら"
     },
@@ -5883,6 +6065,13 @@
       "kana_group": "ら"
     },
     {
+      "mc_id": "MC0989",
+      "mc_name": "Laze",
+      "mc_yomi": "れいず",
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
       "mc_id": "MC0255",
       "mc_name": "REIDAM",
       "mc_yomi": "れいだむ",
@@ -5963,6 +6152,13 @@
       "mc_id": "MC0249",
       "mc_name": "R.O.G",
       "mc_yomi": "ろぐ",
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC0993",
+      "mc_name": "六文銭",
+      "mc_yomi": "ろくもんせん",
       "notes": "",
       "kana_group": "ら"
     },
