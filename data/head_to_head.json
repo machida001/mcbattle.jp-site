@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-04-08T10:15:08.370Z",
+  "updated_at": "2026-04-08T16:40:32.504Z",
   "min_matches": 2,
-  "total": 448,
+  "total": 453,
   "summaries": [
     {
       "pair_key": "MC0080__MC0214",
@@ -1044,6 +1044,19 @@
       "last_event_name": "戦極MCBATTLE 第30章 "
     },
     {
+      "pair_key": "MC0046__MC0451",
+      "mc_id_a": "MC0046",
+      "mc_name_a": "Authority",
+      "mc_id_b": "MC0451",
+      "mc_name_b": "Fuma no KTR",
+      "a_wins": 2,
+      "b_wins": 1,
+      "total_matches": 3,
+      "last_match_date": "2023-12-17",
+      "last_event_id": "EVT0093",
+      "last_event_name": "KING OF KINGS vs 真 ADRENALINE #6"
+    },
+    {
       "pair_key": "MC0077__MC0100",
       "mc_id_a": "MC0077",
       "mc_name_a": "CHICO CARLITO",
@@ -1233,6 +1246,19 @@
       "mc_name_b": "NAIKA MC",
       "a_wins": 1,
       "b_wins": 2,
+      "total_matches": 3,
+      "last_match_date": "2023-08-27",
+      "last_event_id": "EVT0073",
+      "last_event_name": "凱旋MC battle Special2023"
+    },
+    {
+      "pair_key": "MC0451__MC0686",
+      "mc_id_a": "MC0451",
+      "mc_name_a": "Fuma no KTR",
+      "mc_id_b": "MC0686",
+      "mc_name_b": "百足",
+      "a_wins": 2,
+      "b_wins": 1,
       "total_matches": 3,
       "last_match_date": "2023-08-27",
       "last_event_id": "EVT0073",
@@ -2331,6 +2357,19 @@
       "last_event_name": "凱旋MC battle 夏ノ陣 U-27"
     },
     {
+      "pair_key": "MC0465__MC0612",
+      "mc_id_a": "MC0465",
+      "mc_name_a": "Shamis",
+      "mc_id_b": "MC0612",
+      "mc_name_b": "龍鬼",
+      "a_wins": 1,
+      "b_wins": 1,
+      "total_matches": 2,
+      "last_match_date": "2024-08-25",
+      "last_event_id": "EVT0142",
+      "last_event_name": "凱旋MC battle 夏ノ陣 U-27"
+    },
+    {
       "pair_key": "MC0469__MC0612",
       "mc_id_a": "MC0469",
       "mc_name_a": "ミメイ",
@@ -2550,19 +2589,6 @@
       "last_match_date": "2023-12-30",
       "last_event_id": "EVT0122",
       "last_event_name": "戦極MCBATTLE 第30章 "
-    },
-    {
-      "pair_key": "MC0046__MC0451",
-      "mc_id_a": "MC0046",
-      "mc_name_a": "Authority",
-      "mc_id_b": "MC0451",
-      "mc_name_b": "Fuma no KTR",
-      "a_wins": 1,
-      "b_wins": 1,
-      "total_matches": 2,
-      "last_match_date": "2023-12-17",
-      "last_event_id": "EVT0093",
-      "last_event_name": "KING OF KINGS vs 真 ADRENALINE #6"
     },
     {
       "pair_key": "MC0100__MC0753",
@@ -2786,19 +2812,6 @@
       "last_event_name": "凱旋MC battle Special2023"
     },
     {
-      "pair_key": "MC0451__MC0686",
-      "mc_id_a": "MC0451",
-      "mc_name_a": "Fuma no KTR",
-      "mc_id_b": "MC0686",
-      "mc_name_b": "百足",
-      "a_wins": 2,
-      "b_wins": 0,
-      "total_matches": 2,
-      "last_match_date": "2023-08-27",
-      "last_event_id": "EVT0073",
-      "last_event_name": "凱旋MC battle Special2023"
-    },
-    {
       "pair_key": "MC0222__MC0279",
       "mc_id_a": "MC0222",
       "mc_name_a": "NAIKA MC",
@@ -2914,6 +2927,19 @@
       "last_match_date": "2023-06-09",
       "last_event_id": "EVT0150",
       "last_event_name": "Spotlight 2023東京編"
+    },
+    {
+      "pair_key": "MC0395__MC0451",
+      "mc_id_a": "MC0395",
+      "mc_name_a": "晋平太",
+      "mc_id_b": "MC0451",
+      "mc_name_b": "Fuma no KTR",
+      "a_wins": 1,
+      "b_wins": 1,
+      "total_matches": 2,
+      "last_match_date": "2023-05-28",
+      "last_event_id": "EVT0072",
+      "last_event_name": "凱旋MC battle 大阪ノ陣2023"
     },
     {
       "pair_key": "MC0434__MC0468",
@@ -3540,6 +3566,19 @@
       "last_event_name": "真ADRENALINE 春のMC BATTLE 三連祭2022"
     },
     {
+      "pair_key": "MC0300__MC0451",
+      "mc_id_a": "MC0300",
+      "mc_name_a": "TERU",
+      "mc_id_b": "MC0451",
+      "mc_name_b": "Fuma no KTR",
+      "a_wins": 0,
+      "b_wins": 2,
+      "total_matches": 2,
+      "last_match_date": "2022-03-25",
+      "last_event_id": "EVT0067",
+      "last_event_name": "凱旋MC BATTLE 春のMC BATTLE 三連祭2022"
+    },
+    {
       "pair_key": "MC0080__MC0272",
       "mc_id_a": "MC0080",
       "mc_name_a": "CIMA",
@@ -3837,6 +3876,19 @@
       "last_match_date": "2021-07-23",
       "last_event_id": "EVT0127",
       "last_event_name": "UMB 2021 THE CHOICE IS YOURS Vol.5"
+    },
+    {
+      "pair_key": "MC0027__MC0434",
+      "mc_id_a": "MC0027",
+      "mc_name_a": "ACE",
+      "mc_id_b": "MC0434",
+      "mc_name_b": "輪入道",
+      "a_wins": 0,
+      "b_wins": 2,
+      "total_matches": 2,
+      "last_match_date": "2021-07-04",
+      "last_event_id": "EVT0062",
+      "last_event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠名古屋"
     },
     {
       "pair_key": "MC0023__MC0689",
@@ -5380,6 +5432,19 @@
       "mc_name_b": "Lick-G",
       "a_wins": 2,
       "b_wins": 0,
+      "total_matches": 2,
+      "last_match_date": "2016-11-06",
+      "last_event_id": "EVT0041",
+      "last_event_name": "戦極MCBATTLE 第15章"
+    },
+    {
+      "pair_key": "MC0299__MC0456",
+      "mc_id_a": "MC0299",
+      "mc_name_a": "TENGG",
+      "mc_id_b": "MC0456",
+      "mc_name_b": "Lick-G",
+      "a_wins": 0,
+      "b_wins": 2,
       "total_matches": 2,
       "last_match_date": "2016-11-06",
       "last_event_id": "EVT0041",

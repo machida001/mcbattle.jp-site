@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-08T10:13:45.742Z",
-  "total": 930,
+  "updated_at": "2026-04-08T16:39:54.754Z",
+  "total": 914,
   "mcs": [
     {
       "mc_id": "MC0040",
@@ -783,13 +783,6 @@
       "mc_id": "MC0995",
       "mc_name": "MK34",
       "mc_yomi": "えむけーさーてぃふぉー",
-      "notes": "",
-      "kana_group": "あ"
-    },
-    {
-      "mc_id": "MC0734",
-      "mc_name": "MK34 a.k.a.Young Blood",
-      "mc_yomi": "えむけーさんじゅうよん",
       "notes": "",
       "kana_group": "あ"
     },
@@ -2180,13 +2173,6 @@
       "kana_group": "さ"
     },
     {
-      "mc_id": "MC0629",
-      "mc_name": "猿-TARØET",
-      "mc_yomi": "さるたーげっと",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
       "mc_id": "MC0809",
       "mc_name": "Salvador Mani",
       "mc_yomi": "さるばどーるまに",
@@ -2253,13 +2239,6 @@
       "mc_id": "MC0273",
       "mc_name": "SEA-MEN",
       "mc_yomi": "しーめん",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0900",
-      "mc_name": "G YARD",
-      "mc_yomi": "じーやーど",
       "notes": "",
       "kana_group": "さ"
     },
@@ -2505,13 +2484,6 @@
       "mc_id": "MC0143",
       "mc_name": "Jafem",
       "mc_yomi": "じゃふぇむ",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0736",
-      "mc_name": "$hamis",
-      "mc_yomi": "しゃみす",
       "notes": "",
       "kana_group": "さ"
     },
@@ -3699,13 +3671,6 @@
       "kana_group": "た"
     },
     {
-      "mc_id": "MC0650",
-      "mc_name": "TENNG",
-      "mc_yomi": "てんぐ",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
       "mc_id": "MC0870",
       "mc_name": "天狗",
       "mc_yomi": "てんぐ",
@@ -4735,13 +4700,6 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0773",
-      "mc_name": "藤KooS",
-      "mc_yomi": "ふじkoos",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC1018",
       "mc_name": "藤 優人",
       "mc_yomi": "ふじゆうと",
@@ -4787,13 +4745,6 @@
       "mc_id": "MC0634",
       "mc_name": "ブッダ",
       "mc_yomi": "ぶっだ",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0069",
-      "mc_name": "Buppon",
-      "mc_yomi": "ぶっぽん",
       "notes": "",
       "kana_group": "は"
     },
@@ -4896,13 +4847,6 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0818",
-      "mc_name": "buntes",
-      "mc_yomi": "ぶんてす",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC0550",
       "mc_name": "bunTes",
       "mc_yomi": "ぶんてす",
@@ -4990,13 +4934,6 @@
       "mc_id": "MC0851",
       "mc_name": "HENAN",
       "mc_yomi": "へなん",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0721",
-      "mc_name": "venom",
-      "mc_yomi": "べのむ",
       "notes": "",
       "kana_group": "は"
     },
@@ -5218,13 +5155,6 @@
       "kana_group": "ま"
     },
     {
-      "mc_id": "MC0772",
-      "mc_name": "真ACE",
-      "mc_yomi": "まことace",
-      "notes": "",
-      "kana_group": "ま"
-    },
-    {
       "mc_id": "MC0432",
       "mc_name": "誠 a.k.a JAFEM",
       "mc_yomi": "まことakajafem",
@@ -5235,13 +5165,6 @@
       "mc_id": "MC0798",
       "mc_name": "雅",
       "mc_yomi": "まさ",
-      "notes": "",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0679",
-      "mc_name": "Masa & トラヴィス・スットコ",
-      "mc_yomi": "まさあんど",
       "notes": "",
       "kana_group": "ま"
     },
@@ -5318,13 +5241,6 @@
     {
       "mc_id": "MC0202",
       "mc_name": "MAD ASH",
-      "mc_yomi": "まっどあっしゅ",
-      "notes": "",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0217",
-      "mc_name": "MUD ASH",
       "mc_yomi": "まっどあっしゅ",
       "notes": "",
       "kana_group": "ま"
@@ -5890,13 +5806,6 @@
       "kana_group": "ら"
     },
     {
-      "mc_id": "MC0263",
-      "mc_name": "Rugshot",
-      "mc_yomi": "らぐしょっと",
-      "notes": "",
-      "kana_group": "ら"
-    },
-    {
       "mc_id": "MC0262",
       "mc_name": "RUGSHOT",
       "mc_yomi": "らぐしょっと",
@@ -6032,13 +5941,6 @@
     {
       "mc_id": "MC0740",
       "mc_name": "River kid",
-      "mc_yomi": "りばーきっど",
-      "notes": "",
-      "kana_group": "ら"
-    },
-    {
-      "mc_id": "MC1006",
-      "mc_name": "Riverkid",
       "mc_yomi": "りばーきっど",
       "notes": "",
       "kana_group": "ら"
@@ -6194,13 +6096,6 @@
       "mc_id": "MC0259",
       "mc_name": "Route",
       "mc_yomi": "るーと",
-      "notes": "",
-      "kana_group": "ら"
-    },
-    {
-      "mc_id": "MC0622",
-      "mc_name": "Rude-a",
-      "mc_yomi": "るーどあるふぁ",
       "notes": "",
       "kana_group": "ら"
     },
@@ -6425,13 +6320,6 @@
       "mc_id": "MC0793",
       "mc_name": "ワイジニアス",
       "mc_yomi": "わいじにあす",
-      "notes": "",
-      "kana_group": "わ"
-    },
-    {
-      "mc_id": "MC0559",
-      "mc_name": "WATA the FreeMan",
-      "mc_yomi": "わたざ",
       "notes": "",
       "kana_group": "わ"
     },

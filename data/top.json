@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-08T10:13:43.872Z",
+  "updated_at": "2026-04-08T16:39:53.154Z",
   "recent_events": [
     {
       "event_id": "EVT0032",
@@ -77,7 +77,7 @@
       "event_category": "戦極MC BATTLE",
       "event_stage": "本戦",
       "location": "Zepp Osaka Bayside",
-      "winner_name": ""
+      "winner_name": "NAIKA MC"
     },
     {
       "event_id": "EVT0138",
@@ -136,103 +136,103 @@
   "score_rankings": [
     {
       "rank": 1,
-      "mc_id": "MC0080",
-      "mc_name": "CIMA",
-      "score": 2021.15,
-      "total_matches": 57,
-      "wins": 37,
-      "losses": 20,
-      "last_match_date": "2025-12-20"
-    },
-    {
-      "rank": 2,
-      "mc_id": "MC0434",
-      "mc_name": "輪入道",
-      "score": 1998.88,
-      "total_matches": 49,
-      "wins": 36,
-      "losses": 13,
-      "last_match_date": "2025-12-20"
-    },
-    {
-      "rank": 3,
       "mc_id": "MC0023",
       "mc_name": "S-kainê",
-      "score": 1978.39,
+      "score": 1882.34,
       "total_matches": 32,
       "wins": 25,
       "losses": 7,
       "last_match_date": "2025-05-24"
     },
     {
-      "rank": 4,
+      "rank": 2,
       "mc_id": "MC0271",
       "mc_name": "SAM",
-      "score": 1974.78,
+      "score": 1879.71,
       "total_matches": 14,
       "wins": 11,
       "losses": 3,
       "last_match_date": "2025-05-24"
     },
     {
-      "rank": 5,
-      "mc_id": "MC0214",
-      "mc_name": "RAWAXXX(MOL53)",
-      "score": 1965.9,
-      "total_matches": 83,
-      "wins": 53,
-      "losses": 30,
+      "rank": 3,
+      "mc_id": "MC0434",
+      "mc_name": "輪入道",
+      "score": 1875,
+      "total_matches": 49,
+      "wins": 36,
+      "losses": 13,
       "last_match_date": "2025-12-20"
     },
     {
-      "rank": 6,
+      "rank": 4,
+      "mc_id": "MC0080",
+      "mc_name": "CIMA",
+      "score": 1852.29,
+      "total_matches": 57,
+      "wins": 37,
+      "losses": 20,
+      "last_match_date": "2025-12-20"
+    },
+    {
+      "rank": 5,
       "mc_id": "MC0373",
       "mc_name": "句潤",
-      "score": 1964.29,
+      "score": 1837.49,
       "total_matches": 25,
       "wins": 17,
       "losses": 8,
       "last_match_date": "2026-01-10"
     },
     {
-      "rank": 7,
-      "mc_id": "MC0376",
-      "mc_name": "呂布カルマ",
-      "score": 1944.94,
-      "total_matches": 69,
-      "wins": 45,
-      "losses": 24,
-      "last_match_date": "2025-02-02"
+      "rank": 6,
+      "mc_id": "MC0214",
+      "mc_name": "RAWAXXX(MOL53)",
+      "score": 1827.49,
+      "total_matches": 83,
+      "wins": 53,
+      "losses": 30,
+      "last_match_date": "2025-12-20"
     },
     {
-      "rank": 8,
+      "rank": 7,
       "mc_id": "MC0046",
       "mc_name": "Authority",
-      "score": 1925.9,
+      "score": 1821.67,
       "total_matches": 23,
       "wins": 17,
       "losses": 6,
       "last_match_date": "2024-01-08"
     },
     {
-      "rank": 9,
+      "rank": 8,
       "mc_id": "MC0100",
       "mc_name": "DOTAMA",
-      "score": 1923.43,
-      "total_matches": 85,
-      "wins": 52,
+      "score": 1792.61,
+      "total_matches": 86,
+      "wins": 53,
       "losses": 33,
       "last_match_date": "2026-01-04"
     },
     {
+      "rank": 9,
+      "mc_id": "MC0376",
+      "mc_name": "呂布カルマ",
+      "score": 1789.14,
+      "total_matches": 69,
+      "wins": 45,
+      "losses": 24,
+      "last_match_date": "2025-02-02"
+    },
+    {
       "rank": 10,
-      "mc_id": "MC0222",
-      "mc_name": "NAIKA MC",
-      "score": 1899.33,
-      "total_matches": 39,
-      "wins": 25,
-      "losses": 14,
-      "last_match_date": "2026-01-10"
+      "mc_id": "MC0469",
+      "mc_name": "ミメイ",
+      "score": 1789,
+      "total_matches": 81,
+      "wins": 53,
+      "losses": 28,
+      "last_match_date": "2026-01-04"
     }
   ],
   "prize_rankings": [
