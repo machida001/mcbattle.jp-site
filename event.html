@@ -374,6 +374,12 @@
       return 999999;
     }
 
+    function isTwoColumnRound(roundName) {
+      const normalized = normalizeRoundLabel(roundName);
+      if (!normalized || normalized === "Final") return false;
+      return /^Best\d+$/i.test(normalized);
+    }
+
     function getRoundMatches(groupedMatches, roundLabel) {
       const group = groupedMatches.find((g) => normalizeRoundLabel(g.round_name) === roundLabel);
       return group && Array.isArray(group.matches) ? group.matches : [];
@@ -477,6 +483,14 @@
           border: none;
           color: inherit;
         }
+        .match-list.is-two-column {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 8px 10px;
+        }
+        .match-list.is-two-column > li {
+          margin: 0;
+        }
         .match-row-wrap {
           display: block;
         }
@@ -489,6 +503,7 @@
           border: 1px solid rgba(255,255,255,0.14);
           color: inherit;
           box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
+          min-height: 100%;
         }
         .match-single-line {
           display: flex;
@@ -557,6 +572,9 @@
           }
           .match-list > li {
             margin-bottom: 6px;
+          }
+          .match-list.is-two-column {
+            display: block;
           }
           .match-row-box {
             padding: 6px 9px;
@@ -681,7 +699,7 @@
           block.appendChild(heading);
 
           const ul = document.createElement("ul");
-          ul.className = "match-list";
+          ul.className = "match-list" + (isTwoColumnRound(roundName) ? " is-two-column" : "");
 
           const matches = Array.isArray(group.matches) ? group.matches : [];
 
