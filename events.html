@@ -244,8 +244,13 @@
       return String(e.winner_name || "").trim();
     }
 
-    function getCategory(e) {
-      return String(e.event_category || "").trim() || "その他";
+    function getCategoryName(e) {
+      return String(e.category_name || "").trim() || String(e.event_category || "").trim() || "その他";
+    }
+
+    function getCategoryShowOrder(e) {
+      const n = Number(e.category_show_order);
+      return Number.isFinite(n) ? n : 999999;
     }
 
     function getDateValue(v) {
@@ -269,33 +274,32 @@
       const map = new Map();
 
       events.forEach(event => {
-        const category = getCategory(event);
-        if (!map.has(category)) {
-          map.set(category, []);
+        const categoryName = getCategoryName(event);
+        const key = `${getCategoryShowOrder(event)}__${categoryName}`;
+
+        if (!map.has(key)) {
+          map.set(key, {
+            category_name: categoryName,
+            category_show_order: getCategoryShowOrder(event),
+            items: []
+          });
         }
-        map.get(category).push(event);
+
+        map.get(key).items.push(event);
       });
 
-      const groups = Array.from(map.entries()).map(([category, items]) => {
-        const sortedItems = items.slice().sort(compareEventsByDateDesc);
-
-        let newestDate = null;
-        sortedItems.forEach(item => {
-          const d = getDateValue(item.event_date);
-          if (d && (!newestDate || d > newestDate)) newestDate = d;
-        });
-
+      const groups = Array.from(map.values()).map(group => {
         return {
-          category,
-          items: sortedItems,
-          newestDate
+          category: group.category_name,
+          category_show_order: group.category_show_order,
+          items: group.items.slice().sort(compareEventsByDateDesc)
         };
       });
 
       groups.sort((a, b) => {
-        if (a.newestDate && b.newestDate) return b.newestDate - a.newestDate;
-        if (a.newestDate) return -1;
-        if (b.newestDate) return 1;
+        if (a.category_show_order !== b.category_show_order) {
+          return a.category_show_order - b.category_show_order;
+        }
         return a.category.localeCompare(b.category, "ja");
       });
 
