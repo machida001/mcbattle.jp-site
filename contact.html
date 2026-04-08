@@ -94,6 +94,23 @@
       font-size:0.95rem;
     }
 
+    .contact-context{
+      margin:0 0 12px;
+      padding:11px 12px;
+      border-radius:12px;
+      border:1px solid rgba(216,180,106,.22);
+      background:rgba(216,180,106,.06);
+      color:var(--text);
+      line-height:1.62;
+      font-size:0.93rem;
+    }
+
+    .contact-context-label{
+      color:var(--accent);
+      font-weight:700;
+      margin-right:.4em;
+    }
+
     .contact-form{
       display:flex;
       flex-direction:column;
@@ -244,6 +261,11 @@
         border-radius:16px;
       }
 
+      .contact-context{
+        font-size:0.86rem;
+        line-height:1.5;
+      }
+
       .contact-input,
       .contact-select{
         min-height:42px;
@@ -285,7 +307,10 @@
       <p id="contact-alert-success" class="contact-alert success honeypot">送信しました。ありがとうございます。</p>
       <p id="contact-alert-error" class="contact-alert error honeypot">送信に失敗しました。時間をおいてもう一度お試しください。</p>
 
+      <p id="contact-context" class="contact-context honeypot"></p>
+
       <form
+        id="contact-form"
         class="contact-form"
         method="post"
         action="YOUR_APPS_SCRIPT_WEBAPP_URL"
@@ -324,6 +349,8 @@
           ></textarea>
         </div>
 
+        <input id="contact-context-type" type="hidden" name="context_type" value="" />
+        <input id="contact-context-name" type="hidden" name="context_name" value="" />
         <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" />
 
         <input type="hidden" name="redirect_success" value="https://machida001.github.io/mcbattle.jp-site/contact.html?sent=1" />
@@ -345,6 +372,15 @@
       const params = new URLSearchParams(window.location.search);
       const successEl = document.getElementById("contact-alert-success");
       const errorEl = document.getElementById("contact-alert-error");
+      const contextEl = document.getElementById("contact-context");
+      const titleEl = document.getElementById("contact-title");
+      const messageEl = document.getElementById("contact-message");
+      const contextTypeEl = document.getElementById("contact-context-type");
+      const contextNameEl = document.getElementById("contact-context-name");
+
+      const type = params.get("type") || "";
+      const eventName = params.get("event_name") || "";
+      const mcName = params.get("mc_name") || "";
 
       if (params.get("sent") === "1") {
         successEl.classList.remove("honeypot");
@@ -352,6 +388,30 @@
 
       if (params.get("error") === "1") {
         errorEl.classList.remove("honeypot");
+      }
+
+      function setMessageIfEmpty(text) {
+        if (!messageEl.value.trim()) {
+          messageEl.value = text;
+        }
+      }
+
+      if (type === "event" && eventName) {
+        contextEl.innerHTML = `<span class="contact-context-label">対象大会:</span>${eventName}`;
+        contextEl.classList.remove("honeypot");
+        titleEl.value = "試合結果等のご意見";
+        contextTypeEl.value = "event";
+        contextNameEl.value = eventName;
+        setMessageIfEmpty(`【対象大会】${eventName}\n\n`);
+      }
+
+      if (type === "mc" && mcName) {
+        contextEl.innerHTML = `<span class="contact-context-label">対象MC:</span>${mcName}`;
+        contextEl.classList.remove("honeypot");
+        titleEl.value = "MCデータのご意見";
+        contextTypeEl.value = "mc";
+        contextNameEl.value = mcName;
+        setMessageIfEmpty(`【対象MC】${mcName}\n\n`);
       }
     })();
   </script>
