@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>シミュレーション調整ツール | MCBattle.jp</title>
+  <meta name="description" content="仮想MCバトルの勝率変換式や相性補正の強さを比較するための調整用ページです。">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .tuner-hero{
+      padding: 0 0 10px;
+    }
+
+    .tuner-title{
+      margin: 0;
+      color: var(--text);
+      line-height: 1.08;
+    }
+
+    .tuner-lead{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.72;
+      max-width: 760px;
+    }
+
+    .tuner-grid{
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .tuner-card-inner{
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .tuner-section-title{
+      margin: 0 0 12px;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
+    .tuner-form{
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .tuner-field{
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .tuner-label{
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .tuner-help{
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .tuner-input,
+    .tuner-select,
+    .tuner-textarea{
+      width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+      box-sizing: border-box;
+      transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background-color 0.18s ease;
+    }
+
+    .tuner-input,
+    .tuner-select{
+      min-height: 42px;
+      padding: 0 12px;
+    }
+
+    .tuner-textarea{
+      min-height: 88px;
+      padding: 10px 12px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .tuner-input:focus,
+    .tuner-select:focus,
+    .tuner-textarea:focus{
+      border-color: var(--line-strong);
+      box-shadow: 0 0 0 3px rgba(216,180,106,0.08);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .tuner-chip-list{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tuner-chip{
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      min-height: 38px;
+      padding: 0 12px;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        background-color 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .tuner-chip:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .tuner-chip.is-active{
+      border-color: rgba(216,180,106,0.44);
+      background: rgba(216,180,106,0.12);
+      color: #fff3d2;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+    }
+
+    .tuner-selected{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-height: 8px;
+    }
+
+    .selected-item{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 0 10px 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(216,180,106,0.28);
+      background: rgba(216,180,106,0.08);
+      color: var(--text);
+      font-size: 0.88rem;
+      line-height: 1.2;
+      max-width: 100%;
+    }
+
+    .selected-name{
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .selected-remove{
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.95rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0;
+      flex: 0 0 auto;
+    }
+
+    .selected-remove:hover{
+      color: var(--text);
+    }
+
+    .tuner-actions{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 4px;
+    }
+
+    .tuner-button{
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      min-height: 42px;
+      padding: 0 16px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        background-color 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .tuner-button:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+    }
+
+    .tuner-button.is-primary{
+      border-color: rgba(143,179,255,0.34);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)),
+        linear-gradient(180deg, rgba(143,179,255,0.18), rgba(143,179,255,0.07));
+      color: #eef4ff;
+    }
+
+    .tuner-button.is-primary:hover{
+      border-color: rgba(143,179,255,0.52);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02)),
+        linear-gradient(180deg, rgba(143,179,255,0.24), rgba(143,179,255,0.10));
+    }
+
+    .tuner-button:disabled{
+      opacity: 0.55;
+      cursor: default;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .tuner-status{
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .tuner-status.error{
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .tuner-status.success{
+      color: var(--accent);
+    }
+
+    .compare-table-wrap{
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .compare-table{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    .compare-table th,
+    .compare-table td{
+      padding: 11px 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      text-align: left;
+      vertical-align: middle;
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .compare-table th{
+      color: #c9cfdd;
+      font-weight: 800;
+      background: rgba(255,255,255,0.025);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .compare-table td.is-num,
+    .compare-table th.is-num{
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .compare-table tr.is-highlight td{
+      background: rgba(216,180,106,0.06);
+    }
+
+    .result-pill{
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 0 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.8rem;
+      font-weight: 700;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .result-pill.is-best{
+      background: rgba(216,180,106,0.12);
+      border-color: rgba(216,180,106,0.26);
+      color: #fff0c8;
+    }
+
+    .tuner-note-list{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.64;
+    }
+
+    .candidate-list{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 2px;
+    }
+
+    .candidate-button{
+      appearance: none;
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      padding: 9px 10px;
+      cursor: pointer;
+      transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        background-color 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .candidate-button:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .candidate-button.is-active{
+      border-color: rgba(216,180,106,0.36);
+      background: rgba(216,180,106,0.10);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+    }
+
+    .candidate-name{
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.35;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .candidate-meta{
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 960px){
+      .tuner-grid{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px){
+      .tuner-card-inner{
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .tuner-lead{
+        margin-top: 8px;
+        font-size: 0.87rem;
+        line-height: 1.6;
+      }
+
+      .tuner-section-title{
+        margin-bottom: 10px;
+        font-size: 0.96rem;
+      }
+
+      .candidate-list{
+        grid-template-columns: 1fr;
+        gap: 7px;
+        max-height: 300px;
+      }
+
+      .tuner-chip{
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 0.84rem;
+      }
+
+      .tuner-button{
+        min-height: 40px;
+        font-size: 0.86rem;
+      }
+
+      .compare-table th,
+      .compare-table td{
+        padding: 10px 8px;
+        font-size: 0.84rem;
+      }
+
+      .tuner-note-list{
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <div class="page-top">
+      <p class="page-mini-logo"><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
+
+      <nav class="page-nav-pills" aria-label="主要メニュー">
+        <a class="page-nav-pill" href="events.html">大会一覧</a>
+        <a class="page-nav-pill" href="mcs.html">MC一覧</a>
+        <span class="page-nav-break" aria-hidden="true"></span>
+        <a class="page-nav-pill" href="rankings.html">スコアランキング</a>
+        <a class="page-nav-pill" href="virtual_tournament.html">仮想シミュレーション</a>
+      </nav>
+
+      <section class="tuner-hero">
+        <h1 class="tuner-title">シミュレーション調整ツール</h1>
+        <p class="tuner-lead">
+          8人を選び、勝率変換式の係数や相性補正の強さを変えながら、優勝率分布の差を比較するための調整ページです。
+          現在の <code>rankings.json</code> と <code>head_to_head.json</code> を直接読み込みます。
+        </p>
+      </section>
+    </div>
+
+    <div class="tuner-grid">
+      <section class="card">
+        <div class="tuner-card-inner">
+          <h2 class="tuner-section-title">入力条件</h2>
+
+          <div class="tuner-form">
+            <div class="tuner-field">
+              <label class="tuner-label" for="candidate-search">MC検索</label>
+              <input id="candidate-search" class="tuner-input" type="text" placeholder="MC名で検索" />
+            </div>
+
+            <div class="tuner-field">
+              <div class="tuner-label">参加MC（8人）</div>
+              <div id="selected-mcs" class="tuner-selected"></div>
+              <div class="tuner-help">8人ちょうど選ぶと比較実行できます。</div>
+            </div>
+
+            <div class="tuner-field">
+              <div class="tuner-label">候補一覧</div>
+              <div id="candidate-list" class="candidate-list"></div>
+            </div>
+
+            <div class="tuner-field">
+              <label class="tuner-label" for="divisors-input">比較する勝率係数</label>
+              <input id="divisors-input" class="tuner-input" type="text" value="120,160,180,200,220" />
+              <div class="tuner-help">例: 120,160,180,200,220</div>
+            </div>
+
+            <div class="tuner-field">
+              <div class="tuner-label">相性補正</div>
+              <div id="h2h-mode-chips" class="tuner-chip-list"></div>
+            </div>
+
+            <div class="tuner-field">
+              <label class="tuner-label" for="sim-count-input">シミュレーション回数</label>
+              <input id="sim-count-input" class="tuner-input" type="number" min="100" step="100" value="3000" />
+            </div>
+
+            <div class="tuner-field">
+              <label class="tuner-label" for="target-a-select">比較したいMC A</label>
+              <select id="target-a-select" class="tuner-select"></select>
+            </div>
+
+            <div class="tuner-field">
+              <label class="tuner-label" for="target-b-select">比較したいMC B</label>
+              <select id="target-b-select" class="tuner-select"></select>
+            </div>
+
+            <div class="tuner-actions">
+              <button id="run-button" class="tuner-button is-primary" type="button">比較実行</button>
+              <button id="preset-shinpeita-button" class="tuner-button" type="button">晋平太/FORK系の例を入れる</button>
+              <button id="clear-button" class="tuner-button" type="button">選択クリア</button>
+            </div>
+
+            <p id="tuner-status" class="tuner-status">rankings.json を読み込み中...</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="tuner-card-inner">
+          <h2 class="tuner-section-title">比較結果</h2>
+
+          <div class="compare-table-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>設定</th>
+                  <th class="is-num">A優勝率</th>
+                  <th class="is-num">B優勝率</th>
+                  <th class="is-num">A-B差</th>
+                  <th class="is-num">A vs B 1戦勝率</th>
+                  <th class="is-num">最大優勝率</th>
+                  <th>評価</th>
+                </tr>
+              </thead>
+              <tbody id="compare-result-body">
+                <tr>
+                  <td colspan="7" class="tuner-status">まだ結果がありません</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <h3 class="tuner-section-title" style="font-size:.94rem;">補足</h3>
+          <div class="tuner-note-list">
+            <div>・A優勝率 / B優勝率 は、選んだ8人で固定ブラケットを多数回まわした時の優勝率です。</div>
+            <div>・A vs B 1戦勝率 は、その2人が直接当たった時の理論勝率です。</div>
+            <div>・「最大優勝率」が高すぎる設定ほど、一強に見えやすいです。</div>
+            <div>・相性補正は <code>head_to_head.json</code> がある場合のみ反映されます。</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const RANKINGS_JSON_URL = "./data/rankings.json";
+    const HEAD_TO_HEAD_JSON_URL = "./data/head_to_head.json";
+    const REQUIRED_MC_COUNT = 8;
+
+    const H2H_PRESETS = [
+      { key: "off", label: "なし", diff1: 0, diff2: 0, diff3: 0 },
+      { key: "weak", label: "弱", diff1: 8, diff2: 20, diff3: 30 },
+      { key: "medium", label: "中", diff1: 12, diff2: 35, diff3: 50 },
+      { key: "strong", label: "強", diff1: 16, diff2: 45, diff3: 65 }
+    ];
+
+    const state = {
+      rankings: [],
+      h2hMap: {},
+      selectedIds: [],
+      activeH2H: "weak"
+    };
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function setStatus(message, mode) {
+      const el = document.getElementById("tuner-status");
+      el.textContent = message || "";
+      el.classList.remove("error", "success");
+      if (mode === "error") el.classList.add("error");
+      if (mode === "success") el.classList.add("success");
+    }
+
+    async function loadJson(url) {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
+    }
+
+    function normalizePairKey(a, b) {
+      const x = String(a || "");
+      const y = String(b || "");
+      return x <= y ? `${x}__${y}` : `${y}__${x}`;
+    }
+
+    function buildH2HMap(payload) {
+      const map = {};
+      const list = Array.isArray(payload?.summaries) ? payload.summaries : [];
+      list.forEach((item) => {
+        const a = String(item.mc_id_a || "");
+        const b = String(item.mc_id_b || "");
+        if (!a || !b) return;
+        map[normalizePairKey(a, b)] = {
+          mc_id_a: a,
+          mc_id_b: b,
+          a_wins: Number(item.a_wins || 0),
+          b_wins: Number(item.b_wins || 0),
+          total_matches: Number(item.total_matches || 0)
+        };
+      });
+      return map;
+    }
+
+    function getCurrentScore(item) {
+      const raw = item.current_score ?? item.score ?? item.current_strength_score_v2 ?? "";
+      const n = Number(raw);
+      return Number.isFinite(n) ? n : 1500;
+    }
+
+    function compareRankings(a, b) {
+      const sa = getCurrentScore(a);
+      const sb = getCurrentScore(b);
+      if (sb !== sa) return sb - sa;
+      return String(a.mc_name || "").localeCompare(String(b.mc_name || ""), "ja");
+    }
+
+    function getSelectedRankingItems() {
+      const map = new Map(state.rankings.map(item => [String(item.mc_id), item]));
+      return state.selectedIds
+        .map(id => map.get(String(id)))
+        .filter(Boolean);
+    }
+
+    function renderH2HChips() {
+      const wrap = document.getElementById("h2h-mode-chips");
+      wrap.innerHTML = H2H_PRESETS.map(preset => `
+        <button
+          type="button"
+          class="tuner-chip ${preset.key === state.activeH2H ? "is-active" : ""}"
+          data-h2h-key="${escapeHtml(preset.key)}"
+        >
+          ${escapeHtml(preset.label)}
+        </button>
+      `).join("");
+
+      wrap.querySelectorAll("[data-h2h-key]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          state.activeH2H = btn.dataset.h2hKey;
+          renderH2HChips();
+        });
+      });
+    }
+
+    function renderSelectedMcs() {
+      const wrap = document.getElementById("selected-mcs");
+      const items = getSelectedRankingItems();
+
+      if (!items.length) {
+        wrap.innerHTML = `<span class="tuner-help">まだ選択されていません</span>`;
+        syncTargetSelects();
+        return;
+      }
+
+      wrap.innerHTML = items.map(item => `
+        <span class="selected-item">
+          <span class="selected-name">${escapeHtml(item.mc_name || "")}</span>
+          <button type="button" class="selected-remove" data-remove-id="${escapeHtml(item.mc_id)}">×</button>
+        </span>
+      `).join("");
+
+      wrap.querySelectorAll("[data-remove-id]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          removeSelectedMc(btn.dataset.removeId);
+        });
+      });
+
+      syncTargetSelects();
+    }
+
+    function renderCandidateList() {
+      const wrap = document.getElementById("candidate-list");
+      const keyword = String(document.getElementById("candidate-search").value || "").trim().toLowerCase();
+
+      const filtered = state.rankings.filter(item => {
+        const name = String(item.mc_name || "").toLowerCase();
+        return !keyword || name.includes(keyword);
+      });
+
+      wrap.innerHTML = filtered.map(item => {
+        const id = String(item.mc_id || "");
+        const isActive = state.selectedIds.includes(id);
+        return `
+          <button type="button" class="candidate-button ${isActive ? "is-active" : ""}" data-mc-id="${escapeHtml(id)}">
+            <span class="candidate-name">${escapeHtml(item.mc_name || "")}</span>
+            <span class="candidate-meta">score ${escapeHtml(formatScore(getCurrentScore(item)))}</span>
+          </button>
+        `;
+      }).join("");
+
+      wrap.querySelectorAll("[data-mc-id]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          toggleSelectedMc(btn.dataset.mcId);
+        });
+      });
+    }
+
+    function toggleSelectedMc(mcId) {
+      const id = String(mcId || "");
+      if (!id) return;
+
+      const idx = state.selectedIds.indexOf(id);
+      if (idx >= 0) {
+        state.selectedIds.splice(idx, 1);
+      } else {
+        if (state.selectedIds.length >= REQUIRED_MC_COUNT) {
+          setStatus(`参加MCは ${REQUIRED_MC_COUNT} 人までです。`, "error");
+          return;
+        }
+        state.selectedIds.push(id);
+      }
+
+      renderSelectedMcs();
+      renderCandidateList();
+      updateReadyStatus();
+    }
+
+    function removeSelectedMc(mcId) {
+      const id = String(mcId || "");
+      state.selectedIds = state.selectedIds.filter(x => x !== id);
+      renderSelectedMcs();
+      renderCandidateList();
+      updateReadyStatus();
+    }
+
+    function syncTargetSelects() {
+      const items = getSelectedRankingItems();
+      const aSel = document.getElementById("target-a-select");
+      const bSel = document.getElementById("target-b-select");
+
+      const options = items.map(item =>
+        `<option value="${escapeHtml(item.mc_id)}">${escapeHtml(item.mc_name || "")}</option>`
+      ).join("");
+
+      aSel.innerHTML = options || `<option value="">先にMCを選んでください</option>`;
+      bSel.innerHTML = options || `<option value="">先にMCを選んでください</option>`;
+
+      if (items.length >= 2) {
+        if (!items.some(x => x.mc_id === aSel.value)) aSel.value = items[0].mc_id;
+        if (!items.some(x => x.mc_id === bSel.value) || bSel.value === aSel.value) bSel.value = items[1].mc_id;
+      }
+    }
+
+    function updateReadyStatus() {
+      if (state.selectedIds.length === REQUIRED_MC_COUNT) {
+        setStatus("8人選択済みです。比較実行できます。", "success");
+      } else {
+        setStatus(`参加MCを ${REQUIRED_MC_COUNT} 人選んでください。現在 ${state.selectedIds.length} 人です。`);
+      }
+    }
+
+    function formatPercent(n) {
+      const num = Number(n || 0);
+      return `${Math.round(num * 100)}%`;
+    }
+
+    function formatScore(value) {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return "0.00";
+      return n.toFixed(2);
+    }
+
+    function parseDivisors() {
+      const raw = String(document.getElementById("divisors-input").value || "");
+      const values = raw
+        .split(",")
+        .map(v => Number(String(v).trim()))
+        .filter(v => Number.isFinite(v) && v > 0);
+
+      return Array.from(new Set(values));
+    }
+
+    function getActiveH2HPreset() {
+      return H2H_PRESETS.find(p => p.key === state.activeH2H) || H2H_PRESETS[0];
+    }
+
+    function getH2HBonus(mcAId, mcBId, preset) {
+      const summary = state.h2hMap[normalizePairKey(mcAId, mcBId)];
+      if (!summary || !preset) return 0;
+
+      let aWins = 0;
+      let bWins = 0;
+
+      if (summary.mc_id_a === mcAId) {
+        aWins = Number(summary.a_wins || 0);
+        bWins = Number(summary.b_wins || 0);
+      } else {
+        aWins = Number(summary.b_wins || 0);
+        bWins = Number(summary.a_wins || 0);
+      }
+
+      const diff = aWins - bWins;
+      const absDiff = Math.abs(diff);
+
+      if (absDiff <= 0) return 0;
+
+      let bonus = 0;
+      if (absDiff === 1) bonus = preset.diff1;
+      else if (absDiff === 2) bonus = preset.diff2;
+      else bonus = preset.diff3;
+
+      return diff > 0 ? bonus : -bonus;
+    }
+
+    function getMatchWinProbability(scoreA, scoreB, divisor, bonus) {
+      const adjustedDiff = (scoreA - scoreB) + bonus;
+      return 1 / (1 + Math.pow(10, -adjustedDiff / divisor));
+    }
+
+    function pickWinner(itemA, itemB, divisor, preset) {
+      const bonus = getH2HBonus(itemA.mc_id, itemB.mc_id, preset);
+      const pA = getMatchWinProbability(getCurrentScore(itemA), getCurrentScore(itemB), divisor, bonus);
+      return Math.random() < pA ? itemA : itemB;
+    }
+
+    function simulateOneTournament(players, divisor, preset) {
+      const qfWinners = [];
+      qfWinners.push(pickWinner(players[0], players[1], divisor, preset));
+      qfWinners.push(pickWinner(players[2], players[3], divisor, preset));
+      qfWinners.push(pickWinner(players[4], players[5], divisor, preset));
+      qfWinners.push(pickWinner(players[6], players[7], divisor, preset));
+
+      const sfWinners = [];
+      sfWinners.push(pickWinner(qfWinners[0], qfWinners[1], divisor, preset));
+      sfWinners.push(pickWinner(qfWinners[2], qfWinners[3], divisor, preset));
+
+      return pickWinner(sfWinners[0], sfWinners[1], divisor, preset);
+    }
+
+    function runSimulation(players, divisor, preset, count) {
+      const wins = {};
+      players.forEach(p => { wins[p.mc_id] = 0; });
+
+      for (let i = 0; i < count; i += 1) {
+        const champion = simulateOneTournament(players, divisor, preset);
+        wins[champion.mc_id] += 1;
+      }
+
+      const result = {};
+      players.forEach(p => {
+        result[p.mc_id] = wins[p.mc_id] / count;
+      });
+      return result;
+    }
+
+    function buildResultRows(players, divisors, preset, simCount, targetAId, targetBId) {
+      const playerMap = new Map(players.map(item => [String(item.mc_id), item]));
+      const targetA = playerMap.get(String(targetAId));
+      const targetB = playerMap.get(String(targetBId));
+
+      return divisors.map((divisor) => {
+        const simResult = runSimulation(players, divisor, preset, simCount);
+        const aRate = simResult[String(targetAId)] || 0;
+        const bRate = simResult[String(targetBId)] || 0;
+
+        const maxRate = Math.max(...Object.values(simResult));
+        const bonus = getH2HBonus(targetAId, targetBId, preset);
+        const directRate = getMatchWinProbability(
+          getCurrentScore(targetA),
+          getCurrentScore(targetB),
+          divisor,
+          bonus
+        );
+
+        return {
+          divisor,
+          presetLabel: preset.label,
+          aRate,
+          bRate,
+          diff: aRate - bRate,
+          directRate,
+          maxRate
+        };
+      });
+    }
+
+    function pickBestRows(rows) {
+      if (!rows.length) return { closest60: null, mostBalanced: null };
+
+      let closest60 = rows[0];
+      let mostBalanced = rows[0];
+
+      rows.forEach((row) => {
+        const targetDist = Math.abs(row.directRate - 0.60);
+        const bestDist = Math.abs(closest60.directRate - 0.60);
+        if (targetDist < bestDist) closest60 = row;
+
+        const rowGap = Math.abs(row.aRate - row.bRate);
+        const bestGap = Math.abs(mostBalanced.aRate - mostBalanced.bRate);
+        if (rowGap < bestGap) mostBalanced = row;
+      });
+
+      return { closest60, mostBalanced };
+    }
+
+    function renderResults(rows, players, targetAId, targetBId) {
+      const tbody = document.getElementById("compare-result-body");
+      if (!rows.length) {
+        tbody.innerHTML = `<tr><td colspan="7" class="tuner-status">結果がありません</td></tr>`;
+        return;
+      }
+
+      const playerMap = new Map(players.map(item => [String(item.mc_id), item]));
+      const aName = playerMap.get(String(targetAId))?.mc_name || "A";
+      const bName = playerMap.get(String(targetBId))?.mc_name || "B";
+      const picks = pickBestRows(rows);
+
+      tbody.innerHTML = rows.map((row) => {
+        const badges = [];
+        if (picks.closest60 && row.divisor === picks.closest60.divisor) {
+          badges.push(`<span class="result-pill is-best">60/40寄り</span>`);
+        }
+        if (picks.mostBalanced && row.divisor === picks.mostBalanced.divisor) {
+          badges.push(`<span class="result-pill">差が小さい</span>`);
+        }
+
+        const isHighlight = (
+          (picks.closest60 && row.divisor === picks.closest60.divisor) ||
+          (picks.mostBalanced && row.divisor === picks.mostBalanced.divisor)
+        );
+
+        return `
+          <tr class="${isHighlight ? "is-highlight" : ""}">
+            <td>
+              divisor=${escapeHtml(row.divisor)} / 相性=${escapeHtml(row.presetLabel)}
+              <div style="margin-top:6px; display:flex; flex-wrap:wrap; gap:6px;">${badges.join("")}</div>
+            </td>
+            <td class="is-num">${escapeHtml(formatPercent(row.aRate))}</td>
+            <td class="is-num">${escapeHtml(formatPercent(row.bRate))}</td>
+            <td class="is-num">${escapeHtml(formatPercent(row.diff))}</td>
+            <td class="is-num">${escapeHtml(formatPercent(row.directRate))}</td>
+            <td class="is-num">${escapeHtml(formatPercent(row.maxRate))}</td>
+            <td>${escapeHtml(`${aName} / ${bName}`)}</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function validateBeforeRun() {
+      if (state.selectedIds.length !== REQUIRED_MC_COUNT) {
+        setStatus(`参加MCを ${REQUIRED_MC_COUNT} 人ちょうど選んでください。`, "error");
+        return false;
+      }
+
+      const divisors = parseDivisors();
+      if (!divisors.length) {
+        setStatus("勝率係数を1つ以上入れてください。", "error");
+        return false;
+      }
+
+      const simCount = Number(document.getElementById("sim-count-input").value || 0);
+      if (!Number.isFinite(simCount) || simCount < 100) {
+        setStatus("シミュレーション回数は 100 以上で入れてください。", "error");
+        return false;
+      }
+
+      const aId = String(document.getElementById("target-a-select").value || "");
+      const bId = String(document.getElementById("target-b-select").value || "");
+      if (!aId || !bId || aId === bId) {
+        setStatus("比較対象のMC A / B を別々に選んでください。", "error");
+        return false;
+      }
+
+      return true;
+    }
+
+    async function runComparison() {
+      if (!validateBeforeRun()) return;
+
+      const runBtn = document.getElementById("run-button");
+      runBtn.disabled = true;
+      setStatus("比較計算中です...", "success");
+
+      try {
+        const divisors = parseDivisors();
+        const simCount = Number(document.getElementById("sim-count-input").value || 0);
+        const preset = getActiveH2HPreset();
+        const targetAId = String(document.getElementById("target-a-select").value || "");
+        const targetBId = String(document.getElementById("target-b-select").value || "");
+        const players = getSelectedRankingItems();
+
+        await new Promise(resolve => setTimeout(resolve, 20));
+
+        const rows = buildResultRows(players, divisors, preset, simCount, targetAId, targetBId);
+        renderResults(rows, players, targetAId, targetBId);
+
+        setStatus("比較が完了しました。", "success");
+      } catch (err) {
+        console.error(err);
+        setStatus(`比較に失敗しました: ${err && err.message ? err.message : err}`, "error");
+      } finally {
+        runBtn.disabled = false;
+      }
+    }
+
+    function clearSelection() {
+      state.selectedIds = [];
+      renderSelectedMcs();
+      renderCandidateList();
+      updateReadyStatus();
+      document.getElementById("compare-result-body").innerHTML = `<tr><td colspan="7" class="tuner-status">まだ結果がありません</td></tr>`;
+    }
+
+    function applyShinpeitaForkPreset() {
+      const candidateNames = ["晋平太", "FORK", "ミステリオ", "PONEY", "Ry-lax", "Shamis", "#KTちゃん", "$hamis"];
+      const selected = [];
+
+      candidateNames.forEach((name) => {
+        const found = state.rankings.find(item => String(item.mc_name || "") === name);
+        if (found) selected.push(String(found.mc_id));
+      });
+
+      if (selected.length >= 2) {
+        state.selectedIds = selected.slice(0, REQUIRED_MC_COUNT);
+        renderSelectedMcs();
+        renderCandidateList();
+        updateReadyStatus();
+      } else {
+        setStatus("例として入れたいMCが現在のランキングデータに十分見つかりませんでした。", "error");
+      }
+    }
+
+    async function init() {
+      try {
+        const [rankingsPayload, h2hPayload] = await Promise.all([
+          loadJson(RANKINGS_JSON_URL),
+          loadJson(HEAD_TO_HEAD_JSON_URL).catch(() => ({ summaries: [] }))
+        ]);
+
+        const rankings = Array.isArray(rankingsPayload?.rankings)
+          ? rankingsPayload.rankings.slice().sort(compareRankings)
+          : [];
+
+        state.rankings = rankings;
+        state.h2hMap = buildH2HMap(h2hPayload);
+
+        renderH2HChips();
+        renderSelectedMcs();
+        renderCandidateList();
+        updateReadyStatus();
+
+        document.getElementById("candidate-search").addEventListener("input", renderCandidateList);
+        document.getElementById("run-button").addEventListener("click", runComparison);
+        document.getElementById("clear-button").addEventListener("click", clearSelection);
+        document.getElementById("preset-shinpeita-button").addEventListener("click", applyShinpeitaForkPreset);
+
+        setStatus("rankings.json の読み込みが完了しました。", "success");
+      } catch (err) {
+        console.error(err);
+        setStatus(`初期化に失敗しました: ${err && err.message ? err.message : err}`, "error");
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
