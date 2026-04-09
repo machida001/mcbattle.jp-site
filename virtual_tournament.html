@@ -6,8 +6,21 @@
   <title>MCバトルシミュレーター | MCBattle.jp</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    html, body{
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    .page{
+      overflow-x: hidden;
+      max-width: 100%;
+      width: 100%;
+    }
+
     .vt-hero{
       padding: 0 0 8px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-title-wrap{
@@ -15,12 +28,17 @@
       align-items: baseline;
       gap: 10px;
       flex-wrap: wrap;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-title{
       margin: 0;
       color: var(--text);
       line-height: 1.08;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .vt-version{
@@ -29,6 +47,7 @@
       line-height: 1.2;
       letter-spacing: .03em;
       white-space: nowrap;
+      max-width: 100%;
     }
 
     .vt-lead{
@@ -37,6 +56,8 @@
       font-size: .96rem;
       line-height: 1.68;
       max-width: 760px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .vt-stack{
@@ -45,6 +66,8 @@
       gap: 12px;
       margin-top: 12px;
       padding-bottom: 18px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-panel{
@@ -53,6 +76,10 @@
       padding: 14px 14px 12px;
       box-shadow: 0 18px 48px rgba(0,0,0,.22);
       background: rgba(13,17,28,.22);
+      min-width: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
     }
 
     .vt-step-label{
@@ -62,6 +89,8 @@
       font-weight: 800;
       color: var(--accent);
       letter-spacing: .01em;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-search-row{
@@ -70,6 +99,8 @@
       gap: 10px;
       align-items: center;
       margin-top: 2px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-search-box{
@@ -84,6 +115,8 @@
       font-size: .95rem;
       outline: none;
       box-sizing: border-box;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-search-box::placeholder{
@@ -99,6 +132,8 @@
 
     .vt-candidates{
       margin-top: 8px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-candidate-list{
@@ -106,6 +141,8 @@
       grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 8px;
       margin-top: 0;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-candidate-btn{
@@ -130,6 +167,8 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       box-sizing: border-box;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-candidate-btn:hover{
@@ -151,17 +190,22 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
       margin-top: 10px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-run-button-wrap{
       margin-top: 2px;
       margin-bottom: 2px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-main-button,
     .vt-sub-button{
       width: 100%;
       min-width: 0;
+      max-width: 100%;
       border-radius: 16px;
       background: #ffffff;
       color: #11131a;
@@ -207,6 +251,8 @@
 
     .vt-selected-wrap{
       margin-top: 12px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-selected-title{
@@ -221,6 +267,8 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 8px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-selected-grid.is-single{
@@ -239,6 +287,7 @@
       border: 1px solid rgba(255,255,255,.78);
       background: rgba(13,17,28,.22);
       box-sizing: border-box;
+      max-width: 100%;
     }
 
     .vt-selected-name{
@@ -253,6 +302,7 @@
       font-weight: 400;
       color: var(--text);
       word-break: break-word;
+      overflow-wrap: anywhere;
     }
 
     .vt-remove-btn{
@@ -267,6 +317,7 @@
       padding: 0;
       width: 20px;
       height: 20px;
+      flex: 0 0 auto;
     }
 
     .vt-status{
@@ -275,12 +326,16 @@
       font-size: .9rem;
       line-height: 1.55;
       white-space: pre-line;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .vt-run-area{
       display: flex;
       flex-direction: column;
       gap: 10px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-pair-card{
@@ -288,6 +343,10 @@
       border-radius: 18px;
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.025);
+      min-width: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
     }
 
     .vt-pair-title{
@@ -295,12 +354,17 @@
       color: var(--accent);
       font-size: 1.02rem;
       line-height: 1.2;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .vt-pair-list{
       display: flex;
       flex-direction: column;
       gap: 8px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-pair-line{
@@ -308,6 +372,10 @@
       color: var(--text);
       font-size: .92rem;
       line-height: 1.6;
+      min-width: 0;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .vt-hero-result{
@@ -315,6 +383,10 @@
       border-radius: 18px;
       border: 1px solid rgba(216,180,106,.16);
       background: linear-gradient(180deg, rgba(216,180,106,.16), rgba(110,84,40,.12));
+      min-width: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
     }
 
     .vt-hero-result-label{
@@ -323,6 +395,9 @@
       font-size: .92rem;
       line-height: 1.4;
       margin-bottom: 6px;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .vt-hero-result-name{
@@ -331,6 +406,9 @@
       line-height: 1.15;
       font-weight: 900;
       word-break: break-word;
+      overflow-wrap: anywhere;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-summary-card{
@@ -338,6 +416,10 @@
       border-radius: 18px;
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.025);
+      min-width: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
     }
 
     .vt-summary-title,
@@ -346,12 +428,17 @@
       color: var(--accent);
       font-size: 1.22rem;
       line-height: 1.15;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .vt-summary-lines{
       display: flex;
       flex-direction: column;
       gap: 10px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-summary-lines p{
@@ -359,6 +446,8 @@
       color: var(--text);
       line-height: 1.75;
       font-size: .93rem;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .vt-dist-card-head,
@@ -368,6 +457,10 @@
       gap: 8px;
       align-items: center;
       justify-content: start;
+      min-width: 0;
+      max-width: 100%;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .vt-dist-card-head{
@@ -382,6 +475,8 @@
     .vt-dist-list{
       display: flex;
       flex-direction: column;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .vt-dist-row{
@@ -411,6 +506,7 @@
       font-variant-numeric: tabular-nums;
       font-size: .9rem;
       line-height: 1.35;
+      min-width: 0;
     }
 
     .vt-dist-card-head > div:nth-child(2),
@@ -552,7 +648,7 @@
 
       .vt-dist-card-head,
       .vt-dist-row{
-        grid-template-columns: minmax(0, 1fr) 38px 38px 46px;
+        grid-template-columns: minmax(0, 1fr) 34px 34px 42px;
         gap: 5px;
       }
 
