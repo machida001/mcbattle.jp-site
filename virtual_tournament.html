@@ -10,10 +10,25 @@
       padding: 0 0 8px;
     }
 
+    .vt-title-wrap{
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
     .vt-title{
       margin: 0;
       color: var(--text);
       line-height: 1.08;
+    }
+
+    .vt-version{
+      color: var(--muted);
+      font-size: .76rem;
+      line-height: 1.2;
+      letter-spacing: .03em;
+      white-space: nowrap;
     }
 
     .vt-lead{
@@ -509,6 +524,10 @@
         font-size: clamp(2rem, 9.4vw, 2.8rem);
       }
 
+      .vt-version{
+        font-size: .7rem;
+      }
+
       .vt-lead{
         font-size: .94rem;
         line-height: 1.66;
@@ -571,7 +590,10 @@
       </nav>
 
       <div class="page-header-block">
-        <h1 class="vt-title">バトルシミュレータ</h1>
+        <div class="vt-title-wrap">
+          <h1 class="vt-title">バトルシミュレータ</h1>
+          <span class="vt-version">Ver.1.125</span>
+        </div>
       </div>
     </div>
 
@@ -665,11 +687,10 @@
     const MAX_SELECTED = 8;
     const SIM_COUNT = 100;
 
-    /* 緩和後パラメータ */
-    const HEAD_TO_HEAD_SCORE_CAP = 18;
-    const WIN_PROB_DIVISOR = 240;
-    const WIN_PROB_MIN = 0.08;
-    const WIN_PROB_MAX = 0.92;
+    const HEAD_TO_HEAD_SCORE_CAP = 12;
+    const WIN_PROB_DIVISOR = 280;
+    const WIN_PROB_MIN = 0.12;
+    const WIN_PROB_MAX = 0.88;
 
     let allCandidates = [];
     let strengthMap = {};
@@ -756,14 +777,18 @@
       if (winsA === winsB) return 0;
 
       const diff = Math.abs(winsA - winsB);
+      const isSweep = (winsA === total || winsB === total);
+
       let bonus = 0;
 
-      if (diff === 1) {
-        bonus = 4;
+      if (isSweep && total >= 3) {
+        bonus = 12;
+      } else if (diff === 1) {
+        bonus = 3;
       } else if (diff === 2) {
-        bonus = 10;
+        bonus = 7;
       } else {
-        bonus = 18;
+        bonus = 10;
       }
 
       if (bonus > HEAD_TO_HEAD_SCORE_CAP) {
@@ -795,11 +820,16 @@
       return 0;
     }
 
-    function getHeadToHeadAdvantageLabel(adjustment) {
+    function getHeadToHeadAdvantageLabel(adjustment, pair) {
       const abs = Math.abs(Number(adjustment || 0));
-      if (abs >= 18) return "やや有利";
-      if (abs >= 10) return "少し有利";
-      if (abs >= 4) return "わずかに有利";
+      const totalMatches = Number(pair?.total_matches || 0);
+      const aWins = Number(pair?.a_wins || 0);
+      const bWins = Number(pair?.b_wins || 0);
+      const isSweep = totalMatches >= 3 && (aWins === totalMatches || bWins === totalMatches);
+
+      if (isSweep) return "有利";
+      if (abs >= 10) return "やや有利";
+      if (abs >= 3) return "少し有利";
       return "";
     }
 
@@ -841,17 +871,17 @@
         for (let j = i + 1; j < selectedMcs.length; j++) {
           const a = selectedMcs[i];
           const b = selectedMcs[j];
+          const key = getPairKey(a.mc_id, b.mc_id);
+          const pair = headToHeadMap[key];
           const adjustment = getHeadToHeadScoreAdjustment(a.mc_id, b.mc_id);
-          if (!adjustment) continue;
+          if (!pair || !adjustment) continue;
 
           const favored = adjustment > 0 ? a : b;
           const other = adjustment > 0 ? b : a;
-          const label = getHeadToHeadAdvantageLabel(adjustment);
+          const label = getHeadToHeadAdvantageLabel(adjustment, pair);
           if (!label) continue;
 
-          const key = getPairKey(a.mc_id, b.mc_id);
-          const pair = headToHeadMap[key];
-          const totalMatches = Number(pair?.total_matches || 0);
+          const totalMatches = Number(pair.total_matches || 0);
           const recordText = formatHeadToHeadRecord(favored, other, pair);
 
           rows.push({
