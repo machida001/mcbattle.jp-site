@@ -74,11 +74,26 @@
       margin-bottom: 14px;
     }
 
+    .page-header-title-row{
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
     .page-header-block h1{
       margin: 0;
       text-wrap: balance;
       overflow-wrap: anywhere;
       word-break: break-word;
+    }
+
+    .page-version{
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
     }
 
     .spec-grid {
@@ -225,6 +240,10 @@
         margin-bottom: 12px;
       }
 
+      .page-version{
+        font-size: 0.70rem;
+      }
+
       .spec-grid {
         gap: 14px;
       }
@@ -268,7 +287,10 @@
       </nav>
 
       <div class="page-header-block">
-        <h1>ランキング仕様について</h1>
+        <div class="page-header-title-row">
+          <h1>ランキング仕様について</h1>
+          <span class="page-version">Ver.1.126</span>
+        </div>
       </div>
     </div>
 
@@ -282,14 +304,14 @@
           歴代最強ランキングや知名度ランキングではなく、<strong>過去の蓄積も残しつつ、最近の試合をより重く見た現在推定の強さ</strong>を表すことを目的としています。
         </p>
         <p>
-          ただし、単純な勝利数ランキングにはしていません。<strong>勝ちの量だけでなく、負けの少なさや勝ち方の質も含めて評価する</strong>設計です。
+          単純な勝利数ランキングではなく、<strong>誰に勝ったかを中心に、最近の試合かどうか、どのラウンドの勝敗か</strong>を反映する設計です。
         </p>
 
         <div class="spec-link-row">
           <span class="spec-chip">主役：誰に勝ったか</span>
-          <span class="spec-chip">主役：どれだけ負けていないか</span>
           <span class="spec-chip">補助：いつ勝ったか</span>
           <span class="spec-chip">補助：どのラウンドで勝ったか</span>
+          <span class="spec-chip">補助：敗戦も反映</span>
         </div>
       </section>
 
@@ -320,42 +342,36 @@
       <section class="spec-card">
         <h2>3. スコアの基本的な考え方</h2>
         <p>
-          スコアは、時系列に沿って試合結果を積み上げる方式をベースにしつつ、<strong>敗戦も明確に反映する</strong>形で計算しています。
+          スコアは、<strong>weighted Elo をベースに、試合を時系列で1つずつ積み上げて更新する方式</strong>で計算しています。
         </p>
 
         <ul class="spec-list">
-          <li><strong>誰に勝ったか</strong> … 強い相手への勝利ほど高く評価します。</li>
-          <li><strong>どのラウンドで勝ったか</strong> … 大会終盤の勝利ほど高く評価します。</li>
-          <li><strong>どれだけ負けていないか</strong> … 負けの多いMCが勝利数だけで上がりすぎないようにします。</li>
-          <li><strong>勝率</strong> … 近い実績なら、勝率が高い方を少し上に評価します。</li>
-          <li><strong>優勝・準優勝</strong> … 大会を最後まで勝ち切った、または決勝まで進んだ実績を補助的に加点します。</li>
+          <li><strong>誰に勝ったか</strong> … 強い相手に勝つほど上がりやすくなります。</li>
+          <li><strong>どのラウンドか</strong> … 大会終盤の勝敗ほど重く反映します。</li>
+          <li><strong>いつの試合か</strong> … 最近の試合ほど現在スコアに強く効きます。</li>
+          <li><strong>敗戦</strong> … 負けも反映しますが、勝利と完全に同じ重さではなく、やや軽めに減点します。</li>
         </ul>
 
         <p>
-          このページでいう「スコア」は、<strong>勝利を足していくだけの数字ではなく、敗戦も差し引いた上で、勝率・優勝・上位相手への勝利を補助的に反映した指標</strong>です。
+          つまり、<strong>勝利点や優勝点を後から足し算する方式ではなく、試合ごとに現在値を更新していく方式</strong>です。
         </p>
 
-        <h3>基本式の考え方</h3>
-        <div class="spec-formula">FinalScore
-= 勝利の積み上げ
-- 敗戦の積み上げ
-+ 優勝・準優勝の補助点
-+ 勝率補正
-+ 無敗補正</div>
+        <h3>基本式</h3>
+        <div class="spec-formula">expectedWinner = 1 / (1 + 10 ^ ((loserRating - winnerRating) / 400))
+
+delta = baseK × roundWeight × recencyWeight × (1 - expectedWinner)
+loserDelta = delta × lossPenaltyRate
+
+winnerRating = winnerRating + delta
+loserRating  = loserRating  - loserDelta</div>
 
         <p>
-          具体的には、各勝利を「相手の強さ」「試合の新しさ」「ラウンドの深さ」で重み付けして合計し、同様に敗戦も重み付けして減点します。
-          その上で、優勝・準優勝・上位相手への勝利・勝率を補助的に加味します。
+          初期値は全MC共通でスタートし、そこから対象試合を古い順にたどって現在スコアを作っています。
         </p>
 
-        <div class="spec-formula">Score
-= MatchSum
-- LossPenalty × LossSum
-+ ChampBonus × 優勝回数
-+ RunnerUpBonus × 準優勝回数
-+ TopWinsBonus × 上位相手への勝利
-+ WinRateBonus × (勝率 - 0.5)
-+ UndefeatedBonus</div>
+        <div class="spec-formula">initialRating = 1500.00
+baseK = 24.00
+lossPenaltyRate = 0.40</div>
       </section>
 
       <section class="spec-card">
@@ -375,34 +391,21 @@
       <section class="spec-card">
         <h2>5. 負けの扱い</h2>
         <p>
-          このランキングでは、<strong>敗戦もはっきり反映</strong>します。
+          このランキングでは、<strong>敗戦も反映</strong>します。
         </p>
         <p>
-          これは、たくさん出場して勝利数を積んでいるMCが、負けの多さを無視して上がりすぎるのを防ぐためです。
+          ただし、敗戦を勝利と同じ重さで完全に相殺するのではなく、<strong>勝者の上がり幅に対して、敗者はその40%を減点</strong>する設計です。
         </p>
         <p>
-          そのため、勝利を評価するだけでなく、<strong>負けた試合も相手の強さやラウンドの重みを踏まえて減点</strong>します。
+          これは、強豪への大きな勝利を残しつつ、負けが多い場合には現在評価が上がりにくくなるようにするためです。
         </p>
         <p>
-          ただし、敗戦を勝利と同じ重さで完全に相殺するわけではありません。<strong>強豪への大きな勝利は残しつつ、負けが多い場合は順位が上がりにくくなる</strong>ように調整しています。
+          そのため、負けが全く無視されるわけではありませんが、<strong>勝利の価値をやや強めに残す</strong>バランスになっています。
         </p>
       </section>
 
       <section class="spec-card">
-        <h2>6. 勝率・無敗の扱い</h2>
-        <p>
-          同じような実績なら、<strong>勝率が高いMCをやや上に評価</strong>します。
-        </p>
-        <p>
-          また、無敗であることも補助的に評価します。ただし、試合数が極端に少ない場合に過大評価しすぎないよう、<strong>無敗だけで大きく跳ねる設計にはしていません</strong>。
-        </p>
-        <p>
-          つまり、勝率や無敗はランキングの中心ではなく、<strong>近い実績のMC同士の並びを整えるための補助要素</strong>です。
-        </p>
-      </section>
-
-      <section class="spec-card">
-        <h2>7. いつ勝ったか</h2>
+        <h2>6. いつ勝ったか</h2>
         <p>
           このランキングは「今出た場合の強さ」を見るため、試合の新しさも加味しています。
           ただし、古い試合を切り捨てるのではなく、<strong>古い試合ほど影響を弱める</strong>設計です。
@@ -412,11 +415,11 @@
         </p>
 
         <ul class="spec-list">
-          <li>3年以内：強め</li>
-          <li>3年超〜5年以内：標準</li>
-          <li>5年超〜8年以内：少し弱め</li>
-          <li>8年超〜13年以内：弱め</li>
-          <li>13年超：かなり弱め</li>
+          <li>3年以内：1.15</li>
+          <li>3年超〜5年以内：1.00</li>
+          <li>5年超〜8年以内：0.92</li>
+          <li>8年超〜13年以内：0.84</li>
+          <li>13年超：0.76</li>
         </ul>
 
         <p>
@@ -425,7 +428,7 @@
       </section>
 
       <section class="spec-card">
-        <h2>8. どのラウンドで勝ったか</h2>
+        <h2>7. どのラウンドで勝ったか</h2>
         <p>
           同じ1勝でも、深いラウンドでの勝利ほど重く扱います。
           これは、大会終盤の勝利ほど価値が高いと考えるためです。
@@ -434,13 +437,16 @@
           たとえば、序盤の勝利よりも、準決勝や決勝での勝利の方がスコアに強く反映されます。
         </p>
         <p>
-          さらに、優勝・準優勝については、<strong>単なるラウンド勝利とは別に補助的な加点</strong>を与えています。
-          これは、終盤まで勝ち残る力を順位に反映するためです。
+          現在は、<strong>Best64 を最小、Final を最大</strong>とする傾斜を置いています。
+          また、<strong>Best8以降はやや強めに効く</strong>ように調整しています。
+        </p>
+        <p>
+          ラウンド重みは固定点を後から加算するのではなく、<strong>各試合の変動幅そのものに掛けて反映</strong>しています。
         </p>
       </section>
 
       <section class="spec-card">
-        <h2>9. 入れていないもの</h2>
+        <h2>8. 入れていないもの</h2>
         <p>
           このランキングでは、次のような要素は直接スコアに入れていません。
         </p>
@@ -451,6 +457,9 @@
           <li>賞金額そのもの</li>
           <li>主観的な「全盛期」評価</li>
           <li>大会ごとの主観的な強度補正</li>
+          <li>優勝回数・準優勝回数への独立した固定ボーナス</li>
+          <li>勝率への独立した固定ボーナス</li>
+          <li>無敗への独立した固定ボーナス</li>
         </ul>
 
         <p>
@@ -459,24 +468,23 @@
       </section>
 
       <section class="spec-card">
-        <h2>10. このランキングの見方</h2>
+        <h2>9. このランキングの見方</h2>
         <p>
-          このランキングは、<strong>勝ちの量だけを見るものではありません</strong>。
+          このランキングは、<strong>長期的な実力の蓄積を残しつつ、最近の試合をより重く見た現在推定強度</strong>を見るためのものです。
         </p>
         <p>
-          強い相手に勝ったこと、大会終盤まで勝ち上がったこと、そして負けが少ないことをあわせて見ています。
-          そのため、<strong>出場数や勝利数だけで順位が決まるわけではありません</strong>。
-        </p>
-        <p>
-          また、最近ほとんど出ていない実力者が完全にゼロから評価されるわけではありませんが、<strong>直近4年出場がないMCはランキング表示の対象外</strong>です。
+          そのため、最近ほとんど出ていない実力者が完全にゼロから評価されるわけではありませんが、<strong>直近4年出場がないMCはランキング表示の対象外</strong>です。
         </p>
         <p>
           対象外のMCについては、ランキングだけでなくMC詳細ページでもスコアを表示しません。
         </p>
+        <p>
+          また、現在は<strong>勝利の価値をやや強めに残す設計</strong>のため、強豪への大きな勝利は数回の敗戦だけでは消えにくくなっています。
+        </p>
       </section>
 
       <section class="spec-card">
-        <h2>11. 仮想MCバトルとの関係</h2>
+        <h2>10. 仮想MCバトルとの関係</h2>
         <p>
           仮想MCバトルの「今の強さでシミュレーションする」モードも、基本的にはこの考え方に沿っています。
         </p>
@@ -486,15 +494,18 @@
         <p>
           また、シミュレーションでは現在スコアをベースにしつつ、特定のMC同士の直接対戦相性も少しだけ加味しています。
         </p>
+        <p>
+          ただし、シミュレーション側の勝率変換は別ロジックなので、<strong>ランキング順位と優勝率がそのまま1対1対応するわけではありません</strong>。
+        </p>
       </section>
 
       <section class="spec-card">
-        <h2>12. 今後の見直しについて</h2>
+        <h2>11. 今後の見直しについて</h2>
         <p>
           スコアリングの考え方は今後も改善の余地があります。
         </p>
         <p>
-          特に、<strong>敗戦の重み、優勝・準優勝の加点、勝率の反映方法、どこまでを「今出た場合の強さ」とみなすか</strong>については、継続的に見直していきます。
+          特に、<strong>敗戦の重み、最近の試合をどこまで強く見るか、ラウンド重みの傾斜</strong>については、継続的に見直していきます。
         </p>
 
         <div class="form-card">
