@@ -474,11 +474,11 @@
       <p class="page-mini-logo"><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
 
       <nav class="page-nav-pills" aria-label="主要メニュー">
-        <a class="page-nav-pill" href="events.html">大会一覧</a>
-        <a class="page-nav-pill" href="mcs.html">MC一覧</a>
+        <a class="page-nav-pill" href="list_event.html">大会一覧</a>
+        <a class="page-nav-pill" href="list_mc.html">MC一覧</a>
         <span class="page-nav-break" aria-hidden="true"></span>
-        <a class="page-nav-pill" href="rankings.html">スコアランキング</a>
-        <a class="page-nav-pill" href="prize_rankings.html">賞金ランキング</a>
+        <a class="page-nav-pill" href="score_ranking.html">スコアランキング</a>
+        <a class="page-nav-pill" href="prize_ranking.html">賞金ランキング</a>
       </nav>
 
       <div class="page-header-block">
@@ -616,7 +616,7 @@
       if (!safeName) return "";
       if (!safeId) return `<span>${safeName}</span>`;
 
-      return `<a href="./mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
+      return `<a href="./detail_mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
     }
 
     function renderBattleEvent(name, eventId) {
@@ -628,7 +628,7 @@
 
       return `
         <span class="battle-event">
-          <a href="./event.html?event_id=${encodeURIComponent(safeId)}" class="battle-event-link">${safeName}</a>
+          <a href="./detail_event.html?event_id=${encodeURIComponent(safeId)}" class="battle-event-link">${safeName}</a>
         </span>
       `;
     }
@@ -647,7 +647,7 @@
       }
 
       return `
-        <a href="./event.html?event_id=${encodeURIComponent(safeId)}">
+        <a href="./detail_event.html?event_id=${encodeURIComponent(safeId)}">
           <span class="appearance-name">${safeName}</span>
           ${safeDate ? `<span class="appearance-date">${safeDate}</span>` : ""}
         </a>
@@ -663,7 +663,7 @@
       if (safeEventId) {
         return `
           <span class="championship-line">
-            <a class="championship-event-link" href="./event.html?event_id=${encodeURIComponent(safeEventId)}">${eventName}</a>
+            <a class="championship-event-link" href="./detail_event.html?event_id=${encodeURIComponent(safeEventId)}">${eventName}</a>
           </span>
         `;
       }
