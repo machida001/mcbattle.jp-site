@@ -7,6 +7,7 @@ on:
       - main
     paths-ignore:
       - 'detail_event/**'
+      - 'sitemap.xml'
 
 permissions:
   contents: write
@@ -27,14 +28,17 @@ jobs:
       - name: Generate event pages
         run: node scripts/generate-events.js
 
+      - name: Generate sitemap
+        run: node scripts/generate-sitemap.js
+
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add detail_event
+          git add detail_event sitemap.xml
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Generate static event pages"
+            git commit -m "Generate static event pages and sitemap"
             git push
           fi
