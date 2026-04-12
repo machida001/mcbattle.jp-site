@@ -201,23 +201,17 @@
     }
 
     .contact-alert{
-      margin:0 0 12px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.03);
+      margin:0;
       line-height:1.58;
       font-size:0.88rem;
     }
 
     .contact-alert.success{
-      color:var(--text);
+      color:#e07a7a;
     }
 
     .contact-alert.error{
       color:#f0caca;
-      border-color:rgba(255,123,123,.24);
-      background:rgba(255,123,123,.05);
     }
 
     .honeypot{
@@ -326,9 +320,6 @@
         ご意見、ご指摘、ご要望がありましたら、お気軽にご連絡下さい。
       </p>
 
-      <p id="contact-alert-success" class="contact-alert success honeypot">送信しました。ありがとうございます。</p>
-      <p id="contact-alert-error" class="contact-alert error honeypot">送信に失敗しました。時間をおいてもう一度お試しください。</p>
-
       <form
         id="contact-form"
         class="contact-form"
@@ -382,6 +373,8 @@
 
         <div class="contact-actions">
           <button id="contact-submit" class="contact-submit" type="submit">送信する</button>
+          <p id="contact-alert-success" class="contact-alert success honeypot">送信しました。ありがとうございます。</p>
+          <p id="contact-alert-error" class="contact-alert error honeypot">送信に失敗しました。時間をおいてもう一度お試しください。</p>
         </div>
       </form>
 
@@ -400,6 +393,7 @@
       const successEl = document.getElementById("contact-alert-success");
       const errorEl = document.getElementById("contact-alert-error");
       const titleEl = document.getElementById("contact-title");
+      const emailEl = document.getElementById("contact-email");
       const messageEl = document.getElementById("contact-message");
       const contextTypeEl = document.getElementById("contact-context-type");
       const contextNameEl = document.getElementById("contact-context-name");
@@ -413,23 +407,33 @@
 
       let submitting = false;
 
-      if (params.get("sent") === "1") {
-        successEl.classList.remove("honeypot");
-      }
-
-      if (params.get("error") === "1") {
-        errorEl.classList.remove("honeypot");
-      }
-
       function hideAlerts() {
         successEl.classList.add("honeypot");
         errorEl.classList.add("honeypot");
+      }
+
+      function blurAllInputs() {
+        if (document.activeElement && typeof document.activeElement.blur === "function") {
+          document.activeElement.blur();
+        }
+        titleEl.blur();
+        emailEl.blur();
+        messageEl.blur();
+        submitEl.blur();
       }
 
       function setMessageIfEmpty(text) {
         if (!messageEl.value.trim()) {
           messageEl.value = text;
         }
+      }
+
+      if (params.get("sent") === "1") {
+        successEl.classList.remove("honeypot");
+      }
+
+      if (params.get("error") === "1") {
+        errorEl.classList.remove("honeypot");
       }
 
       if (type === "event" && eventName) {
@@ -448,6 +452,7 @@
 
       formEl.addEventListener("submit", function () {
         hideAlerts();
+        blurAllInputs();
         submitting = true;
         submitEl.disabled = true;
         submitEl.textContent = "送信中…";
@@ -459,6 +464,8 @@
         submitting = false;
         submitEl.disabled = false;
         submitEl.textContent = "送信する";
+
+        blurAllInputs();
 
         successEl.classList.remove("honeypot");
         errorEl.classList.add("honeypot");
@@ -480,6 +487,8 @@
           contextNameEl.value = mcName;
           messageEl.value = `【対象MC】${mcName}\n\n`;
         }
+
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
       });
     })();
   </script>
