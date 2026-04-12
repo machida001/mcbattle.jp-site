@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-09T00:35:10.705Z",
-  "total": 151,
+  "updated_at": "2026-04-12T14:38:24.976Z",
+  "total": 153,
   "events": [
     {
       "event_id": "EVT0021",
@@ -705,6 +705,24 @@
       "winner_name": "崇勲"
     },
     {
+      "event_id": "EVT0162",
+      "event_name": "BATTLE SUMMITⅢ",
+      "event_name_full": "BATTLE SUMMITⅢ",
+      "event_name_simple": "BATTLE SUMMITⅢ",
+      "event_date": "2026-08-11",
+      "prize_money_winner": 50000000,
+      "prize_money_total": null,
+      "category_id": "EVTCat008",
+      "category_name": "BUTTLE SUMMIT",
+      "category_show_order": 4,
+      "event_category": "BUTTLE SUMMIT",
+      "event_stage": "本戦",
+      "location": "Kアリーナ横浜",
+      "organizer": "BUTTLE SUMMIT",
+      "notes": "",
+      "winner_name": ""
+    },
+    {
       "event_id": "EVT0131",
       "event_name": "BATTLE SUMMITⅡ",
       "event_name_full": "BATTLE SUMMITⅡ",
@@ -739,6 +757,24 @@
       "organizer": "BUTTLE SUMMIT",
       "notes": "",
       "winner_name": "Authority"
+    },
+    {
+      "event_id": "EVT0161",
+      "event_name": "戦極MCBATTLE 第42章",
+      "event_name_full": "戦極MCBATTLE 第42章",
+      "event_name_simple": "戦極MCBATTLE 第42章",
+      "event_date": "2026-06-20",
+      "prize_money_winner": 0,
+      "prize_money_total": null,
+      "category_id": "EVTCat004",
+      "category_name": "戦極MC BATTLE",
+      "category_show_order": 5,
+      "event_category": "戦極MC BATTLE",
+      "event_stage": "本戦",
+      "location": "川崎CLUB CITTA'",
+      "organizer": "戦極MCBATTLE",
+      "notes": "",
+      "winner_name": ""
     },
     {
       "event_id": "EVT0040",

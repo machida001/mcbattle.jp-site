@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-09T00:35:08.359Z",
+  "updated_at": "2026-04-12T14:38:23.467Z",
   "recent_events": [
     {
       "event_id": "EVT0032",
@@ -132,7 +132,20 @@
       "winner_name": "K-rush"
     }
   ],
-  "upcoming_events": [],
+  "upcoming_events": [
+    {
+      "event_date": "2026-06-20",
+      "event_name": "戦極MCBATTLE 第42章",
+      "event_stage": "本戦",
+      "location": "川崎CLUB CITTA'"
+    },
+    {
+      "event_date": "2026-08-11",
+      "event_name": "BATTLE SUMMITⅢ",
+      "event_stage": "本戦",
+      "location": "Kアリーナ横浜"
+    }
+  ],
   "score_rankings": [
     {
       "rank": 1,
