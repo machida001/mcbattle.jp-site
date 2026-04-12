@@ -5,15 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>大会詳細 | MCBattle.jp</title>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9C8VGD3THB');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9C8VGD3THB');
+  </script>
   <meta name="description" content="国内MCバトル大会の開催日、優勝者、試合結果を掲載する大会詳細ページです。">
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const eventId = (params.get("event_id") || "").trim();
+      if (!eventId) return;
+
+      const staticUrl = `https://mcbattle.jp/detail_event/${encodeURIComponent(eventId)}.html`;
+
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.setAttribute("rel", "canonical");
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute("href", staticUrl);
+
+      if (!window.location.pathname.includes("/detail_event/")) {
+        window.location.replace(staticUrl);
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="style.css" />
   <style>
     .page-top{
@@ -308,6 +330,17 @@
       meta.setAttribute("content", content);
     }
 
+    function setCanonicalUrl(url) {
+      if (!url) return;
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.setAttribute("rel", "canonical");
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute("href", url);
+    }
+
     function formatNumberWithComma(value) {
       if (value === null || value === undefined || value === "") return "";
       const normalized = String(value).replace(/,/g, "").trim();
@@ -343,7 +376,7 @@
 
       if (!safeName) return "";
       if (!safeId) return `<span>${safeName}</span>`;
-      return `<a href="./detail_mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
+      return `<a href="./detail_mc/${encodeURIComponent(safeId)}.html">${safeName}</a>`;
     }
 
     function normalizeRoundLabel(roundName) {
@@ -656,6 +689,9 @@
         const winnerName = event.winner_name || "";
         titleEl.textContent = eventTitle;
         document.title = `${eventTitle} | 大会結果・試合結果 | MCBattle.jp`;
+
+        const canonicalUrl = `https://mcbattle.jp/detail_event/${encodeURIComponent(eventId)}.html`;
+        setCanonicalUrl(canonicalUrl);
 
         const descriptionParts = [
           `${eventTitle}の大会詳細ページです。`,
