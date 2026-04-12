@@ -4,21 +4,24 @@
     <loc>https://mcbattle.jp/</loc>
   </url>
   <url>
-    <loc>https://mcbattle.jp/events.html</loc>
+    <loc>https://mcbattle.jp/list_event.html</loc>
   </url>
   <url>
-    <loc>https://mcbattle.jp/mcs.html</loc>
+    <loc>https://mcbattle.jp/list_mc.html</loc>
   </url>
   <url>
-    <loc>https://mcbattle.jp/rankings.html</loc>
+    <loc>https://mcbattle.jp/score_ranking.html</loc>
   </url>
   <url>
-    <loc>https://mcbattle.jp/prize_rankings.html</loc>
+    <loc>https://mcbattle.jp/prize_ranking.html</loc>
   </url>
   <url>
     <loc>https://mcbattle.jp/ranking_spec.html</loc>
   </url>
   <url>
     <loc>https://mcbattle.jp/virtual_tournament.html</loc>
+  </url>
+  <url>
+    <loc>https://mcbattle.jp/contact.html</loc>
   </url>
 </urlset>
