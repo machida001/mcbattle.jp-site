@@ -4,6 +4,7 @@ const path = require("path");
 const ROOT_DIR = process.cwd();
 const OUTPUT_PATH = path.join(ROOT_DIR, "sitemap.xml");
 const DETAIL_EVENT_DIR = path.join(ROOT_DIR, "detail_event");
+const DETAIL_MC_DIR = path.join(ROOT_DIR, "detail_mc");
 
 const SITE_URL = "https://mcbattle.jp";
 
@@ -22,28 +23,34 @@ function main() {
   const urls = [];
 
   STATIC_PAGES.forEach((p) => {
+    urls.push({ loc: SITE_URL + p });
+  });
+
+  collectHtmlFiles(DETAIL_EVENT_DIR).forEach((fileName) => {
     urls.push({
-      loc: SITE_URL + p
+      loc: `${SITE_URL}/detail_event/${fileName}`
     });
   });
 
-  if (fs.existsSync(DETAIL_EVENT_DIR)) {
-    const files = fs
-      .readdirSync(DETAIL_EVENT_DIR)
-      .filter((name) => name.toLowerCase().endsWith(".html"))
-      .sort((a, b) => a.localeCompare(b, "ja"));
-
-    files.forEach((fileName) => {
-      urls.push({
-        loc: `${SITE_URL}/detail_event/${fileName}`
-      });
+  collectHtmlFiles(DETAIL_MC_DIR).forEach((fileName) => {
+    urls.push({
+      loc: `${SITE_URL}/detail_mc/${fileName}`
     });
-  }
+  });
 
   const xml = buildSitemapXml(urls);
   fs.writeFileSync(OUTPUT_PATH, xml, "utf8");
 
   console.log(`sitemap.xml generated: ${urls.length} URLs`);
+}
+
+function collectHtmlFiles(dirPath) {
+  if (!fs.existsSync(dirPath)) return [];
+
+  return fs
+    .readdirSync(dirPath)
+    .filter((name) => name.toLowerCase().endsWith(".html"))
+    .sort((a, b) => a.localeCompare(b, "ja"));
 }
 
 function buildSitemapXml(urls) {
