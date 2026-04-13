@@ -58,7 +58,7 @@ function buildEventHtml(template, eventId, detail) {
     : "";
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(eventId, eventTitle);
-  const eventJsonLd = buildEventJsonLd(eventId, eventTitle, metaDescription, eventDateText, winnerName);
+  const eventJsonLd = buildEventJsonLd(eventId, event, eventTitle, metaDescription, winnerName);
 
   return template
     .replaceAll("__PAGE_TITLE__", escapeHtml(pageTitle))
@@ -196,7 +196,18 @@ function buildBreadcrumbJsonLd(eventId, eventTitle) {
   }, null, 2);
 }
 
-function buildEventJsonLd(eventId, eventTitle, description, eventDateText, winnerName) {
+function buildEventJsonLd(eventId, event, eventTitle, description, winnerName) {
+  const normalizedDate = normalizeDateForSchema(event.event_date || "");
+  const locationName = safeString(event.location || "").trim();
+
+  const organizerName = safeString(
+    event.organizer ||
+    event.host ||
+    event.promoter ||
+    event.event_organizer ||
+    ""
+  ).trim();
+
   const obj = {
     "@context": "https://schema.org",
     "@type": "Event",
@@ -204,11 +215,22 @@ function buildEventJsonLd(eventId, eventTitle, description, eventDateText, winne
     "description": description,
     "url": `https://mcbattle.jp/detail_event/${eventId}.html`,
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventCompleted"
+    "eventStatus": "https://schema.org/EventCompleted",
+    "image": [
+      "https://mcbattle.jp/ogp.jpg"
+    ]
   };
 
-  if (eventDateText) {
-    obj.startDate = normalizeDateForSchema(eventDateText);
+  if (normalizedDate) {
+    obj.startDate = normalizedDate;
+    obj.endDate = normalizedDate;
+  }
+
+  if (locationName) {
+    obj.location = {
+      "@type": "Place",
+      "name": locationName
+    };
   }
 
   if (winnerName) {
@@ -218,13 +240,31 @@ function buildEventJsonLd(eventId, eventTitle, description, eventDateText, winne
     };
   }
 
+  if (organizerName) {
+    obj.organizer = {
+      "@type": "Organization",
+      "name": organizerName
+    };
+  }
+
   return JSON.stringify(obj, null, 2);
 }
 
-function normalizeDateForSchema(dateText) {
-  const m = String(dateText).match(/^(\d{4})\.(\d{2})\.(\d{2})$/);
-  if (!m) return dateText;
-  return `${m[1]}-${m[2]}-${m[3]}`;
+function normalizeDateForSchema(dateValue) {
+  const value = String(dateValue || "").trim();
+
+  if (!value) return "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+
+  const m = value.match(/^(\d{4})\.(\d{2})\.(\d{2})$/);
+  if (m) {
+    return `${m[1]}-${m[2]}-${m[3]}`;
+  }
+
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return value;
+
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
 function getRoundMatches(groupedMatches, roundLabel) {
@@ -279,7 +319,7 @@ function renderMcLink(name, mcId) {
 
   if (!safeName) return "";
   if (!safeId) return `<span>${safeName}</span>`;
-  return `<a href="../detail_mc.html?mc_id=${encodeURIComponent(safeId)}">${safeName}</a>`;
+  return `<a href="../detail_mc/${encodeURIComponent(safeId)}.html">${safeName}</a>`;
 }
 
 function formatPrizeYen(value) {
