@@ -52,7 +52,7 @@ function buildMcHtml(template, mcId, detail) {
   const totalPrizeMoney = detail.total_prize_money ?? 0;
 
   const mcName = safeString(mc.mc_name || "このMC");
-  const pageTitle = `${mcName} | 戦績・出場大会・優勝歴 | MCBattle.jp`;
+  const pageTitle = `${mcName} | 戦績・優勝歴・賞金・出場大会 | MCBattle.jp`;
   const metaDescription = buildMetaDescription(mcName, summary, championships, totalPrizeMoney);
 
   const rankDisplay = getRankDisplay(ranking);
@@ -114,14 +114,28 @@ function buildMcHtml(template, mcId, detail) {
 }
 
 function buildMetaDescription(mcName, summary, championships, totalPrizeMoney) {
+  const totalMatches = summary && summary.total_matches !== undefined && summary.total_matches !== null
+    ? Number(summary.total_matches)
+    : null;
+  const wins = summary && summary.wins !== undefined && summary.wins !== null
+    ? Number(summary.wins)
+    : null;
+  const losses = summary && summary.losses !== undefined && summary.losses !== null
+    ? Number(summary.losses)
+    : null;
+
   const parts = [
-    `${mcName}のMC詳細ページです。`,
-    summary && summary.total_matches !== undefined && summary.total_matches !== null
-      ? `戦績は${displayValue(summary.total_matches)}試合${displayValue(summary.wins)}勝${displayValue(summary.losses)}敗。`
+    `${mcName}の戦績・優勝歴・出場大会ページです。`,
+    totalMatches !== null && Number.isFinite(totalMatches) && wins !== null && Number.isFinite(wins) && losses !== null && Number.isFinite(losses)
+      ? `戦績は${totalMatches}試合${wins}勝${losses}敗。`
       : "",
-    championships.length ? `優勝歴${championships.length}回。` : "",
-    totalPrizeMoney ? `獲得賞金総額は¥${formatYen(totalPrizeMoney)}。` : "",
-    "出場大会とスコアを掲載しています。"
+    championships.length
+      ? `優勝歴は${championships.length}回。`
+      : "",
+    Number(totalPrizeMoney) > 0
+      ? `獲得賞金総額は¥${formatYen(totalPrizeMoney)}。`
+      : "",
+    "出場大会、戦績、スコアを掲載しています。"
   ].filter(Boolean);
 
   return parts.join(" ");
