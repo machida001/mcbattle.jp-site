@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-12T14:38:25.601Z",
-  "total": 914,
+  "updated_at": "2026-04-17T10:28:41.510Z",
+  "total": 909,
   "mcs": [
     {
       "mc_id": "MC0040",
@@ -1235,16 +1235,16 @@
       "kana_group": "か"
     },
     {
-      "mc_id": "MC0344",
-      "mc_name": "カツヲ",
-      "mc_yomi": "かつを",
+      "mc_id": "MC0116",
+      "mc_name": "GADORO",
+      "mc_yomi": "がどろ",
       "notes": "",
       "kana_group": "か"
     },
     {
-      "mc_id": "MC0116",
-      "mc_name": "GADORO",
-      "mc_yomi": "がどろ",
+      "mc_id": "MC0429",
+      "mc_name": "要",
+      "mc_yomi": "かなめ",
       "notes": "",
       "kana_group": "か"
     },
@@ -1805,13 +1805,6 @@
       "mc_id": "MC0758",
       "mc_name": "KENTY GROSS",
       "mc_yomi": "けんてぃぐろす",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0683",
-      "mc_name": "Core-Boy",
-      "mc_yomi": "こあぼーい",
       "notes": "",
       "kana_group": "か"
     },
@@ -3510,13 +3503,6 @@
       "kana_group": "た"
     },
     {
-      "mc_id": "MC0655",
-      "mc_name": "T-TONGUE（T-TANGG）",
-      "mc_yomi": "てぃーたんぐ",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
       "mc_id": "MC0478",
       "mc_name": ":DSLowvv",
       "mc_yomi": "でぃえすろー",
@@ -4009,13 +3995,6 @@
     {
       "mc_id": "MC0663",
       "mc_name": "NIHA-C",
-      "mc_yomi": "にはし",
-      "notes": "",
-      "kana_group": "な"
-    },
-    {
-      "mc_id": "MC0832",
-      "mc_name": "NIHA-C from 電波少女",
       "mc_yomi": "にはし",
       "notes": "",
       "kana_group": "な"
@@ -5659,13 +5638,6 @@
       "kana_group": "や"
     },
     {
-      "mc_id": "MC0429",
-      "mc_name": "要",
-      "mc_yomi": "よう",
-      "notes": "",
-      "kana_group": "や"
-    },
-    {
       "mc_id": "MC0533",
       "mc_name": "陽",
       "mc_yomi": "よう",
@@ -6138,13 +6110,6 @@
       "mc_id": "MC0367",
       "mc_name": "レイジ",
       "mc_yomi": "れいじ",
-      "notes": "",
-      "kana_group": "ら"
-    },
-    {
-      "mc_id": "MC0252",
-      "mc_name": "Racy",
-      "mc_yomi": "れいしー",
       "notes": "",
       "kana_group": "ら"
     },

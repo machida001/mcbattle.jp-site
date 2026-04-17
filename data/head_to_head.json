@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-12T14:39:01.509Z",
+  "updated_at": "2026-04-17T10:29:25.679Z",
   "min_matches": 2,
   "total": 453,
   "summaries": [
@@ -1857,6 +1857,19 @@
       "mc_name_b": "RAWAXXX(MOL53)",
       "a_wins": 3,
       "b_wins": 0,
+      "total_matches": 3,
+      "last_match_date": "2018-01-12",
+      "last_event_id": "EVT0024",
+      "last_event_name": "KOK2017本戦"
+    },
+    {
+      "pair_key": "MC0296__MC0354",
+      "mc_id_a": "MC0296",
+      "mc_name_a": "T-TANGG",
+      "mc_id_b": "MC0354",
+      "mc_name_b": "スナフキン",
+      "a_wins": 0,
+      "b_wins": 3,
       "total_matches": 3,
       "last_match_date": "2018-01-12",
       "last_event_id": "EVT0024",
@@ -5484,19 +5497,6 @@
       "mc_name_b": "ミステリオ",
       "a_wins": 0,
       "b_wins": 2,
-      "total_matches": 2,
-      "last_match_date": "2016-11-06",
-      "last_event_id": "EVT0041",
-      "last_event_name": "戦極MCBATTLE 第15章"
-    },
-    {
-      "pair_key": "MC0354__MC0655",
-      "mc_id_a": "MC0354",
-      "mc_name_a": "スナフキン",
-      "mc_id_b": "MC0655",
-      "mc_name_b": "T-TONGUE（T-TANGG）",
-      "a_wins": 2,
-      "b_wins": 0,
       "total_matches": 2,
       "last_match_date": "2016-11-06",
       "last_event_id": "EVT0041",
