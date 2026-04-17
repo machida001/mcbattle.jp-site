@@ -152,7 +152,8 @@ function buildMcInfoListItems(params) {
     rankingNote
   } = params;
 
-  const championshipText = championships.length
+  const hasChampionships = championships.length > 0;
+  const championshipText = hasChampionships
     ? championships.map(renderChampionshipLine).join("")
     : "−";
 
@@ -162,7 +163,13 @@ function buildMcInfoListItems(params) {
 
   rows.push(renderInfoRow("戦績", escapeHtml(battleSummary)));
   rows.push(renderInfoRow("獲得賞金総額", escapeHtml(`¥${formatYen(totalPrizeMoney)}`)));
-  rows.push(renderInfoRow("優勝歴", championshipText, { block: true }));
+
+  if (hasChampionships) {
+    rows.push(renderInfoRow("優勝歴", championshipText, { block: true }));
+  } else {
+    rows.push(renderInfoRow("優勝歴", escapeHtml(championshipText)));
+  }
+
   rows.push(renderInfoRow("スコアランキング", escapeHtml(isInactiveRanking(rankingStatus) ? "対象外" : displayValue(rankDisplay))));
   rows.push(renderInfoRow("スコア", escapeHtml(isInactiveRanking(rankingStatus) ? "−" : displayValue(scoreDisplay))));
 
