@@ -5,15 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>スコアリング仕様について | MCBattle.jp</title>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9C8VGD3THB');
-</script>
-  <meta name="description" content="国内MCバトルの独自スコアの算出方法を説明するページです。誰に勝ったか、いつの試合か、どのラウンドか、敗戦の扱いなど、スコアリングの考え方を掲載しています。">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9C8VGD3THB');
+  </script>
+  <meta name="description" content="国内MCバトルの独自スコアの算出方法を説明するページです。誰に勝ったか、いつの試合か、どのラウンドか、敗戦の扱い、優勝・準優勝・上位相手勝利・勝率・無敗の補助加点など、現在のスコアリングの考え方を掲載しています。">
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -299,7 +298,7 @@
       <div class="page-header-block">
         <div class="page-header-title-row">
           <h1>スコアリング仕様について</h1>
-          <span class="page-version">Ver.1.127</span>
+          <span class="page-version">Ver.1.128</span>
         </div>
       </div>
     </div>
@@ -311,10 +310,10 @@
           このページは、<strong>MCBattle.jp の独自スコアがどう計算されているか</strong>を説明するためのページです。
         </p>
         <p>
-          ここでいうスコアは、単なる勝利数や優勝回数ではなく、<strong>試合結果を時系列で積み上げて更新していく現在推定値</strong>です。
+          ここでいうスコアは、単なる勝利数や優勝回数ではなく、<strong>試合結果をもとに現在の強さを数値化した推定値</strong>です。
         </p>
         <p>
-          ランキングは、このスコアをもとに並べた表示結果にすぎません。  
+          ランキングは、このスコアをもとに並べた表示結果です。  
           つまり、主役はランキングではなく、<strong>スコアそのものの算出ロジック</strong>です。
         </p>
 
@@ -371,28 +370,41 @@
       <section class="spec-card">
         <h2>4. スコアの基本構造</h2>
         <p>
-          スコアは、<strong>weighted Elo をベースに、試合を古い順から1件ずつ反映して更新していく方式</strong>で計算しています。
+          現在の実装は、<strong>Elo を補助的な土台として使いながら、最終順位自体は独自の direct score で決める方式</strong>です。
         </p>
         <p>
-          後から勝利点や優勝点を足し算するのではなく、<strong>各試合の時点での両者のスコア差を見ながら、そのたびに現在値を更新</strong>します。
+          まず各試合について、相手の評価差・ラウンド・開催日の重みを使って期待値を出し、そこから<strong>Elo 系の更新</strong>を行います。
+        </p>
+        <p>
+          ただし、最終スコアはその Elo 値そのものではなく、<strong>重み付きの勝利加点・敗戦減点・補助ボーナス・Elo残差</strong>を合算した独自スコアです。
         </p>
 
-        <h3>基本式</h3>
+        <h3>試合ごとの期待値とElo更新</h3>
         <div class="spec-formula">expectedWinner = 1 / (1 + 10 ^ ((loserRating - winnerRating) / 400))
 
-delta = baseK × roundWeight × recencyWeight × (1 - expectedWinner)
-loserDelta = delta × lossPenaltyRate
+eloDelta = baseK × roundWeight × recencyWeight × (1 - expectedWinner)
+loserEloDelta = eloDelta × lossPenaltyRate
 
-winnerRating = winnerRating + delta
-loserRating  = loserRating  - loserDelta</div>
+winnerElo = winnerElo + eloDelta
+loserElo  = loserElo  - loserEloDelta</div>
 
-        <p>
-          初期値は全MC共通でスタートし、対象試合を順番にたどって現在スコアを作っています。
-        </p>
+        <h3>最終スコアの考え方</h3>
+        <div class="spec-formula">directScore =
+  BASE_SCORE
++ weighted win sum
+- weighted loss sum
++ champion bonus
++ runner-up bonus
++ top opponent win bonus
++ win-rate bonus
++ undefeated bonus
++ small Elo residual</div>
 
         <div class="spec-formula">initialRating = 1500.00
-baseK = 24.00
-lossPenaltyRate = 0.40</div>
+BASE_SCORE = 1500.00
+baseK = 20.00
+lossPenaltyRate = 1.00
+ELO_RESIDUAL_RATE = 0.18</div>
       </section>
 
       <section class="spec-card">
@@ -405,6 +417,9 @@ lossPenaltyRate = 0.40</div>
           逆に、評価が低い相手への勝利は、上がり幅が比較的小さくなります。
         </p>
         <p>
+          現在は、各試合ごとに期待値を計算したうえで、<strong>格上への勝利はやや大きく、格下への勝利はやや小さく</strong>なるように重み付けしています。
+        </p>
+        <p>
           このため、同じ1勝でも価値は一律ではなく、<strong>勝利数そのものより「誰に勝ったか」</strong>を重く見ています。
         </p>
       </section>
@@ -415,13 +430,13 @@ lossPenaltyRate = 0.40</div>
           このスコアでは、<strong>敗戦も反映</strong>します。
         </p>
         <p>
-          ただし、勝者の上がり幅をそのまま敗者のマイナスにするのではなく、<strong>敗者の減点は勝者上昇分の40%</strong>にしています。
+          現在の実装では、Elo更新部分の敗者側減点は<strong>勝者側上昇分と同率</strong>で扱っています。
         </p>
         <p>
-          これは、強豪への大きな勝利の価値をある程度残しつつ、負けが多い場合には現在評価が伸びにくくなるようにするためです。
+          また最終スコアでも、<strong>重み付きの敗戦減点</strong>を明確に差し引いています。
         </p>
         <p>
-          つまり、負けは無視していませんが、<strong>勝利の価値をやや強めに残す設計</strong>です。
+          つまり、負けは無視しておらず、<strong>勝ちだけでなく負けも現在評価にきちんと効く設計</strong>です。
         </p>
       </section>
 
@@ -457,8 +472,8 @@ lossPenaltyRate = 0.40</div>
           序盤よりも、準決勝や決勝の勝敗の方が価値が高いと考えるためです。
         </p>
         <p>
-          現在は、<strong>Best64 を最小、Final を最大</strong>とする傾斜を置いています。  
-          また、<strong>Best8以降はやや強めに効く</strong>ように調整しています。
+          現在は、<strong>Final を最大、Best4〜Best64 付近を段階的に傾斜</strong>させる方式です。  
+          また、<strong>Best8 以降はやや強めに効く</strong>ように調整しています。
         </p>
         <p>
           これも固定点を後から加える方式ではなく、<strong>各試合の変動幅そのものに掛けて反映</strong>しています。
@@ -466,7 +481,27 @@ lossPenaltyRate = 0.40</div>
       </section>
 
       <section class="spec-card">
-        <h2>9. スコアに入れていないもの</h2>
+        <h2>9. 補助的に入れているもの</h2>
+        <p>
+          現在のスコアでは、試合ごとの勝敗評価に加えて、次の要素を<strong>補助的に加点</strong>しています。
+        </p>
+
+        <ul class="spec-list">
+          <li>直近4年の優勝回数</li>
+          <li>直近4年の準優勝回数</li>
+          <li>直近4年における上位相手への勝利回数</li>
+          <li>直近4年の勝率</li>
+          <li>直近4年で一定試合数以上かつ無敗であること</li>
+          <li>Elo の最終値からの小さな残差</li>
+        </ul>
+
+        <p>
+          つまり、主役はあくまで試合単位の勝敗評価ですが、<strong>最近の実績の見え方を少し補正する補助要素</strong>も入れています。
+        </p>
+      </section>
+
+      <section class="spec-card">
+        <h2>10. 直接入れていないもの</h2>
         <p>
           このスコアでは、次のような要素は直接入れていません。
         </p>
@@ -477,9 +512,6 @@ lossPenaltyRate = 0.40</div>
           <li>賞金額そのもの</li>
           <li>主観的な「全盛期」評価</li>
           <li>大会ごとの主観的な強度補正</li>
-          <li>優勝回数・準優勝回数への独立した固定ボーナス</li>
-          <li>勝率への独立した固定ボーナス</li>
-          <li>無敗への独立した固定ボーナス</li>
         </ul>
 
         <p>
@@ -488,7 +520,7 @@ lossPenaltyRate = 0.40</div>
       </section>
 
       <section class="spec-card">
-        <h2>10. ランキングとの関係</h2>
+        <h2>11. ランキングとの関係</h2>
         <p>
           スコアランキングは、<strong>このスコアを順位順に並べて表示したもの</strong>です。
         </p>
@@ -504,7 +536,7 @@ lossPenaltyRate = 0.40</div>
       </section>
 
       <section class="spec-card">
-        <h2>11. 仮想MCバトルとの関係</h2>
+        <h2>12. 仮想MCバトルとの関係</h2>
         <p>
           仮想MCバトルの「今の強さでシミュレーションする」モードも、基本的にはこのスコアの考え方を土台にしています。
         </p>
@@ -517,7 +549,7 @@ lossPenaltyRate = 0.40</div>
       </section>
 
       <section class="spec-card">
-        <h2>12. 今後の見直し</h2>
+        <h2>13. 今後の見直し</h2>
         <p>
           スコアリングの考え方には、今後も改善の余地があります。
         </p>
