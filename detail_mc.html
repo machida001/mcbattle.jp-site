@@ -4,16 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MC詳細 | MCBattle.jp</title>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9C8VGD3THB');
-</script>
   <meta name="description" content="国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。">
+  <link rel="canonical" href="https://mcbattle.jp/detail_mc.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MCBattle.jp" />
+  <meta property="og:title" content="MC詳細 | MCBattle.jp" />
+  <meta property="og:description" content="国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。" />
+  <meta property="og:url" content="https://mcbattle.jp/detail_mc.html" />
+  <meta property="og:image" content="https://mcbattle.jp/ogp.PNG" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MC詳細 | MCBattle.jp" />
+  <meta name="twitter:description" content="国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。" />
+  <meta name="twitter:image" content="https://mcbattle.jp/ogp.PNG" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9C8VGD3THB');
+  </script>
   <link rel="stylesheet" href="style.css" />
   <style>
     .page-top{
@@ -562,6 +576,28 @@
         document.head.appendChild(meta);
       }
       meta.setAttribute("content", content);
+
+      const ogDescription = document.querySelector('meta[property="og:description"]');
+      if (ogDescription) ogDescription.setAttribute("content", content);
+
+      const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDescription) twitterDescription.setAttribute("content", content);
+    }
+
+    function setCanonicalUrl(url) {
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute("href", url);
+
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.setAttribute("content", url);
+    }
+
+    function setOgTitle(title) {
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute("content", title);
+
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) twitterTitle.setAttribute("content", title);
     }
 
     function escapeHtml(value) {
@@ -861,6 +897,8 @@
       if (!mcId) {
         titleEl.textContent = "MC IDが指定されていません";
         document.title = "MC詳細 | MCBattle.jp";
+        setOgTitle("MC詳細 | MCBattle.jp");
+        setCanonicalUrl("https://mcbattle.jp/detail_mc.html");
         setMetaDescription("国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。");
         metaEl.textContent = "";
         showErrorState("mc_id が見つかりませんでした。");
@@ -888,6 +926,8 @@
         if (!data) {
           titleEl.textContent = "MC情報の取得に失敗しました";
           document.title = "MC詳細 | MCBattle.jp";
+          setOgTitle("MC詳細 | MCBattle.jp");
+          setCanonicalUrl(`https://mcbattle.jp/detail_mc.html?mc_id=${encodeURIComponent(mcId)}`);
           setMetaDescription("国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。");
           metaEl.textContent = "";
           showErrorState("指定されたMCデータが見つかりません");
@@ -897,6 +937,8 @@
         if (data.error) {
           titleEl.textContent = "MC情報の取得に失敗しました";
           document.title = "MC詳細 | MCBattle.jp";
+          setOgTitle("MC詳細 | MCBattle.jp");
+          setCanonicalUrl(`https://mcbattle.jp/detail_mc.html?mc_id=${encodeURIComponent(mcId)}`);
           setMetaDescription("国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。");
           metaEl.textContent = data.message || "";
           showErrorState("データ取得エラー");
@@ -915,6 +957,8 @@
         const mcName = mc.mc_name || "このMC";
         titleEl.textContent = mcName;
         document.title = `${mcName} | 戦績・出場大会・優勝歴 | MCBattle.jp`;
+        setOgTitle(`${mcName} | 戦績・出場大会・優勝歴 | MCBattle.jp`);
+        setCanonicalUrl(`https://mcbattle.jp/detail_mc.html?mc_id=${encodeURIComponent(mcId)}`);
         metaEl.textContent = "";
 
         const rankDisplay = getRankDisplay(ranking);
@@ -1005,6 +1049,8 @@
         console.error(err);
         titleEl.textContent = "MC情報の読み込みに失敗しました";
         document.title = "MC詳細 | MCBattle.jp";
+        setOgTitle("MC詳細 | MCBattle.jp");
+        setCanonicalUrl(`https://mcbattle.jp/detail_mc.html${mcId ? `?mc_id=${encodeURIComponent(mcId)}` : ""}`);
         setMetaDescription("国内MCバトルのMCごとの戦績、出場大会、優勝歴、獲得賞金、スコアを掲載する詳細ページです。");
         metaEl.textContent = "";
         showErrorState(`読み込み失敗: ${err && err.message ? err.message : err}`);
