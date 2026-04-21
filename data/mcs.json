@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-17T12:33:38.722Z",
-  "total": 909,
+  "updated_at": "2026-04-21T12:52:44.670Z",
+  "total": 918,
   "mcs": [
     {
       "mc_id": "MC0040",
@@ -689,6 +689,13 @@
       "kana_group": "あ"
     },
     {
+      "mc_id": "MC1032",
+      "mc_name": "S-deep",
+      "mc_yomi": "えすでぃーぷ",
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
       "mc_id": "MC0464",
       "mc_name": "ST-C",
       "mc_yomi": "えすてぃし",
@@ -1172,6 +1179,13 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1036",
+      "mc_name": "GAGA",
+      "mc_yomi": "がが",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0330",
       "mc_name": "かくてる",
       "mc_yomi": "かくてる",
@@ -1497,6 +1511,13 @@
       "mc_id": "MC0084",
       "mc_name": "COOKIE",
       "mc_yomi": "くっきー",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC1033",
+      "mc_name": "Gucci mask",
+      "mc_yomi": "ぐっちますく",
       "notes": "",
       "kana_group": "か"
     },
@@ -1844,6 +1865,13 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1034",
+      "mc_name": "コージー零八",
+      "mc_yomi": "こーじーぜろはち",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0119",
       "mc_name": "GO MAD",
       "mc_yomi": "ごーまっど",
@@ -2092,6 +2120,13 @@
       "mc_id": "MC0980",
       "mc_name": "ZACK",
       "mc_yomi": "ざっく",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC1035",
+      "mc_name": "ZACKMAN Jr",
+      "mc_yomi": "ざっくまんじゅにあ",
       "notes": "",
       "kana_group": "さ"
     },
@@ -3090,6 +3125,13 @@
       "kana_group": "た"
     },
     {
+      "mc_id": "MC1028",
+      "mc_name": "TAISHI",
+      "mc_yomi": "たいし",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
       "mc_id": "MC0379",
       "mc_name": "大将",
       "mc_yomi": "たいしょう",
@@ -3268,6 +3310,13 @@
       "mc_id": "MC0297",
       "mc_name": "Tach-B",
       "mc_yomi": "たふびー",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC1029",
+      "mc_name": "タマコテツ",
+      "mc_yomi": "たまこてつ",
       "notes": "",
       "kana_group": "た"
     },
@@ -3499,6 +3548,13 @@
       "mc_id": "MC0025",
       "mc_name": "TKda黒ぶち",
       "mc_yomi": "てぃーけーだ",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC1031",
+      "mc_name": "D-Nut's",
+      "mc_yomi": "でぃーなっつ",
       "notes": "",
       "kana_group": "た"
     },
@@ -3772,6 +3828,13 @@
       "mc_id": "MC0302",
       "mc_name": "TORA",
       "mc_yomi": "とら",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC1030",
+      "mc_name": "DraG∞N",
+      "mc_yomi": "どらごん",
       "notes": "",
       "kana_group": "た"
     },
@@ -5038,7 +5101,7 @@
     {
       "mc_id": "MC0399",
       "mc_name": "梵頭",
-      "mc_yomi": "ぼんあたま",
+      "mc_yomi": "ぼんず",
       "notes": "",
       "kana_group": "は"
     },

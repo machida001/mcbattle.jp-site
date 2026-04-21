@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-17T12:33:37.348Z",
-  "total": 153,
+  "updated_at": "2026-04-21T12:52:44.275Z",
+  "total": 154,
   "events": [
     {
       "event_id": "EVT0021",
@@ -775,6 +775,24 @@
       "organizer": "戦極MCBATTLE",
       "notes": "",
       "winner_name": ""
+    },
+    {
+      "event_id": "EVT0163",
+      "event_name": "戦極MCBATTLE vs THE罵倒",
+      "event_name_full": "戦極MCBATTLE vs THE罵倒",
+      "event_name_simple": "戦極MCBATTLE vs THE罵倒",
+      "event_date": "2026-04-19",
+      "prize_money_winner": 100000,
+      "prize_money_total": null,
+      "category_id": "EVTCat004",
+      "category_name": "戦極MC BATTLE",
+      "category_show_order": 5,
+      "event_category": "戦極MC BATTLE",
+      "event_stage": "本戦",
+      "location": "両国Sunrise",
+      "organizer": "戦極MC BATTLE",
+      "notes": "",
+      "winner_name": "椿"
     },
     {
       "event_id": "EVT0040",

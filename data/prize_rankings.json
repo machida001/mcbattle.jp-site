@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-17T12:33:48.433Z",
-  "total": 54,
+  "updated_at": "2026-04-21T12:53:05.770Z",
+  "total": 55,
   "rankings": [
     {
       "rank": 1,
@@ -316,12 +316,18 @@
     },
     {
       "rank": 53,
+      "mc_id": "MC0400",
+      "mc_name": "椿",
+      "total_prize_money": 100000
+    },
+    {
+      "rank": 54,
       "mc_id": "MC0158",
       "mc_name": "K-razy",
       "total_prize_money": 50000
     },
     {
-      "rank": 54,
+      "rank": 55,
       "mc_id": "MC0444",
       "mc_name": "黄猿",
       "total_prize_money": 50000
