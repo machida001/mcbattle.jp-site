@@ -5,6 +5,7 @@ const ROOT_DIR = process.cwd();
 const TEMPLATE_PATH = path.join(ROOT_DIR, "templates", "event-template.html");
 const DATA_PATH = path.join(ROOT_DIR, "data", "event_details_all.json");
 const OUTPUT_DIR = path.join(ROOT_DIR, "detail_event");
+const LONG_NAME_THRESHOLD = 10;
 
 function main() {
   ensureFileExists(TEMPLATE_PATH);
@@ -314,13 +315,20 @@ function isTwoColumnRound(roundName) {
 }
 
 function renderMcLink(name, mcId, type = "winner") {
-  const safeName = escapeHtml(name || "");
+  const rawName = String(name || "");
+  const safeName = escapeHtml(rawName);
   const safeId = String(mcId || "").trim();
-  const className = type === "loser" ? "result-link-loser" : "result-link-winner";
+  const isLong = getDisplayLength(rawName) >= LONG_NAME_THRESHOLD;
+  const className =
+    `${type === "loser" ? "result-link-loser" : "result-link-winner"}${isLong ? " is-long" : ""}`;
 
   if (!safeName) return "";
   if (!safeId) return `<span class="${className}">${safeName}</span>`;
   return `<a href="../detail_mc/${encodeURIComponent(safeId)}.html" class="${className}">${safeName}</a>`;
+}
+
+function getDisplayLength(value) {
+  return Array.from(String(value || "").trim()).length;
 }
 
 function formatPrizeYen(value) {
