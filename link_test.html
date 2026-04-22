@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>link_test | MCBattle.jp</title>
+  <style>
+    :root{
+      --bg: #0a0b10;
+      --bg-2: #11131a;
+      --panel: rgba(23, 25, 34, 0.92);
+      --text: #f4f5f7;
+      --muted: #b2b8c7;
+      --line: rgba(216, 180, 106, 0.16);
+      --line-strong: rgba(216, 180, 106, 0.30);
+      --accent: #d8b46a;
+      --accent-soft: #e3c98f;
+      --glow: rgba(216, 180, 106, 0.16);
+      --content-max: 1120px;
+      --page-gutter: 16px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif;
+      line-height:1.6;
+      background:
+        radial-gradient(circle at top, rgba(216,180,106,.08), transparent 28%),
+        radial-gradient(circle at 82% 12%, rgba(216,180,106,.05), transparent 20%),
+        linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+      min-height:100vh;
+    }
+
+    .page{
+      width:min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
+      margin:0 auto;
+      padding:28px var(--page-gutter) 56px;
+    }
+
+    h1{
+      margin:0 0 8px;
+      color:var(--accent);
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1.06;
+      letter-spacing:-0.01em;
+      font-family:"Times New Roman", Georgia, serif;
+      font-style:italic;
+      font-weight:700;
+    }
+
+    .lead{
+      margin:0 0 20px;
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%),
+        linear-gradient(180deg, var(--panel) 0%, rgba(14, 18, 28, 0.98) 100%);
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.32),
+        0 0 0 1px rgba(255,255,255,.02);
+      padding:16px;
+      min-width:0;
+    }
+
+    .num{
+      color:var(--accent);
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.05em;
+      margin-bottom:8px;
+    }
+
+    .label{
+      margin:0 0 10px;
+      font-size:1rem;
+      font-weight:700;
+    }
+
+    .sample{
+      color:var(--muted);
+      font-size:.92rem;
+      margin:0 0 12px;
+    }
+
+    .demo-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+
+    .demo-block{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      align-items:flex-start;
+    }
+
+    .match-box{
+      width:100%;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:12px;
+      background:rgba(255,255,255,0.025);
+      min-height:52px;
+    }
+
+    .sep{
+      color:var(--muted);
+      opacity:.85;
+    }
+
+    .base-link{
+      color:var(--text);
+      text-decoration:none;
+      transition:all .18s ease;
+    }
+
+    .p01{ text-decoration:underline; text-underline-offset:.14em; }
+    .p01:hover{ color:var(--accent-soft); }
+
+    .p02{ color:var(--accent-soft); text-decoration:underline; text-underline-offset:.16em; }
+    .p02:hover{ color:#fff3d4; }
+
+    .p03{ border-bottom:1px solid rgba(216,180,106,.38); padding-bottom:1px; }
+    .p03:hover{ color:var(--accent-soft); border-color:rgba(216,180,106,.72); }
+
+    .p04{ text-decoration:underline; text-decoration-thickness:2px; text-decoration-color:rgba(216,180,106,.55); text-underline-offset:.18em; }
+    .p04:hover{ color:var(--accent-soft); text-decoration-color:rgba(216,180,106,.9); }
+
+    .p05{ padding:2px 5px; border-radius:6px; text-decoration:underline; text-underline-offset:.15em; }
+    .p05:hover{ background:rgba(216,180,106,.10); color:var(--accent-soft); }
+
+    .p06{ padding:3px 6px; border-radius:7px; border:1px solid transparent; }
+    .p06:hover{ border-color:rgba(216,180,106,.30); background:rgba(216,180,106,.08); color:var(--accent-soft); }
+
+    .p07{ display:inline-flex; align-items:center; gap:.28em; font-weight:700; }
+    .p07::after{ content:"›"; color:var(--accent); }
+    .p07:hover{ color:var(--accent-soft); transform:translateX(1px); }
+
+    .p08{ display:inline-flex; align-items:center; gap:.36em; font-weight:700; color:var(--accent-soft); }
+    .p08::after{ content:"↗"; font-size:.9em; }
+    .p08:hover{ color:#fff0ca; }
+
+    .p09{ display:inline-flex; align-items:center; min-height:30px; padding:0 10px; border-radius:999px; border:1px solid var(--line); background:rgba(255,255,255,.04); }
+    .p09:hover{ border-color:var(--line-strong); background:rgba(255,255,255,.07); color:var(--accent-soft); }
+
+    .p10{ display:inline-flex; align-items:center; min-height:31px; padding:0 10px; border-radius:999px; background:rgba(216,180,106,.10); border:1px solid rgba(216,180,106,.30); color:var(--accent-soft); }
+    .p10:hover{ background:rgba(216,180,106,.17); border-color:rgba(216,180,106,.54); }
+
+    .p11{ display:inline-flex; align-items:center; min-height:32px; padding:0 11px; border-radius:10px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10); }
+    .p11:hover{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.22); }
+
+    .p12{ display:inline-flex; align-items:center; min-height:34px; padding:0 12px; border-radius:11px; background:linear-gradient(180deg, rgba(216,180,106,.14), rgba(216,180,106,.06)); border:1px solid rgba(216,180,106,.34); color:#fff0ca; }
+    .p12:hover{ transform:translateY(-1px); box-shadow:0 0 18px var(--glow); }
+
+    .p13{ display:inline-flex; align-items:center; gap:.4em; min-height:32px; padding:0 11px; border-radius:999px; border:1px solid rgba(216,180,106,.28); }
+    .p13::after{ content:"›"; color:var(--accent); }
+    .p13:hover{ background:rgba(216,180,106,.09); }
+
+    .p14{ display:inline-flex; align-items:center; gap:.45em; min-height:32px; padding:0 11px; border-radius:999px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.09); }
+    .p14::before{ content:"●"; font-size:.52em; color:var(--accent); }
+    .p14:hover{ background:rgba(255,255,255,.06); }
+
+    .p15{ font-weight:800; color:#ffffff; letter-spacing:-0.01em; }
+    .p15:hover{ color:var(--accent-soft); text-shadow:0 0 12px rgba(216,180,106,.18); }
+
+    .p16{ font-weight:700; background-image:linear-gradient(transparent 72%, rgba(216,180,106,.22) 72%); }
+    .p16:hover{ background-image:linear-gradient(transparent 66%, rgba(216,180,106,.32) 66%); color:#fff1d2; }
+
+    .p17{ padding:3px 0; position:relative; }
+    .p17::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:100%;
+      bottom:0;
+      height:2px;
+      background:var(--accent);
+      transition:right .18s ease;
+    }
+    .p17:hover::after{ right:0; }
+    .p17:hover{ color:var(--accent-soft); }
+
+    .p18{ padding:3px 8px; border-left:2px solid rgba(216,180,106,.45); }
+    .p18:hover{ background:rgba(216,180,106,.08); border-left-color:rgba(216,180,106,.82); }
+
+    .p19{ padding:4px 9px; border-radius:8px; background:rgba(255,255,255,.03); box-shadow:0 0 0 1px rgba(255,255,255,.05) inset; }
+    .p19:hover{ background:rgba(255,255,255,.08); color:var(--accent-soft); }
+
+    .p20{ color:var(--accent-soft); border-bottom:1px dashed rgba(216,180,106,.40); }
+    .p20:hover{ border-bottom-style:solid; color:#fff1cc; }
+
+    .p21{ display:inline-flex; align-items:center; gap:.35em; padding:2px 0; font-weight:700; }
+    .p21::after{ content:"詳細"; font-size:.72em; color:var(--muted); }
+    .p21:hover{ color:var(--accent-soft); }
+
+    .p22{ display:inline-flex; align-items:center; min-height:34px; padding:0 12px; border-radius:999px; color:#fff; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); }
+    .p22:hover{ background:rgba(216,180,106,.14); border-color:rgba(216,180,106,.30); }
+
+    .p23{ display:inline-flex; align-items:center; gap:.45em; min-height:34px; padding:0 12px; border-radius:11px; background:rgba(255,255,255,.03); border:1px solid var(--line); }
+    .p23::after{ content:"→"; color:var(--accent); }
+    .p23:hover{ background:rgba(255,255,255,.08); }
+
+    .p24{ padding:4px 10px; border-radius:999px; color:var(--text); background:transparent; border:1px dashed rgba(216,180,106,.30); }
+    .p24:hover{ background:rgba(216,180,106,.08); border-style:solid; }
+
+    .p25{ display:inline-flex; align-items:center; gap:.36em; padding:5px 8px; border-radius:8px; }
+    .p25::before{ content:"🥇"; }
+    .p25:hover{ background:rgba(255,255,255,.06); }
+
+    .p26{ padding:4px 10px; border-radius:10px; border:1px solid rgba(216,180,106,.22); box-shadow:0 0 0 1px rgba(255,255,255,.03) inset; }
+    .p26:hover{ background:rgba(216,180,106,.08); box-shadow:0 0 18px rgba(216,180,106,.18); }
+
+    .p27{ padding:3px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.10); }
+    .p27:hover{ border-color:rgba(216,180,106,.32); color:var(--accent-soft); }
+
+    .p28{ padding:4px 9px; border-radius:999px; background:rgba(255,255,255,.06); }
+    .p28:hover{ background:rgba(255,255,255,.11); }
+
+    .p29{ padding:4px 10px; border-radius:9px; border:1px solid rgba(216,180,106,.20); box-shadow:0 0 0 1px rgba(216,180,106,.12) inset; }
+    .p29:hover{ background:rgba(216,180,106,.08); }
+
+    .p30{ display:inline-flex; align-items:center; gap:.35em; }
+    .p30::before{
+      content:"MC";
+      font-size:.68em;
+      color:var(--muted);
+      padding:1px 5px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:999px;
+    }
+    .p30:hover{ color:var(--accent-soft); }
+
+    .p31{ color:var(--accent); font-weight:700; }
+    .p31:hover{ color:#f1d395; }
+
+    .p32{ font-weight:700; text-shadow:0 0 8px rgba(255,255,255,.08); }
+    .p32:hover{ text-shadow:0 0 14px rgba(216,180,106,.18); color:var(--accent-soft); }
+
+    .p33{ display:inline-flex; align-items:center; gap:.35em; }
+    .p33::before{ content:"›"; color:var(--accent); transform:rotate(180deg); }
+    .p33:hover{ color:var(--accent-soft); }
+
+    .p34{ padding:2px 5px; border-radius:6px; text-decoration:underline; text-underline-offset:.18em; text-decoration-color:rgba(216,180,106,.45); }
+    .p34:hover{ background:rgba(255,255,255,.05); }
+
+    .p35{ display:inline-flex; align-items:center; min-height:28px; padding:0 9px; border-radius:999px; border:1px solid rgba(255,255,255,.10); font-size:.95em; }
+    .p35:hover{ background:rgba(255,255,255,.05); }
+
+    .p36{ display:inline-flex; align-items:center; min-height:34px; padding:0 12px; border-radius:10px; border:1px solid rgba(216,180,106,.30); color:var(--accent-soft); }
+    .p36:hover{ background:rgba(216,180,106,.10); }
+
+    .p37{ display:inline-flex; align-items:center; min-height:26px; padding:0 8px; border-radius:999px; background:rgba(255,255,255,.04); font-size:.92em; }
+    .p37:hover{ background:rgba(255,255,255,.09); }
+
+    .p38{ padding:5px 10px; border-radius:8px; }
+    .p38:hover{ background:rgba(216,180,106,.16); color:#fff1d2; }
+
+    .p39{ padding:4px 9px; border-left:3px solid rgba(216,180,106,.55); }
+    .p39:hover{ background:rgba(216,180,106,.08); }
+
+    .p40{ display:inline-flex; align-items:center; gap:.35em; }
+    .p40::after{
+      content:"12";
+      font-size:.7em;
+      line-height:1;
+      padding:3px 6px;
+      border-radius:999px;
+      background:rgba(216,180,106,.14);
+      color:var(--accent-soft);
+    }
+    .p40:hover{ color:var(--accent-soft); }
+
+    .p41{ padding:4px 9px; border-radius:8px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); font-weight:800; color:#fff; }
+    .p41:hover{ background:rgba(216,180,106,.12); }
+
+    .p42{ padding:4px 9px; border-radius:8px; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); color:#8f97aa; }
+    .p42:hover{ background:rgba(255,255,255,.05); color:#b8c0cf; }
+
+    .p43{ display:inline-flex; align-items:center; min-height:36px; padding:0 12px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10); font-weight:700; }
+    .p43:hover{ transform:translateY(-1px); background:rgba(255,255,255,.07); }
+
+    .p44{ display:inline-flex; align-items:center; min-height:30px; padding:0 10px; border-radius:7px; background:rgba(216,180,106,.08); color:#fff2d7; }
+    .p44:hover{ background:rgba(216,180,106,.16); }
+
+    .p45{ display:inline-flex; align-items:center; min-height:38px; padding:0 13px; border-radius:12px; border:1px solid rgba(216,180,106,.28); background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); }
+    .p45:hover{ box-shadow:0 10px 24px rgba(0,0,0,.18); }
+
+    .p46{ display:block; padding:8px 10px; border-radius:10px; }
+    .p46:hover{ background:rgba(255,255,255,.06); }
+
+    .p47{ display:inline-flex; align-items:center; gap:.38em; padding:5px 10px; border-radius:10px; background:rgba(255,255,255,.04); border:1px solid rgba(216,180,106,.18); font-weight:800; }
+    .p47::after{ content:"詳"; font-size:.72em; color:var(--accent); }
+    .p47:hover{ background:rgba(216,180,106,.10); }
+
+    .p48{ display:inline-flex; align-items:center; gap:.35em; color:var(--muted); }
+    .p48::after{ content:"→"; font-size:.9em; }
+    .p48:hover{ color:var(--accent-soft); }
+
+    .p49{ color:#8ab4f8; text-decoration:underline; text-underline-offset:.14em; }
+    .p49:hover{ color:#a8c7fa; }
+
+    .p50{
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:0 14px;
+      border-radius:999px;
+      background:linear-gradient(180deg, rgba(216,180,106,.20), rgba(216,180,106,.08));
+      border:1px solid rgba(216,180,106,.40);
+      color:#fff4dc;
+      font-weight:800;
+      box-shadow:0 0 0 1px rgba(255,255,255,.03) inset;
+    }
+    .p50:hover{
+      transform:translateY(-1px);
+      box-shadow:0 0 20px rgba(216,180,106,.20);
+    }
+
+    @media (max-width: 820px){
+      .grid{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>MCBattle.jp</h1>
+    <p class="lead">リンク見た目の比較用です。50パターン入れてあります。大会ページやMCページでの「押したくなる見た目」を選ぶためのテスト台です。</p>
+
+    <div class="grid">
+
+      <section class="card">
+        <div class="num">#01</div>
+        <p class="label">標準下線</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p01">Authority</a>
+            <a href="#" class="base-link p01">呂布カルマ</a>
+            <a href="#" class="base-link p01">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p01">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p01">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#02</div>
+        <p class="label">金色下線</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p02">Authority</a>
+            <a href="#" class="base-link p02">呂布カルマ</a>
+            <a href="#" class="base-link p02">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p02">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p02">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#03</div>
+        <p class="label">細い下線</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p03">Authority</a>
+            <a href="#" class="base-link p03">呂布カルマ</a>
+            <a href="#" class="base-link p03">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p03">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p03">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#04</div>
+        <p class="label">太め下線</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p04">Authority</a>
+            <a href="#" class="base-link p04">呂布カルマ</a>
+            <a href="#" class="base-link p04">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p04">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p04">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#05</div>
+        <p class="label">ホバー背景</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p05">Authority</a>
+            <a href="#" class="base-link p05">呂布カルマ</a>
+            <a href="#" class="base-link p05">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p05">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p05">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#06</div>
+        <p class="label">薄枠ホバー</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p06">Authority</a>
+            <a href="#" class="base-link p06">呂布カルマ</a>
+            <a href="#" class="base-link p06">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p06">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p06">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#07</div>
+        <p class="label">右矢印付き</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p07">Authority</a>
+            <a href="#" class="base-link p07">呂布カルマ</a>
+            <a href="#" class="base-link p07">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p07">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p07">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#08</div>
+        <p class="label">外部風矢印</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p08">Authority</a>
+            <a href="#" class="base-link p08">呂布カルマ</a>
+            <a href="#" class="base-link p08">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p08">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p08">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#09</div>
+        <p class="label">丸ピル</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p09">Authority</a>
+            <a href="#" class="base-link p09">呂布カルマ</a>
+            <a href="#" class="base-link p09">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p09">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p09">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#10</div>
+        <p class="label">金色ピル</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p10">Authority</a>
+            <a href="#" class="base-link p10">呂布カルマ</a>
+            <a href="#" class="base-link p10">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p10">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p10">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#11</div>
+        <p class="label">角丸ボタン</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p11">Authority</a>
+            <a href="#" class="base-link p11">呂布カルマ</a>
+            <a href="#" class="base-link p11">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p11">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p11">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#12</div>
+        <p class="label">金グラデ</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p12">Authority</a>
+            <a href="#" class="base-link p12">呂布カルマ</a>
+            <a href="#" class="base-link p12">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p12">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p12">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#13</div>
+        <p class="label">ピル+矢印</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p13">Authority</a>
+            <a href="#" class="base-link p13">呂布カルマ</a>
+            <a href="#" class="base-link p13">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p13">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p13">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#14</div>
+        <p class="label">ドット付き</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p14">Authority</a>
+            <a href="#" class="base-link p14">呂布カルマ</a>
+            <a href="#" class="base-link p14">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p14">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p14">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#15</div>
+        <p class="label">太字発光</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p15">Authority</a>
+            <a href="#" class="base-link p15">呂布カルマ</a>
+            <a href="#" class="base-link p15">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p15">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p15">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#16</div>
+        <p class="label">マーカー線</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p16">Authority</a>
+            <a href="#" class="base-link p16">呂布カルマ</a>
+            <a href="#" class="base-link p16">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p16">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p16">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#17</div>
+        <p class="label">アンダー伸長</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p17">Authority</a>
+            <a href="#" class="base-link p17">呂布カルマ</a>
+            <a href="#" class="base-link p17">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p17">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p17">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#18</div>
+        <p class="label">左線強調</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p18">Authority</a>
+            <a href="#" class="base-link p18">呂布カルマ</a>
+            <a href="#" class="base-link p18">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p18">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p18">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#19</div>
+        <p class="label">薄カード</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p19">Authority</a>
+            <a href="#" class="base-link p19">呂布カルマ</a>
+            <a href="#" class="base-link p19">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p19">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p19">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#20</div>
+        <p class="label">破線下線</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p20">Authority</a>
+            <a href="#" class="base-link p20">呂布カルマ</a>
+            <a href="#" class="base-link p20">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p20">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p20">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#21</div>
+        <p class="label">詳細ラベル</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p21">Authority</a>
+            <a href="#" class="base-link p21">呂布カルマ</a>
+            <a href="#" class="base-link p21">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p21">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p21">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#22</div>
+        <p class="label">白ボタン</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p22">Authority</a>
+            <a href="#" class="base-link p22">呂布カルマ</a>
+            <a href="#" class="base-link p22">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p22">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p22">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#23</div>
+        <p class="label">矢印ボタン</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p23">Authority</a>
+            <a href="#" class="base-link p23">呂布カルマ</a>
+            <a href="#" class="base-link p23">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p23">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p23">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#24</div>
+        <p class="label">破線ピル</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p24">Authority</a>
+            <a href="#" class="base-link p24">呂布カルマ</a>
+            <a href="#" class="base-link p24">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p24">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p24">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#25</div>
+        <p class="label">絵文字付き</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p25">Authority</a>
+            <a href="#" class="base-link p25">呂布カルマ</a>
+            <a href="#" class="base-link p25">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p25">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p25">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#26</div>
+        <p class="label">角丸+発光</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p26">Authority</a>
+            <a href="#" class="base-link p26">呂布カルマ</a>
+            <a href="#" class="base-link p26">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p26">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p26">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#27</div>
+        <p class="label">細枠チップ</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p27">Authority</a>
+            <a href="#" class="base-link p27">呂布カルマ</a>
+            <a href="#" class="base-link p27">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p27">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p27">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#28</div>
+        <p class="label">濃い背景チップ</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p28">Authority</a>
+            <a href="#" class="base-link p28">呂布カルマ</a>
+            <a href="#" class="base-link p28">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p28">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p28">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#29</div>
+        <p class="label">二重枠風</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p29">Authority</a>
+            <a href="#" class="base-link p29">呂布カルマ</a>
+            <a href="#" class="base-link p29">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p29">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p29">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#30</div>
+        <p class="label">小ラベル付き</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p30">Authority</a>
+            <a href="#" class="base-link p30">呂布カルマ</a>
+            <a href="#" class="base-link p30">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p30">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p30">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#31</div>
+        <p class="label">金文字のみ</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p31">Authority</a>
+            <a href="#" class="base-link p31">呂布カルマ</a>
+            <a href="#" class="base-link p31">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p31">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p31">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#32</div>
+        <p class="label">白文字+下影</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p32">Authority</a>
+            <a href="#" class="base-link p32">呂布カルマ</a>
+            <a href="#" class="base-link p32">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p32">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p32">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#33</div>
+        <p class="label">左矢印風</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p33">Authority</a>
+            <a href="#" class="base-link p33">呂布カルマ</a>
+            <a href="#" class="base-link p33">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p33">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p33">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#34</div>
+        <p class="label">角丸+下線</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p34">Authority</a>
+            <a href="#" class="base-link p34">呂布カルマ</a>
+            <a href="#" class="base-link p34">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p34">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p34">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#35</div>
+        <p class="label">極細ボタン</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p35">Authority</a>
+            <a href="#" class="base-link p35">呂布カルマ</a>
+            <a href="#" class="base-link p35">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p35">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p35">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#36</div>
+        <p class="label">中抜きボタン</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p36">Authority</a>
+            <a href="#" class="base-link p36">呂布カルマ</a>
+            <a href="#" class="base-link p36">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p36">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p36">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#37</div>
+        <p class="label">小カプセル</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p37">Authority</a>
+            <a href="#" class="base-link p37">呂布カルマ</a>
+            <a href="#" class="base-link p37">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p37">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p37">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#38</div>
+        <p class="label">強めホバー面</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p38">Authority</a>
+            <a href="#" class="base-link p38">呂布カルマ</a>
+            <a href="#" class="base-link p38">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p38">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p38">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#39</div>
+        <p class="label">金左バー</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p39">Authority</a>
+            <a href="#" class="base-link p39">呂布カルマ</a>
+            <a href="#" class="base-link p39">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p39">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p39">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#40</div>
+        <p class="label">数字バッジ付き</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p40">Authority</a>
+            <a href="#" class="base-link p40">呂布カルマ</a>
+            <a href="#" class="base-link p40">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p40">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p40">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#41</div>
+        <p class="label">勝者っぽい</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p41">Authority</a>
+            <a href="#" class="base-link p41">呂布カルマ</a>
+            <a href="#" class="base-link p41">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p41">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p41">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#42</div>
+        <p class="label">敗者っぽい</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p42">Authority</a>
+            <a href="#" class="base-link p42">呂布カルマ</a>
+            <a href="#" class="base-link p42">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p42">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p42">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#43</div>
+        <p class="label">比較カード風</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p43">Authority</a>
+            <a href="#" class="base-link p43">呂布カルマ</a>
+            <a href="#" class="base-link p43">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p43">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p43">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#44</div>
+        <p class="label">名前タグ風</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p44">Authority</a>
+            <a href="#" class="base-link p44">呂布カルマ</a>
+            <a href="#" class="base-link p44">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p44">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p44">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#45</div>
+        <p class="label">情報カード風</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p45">Authority</a>
+            <a href="#" class="base-link p45">呂布カルマ</a>
+            <a href="#" class="base-link p45">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p45">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p45">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#46</div>
+        <p class="label">行リンク風</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p46">Authority</a>
+            <a href="#" class="base-link p46">呂布カルマ</a>
+            <a href="#" class="base-link p46">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p46">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p46">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#47</div>
+        <p class="label">カード内主リンク</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p47">Authority</a>
+            <a href="#" class="base-link p47">呂布カルマ</a>
+            <a href="#" class="base-link p47">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p47">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p47">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#48</div>
+        <p class="label">カード内副リンク</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p48">Authority</a>
+            <a href="#" class="base-link p48">呂布カルマ</a>
+            <a href="#" class="base-link p48">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p48">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p48">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#49</div>
+        <p class="label">Wikipedia寄り</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p49">Authority</a>
+            <a href="#" class="base-link p49">呂布カルマ</a>
+            <a href="#" class="base-link p49">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p49">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p49">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="num">#50</div>
+        <p class="label">かなり押せるボタン</p>
+        <p class="sample">大会ページやMCページの名前リンク用サンプル</p>
+        <div class="demo-block">
+          <div class="demo-row">
+            <a href="#" class="base-link p50">Authority</a>
+            <a href="#" class="base-link p50">呂布カルマ</a>
+            <a href="#" class="base-link p50">DOTAMA</a>
+          </div>
+          <div class="match-box">
+            <a href="#" class="base-link p50">Authority</a>
+            <span class="sep">/</span>
+            <a href="#" class="base-link p50">呂布カルマ</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>
