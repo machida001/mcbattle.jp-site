@@ -257,6 +257,13 @@
       text-decoration: none !important;
     }
 
+    /* 実測用: 少し縮小して収まるか確認 */
+    .result-link-winner.is-fit-test,
+    .result-link-loser.is-fit-test{
+      font-size: 0.92rem !important;
+    }
+
+    /* 実測で収まらなかったものだけ左寄せ */
     .result-link-winner.is-long,
     .result-link-loser.is-long{
       justify-content: flex-start;
@@ -525,6 +532,11 @@
       text-decoration: none !important;
     }
 
+    .match-name.is-winner .result-link-winner.is-fit-test,
+    .match-name.is-loser .result-link-loser.is-fit-test{
+      font-size: 0.88rem !important;
+    }
+
     .match-name.is-winner .result-link-winner.is-long,
     .match-name.is-loser .result-link-loser.is-long{
       justify-content: flex-start;
@@ -601,6 +613,11 @@
         min-height: 28px;
         padding: 0 9px;
         font-size: 0.96rem;
+      }
+
+      .result-link-winner.is-fit-test,
+      .result-link-loser.is-fit-test{
+        font-size: 0.84rem !important;
       }
 
       .result-link-winner.is-long,
@@ -680,6 +697,11 @@
         min-height: 29px;
         padding: 0 8px;
         font-size: 0.92rem;
+      }
+
+      .match-name.is-winner .result-link-winner.is-fit-test,
+      .match-name.is-loser .result-link-loser.is-fit-test{
+        font-size: 0.80rem !important;
       }
 
       .match-name.is-winner .result-link-winner.is-long,
@@ -811,5 +833,40 @@
       </div>
     </section>
   </div>
+
+  <script>
+    (function () {
+      function applySmartAlign() {
+        const targets = document.querySelectorAll(
+          ".result-link-winner, .result-link-loser"
+        );
+
+        targets.forEach((el) => {
+          el.classList.remove("is-long", "is-fit-test");
+
+          el.classList.add("is-fit-test");
+          const isOverflow = el.scrollWidth > el.clientWidth + 1;
+          el.classList.remove("is-fit-test");
+
+          if (isOverflow) {
+            el.classList.add("is-long");
+          }
+        });
+      }
+
+      let resizeTimer = null;
+
+      function requestApplySmartAlign() {
+        if (resizeTimer) {
+          clearTimeout(resizeTimer);
+        }
+        resizeTimer = setTimeout(applySmartAlign, 80);
+      }
+
+      window.addEventListener("load", applySmartAlign);
+      window.addEventListener("resize", requestApplySmartAlign);
+      document.addEventListener("DOMContentLoaded", applySmartAlign);
+    })();
+  </script>
 </body>
 </html>
