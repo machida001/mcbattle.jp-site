@@ -52,6 +52,7 @@ function buildMcHtml(template, mcId, detail) {
   const totalPrizeMoney = detail.total_prize_money ?? 0;
 
   const mcName = safeString(mc.mc_name || "このMC");
+  const mcSubName = safeString(mc.mc_name_sub || "").trim();
   const pageTitle = `${mcName} | 戦績・優勝歴・賞金・出場大会 | MCBattle.jp`;
   const metaDescription = buildMetaDescription(mcName, summary, championships, totalPrizeMoney);
 
@@ -90,6 +91,8 @@ function buildMcHtml(template, mcId, detail) {
     .replaceAll("__BREADCRUMB_JSON_LD__", escapeScriptJson(breadcrumbJsonLd))
     .replaceAll("__PROFILE_JSON_LD__", escapeScriptJson(profileJsonLd))
     .replaceAll("__MC_TITLE__", escapeHtml(mcName))
+    .replaceAll("__MC_SUBNAME__", escapeHtml(mcSubName))
+    .replaceAll("__MC_SUBNAME_HIDDEN_CLASS__", mcSubName ? "" : "is-hidden")
     .replaceAll("__MC_META__", "")
     .replaceAll("__STATE_CARD_HIDDEN_CLASS__", "is-hidden")
     .replaceAll("__STATE_MESSAGE_ERROR_CLASS__", "")
@@ -275,28 +278,16 @@ function renderMcLink(name, mcId, battleType = "") {
   const safeName = escapeHtml(name || "");
   const safeId = String(mcId || "").trim();
 
-  const linkClass = battleType === "win"
-    ? "battle-opponent-link battle-opponent-link-win"
-    : battleType === "loss"
-      ? "battle-opponent-link battle-opponent-link-loss"
-      : "";
-
+  const linkClass = "battle-opponent-link";
   const labelHtml = `<span class="battle-opponent-label">${safeName}</span>`;
 
   if (!safeName) return "";
 
   if (!safeId) {
-    if (linkClass) {
-      return `<span class="${linkClass}">${labelHtml}</span>`;
-    }
-    return `<span>${safeName}</span>`;
+    return `<span class="${linkClass}">${labelHtml}</span>`;
   }
 
-  if (linkClass) {
-    return `<a href="../detail_mc/${encodeURIComponent(safeId)}.html" class="${linkClass}">${labelHtml}</a>`;
-  }
-
-  return `<a href="../detail_mc/${encodeURIComponent(safeId)}.html">${safeName}</a>`;
+  return `<a href="../detail_mc/${encodeURIComponent(safeId)}.html" class="${linkClass}">${labelHtml}</a>`;
 }
 
 function renderBattleEvent(name, eventId) {
