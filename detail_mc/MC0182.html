@@ -139,6 +139,15 @@
       word-break: break-word;
     }
 
+    .page-header-subname{
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.34;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
     .page-header-meta{
       margin: 6px 0 0;
       color: var(--muted);
@@ -530,6 +539,12 @@
         line-height: 1.12;
       }
 
+      .page-header-subname{
+        margin-top: 4px;
+        font-size: 0.87rem;
+        line-height: 1.30;
+      }
+
       .page-header-meta{
         margin-top: 6px;
         font-size: 0.82rem;
@@ -657,6 +672,7 @@
 
       <div class="page-header-block">
         <h1 id="mc-title">Kowree</h1>
+        <p id="mc-subname" class="page-header-subname is-hidden"></p>
         <p id="mc-meta" class="page-header-meta"></p>
       </div>
     </div>
@@ -689,31 +705,31 @@
         </h2>
         <p id="wins-status" class="muted is-hidden"></p>
         <ul id="wins-list" class="battle-list">
-<li><span class="battle-opponent"><a href="../detail_mc/MC0170.html" class="battle-opponent-link battle-opponent-link-win"><span class="battle-opponent-label">KATY</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0170.html" class="battle-opponent-link"><span class="battle-opponent-label">KATY</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0015.html" class="battle-event-link">UMB2019本戦</a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0592.html" class="battle-opponent-link battle-opponent-link-win"><span class="battle-opponent-label">DOPEMAN</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0592.html" class="battle-opponent-link"><span class="battle-opponent-label">DOPEMAN</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0110.html" class="battle-event-link">戦極MCBATTLE 第17章 </a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0626.html" class="battle-opponent-link battle-opponent-link-win"><span class="battle-opponent-label">デストロイ海沼</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0626.html" class="battle-opponent-link"><span class="battle-opponent-label">デストロイ海沼</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0110.html" class="battle-event-link">戦極MCBATTLE 第17章 </a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0447.html" class="battle-opponent-link battle-opponent-link-win"><span class="battle-opponent-label">9for</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0447.html" class="battle-opponent-link"><span class="battle-opponent-label">9for</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0109.html" class="battle-event-link">戦極MCBATTLE 第16章 </a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0066.html" class="battle-opponent-link battle-opponent-link-win"><span class="battle-opponent-label">BUCHI DA MIC</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0066.html" class="battle-opponent-link"><span class="battle-opponent-label">BUCHI DA MIC</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0009.html" class="battle-event-link">UMB2013本戦</a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0316.html" class="battle-opponent-link battle-opponent-link-win"><span class="battle-opponent-label">Y.A.S</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0316.html" class="battle-opponent-link"><span class="battle-opponent-label">Y.A.S</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0101.html" class="battle-event-link">戦極MCBATTLE 第7章 </a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0871.html" class="battle-opponent-link battle-opponent-link-win"><span class="battle-opponent-label">GILI</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0871.html" class="battle-opponent-link"><span class="battle-opponent-label">GILI</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0101.html" class="battle-event-link">戦極MCBATTLE 第7章 </a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0131.html" class="battle-opponent-link battle-opponent-link-win"><span class="battle-opponent-label">hiero</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0131.html" class="battle-opponent-link"><span class="battle-opponent-label">hiero</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0008.html" class="battle-event-link">UMB2012本戦</a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0316.html" class="battle-opponent-link battle-opponent-link-win"><span class="battle-opponent-label">Y.A.S</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0316.html" class="battle-opponent-link"><span class="battle-opponent-label">Y.A.S</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0008.html" class="battle-event-link">UMB2012本戦</a>
         </span></li>
         </ul>
@@ -730,34 +746,34 @@
         </h2>
         <p id="losses-status" class="muted is-hidden"></p>
         <ul id="losses-list" class="battle-list">
-<li><span class="battle-opponent"><a href="../detail_mc/MC0046.html" class="battle-opponent-link battle-opponent-link-loss"><span class="battle-opponent-label">Authority</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0046.html" class="battle-opponent-link"><span class="battle-opponent-label">Authority</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0015.html" class="battle-event-link">UMB2019本戦</a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0395.html" class="battle-opponent-link battle-opponent-link-loss"><span class="battle-opponent-label">晋平太</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0395.html" class="battle-opponent-link"><span class="battle-opponent-label">晋平太</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0124.html" class="battle-event-link">UMB 2018 THE CHOICE IS YOURS Vol.2</a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0608.html" class="battle-opponent-link battle-opponent-link-loss"><span class="battle-opponent-label">ハハノシキュウ</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0608.html" class="battle-opponent-link"><span class="battle-opponent-label">ハハノシキュウ</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0110.html" class="battle-event-link">戦極MCBATTLE 第17章 </a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0145.html" class="battle-opponent-link battle-opponent-link-loss"><span class="battle-opponent-label">JAKE</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0145.html" class="battle-opponent-link"><span class="battle-opponent-label">JAKE</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0109.html" class="battle-event-link">戦極MCBATTLE 第16章 </a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0214.html" class="battle-opponent-link battle-opponent-link-loss"><span class="battle-opponent-label">RAWAXXX(MOL53)</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0214.html" class="battle-opponent-link"><span class="battle-opponent-label">RAWAXXX(MOL53)</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0123.html" class="battle-event-link">UMB 2017 THE CHOICE IS YOURS Vol.1</a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0444.html" class="battle-opponent-link battle-opponent-link-loss"><span class="battle-opponent-label">黄猿</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0444.html" class="battle-opponent-link"><span class="battle-opponent-label">黄猿</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0012.html" class="battle-event-link">UMB2016本戦</a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0207.html" class="battle-opponent-link battle-opponent-link-loss"><span class="battle-opponent-label">marsh</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0207.html" class="battle-opponent-link"><span class="battle-opponent-label">marsh</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0010.html" class="battle-event-link">UMB2014本戦</a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0021.html" class="battle-opponent-link battle-opponent-link-loss"><span class="battle-opponent-label">R-指定</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0021.html" class="battle-opponent-link"><span class="battle-opponent-label">R-指定</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0009.html" class="battle-event-link">UMB2013本戦</a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0106.html" class="battle-opponent-link battle-opponent-link-loss"><span class="battle-opponent-label">ERONE</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0106.html" class="battle-opponent-link"><span class="battle-opponent-label">ERONE</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0101.html" class="battle-event-link">戦極MCBATTLE 第7章 </a>
         </span></li>
-<li><span class="battle-opponent"><a href="../detail_mc/MC0214.html" class="battle-opponent-link battle-opponent-link-loss"><span class="battle-opponent-label">RAWAXXX(MOL53)</span></a></span><span class="battle-event">
+<li><span class="battle-opponent"><a href="../detail_mc/MC0214.html" class="battle-opponent-link"><span class="battle-opponent-label">RAWAXXX(MOL53)</span></a></span><span class="battle-event">
           <a href="../detail_event/EVT0008.html" class="battle-event-link">UMB2012本戦</a>
         </span></li>
         </ul>
