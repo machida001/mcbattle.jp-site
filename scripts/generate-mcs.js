@@ -72,8 +72,8 @@ function buildMcHtml(template, mcId, detail) {
     rankingNote
   });
 
-  const winsListItems = buildBattleListItems(wins);
-  const lossesListItems = buildBattleListItems(losses);
+  const winsListItems = buildBattleListItems(wins, "win");
+  const lossesListItems = buildBattleListItems(losses, "loss");
   const appearancesListItems = buildAppearanceListItems(appearances);
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(mcId, mcName);
@@ -198,13 +198,13 @@ function renderInfoRow(label, valueHtml, options = {}) {
   ].join("");
 }
 
-function buildBattleListItems(items) {
+function buildBattleListItems(items, battleType) {
   if (!items.length) {
     return '<li class="is-static-empty">−</li>';
   }
 
   return items.map((item) => {
-    const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "");
+    const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "", battleType);
     const eventHtml = renderBattleEvent(item.event_name || "", item.event_id || "");
 
     return [
@@ -271,12 +271,30 @@ function buildProfileJsonLd(mcId, mcName, description) {
   }, null, 2);
 }
 
-function renderMcLink(name, mcId) {
+function renderMcLink(name, mcId, battleType = "") {
   const safeName = escapeHtml(name || "");
   const safeId = String(mcId || "").trim();
 
+  const linkClass = battleType === "win"
+    ? "battle-opponent-link battle-opponent-link-win"
+    : battleType === "loss"
+      ? "battle-opponent-link battle-opponent-link-loss"
+      : "";
+
+  const labelHtml = `<span class="battle-opponent-label">${safeName}</span>`;
+
   if (!safeName) return "";
-  if (!safeId) return `<span>${safeName}</span>`;
+
+  if (!safeId) {
+    if (linkClass) {
+      return `<span class="${linkClass}">${labelHtml}</span>`;
+    }
+    return `<span>${safeName}</span>`;
+  }
+
+  if (linkClass) {
+    return `<a href="../detail_mc/${encodeURIComponent(safeId)}.html" class="${linkClass}">${labelHtml}</a>`;
+  }
 
   return `<a href="../detail_mc/${encodeURIComponent(safeId)}.html">${safeName}</a>`;
 }
