@@ -15,8 +15,7 @@ const STATIC_PAGES = [
   "/score_ranking.html",
   "/prize_ranking.html",
   "/score_spec.html",
-  "/simulation.html",
-  "/contact.html"
+  "/simulation.html"
 ];
 
 function main() {
