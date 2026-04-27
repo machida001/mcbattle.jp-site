@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-04-23T15:52:22.590Z",
+  "updated_at": "2026-04-27T15:49:45.312Z",
   "recent_events": [
+    {
+      "event_id": "EVT0164",
+      "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+      "event_name_full": "3150×LUSHBOMU MC BATTLE vol.3",
+      "event_name_simple": "3150×LUSHBOMU MC BATTLE vol.3",
+      "event_date": "2026-04-26",
+      "prize_money_winner": 6800000,
+      "prize_money_total": null,
+      "event_category": "LUSHBOMU MC BATTLE",
+      "event_stage": "本戦",
+      "location": "-",
+      "winner_name": ""
+    },
     {
       "event_id": "EVT0163",
       "event_name": "戦極MCBATTLE vs THE罵倒",
@@ -117,19 +130,6 @@
       "event_stage": "本戦",
       "location": "仙台PIT",
       "winner_name": "Sitissy luvit"
-    },
-    {
-      "event_id": "EVT0031",
-      "event_name": "KOK2024 GrandChanpionShip",
-      "event_name_full": "KOK2024 GrandChanpionShip",
-      "event_name_simple": "KOK2024本戦",
-      "event_date": "2025-01-11",
-      "prize_money_winner": 3000000,
-      "prize_money_total": null,
-      "event_category": "King of Kings 本戦",
-      "event_stage": "本戦",
-      "location": "豊洲PIT",
-      "winner_name": "9for"
     }
   ],
   "upcoming_events": [
@@ -275,39 +275,39 @@
     },
     {
       "rank": 5,
+      "mc_id": "MC0466",
+      "mc_name": "Sitissy luvit",
+      "total_prize_money": 7100000
+    },
+    {
+      "rank": 6,
       "mc_id": "MC0116",
       "mc_name": "GADORO",
       "total_prize_money": 7000000
     },
     {
-      "rank": 6,
+      "rank": 7,
       "mc_id": "MC0111",
       "mc_name": "FORK",
       "total_prize_money": 4500000
     },
     {
-      "rank": 7,
+      "rank": 8,
       "mc_id": "MC0474",
       "mc_name": "泰斗(裂固)",
       "total_prize_money": 3600000
     },
     {
-      "rank": 8,
+      "rank": 9,
       "mc_id": "MC0395",
       "mc_name": "晋平太",
       "total_prize_money": 3550000
     },
     {
-      "rank": 9,
+      "rank": 10,
       "mc_id": "MC0756",
       "mc_name": "COCRGI WHITE",
       "total_prize_money": 3400000
-    },
-    {
-      "rank": 10,
-      "mc_id": "MC0271",
-      "mc_name": "SAM",
-      "total_prize_money": 3100000
     }
   ]
 }
