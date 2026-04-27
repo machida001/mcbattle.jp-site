@@ -49,11 +49,12 @@ function buildMcHtml(template, mcId, detail) {
   const wins = sortMatchHistory(Array.isArray(detail.wins_against) ? detail.wins_against : []);
   const losses = sortMatchHistory(Array.isArray(detail.losses_against) ? detail.losses_against : []);
   const championships = Array.isArray(detail.championships) ? detail.championships : [];
+  const prizeAdjustments = normalizePrizeAdjustments(detail);
   const totalPrizeMoney = detail.total_prize_money ?? 0;
 
   const mcName = safeString(mc.mc_name || "このMC");
   const mcSubName = safeString(mc.mc_name_sub || "").trim();
-  const mcDescription = getMcDescription(mc);
+  const mcDescription = safeString(mc.mc_description || mc.description || mc.notes_public || "").trim();
   const pageTitle = `${mcName} | 戦績・優勝歴・賞金・出場大会 | MCBattle.jp`;
   const metaDescription = buildMetaDescription(mcName, summary, championships, totalPrizeMoney);
 
@@ -71,7 +72,8 @@ function buildMcHtml(template, mcId, detail) {
     rankingStatus,
     rankDisplay,
     scoreDisplay,
-    rankingNote
+    rankingNote,
+    prizeAdjustments
   });
 
   const winsListItems = buildBattleListItems(wins, "win");
@@ -119,15 +121,6 @@ function buildMcHtml(template, mcId, detail) {
     .replaceAll("__APPEARANCES_MORE_HIDDEN_CLASS__", appearancesHasMore ? "" : "is-hidden");
 }
 
-function getMcDescription(mc) {
-  return safeString(
-    mc.mc_description ??
-    mc.description ??
-    mc.notes_public ??
-    ""
-  ).trim();
-}
-
 function buildMetaDescription(mcName, summary, championships, totalPrizeMoney) {
   const totalMatches = summary && summary.total_matches !== undefined && summary.total_matches !== null
     ? Number(summary.total_matches)
@@ -164,7 +157,8 @@ function buildMcInfoListItems(params) {
     rankingStatus,
     rankDisplay,
     scoreDisplay,
-    rankingNote
+    rankingNote,
+    prizeAdjustments
   } = params;
 
   const hasChampionships = championships.length > 0;
@@ -188,8 +182,19 @@ function buildMcInfoListItems(params) {
   rows.push(renderInfoRow("スコアランキング", escapeHtml(isInactiveRanking(rankingStatus) ? "対象外" : displayValue(rankDisplay))));
   rows.push(renderInfoRow("スコア", escapeHtml(isInactiveRanking(rankingStatus) ? "−" : displayValue(scoreDisplay))));
 
+  const noteLines = [];
+
   if (rankingNote) {
-    rows.push(renderInfoRow("補足", `<span class="mc-note">${escapeHtml(rankingNote)}</span>`));
+    noteLines.push(rankingNote);
+  }
+
+  prizeAdjustments.forEach((item) => {
+    const line = renderPrizeAdjustmentNoteText(item);
+    if (line) noteLines.push(line);
+  });
+
+  if (noteLines.length > 0) {
+    rows.push(renderInfoRow("補足", renderNoteLines(noteLines), { block: noteLines.length > 1 }));
   }
 
   return rows.join("\n");
@@ -211,6 +216,61 @@ function renderInfoRow(label, valueHtml, options = {}) {
     `<span>${valueHtml}</span>`,
     "</li>"
   ].join("");
+}
+
+function renderNoteLines(lines) {
+  return lines
+    .filter(line => safeString(line).trim())
+    .map(line => `<span class="mc-note">${escapeHtml(line)}</span>`)
+    .join("<br>");
+}
+
+function normalizePrizeAdjustments(detail) {
+  const candidates = [
+    detail.prize_adjustments,
+    detail.prize_adjustment,
+    detail.manual_prize_adjustments,
+    detail.prizeAdjustment,
+    detail.prizeAdjustments
+  ];
+
+  const source = candidates.find(value => Array.isArray(value)) || [];
+
+  return source
+    .map((item) => {
+      const amount = firstValidNumber([
+        item.amount,
+        item.adjustment_amount,
+        item.prize_amount,
+        item.prize_money,
+        item.money
+      ], null);
+
+      const note = safeString(
+        item.note ??
+        item.notes ??
+        item.adjustment_note ??
+        item.description ??
+        item.memo ??
+        ""
+      ).trim();
+
+      return {
+        amount,
+        note
+      };
+    })
+    .filter(item => item.amount !== null && item.amount !== 0);
+}
+
+function renderPrizeAdjustmentNoteText(item) {
+  const amount = Number(item.amount);
+  if (!Number.isFinite(amount) || amount === 0) return "";
+
+  const amountText = `${formatYen(amount)}円`;
+  const note = safeString(item.note || "").trim();
+
+  return note ? `${amountText}:${note}` : amountText;
 }
 
 function buildBattleListItems(items, battleType) {
@@ -474,6 +534,17 @@ function sortAppearances(items) {
     const eventB = String(b.event_name || "");
     return eventA.localeCompare(eventB, "ja");
   });
+}
+
+function firstValidNumber(values, defaultValue) {
+  for (const value of values) {
+    if (value === null || value === undefined || value === "") continue;
+    const cleaned = String(value).replace(/[^\d.-]/g, "");
+    if (!cleaned) continue;
+    const n = Number(cleaned);
+    if (Number.isFinite(n)) return n;
+  }
+  return defaultValue;
 }
 
 function escapeHtml(value) {
