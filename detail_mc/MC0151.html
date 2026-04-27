@@ -304,7 +304,7 @@
     }
 
     .championship-event-link::after{
-      content: "âº";
+      content: "\203A";
       font-size: 0.95em;
       line-height: 1;
       opacity: 0.78;
@@ -488,7 +488,7 @@
     }
 
     .battle-event-link::after{
-      content: "âº";
+      content: "\203A";
       font-size: 0.95em;
       line-height: 1;
       opacity: 0.78;
@@ -538,7 +538,7 @@
     }
 
     .appearance-name::after{
-      content: "âº";
+      content: "\203A";
       font-size: 0.95em;
       line-height: 1;
       opacity: 0.78;
@@ -717,12 +717,12 @@
     <div class="page-top">
       <p class="page-mini-logo"><a href="../" class="site-mini-logo">MCBattle.jp</a></p>
 
-      <nav class="page-nav-pills" aria-label="ä¸»è¦ã¡ãã¥ã¼">
-        <a class="page-nav-pill" href="../list_event.html">å¤§ä¼ä¸è¦§</a>
-        <a class="page-nav-pill" href="../list_mc.html">MCä¸è¦§</a>
+      <nav class="page-nav-pills" aria-label="主要メニュー">
+        <a class="page-nav-pill" href="../list_event.html">大会一覧</a>
+        <a class="page-nav-pill" href="../list_mc.html">MC一覧</a>
         <span class="page-nav-break" aria-hidden="true"></span>
-        <a class="page-nav-pill" href="../score_ranking.html">ã¹ã³ã¢ã©ã³ã­ã³ã°</a>
-        <a class="page-nav-pill" href="../prize_ranking.html">è³éã©ã³ã­ã³ã°</a>
+        <a class="page-nav-pill" href="../score_ranking.html">スコアランキング</a>
+        <a class="page-nav-pill" href="../prize_ranking.html">賞金ランキング</a>
       </nav>
 
       <div class="page-header-block">
@@ -767,7 +767,7 @@
           <a href="../detail_event/EVT0141.html" class="battle-event-link">凱旋MC battle 東西選抜 春ノ陣　2024</a>
         </span></li>
         </ul>
-        <button id="wins-more-button" class="more-button is-hidden" type="button">ãã¹ã¦è¦ã</button>
+        <button id="wins-more-button" class="more-button is-hidden" type="button">すべて見る</button>
       </div>
     </section>
 
@@ -802,7 +802,7 @@
           <a href="../detail_event/EVT0143.html" class="battle-event-link">凱旋MC battle Gate24</a>
         </span></li>
         </ul>
-        <button id="losses-more-button" class="more-button " type="button">ãã¹ã¦è¦ã</button>
+        <button id="losses-more-button" class="more-button " type="button">すべて見る</button>
       </div>
     </section>
 
@@ -811,7 +811,7 @@
         <h2 class="appearance-section-heading">
           <span class="section-heading-name">Joker clown</span>
           <span class="section-heading-sep">/</span>
-          <span class="section-heading-label">åºå ´å¤§ä¼</span>
+          <span class="section-heading-label">出場大会</span>
         </h2>
         <p id="appearances-status" class="muted is-hidden"></p>
         <ul id="appearances-list" class="appearance-list">
@@ -844,7 +844,7 @@
           <span class="appearance-date">2024.03.17</span>
         </a></div></li>
         </ul>
-        <button id="appearances-more-button" class="more-button is-hidden" type="button">ãã¹ã¦è¦ã</button>
+        <button id="appearances-more-button" class="more-button is-hidden" type="button">すべて見る</button>
       </div>
     </section>
   </div>
@@ -872,7 +872,7 @@
               item.classList.remove("is-hidden");
             }
           });
-          buttonEl.textContent = expanded ? "éãã" : "ãã¹ã¦è¦ã";
+          buttonEl.textContent = expanded ? "閉じる" : "すべて見る";
         }
 
         buttonEl.classList.remove("is-hidden");
