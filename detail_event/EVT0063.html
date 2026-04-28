@@ -23,12 +23,12 @@
   <meta property="og:title" content="凱旋MC Battle 西日本ZEPP TOUR ＠福岡 | 大会結果・優勝者・試合結果 | MCBattle.jp" />
   <meta property="og:description" content="凱旋MC Battle 西日本ZEPP TOUR ＠福岡の大会結果ページです。 開催日は2021.07.18。 優勝者はSKRYU。 準優勝者はS-kainê。 全15試合の試合結果を掲載しています。" />
   <meta property="og:url" content="https://mcbattle.jp/detail_event/EVT0063.html" />
-  <meta property="og:image" content="https://mcbattle.jp/ogp.PNG" />
+  <meta property="og:image" content="https://mcbattle.jp/ogp.png?v=2" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="凱旋MC Battle 西日本ZEPP TOUR ＠福岡 | 大会結果・優勝者・試合結果 | MCBattle.jp" />
   <meta name="twitter:description" content="凱旋MC Battle 西日本ZEPP TOUR ＠福岡の大会結果ページです。 開催日は2021.07.18。 優勝者はSKRYU。 準優勝者はS-kainê。 全15試合の試合結果を掲載しています。" />
-  <meta name="twitter:image" content="https://mcbattle.jp/ogp.PNG" />
+  <meta name="twitter:image" content="https://mcbattle.jp/ogp.png?v=2" />
 
   <script type="application/ld+json">
   {
@@ -414,6 +414,12 @@
 
     .match-list.is-two-column > li {
       margin: 0;
+    }
+
+    @media (min-width: 641px) {
+      .match-list:not(.is-two-column) > li {
+        max-width: calc((100% - 10px) / 2);
+      }
     }
 
     .match-row-wrap {

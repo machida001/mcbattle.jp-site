@@ -23,12 +23,12 @@
   <meta property="og:title" content="凱旋MC battle 夏ノ陣 U-27 | 大会結果・優勝者・試合結果 | MCBattle.jp" />
   <meta property="og:description" content="凱旋MC battle 夏ノ陣 U-27の大会結果ページです。 開催日は2024.08.25。 優勝者は龍鬼。 準優勝者はミメイ。 全23試合の試合結果を掲載しています。" />
   <meta property="og:url" content="https://mcbattle.jp/detail_event/EVT0142.html" />
-  <meta property="og:image" content="https://mcbattle.jp/ogp.PNG" />
+  <meta property="og:image" content="https://mcbattle.jp/ogp.png?v=2" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="凱旋MC battle 夏ノ陣 U-27 | 大会結果・優勝者・試合結果 | MCBattle.jp" />
   <meta name="twitter:description" content="凱旋MC battle 夏ノ陣 U-27の大会結果ページです。 開催日は2024.08.25。 優勝者は龍鬼。 準優勝者はミメイ。 全23試合の試合結果を掲載しています。" />
-  <meta name="twitter:image" content="https://mcbattle.jp/ogp.PNG" />
+  <meta name="twitter:image" content="https://mcbattle.jp/ogp.png?v=2" />
 
   <script type="application/ld+json">
   {
@@ -414,6 +414,12 @@
 
     .match-list.is-two-column > li {
       margin: 0;
+    }
+
+    @media (min-width: 641px) {
+      .match-list:not(.is-two-column) > li {
+        max-width: calc((100% - 10px) / 2);
+      }
     }
 
     .match-row-wrap {
