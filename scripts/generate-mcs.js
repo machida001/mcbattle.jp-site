@@ -96,7 +96,7 @@ function buildMcHtml(template, mcId, detail) {
     .replaceAll("__MC_TITLE__", escapeHtml(mcName))
     .replaceAll("__MC_SUBNAME__", escapeHtml(mcSubName))
     .replaceAll("__MC_SUBNAME_HIDDEN_CLASS__", mcSubName ? "" : "is-hidden")
-    .replaceAll("__MC_DESCRIPTION__", escapeHtml(mcDescription))
+    .replaceAll("__MC_DESCRIPTION__", formatMcDescriptionHtml(mcDescription))
     .replaceAll("__MC_DESCRIPTION_HIDDEN_CLASS__", mcDescription ? "" : "is-hidden")
     .replaceAll("__MC_META__", "")
     .replaceAll("__STATE_CARD_HIDDEN_CLASS__", "is-hidden")
@@ -223,6 +223,17 @@ function renderNoteLines(lines) {
     .filter(line => safeString(line).trim())
     .map(line => `<span class="mc-note">${escapeHtml(line)}</span>`)
     .join("<br>");
+}
+
+function formatMcDescriptionHtml(value) {
+  const text = safeString(value).trim();
+  if (!text) return "";
+
+  return escapeHtml(text)
+    .replace(/。+/g, function (match) {
+      return match + "<br>";
+    })
+    .replace(/(<br>)+$/g, "");
 }
 
 function normalizePrizeAdjustments(detail) {
