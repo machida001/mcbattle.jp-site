@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-04-29T15:49:15.935Z",
+  "updated_at": "2026-04-29T16:09:53.578Z",
   "total": 155,
   "event_details": {
     "EVT0001": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0001",
         "event_name": "UMB2005 GrandChanpionShip",
@@ -12,6 +12,8 @@
         "event_date": "2005-08-13",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -195,7 +197,7 @@
       "total_matches": 15
     },
     "EVT0002": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0002",
         "event_name": "UMB2006 GrandChanpionShip",
@@ -204,6 +206,8 @@
         "event_date": "2006-12-30",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -387,7 +391,7 @@
       "total_matches": 15
     },
     "EVT0003": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0003",
         "event_name": "UMB2007 GrandChanpionShip",
@@ -396,6 +400,8 @@
         "event_date": "2007-12-29",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -579,7 +585,7 @@
       "total_matches": 15
     },
     "EVT0004": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0004",
         "event_name": "UMB2008 GrandChanpionShip",
@@ -588,6 +594,8 @@
         "event_date": "2008-12-27",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -771,7 +779,7 @@
       "total_matches": 15
     },
     "EVT0005": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0005",
         "event_name": "UMB2009 GrandChanpionShip",
@@ -780,6 +788,8 @@
         "event_date": "2009-12-26",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -977,7 +987,7 @@
       "total_matches": 16
     },
     "EVT0006": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0006",
         "event_name": "UMB2010 GrandChanpionShip",
@@ -986,6 +996,8 @@
         "event_date": "2010-12-24",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -1169,7 +1181,7 @@
       "total_matches": 15
     },
     "EVT0007": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0007",
         "event_name": "UMB2011 GrandChanpionShip",
@@ -1178,6 +1190,8 @@
         "event_date": "2011-12-30",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -1510,7 +1524,7 @@
       "total_matches": 31
     },
     "EVT0008": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0008",
         "event_name": "UMB2012 GrandChanpionShip",
@@ -1519,6 +1533,8 @@
         "event_date": "2012-12-30",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -1851,7 +1867,7 @@
       "total_matches": 31
     },
     "EVT0009": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0009",
         "event_name": "UMB2013 GrandChanpionShip",
@@ -1860,6 +1876,8 @@
         "event_date": "2013-12-30",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -2192,7 +2210,7 @@
       "total_matches": 31
     },
     "EVT0010": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0010",
         "event_name": "UMB2014 GrandChanpionShip",
@@ -2201,6 +2219,8 @@
         "event_date": "2014-12-30",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -2533,7 +2553,7 @@
       "total_matches": 31
     },
     "EVT0011": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0011",
         "event_name": "UMB2015 GrandChanpionShip",
@@ -2542,6 +2562,8 @@
         "event_date": "2015-12-30",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -2874,7 +2896,7 @@
       "total_matches": 31
     },
     "EVT0012": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0012",
         "event_name": "UMB2016 GrandChanpionShip",
@@ -2883,6 +2905,8 @@
         "event_date": "2016-12-30",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -3364,7 +3388,7 @@
       "total_matches": 47
     },
     "EVT0013": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0013",
         "event_name": "UMB2017 GrandChanpionShip",
@@ -3373,6 +3397,8 @@
         "event_date": "2017-12-30",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -3854,7 +3880,7 @@
       "total_matches": 47
     },
     "EVT0014": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0014",
         "event_name": "UMB2018 GrandChanpionShip",
@@ -3863,6 +3889,8 @@
         "event_date": "2018-12-30",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -4344,7 +4372,7 @@
       "total_matches": 47
     },
     "EVT0015": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0015",
         "event_name": "UMB2019 GrandChanpionShip",
@@ -4353,6 +4381,8 @@
         "event_date": "2019-12-28",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -4834,7 +4864,7 @@
       "total_matches": 47
     },
     "EVT0016": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0016",
         "event_name": "UMB2020 GrandChanpionShip",
@@ -4843,6 +4873,8 @@
         "event_date": "2020-12-27",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -5468,7 +5500,7 @@
       "total_matches": 63
     },
     "EVT0017": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0017",
         "event_name": "UMB2021 GrandChanpionShip",
@@ -5477,6 +5509,8 @@
         "event_date": "2021-12-26",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -5809,7 +5843,7 @@
       "total_matches": 31
     },
     "EVT0018": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0018",
         "event_name": "UMB2022 GrandChanpionShip",
@@ -5818,6 +5852,8 @@
         "event_date": "2022-12-23",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -6227,7 +6263,7 @@
       "total_matches": 39
     },
     "EVT0019": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0019",
         "event_name": "UMB2023 GrandChanpionShip",
@@ -6236,6 +6272,8 @@
         "event_date": "2023-12-26",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -6717,7 +6755,7 @@
       "total_matches": 47
     },
     "EVT0020": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0020",
         "event_name": "UMB2024 GrandChanpionShip",
@@ -6726,6 +6764,8 @@
         "event_date": "2024-12-28",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -7189,7 +7229,7 @@
       "total_matches": 45
     },
     "EVT0021": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0021",
         "event_name": "UMB2025 GrandChanpionShip",
@@ -7198,6 +7238,8 @@
         "event_date": "2025-12-29",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat001",
         "category_name": "UMB 本戦",
         "category_show_order": 100,
@@ -7643,7 +7685,7 @@
       "total_matches": 43
     },
     "EVT0022": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0022",
         "event_name": "KOK2015 GrandChanpionShip",
@@ -7652,6 +7694,8 @@
         "event_date": "2015-09-23",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -7835,7 +7879,7 @@
       "total_matches": 15
     },
     "EVT0023": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0023",
         "event_name": "KOK2016 GrandChanpionShip",
@@ -7844,6 +7888,8 @@
         "event_date": "2017-01-08",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -8027,7 +8073,7 @@
       "total_matches": 15
     },
     "EVT0024": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0024",
         "event_name": "KOK2017 GrandChanpionShip",
@@ -8036,6 +8082,8 @@
         "event_date": "2018-01-12",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -8219,7 +8267,7 @@
       "total_matches": 15
     },
     "EVT0025": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0025",
         "event_name": "KOK2018 GrandChanpionShip",
@@ -8228,6 +8276,8 @@
         "event_date": "2019-01-06",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -8411,7 +8461,7 @@
       "total_matches": 15
     },
     "EVT0026": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0026",
         "event_name": "KOK2019 GrandChanpionShip",
@@ -8420,6 +8470,8 @@
         "event_date": "2020-01-11",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -8603,7 +8655,7 @@
       "total_matches": 15
     },
     "EVT0027": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0027",
         "event_name": "KOK2020 GrandChanpionShip",
@@ -8612,6 +8664,8 @@
         "event_date": "2021-01-09",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -8795,7 +8849,7 @@
       "total_matches": 15
     },
     "EVT0028": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0028",
         "event_name": "KOK2021 GrandChanpionShip",
@@ -8804,6 +8858,8 @@
         "event_date": "2022-01-23",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -8987,7 +9043,7 @@
       "total_matches": 15
     },
     "EVT0029": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0029",
         "event_name": "KOK2022 GrandChanpionShip",
@@ -8996,6 +9052,8 @@
         "event_date": "2023-01-22",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -9179,7 +9237,7 @@
       "total_matches": 15
     },
     "EVT0030": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0030",
         "event_name": "KOK2023 GrandChanpionShip",
@@ -9188,6 +9246,8 @@
         "event_date": "2024-01-08",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -9371,7 +9431,7 @@
       "total_matches": 15
     },
     "EVT0031": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0031",
         "event_name": "KOK2024 GrandChanpionShip",
@@ -9380,6 +9440,8 @@
         "event_date": "2025-01-11",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -9563,7 +9625,7 @@
       "total_matches": 15
     },
     "EVT0032": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0032",
         "event_name": "KOK2025 GrandChanpionShip",
@@ -9572,6 +9634,8 @@
         "event_date": "2026-01-10",
         "prize_money_winner": 3000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat003",
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
@@ -9755,7 +9819,7 @@
       "total_matches": 15
     },
     "EVT0038": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0038",
         "event_name": "戦極MCBATTLE 第34章 -THE 32MCs王道in横浜-",
@@ -9764,6 +9828,8 @@
         "event_date": "2024-06-15",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -10096,7 +10162,7 @@
       "total_matches": 31
     },
     "EVT0039": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0039",
         "event_name": "戦極MCBATTLE 第36章 東北公演 2025開幕戦",
@@ -10105,6 +10171,8 @@
         "event_date": "2025-02-02",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -10252,7 +10320,7 @@
       "total_matches": 11
     },
     "EVT0040": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0040",
         "event_name": "戦極MCBATTLE 第37章 -OSAKA- 王座奪還1on1",
@@ -10261,6 +10329,8 @@
         "event_date": "2025-05-24",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -10593,7 +10663,7 @@
       "total_matches": 31
     },
     "EVT0041": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0041",
         "event_name": "戦極MCBATTLE 第15章本選 JAPAN TOUR FINAL",
@@ -10602,6 +10672,8 @@
         "event_date": "2016-11-06",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -11227,7 +11299,7 @@
       "total_matches": 63
     },
     "EVT0045": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0045",
         "event_name": "口喧嘩祭 Special × KOK2020",
@@ -11236,6 +11308,8 @@
         "event_date": "2020-10-31",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat006",
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
@@ -11717,7 +11791,7 @@
       "total_matches": 47
     },
     "EVT0046": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0046",
         "event_name": "口喧嘩祭 Special × KOK2021",
@@ -11726,6 +11800,8 @@
         "event_date": "2021-07-31",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat006",
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
@@ -12058,7 +12134,7 @@
       "total_matches": 31
     },
     "EVT0047": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0047",
         "event_name": "口喧嘩祭 大阪編",
@@ -12067,6 +12143,8 @@
         "event_date": "2022-04-30",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat006",
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
@@ -12399,7 +12477,7 @@
       "total_matches": 31
     },
     "EVT0048": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0048",
         "event_name": "口喧嘩祭 Special at Zepp Nagoya",
@@ -12408,6 +12486,8 @@
         "event_date": "2022-06-11",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat006",
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
@@ -12591,7 +12671,7 @@
       "total_matches": 15
     },
     "EVT0049": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0049",
         "event_name": "口喧嘩祭 Special × KOK2022",
@@ -12600,6 +12680,8 @@
         "event_date": "2022-10-30",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat006",
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
@@ -12932,7 +13014,7 @@
       "total_matches": 31
     },
     "EVT0050": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0050",
         "event_name": "口喧嘩祭 Special in CLUB CITTA'",
@@ -12941,6 +13023,8 @@
         "event_date": "2023-01-05",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat006",
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
@@ -13124,7 +13208,7 @@
       "total_matches": 15
     },
     "EVT0051": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0051",
         "event_name": "口喧嘩祭 Special × KOK2023",
@@ -13133,6 +13217,8 @@
         "event_date": "2023-09-10",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat006",
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
@@ -13465,7 +13551,7 @@
       "total_matches": 31
     },
     "EVT0052": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0052",
         "event_name": "口喧嘩祭 Special at Zepp Nagoya",
@@ -13474,6 +13560,8 @@
         "event_date": "2023-11-26",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat006",
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
@@ -13657,7 +13745,7 @@
       "total_matches": 15
     },
     "EVT0053": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0053",
         "event_name": "凱旋MCbattle東西選抜",
@@ -13666,6 +13754,8 @@
         "event_date": "2018-06-24",
         "prize_money_winner": 50000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -14147,7 +14237,7 @@
       "total_matches": 47
     },
     "EVT0054": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0054",
         "event_name": "凱旋2019春ノ陣",
@@ -14156,6 +14246,8 @@
         "event_date": "2019-04-04",
         "prize_money_winner": 150000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -14637,7 +14729,7 @@
       "total_matches": 47
     },
     "EVT0055": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0055",
         "event_name": "凱旋MCbattle夏ノ陣2019",
@@ -14646,6 +14738,8 @@
         "event_date": "2019-07-31",
         "prize_money_winner": 150000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -15127,7 +15221,7 @@
       "total_matches": 47
     },
     "EVT0057": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0057",
         "event_name": "凱旋MCbattle東西選抜 冬ノ陣2020",
@@ -15136,6 +15230,8 @@
         "event_date": "2020-01-19",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -15617,7 +15713,7 @@
       "total_matches": 47
     },
     "EVT0058": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0058",
         "event_name": "凱旋MCBattle東西選抜 夏ノ陣2020",
@@ -15626,6 +15722,8 @@
         "event_date": "2020-07-11",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -15809,7 +15907,7 @@
       "total_matches": 15
     },
     "EVT0059": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0059",
         "event_name": "凱旋MCbattle×ABEMATV",
@@ -15818,6 +15916,8 @@
         "event_date": "2020-12-12",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -16078,7 +16178,7 @@
       "total_matches": 23
     },
     "EVT0060": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0060",
         "event_name": "凱旋MCbattle Special アリーナの陣",
@@ -16087,6 +16187,8 @@
         "event_date": "2021-02-23",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -16329,7 +16431,7 @@
       "total_matches": 21
     },
     "EVT0061": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0061",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠横浜",
@@ -16338,6 +16440,8 @@
         "event_date": "2021-06-20",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -16598,7 +16702,7 @@
       "total_matches": 23
     },
     "EVT0062": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0062",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠名古屋",
@@ -16607,6 +16711,8 @@
         "event_date": "2021-07-04",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -16790,7 +16896,7 @@
       "total_matches": 15
     },
     "EVT0063": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0063",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠福岡",
@@ -16799,6 +16905,8 @@
         "event_date": "2021-07-18",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -16982,7 +17090,7 @@
       "total_matches": 15
     },
     "EVT0064": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0064",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠大阪",
@@ -16991,6 +17099,8 @@
         "event_date": "2021-07-24",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -17251,7 +17361,7 @@
       "total_matches": 23
     },
     "EVT0065": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0065",
         "event_name": "凱旋MC battle PIT TOUR 仙台",
@@ -17260,6 +17370,8 @@
         "event_date": "2021-12-12",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -17443,7 +17555,7 @@
       "total_matches": 15
     },
     "EVT0066": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0066",
         "event_name": "凱旋MC battle PIT TOUR 東京",
@@ -17452,6 +17564,8 @@
         "event_date": "2021-12-19",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -17635,7 +17749,7 @@
       "total_matches": 15
     },
     "EVT0067": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0067",
         "event_name": "凱旋MC BATTLE 春のMC BATTLE 三連祭2022",
@@ -17644,6 +17758,8 @@
         "event_date": "2022-03-25",
         "prize_money_winner": 200000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -17827,7 +17943,7 @@
       "total_matches": 15
     },
     "EVT0068": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0068",
         "event_name": "凱旋MC battle in さいたまスーパーアリーナ",
@@ -17836,6 +17952,8 @@
         "event_date": "2022-05-15",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -18019,7 +18137,7 @@
       "total_matches": 15
     },
     "EVT0069": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0069",
         "event_name": "凱旋MC battle NORTH JAPAN TOUR2023 in 北海道",
@@ -18028,6 +18146,8 @@
         "event_date": "2023-02-05",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -18211,7 +18331,7 @@
       "total_matches": 15
     },
     "EVT0070": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0070",
         "event_name": "凱旋MC battle NORTH JAPAN TOUR2023 in 仙台",
@@ -18220,6 +18340,8 @@
         "event_date": "2023-02-19",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -18403,7 +18525,7 @@
       "total_matches": 15
     },
     "EVT0071": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0071",
         "event_name": "凱旋MC battle THE GIANT KILLING ",
@@ -18412,6 +18534,8 @@
         "event_date": "2023-04-29",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -18744,7 +18868,7 @@
       "total_matches": 31
     },
     "EVT0072": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0072",
         "event_name": "凱旋MC battle 大阪ノ陣2023",
@@ -18753,6 +18877,8 @@
         "event_date": "2023-05-28",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -18936,7 +19062,7 @@
       "total_matches": 15
     },
     "EVT0073": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0073",
         "event_name": "凱旋MC battle Special2023",
@@ -18945,6 +19071,8 @@
         "event_date": "2023-08-27",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -19205,7 +19333,7 @@
       "total_matches": 23
     },
     "EVT0074": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0074",
         "event_name": "凱旋MC battle 冬ノ陣2023",
@@ -19214,6 +19342,8 @@
         "event_date": "2023-12-10",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -19397,7 +19527,7 @@
       "total_matches": 15
     },
     "EVT0075": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0075",
         "event_name": "凱旋MC battle THE GIANT KILLING 2",
@@ -19406,6 +19536,8 @@
         "event_date": "2024-03-16",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -19738,7 +19870,7 @@
       "total_matches": 31
     },
     "EVT0076": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0076",
         "event_name": "ADRENALINE2014",
@@ -19747,6 +19879,8 @@
         "event_date": "2014-08-24",
         "prize_money_winner": 50000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -20079,7 +20213,7 @@
       "total_matches": 31
     },
     "EVT0077": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0077",
         "event_name": "真ADRENALINE2020",
@@ -20088,6 +20222,8 @@
         "event_date": "2020-03-22",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -20312,7 +20448,7 @@
       "total_matches": 19
     },
     "EVT0078": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0078",
         "event_name": "ADRENALINE杯 夏の陣2020",
@@ -20321,6 +20457,8 @@
         "event_date": "2020-06-27",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -20504,7 +20642,7 @@
       "total_matches": 15
     },
     "EVT0079": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0079",
         "event_name": "真ADRENALINE SPECIAL 杯真の陣+KINGDOM2020",
@@ -20513,6 +20651,8 @@
         "event_date": "2020-10-03",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -20696,7 +20836,7 @@
       "total_matches": 15
     },
     "EVT0080": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0080",
         "event_name": "真 ADRENALINE ABEMAノ乱",
@@ -20705,6 +20845,8 @@
         "event_date": "2021-01-30",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -20929,7 +21071,7 @@
       "total_matches": 19
     },
     "EVT0081": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0081",
         "event_name": "KING OF KINGS vs 真ADRENALINE",
@@ -20938,6 +21080,8 @@
         "event_date": "2021-05-02",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -21121,7 +21265,7 @@
       "total_matches": 15
     },
     "EVT0082": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0082",
         "event_name": "KING OF KINGS vs 真ADRENALINE #2",
@@ -21130,6 +21274,8 @@
         "event_date": "2021-08-07",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -21313,7 +21459,7 @@
       "total_matches": 15
     },
     "EVT0083": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0083",
         "event_name": "真 ADRENALINE 福岡ノ乱",
@@ -21322,6 +21468,8 @@
         "event_date": "2021-09-05",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -21496,7 +21644,7 @@
       "total_matches": 14
     },
     "EVT0084": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0084",
         "event_name": "渋谷レゲエ祭 vs 真 ADRENALINE 2021",
@@ -21505,6 +21653,8 @@
         "event_date": "2021-11-14",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -21688,7 +21838,7 @@
       "total_matches": 15
     },
     "EVT0085": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0085",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #3",
@@ -21697,6 +21847,8 @@
         "event_date": "2022-02-27",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -21880,7 +22032,7 @@
       "total_matches": 15
     },
     "EVT0086": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0086",
         "event_name": "真ADRENALINE 春のMC BATTLE 三連祭2022",
@@ -21889,6 +22041,8 @@
         "event_date": "2022-04-22",
         "prize_money_winner": 200000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -22072,7 +22226,7 @@
       "total_matches": 15
     },
     "EVT0087": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0087",
         "event_name": "渋谷レゲエ祭 vs 真ADRENALINE #2",
@@ -22081,6 +22235,8 @@
         "event_date": "2022-06-25",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -22264,7 +22420,7 @@
       "total_matches": 15
     },
     "EVT0088": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0088",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #4",
@@ -22273,6 +22429,8 @@
         "event_date": "2022-10-01",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -22456,7 +22614,7 @@
       "total_matches": 15
     },
     "EVT0089": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0089",
         "event_name": "真 ADRENALINE 2023 at 渋谷WOMB",
@@ -22465,6 +22623,8 @@
         "event_date": "2023-02-11",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -22648,7 +22808,7 @@
       "total_matches": 15
     },
     "EVT0090": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0090",
         "event_name": "渋谷レゲエ祭 vs 真ADRENALINE 2023",
@@ -22657,6 +22817,8 @@
         "event_date": "2023-04-22",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -22840,7 +23002,7 @@
       "total_matches": 15
     },
     "EVT0091": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0091",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #5",
@@ -22849,6 +23011,8 @@
         "event_date": "2023-07-14",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -23032,7 +23196,7 @@
       "total_matches": 15
     },
     "EVT0092": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0092",
         "event_name": "戦極MCBATTLE vs 真ADRENALINE",
@@ -23041,6 +23205,8 @@
         "event_date": "2023-09-30",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -23224,7 +23390,7 @@
       "total_matches": 15
     },
     "EVT0093": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0093",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #6",
@@ -23233,6 +23399,8 @@
         "event_date": "2023-12-17",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -23416,7 +23584,7 @@
       "total_matches": 15
     },
     "EVT0094": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0094",
         "event_name": "渋谷レゲエ祭 vs 真ADRENALINE",
@@ -23425,6 +23593,8 @@
         "event_date": "2024-02-02",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat007",
         "category_name": "ADRENALINE",
         "category_show_order": 800,
@@ -23608,7 +23778,7 @@
       "total_matches": 15
     },
     "EVT0095": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0095",
         "event_name": "戦極MCBATTLE 第1章 ",
@@ -23617,6 +23787,8 @@
         "event_date": "2012-01-12",
         "prize_money_winner": 50000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -23990,7 +24162,7 @@
       "total_matches": 35
     },
     "EVT0096": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0096",
         "event_name": "戦極MCBATTLE 第2章 ",
@@ -23999,6 +24171,8 @@
         "event_date": "2012-03-11",
         "prize_money_winner": 50000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -24182,7 +24356,7 @@
       "total_matches": 15
     },
     "EVT0097": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0097",
         "event_name": "戦極MCBATTLE 第3章 ",
@@ -24191,6 +24365,8 @@
         "event_date": "2012-03-24",
         "prize_money_winner": 50000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -24374,7 +24550,7 @@
       "total_matches": 15
     },
     "EVT0098": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0098",
         "event_name": "戦極MCBATTLE 第4章 ",
@@ -24383,6 +24559,8 @@
         "event_date": "2012-09-15",
         "prize_money_winner": 50000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -24566,7 +24744,7 @@
       "total_matches": 15
     },
     "EVT0099": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0099",
         "event_name": "戦極MCBATTLE 第5章 ",
@@ -24575,6 +24753,8 @@
         "event_date": "2013-01-20",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -24907,7 +25087,7 @@
       "total_matches": 31
     },
     "EVT0100": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0100",
         "event_name": "戦極MCBATTLE 第6章 ",
@@ -24916,6 +25096,8 @@
         "event_date": "2013-04-28",
         "prize_money_winner": 50000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -25248,7 +25430,7 @@
       "total_matches": 31
     },
     "EVT0101": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0101",
         "event_name": "戦極MCBATTLE 第7章 ",
@@ -25257,6 +25439,8 @@
         "event_date": "2013-07-21",
         "prize_money_winner": 50000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -25589,7 +25773,7 @@
       "total_matches": 31
     },
     "EVT0102": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0102",
         "event_name": "戦極MCBATTLE 第8章 ",
@@ -25598,6 +25782,8 @@
         "event_date": "2014-01-26",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -25781,7 +25967,7 @@
       "total_matches": 15
     },
     "EVT0103": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0103",
         "event_name": "戦極MCBATTLE 第9章 ",
@@ -25790,6 +25976,8 @@
         "event_date": "2014-04-13",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -26122,7 +26310,7 @@
       "total_matches": 31
     },
     "EVT0104": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0104",
         "event_name": "戦極MCBATTLE 第10章 ",
@@ -26131,6 +26319,8 @@
         "event_date": "2014-10-19",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -26314,7 +26504,7 @@
       "total_matches": 15
     },
     "EVT0105": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0105",
         "event_name": "戦極MCBATTLE 第11章 ",
@@ -26323,6 +26513,8 @@
         "event_date": "2015-02-21",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -26506,7 +26698,7 @@
       "total_matches": 15
     },
     "EVT0106": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0106",
         "event_name": "戦極MCBATTLE 第12章 ",
@@ -26515,6 +26707,8 @@
         "event_date": "2015-06-14",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -26698,7 +26892,7 @@
       "total_matches": 15
     },
     "EVT0107": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0107",
         "event_name": "戦極MCBATTLE 第13章 ",
@@ -26707,6 +26901,8 @@
         "event_date": "2015-12-27",
         "prize_money_winner": 150000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -26890,7 +27086,7 @@
       "total_matches": 15
     },
     "EVT0108": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0108",
         "event_name": "戦極MCBATTLE 第15章 ",
@@ -26899,6 +27095,8 @@
         "event_date": "2016-11-06",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -27524,7 +27722,7 @@
       "total_matches": 63
     },
     "EVT0109": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0109",
         "event_name": "戦極MCBATTLE 第16章 ",
@@ -27533,6 +27731,8 @@
         "event_date": "2017-05-21",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -28158,7 +28358,7 @@
       "total_matches": 63
     },
     "EVT0110": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0110",
         "event_name": "戦極MCBATTLE 第17章 ",
@@ -28167,6 +28367,8 @@
         "event_date": "2018-02-17",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -28783,7 +28985,7 @@
       "total_matches": 62
     },
     "EVT0111": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0111",
         "event_name": "戦極MCBATTLE 第18章 ",
@@ -28792,6 +28994,8 @@
         "event_date": "2018-08-11",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -29273,7 +29477,7 @@
       "total_matches": 47
     },
     "EVT0112": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0112",
         "event_name": "戦極MCBATTLE 第20章 ",
@@ -29282,6 +29486,8 @@
         "event_date": "2019-09-15",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -29763,7 +29969,7 @@
       "total_matches": 47
     },
     "EVT0113": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0113",
         "event_name": "戦極MCBATTLE 第21章 ",
@@ -29772,6 +29978,8 @@
         "event_date": "2020-02-15",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -30253,7 +30461,7 @@
       "total_matches": 47
     },
     "EVT0114": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0114",
         "event_name": "戦極MCBATTLE 第22章 ",
@@ -30262,6 +30470,8 @@
         "event_date": "2020-12-26",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -30594,7 +30804,7 @@
       "total_matches": 31
     },
     "EVT0115": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0115",
         "event_name": "戦極MCBATTLE 第23章 ",
@@ -30603,6 +30813,8 @@
         "event_date": "2021-04-10",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -30935,7 +31147,7 @@
       "total_matches": 31
     },
     "EVT0116": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0116",
         "event_name": "戦極MCBATTLE 第24章 ",
@@ -30944,6 +31156,8 @@
         "event_date": "2021-10-09",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -31127,7 +31341,7 @@
       "total_matches": 15
     },
     "EVT0117": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0117",
         "event_name": "戦極MCBATTLE 第25章 ",
@@ -31136,6 +31350,8 @@
         "event_date": "2021-12-30",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -31319,7 +31535,7 @@
       "total_matches": 15
     },
     "EVT0118": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0118",
         "event_name": "戦極MCBATTLE 第26章 ",
@@ -31328,6 +31544,8 @@
         "event_date": "2022-06-19",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -31511,7 +31729,7 @@
       "total_matches": 15
     },
     "EVT0119": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0119",
         "event_name": "戦極MCBATTLE 第27章 ",
@@ -31520,6 +31738,8 @@
         "event_date": "2022-10-29",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -31703,7 +31923,7 @@
       "total_matches": 15
     },
     "EVT0120": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0120",
         "event_name": "戦極MCBATTLE 第28章 ",
@@ -31712,6 +31932,8 @@
         "event_date": "2022-12-30",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -31895,7 +32117,7 @@
       "total_matches": 15
     },
     "EVT0121": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0121",
         "event_name": "戦極MCBATTLE 第29章 ",
@@ -31904,6 +32126,8 @@
         "event_date": "2023-03-12",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -32164,7 +32388,7 @@
       "total_matches": 23
     },
     "EVT0122": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0122",
         "event_name": "戦極MCBATTLE 第30章 ",
@@ -32173,6 +32397,8 @@
         "event_date": "2023-12-30",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -32356,7 +32582,7 @@
       "total_matches": 15
     },
     "EVT0123": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0123",
         "event_name": "UMB 2017 THE CHOICE IS YOURS Vol.1",
@@ -32365,6 +32591,8 @@
         "event_date": "2017-03-27",
         "prize_money_winner": 0,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat002",
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
@@ -32697,7 +32925,7 @@
       "total_matches": 31
     },
     "EVT0124": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0124",
         "event_name": "UMB 2018 THE CHOICE IS YOURS Vol.2",
@@ -32706,6 +32934,8 @@
         "event_date": "2018-03-20",
         "prize_money_winner": 50000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat002",
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
@@ -33038,7 +33268,7 @@
       "total_matches": 31
     },
     "EVT0125": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0125",
         "event_name": "UMB 2019 THE CHOICE IS YOURS Vol.3",
@@ -33047,6 +33277,8 @@
         "event_date": "2019-03-23",
         "prize_money_winner": 1000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat002",
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
@@ -33230,7 +33462,7 @@
       "total_matches": 15
     },
     "EVT0126": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0126",
         "event_name": "UMB 2020 THE CHOICE IS YOURS Vol.4",
@@ -33239,6 +33471,8 @@
         "event_date": "2020-11-08",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat002",
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
@@ -33571,7 +33805,7 @@
       "total_matches": 31
     },
     "EVT0127": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0127",
         "event_name": "UMB 2021 THE CHOICE IS YOURS Vol.5",
@@ -33580,6 +33814,8 @@
         "event_date": "2021-07-23",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat002",
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
@@ -33912,7 +34148,7 @@
       "total_matches": 31
     },
     "EVT0128": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0128",
         "event_name": "UMB 2022 THE CHOICE IS YOURS Vol.6",
@@ -33921,6 +34157,8 @@
         "event_date": "2022-08-21",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat002",
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
@@ -34253,7 +34491,7 @@
       "total_matches": 31
     },
     "EVT0129": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0129",
         "event_name": "UMB 2023 THE CHOICE IS YOURS Vol.7",
@@ -34262,6 +34500,8 @@
         "event_date": "2023-08-20",
         "prize_money_winner": 500000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat002",
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
@@ -34594,7 +34834,7 @@
       "total_matches": 31
     },
     "EVT0130": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0130",
         "event_name": "BATTLE SUMMITⅠ",
@@ -34603,6 +34843,8 @@
         "event_date": "2022-08-31",
         "prize_money_winner": 10000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat008",
         "category_name": "BUTTLE SUMMIT",
         "category_show_order": 400,
@@ -34827,7 +35069,7 @@
       "total_matches": 19
     },
     "EVT0131": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0131",
         "event_name": "BATTLE SUMMITⅡ",
@@ -34836,6 +35078,8 @@
         "event_date": "2024-08-14",
         "prize_money_winner": 20000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat008",
         "category_name": "BUTTLE SUMMIT",
         "category_show_order": 400,
@@ -35019,7 +35263,7 @@
       "total_matches": 15
     },
     "EVT0132": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0132",
         "event_name": "NEO GENESIS MC BATTLE Vol.1",
@@ -35028,6 +35272,8 @@
         "event_date": "2023-03-18",
         "prize_money_winner": null,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat009",
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
@@ -35288,7 +35534,7 @@
       "total_matches": 23
     },
     "EVT0133": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0133",
         "event_name": "NEO GENESIS MC BATTLE Vol.2",
@@ -35297,6 +35543,8 @@
         "event_date": "2023-10-01",
         "prize_money_winner": null,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat009",
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
@@ -35557,7 +35805,7 @@
       "total_matches": 23
     },
     "EVT0134": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0134",
         "event_name": "NEO GENESIS MC BATTLE Vol.3",
@@ -35566,6 +35814,8 @@
         "event_date": "2024-03-28",
         "prize_money_winner": null,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat009",
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
@@ -35898,7 +36148,7 @@
       "total_matches": 31
     },
     "EVT0135": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0135",
         "event_name": "NEO GENESIS MC BATTLE Vol.4",
@@ -35907,6 +36157,8 @@
         "event_date": "2024-08-23",
         "prize_money_winner": 150000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat009",
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
@@ -36239,7 +36491,7 @@
       "total_matches": 31
     },
     "EVT0136": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0136",
         "event_name": "NEO GENESIS MC BATTLE Vol.5",
@@ -36248,6 +36500,8 @@
         "event_date": "2024-11-10",
         "prize_money_winner": 150000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat009",
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
@@ -36580,7 +36834,7 @@
       "total_matches": 31
     },
     "EVT0137": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0137",
         "event_name": "NEO GENESIS MC BATTLE Vol.6",
@@ -36589,6 +36843,8 @@
         "event_date": "2025-01-04",
         "prize_money_winner": null,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat009",
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
@@ -36849,7 +37105,7 @@
       "total_matches": 23
     },
     "EVT0138": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0138",
         "event_name": "NEO GENESIS MC BATTLE Vol.7",
@@ -36858,6 +37114,8 @@
         "event_date": "2025-04-18",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat009",
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
@@ -37190,7 +37448,7 @@
       "total_matches": 31
     },
     "EVT0139": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0139",
         "event_name": "NEO GENESIS MC BATTLE Vol.8",
@@ -37199,6 +37457,8 @@
         "event_date": "2025-10-05",
         "prize_money_winner": 150000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat009",
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
@@ -37531,7 +37791,7 @@
       "total_matches": 31
     },
     "EVT0140": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0140",
         "event_name": "NEO GENESIS MC BATTLE Vol.9",
@@ -37540,6 +37800,8 @@
         "event_date": "2026-01-04",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat009",
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
@@ -37800,7 +38062,7 @@
       "total_matches": 23
     },
     "EVT0141": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0141",
         "event_name": "凱旋MC battle 東西選抜 春ノ陣　2024",
@@ -37809,6 +38071,8 @@
         "event_date": "2024-05-06",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -38141,7 +38405,7 @@
       "total_matches": 31
     },
     "EVT0142": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0142",
         "event_name": "凱旋MC battle 夏ノ陣 U-27",
@@ -38150,6 +38414,8 @@
         "event_date": "2024-08-25",
         "prize_money_winner": 0,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -38410,7 +38676,7 @@
       "total_matches": 23
     },
     "EVT0143": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0143",
         "event_name": "凱旋MC battle Gate24",
@@ -38419,6 +38685,8 @@
         "event_date": "2024-03-17",
         "prize_money_winner": 0,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat005",
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
@@ -38751,7 +39019,7 @@
       "total_matches": 31
     },
     "EVT0144": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0144",
         "event_name": "Spotlight 2024 関東編",
@@ -38760,6 +39028,8 @@
         "event_date": "2024-04-29",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -38943,7 +39213,7 @@
       "total_matches": 15
     },
     "EVT0145": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0145",
         "event_name": "Spotlight 2019",
@@ -38952,6 +39222,8 @@
         "event_date": "2019-12-01",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -39284,7 +39556,7 @@
       "total_matches": 31
     },
     "EVT0146": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0146",
         "event_name": "Spotlight 2017",
@@ -39293,6 +39565,8 @@
         "event_date": "2017-12-03",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -39625,7 +39899,7 @@
       "total_matches": 31
     },
     "EVT0147": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0147",
         "event_name": "Spotlight 2025",
@@ -39634,6 +39908,8 @@
         "event_date": "2025-12-20",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -39894,7 +40170,7 @@
       "total_matches": 23
     },
     "EVT0148": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0148",
         "event_name": "Spotlight 2024",
@@ -39903,6 +40179,8 @@
         "event_date": "2024-12-14",
         "prize_money_winner": 0,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -40235,7 +40513,7 @@
       "total_matches": 31
     },
     "EVT0149": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0149",
         "event_name": "Spotlight 2023大阪編",
@@ -40244,6 +40522,8 @@
         "event_date": "2023-11-23",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -40576,7 +40856,7 @@
       "total_matches": 31
     },
     "EVT0150": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0150",
         "event_name": "Spotlight 2023東京編",
@@ -40585,6 +40865,8 @@
         "event_date": "2023-06-09",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -40768,7 +41050,7 @@
       "total_matches": 15
     },
     "EVT0151": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0151",
         "event_name": "Spotlight 2022",
@@ -40777,6 +41059,8 @@
         "event_date": "2022-12-04",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -40960,7 +41244,7 @@
       "total_matches": 15
     },
     "EVT0152": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0152",
         "event_name": "Spotlight 2022関東編",
@@ -40969,6 +41253,8 @@
         "event_date": "2022-07-01",
         "prize_money_winner": 300000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -41152,7 +41438,7 @@
       "total_matches": 15
     },
     "EVT0153": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0153",
         "event_name": "Spotlight 2021",
@@ -41161,6 +41447,8 @@
         "event_date": "2021-12-04",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -41493,7 +41781,7 @@
       "total_matches": 31
     },
     "EVT0154": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0154",
         "event_name": "Spotlight 2020",
@@ -41502,6 +41790,8 @@
         "event_date": "2020-12-13",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -41834,7 +42124,7 @@
       "total_matches": 31
     },
     "EVT0155": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0155",
         "event_name": "Spotlight 2018",
@@ -41843,6 +42133,8 @@
         "event_date": "2018-12-15",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -42175,7 +42467,7 @@
       "total_matches": 31
     },
     "EVT0156": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0156",
         "event_name": "Spotlight 2016",
@@ -42184,6 +42476,8 @@
         "event_date": "2016-12-03",
         "prize_money_winner": 0,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -42367,7 +42661,7 @@
       "total_matches": 15
     },
     "EVT0157": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0157",
         "event_name": "Spotlight 2015",
@@ -42376,6 +42670,8 @@
         "event_date": "2015-12-03",
         "prize_money_winner": 0,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -42559,7 +42855,7 @@
       "total_matches": 15
     },
     "EVT0158": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0158",
         "event_name": "Spotlight 2012",
@@ -42568,6 +42864,8 @@
         "event_date": "2012-12-23",
         "prize_money_winner": 0,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -42751,7 +43049,7 @@
       "total_matches": 15
     },
     "EVT0159": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0159",
         "event_name": "Spotlight 2010",
@@ -42760,6 +43058,8 @@
         "event_date": "2010-12-23",
         "prize_money_winner": 0,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -42916,7 +43216,7 @@
       "total_matches": 12
     },
     "EVT0160": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0160",
         "event_name": "Spotlight 2009",
@@ -42925,6 +43225,8 @@
         "event_date": "2009-10-25",
         "prize_money_winner": 0,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat010",
         "category_name": "Spotlight",
         "category_show_order": 600,
@@ -43031,7 +43333,7 @@
       "total_matches": 7
     },
     "EVT0161": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0161",
         "event_name": "戦極MCBATTLE 第42章",
@@ -43040,6 +43342,8 @@
         "event_date": "2026-06-20",
         "prize_money_winner": 0,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -43058,7 +43362,7 @@
       "total_matches": 0
     },
     "EVT0162": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0162",
         "event_name": "BATTLE SUMMITⅢ",
@@ -43067,6 +43371,8 @@
         "event_date": "2026-08-11",
         "prize_money_winner": 50000000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat008",
         "category_name": "BUTTLE SUMMIT",
         "category_show_order": 400,
@@ -43085,7 +43391,7 @@
       "total_matches": 0
     },
     "EVT0163": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0163",
         "event_name": "戦極MCBATTLE vs THE罵倒",
@@ -43094,6 +43400,8 @@
         "event_date": "2026-04-19",
         "prize_money_winner": 100000,
         "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
         "category_id": "EVTCat004",
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
@@ -43345,7 +43653,7 @@
       "total_matches": 23
     },
     "EVT0164": {
-      "updated_at": "2026-04-29T15:49:15.935Z",
+      "updated_at": "2026-04-29T16:09:53.578Z",
       "event": {
         "event_id": "EVT0164",
         "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
@@ -43354,6 +43662,310 @@
         "event_date": "2026-04-26",
         "prize_money_winner": 6800000,
         "prize_money_total": null,
+        "prize_adjustments": [
+          {
+            "adjustment_id": "AI0001",
+            "mc_id": "MC0466",
+            "mc_name": "Sitissy luvit",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 1800000,
+            "note": "準優勝配当分"
+          },
+          {
+            "adjustment_id": "AI0003",
+            "mc_id": "MC0222",
+            "mc_name": "NAIKA MC",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 800000,
+            "note": "Best4配当分"
+          },
+          {
+            "adjustment_id": "AI0002",
+            "mc_id": "MC0472",
+            "mc_name": "崇勲",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 800000,
+            "note": "Best4配当分"
+          },
+          {
+            "adjustment_id": "AI0006",
+            "mc_id": "MC0118",
+            "mc_name": "GIL",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 300000,
+            "note": "Best8配当分"
+          },
+          {
+            "adjustment_id": "AI0004",
+            "mc_id": "MC0280",
+            "mc_name": "SIMON JAP",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 300000,
+            "note": "Best8配当分"
+          },
+          {
+            "adjustment_id": "AI0005",
+            "mc_id": "MC0469",
+            "mc_name": "ミメイ",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 300000,
+            "note": "Best8配当分"
+          },
+          {
+            "adjustment_id": "AI0007",
+            "mc_id": "MC0444",
+            "mc_name": "黄猿",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 300000,
+            "note": "Best8配当分"
+          },
+          {
+            "adjustment_id": "AI0014",
+            "mc_id": "MC0447",
+            "mc_name": "9for",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0013",
+            "mc_id": "MC1038",
+            "mc_name": "Ery10",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0008",
+            "mc_id": "MC0126",
+            "mc_name": "Hawk-I",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0010",
+            "mc_id": "MC0930",
+            "mc_name": "Keita",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0012",
+            "mc_id": "MC0214",
+            "mc_name": "RAWAXXX",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0015",
+            "mc_id": "MC0023",
+            "mc_name": "S-kainê",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0009",
+            "mc_id": "MC0467",
+            "mc_name": "Yella goat",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0011",
+            "mc_id": "MC0633",
+            "mc_name": "煩悩",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          }
+        ],
+        "prize_supplements": [
+          {
+            "adjustment_id": "AI0001",
+            "mc_id": "MC0466",
+            "mc_name": "Sitissy luvit",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 1800000,
+            "note": "準優勝配当分"
+          },
+          {
+            "adjustment_id": "AI0003",
+            "mc_id": "MC0222",
+            "mc_name": "NAIKA MC",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 800000,
+            "note": "Best4配当分"
+          },
+          {
+            "adjustment_id": "AI0002",
+            "mc_id": "MC0472",
+            "mc_name": "崇勲",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 800000,
+            "note": "Best4配当分"
+          },
+          {
+            "adjustment_id": "AI0006",
+            "mc_id": "MC0118",
+            "mc_name": "GIL",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 300000,
+            "note": "Best8配当分"
+          },
+          {
+            "adjustment_id": "AI0004",
+            "mc_id": "MC0280",
+            "mc_name": "SIMON JAP",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 300000,
+            "note": "Best8配当分"
+          },
+          {
+            "adjustment_id": "AI0005",
+            "mc_id": "MC0469",
+            "mc_name": "ミメイ",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 300000,
+            "note": "Best8配当分"
+          },
+          {
+            "adjustment_id": "AI0007",
+            "mc_id": "MC0444",
+            "mc_name": "黄猿",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 300000,
+            "note": "Best8配当分"
+          },
+          {
+            "adjustment_id": "AI0014",
+            "mc_id": "MC0447",
+            "mc_name": "9for",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0013",
+            "mc_id": "MC1038",
+            "mc_name": "Ery10",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0008",
+            "mc_id": "MC0126",
+            "mc_name": "Hawk-I",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0010",
+            "mc_id": "MC0930",
+            "mc_name": "Keita",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0012",
+            "mc_id": "MC0214",
+            "mc_name": "RAWAXXX",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0015",
+            "mc_id": "MC0023",
+            "mc_name": "S-kainê",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0009",
+            "mc_id": "MC0467",
+            "mc_name": "Yella goat",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          },
+          {
+            "adjustment_id": "AI0011",
+            "mc_id": "MC0633",
+            "mc_name": "煩悩",
+            "event_id": "EVT0164",
+            "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+            "event_date": "2026-04-26",
+            "amount": 100000,
+            "note": "Best16配当分"
+          }
+        ],
         "category_id": "EVTCat011",
         "category_name": "LUSHBOMU MC BATTLE",
         "category_show_order": 450,
