@@ -118,26 +118,22 @@ function buildPrizeSupplementHtml(detail) {
   const items = normalizeEventPrizeSupplements(detail);
   if (!items.length) return "";
 
-  const lines = items
-    .map((item) => {
-      const mcName = safeString(item.mc_name || "").trim();
-      const label = safeString(item.label || "").trim();
-      const amount = formatPrizeYen(item.amount);
-      const note = safeString(item.note || "").trim();
+  const uniqueMap = new Map();
 
-      if (!amount) return "";
+  items.forEach((item) => {
+    const label = getPrizeSupplementDisplayLabel(item);
+    const amount = formatPrizeYen(item.amount);
+    const amountKey = normalizePrizeAmountKey(item.amount);
 
-      const mainText = mcName
-        ? `${mcName} ${amount}`
-        : label
-          ? `${label} ${amount}`
-          : amount;
+    if (!label || !amount || !amountKey) return;
 
-      const noteText = note ? `:${note}` : "";
-      return `${mainText}${noteText}`;
-    })
-    .filter(Boolean);
+    const key = `${label}__${amountKey}`;
+    if (!uniqueMap.has(key)) {
+      uniqueMap.set(key, `${label}: ${amount}`);
+    }
+  });
 
+  const lines = Array.from(uniqueMap.values());
   if (!lines.length) return "";
 
   const prefix = "この大会は優勝以外にも賞金が発生します。";
@@ -146,6 +142,27 @@ function buildPrizeSupplementHtml(detail) {
     `<span class="event-prize-note">${escapeHtml(prefix)}</span>`,
     ...lines.map((line) => `<span class="event-prize-note">${escapeHtml(line)}</span>`)
   ].join("<br>");
+}
+
+function getPrizeSupplementDisplayLabel(item) {
+  const note = safeString(item.note || "").trim();
+  if (note) return note;
+
+  const label = safeString(item.label || "").trim();
+  if (label) return label;
+
+  return "賞金配当分";
+}
+
+function normalizePrizeAmountKey(value) {
+  if (value === null || value === undefined || value === "") return "";
+  const cleaned = String(value).replace(/,/g, "").replace(/[¥￥円\s]/g, "").trim();
+  if (!cleaned) return "";
+
+  const num = Number(cleaned);
+  if (Number.isFinite(num)) return String(num);
+
+  return cleaned;
 }
 
 function normalizeEventPrizeSupplements(detail) {
