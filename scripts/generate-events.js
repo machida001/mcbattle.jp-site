@@ -93,12 +93,14 @@ function buildEventInfoListItems(event, groupedMatches) {
   const resultsHtml = buildResultsHtml(event, groupedMatches);
   const formattedWinnerPrize = formatPrizeYen(event.prize_money_winner);
   const formattedLocation = safeString(event.location || "").trim();
+  const prizeSupplementHtml = buildPrizeSupplementHtml(event);
 
   const items = [
     { label: "開催日", html: escapeHtml(formatDateJP(event.event_date || "")) },
     { label: "場所", html: escapeHtml(formattedLocation) },
     { label: "結果", html: resultsHtml },
-    { label: "優勝賞金", html: escapeHtml(formattedWinnerPrize || "") }
+    { label: "優勝賞金", html: escapeHtml(formattedWinnerPrize || "") },
+    { label: "補足", html: prizeSupplementHtml }
   ].filter((item) => item.html !== "");
 
   return items.map((item) => {
@@ -109,6 +111,129 @@ function buildEventInfoListItems(event, groupedMatches) {
       "</li>"
     ].join("");
   }).join("\n");
+}
+
+function buildPrizeSupplementHtml(event) {
+  const lines = normalizeEventPrizeSupplements(event).map((item) => {
+    const label = safeString(item.label || "").trim();
+    const amount = formatPrizeYen(item.amount);
+
+    if (!label || !amount) return "";
+    return `${label} ${amount}`;
+  }).filter(Boolean);
+
+  if (!lines.length) return "";
+
+  const prefix = "この大会は優勝以外にも賞金が発生します。";
+  return escapeHtml(prefix + lines.join(" / "));
+}
+
+function normalizeEventPrizeSupplements(event) {
+  const source = findEventPrizeSupplementSource(event);
+
+  if (Array.isArray(source)) {
+    return source
+      .map((item) => {
+        return {
+          label: getPrizeSupplementLabel(item),
+          amount: getPrizeSupplementAmount(item)
+        };
+      })
+      .filter((item) => item.label && item.amount !== null && item.amount !== undefined && item.amount !== "");
+  }
+
+  const parsedFromText = parsePrizeSupplementText(source);
+  if (parsedFromText.length) return parsedFromText;
+
+  return normalizeEventPrizeSupplementsFromColumns(event);
+}
+
+function findEventPrizeSupplementSource(event) {
+  const candidates = [
+    event.prize_supplements,
+    event.prize_supplement,
+    event.prize_distribution,
+    event.prize_distributions,
+    event.prize_breakdown,
+    event.prize_breakdowns,
+    event.prize_notes,
+    event.prize_note,
+    event.prize_money_notes,
+    event.prize_money_note,
+    event.prize_money_other,
+    event.other_prize_money,
+    event.other_prizes
+  ];
+
+  return candidates.find((value) => {
+    if (Array.isArray(value)) return value.length > 0;
+    return safeString(value).trim() !== "";
+  });
+}
+
+function normalizeEventPrizeSupplementsFromColumns(event) {
+  const candidates = [
+    { label: "準優勝", amount: event.prize_money_runner_up ?? event.runner_up_prize_money ?? event.prize_money_second ?? event.second_prize_money },
+    { label: "Best4", amount: event.prize_money_best4 ?? event.best4_prize_money ?? event.prize_money_semifinalist ?? event.semifinalist_prize_money },
+    { label: "Best8", amount: event.prize_money_best8 ?? event.best8_prize_money },
+    { label: "Best16", amount: event.prize_money_best16 ?? event.best16_prize_money },
+    { label: "Best32", amount: event.prize_money_best32 ?? event.best32_prize_money }
+  ];
+
+  return candidates.filter((item) => {
+    return item.amount !== null && item.amount !== undefined && item.amount !== "" && Number(String(item.amount).replace(/,/g, "").trim()) > 0;
+  });
+}
+
+function parsePrizeSupplementText(value) {
+  const text = safeString(value).trim();
+  if (!text) return [];
+
+  return text
+    .split(/[\/／、,，]+/)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => {
+      const match = part.match(/^(.+?)\s*[:：]?\s*[¥￥]?\s*([0-9][0-9,]*)\s*円?$/);
+      if (!match) {
+        return {
+          label: part,
+          amount: ""
+        };
+      }
+
+      return {
+        label: match[1].trim(),
+        amount: match[2].trim()
+      };
+    })
+    .filter((item) => item.label);
+}
+
+function getPrizeSupplementLabel(item) {
+  return safeString(
+    item.label ??
+    item.round ??
+    item.round_name ??
+    item.rank ??
+    item.result ??
+    item.position ??
+    item.name ??
+    ""
+  ).trim();
+}
+
+function getPrizeSupplementAmount(item) {
+  const value =
+    item.amount ??
+    item.prize_money ??
+    item.prize ??
+    item.money ??
+    item.value ??
+    "";
+
+  if (value === null || value === undefined || value === "") return "";
+  return value;
 }
 
 function buildResultsHtml(event, groupedMatches) {
