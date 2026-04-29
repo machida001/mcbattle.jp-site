@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-04-27T16:35:21.421Z",
+  "updated_at": "2026-04-29T14:26:13.913Z",
   "min_matches": 2,
-  "total": 457,
+  "total": 456,
   "summaries": [
     {
       "pair_key": "MC0080__MC0214",
@@ -5365,19 +5365,6 @@
       "mc_name_a": "MC松島",
       "mc_id_b": "MC0271",
       "mc_name_b": "SAM",
-      "a_wins": 2,
-      "b_wins": 0,
-      "total_matches": 2,
-      "last_match_date": "2016-11-06",
-      "last_event_id": "EVT0041",
-      "last_event_name": "戦極MCBATTLE 第15章"
-    },
-    {
-      "pair_key": "MC0595__MC0651",
-      "mc_id_a": "MC0595",
-      "mc_name_a": "MIRI",
-      "mc_id_b": "MC0651",
-      "mc_name_b": "ドイケン",
       "a_wins": 2,
       "b_wins": 0,
       "total_matches": 2,

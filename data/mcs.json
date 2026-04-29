@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-27T16:34:39.480Z",
-  "total": 920,
+  "updated_at": "2026-04-29T14:25:16.306Z",
+  "total": 839,
   "mcs": [
     {
       "mc_id": "MC0040",
@@ -42,7 +42,7 @@
       "mc_id": "MC0021",
       "mc_name": "R-指定",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1991年生まれ、大阪府堺市出身。Creepy NutsのMC。ULTIMATE MC BATTLE大阪予選5連覇、同全国大会3連覇。",
       "mc_yomi": "あーるしてい",
       "notes": "",
       "kana_group": "あ"
@@ -69,7 +69,7 @@
       "mc_id": "MC0138",
       "mc_name": "IZ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "広島代表としてUMB 2018 GRAND CHAMPIONSHIP出場。UMB 2018 広島予選優勝。",
       "mc_yomi": "あいず",
       "notes": "",
       "kana_group": "あ"
@@ -80,15 +80,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "あいすりー",
-      "notes": "",
-      "kana_group": "あ"
-    },
-    {
-      "mc_id": "MC0493",
-      "mc_name": "ICE ROOL",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "あいするーる",
       "notes": "",
       "kana_group": "あ"
     },
@@ -105,7 +96,7 @@
       "mc_id": "MC0135",
       "mc_name": "I.T.1",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2023 GRAND CHAMPIONSHIP出場。1回戦でalphaと対戦。",
       "mc_yomi": "あいてぃーわん",
       "notes": "",
       "kana_group": "あ"
@@ -123,7 +114,7 @@
       "mc_id": "MC0047",
       "mc_name": "AWAKE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "青森代表としてUMB 2024 GRAND CHAMPIONSHIP出場、同大会2回戦進出。UMB 2024 青森予選優勝。",
       "mc_yomi": "あうぇいく",
       "notes": "",
       "kana_group": "あ"
@@ -132,7 +123,7 @@
       "mc_id": "MC0046",
       "mc_name": "Authority",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1997年生まれ、青森県黒石市出身。UMB 2019 GRAND CHAMPIONSHIP優勝、BATTLE SUMMIT 2022優勝。アルバム『EMRAL』、EP『22 Space』『Tensei』など。",
       "mc_yomi": "あうそりてぃ",
       "notes": "",
       "kana_group": "あ"
@@ -141,7 +132,7 @@
       "mc_id": "MC0038",
       "mc_name": "aonisai",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1993年生まれ、横浜出身。before sleepin’shower所属。UMB 2025 GRAND CHAMPIONSHIPベスト4。",
       "mc_yomi": "あおにさい",
       "notes": "",
       "kana_group": "あ"
@@ -161,15 +152,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "あおりんご",
-      "notes": "",
-      "kana_group": "あ"
-    },
-    {
-      "mc_id": "MC0479",
-      "mc_name": "AKI",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "あき",
       "notes": "",
       "kana_group": "あ"
     },
@@ -213,7 +195,7 @@
       "mc_id": "MC0028",
       "mc_name": "AKR5",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "熊本代表としてUMB 2006・2007 GRAND CHAMPIONSHIP出場。UMB 2006・2007 熊本予選優勝。",
       "mc_yomi": "あくろ",
       "notes": "",
       "kana_group": "あ"
@@ -222,7 +204,7 @@
       "mc_id": "MC0328",
       "mc_name": "あざいすと",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "静岡Rep。UMB 2013 静岡予選優勝、UMB 2015 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "あざいすと",
       "notes": "",
       "kana_group": "あ"
@@ -231,7 +213,7 @@
       "mc_id": "MC0441",
       "mc_name": "阿修羅",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1999年生まれ、新潟県上越市出身。UMB 2020 新潟予選優勝、同全国大会出場。",
       "mc_yomi": "あしゅら",
       "notes": "",
       "kana_group": "あ"
@@ -240,7 +222,7 @@
       "mc_id": "MC0042",
       "mc_name": "ASS-B.Miller",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福井県代表としてUMB 2022 GRAND CHAMPIONSHIP出場。UMB 2022 福井予選優勝。",
       "mc_yomi": "あすびーみらー",
       "notes": "",
       "kana_group": "あ"
@@ -312,7 +294,7 @@
       "mc_id": "MC0039",
       "mc_name": "APACHE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "島根県出身。UMB 2017 島根予選準優勝など。MCバトル出場、山陰シーンでの活動。",
       "mc_yomi": "あぱっち",
       "notes": "",
       "kana_group": "あ"
@@ -375,7 +357,7 @@
       "mc_id": "MC0380",
       "mc_name": "天邪鬼",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "熊本代表としてUMB 2022・2024 GRAND CHAMPIONSHIP出場。UMB 2024 熊本予選優勝。",
       "mc_yomi": "あまのじゃく",
       "notes": "",
       "kana_group": "あ"
@@ -384,7 +366,7 @@
       "mc_id": "MC0036",
       "mc_name": "amida",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福島県会津若松市を拠点に活動、WhereAboutsのMC。UMB 2023 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "あみだ",
       "notes": "",
       "kana_group": "あ"
@@ -465,7 +447,7 @@
       "mc_id": "MC0029",
       "mc_name": "ALBA-TROSS",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1989年生まれ、ブラジル・サンパウロ州出身、岐阜県大垣市育ち。UMB 2017 GRAND CHAMPIONSHIP出場、同大会ベスト16。アルバム『365』『獏-BAKU-』『TOKAI KENBUNROKU』など。",
       "mc_yomi": "あるばとろす",
       "notes": "",
       "kana_group": "あ"
@@ -474,7 +456,7 @@
       "mc_id": "MC0032",
       "mc_name": "Alpha",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2023・2024 鹿児島予選優勝、UMB 2024 GRAND CHAMPIONSHIP出場。鹿児島代表としてMCバトルに出場。",
       "mc_yomi": "あるふぁ",
       "notes": "",
       "kana_group": "あ"
@@ -483,7 +465,7 @@
       "mc_id": "MC0329",
       "mc_name": "あるま",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2005 GRAND CHAMPIONSHIP出場、第4回東京最終予選準優勝。",
       "mc_yomi": "あるま",
       "notes": "",
       "kana_group": "あ"
@@ -528,17 +510,8 @@
       "mc_id": "MC0433",
       "mc_name": "諳泰",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡代表としてUMB 2024 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "あんやすし",
-      "notes": "",
-      "kana_group": "あ"
-    },
-    {
-      "mc_id": "MC0582",
-      "mc_name": "ANRI",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "あんり",
       "notes": "",
       "kana_group": "あ"
     },
@@ -591,7 +564,7 @@
       "mc_id": "MC0453",
       "mc_name": "ISSUGI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "東京都練馬区出身。MONJU、SICK TEAM、BES & ISSUGIとしても活動。16FLIP名義でビートメイク・DJも行い、Dogear Recordsを代表。",
       "mc_yomi": "いすぎ",
       "notes": "",
       "kana_group": "あ"
@@ -600,7 +573,7 @@
       "mc_id": "MC0403",
       "mc_name": "泉ピン太郎",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "静岡代表としてUMB 2015 GRAND CHAMPIONSHIP出場。UMB 2015 静岡予選優勝。",
       "mc_yomi": "いずみぴんたろう",
       "notes": "",
       "kana_group": "あ"
@@ -609,7 +582,7 @@
       "mc_id": "MC0413",
       "mc_name": "磯友",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "茨城代表としてUMB 2011 GRAND CHAMPIONSHIP出場。UMB 2011 茨城予選優勝。",
       "mc_yomi": "いそとも",
       "notes": "",
       "kana_group": "あ"
@@ -627,7 +600,7 @@
       "mc_id": "MC0369",
       "mc_name": "一念",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "石川代表としてUMB 2023 GRAND CHAMPIONSHIP出場。UMB 2023 石川予選優勝。",
       "mc_yomi": "いちねん",
       "notes": "",
       "kana_group": "あ"
@@ -645,17 +618,8 @@
       "mc_id": "MC0136",
       "mc_name": "ILL AIK",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "高知代表としてUMB 2017 GRAND CHAMPIONSHIP出場。UMB 2017 高知予選優勝。",
       "mc_yomi": "いるあいく",
-      "notes": "",
-      "kana_group": "あ"
-    },
-    {
-      "mc_id": "MC0494",
-      "mc_name": "ILL THE KID",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "いるざきっど",
       "notes": "",
       "kana_group": "あ"
     },
@@ -663,7 +627,7 @@
       "mc_id": "MC0003",
       "mc_name": "11’Back",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "西東京で活動、LisBoyzのリーダー。U-22 MCBATTLE 2022 FINAL準優勝など。1stアルバム『WEST DOG TOWN』、楽曲「悪巧み2」など。",
       "mc_yomi": "いれぶんばっく",
       "notes": "",
       "kana_group": "あ"
@@ -672,7 +636,7 @@
       "mc_id": "MC0137",
       "mc_name": "ILOHA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "山形代表としてUMB 2022 GRAND CHAMPIONSHIP出場。UMB 2022 山形予選優勝。",
       "mc_yomi": "いろは",
       "notes": "",
       "kana_group": "あ"
@@ -723,15 +687,6 @@
       "kana_group": "あ"
     },
     {
-      "mc_id": "MC0531",
-      "mc_name": "牛志",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "うしこころざし",
-      "notes": "",
-      "kana_group": "あ"
-    },
-    {
       "mc_id": "MC0342",
       "mc_name": "ウジミツ",
       "mc_name_sub": "",
@@ -744,7 +699,7 @@
       "mc_id": "MC0312",
       "mc_name": "USU",
       "mc_name_sub": "USU a.k.a SQUEZ",
-      "mc_description": "",
+      "mc_description": "新潟県出身、NITE FULL MAKERSのメンバー。USU a.k.a. SQUEZ名義でも活動し、UMB 2006・2007 新潟予選優勝。",
       "mc_yomi": "うす",
       "notes": "",
       "kana_group": "あ"
@@ -795,15 +750,6 @@
       "kana_group": "あ"
     },
     {
-      "mc_id": "MC0598",
-      "mc_name": "HRS",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "えいちあーるえす",
-      "notes": "",
-      "kana_group": "あ"
-    },
-    {
       "mc_id": "MC0819",
       "mc_name": "eyden",
       "mc_name_sub": "",
@@ -843,7 +789,7 @@
       "mc_id": "MC0027",
       "mc_name": "ACE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1990年生まれ、ブラジル出身、新宿育ち。B-BOY PARK MC BATTLE 2011優勝、UMB・罵倒・戦極MCBATTLEなどで優勝歴あり。アルバム『STRAIGHT』『LIGHT DOWN』、ADRENALINE主催・渋谷サイファーでの活動など多数。",
       "mc_yomi": "えーす",
       "notes": "",
       "kana_group": "あ"
@@ -879,7 +825,7 @@
       "mc_id": "MC0023",
       "mc_name": "S-kainê",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪府出身。第16回高校生RAP選手権ベスト4。EP『The Era Of Drawing』、Juda名義でのビートメイク。",
       "mc_yomi": "えすかいね",
       "notes": "",
       "kana_group": "あ"
@@ -888,7 +834,7 @@
       "mc_id": "MC0269",
       "mc_name": "S-SENCE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "札幌代表としてUMB 2007 GRAND CHAMPIONSHIP出場。UMB 2007 札幌予選優勝。",
       "mc_yomi": "えすせんす",
       "notes": "",
       "kana_group": "あ"
@@ -915,17 +861,8 @@
       "mc_id": "MC0268",
       "mc_name": "S-fuu",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岐阜を拠点に活動。UMB 2019・2021 岐阜予選準優勝、UMB 2022 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "えすふう",
-      "notes": "",
-      "kana_group": "あ"
-    },
-    {
-      "mc_id": "MC0568",
-      "mc_name": "X",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "えっくす",
       "notes": "",
       "kana_group": "あ"
     },
@@ -942,7 +879,7 @@
       "mc_id": "MC0044",
       "mc_name": "aTp",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "熊本代表としてUMB 2021 GRAND CHAMPIONSHIP出場、同大会ベスト32。UMB 2021 熊本予選優勝。",
       "mc_yomi": "えてぃーぴー",
       "notes": "",
       "kana_group": "あ"
@@ -960,7 +897,7 @@
       "mc_id": "MC0228",
       "mc_name": "nkm-Le0t0rio",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "京都代表としてUMB 2025 GRAND CHAMPIONSHIP出場。UMB 2025 京都予選優勝。",
       "mc_yomi": "えぬけーえむれおとりお",
       "notes": "",
       "kana_group": "あ"
@@ -969,7 +906,7 @@
       "mc_id": "MC0104",
       "mc_name": "ENEMY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "神奈川県藤沢市SND出身、SNDCrew・Oil Blood Pimps所属。UMB 2024 神奈川予選優勝、UMB GRAND CHAMPIONSHIP出場など。",
       "mc_yomi": "えねみー",
       "notes": "",
       "kana_group": "あ"
@@ -996,7 +933,7 @@
       "mc_id": "MC0102",
       "mc_name": "EFTRA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1997年生まれ、富山県出身。UMB GRAND CHAMPIONSHIPに富山代表として2度出場。Eftra名義で『EF CULT』を発表。",
       "mc_yomi": "えふとら",
       "notes": "",
       "kana_group": "あ"
@@ -1005,7 +942,7 @@
       "mc_id": "MC0107",
       "mc_name": "EVOL",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "富山県を拠点に活動。UMB 2018・2020 富山予選優勝、同全国大会出場。Kenny Bullard a.k.a EVOL名義での活動など。",
       "mc_yomi": "えぼる",
       "notes": "",
       "kana_group": "あ"
@@ -1059,7 +996,7 @@
       "mc_id": "MC0019",
       "mc_name": "MC小法師",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福井県出身。ラップスタア誕生！2nd season準優勝、UMB 2020 福井代表、戦極MCBATTLE 第23章中部代表。",
       "mc_yomi": "えむしーこぼうし",
       "notes": "",
       "kana_group": "あ"
@@ -1086,7 +1023,7 @@
       "mc_id": "MC0015",
       "mc_name": "MC☆ニガリ",
       "mc_name_sub": "MC☆ニガリ a.k.a 赤い稲妻",
-      "mc_description": "",
+      "mc_description": "1996年生まれ、長野県出身。第6回・第7回高校生RAP選手権優勝、UMB 2021 GRAND CHAMPIONSHIP優勝。",
       "mc_yomi": "えむしーにがり",
       "notes": "",
       "kana_group": "あ"
@@ -1122,7 +1059,7 @@
       "mc_id": "MC0020",
       "mc_name": "MC松島",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1987年生まれ、北海道札幌市出身・在住。UMB 2014 札幌予選優勝、同全国大会ベスト8など。『FIVE WAYS』『360 Kick Flip』、漫画家・映画監督としての活動など多数。",
       "mc_yomi": "えむしーまつしま",
       "notes": "",
       "kana_group": "あ"
@@ -1167,7 +1104,7 @@
       "mc_id": "MC0210",
       "mc_name": "MC.YO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2017 西東京予選優勝、同全国大会出場。",
       "mc_yomi": "えむしーよー",
       "notes": "",
       "kana_group": "あ"
@@ -1176,7 +1113,7 @@
       "mc_id": "MC0018",
       "mc_name": "MCリトル",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "2002年生まれ、北海道札幌市出身。UMB 2022・2023 北海道代表、戦極MCBATTLE 第35章優勝。",
       "mc_yomi": "えむしーりとる",
       "notes": "",
       "kana_group": "あ"
@@ -1187,15 +1124,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "えむしっくすぽ",
-      "notes": "",
-      "kana_group": "あ"
-    },
-    {
-      "mc_id": "MC0590",
-      "mc_name": "mcRey",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "えむしれ",
       "notes": "",
       "kana_group": "あ"
     },
@@ -1230,7 +1158,7 @@
       "mc_id": "MC0106",
       "mc_name": "ERONE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪府出身、韻踏合組合・CHIEF ROKKAのメンバー。ソロアルバム『ゆめものがたり』、ミックスCD『覚醒』、フリースタイルダンジョン審査員・3代目モンスターなど。",
       "mc_yomi": "えろーん",
       "notes": "",
       "kana_group": "あ"
@@ -1248,7 +1176,7 @@
       "mc_id": "MC0473",
       "mc_name": "押忍マン",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大分県出身、東京在住。アルバム『押忍マン Vs Nezumi』、シングル『IT'S ONE TIME』『100 or 0』など。",
       "mc_yomi": "おうにんまん",
       "notes": "",
       "kana_group": "あ"
@@ -1266,7 +1194,7 @@
       "mc_id": "MC0232",
       "mc_name": "O.G.K",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "鳥取代表としてUMB 2018 GRAND CHAMPIONSHIP出場。UMB 2018 鳥取予選優勝。",
       "mc_yomi": "おーじーけー",
       "notes": "",
       "kana_group": "あ"
@@ -1275,7 +1203,7 @@
       "mc_id": "MC0236",
       "mc_name": "OZY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "長野代表としてUMB 2012 GRAND CHAMPIONSHIP出場。OZY、落合ひろんぬ名義で活動。",
       "mc_yomi": "おーじーわい",
       "notes": "",
       "kana_group": "あ"
@@ -1284,7 +1212,7 @@
       "mc_id": "MC0459",
       "mc_name": "OWG",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "愛知出身。第5回 激闘！ラップ甲子園優勝、楽曲「JUST DO IT」など。",
       "mc_yomi": "おーだぶるじー",
       "notes": "",
       "kana_group": "あ"
@@ -1329,7 +1257,7 @@
       "mc_id": "MC0235",
       "mc_name": "OSCAR",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "秋田代表としてUMB 2019 GRAND CHAMPIONSHIP出場。UMB 2019 秋田予選優勝。",
       "mc_yomi": "おすかー",
       "notes": "",
       "kana_group": "あ"
@@ -1338,7 +1266,7 @@
       "mc_id": "MC0442",
       "mc_name": "雄猿",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "千葉県出身。UMB 2016 千葉予選優勝、同全国大会出場。",
       "mc_yomi": "おすざる",
       "notes": "",
       "kana_group": "あ"
@@ -1365,7 +1293,7 @@
       "mc_id": "MC0443",
       "mc_name": "音主",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "沖縄県浦添Rep、城間CREW所属。UMB 2009 沖縄予選優勝、同全国大会出場。",
       "mc_yomi": "おとしゅ",
       "notes": "",
       "kana_group": "あ"
@@ -1398,19 +1326,10 @@
       "kana_group": "あ"
     },
     {
-      "mc_id": "MC0506",
-      "mc_name": "OMATA Longinus",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "おまたろんぎぬす",
-      "notes": "",
-      "kana_group": "あ"
-    },
-    {
       "mc_id": "MC0233",
       "mc_name": "OLIVA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "愛媛代表としてUMB 2021 GRAND CHAMPIONSHIPベスト8。UMB 2023 愛媛予選ではFINAL進出。",
       "mc_yomi": "おりば",
       "notes": "",
       "kana_group": "あ"
@@ -1419,7 +1338,7 @@
       "mc_id": "MC0234",
       "mc_name": "ORYO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "和歌山県有田市出身。UMB 2023 和歌山予選優勝、同全国大会出場。EP『To that Moment』など。",
       "mc_yomi": "おりょう",
       "notes": "",
       "kana_group": "あ"
@@ -1437,7 +1356,7 @@
       "mc_id": "MC0388",
       "mc_name": "御笑門",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岩手県釜石Rep、E.O.P所属。UMB 2018 岩手予選出場、UMB 2022 岩手予選出場。",
       "mc_yomi": "おわらいもん",
       "notes": "",
       "kana_group": "あ"
@@ -1455,17 +1374,8 @@
       "mc_id": "MC0468",
       "mc_name": "がーどまん",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "滋賀県守山市出身。チャンネルがーどまんのメンバー。MCバトル出場、YouTube・音楽活動など。",
       "mc_yomi": "がーどまん",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0551",
-      "mc_name": "gAwn",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "がーん",
       "notes": "",
       "kana_group": "か"
     },
@@ -1491,7 +1401,7 @@
       "mc_id": "MC0389",
       "mc_name": "怪士",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "栃木県宇都宮Rep、雷都boys所属。UMB 2021 栃木予選優勝、1st EP『Beautiful Days』など。",
       "mc_yomi": "かいさむらい",
       "notes": "",
       "kana_group": "か"
@@ -1509,7 +1419,7 @@
       "mc_id": "MC0163",
       "mc_name": "Kai-Tone",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "沖縄県出身。第14回高校生ラップ選手権出場、UMB本戦に史上最年少で出場。",
       "mc_yomi": "かいとーん",
       "notes": "",
       "kana_group": "か"
@@ -1527,7 +1437,7 @@
       "mc_id": "MC0401",
       "mc_name": "楓",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2023 GRAND CHAMPIONSHIPベスト8。",
       "mc_yomi": "かえで",
       "notes": "",
       "kana_group": "か"
@@ -1545,17 +1455,8 @@
       "mc_id": "MC0330",
       "mc_name": "かくてる",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "北海道代表としてUMB 2006 GRAND CHAMPIONSHIP出場。UMB 2006 北海道予選優勝。",
       "mc_yomi": "かくてる",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0541",
-      "mc_name": "カクニケンスケ",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "かくにけんすけ",
       "notes": "",
       "kana_group": "か"
     },
@@ -1581,17 +1482,8 @@
       "mc_id": "MC0391",
       "mc_name": "我次郎MIC",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2017 GRAND CHAMPIONSHIPベスト8。フリースタイルダンジョン出演。",
       "mc_yomi": "がじろうmic",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0594",
-      "mc_name": "kaz kikuchi",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "かずきくち",
       "notes": "",
       "kana_group": "か"
     },
@@ -1608,7 +1500,7 @@
       "mc_id": "MC0164",
       "mc_name": "KAKKY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2021 兵庫予選優勝、UMB 2018 滋賀予選優勝。",
       "mc_yomi": "かっきー",
       "notes": "",
       "kana_group": "か"
@@ -1617,7 +1509,7 @@
       "mc_id": "MC0122",
       "mc_name": "GOTIT",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "茨城県日立市出身。UMB 2023 GRAND CHAMPIONSHIP優勝。GOTIT & 呼煙魔名義でEP『UNDER BOOB』など。",
       "mc_yomi": "がってぃ",
       "notes": "",
       "kana_group": "か"
@@ -1632,19 +1524,10 @@
       "kana_group": "か"
     },
     {
-      "mc_id": "MC0675",
-      "mc_name": "桂枝太郎",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "かつらえだたろう",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
       "mc_id": "MC0116",
       "mc_name": "GADORO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1990年生まれ、宮崎県出身。KING OF KINGS 2016・2017優勝。アルバム『四畳半』『花水木』、Four Mud Arrows設立など。",
       "mc_yomi": "がどろ",
       "notes": "",
       "kana_group": "か"
@@ -1653,7 +1536,7 @@
       "mc_id": "MC0429",
       "mc_name": "要",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "滋賀代表としてUMB 2016 GRAND CHAMPIONSHIP出場。UMB 2016 滋賀予選優勝。",
       "mc_yomi": "かなめ",
       "notes": "",
       "kana_group": "か"
@@ -1680,7 +1563,7 @@
       "mc_id": "MC0167",
       "mc_name": "KaRaAgE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "佐賀代表としてUMB 2018 GRAND CHAMPIONSHIP出場。UMB 2018 佐賀予選優勝。",
       "mc_yomi": "からあげ",
       "notes": "",
       "kana_group": "か"
@@ -1689,7 +1572,7 @@
       "mc_id": "MC0168",
       "mc_name": "KARASS",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡・門司松ヶ江Rep、BLOODNA所属。UMB 2015・2016 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "からす",
       "notes": "",
       "kana_group": "か"
@@ -1698,7 +1581,7 @@
       "mc_id": "MC0347",
       "mc_name": "ガーリー",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "千葉県出身。UMB 2005 GRAND CHAMPIONSHIP優勝、UMB 2006 GRAND CHAMPIONSHIP準優勝。ZAG SYSTEM、Da.Me.Records、TEAM Cを経てソロでも活動。",
       "mc_yomi": "がり",
       "notes": "",
       "kana_group": "か"
@@ -1707,7 +1590,7 @@
       "mc_id": "MC0345",
       "mc_name": "カルデラビスタ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "山口代表としてUMB 2023 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "かるでらびすた",
       "notes": "",
       "kana_group": "か"
@@ -1716,7 +1599,7 @@
       "mc_id": "MC0475",
       "mc_name": "漢 a.k.a. GAMI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1978年生まれ、東京都新宿区出身。MSCのリーダー、9SARI GROUP代表。アルバム『導』『ヒップホップ・ドリーム』など。",
       "mc_yomi": "かんえーけーえーがみ",
       "notes": "",
       "kana_group": "か"
@@ -1725,7 +1608,7 @@
       "mc_id": "MC0165",
       "mc_name": "KANDAI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福井代表としてUMB 2021・2024 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "かんだい",
       "notes": "",
       "kana_group": "か"
@@ -1743,7 +1626,7 @@
       "mc_id": "MC0175",
       "mc_name": "Key",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "新潟代表としてUMB 2024 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "きー",
       "notes": "",
       "kana_group": "か"
@@ -1770,7 +1653,7 @@
       "mc_id": "MC0444",
       "mc_name": "黄猿",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "東京を拠点に活動。KING OF KINGS東京大会優勝、UMB準優勝など。アルバム『東京地下』『Reverse 360』など。",
       "mc_yomi": "きざる",
       "notes": "",
       "kana_group": "か"
@@ -1779,17 +1662,8 @@
       "mc_id": "MC0013",
       "mc_name": "Kizushi 命",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "滋賀県出身、Molly Fuckin G所属。UMB 2023 滋賀予選優勝、同全国大会出場。",
       "mc_yomi": "きずしいのち",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0540",
-      "mc_name": "KissShot",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "きすしょっと",
       "notes": "",
       "kana_group": "か"
     },
@@ -1797,7 +1671,7 @@
       "mc_id": "MC0349",
       "mc_name": "ギネス",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "和歌山代表としてUMB 2013 GRAND CHAMPIONSHIP出場。UMB 2013 和歌山予選優勝。",
       "mc_yomi": "ぎねす",
       "notes": "",
       "kana_group": "か"
@@ -1812,19 +1686,10 @@
       "kana_group": "か"
     },
     {
-      "mc_id": "MC0523",
-      "mc_name": "きばな",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "きばな",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
       "mc_id": "MC0073",
       "mc_name": "CASPER ACE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "CASPER ACE",
       "mc_yomi": "きゃすぱーえーす",
       "notes": "",
       "kana_group": "か"
@@ -1833,7 +1698,7 @@
       "mc_id": "MC0187",
       "mc_name": "KYAPER",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "滋賀県大津市膳所・石山Rep、ねずみ所属。UMB 2025 滋賀予選優勝、同全国大会出場。",
       "mc_yomi": "きゃぱー",
       "notes": "",
       "kana_group": "か"
@@ -1842,7 +1707,7 @@
       "mc_id": "MC0072",
       "mc_name": "CANDLE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "CANDLE",
       "mc_yomi": "きゃんどる",
       "notes": "",
       "kana_group": "か"
@@ -1902,20 +1767,20 @@
       "kana_group": "か"
     },
     {
-      "mc_id": "MC0157",
-      "mc_name": "K'iLL",
+      "mc_id": "MC0118",
+      "mc_name": "GIL",
       "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "きる",
+      "mc_description": "福島県郡山市を拠点に活動。UMB 2014 GRAND CHAMPIONSHIP準決勝進出。アルバム『The Remnants』など。",
+      "mc_yomi": "ぎる",
       "notes": "",
       "kana_group": "か"
     },
     {
-      "mc_id": "MC0118",
-      "mc_name": "GIL",
+      "mc_id": "MC0372",
+      "mc_name": "切刃",
       "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ぎる",
+      "mc_description": "沖縄県出身。UMB沖縄優勝歴あり。アルバム『Only My Idea Is Best』など。",
+      "mc_yomi": "きるは",
       "notes": "",
       "kana_group": "か"
     },
@@ -1932,7 +1797,7 @@
       "mc_id": "MC0375",
       "mc_name": "吟時",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "三重代表としてUMB 2025 GRAND CHAMPIONSHIP出場。UMB 2025 三重予選優勝。",
       "mc_yomi": "ぎんとき",
       "notes": "",
       "kana_group": "か"
@@ -1941,7 +1806,7 @@
       "mc_id": "MC0181",
       "mc_name": "KOOPA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "埼玉県蕨市を拠点に活動。UMB 2024 GRAND CHAMPIONSHIP優勝、UMB埼玉予選を複数回制覇。アルバム『芯喰』『RIGHT BRAIN』『喰吐』など。",
       "mc_yomi": "くーぱ",
       "notes": "",
       "kana_group": "か"
@@ -1950,7 +1815,7 @@
       "mc_id": "MC0248",
       "mc_name": "QUARK",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "北海道代表としてUMB 2016 GRAND CHAMPIONSHIP出場。UMB 2016 札幌予選優勝。",
       "mc_yomi": "くおーく",
       "notes": "",
       "kana_group": "か"
@@ -1968,7 +1833,7 @@
       "mc_id": "MC0373",
       "mc_name": "句潤",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "神奈川県横浜市出身、MEATERSのフロントマン。UMB 2015 神奈川予選優勝。アルバム『秋雨の宴』『風呼ぶカモメ』など。",
       "mc_yomi": "くじゅん",
       "notes": "",
       "kana_group": "か"
@@ -1977,7 +1842,7 @@
       "mc_id": "MC0084",
       "mc_name": "COOKIE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1986年生まれ、熊本県熊本市育ち。UMB熊本予選2008・2009・2010優勝。SUNNY'S CAMPでの活動、ライブ・客演など多数。",
       "mc_yomi": "くっきー",
       "notes": "",
       "kana_group": "か"
@@ -1988,6 +1853,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "ぐっちますく",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0184",
+      "mc_name": "KTSRO",
+      "mc_name_sub": "",
+      "mc_description": "1986年生まれ、茨城県出身。茨城に根をはるベテランMCとして紹介される存在。",
+      "mc_yomi": "くつろ",
       "notes": "",
       "kana_group": "か"
     },
@@ -2013,7 +1887,7 @@
       "mc_id": "MC0408",
       "mc_name": "熊の皮",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "石川県金沢市を拠点に活動。金沢サイファー主催、1stアルバム『虹色ロイコクロリディウム』など。",
       "mc_yomi": "くまのかわ",
       "notes": "",
       "kana_group": "か"
@@ -2022,7 +1896,7 @@
       "mc_id": "MC0186",
       "mc_name": "KUYA MIGUEL",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "香川県丸亀市出身、FAVORITE所属。UMB 2018 香川予選優勝、UMB 2019 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "くやみげる",
       "notes": "",
       "kana_group": "か"
@@ -2031,7 +1905,7 @@
       "mc_id": "MC0183",
       "mc_name": "KRYZ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "新潟県出身。UMB 2016 新潟予選優勝、同全国大会出場。",
       "mc_yomi": "くらいず",
       "notes": "",
       "kana_group": "か"
@@ -2040,7 +1914,7 @@
       "mc_id": "MC0087",
       "mc_name": "CROWN-D",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "愛知県名古屋市有松出身。UMB 2012 名古屋予選優勝、KOK 2019 GRAND CHAMPIONSHIPファイナリスト。アルバム『CONFLICT GROWTH』、DRAMASICK・東海喰種での活動など。",
       "mc_yomi": "くらうんでぃ",
       "notes": "",
       "kana_group": "か"
@@ -2076,17 +1950,8 @@
       "mc_id": "MC0086",
       "mc_name": "CRESS",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2010 京都予選優勝、同全国大会出場。京都代表としてUMB GRAND CHAMPIONSHIPに出場。",
       "mc_yomi": "くれす",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0416",
-      "mc_name": "紅桜",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "くれないざくら",
       "notes": "",
       "kana_group": "か"
     },
@@ -2094,7 +1959,7 @@
       "mc_id": "MC0185",
       "mc_name": "KUREHA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "青森県出身、B.B CREW所属。KOK 2021・2022でベスト4、UMB 2021 青森予選準優勝。",
       "mc_yomi": "くれは",
       "notes": "",
       "kana_group": "か"
@@ -2103,7 +1968,7 @@
       "mc_id": "MC0123",
       "mc_name": "Gremlin",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "茨城代表としてUMB 2025 GRAND CHAMPIONSHIP出場。UMB 2025 茨城予選優勝。",
       "mc_yomi": "ぐれむりん",
       "notes": "",
       "kana_group": "か"
@@ -2112,7 +1977,7 @@
       "mc_id": "MC0417",
       "mc_name": "紅蓮",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "広島代表としてUMB 2025 GRAND CHAMPIONSHIP出場。UMB 2025 広島予選優勝。",
       "mc_yomi": "ぐれん",
       "notes": "",
       "kana_group": "か"
@@ -2139,7 +2004,7 @@
       "mc_id": "MC0446",
       "mc_name": "黒さき海斗",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "新潟代表としてUMB 2021 GRAND CHAMPIONSHIP出場。UMB 2021 新潟予選優勝。",
       "mc_yomi": "ぐろさきかいと",
       "notes": "",
       "kana_group": "か"
@@ -2148,7 +2013,7 @@
       "mc_id": "MC0445",
       "mc_name": "黒さき拓海",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "新潟県出身、東京を拠点に活動。UMB 2022 新潟予選優勝、pyramid mc battle・GRANTZ主催。",
       "mc_yomi": "ぐろさきたくみ",
       "notes": "",
       "kana_group": "か"
@@ -2166,7 +2031,7 @@
       "mc_id": "MC0160",
       "mc_name": "K.K FLOW",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "静岡県を拠点に活動。UMB 2021・2023・2024 静岡予選優勝。K.K FLOW & M.O.J.I.としても音源制作。",
       "mc_yomi": "けいけいふろう",
       "notes": "",
       "kana_group": "か"
@@ -2193,7 +2058,7 @@
       "mc_id": "MC0170",
       "mc_name": "KATY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "兵庫県姫路市家島町坊勢島Rep、Ruff Space・寺子屋ネオン所属。UMB 2023 兵庫予選準優勝。",
       "mc_yomi": "けいてぃー",
       "notes": "",
       "kana_group": "か"
@@ -2211,7 +2076,7 @@
       "mc_id": "MC0159",
       "mc_name": "K-rush",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "埼玉代表としてUMB 2023 GRAND CHAMPIONSHIP準優勝。",
       "mc_yomi": "けいらっしゅ",
       "notes": "",
       "kana_group": "か"
@@ -2220,7 +2085,7 @@
       "mc_id": "MC0161",
       "mc_name": "K.Lee",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "愛知県出身。UMB 2008 名古屋予選優勝、戦極MCBATTLE 第14章優勝。JET CITY PEOPLEのメンバー。",
       "mc_yomi": "けいりー",
       "notes": "",
       "kana_group": "か"
@@ -2229,8 +2094,17 @@
       "mc_id": "MC0158",
       "mc_name": "K-razy",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪府和泉市Rep。UMB 2015 大阪予選優勝、UMB 2023 GRAND CHAMPIONSHIPベスト8。",
       "mc_yomi": "けいれいじー",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0157",
+      "mc_name": "K'iLL",
+      "mc_name_sub": "",
+      "mc_description": "埼玉代表としてUMB 2022 GRAND CHAMPIONSHIPベスト4、UMB 2024 GRAND CHAMPIONSHIPベスト16。",
+      "mc_yomi": "けーいる",
       "notes": "",
       "kana_group": "か"
     },
@@ -2240,15 +2114,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "けーいる",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0546",
-      "mc_name": "KMC",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "けーえむしー",
       "notes": "",
       "kana_group": "か"
     },
@@ -2274,7 +2139,7 @@
       "mc_id": "MC0188",
       "mc_name": "KZ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪府出身、梅田サイファーのメンバー。UMB 2018〜2020で大阪代表。アルバム『PULP』『CASK』『NORITO』『Less, but better』など。",
       "mc_yomi": "けーずぃー",
       "notes": "",
       "kana_group": "か"
@@ -2298,29 +2163,11 @@
       "kana_group": "か"
     },
     {
-      "mc_id": "MC0184",
-      "mc_name": "KTSRO",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "けーてぃーえすあーるおー",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
       "mc_id": "MC0171",
       "mc_name": "KBD",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪府出身。UMB 2019 GRAND CHAMPIONSHIPベスト8。アルバム『The Light』、梅田サイファーでの活動など。",
       "mc_yomi": "けーびーでぃー",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0602",
-      "mc_name": "Che-micl",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "けみかる",
       "notes": "",
       "kana_group": "か"
     },
@@ -2346,7 +2193,7 @@
       "mc_id": "MC0173",
       "mc_name": "KEN THE 390",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1981年生まれ、東京都町田市出身。DREAM BOY主宰。アルバム『プロローグ』、フリースタイルダンジョン審査員、舞台・映像作品の音楽監修など。",
       "mc_yomi": "けんざさんきゅうまる",
       "notes": "",
       "kana_group": "か"
@@ -2364,7 +2211,7 @@
       "mc_id": "MC0174",
       "mc_name": "KENSHIN",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "B-BOY PARK MCバトルで準優勝・3位などの実績。アルバム『THE FIRST』、客演参加など。",
       "mc_yomi": "けんしん",
       "notes": "",
       "kana_group": "か"
@@ -2388,19 +2235,10 @@
       "kana_group": "か"
     },
     {
-      "mc_id": "MC0439",
-      "mc_name": "鋼",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "こう",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
       "mc_id": "MC0179",
       "mc_name": "KOKI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岩手代表としてUMB 2016・2024・2025 GRAND CHAMPIONSHIP出場。UMB 2024・2025 岩手予選優勝。",
       "mc_yomi": "こうき",
       "notes": "",
       "kana_group": "か"
@@ -2409,7 +2247,7 @@
       "mc_id": "MC0182",
       "mc_name": "Kowree",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "島根県出身。UMB島根予選を複数回制覇。アルバム『Straight Out From Cloud』『REASON TO LIVE』『Gene And Thought』など。",
       "mc_yomi": "こうりー",
       "notes": "",
       "kana_group": "か"
@@ -2436,7 +2274,7 @@
       "mc_id": "MC0119",
       "mc_name": "GO MAD",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "熊本代表としてUMB 2023 GRAND CHAMPIONSHIP出場。UMB 2023 熊本予選優勝。",
       "mc_yomi": "ごーまっど",
       "notes": "",
       "kana_group": "か"
@@ -2454,7 +2292,7 @@
       "mc_id": "MC0083",
       "mc_name": "COCORO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2024 秋田予選優勝、同全国大会出場。秋田代表としてUMB GRAND CHAMPIONSHIPに出場。",
       "mc_yomi": "こころ",
       "notes": "",
       "kana_group": "か"
@@ -2465,15 +2303,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "ごし",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0491",
-      "mc_name": "GOSPO",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ごすぽ",
       "notes": "",
       "kana_group": "か"
     },
@@ -2490,17 +2319,8 @@
       "mc_id": "MC0085",
       "mc_name": "cosmo da ug",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2017 島根予選優勝、同全国大会出場。島根代表としてUMB GRAND CHAMPIONSHIPに出場。",
       "mc_yomi": "こすもだ",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0483",
-      "mc_name": "CO-DAbow",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "こだぼ",
       "notes": "",
       "kana_group": "か"
     },
@@ -2508,7 +2328,7 @@
       "mc_id": "MC0120",
       "mc_name": "GOCCI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2007 GRAND CHAMPIONSHIP優勝。GOCCI名義でMC・ラッパーとして活動。",
       "mc_yomi": "ごっち",
       "notes": "",
       "kana_group": "か"
@@ -2526,7 +2346,7 @@
       "mc_id": "MC0082",
       "mc_name": "COBA5000",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "2000年代にZAGSYSTEM、WAQWADOMのMC・ビートメーカーとして活動。B-BOY PARKやUMB全国大会に出場。EPリリース、KOGAI UNIT・MAXIRIESでの作品発表など。",
       "mc_yomi": "こばごせん",
       "notes": "",
       "kana_group": "か"
@@ -2535,7 +2355,7 @@
       "mc_id": "MC0454",
       "mc_name": "KOPERU",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪出身、梅田サイファーのメンバー。B-BOY PARK UNDER20 MCバトル優勝、アルバム『大阪キッド』、HYPER TAMADEでの活動など。",
       "mc_yomi": "こぺる",
       "notes": "",
       "kana_group": "か"
@@ -2544,17 +2364,8 @@
       "mc_id": "MC0409",
       "mc_name": "狛犬",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "長野代表としてUMB 2019 GRAND CHAMPIONSHIP出場。UMB 2019 長野予選優勝。",
       "mc_yomi": "こまいぬ",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0556",
-      "mc_name": "Komatsu Yoshihiro",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "こまつよしひろ",
       "notes": "",
       "kana_group": "か"
     },
@@ -2580,7 +2391,7 @@
       "mc_id": "MC0121",
       "mc_name": "GOLBY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "東京都練馬区出身。THE 罵倒 2013 GRAND CHAMPIONSHIP優勝、戦極MCBATTLE 第11章・crossover優勝。アルバム『TRAINING DAYS』など。",
       "mc_yomi": "ごるびー",
       "notes": "",
       "kana_group": "か"
@@ -2591,15 +2402,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "ころな",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0548",
-      "mc_name": "CORON",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ころん",
       "notes": "",
       "kana_group": "か"
     },
@@ -2618,15 +2420,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "ごんたーげっと",
-      "notes": "",
-      "kana_group": "か"
-    },
-    {
-      "mc_id": "MC0477",
-      "mc_name": "5NBI",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ごんび",
       "notes": "",
       "kana_group": "か"
     },
@@ -2652,7 +2445,7 @@
       "mc_id": "MC0294",
       "mc_name": "SyAchi",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "2000年生まれ、香川県丸亀市出身。UMB 2023、KOK 2024・2025香川代表。",
       "mc_yomi": "さいあち",
       "notes": "",
       "kana_group": "さ"
@@ -2670,7 +2463,7 @@
       "mc_id": "MC0351",
       "mc_name": "サイプレス上野",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1980年生まれ、神奈川県横浜市出身。サイプレス上野とロベルト吉野のMC。アルバム『ドリーム』『WONDER WHEEL』など。",
       "mc_yomi": "さいぷれすうえの",
       "notes": "",
       "kana_group": "さ"
@@ -2679,7 +2472,7 @@
       "mc_id": "MC0280",
       "mc_name": "SIMON JAP",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1980年生まれ。JUSTY ACEのメンバー。アルバム『THE FIRLAST』『くそったれFor Life』『ART OF PAIN』など。",
       "mc_yomi": "さいもんじゃっぷ",
       "notes": "",
       "kana_group": "さ"
@@ -2688,7 +2481,7 @@
       "mc_id": "MC0279",
       "mc_name": "SILENT KILLA JOINT",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1994年生まれ、兵庫県淡路島育ち。9CASTLE、Squad Words所属。アルバム『静寂麻巻』『THE KILL』『ALL GREEN』など。",
       "mc_yomi": "さいれんときら",
       "notes": "",
       "kana_group": "さ"
@@ -2697,7 +2490,7 @@
       "mc_id": "MC0270",
       "mc_name": "SAKA THE GAMI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "栃木県宇都宮Rep、Hyper Attack Recordz所属。UMB 2011 GRAND CHAMPIONSHIPに栃木王者として出場。",
       "mc_yomi": "さかざがみ",
       "notes": "",
       "kana_group": "さ"
@@ -2715,7 +2508,7 @@
       "mc_id": "MC0301",
       "mc_name": "THUG HEADS",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "広島Rep、Act所属。UMB 2017 GRAND CHAMPIONSHIP広島代表、戦極MCBATTLE THE CHOICE IS YOURS 2018出場。",
       "mc_yomi": "さぐへっず",
       "notes": "",
       "kana_group": "さ"
@@ -2742,7 +2535,7 @@
       "mc_id": "MC0326",
       "mc_name": "zakky",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "宮城県仙台市Rep。UMB 2023 GRAND CHAMPIONSHIP出場、UMB 2023 宮城予選優勝。",
       "mc_yomi": "ざっきー",
       "notes": "",
       "kana_group": "さ"
@@ -2805,7 +2598,7 @@
       "mc_id": "MC0470",
       "mc_name": "仙人掌",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "東京都出身、MONJU・DOWN NORTH CAMPのメンバー。アルバム『VOICE』『BOY MEETS WORLD』など。",
       "mc_yomi": "さぼてん",
       "notes": "",
       "kana_group": "さ"
@@ -2823,7 +2616,7 @@
       "mc_id": "MC0271",
       "mc_name": "SAM",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1994年生まれ、埼玉県所沢市出身。戦極MCBATTLE 第29章優勝。舟平名義での音源制作など。",
       "mc_yomi": "さむ",
       "notes": "",
       "kana_group": "さ"
@@ -2832,7 +2625,7 @@
       "mc_id": "MC0290",
       "mc_name": "SUMFLAT",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2024 山口予選優勝、同全国大会出場。",
       "mc_yomi": "さむふらっと",
       "notes": "",
       "kana_group": "さ"
@@ -2841,7 +2634,7 @@
       "mc_id": "MC0291",
       "mc_name": "SURRY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1986年生まれ、和歌山県御坊市出身。UMB 2014 和歌山予選優勝。アルバム『Grand Bulled』、KSC RECORDSでの活動など。",
       "mc_yomi": "さりー",
       "notes": "",
       "kana_group": "さ"
@@ -2883,15 +2676,6 @@
       "kana_group": "さ"
     },
     {
-      "mc_id": "MC0484",
-      "mc_name": "CRK",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "しーあーるけー",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
       "mc_id": "MC0610",
       "mc_name": "G.O",
       "mc_name_sub": "",
@@ -2904,7 +2688,7 @@
       "mc_id": "MC0117",
       "mc_name": "GCI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "徳島代表としてUMB 2024 GRAND CHAMPIONSHIP出場。UMB 2023 徳島予選FINAL進出など。",
       "mc_yomi": "じーしーあい",
       "notes": "",
       "kana_group": "さ"
@@ -2922,7 +2706,7 @@
       "mc_id": "MC0274",
       "mc_name": "SEED",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2011 GRAND CHAMPIONSHIPに四国王者として出場。seed the lazy名義でも活動。",
       "mc_yomi": "しーど",
       "notes": "",
       "kana_group": "さ"
@@ -2931,7 +2715,7 @@
       "mc_id": "MC0080",
       "mc_name": "CIMA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪府出身、BOIL RHYME所属。戦極MCBATTLE 第11章準優勝、SPOTLIGHT 2013優勝、凱旋MC Battle春ノ陣2019優勝など。",
       "mc_yomi": "しーま",
       "notes": "",
       "kana_group": "さ"
@@ -2967,7 +2751,7 @@
       "mc_id": "MC0325",
       "mc_name": "Z-Loop",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福島代表としてUMB 2021 GRAND CHAMPIONSHIP出場。UMB 2021 福島予選優勝。",
       "mc_yomi": "じーるーぷ",
       "notes": "",
       "kana_group": "さ"
@@ -2976,7 +2760,7 @@
       "mc_id": "MC0115",
       "mc_name": "G-ROD",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "熊本代表としてUMB 2016 GRAND CHAMPIONSHIP出場。UMB 2016 熊本予選優勝。",
       "mc_yomi": "じーろっど",
       "notes": "",
       "kana_group": "さ"
@@ -2985,7 +2769,7 @@
       "mc_id": "MC0145",
       "mc_name": "JAKE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2024 GRAND CHAMPIONSHIP準優勝。UMB 2017 GRAND CHAMPIONSHIPベスト8。",
       "mc_yomi": "じぇいく",
       "notes": "",
       "kana_group": "さ"
@@ -3003,16 +2787,7 @@
       "mc_id": "MC0148",
       "mc_name": "JAYPAY",
       "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "じぇいぺい",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0593",
-      "mc_name": "J平",
-      "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "長崎出身、東京拠点。バンドNEW BABYLONのボーカルとしても活動。",
       "mc_yomi": "じぇいぺい",
       "notes": "",
       "kana_group": "さ"
@@ -3066,7 +2841,7 @@
       "mc_id": "MC0332",
       "mc_name": "しおん",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "鹿児島代表としてUMB 2022 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "しおん",
       "notes": "",
       "kana_group": "さ"
@@ -3084,17 +2859,8 @@
       "mc_id": "MC0431",
       "mc_name": "詩言",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "愛知予選を中心にUMBへ出場。UMB 2022 愛知予選FINAL進出。",
       "mc_yomi": "しげん",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0574",
-      "mc_name": "ジジ",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "じじ",
       "notes": "",
       "kana_group": "さ"
     },
@@ -3120,7 +2886,7 @@
       "mc_id": "MC0430",
       "mc_name": "視聴覚アルピニスト",
       "mc_name_sub": "カツヲ",
-      "mc_description": "",
+      "mc_description": "佐賀県出身、カツヲ名義でも活動。UMB 2019 佐賀予選優勝、同全国大会出場。",
       "mc_yomi": "しちょうかくあるぴにすと",
       "notes": "",
       "kana_group": "さ"
@@ -3129,7 +2895,7 @@
       "mc_id": "MC0466",
       "mc_name": "Sitissy luvit",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "2002年生まれ、宮城県塩竈市出身。戦極U-22 MC BATTLE史上最年少優勝、アルバム『FIRST DIVE』『puha~』など。",
       "mc_yomi": "しってぃしぃ",
       "notes": "",
       "kana_group": "さ"
@@ -3140,15 +2906,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "しにがみむらさきろう",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0525",
-      "mc_name": "シニピエ",
-      "mc_name_sub": "泥牙-L",
-      "mc_description": "",
-      "mc_yomi": "しにぴえakaどろきばl",
       "notes": "",
       "kana_group": "さ"
     },
@@ -3183,7 +2940,7 @@
       "mc_id": "MC0353",
       "mc_name": "シーモンキー",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "千葉代表としてUMB 2008 GRAND CHAMPIONSHIP出場。UMB 2008 千葉予選優勝。",
       "mc_yomi": "しもんき",
       "notes": "",
       "kana_group": "さ"
@@ -3210,7 +2967,7 @@
       "mc_id": "MC0384",
       "mc_name": "尺out2",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "山口県宇部Rep、RECKLESS / ASIAN ABDUCTION RECORD$所属。UMB 2022 山口予選優勝、同全国大会出場。",
       "mc_yomi": "しゃくout2",
       "notes": "",
       "kana_group": "さ"
@@ -3219,7 +2976,7 @@
       "mc_id": "MC0142",
       "mc_name": "JACKTER",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2017・2018・2020 山形代表。2021年から東京に活動拠点を移し、THE ANTHEMにも加入。",
       "mc_yomi": "じゃくたー",
       "notes": "",
       "kana_group": "さ"
@@ -3228,7 +2985,7 @@
       "mc_id": "MC0144",
       "mc_name": "JAG-ME",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福島代表としてUMB 2013・2023・2025 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "じゃぐみー",
       "notes": "",
       "kana_group": "さ"
@@ -3237,7 +2994,7 @@
       "mc_id": "MC0141",
       "mc_name": "JACK-GX",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "千葉県南房総Rep。UMB 2022 千葉予選、KING OF KINGS 2022 千葉予選優勝。",
       "mc_yomi": "じゃっくじーえっくす",
       "notes": "",
       "kana_group": "さ"
@@ -3255,7 +3012,7 @@
       "mc_id": "MC0143",
       "mc_name": "Jafem",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "沖縄県北谷市出身。UMB 2008 沖縄予選優勝。",
       "mc_yomi": "じゃふぇむ",
       "notes": "",
       "kana_group": "さ"
@@ -3264,7 +3021,7 @@
       "mc_id": "MC0465",
       "mc_name": "Shamis",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "2005年生まれ、岐阜県出身、神奈川県在住。第18回高校生RAP選手権優勝、KING OF KINGS 2023 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "しゃみす",
       "notes": "",
       "kana_group": "さ"
@@ -3273,7 +3030,7 @@
       "mc_id": "MC0275",
       "mc_name": "SHAMO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1987年生まれ、千葉を拠点に活動。BLACK BIRD MAD ORCHESTRAのフロントマン。EP『黒と白』『D4C』『CROWS』など。",
       "mc_yomi": "しゃも",
       "notes": "",
       "kana_group": "さ"
@@ -3291,7 +3048,7 @@
       "mc_id": "MC0438",
       "mc_name": "釈楽",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岩手県大槌町Rep。UMB 2017 岩手予選優勝、同全国大会出場。",
       "mc_yomi": "しゃらく",
       "notes": "",
       "kana_group": "さ"
@@ -3327,7 +3084,7 @@
       "mc_id": "MC0146",
       "mc_name": "JANS",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "仙台を拠点に活動、OVELEX・ENCOUNT MC’s所属。6th Generation『UNSTOPPABLE』参加、DOMMUNEライブ出演、ミュージカル『シシ』出演など。",
       "mc_yomi": "じゃんず",
       "notes": "",
       "kana_group": "さ"
@@ -3363,7 +3120,7 @@
       "mc_id": "MC0278",
       "mc_name": "SHUN-P",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "宮崎県日南出身。UMB 2014 熊本予選優勝、同全国大会ベスト16。",
       "mc_yomi": "しゅんぴー",
       "notes": "",
       "kana_group": "さ"
@@ -3372,7 +3129,7 @@
       "mc_id": "MC0407",
       "mc_name": "照",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岡山代表としてUMB 2024 GRAND CHAMPIONSHIP出場。UMB 2024 岡山予選優勝。",
       "mc_yomi": "しょう",
       "notes": "",
       "kana_group": "さ"
@@ -3417,7 +3174,7 @@
       "mc_id": "MC0406",
       "mc_name": "焼陣",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "広島代表としてUMB 2011 GRAND CHAMPIONSHIP出場。UMB 2011 広島予選優勝。",
       "mc_yomi": "しょうじん",
       "notes": "",
       "kana_group": "さ"
@@ -3444,7 +3201,7 @@
       "mc_id": "MC0150",
       "mc_name": "JOE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福井代表としてUMB 2016 GRAND CHAMPIONSHIP出場。UMB 2016 福井予選優勝。",
       "mc_yomi": "じょー",
       "notes": "",
       "kana_group": "さ"
@@ -3462,7 +3219,7 @@
       "mc_id": "MC0153",
       "mc_name": "Jonny the Sonata",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "金沢・北陸代表としてUMB GRAND CHAMPIONSHIPに複数回出場。UMB 2010 北陸チャンピオン。",
       "mc_yomi": "じょにーざそのた",
       "notes": "",
       "kana_group": "さ"
@@ -3480,7 +3237,7 @@
       "mc_id": "MC0152",
       "mc_name": "JOLLY BIG",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "愛媛代表としてUMB 2025 GRAND CHAMPIONSHIP出場。UMB 2025 愛媛予選優勝。",
       "mc_yomi": "じょりーびっぐ",
       "notes": "",
       "kana_group": "さ"
@@ -3507,7 +3264,7 @@
       "mc_id": "MC0333",
       "mc_name": "しろくま",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "北海道代表としてUMB 2008・2010 GRAND CHAMPIONSHIP出場。UMB 2008・2010 北海道予選優勝。",
       "mc_yomi": "しろくま",
       "notes": "",
       "kana_group": "さ"
@@ -3552,7 +3309,7 @@
       "mc_id": "MC0395",
       "mc_name": "晋平太",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1983年生まれ、東京都東村山市出身、埼玉県狭山市育ち。B-BOY PARK MC BATTLE 2005、UMB 2010・2011優勝。アルバム『REVENGE』など。",
       "mc_yomi": "しんぺいた",
       "notes": "",
       "kana_group": "さ"
@@ -3588,7 +3345,7 @@
       "mc_id": "MC0436",
       "mc_name": "酔生夢",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "青森代表としてUMB 2010 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "すいせいゆめ",
       "notes": "",
       "kana_group": "さ"
@@ -3597,7 +3354,7 @@
       "mc_id": "MC0472",
       "mc_name": "崇勲",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "埼玉県春日部市在住。KING OF KINGS UMB 2015 GRAND CHAMPIONSHIP FINAL優勝。フリースタイルダンジョン2代目モンスター。",
       "mc_yomi": "すうくん",
       "notes": "",
       "kana_group": "さ"
@@ -3612,19 +3369,10 @@
       "kana_group": "さ"
     },
     {
-      "mc_id": "MC0511",
-      "mc_name": "Sugiyama",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "すぎやま",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
       "mc_id": "MC0272",
       "mc_name": "Scooby J",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2017 GRAND CHAMPIONSHIPベスト8、UMB 2020 GRAND CHAMPIONSHIPベスト16。",
       "mc_yomi": "すくーびーじぇい",
       "notes": "",
       "kana_group": "さ"
@@ -3633,17 +3381,8 @@
       "mc_id": "MC0283",
       "mc_name": "SKRYU",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1996年生まれ、島根県出身。戦極MCBATTLE 第23章優勝。アルバム『Transform』、EP『東京ドギマギ』『わすれもの』など。",
       "mc_yomi": "すくりゅ",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0596",
-      "mc_name": "Sco-Pion",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "すこぴおん",
       "notes": "",
       "kana_group": "さ"
     },
@@ -3669,7 +3408,7 @@
       "mc_id": "MC0024",
       "mc_name": "STARGAZE",
       "mc_name_sub": "MC龍",
-      "mc_description": "",
+      "mc_description": "UMB 2022 群馬予選優勝、同全国大会出場。STARGAZE名義、MC龍名義でのMCバトル出場。",
       "mc_yomi": "すたーげいず",
       "notes": "",
       "kana_group": "さ"
@@ -3714,7 +3453,7 @@
       "mc_id": "MC0289",
       "mc_name": "Strider",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "山形代表としてUMB 2016 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "すとらいだ",
       "notes": "",
       "kana_group": "さ"
@@ -3783,15 +3522,6 @@
       "kana_group": "さ"
     },
     {
-      "mc_id": "MC0607",
-      "mc_name": "Small fish",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "すもーるふぃっしゅ",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
       "mc_id": "MC0907",
       "mc_name": "sluggah",
       "mc_name_sub": "",
@@ -3831,7 +3561,7 @@
       "mc_id": "MC0293",
       "mc_name": "SWANKY MONKEY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "兵庫代表としてUMB 2025 GRAND CHAMPIONSHIP出場。UMB 2025 兵庫予選、KOK 2025 兵庫B予選優勝。",
       "mc_yomi": "すわんきーもんきー",
       "notes": "",
       "kana_group": "さ"
@@ -3840,7 +3570,7 @@
       "mc_id": "MC0292",
       "mc_name": "SWAMP",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "新潟出身。UMB 2007 GRAND CHAMPIONSHIP出場、同年3月2日大会優勝。",
       "mc_yomi": "すわんぷ",
       "notes": "",
       "kana_group": "さ"
@@ -3882,24 +3612,6 @@
       "kana_group": "さ"
     },
     {
-      "mc_id": "MC0518",
-      "mc_name": "ZトN",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ぜっとん",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0372",
-      "mc_name": "切刃",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "せつは",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
       "mc_id": "MC0355",
       "mc_name": "セブン",
       "mc_name_sub": "",
@@ -3921,7 +3633,7 @@
       "mc_id": "MC0327",
       "mc_name": "ZERO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "富山代表としてUMB 2024 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "ぜろ",
       "notes": "",
       "kana_group": "さ"
@@ -3930,7 +3642,7 @@
       "mc_id": "MC0393",
       "mc_name": "早雲",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1988年生まれ、京都府出身。UMB 2020 GRAND CHAMPIONSHIP優勝。アルバム『SAY TO SEE』『Reflection』など。",
       "mc_yomi": "そううん",
       "notes": "",
       "kana_group": "さ"
@@ -3957,7 +3669,7 @@
       "mc_id": "MC0286",
       "mc_name": "SONNY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2016 西東京予選優勝。",
       "mc_yomi": "そにー",
       "notes": "",
       "kana_group": "さ"
@@ -3975,17 +3687,8 @@
       "mc_id": "MC0287",
       "mc_name": "SORA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2017 香川予選優勝、同全国大会出場。",
       "mc_yomi": "そら",
-      "notes": "",
-      "kana_group": "さ"
-    },
-    {
-      "mc_id": "MC0532",
-      "mc_name": "空迴",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "そらかい",
       "notes": "",
       "kana_group": "さ"
     },
@@ -4011,7 +3714,7 @@
       "mc_id": "MC0356",
       "mc_name": "ダースレイダー",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1977年生まれ、フランス・パリ生まれ。Da.Me.Records創設者。アルバム『ガレージ男の魂』『NO拘束』など。",
       "mc_yomi": "だーすれいだー",
       "notes": "",
       "kana_group": "た"
@@ -4020,7 +3723,7 @@
       "mc_id": "MC0012",
       "mc_name": "Dar-Tなたでここ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "新潟県魚沼市出身。UMB 2019 新潟予選優勝、UMB 2020 GRAND CHAMPIONSHIP出場。楽曲「もういいのに。」「いなご」など。",
       "mc_yomi": "だーてぃなたでここ",
       "notes": "",
       "kana_group": "た"
@@ -4038,7 +3741,7 @@
       "mc_id": "MC0097",
       "mc_name": "DIE-K",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "青森代表としてUMB 2011 GRAND CHAMPIONSHIP出場。UMB 2011 青森予選優勝。",
       "mc_yomi": "だいけー",
       "notes": "",
       "kana_group": "た"
@@ -4083,7 +3786,7 @@
       "mc_id": "MC0091",
       "mc_name": "DAISEI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福井代表としてUMB 2018 GRAND CHAMPIONSHIP出場。UMB 2018 福井予選優勝。",
       "mc_yomi": "だいせい",
       "notes": "",
       "kana_group": "た"
@@ -4110,7 +3813,7 @@
       "mc_id": "MC0474",
       "mc_name": "泰斗(裂固)",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1997年生まれ、岐阜県出身、HIKIGANE SOUND所属。第9回高校生ラップ選手権、KING OF KINGS 2022優勝。アルバム『TIGHT』『omniverse』など。",
       "mc_yomi": "たいとakaれっこ",
       "notes": "",
       "kana_group": "た"
@@ -4119,7 +3822,7 @@
       "mc_id": "MC0437",
       "mc_name": "醍福",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2005 GRAND CHAMPIONSHIP出場。ZIOPS所属。",
       "mc_yomi": "だいふく",
       "notes": "",
       "kana_group": "た"
@@ -4179,15 +3882,6 @@
       "kana_group": "た"
     },
     {
-      "mc_id": "MC0487",
-      "mc_name": "Da-Klow",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "だくろう",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
       "mc_id": "MC0512",
       "mc_name": "T4kq",
       "mc_name_sub": "",
@@ -4200,7 +3894,7 @@
       "mc_id": "MC0421",
       "mc_name": "脱走",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "北海道代表としてUMB GRAND CHAMPIONSHIPに複数回出場。UMB北海道予選を2019・2020・2021・2024年に制覇。",
       "mc_yomi": "だっそう",
       "notes": "",
       "kana_group": "た"
@@ -4209,7 +3903,7 @@
       "mc_id": "MC0420",
       "mc_name": "脱兎",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岡山代表としてUMB 2021 GRAND CHAMPIONSHIP出場。UMB 2021 岡山予選優勝。",
       "mc_yomi": "だっと",
       "notes": "",
       "kana_group": "た"
@@ -4224,19 +3918,10 @@
       "kana_group": "た"
     },
     {
-      "mc_id": "MC0570",
-      "mc_name": "ダテメギリ",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "だてめぎり",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
       "mc_id": "MC0412",
       "mc_name": "田中光",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "千葉県館山市出身。SSWSトーナメント、戦極MCバトル、UMB千葉予選優勝など。アルバム『PROOF』『ECHO CHAMBER』など。",
       "mc_yomi": "たなかひかり",
       "notes": "",
       "kana_group": "た"
@@ -4263,17 +3948,8 @@
       "mc_id": "MC0335",
       "mc_name": "だーひー",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "宮崎県宮崎市住吉出身。UMB 2018・2025 宮崎代表、UMB 2025 GRAND CHAMPIONSHIPベスト8。日高大地名義でも活動。",
       "mc_yomi": "だひ",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
-      "mc_id": "MC0488",
-      "mc_name": "Davy",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "だびー",
       "notes": "",
       "kana_group": "た"
     },
@@ -4290,7 +3966,7 @@
       "mc_id": "MC0297",
       "mc_name": "Tach-B",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1991年生まれ、長野県長野市出身のreggae deejay。UMB 2011 長野地区優勝、1st作品『Breakthrough』など。",
       "mc_yomi": "たふびー",
       "notes": "",
       "kana_group": "た"
@@ -4314,15 +3990,6 @@
       "kana_group": "た"
     },
     {
-      "mc_id": "MC0576",
-      "mc_name": "タムチャオTheニコミスタ",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "たむちゃおtheにこみすた",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
       "mc_id": "MC0903",
       "mc_name": "Dumbperson",
       "mc_name_sub": "",
@@ -4335,17 +4002,8 @@
       "mc_id": "MC0094",
       "mc_name": "DAYO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "広島代表としてUMB 2023 GRAND CHAMPIONSHIP出場。UMB 2023 広島予選優勝。",
       "mc_yomi": "だよ",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
-      "mc_id": "MC0485",
-      "mc_name": "DA-RA",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "だら",
       "notes": "",
       "kana_group": "た"
     },
@@ -4368,28 +4026,10 @@
       "kana_group": "た"
     },
     {
-      "mc_id": "MC0628",
-      "mc_name": "T@NPOPO",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "たんぽぽ",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
-      "mc_id": "MC0549",
-      "mc_name": "chez",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ちぇず",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
       "mc_id": "MC0448",
       "mc_name": "CHEHON",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪府生野区出身のレゲエDeejay。楽曲「みどり」「韻波句徒」など。MCバトルやレゲエDeejayクラッシュにも出場。",
       "mc_yomi": "ちぇほん",
       "notes": "",
       "kana_group": "た"
@@ -4398,7 +4038,7 @@
       "mc_id": "MC0076",
       "mc_name": "Cherry",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "Cherry",
       "mc_yomi": "ちぇりー",
       "notes": "",
       "kana_group": "た"
@@ -4416,7 +4056,7 @@
       "mc_id": "MC0077",
       "mc_name": "CHICO CARLITO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1988年生まれ、沖縄県那覇市出身。戦極MCBATTLE 第9章優勝、UMB 2015・2016 GRAND CHAMPIONSHIP出場。アルバム『Carlito’s Way』『Sandra’s Son』など。",
       "mc_yomi": "ちこかりーと",
       "notes": "",
       "kana_group": "た"
@@ -4434,7 +4074,7 @@
       "mc_id": "MC0357",
       "mc_name": "チプルソ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1986年生まれ、大阪府出身。アルバム『一人宇宙』『一人宇宙III -歌陽風月-』、The Clap Brothersでの活動など。",
       "mc_yomi": "ちぷるそ",
       "notes": "",
       "kana_group": "た"
@@ -4443,7 +4083,7 @@
       "mc_id": "MC0075",
       "mc_name": "CHARLIE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "CHARLIE",
       "mc_yomi": "ちゃーりー",
       "notes": "",
       "kana_group": "た"
@@ -4461,7 +4101,7 @@
       "mc_id": "MC0074",
       "mc_name": "Chakr@The3rd",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "Chakr@The3rd",
       "mc_yomi": "ちゃくらざさーど",
       "notes": "",
       "kana_group": "た"
@@ -4488,7 +4128,7 @@
       "mc_id": "MC0079",
       "mc_name": "ChillER",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2023 徳島予選FINAL進出、UMB 2022 徳島予選出場。",
       "mc_yomi": "ちらー",
       "notes": "",
       "kana_group": "た"
@@ -4497,7 +4137,7 @@
       "mc_id": "MC0078",
       "mc_name": "CHILL B",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福井県出身、KbN所属。UMB 2015 福井予選優勝、同全国大会出場。",
       "mc_yomi": "ちるびー",
       "notes": "",
       "kana_group": "た"
@@ -4506,7 +4146,7 @@
       "mc_id": "MC0440",
       "mc_name": "鎮座DOPENESS",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1981年生まれ、東京都調布市出身。UMB 2009 GRAND CHAMPIONSHIP優勝。アルバム『100%RAP』『だいぶ気持ちいいね!』など。",
       "mc_yomi": "ちんざdopeness",
       "notes": "",
       "kana_group": "た"
@@ -4515,7 +4155,7 @@
       "mc_id": "MC0007",
       "mc_name": "2SK",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "宮城県仙台市出身。UMB 2009 仙台予選優勝、同全国大会出場。仙台代表としてUMB GRAND CHAMPIONSHIPに出場。",
       "mc_yomi": "つーえすけー",
       "notes": "",
       "kana_group": "た"
@@ -4533,7 +4173,7 @@
       "mc_id": "MC0400",
       "mc_name": "椿",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡県筑紫野市出身。第二回CINDERELLA MC BATTLE優勝、UMB 2017・2018 福岡予選優勝。楽曲「MEMORY LANE」など。",
       "mc_yomi": "つばき",
       "notes": "",
       "kana_group": "た"
@@ -4542,7 +4182,7 @@
       "mc_id": "MC0005",
       "mc_name": "238",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2025 岡山予選優勝、同全国大会出場など。岡山代表としてUMB GRAND CHAMPIONSHIPに出場。",
       "mc_yomi": "つばさ",
       "notes": "",
       "kana_group": "た"
@@ -4596,7 +4236,7 @@
       "mc_id": "MC0025",
       "mc_name": "TKda黒ぶち",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1988年生まれ、埼玉県春日部市出身。フリースタイルダンジョン3代目モンスター。アルバム『LIFE IS ONE TIME, TODAY IS A GOOD DAY.』『Live in a dream!!』など。",
       "mc_yomi": "てぃーけーだ",
       "notes": "",
       "kana_group": "た"
@@ -4607,15 +4247,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "でぃーなっつ",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
-      "mc_id": "MC0478",
-      "mc_name": ":DSLowvv",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "でぃえすろー",
       "notes": "",
       "kana_group": "た"
     },
@@ -4641,7 +4272,7 @@
       "mc_id": "MC0295",
       "mc_name": "T-STONE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1999年生まれ、徳島県出身。UMB徳島予選2017・2018・2019優勝。EP『APOSTROPHE』『INDEPENDENT』、アルバム『Type 1 Diabetes』など。",
       "mc_yomi": "てぃすとん",
       "notes": "",
       "kana_group": "た"
@@ -4668,7 +4299,7 @@
       "mc_id": "MC0296",
       "mc_name": "T-TANGG",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "KOK2025本戦、凱旋MC battle 東西選抜 春ノ陣 2024優勝。UMB 2021 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "てぃたんぐ",
       "notes": "",
       "kana_group": "た"
@@ -4677,7 +4308,7 @@
       "mc_id": "MC0089",
       "mc_name": "D.D.S",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "沖縄出身。MULBEとのラップデュオN.E.Nとして活動。アルバム『N.E.N』、DDS THE SUKE名義での音源制作など。",
       "mc_yomi": "でぃでぃえす",
       "notes": "",
       "kana_group": "た"
@@ -4695,7 +4326,7 @@
       "mc_id": "MC0307",
       "mc_name": "TYK",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "宮崎県日南市出身、Bad Trips・ODJ所属。UMB 2023 GRAND CHAMPIONSHIP出場、UMB 2023 宮崎予選優勝。",
       "mc_yomi": "てぃわいけい",
       "notes": "",
       "kana_group": "た"
@@ -4713,7 +4344,7 @@
       "mc_id": "MC0095",
       "mc_name": "DEJI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "佐賀県佐賀市出身。Kalliostro、Black Mont Blanc、菊丸＆DEJIなどで活動。アルバム『SENBE-BUTON』『自問自答』『運命の輪 〜Wheels Of Fortune〜』など。",
       "mc_yomi": "でじ",
       "notes": "",
       "kana_group": "た"
@@ -4758,7 +4389,7 @@
       "mc_id": "MC0096",
       "mc_name": "DEP FROG",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "佐賀代表としてUMB 2016 GRAND CHAMPIONSHIP出場。UMB 2016 佐賀予選優勝。",
       "mc_yomi": "でぷふろっぐ",
       "notes": "",
       "kana_group": "た"
@@ -4776,7 +4407,7 @@
       "mc_id": "MC0300",
       "mc_name": "TERU",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1998年生まれ、大阪府枚方市出身。UMB 2022 大阪予選優勝。アルバム『奇伏』『夜行』『ORIGIN』『BED TOWN DREAMS』など。",
       "mc_yomi": "てる",
       "notes": "",
       "kana_group": "た"
@@ -4803,7 +4434,7 @@
       "mc_id": "MC0299",
       "mc_name": "TENGG",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "埼玉県草加Rep、Kuragaly・BDR・UJC所属。UMB 2015 埼玉予選優勝、同全国大会出場。",
       "mc_yomi": "てんぐ",
       "notes": "",
       "kana_group": "た"
@@ -4814,24 +4445,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "てんぐ",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
-      "mc_id": "MC0522",
-      "mc_name": "tenD",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "てんど",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
-      "mc_id": "MC0651",
-      "mc_name": "ドイケン",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "どいけん",
       "notes": "",
       "kana_group": "た"
     },
@@ -4884,7 +4497,7 @@
       "mc_id": "MC0100",
       "mc_name": "DOTAMA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1984年生まれ、栃木県佐野市出身。UMB 2017 GRAND CHAMPIONSHIP優勝。アルバム『音楽ワルキューレ』『社会人』、FINAL FRASHでの活動など。",
       "mc_yomi": "どたま",
       "notes": "",
       "kana_group": "た"
@@ -4893,7 +4506,7 @@
       "mc_id": "MC0304",
       "mc_name": "TOTOROW",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "新潟を拠点に活動、NITE FULL MAKERSのMC。UMB 2006 新潟準予選準優勝。",
       "mc_yomi": "ととろう",
       "notes": "",
       "kana_group": "た"
@@ -4902,7 +4515,7 @@
       "mc_id": "MC0450",
       "mc_name": "Donatello",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "神奈川県出身、Bay Klang Squad所属。masa&トラヴィス・スットコ名義を経てDonatello名義で活動。",
       "mc_yomi": "どなてろ",
       "notes": "",
       "kana_group": "た"
@@ -4911,7 +4524,7 @@
       "mc_id": "MC0336",
       "mc_name": "とびっきり",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "滋賀代表としてUMB 2017 GRAND CHAMPIONSHIP出場。UMB 2017 滋賀予選優勝。",
       "mc_yomi": "とびっきり",
       "notes": "",
       "kana_group": "た"
@@ -4929,7 +4542,7 @@
       "mc_id": "MC0382",
       "mc_name": "富博",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岩手県花巻Rep。UMB 2018 岩手予選優勝、同全国大会出場。",
       "mc_yomi": "とみひろし",
       "notes": "",
       "kana_group": "た"
@@ -4938,7 +4551,7 @@
       "mc_id": "MC0405",
       "mc_name": "灯火",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "長崎を拠点に活動。UMB 2024 長崎代表、UMB 2025 長崎予選優勝。",
       "mc_yomi": "ともしび",
       "notes": "",
       "kana_group": "た"
@@ -4947,7 +4560,7 @@
       "mc_id": "MC0396",
       "mc_name": "智大",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡県・親富孝通りを拠点に活動。UMB 2008 福岡代表、UMB THE CHOICE IS YOURS 2018ベスト16。",
       "mc_yomi": "ともひろ",
       "notes": "",
       "kana_group": "た"
@@ -4956,7 +4569,7 @@
       "mc_id": "MC0302",
       "mc_name": "TORA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "静岡県出身。UMB 2018・2019 静岡代表、フリースタイルダンジョン出演。",
       "mc_yomi": "とら",
       "notes": "",
       "kana_group": "た"
@@ -4974,7 +4587,7 @@
       "mc_id": "MC0101",
       "mc_name": "Dragon One",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1988年生まれ、神奈川県横浜市出身。UMB 2013 横浜予選優勝。アルバム『FORTIS』『掌ノ蕾。』、フリースタイルダンジョン出演など。",
       "mc_yomi": "どらごんわん",
       "notes": "",
       "kana_group": "た"
@@ -5007,15 +4620,6 @@
       "kana_group": "た"
     },
     {
-      "mc_id": "MC0630",
-      "mc_name": "トンボの股間",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "とんぼのこかん",
-      "notes": "",
-      "kana_group": "た"
-    },
-    {
       "mc_id": "MC0816",
       "mc_name": "NARVE",
       "mc_name_sub": "",
@@ -5037,7 +4641,7 @@
       "mc_id": "MC0222",
       "mc_name": "NAIKA MC",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1983年生まれ、群馬県出身。UMB 2016 GRAND CHAMPIONSHIP優勝、戦極MCBATTLE 第13章優勝。アルバム『THE TALK MAN SHOW』など。",
       "mc_yomi": "ないかえむしー",
       "notes": "",
       "kana_group": "な"
@@ -5064,7 +4668,7 @@
       "mc_id": "MC0447",
       "mc_name": "9for",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1998年生まれ、神奈川県横浜市出身。第11回高校生ラップ選手権、戦極U22 2017優勝。KING OF KINGS 2024優勝。",
       "mc_yomi": "ないんふぉー",
       "notes": "",
       "kana_group": "な"
@@ -5100,7 +4704,7 @@
       "mc_id": "MC0221",
       "mc_name": "NAGION",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "愛知・東海を拠点に活動。UMB 2010・2011 名古屋予選優勝、KING OF KINGS 2015 東海予選優勝。",
       "mc_yomi": "なぎおん",
       "notes": "",
       "kana_group": "な"
@@ -5118,7 +4722,7 @@
       "mc_id": "MC0223",
       "mc_name": "NAJIMI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "奈良県出身、074BROSのメンバー。UMB奈良予選をはじめとする優勝歴。074BROS『SCRAP & BUILD』など。",
       "mc_yomi": "なじみ",
       "notes": "",
       "kana_group": "な"
@@ -5136,7 +4740,7 @@
       "mc_id": "MC0225",
       "mc_name": "NastyTEZ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "北海道代表としてUMB 2011 GRAND CHAMPIONSHIP出場。UMB 2011 札幌予選優勝。",
       "mc_yomi": "なすてぃーてず",
       "notes": "",
       "kana_group": "な"
@@ -5145,7 +4749,7 @@
       "mc_id": "MC0009",
       "mc_name": "79",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "79名義でMCバトルに出場。UMB 2006・2013 GRAND CHAMPIONSHIP出場。The Mind Gift、ザマギ、ポリスマンとしての音源制作。",
       "mc_yomi": "なっく",
       "notes": "",
       "kana_group": "な"
@@ -5154,7 +4758,7 @@
       "mc_id": "MC0177",
       "mc_name": "kNaxx",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "2000年生まれ、滋賀県出身。GET BACK ASS、GAD YOUNG VALUESのメンバー。アルバム『Hiraeth』など。",
       "mc_yomi": "なっくす",
       "notes": "",
       "kana_group": "な"
@@ -5163,7 +4767,7 @@
       "mc_id": "MC0224",
       "mc_name": "NASSO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "兵庫県たつのRep。UMB 2015 兵庫代表としてGRAND CHAMPIONSHIP出場。",
       "mc_yomi": "なっそ",
       "notes": "",
       "kana_group": "な"
@@ -5181,7 +4785,7 @@
       "mc_id": "MC0419",
       "mc_name": "肉切り包丁",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "京都BRAIN PUMP所属。UMB 2011 GRAND CHAMPIONSHIP京都予選2代表。",
       "mc_yomi": "にくきりほうちょう",
       "notes": "",
       "kana_group": "な"
@@ -5199,7 +4803,7 @@
       "mc_id": "MC0006",
       "mc_name": "25時の影絵",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "25歳時にUMB 2006 青森予選優勝、同全国大会出場。PEDAL aka 25時の影絵名義でもUMB青森予選優勝歴あり。",
       "mc_yomi": "にじゅうごじ",
       "notes": "",
       "kana_group": "な"
@@ -5208,7 +4812,7 @@
       "mc_id": "MC0226",
       "mc_name": "NICKA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡代表としてUMB 2006 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "にっか",
       "notes": "",
       "kana_group": "な"
@@ -5217,7 +4821,7 @@
       "mc_id": "MC0227",
       "mc_name": "NICKA BLACK",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "広島県出身、MOGURA POSSE所属。UMB広島大会2006・2007の2年連続覇者。",
       "mc_yomi": "にっかぶらっく",
       "notes": "",
       "kana_group": "な"
@@ -5226,7 +4830,7 @@
       "mc_id": "MC0178",
       "mc_name": "KNIC",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "茨城県を拠点に活動。UMB 2013 茨城予選優勝。METRICAL CONCEPTでの活動など。",
       "mc_yomi": "にっく",
       "notes": "",
       "kana_group": "な"
@@ -5244,7 +4848,7 @@
       "mc_id": "MC0458",
       "mc_name": "N1NYO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "THE罵倒2025 REVENGE優勝、KING OF KINGS 2021 GRAND CHAMPIONSHIP出場など。",
       "mc_yomi": "ににょ",
       "notes": "",
       "kana_group": "な"
@@ -5271,7 +4875,7 @@
       "mc_id": "MC0230",
       "mc_name": "NYNJA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福島代表としてUMB 2011 GRAND CHAMPIONSHIP出場。UMB 2011 福島予選優勝。",
       "mc_yomi": "にんじゃ",
       "notes": "",
       "kana_group": "な"
@@ -5291,24 +4895,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "ねいと",
-      "notes": "",
-      "kana_group": "な"
-    },
-    {
-      "mc_id": "MC0521",
-      "mc_name": "noizy",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "のいじ",
-      "notes": "",
-      "kana_group": "な"
-    },
-    {
-      "mc_id": "MC0505",
-      "mc_name": "NOID",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "のいど",
       "notes": "",
       "kana_group": "な"
     },
@@ -5352,7 +4938,7 @@
       "mc_id": "MC0229",
       "mc_name": "NONKEY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2009 GRAND CHAMPIONSHIP準優勝。SD JUNKSTA周辺のMCとしても活動。",
       "mc_yomi": "のんきー",
       "notes": "",
       "kana_group": "な"
@@ -5367,19 +4953,10 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0672",
-      "mc_name": "Hardy",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "はーでぃ",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC0452",
       "mc_name": "HARDY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "2000年生まれ、大阪府西成区出身。一二三屋所属。第14回高校生RAP選手権でLINE RECORDS賞を受賞し、『ARE YOU READY』をリリース。",
       "mc_yomi": "はーでぃ",
       "notes": "",
       "kana_group": "は"
@@ -5388,8 +4965,8 @@
       "mc_id": "MC0125",
       "mc_name": "HARD VERK",
       "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "はーどゔぇるく",
+      "mc_description": "岐阜代表としてUMB 2012 GRAND CHAMPIONSHIP出場。UMB 2012 岐阜予選優勝。",
+      "mc_yomi": "はーどばーく",
       "notes": "",
       "kana_group": "は"
     },
@@ -5433,7 +5010,7 @@
       "mc_id": "MC0128",
       "mc_name": "HI-KING TAKASE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "HI-KING aka TAKASE名義でも活動。UMB 2015 GRAND CHAMPIONSHIP、UMB 2020 GRAND CHAMPIONSHIPなどに出場。",
       "mc_yomi": "はいきんぐたかせ",
       "notes": "",
       "kana_group": "は"
@@ -5442,7 +5019,7 @@
       "mc_id": "MC0127",
       "mc_name": "HI-JET",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福山を拠点に活動。UMB 2015 広島予選にHI-JET名義でエントリー、THE AXIS RECORDS所属。",
       "mc_yomi": "はいじぇっと",
       "notes": "",
       "kana_group": "は"
@@ -5487,7 +5064,7 @@
       "mc_id": "MC0134",
       "mc_name": "HYPERNONMC",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "愛媛代表としてUMB 2015 GRAND CHAMPIONSHIP出場。UMB公式プロフィールではRep溝辺、Crew HOTPOSSE。UMB 2022 GRAND CHAMPIONSHIPにも出場。",
       "mc_yomi": "はいぱーのんえむしー",
       "notes": "",
       "kana_group": "は"
@@ -5505,7 +5082,7 @@
       "mc_id": "MC0358",
       "mc_name": "ハイロ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "愛知代表としてUMB 2021 GRAND CHAMPIONSHIP出場。UMB 2021 愛知予選優勝。",
       "mc_yomi": "はいろ",
       "notes": "",
       "kana_group": "は"
@@ -5525,6 +5102,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "はうぜ",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0439",
+      "mc_name": "鋼",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "はがね",
       "notes": "",
       "kana_group": "は"
     },
@@ -5559,7 +5145,7 @@
       "mc_id": "MC0378",
       "mc_name": "外れクジ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "長崎Rep、FeelConfident所属。UMB 2022・2023 長崎予選優勝、同全国大会出場。",
       "mc_yomi": "はずれくじ",
       "notes": "",
       "kana_group": "は"
@@ -5570,15 +5156,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "はだかいん",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0428",
-      "mc_name": "裸武",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "はだかたけし",
       "notes": "",
       "kana_group": "は"
     },
@@ -5610,15 +5187,6 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0572",
-      "mc_name": "B.A.D",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ばっど",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC0931",
       "mc_name": "hattori HNZ",
       "mc_name_sub": "",
@@ -5640,7 +5208,7 @@
       "mc_id": "MC0010",
       "mc_name": "BATTLE手裏剣",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "神奈川県出身、町田・相模原を拠点に活動。UMB 2017 神奈川予選優勝、同全国大会ベスト8など。RHIME手裏剣名義での音源制作。",
       "mc_yomi": "ばとるしゅりけん",
       "notes": "",
       "kana_group": "は"
@@ -5676,7 +5244,7 @@
       "mc_id": "MC0423",
       "mc_name": "芭撫琉",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "秋田県三種町Rep、High¥D Clew所属。UMB 2025 秋田予選優勝、同全国大会出場。",
       "mc_yomi": "はぶりゅう",
       "notes": "",
       "kana_group": "は"
@@ -5685,7 +5253,7 @@
       "mc_id": "MC0050",
       "mc_name": "BALA a.k.a SBKN",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "神奈川県大和市出身。UMB 2022 GRAND CHAMPIONSHIP準優勝。楽曲「流星」、BALA SBKN名義での音源制作など。",
       "mc_yomi": "ばら",
       "notes": "",
       "kana_group": "は"
@@ -5739,7 +5307,7 @@
       "mc_id": "MC0422",
       "mc_name": "般若",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1978年生まれ、東京都世田谷区出身。妄走族を経てソロで活動し、昭和レコードを設立。アルバム『おはよう日本』『内部告発』など。",
       "mc_yomi": "はんにゃ",
       "notes": "",
       "kana_group": "は"
@@ -5748,7 +5316,7 @@
       "mc_id": "MC0247",
       "mc_name": "PUMPEE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1984年生まれ、東京都板橋区出身。PSGのメンバー。アルバム『MODERN TIMES』、EP『The Sofakingdom』など。",
       "mc_yomi": "ぱんぴー",
       "notes": "",
       "kana_group": "は"
@@ -5757,7 +5325,7 @@
       "mc_id": "MC0053",
       "mc_name": "BAMBLE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "熊本県を拠点に活動。UMB 2018 熊本予選優勝、同全国大会出場。",
       "mc_yomi": "ばんぶる",
       "notes": "",
       "kana_group": "は"
@@ -5775,7 +5343,7 @@
       "mc_id": "MC0048",
       "mc_name": "B-COSMO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "京都府京都市出身。UMB 2009 京都予選優勝、同全国大会出場。",
       "mc_yomi": "びーこすも",
       "notes": "",
       "kana_group": "は"
@@ -5784,7 +5352,7 @@
       "mc_id": "MC0071",
       "mc_name": "BZN",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "長野代表としてUMB 2024 GRAND CHAMPIONSHIP出場。UMB 2024本戦ではRugshotとの対戦記録あり。",
       "mc_yomi": "びーじーえぬ",
       "notes": "",
       "kana_group": "は"
@@ -5793,7 +5361,7 @@
       "mc_id": "MC0049",
       "mc_name": "B_ZERO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "山梨県を拠点に活動。UMB 2024 山梨予選優勝、同全国大会出場。",
       "mc_yomi": "びーぜろ",
       "notes": "",
       "kana_group": "は"
@@ -5802,7 +5370,7 @@
       "mc_id": "MC0237",
       "mc_name": "P-PONG",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "神戸／HRC Rep。UMB 2009 神戸予選優勝、UMB 2012・2013 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "ぴーぽん",
       "notes": "",
       "kana_group": "は"
@@ -5820,7 +5388,7 @@
       "mc_id": "MC0131",
       "mc_name": "hiero",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "hiero名義でUMB 2012 GRAND CHAMPIONSHIP出場。MCバトル出場、UMB関連映像への出演など。",
       "mc_yomi": "ひえろ",
       "notes": "",
       "kana_group": "は"
@@ -5844,19 +5412,10 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0526",
-      "mc_name": "ビシキマ",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "びしきま",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC0130",
       "mc_name": "HIDADDY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "韻踏合組合、HEAD BANGERZのメンバー。HIDADDY名義でも活動し、UMB大阪予選4連覇。アルバム『火種』、一二三屋オーナーとしての活動など。",
       "mc_yomi": "ひだでぃー",
       "notes": "",
       "kana_group": "は"
@@ -5880,19 +5439,10 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0480",
-      "mc_name": "B.I.G KID",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "びっぐきっど",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC0359",
       "mc_name": "ビッグサンフワラー",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "茨城代表としてUMB 2022 GRAND CHAMPIONSHIP出場。UMB 2022 茨城予選優勝。",
       "mc_yomi": "びっぐさんふわら",
       "notes": "",
       "kana_group": "は"
@@ -5916,24 +5466,6 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0492",
-      "mc_name": "Hinata",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ひなた",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0520",
-      "mc_name": "hnt.",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ひなた",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC0846",
       "mc_name": "ひばな",
       "mc_name_sub": "",
@@ -5946,7 +5478,7 @@
       "mc_id": "MC0129",
       "mc_name": "HIBIKI",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "HIBIKI名義でUMB 2017・2023 GRAND CHAMPIONSHIP出場。UMB本戦でDOTAMA、K.K FLOWとの対戦記録あり。",
       "mc_yomi": "ひびき",
       "notes": "",
       "kana_group": "は"
@@ -5982,7 +5514,7 @@
       "mc_id": "MC0386",
       "mc_name": "弘明",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "熊本代表としてUMB 2017 GRAND CHAMPIONSHIP出場。UMB 2017 熊本予選優勝。",
       "mc_yomi": "ひろあき",
       "notes": "",
       "kana_group": "は"
@@ -6000,7 +5532,7 @@
       "mc_id": "MC0112",
       "mc_name": "Fugry",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "鹿児島県出身。UMB 2017 鹿児島予選優勝、同全国大会出場。戦極MCBATTLE 第16章出場など。",
       "mc_yomi": "ふぁぐりー",
       "notes": "",
       "kana_group": "は"
@@ -6009,7 +5541,7 @@
       "mc_id": "MC0113",
       "mc_name": "FURAIIR.C",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "長野県出身。UMB 2025 長野予選優勝、同全国大会出場。地元で陸門戦MC Battleを主催。",
       "mc_yomi": "ふぁらいる",
       "notes": "",
       "kana_group": "は"
@@ -6018,7 +5550,7 @@
       "mc_id": "MC0337",
       "mc_name": "ふぁんく",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪府出身、梅田サイファーの元メンバー。UMB 2014 REVENGE WEST、ENTER MC BATTLE優勝。アルバム『INTROSPECTIVE』など。",
       "mc_yomi": "ふぁんく",
       "notes": "",
       "kana_group": "は"
@@ -6054,17 +5586,8 @@
       "mc_id": "MC0451",
       "mc_name": "Fuma no KTR",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "2000年生まれ、大阪府寝屋川市出身。Fuma no KTR名義のほか、八咫烏・藤KooS名義でも活動。",
       "mc_yomi": "ふーま",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0564",
-      "mc_name": "風来坊",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ふうらいぼう",
       "notes": "",
       "kana_group": "は"
     },
@@ -6072,17 +5595,8 @@
       "mc_id": "MC0108",
       "mc_name": "FEIDA-WAN",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岡山県出身、TOU GEN KYOUのフロントマン。UMB岡山予選を複数回制し、UMB 2010 GRAND CHAMPIONSHIP準優勝。アルバム『WILLVANA』『DIESEL BURN 2』など。",
       "mc_yomi": "ふぇいだわん",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0490",
-      "mc_name": "Feliz",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ふぇりず",
       "notes": "",
       "kana_group": "は"
     },
@@ -6090,7 +5604,7 @@
       "mc_id": "MC0111",
       "mc_name": "FORK",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "ICE BAHNのMC。UMB 2006 GRAND CHAMPIONSHIP優勝。ICE BAHN『STARTREC』『RHYME GUARD』、楽曲「越冬」など。",
       "mc_yomi": "ふぉーく",
       "notes": "",
       "kana_group": "は"
@@ -6108,17 +5622,8 @@
       "mc_id": "MC0110",
       "mc_name": "Folgoregia",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "沖縄県出身、Aesop Land所属。アルバム『IN MY PRIME』、楽曲「AIM」「RE:KICK」など。",
       "mc_yomi": "ふぉるごれじあ",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0538",
-      "mc_name": "フォレスト55",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ふぉれすと55",
       "notes": "",
       "kana_group": "は"
     },
@@ -6135,17 +5640,8 @@
       "mc_id": "MC0070",
       "mc_name": "BUSS",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "群馬県出身、NAKARA VIBES BROS所属。UMB 2014 群馬代表。群馬・栃木・埼玉を拠点に活動。",
       "mc_yomi": "ぶす",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0565",
-      "mc_name": "フータロック",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ふたろっく",
       "notes": "",
       "kana_group": "は"
     },
@@ -6162,7 +5658,7 @@
       "mc_id": "MC0066",
       "mc_name": "BUCHI DA MIC",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2012・2013・2014・2017 GRAND CHAMPIONSHIP出場。各年度のUMB本戦映像にBUCHI DA MIC名義で出場記録あり。",
       "mc_yomi": "ぶちだまいく",
       "notes": "",
       "kana_group": "は"
@@ -6189,7 +5685,7 @@
       "mc_id": "MC0068",
       "mc_name": "BUPPON",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "山口県出身、THE AXIS RECORDS主宰。アルバム『蓄積タイムラグ』『LIFE』『enDroll』『Mother』など。Kojoe、illmore、ZINとの作品制作・客演参加など。",
       "mc_yomi": "ぶっぽん",
       "notes": "",
       "kana_group": "は"
@@ -6209,15 +5705,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "ぶらぼ",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0489",
-      "mc_name": "FRank Logun",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ふらんくろぐん",
       "notes": "",
       "kana_group": "は"
     },
@@ -6261,7 +5748,7 @@
       "mc_id": "MC0061",
       "mc_name": "Bluek",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "京都を拠点に活動。UMB 2023 京都予選優勝、同全国大会出場。自身のnoteでUMB京都代表としての活動報告など。",
       "mc_yomi": "ぶるーく",
       "notes": "",
       "kana_group": "は"
@@ -6272,15 +5759,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "ぶるーす",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0482",
-      "mc_name": "Bullharts",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ぶるはつ",
       "notes": "",
       "kana_group": "は"
     },
@@ -6297,7 +5775,7 @@
       "mc_id": "MC0338",
       "mc_name": "ふーわ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "三重代表としてUMB 2020・2021・2022・2023 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "ふわ",
       "notes": "",
       "kana_group": "は"
@@ -6321,15 +5799,6 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0849",
-      "mc_name": "PAYVVIEW",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ぺいぶびゅー",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC0242",
       "mc_name": "Pein Mirra",
       "mc_name_sub": "",
@@ -6339,19 +5808,10 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0508",
-      "mc_name": "Pain Reign",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ぺいんれいん",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC0055",
       "mc_name": "BASE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1985年生まれ、静岡県浜松市出身、名古屋拠点。UMB 2015 愛知予選優勝など。アルバム『One Shot All Kill』、東海喰種・JET CITY PEOPLEでの活動など。",
       "mc_yomi": "べーす",
       "notes": "",
       "kana_group": "は"
@@ -6369,16 +5829,7 @@
       "mc_id": "MC0243",
       "mc_name": "peko",
       "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ぺこ",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0659",
-      "mc_name": "PEKO",
-      "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "梅田サイファーのメンバー。梅田サイファーとしてアルバム『RAPNAVIO』でメジャーデビュー。DJ・トラックメイクでも活動。",
       "mc_yomi": "ぺこ",
       "notes": "",
       "kana_group": "は"
@@ -6396,7 +5847,7 @@
       "mc_id": "MC0058",
       "mc_name": "BES",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "SWANKY SWIPE、SCARSのメンバーとして活動。アルバム『REBUILD』『UNTITLED』、BES from SWANKY SWIPE名義での音源制作など。",
       "mc_yomi": "べす",
       "notes": "",
       "kana_group": "は"
@@ -6405,17 +5856,8 @@
       "mc_id": "MC0241",
       "mc_name": "PEDAL",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "青森県三沢市出身。PEDAL aka 25時の影絵としてUMB 2007 青森予選優勝、2回連続本戦出場。",
       "mc_yomi": "ぺだる",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
-      "mc_id": "MC0553",
-      "mc_name": "ヘタレビーボーイ",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "へたれびぼい",
       "notes": "",
       "kana_group": "は"
     },
@@ -6429,10 +5871,19 @@
       "kana_group": "は"
     },
     {
+      "mc_id": "MC0416",
+      "mc_name": "紅桜",
+      "mc_name_sub": "",
+      "mc_description": "岡山県津山市出身。UMB岡山予選を複数回制覇。アルバム『紅桜』、Theタイマンチーズでの活動など。",
+      "mc_yomi": "べにざくら",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
       "mc_id": "MC0313",
       "mc_name": "VENOM",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1983年生まれ、千葉県出身。戦極MCBATTLE、UMB千葉予選などに出場。アルバム『毒針』など。",
       "mc_yomi": "べのむ",
       "notes": "",
       "kana_group": "は"
@@ -6441,7 +5892,7 @@
       "mc_id": "MC0426",
       "mc_name": "蛇",
       "mc_name_sub": "nakaji",
-      "mc_description": "",
+      "mc_description": "滋賀県Rep、花魁音盤所属。UMB 2017 REVENGE出場、UMB徳島予選出場など。",
       "mc_yomi": "へび",
       "notes": "",
       "kana_group": "は"
@@ -6465,15 +5916,6 @@
       "kana_group": "は"
     },
     {
-      "mc_id": "MC0481",
-      "mc_name": "BENKEI",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "べんけい",
-      "notes": "",
-      "kana_group": "は"
-    },
-    {
       "mc_id": "MC0923",
       "mc_name": "Benjazzy",
       "mc_name_sub": "",
@@ -6486,7 +5928,7 @@
       "mc_id": "MC0057",
       "mc_name": "BENZO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2005 GRAND CHAMPIONSHIP出場、第5回関西最終予選準優勝。",
       "mc_yomi": "べんぞ",
       "notes": "",
       "kana_group": "は"
@@ -6495,7 +5937,7 @@
       "mc_id": "MC0056",
       "mc_name": "Bendy",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "群馬県を拠点に活動。第22回高校生RAP選手権優勝、UMB 2025 群馬予選優勝など。MCバトル出場・UMB GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "べんでぃ",
       "notes": "",
       "kana_group": "は"
@@ -6513,7 +5955,7 @@
       "mc_id": "MC0063",
       "mc_name": "BOZ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "横浜を拠点に活動。BRT×UMB 2016優勝、THE罵倒 2016 GRAND CHAMPIONSHIP優勝。フリースタイルダンジョンチャレンジャーズカップ優勝など。",
       "mc_yomi": "ぼず",
       "notes": "",
       "kana_group": "は"
@@ -6522,7 +5964,7 @@
       "mc_id": "MC0244",
       "mc_name": "POCKY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡代表としてUMB 2011 GRAND CHAMPIONSHIP出場。UMB 2011 福岡予選優勝。",
       "mc_yomi": "ぽっきー",
       "notes": "",
       "kana_group": "は"
@@ -6540,7 +5982,7 @@
       "mc_id": "MC0245",
       "mc_name": "PONEY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1985年生まれ、山梨県出身。B-BOY PARK 2011冬の陣優勝。EP『ちょっと話がある』など。",
       "mc_yomi": "ぽにー",
       "notes": "",
       "kana_group": "は"
@@ -6549,7 +5991,7 @@
       "mc_id": "MC0062",
       "mc_name": "BOBO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "茨城代表としてUMB GRAND CHAMPIONSHIP出場。UMB 2017 茨城予選優勝。",
       "mc_yomi": "ぼぼ",
       "notes": "",
       "kana_group": "は"
@@ -6558,7 +6000,7 @@
       "mc_id": "MC0402",
       "mc_name": "歩歩",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "京都府出身、ストロベリーパンティースのMC。UMB 2013 京都予選優勝。",
       "mc_yomi": "ぽぽ",
       "notes": "",
       "kana_group": "は"
@@ -6567,7 +6009,7 @@
       "mc_id": "MC0133",
       "mc_name": "hoRao",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "宮城県南仙台を拠点に活動。UMB 2025 REVENGE優勝、UMB 2025 GRAND CHAMPIONSHIP出場権獲得。",
       "mc_yomi": "ほらお",
       "notes": "",
       "kana_group": "は"
@@ -6576,7 +6018,7 @@
       "mc_id": "MC0360",
       "mc_name": "ホロンバイム",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "長崎県佐世保を拠点に活動。秘密結社Enigmatic Laboratory所属。アルバム『ローカリスト』など。",
       "mc_yomi": "ほろんばいむ",
       "notes": "",
       "kana_group": "は"
@@ -6585,7 +6027,7 @@
       "mc_id": "MC0399",
       "mc_name": "梵頭",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岐阜を拠点に活動、HIKIGANE SOUNDのリーダー。UMB 2018岐阜代表、2019年・2021年KING OF KINGSベスト4。口喧嘩祭主催など。",
       "mc_yomi": "ぼんず",
       "notes": "",
       "kana_group": "は"
@@ -6612,7 +6054,7 @@
       "mc_id": "MC0209",
       "mc_name": "MAVEL",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "沖縄県浦添Rep、BAGZZZ CREW・GUZURI RECORDS.604所属。UMB 2015 沖縄予選優勝、同全国大会出場。",
       "mc_yomi": "まーゔぇる",
       "notes": "",
       "kana_group": "ま"
@@ -6630,7 +6072,7 @@
       "mc_id": "MC0207",
       "mc_name": "marsh",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "宮崎県出身、兵庫県姫路市在住。UMB 2014 兵庫代表。",
       "mc_yomi": "まーしゅ",
       "notes": "",
       "kana_group": "ま"
@@ -6645,19 +6087,10 @@
       "kana_group": "ま"
     },
     {
-      "mc_id": "MC0498",
-      "mc_name": "MAIII",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "まい",
-      "notes": "",
-      "kana_group": "ま"
-    },
-    {
       "mc_id": "MC0457",
       "mc_name": "Maiji",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡県北九州出身、ベゲfastman人所属。EP『POA』、Maiji×5HUH31名義での『匕首緑』など。",
       "mc_yomi": "まいじ",
       "notes": "",
       "kana_group": "ま"
@@ -6675,7 +6108,7 @@
       "mc_id": "MC0204",
       "mc_name": "MAKA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "栃木県足利市出身、関西を拠点に活動。レゲエDeejay的なスタイルも取り入れたMCとして紹介される存在。",
       "mc_yomi": "まか",
       "notes": "",
       "kana_group": "ま"
@@ -6684,7 +6117,7 @@
       "mc_id": "MC0205",
       "mc_name": "MAKI DA SHIT",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1990年生まれ、青森県青森市出身。Dr.マキダシ名義でも活動し、精神科医として勤務しながらラッパーとして活動。怪談イベント「ラッパーの怖い話」立ち上げなど。",
       "mc_yomi": "まきだしっと",
       "notes": "",
       "kana_group": "ま"
@@ -6711,7 +6144,7 @@
       "mc_id": "MC0432",
       "mc_name": "誠 a.k.a JAFEM",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "沖縄県北谷市出身。UMB 2021 沖縄予選優勝、同全国大会出場。",
       "mc_yomi": "まことakajafem",
       "notes": "",
       "kana_group": "ま"
@@ -6747,7 +6180,7 @@
       "mc_id": "MC0339",
       "mc_name": "まーしゃる",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "奈良を拠点に活動。UMB 2018 奈良予選優勝、同全国大会出場。J奈良サイファーでの活動など。",
       "mc_yomi": "ましゃる",
       "notes": "",
       "kana_group": "ま"
@@ -6792,7 +6225,7 @@
       "mc_id": "MC0200",
       "mc_name": "Mac Ass Tiger",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "長野代表としてUMB 2018 GRAND CHAMPIONSHIP出場。UMB 2018 長野予選優勝。",
       "mc_yomi": "まっくあすたいがー",
       "notes": "",
       "kana_group": "ま"
@@ -6801,7 +6234,7 @@
       "mc_id": "MC0201",
       "mc_name": "MAC-T",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岐阜代表としてUMB GRAND CHAMPIONSHIPに複数回出場。UMB 2025 岐阜予選優勝。",
       "mc_yomi": "まっくてぃー",
       "notes": "",
       "kana_group": "ま"
@@ -6810,7 +6243,7 @@
       "mc_id": "MC0208",
       "mc_name": "MATTO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡から出場し、UMB 2024 佐賀予選優勝。",
       "mc_yomi": "まっと",
       "notes": "",
       "kana_group": "ま"
@@ -6819,7 +6252,7 @@
       "mc_id": "MC0202",
       "mc_name": "MAD ASH",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "鹿児島代表としてUMB 2016 GRAND CHAMPIONSHIP出場。UMB 2016 鹿児島予選優勝。",
       "mc_yomi": "まっどあっしゅ",
       "notes": "",
       "kana_group": "ま"
@@ -6837,7 +6270,7 @@
       "mc_id": "MC0398",
       "mc_name": "松元",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2015 GRAND CHAMPIONSHIP出場。松元 aka macchan名義でも活動。",
       "mc_yomi": "まつもと",
       "notes": "",
       "kana_group": "ま"
@@ -6855,7 +6288,7 @@
       "mc_id": "MC0362",
       "mc_name": "マユツバ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "群馬代表としてUMB 2024 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "まゆつば",
       "notes": "",
       "kana_group": "ま"
@@ -6882,7 +6315,7 @@
       "mc_id": "MC0206",
       "mc_name": "Manchies nice",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "熊本代表としてUMB 2025 GRAND CHAMPIONSHIP出場。UMB 2025 熊本予選優勝。",
       "mc_yomi": "まんちーずないす",
       "notes": "",
       "kana_group": "ま"
@@ -6909,7 +6342,7 @@
       "mc_id": "MC0213",
       "mc_name": "mita beats",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "京都代表としてUMB 2024 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "みたびーつ",
       "notes": "",
       "kana_group": "ま"
@@ -6927,17 +6360,8 @@
       "mc_id": "MC0381",
       "mc_name": "実成",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "佐賀代表としてUMB 2023 GRAND CHAMPIONSHIP出場。UMB 2023 佐賀予選優勝。",
       "mc_yomi": "みつなり",
-      "notes": "",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0530",
-      "mc_name": "水無月",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "みなつき",
       "notes": "",
       "kana_group": "ま"
     },
@@ -6945,7 +6369,7 @@
       "mc_id": "MC0212",
       "mc_name": "miniRA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大分県別府市出身。UMB 2016 GRAND CHAMPIONSHIPベスト16、UMB 2023 大分予選優勝。",
       "mc_yomi": "みにら",
       "notes": "",
       "kana_group": "ま"
@@ -6954,7 +6378,7 @@
       "mc_id": "MC0469",
       "mc_name": "ミメイ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "京都府出身。戦極MCBATTLE 第28章、戦極MCBATTLE 令和6年杯、凱旋MCBATTLE GOLDENTAG優勝など。",
       "mc_yomi": "みめい",
       "notes": "",
       "kana_group": "ま"
@@ -6996,33 +6420,6 @@
       "kana_group": "ま"
     },
     {
-      "mc_id": "MC0524",
-      "mc_name": "みLL AuguSt.",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "みるーが",
-      "notes": "",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0501",
-      "mc_name": "Milky",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "みるき",
-      "notes": "",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0503",
-      "mc_name": "MuuNe",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "むうね",
-      "notes": "",
-      "kana_group": "ま"
-    },
-    {
       "mc_id": "MC0686",
       "mc_name": "百足",
       "mc_name_sub": "",
@@ -7050,19 +6447,10 @@
       "kana_group": "ま"
     },
     {
-      "mc_id": "MC0502",
-      "mc_name": "Mura_halo",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "むらはろ",
-      "notes": "",
-      "kana_group": "ま"
-    },
-    {
       "mc_id": "MC0219",
       "mc_name": "MULBE",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "D.D.SとのユニットN.E.Nでも活動。アルバム『FAST&SLOW』『LIFE GOES ON』などを発表。",
       "mc_yomi": "むるべ",
       "notes": "",
       "kana_group": "ま"
@@ -7107,17 +6495,8 @@
       "mc_id": "MC0364",
       "mc_name": "メシアTHEフライ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1981年生まれ、東京都大森出身。JUSWANNAのMC。アルバム『MESS -King Of Dope-』、JUSWANNA『BLACK BOX』など。",
       "mc_yomi": "めしあtheふらい",
-      "notes": "",
-      "kana_group": "ま"
-    },
-    {
-      "mc_id": "MC0499",
-      "mc_name": "ME7O",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "めぞ",
       "notes": "",
       "kana_group": "ま"
     },
@@ -7152,7 +6531,7 @@
       "mc_id": "MC0199",
       "mc_name": "M.O.J.I.",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "静岡県浜松市出身。UMB 2017 静岡代表。K.K FLOWとのユニットKing Kong FLOWでも活動。",
       "mc_yomi": "もじ",
       "notes": "",
       "kana_group": "ま"
@@ -7176,28 +6555,10 @@
       "kana_group": "ま"
     },
     {
-      "mc_id": "MC0527",
-      "mc_name": "夜叉郎",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "やしゃろう",
-      "notes": "",
-      "kana_group": "や"
-    },
-    {
-      "mc_id": "MC0514",
-      "mc_name": "YAS IS OVER",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "やすいず",
-      "notes": "",
-      "kana_group": "や"
-    },
-    {
       "mc_id": "MC0317",
       "mc_name": "YASSAN",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "新潟代表としてUMB 2023 GRAND CHAMPIONSHIP出場。UMB 2023 新潟予選優勝。",
       "mc_yomi": "やっさん",
       "notes": "",
       "kana_group": "や"
@@ -7215,7 +6576,7 @@
       "mc_id": "MC0385",
       "mc_name": "山本びんた",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "滋賀代表としてUMB 2015・2019・2020 GRAND CHAMPIONSHIP出場。UMB滋賀予選を複数回制覇。",
       "mc_yomi": "やまもとびんた",
       "notes": "",
       "kana_group": "や"
@@ -7226,15 +6587,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "やんぐひろぽん",
-      "notes": "",
-      "kana_group": "や"
-    },
-    {
-      "mc_id": "MC0583",
-      "mc_name": "やんでぃ",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "やんでぃ",
       "notes": "",
       "kana_group": "や"
     },
@@ -7251,7 +6603,7 @@
       "mc_id": "MC0323",
       "mc_name": "YUKSTA-ILL",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "三重県を代表するラッパー。RC SLUM所属、WAVELENGTH PLANT主宰。アルバム『82PLACE』など。",
       "mc_yomi": "ゆーくすたいる",
       "notes": "",
       "kana_group": "や"
@@ -7260,7 +6612,7 @@
       "mc_id": "MC0320",
       "mc_name": "YOUTH",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岡山Rep、HB FAMILIA・420FAMILY所属。UMB 2007 岡山予選優勝、同全国大会出場。",
       "mc_yomi": "ゆーす",
       "notes": "",
       "kana_group": "や"
@@ -7314,7 +6666,7 @@
       "mc_id": "MC0366",
       "mc_name": "ユウヤキタイ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "滋賀代表としてUMB 2024 GRAND CHAMPIONSHIP出場。滋賀予選主催なども担当。",
       "mc_yomi": "ゆうやきたい",
       "notes": "",
       "kana_group": "や"
@@ -7323,7 +6675,7 @@
       "mc_id": "MC0308",
       "mc_name": "U-Road",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "千葉代表としてUMB 2015 GRAND CHAMPIONSHIP出場。UMB 2015 千葉予選優勝。",
       "mc_yomi": "ゆーろーど",
       "notes": "",
       "kana_group": "や"
@@ -7338,15 +6690,6 @@
       "kana_group": "や"
     },
     {
-      "mc_id": "MC0515",
-      "mc_name": "YUSEI",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "ゆせい",
-      "notes": "",
-      "kana_group": "や"
-    },
-    {
       "mc_id": "MC0966",
       "mc_name": "ゆらりん",
       "mc_name_sub": "",
@@ -7356,19 +6699,10 @@
       "kana_group": "や"
     },
     {
-      "mc_id": "MC0533",
-      "mc_name": "陽",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "よう",
-      "notes": "",
-      "kana_group": "や"
-    },
-    {
       "mc_id": "MC0318",
       "mc_name": "YO-1",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "静岡県浜松市天竜Rep、I.D.P／RM所属。UMB 2017 静岡予選出場。",
       "mc_yomi": "よーいち",
       "notes": "",
       "kana_group": "や"
@@ -7383,15 +6717,6 @@
       "kana_group": "や"
     },
     {
-      "mc_id": "MC0516",
-      "mc_name": "Yoji",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "よじ",
-      "notes": "",
-      "kana_group": "や"
-    },
-    {
       "mc_id": "MC0374",
       "mc_name": "吉田のブービー",
       "mc_name_sub": "",
@@ -7401,19 +6726,10 @@
       "kana_group": "や"
     },
     {
-      "mc_id": "MC0678",
-      "mc_name": "YOS-MAG",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "よすまぐ",
-      "notes": "",
-      "kana_group": "や"
-    },
-    {
       "mc_id": "MC0319",
       "mc_name": "YONA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "沖縄県中城Rep、LNS所属。UMB 2024 沖縄予選優勝、同全国大会出場。",
       "mc_yomi": "よな",
       "notes": "",
       "kana_group": "や"
@@ -7449,7 +6765,7 @@
       "mc_id": "MC0189",
       "mc_name": "La-Men Dogg",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "岡山・ONI-BONG所属。UMB 2008 岡山予選優勝。アルバム『EGUISTO』など。",
       "mc_yomi": "らーめんどっぐ",
       "notes": "",
       "kana_group": "ら"
@@ -7494,7 +6810,7 @@
       "mc_id": "MC0256",
       "mc_name": "RHYME BOYA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "神奈川県藤沢市出身、DINARY DELTA FORCEのメンバー。UMB横浜予選優勝、藤沢北口サンパール杯優勝など。アルバム『MIND VOOK』『FLOWMOTION』など。",
       "mc_yomi": "らいむぼーや",
       "notes": "",
       "kana_group": "ら"
@@ -7503,7 +6819,7 @@
       "mc_id": "MC0197",
       "mc_name": "Luvit",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "2002年生まれ、宮城県仙台市出身。戦極U-22 MCBATTLE史上最年少優勝、UMB 2022 宮城代表。EP『LUVIT x Eae jay』、アルバム『first dive』など。",
       "mc_yomi": "らゔぃっと",
       "notes": "",
       "kana_group": "ら"
@@ -7521,7 +6837,7 @@
       "mc_id": "MC0253",
       "mc_name": "RAGA",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2019・2020 GRAND CHAMPIONSHIP出場。UMB本戦出場、SPOTLIGHTなどのMCバトル出場。",
       "mc_yomi": "らが",
       "notes": "",
       "kana_group": "ら"
@@ -7539,7 +6855,7 @@
       "mc_id": "MC0262",
       "mc_name": "RUGSHOT",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "和歌山県日高川Rep、UNIVERS 88POSSE所属。UMB 2015 和歌山予選優勝、UMB 2024 和歌山予選優勝。",
       "mc_yomi": "らぐしょっと",
       "notes": "",
       "kana_group": "ら"
@@ -7572,11 +6888,11 @@
       "kana_group": "ら"
     },
     {
-      "mc_id": "MC0496",
-      "mc_name": "Laugh man",
+      "mc_id": "MC0428",
+      "mc_name": "裸武",
       "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "らふまん",
+      "mc_description": "埼玉県深谷市Rep、NAKARA VIBES BROS所属。UMB 2018 埼玉予選優勝、UMB 2018 GRAND CHAMPIONSHIPベスト16。",
+      "mc_yomi": "らぶ",
       "notes": "",
       "kana_group": "ら"
     },
@@ -7584,7 +6900,7 @@
       "mc_id": "MC0190",
       "mc_name": "LAFRAN",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "青森代表としてUMB 2025 GRAND CHAMPIONSHIP出場。UMB 2025 青森予選優勝。",
       "mc_yomi": "らふらん",
       "notes": "",
       "kana_group": "ら"
@@ -7611,7 +6927,7 @@
       "mc_id": "MC0462",
       "mc_name": "Randy Wati Sati",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1998年生まれ、東京都墨田区出身。Hatefull Dogg's所属。『RANDY Ⅳ』『G-Pride』などを発表。",
       "mc_yomi": "らんでぃわてぃ",
       "notes": "",
       "kana_group": "ら"
@@ -7638,7 +6954,7 @@
       "mc_id": "MC0257",
       "mc_name": "RISKY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "新潟代表としてUMB 2025 GRAND CHAMPIONSHIP出場。UMB 2025 新潟予選優勝。",
       "mc_yomi": "りすきー",
       "notes": "",
       "kana_group": "ら"
@@ -7674,7 +6990,7 @@
       "mc_id": "MC0456",
       "mc_name": "Lick-G",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1999年生まれ、神奈川県逗子市出身。EP『無題』『有題』『カラス・ステイズ』、アルバム『Trainspotting』、自主レーベルZenknow設立など。",
       "mc_yomi": "りっくじ",
       "notes": "",
       "kana_group": "ら"
@@ -7683,7 +6999,7 @@
       "mc_id": "MC0258",
       "mc_name": "RITTO",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1984年生まれ、沖縄県石垣島出身、那覇市曙育ち。アルバム『AKEBONO』、EP『Mi far Yu』、赤土での活動など。",
       "mc_yomi": "りっと",
       "notes": "",
       "kana_group": "ら"
@@ -7694,15 +7010,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "りっとすてぃーじー",
-      "notes": "",
-      "kana_group": "ら"
-    },
-    {
-      "mc_id": "MC0575",
-      "mc_name": "LIPSTORM",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "りっぷすとーむ",
       "notes": "",
       "kana_group": "ら"
     },
@@ -7719,7 +7026,7 @@
       "mc_id": "MC0455",
       "mc_name": "L.B.R.L",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "2004年生まれ、大阪出身。第18回高校生ラップ選手権出場。シングル『SHUGYO』『Error』『What I want』など。",
       "mc_yomi": "りべらる",
       "notes": "",
       "kana_group": "ら"
@@ -7764,7 +7071,7 @@
       "mc_id": "MC0266",
       "mc_name": "Ryo",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪代表としてUMB 2024 GRAND CHAMPIONSHIP出場。UMB 2024 大阪予選優勝。",
       "mc_yomi": "りょう",
       "notes": "",
       "kana_group": "ら"
@@ -7791,7 +7098,7 @@
       "mc_id": "MC0376",
       "mc_name": "呂布カルマ",
       "mc_name_sub": "",
-      "mc_description": "Jet City People主宰。",
+      "mc_description": "1983年生まれ、兵庫県西宮市出身、名古屋拠点。KING OF KINGS 2018・2020優勝。アルバム『The Cool Core』『SUPERSALT』など。",
       "mc_yomi": "りょふかるま",
       "notes": "",
       "kana_group": "ら"
@@ -7800,7 +7107,7 @@
       "mc_id": "MC0264",
       "mc_name": "Ry-lax",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1995年生まれ、北海道旭川市出身。BCDMG所属。アルバム『CONTROL』、EP『Contrast』『IT'S ALIVE』など。",
       "mc_yomi": "りらっくす",
       "notes": "",
       "kana_group": "ら"
@@ -7809,7 +7116,7 @@
       "mc_id": "MC0198",
       "mc_name": "Lyrical",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "新潟代表としてUMB 2017・2018 GRAND CHAMPIONSHIP出場。UMB 2017・2018 新潟予選優勝。",
       "mc_yomi": "りりかる",
       "notes": "",
       "kana_group": "ら"
@@ -7845,7 +7152,7 @@
       "mc_id": "MC0371",
       "mc_name": "凛",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "栃木代表としてUMB 2022 GRAND CHAMPIONSHIP出場。UMB 2022 栃木予選優勝。",
       "mc_yomi": "りん",
       "notes": "",
       "kana_group": "ら"
@@ -7863,26 +7170,8 @@
       "mc_id": "MC0193",
       "mc_name": "LINKRAZY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "徳島代表としてUMB 2025 GRAND CHAMPIONSHIP出場。UMB 2025 徳島予選優勝。",
       "mc_yomi": "りんくらいじー",
-      "notes": "",
-      "kana_group": "ら"
-    },
-    {
-      "mc_id": "MC0510",
-      "mc_name": "RINDAMAN",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "りんだまん",
-      "notes": "",
-      "kana_group": "ら"
-    },
-    {
-      "mc_id": "MC0544",
-      "mc_name": "凛太朗",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "りんたろう",
       "notes": "",
       "kana_group": "ら"
     },
@@ -7892,15 +7181,6 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "りんね",
-      "notes": "",
-      "kana_group": "ら"
-    },
-    {
-      "mc_id": "MC0536",
-      "mc_name": "Luiz",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "るいず",
       "notes": "",
       "kana_group": "ら"
     },
@@ -7926,7 +7206,7 @@
       "mc_id": "MC0476",
       "mc_name": "盧舎那",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡Rep。UMB 2022 福岡予選ベスト4、戦極U-22 MCBATTLE準優勝、九州MC BATTLE優勝など。",
       "mc_yomi": "るしゃな",
       "notes": "",
       "kana_group": "ら"
@@ -7962,7 +7242,7 @@
       "mc_id": "MC0367",
       "mc_name": "レイジ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "大阪を拠点に活動。UMB 2025 大阪予選優勝、UMB 2025 GRAND CHAMPIONSHIP準優勝。",
       "mc_yomi": "れいじ",
       "notes": "",
       "kana_group": "ら"
@@ -7971,7 +7251,7 @@
       "mc_id": "MC0251",
       "mc_name": "RACY",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "京都代表としてUMB 2007・2008 GRAND CHAMPIONSHIP出場。STINKY SCIZAのメンバー。",
       "mc_yomi": "れいしー",
       "notes": "",
       "kana_group": "ら"
@@ -8007,7 +7287,7 @@
       "mc_id": "MC0255",
       "mc_name": "REIDAM",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡を拠点に活動。UMB・KOK福岡代表の経歴。楽曲「Touch The Sky feat. KAGERAW, REIDAM」など。",
       "mc_yomi": "れいだむ",
       "notes": "",
       "kana_group": "ら"
@@ -8016,7 +7296,7 @@
       "mc_id": "MC0411",
       "mc_name": "玲音",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "長崎代表としてUMB 2012・2019・2020 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "れいね",
       "notes": "",
       "kana_group": "ら"
@@ -8058,15 +7338,6 @@
       "kana_group": "ら"
     },
     {
-      "mc_id": "MC0509",
-      "mc_name": "RED STONE",
-      "mc_name_sub": "",
-      "mc_description": "",
-      "mc_yomi": "れっどすとーん",
-      "notes": "",
-      "kana_group": "ら"
-    },
-    {
       "mc_id": "MC0889",
       "mc_name": "RAW-T",
       "mc_name_sub": "",
@@ -8088,7 +7359,7 @@
       "mc_id": "MC0195",
       "mc_name": "LOWCH",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福岡県北九州市出身。アルバム『ON A JOURNEY』など。",
       "mc_yomi": "ろーち",
       "notes": "",
       "kana_group": "ら"
@@ -8097,7 +7368,7 @@
       "mc_id": "MC0214",
       "mc_name": "RAWAXXX",
       "mc_name_sub": "MOL53",
-      "mc_description": "",
+      "mc_description": "1990年生まれ、宮崎県出身。MOL53名義でKING OF KINGS 2019優勝。RAWAXXX名義で『Grow In 2One』『That's Me』などを発表。",
       "mc_yomi": "ろーわっくす",
       "notes": "",
       "kana_group": "ら"
@@ -8124,7 +7395,7 @@
       "mc_id": "MC0260",
       "mc_name": "Rozetta",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "北海道・札幌Rep。UMB 2015 北海道代表。UMB 2015公式プロフィールではCrew「FULL SWING!!! Ryder」。",
       "mc_yomi": "ろぜった",
       "notes": "",
       "kana_group": "ら"
@@ -8142,7 +7413,7 @@
       "mc_id": "MC0368",
       "mc_name": "ロープ",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2016 REVENGE 東北代表としてUMB 2016 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "ろぷ",
       "notes": "",
       "kana_group": "ら"
@@ -8151,7 +7422,7 @@
       "mc_id": "MC0194",
       "mc_name": "lonelow",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "三重代表としてUMB 2024 GRAND CHAMPIONSHIP出場。UMB 2024 三重予選優勝。",
       "mc_yomi": "ろんろー",
       "notes": "",
       "kana_group": "ら"
@@ -8160,7 +7431,7 @@
       "mc_id": "MC0316",
       "mc_name": "Y.A.S",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "UMB 2008 GRAND CHAMPIONSHIP準優勝。ZION SOLDIER名義でも活動。",
       "mc_yomi": "わいえーえす",
       "notes": "",
       "kana_group": "わ"
@@ -8169,7 +7440,7 @@
       "mc_id": "MC0321",
       "mc_name": "YSK",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "愛媛を拠点に活動。UMB 2008〜2010で四国代表として全国ベスト8。アルバム『普通の奴の普通の発言』『YOU SHOULD KNOW』など。",
       "mc_yomi": "わいえすけー",
       "notes": "",
       "kana_group": "わ"
@@ -8223,7 +7494,7 @@
       "mc_id": "MC0314",
       "mc_name": "wani galay mycel",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "福井代表としてUMB 2025 GRAND CHAMPIONSHIP出場。シングル『deal』など。",
       "mc_yomi": "わにがれい",
       "notes": "",
       "kana_group": "わ"
@@ -8232,7 +7503,7 @@
       "mc_id": "MC0434",
       "mc_name": "輪入道",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1990年生まれ、東京都出身、千葉育ち。B-BOY PARK 2014、THE罵倒 GRAND CHAMPIONSHIP 2014・2016・2018優勝など。アルバム『片割れ』『左回りの時計』『朝が満ちる』など。",
       "mc_yomi": "わにゅうどう",
       "notes": "",
       "kana_group": "わ"
@@ -8241,7 +7512,7 @@
       "mc_id": "MC0415",
       "mc_name": "笑夢珈琲",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "宮崎代表としてUMB 2024 GRAND CHAMPIONSHIP出場。UMB 2024 宮崎予選優勝。",
       "mc_yomi": "わらいゆめこひ",
       "notes": "",
       "kana_group": "わ"
@@ -8259,7 +7530,7 @@
       "mc_id": "MC0004",
       "mc_name": "1horse",
       "mc_name_sub": "",
-      "mc_description": "",
+      "mc_description": "1985年生まれ、神奈川県秦野市出身のMC／トラックメイカー。UMB 2011 横浜予選優勝、UMB 2013 東京予選ベスト4など。アルバム『深核』『次の時代に向かって』など。",
       "mc_yomi": "わんほーす",
       "notes": "",
       "kana_group": "わ"

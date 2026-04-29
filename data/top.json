@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-27T16:34:37.143Z",
+  "updated_at": "2026-04-29T14:25:14.052Z",
   "recent_events": [
     {
       "event_id": "EVT0164",
@@ -151,7 +151,7 @@
       "rank": 1,
       "mc_id": "MC0376",
       "mc_name": "呂布カルマ",
-      "score": 2725.4,
+      "score": 2725.27,
       "total_matches": 245,
       "wins": 179,
       "losses": 66,
@@ -161,7 +161,7 @@
       "rank": 2,
       "mc_id": "MC0434",
       "mc_name": "輪入道",
-      "score": 2653.62,
+      "score": 2653.68,
       "total_matches": 135,
       "wins": 97,
       "losses": 38,
@@ -171,7 +171,7 @@
       "rank": 3,
       "mc_id": "MC0214",
       "mc_name": "RAWAXXX",
-      "score": 2625.64,
+      "score": 2625.17,
       "total_matches": 198,
       "wins": 137,
       "losses": 61,
@@ -181,7 +181,7 @@
       "rank": 4,
       "mc_id": "MC0080",
       "mc_name": "CIMA",
-      "score": 2286.21,
+      "score": 2286.15,
       "total_matches": 173,
       "wins": 116,
       "losses": 57,
@@ -191,7 +191,7 @@
       "rank": 5,
       "mc_id": "MC0100",
       "mc_name": "DOTAMA",
-      "score": 2244.89,
+      "score": 2244.7,
       "total_matches": 142,
       "wins": 96,
       "losses": 46,
@@ -201,7 +201,7 @@
       "rank": 6,
       "mc_id": "MC0756",
       "mc_name": "COCRGI WHITE",
-      "score": 2183.2,
+      "score": 2182.94,
       "total_matches": 157,
       "wins": 102,
       "losses": 55,
@@ -211,7 +211,7 @@
       "rank": 7,
       "mc_id": "MC0023",
       "mc_name": "S-kainê",
-      "score": 2148,
+      "score": 2147.96,
       "total_matches": 89,
       "wins": 60,
       "losses": 29,
@@ -221,7 +221,7 @@
       "rank": 8,
       "mc_id": "MC0271",
       "mc_name": "SAM",
-      "score": 2125.72,
+      "score": 2125.68,
       "total_matches": 67,
       "wins": 49,
       "losses": 18,
@@ -229,23 +229,23 @@
     },
     {
       "rank": 9,
-      "mc_id": "MC0469",
-      "mc_name": "ミメイ",
-      "score": 2076.23,
-      "total_matches": 113,
-      "wins": 68,
-      "losses": 45,
-      "last_match_date": "2026-04-26"
-    },
-    {
-      "rank": 10,
       "mc_id": "MC0046",
       "mc_name": "Authority",
-      "score": 2063.28,
+      "score": 2063.01,
       "total_matches": 83,
       "wins": 59,
       "losses": 24,
       "last_match_date": "2024-01-08"
+    },
+    {
+      "rank": 10,
+      "mc_id": "MC0469",
+      "mc_name": "ミメイ",
+      "score": 2061.19,
+      "total_matches": 112,
+      "wins": 67,
+      "losses": 45,
+      "last_match_date": "2026-04-26"
     }
   ],
   "prize_rankings": [
@@ -277,7 +277,7 @@
       "rank": 5,
       "mc_id": "MC0214",
       "mc_name": "RAWAXXX",
-      "total_prize_money": 7900000
+      "total_prize_money": 8000000
     },
     {
       "rank": 6,
@@ -293,21 +293,21 @@
     },
     {
       "rank": 8,
+      "mc_id": "MC0472",
+      "mc_name": "崇勲",
+      "total_prize_money": 3800000
+    },
+    {
+      "rank": 9,
       "mc_id": "MC0474",
       "mc_name": "泰斗(裂固)",
       "total_prize_money": 3600000
     },
     {
-      "rank": 9,
+      "rank": 10,
       "mc_id": "MC0395",
       "mc_name": "晋平太",
       "total_prize_money": 3550000
-    },
-    {
-      "rank": 10,
-      "mc_id": "MC0756",
-      "mc_name": "COCRGI WHITE",
-      "total_prize_money": 3400000
     }
   ]
 }
