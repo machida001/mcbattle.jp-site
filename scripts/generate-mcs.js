@@ -266,9 +266,23 @@ function normalizePrizeAdjustments(detail) {
         ""
       ).trim();
 
+      const eventName = safeString(
+        item.event_name ??
+        item.eventName ??
+        item.event_title ??
+        item.eventTitle ??
+        item.event_name_full ??
+        item.eventNameFull ??
+        item.tournament_name ??
+        item.tournamentName ??
+        item.event ??
+        ""
+      ).trim();
+
       return {
         amount,
-        note
+        note,
+        event_name: eventName
       };
     })
     .filter(item => item.amount !== null && item.amount !== 0);
@@ -280,8 +294,10 @@ function renderPrizeAdjustmentNoteText(item) {
 
   const amountText = `${formatYen(amount)}円`;
   const note = safeString(item.note || "").trim();
+  const eventName = safeString(item.event_name || "").trim();
+  const detailText = note ? `${amountText}（${note}）` : amountText;
 
-  return note ? `${amountText}:${note}` : amountText;
+  return eventName ? `${eventName}：${detailText}` : detailText;
 }
 
 function buildBattleListItems(items, battleType) {
