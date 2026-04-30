@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-29T16:09:39.045Z",
-  "total": 839,
+  "updated_at": "2026-04-30T11:21:57.818Z",
+  "total": 873,
   "mcs": [
     {
       "mc_id": "MC0040",
@@ -71,6 +71,15 @@
       "mc_name_sub": "",
       "mc_description": "広島代表としてUMB 2018 GRAND CHAMPIONSHIP出場。UMB 2018 広島予選優勝。",
       "mc_yomi": "あいず",
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC1066",
+      "mc_name": "icepikk",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "あいすぴっく",
       "notes": "",
       "kana_group": "あ"
     },
@@ -206,6 +215,15 @@
       "mc_name_sub": "",
       "mc_description": "静岡Rep。UMB 2013 静岡予選優勝、UMB 2015 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "あざいすと",
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC1059",
+      "mc_name": "Azathoth",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "あざそーす",
       "notes": "",
       "kana_group": "あ"
     },
@@ -822,6 +840,15 @@
       "kana_group": "あ"
     },
     {
+      "mc_id": "MC1050",
+      "mc_name": "エスカ",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "えすか",
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
       "mc_id": "MC0023",
       "mc_name": "S-kainê",
       "mc_name_sub": "",
@@ -1020,6 +1047,15 @@
       "kana_group": "あ"
     },
     {
+      "mc_id": "MC1071",
+      "mc_name": "MC TAWARA",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "えむしーたわら",
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
       "mc_id": "MC0015",
       "mc_name": "MC☆ニガリ",
       "mc_name_sub": "MC☆ニガリ a.k.a 赤い稲妻",
@@ -1214,6 +1250,15 @@
       "mc_name_sub": "",
       "mc_description": "愛知出身。第5回 激闘！ラップ甲子園優勝、楽曲「JUST DO IT」など。",
       "mc_yomi": "おーだぶるじー",
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC1068",
+      "mc_name": "ootee",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "おおてえ",
       "notes": "",
       "kana_group": "あ"
     },
@@ -1434,6 +1479,15 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1048",
+      "mc_name": "Kyphos!s",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "かいふぉしす",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0401",
       "mc_name": "楓",
       "mc_name_sub": "",
@@ -1461,6 +1515,15 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1053",
+      "mc_name": "カクニケンスケ",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "かくにけんすけ",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0765",
       "mc_name": "影賭",
       "mc_name_sub": "",
@@ -1475,6 +1538,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "がしま",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC1061",
+      "mc_name": "がじゅまる",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "がじゅまる",
       "notes": "",
       "kana_group": "か"
     },
@@ -1538,6 +1610,15 @@
       "mc_name_sub": "",
       "mc_description": "滋賀代表としてUMB 2016 GRAND CHAMPIONSHIP出場。UMB 2016 滋賀予選優勝。",
       "mc_yomi": "かなめ",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC1060",
+      "mc_name": "KANEKO THE FULL TIME",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "かねこざふるたいむ",
       "notes": "",
       "kana_group": "か"
     },
@@ -1668,6 +1749,15 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1055",
+      "mc_name": "KissShot",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "きすしょっと",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0349",
       "mc_name": "ギネス",
       "mc_name_sub": "",
@@ -1686,11 +1776,29 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1043",
+      "mc_name": "きばな",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "きばな",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0073",
       "mc_name": "CASPER ACE",
       "mc_name_sub": "",
       "mc_description": "CASPER ACE",
       "mc_yomi": "きゃすぱーえーす",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC1039",
+      "mc_name": "Catty Evan",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "きゃってぃえヴぁん",
       "notes": "",
       "kana_group": "か"
     },
@@ -1880,6 +1988,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "くぼたかい",
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC1069",
+      "mc_name": "KUMAR",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "くまー",
       "notes": "",
       "kana_group": "か"
     },
@@ -2865,6 +2982,15 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1058",
+      "mc_name": "ジジ",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "じじ",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0724",
       "mc_name": "ししど",
       "mc_name_sub": "",
@@ -2946,6 +3072,15 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1046",
+      "mc_name": "Jave South",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "じゃいぶさうす",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0147",
       "mc_name": "JAVE",
       "mc_name_sub": "",
@@ -2960,6 +3095,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "しゃかぼうず",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC1062",
+      "mc_name": "SHAKU",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "しゃく",
       "notes": "",
       "kana_group": "さ"
     },
@@ -3270,6 +3414,15 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1049",
+      "mc_name": "SING ARTHUR",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "しんぐあーさー",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC1009",
       "mc_name": "shin kudo",
       "mc_name_sub": "",
@@ -3468,6 +3621,15 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1065",
+      "mc_name": "ストローム",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "すとろーむ",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0354",
       "mc_name": "スナフキン",
       "mc_name_sub": "",
@@ -3635,6 +3797,15 @@
       "mc_name_sub": "",
       "mc_description": "富山代表としてUMB 2024 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "ぜろ",
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC1047",
+      "mc_name": "Zen",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ぜん",
       "notes": "",
       "kana_group": "さ"
     },
@@ -3878,6 +4049,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "たくやいで",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC1072",
+      "mc_name": "タケアキ",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "たけあき",
       "notes": "",
       "kana_group": "た"
     },
@@ -4251,6 +4431,15 @@
       "kana_group": "た"
     },
     {
+      "mc_id": "MC1064",
+      "mc_name": "DEPP HELD",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "でぃーぷへるど",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
       "mc_id": "MC0099",
       "mc_name": "DISY",
       "mc_name_sub": "",
@@ -4445,6 +4634,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "てんぐ",
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC1051",
+      "mc_name": "ドイケン",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "どいけん",
       "notes": "",
       "kana_group": "た"
     },
@@ -4998,6 +5196,15 @@
       "kana_group": "は"
     },
     {
+      "mc_id": "MC1054",
+      "mc_name": "HAIIRO DE ROSSI",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "はいいろでろっし",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
       "mc_id": "MC0861",
       "mc_name": "バイオレンスライダー",
       "mc_name_sub": "",
@@ -5021,6 +5228,15 @@
       "mc_name_sub": "",
       "mc_description": "福山を拠点に活動。UMB 2015 広島予選にHI-JET名義でエントリー、THE AXIS RECORDS所属。",
       "mc_yomi": "はいじぇっと",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC1067",
+      "mc_name": "VITALIZE",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ばいたらいず",
       "notes": "",
       "kana_group": "は"
     },
@@ -5250,6 +5466,15 @@
       "kana_group": "は"
     },
     {
+      "mc_id": "MC1042",
+      "mc_name": "はまちゅー",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "はまちゅー",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
       "mc_id": "MC0050",
       "mc_name": "BALA a.k.a SBKN",
       "mc_name_sub": "",
@@ -5408,6 +5633,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "ひさしくん",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC1052",
+      "mc_name": "ビシキマ",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "びしきま",
       "notes": "",
       "kana_group": "は"
     },
@@ -5637,6 +5871,15 @@
       "kana_group": "は"
     },
     {
+      "mc_id": "MC1063",
+      "mc_name": "武昇",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ぶしょう",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
       "mc_id": "MC0070",
       "mc_name": "BUSS",
       "mc_name_sub": "",
@@ -5696,6 +5939,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "ふらいんぐふぉっくす",
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC1070",
+      "mc_name": "BLASTA",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ぶらすた",
       "notes": "",
       "kana_group": "は"
     },
@@ -6092,6 +6344,15 @@
       "mc_name_sub": "",
       "mc_description": "福岡県北九州出身、ベゲfastman人所属。EP『POA』、Maiji×5HUH31名義での『匕首緑』など。",
       "mc_yomi": "まいじ",
+      "notes": "",
+      "kana_group": "ま"
+    },
+    {
+      "mc_id": "MC1040",
+      "mc_name": "MAIllI",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "まいり",
       "notes": "",
       "kana_group": "ま"
     },
@@ -6600,6 +6861,15 @@
       "kana_group": "や"
     },
     {
+      "mc_id": "MC1044",
+      "mc_name": "YOUKEY",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ゆーきー",
+      "notes": "",
+      "kana_group": "や"
+    },
+    {
       "mc_id": "MC0323",
       "mc_name": "YUKSTA-ILL",
       "mc_name_sub": "",
@@ -6686,6 +6956,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "ゆかりん",
+      "notes": "",
+      "kana_group": "や"
+    },
+    {
+      "mc_id": "MC1041",
+      "mc_name": "Juda",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ゆだ",
       "notes": "",
       "kana_group": "や"
     },
@@ -7185,6 +7464,15 @@
       "kana_group": "ら"
     },
     {
+      "mc_id": "MC1057",
+      "mc_name": "Luiz",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "るいず",
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
       "mc_id": "MC0259",
       "mc_name": "Route",
       "mc_name_sub": "",
@@ -7199,6 +7487,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "るーどあるふぁ",
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC1045",
+      "mc_name": "Lu-LAR",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "るーらー",
       "notes": "",
       "kana_group": "ら"
     },
@@ -7334,6 +7631,15 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "れっどうぃんぐ",
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC1056",
+      "mc_name": "REN",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "れん",
       "notes": "",
       "kana_group": "ら"
     },
