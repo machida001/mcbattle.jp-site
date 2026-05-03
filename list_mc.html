@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
   <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/favicon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon-180x180.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MC一覧 | 国内MCバトルMCデータベース | MCBattle.jp</title>
@@ -92,11 +92,104 @@
       padding-right: 12px;
     }
 
+    .mcs-search {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin: 0 0 12px;
+    }
+
+    .mcs-search-label {
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .mcs-search-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .mcs-search-input {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font: inherit;
+      font-size: 0.94rem;
+      line-height: 1.3;
+      padding: 0 14px;
+      outline: none;
+      box-sizing: border-box;
+      transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background-color 0.18s ease;
+    }
+
+    .mcs-search-input::placeholder {
+      color: rgba(241,244,251,0.44);
+    }
+
+    .mcs-search-input:focus {
+      border-color: var(--line-strong);
+      box-shadow: 0 0 0 3px rgba(216,180,106,0.08);
+      background: rgba(255,255,255,0.055);
+    }
+
+    .mcs-search-clear {
+      flex: 0 0 auto;
+      min-width: 42px;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.035);
+      color: var(--muted);
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+      transition:
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .mcs-search-clear:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.07);
+      border-color: var(--line-strong);
+      color: var(--text);
+    }
+
+    .mcs-search-clear.is-hidden {
+      display: none;
+    }
+
+    .mcs-search-help {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.48;
+    }
+
     .mcs-tabs {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-bottom: 10px;
+    }
+
+    .mcs-tabs.is-hidden {
+      display: none;
     }
 
     .mcs-tab {
@@ -139,6 +232,12 @@
       margin: 4px 0 6px;
       font-size: 0.98rem;
       color: var(--accent-soft);
+    }
+
+    .mcs-result-count {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.86rem;
     }
 
     .mcs-list {
@@ -203,6 +302,36 @@
         padding-right: 10px;
       }
 
+      .mcs-search {
+        gap: 6px;
+        margin-bottom: 11px;
+      }
+
+      .mcs-search-label {
+        font-size: 0.82rem;
+      }
+
+      .mcs-search-row {
+        gap: 7px;
+      }
+
+      .mcs-search-input {
+        min-height: 40px;
+        padding: 0 13px;
+        font-size: 0.9rem;
+      }
+
+      .mcs-search-clear {
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 0.95rem;
+      }
+
+      .mcs-search-help {
+        font-size: 0.75rem;
+        line-height: 1.42;
+      }
+
       .mcs-tabs {
         gap: 7px;
         margin-bottom: 9px;
@@ -222,6 +351,10 @@
       .mcs-section-title {
         margin: 3px 0 5px;
         font-size: 0.95rem;
+      }
+
+      .mcs-result-count {
+        font-size: 0.82rem;
       }
     }
   </style>
@@ -252,6 +385,21 @@
 
     <section class="card">
       <div class="mcs-list-wrap">
+        <div class="mcs-search" role="search" aria-label="MC検索">
+          <label class="mcs-search-label" for="mcs-search-input">MC名・読み仮名で検索</label>
+          <div class="mcs-search-row">
+            <input
+              id="mcs-search-input"
+              class="mcs-search-input"
+              type="search"
+              placeholder="例：R-指定 / りょふ / Authority"
+              autocomplete="off"
+            />
+            <button id="mcs-search-clear" class="mcs-search-clear is-hidden" type="button" aria-label="検索語をクリア">×</button>
+          </div>
+          <p class="mcs-search-help">MC名、読み仮名、カタカナ入力で絞り込めます。</p>
+        </div>
+
         <div id="mcs-tabs" class="mcs-tabs"></div>
         <p id="mcs-status" class="muted">読み込み中...</p>
         <div id="mcs-panel"></div>
@@ -262,6 +410,10 @@
   <script>
     const MCS_JSON_URL = "./data/mcs.json";
     const TAB_ORDER = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ"];
+
+    let allMcs = [];
+    let allGroups = {};
+    let currentTab = "あ";
 
     function escapeHtml(value) {
       return String(value ?? "")
@@ -276,6 +428,20 @@
       return String(str || "").replace(/[\u30a1-\u30f6]/g, ch =>
         String.fromCharCode(ch.charCodeAt(0) - 0x60)
       );
+    }
+
+    function normalizeSearchText(value) {
+      return toHiragana(String(value || ""))
+        .toLowerCase()
+        .replace(/\s+/g, "")
+        .trim();
+    }
+
+    function getSearchText(mc) {
+      return normalizeSearchText([
+        mc.mc_name || "",
+        mc.mc_yomi || ""
+      ].join(" "));
     }
 
     function getTabGroup(mc) {
@@ -307,8 +473,30 @@
       });
     }
 
+    function createMcList(mcs) {
+      const list = document.createElement("ul");
+      list.className = "mcs-list";
+
+      mcs.forEach(mc => {
+        const li = document.createElement("li");
+        const mcId = String(mc.mc_id || "");
+        const name = String(mc.mc_name || "MC名不明");
+
+        if (mcId) {
+          li.innerHTML = `<a class="mc-link" href="detail_mc/${encodeURIComponent(mcId)}.html">${escapeHtml(name)}</a>`;
+        } else {
+          li.innerHTML = `<span class="mc-link-static">${escapeHtml(name)}</span>`;
+        }
+
+        list.appendChild(li);
+      });
+
+      return list;
+    }
+
     function renderTabs(groups, activeTab) {
       const tabsEl = document.getElementById("mcs-tabs");
+      tabsEl.classList.remove("is-hidden");
       tabsEl.innerHTML = "";
 
       TAB_ORDER.forEach(tabName => {
@@ -324,6 +512,7 @@
     }
 
     function renderPanel(groups, activeTab) {
+      currentTab = activeTab;
       renderTabs(groups, activeTab);
 
       const panelEl = document.getElementById("mcs-panel");
@@ -334,9 +523,6 @@
       sectionTitle.textContent = `${activeTab}行`;
       panelEl.appendChild(sectionTitle);
 
-      const list = document.createElement("ul");
-      list.className = "mcs-list";
-
       const target = groups[activeTab] || [];
       if (target.length === 0) {
         const empty = document.createElement("p");
@@ -346,21 +532,62 @@
         return;
       }
 
-      target.forEach(mc => {
-        const li = document.createElement("li");
-        const mcId = String(mc.mc_id || "");
-        const name = String(mc.mc_name || "MC名不明");
+      panelEl.appendChild(createMcList(target));
+    }
 
-        if (mcId) {
-          li.innerHTML = `<a class="mc-link" href="detail_mc/${encodeURIComponent(mcId)}.html">${escapeHtml(name)}</a>`;
-        } else {
-          li.innerHTML = `<span class="mc-link-static">${escapeHtml(name)}</span>`;
-        }
+    function renderSearchResults(keyword) {
+      const tabsEl = document.getElementById("mcs-tabs");
+      const panelEl = document.getElementById("mcs-panel");
+      const normalizedKeyword = normalizeSearchText(keyword);
 
-        list.appendChild(li);
+      tabsEl.classList.add("is-hidden");
+      panelEl.innerHTML = "";
+
+      const results = allMcs.filter(mc => getSearchText(mc).includes(normalizedKeyword));
+
+      const sectionTitle = document.createElement("h2");
+      sectionTitle.className = "mcs-section-title";
+      sectionTitle.innerHTML = `検索結果 <span class="mcs-result-count">${results.length}件</span>`;
+      panelEl.appendChild(sectionTitle);
+
+      if (results.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "mcs-empty";
+        empty.textContent = "該当するMCがいません";
+        panelEl.appendChild(empty);
+        return;
+      }
+
+      panelEl.appendChild(createMcList(results));
+    }
+
+    function updateSearchView() {
+      const inputEl = document.getElementById("mcs-search-input");
+      const clearEl = document.getElementById("mcs-search-clear");
+      const keyword = inputEl.value || "";
+      const normalizedKeyword = normalizeSearchText(keyword);
+
+      if (normalizedKeyword) {
+        clearEl.classList.remove("is-hidden");
+        renderSearchResults(keyword);
+        return;
+      }
+
+      clearEl.classList.add("is-hidden");
+      renderPanel(allGroups, currentTab);
+    }
+
+    function setupSearch() {
+      const inputEl = document.getElementById("mcs-search-input");
+      const clearEl = document.getElementById("mcs-search-clear");
+
+      inputEl.addEventListener("input", updateSearchView);
+
+      clearEl.addEventListener("click", () => {
+        inputEl.value = "";
+        inputEl.focus();
+        updateSearchView();
       });
-
-      panelEl.appendChild(list);
     }
 
     async function loadMcsJson() {
@@ -412,8 +639,13 @@
           console.log("mcs skipped because group was not found:", skipped);
         }
 
+        allMcs = mcs;
+        allGroups = groups;
+
         const firstTab = TAB_ORDER.find(tab => groups[tab] && groups[tab].length > 0) || "あ";
+        currentTab = firstTab;
         renderPanel(groups, firstTab);
+        setupSearch();
 
         if (mcs.length === 0) {
           statusEl.style.display = "block";
