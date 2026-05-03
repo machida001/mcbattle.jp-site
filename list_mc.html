@@ -193,6 +193,60 @@
       display: none;
     }
 
+    .mcs-hot-section {
+      margin: 0 0 14px;
+    }
+
+    .mcs-hot-section.is-hidden {
+      display: none;
+    }
+
+    .mcs-hot-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mcs-hot-list li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .mcs-hot-link,
+    .mcs-hot-static {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid rgba(216,180,106,0.28);
+      border-radius: 999px;
+      background: rgba(216,180,106,0.08);
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+      transition:
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .mcs-hot-link:hover {
+      transform: translateY(-1px);
+      background: rgba(216,180,106,0.13);
+      border-color: rgba(216,180,106,0.42);
+      box-shadow: 0 0 14px rgba(216,180,106,0.10);
+      text-decoration: none;
+      opacity: 1;
+    }
+
     .mcs-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -349,6 +403,21 @@
         font-size: 0.82rem;
       }
 
+      .mcs-hot-section {
+        margin-bottom: 13px;
+      }
+
+      .mcs-hot-list {
+        gap: 7px;
+      }
+
+      .mcs-hot-link,
+      .mcs-hot-static {
+        min-height: 32px;
+        padding: 0 11px;
+        font-size: 0.84rem;
+      }
+
       .mcs-tabs {
         gap: 7px;
         margin-bottom: 9px;
@@ -417,6 +486,11 @@
           <p class="mcs-search-help">MC名、読み仮名、カタカナ入力で絞り込めます。</p>
         </div>
 
+        <div id="mcs-hot-section" class="mcs-hot-section">
+          <h2 class="mcs-block-title">注目度の高いMC</h2>
+          <ul id="mcs-hot-list" class="mcs-hot-list"></ul>
+        </div>
+
         <h2 id="mcs-all-title" class="mcs-block-title">全件表示</h2>
         <div id="mcs-tabs" class="mcs-tabs"></div>
         <p id="mcs-status" class="muted">読み込み中...</p>
@@ -431,6 +505,7 @@
 
     let allMcs = [];
     let allGroups = {};
+    let hotMcs = [];
     let currentTab = "あ";
     let searchInitialized = false;
 
@@ -461,6 +536,12 @@
         mc.mc_name || "",
         mc.mc_yomi || ""
       ].join(" "));
+    }
+
+    function isHotMc(mc) {
+      const value = mc ? mc.hot_mc : "";
+      const text = String(value ?? "").toLowerCase().trim();
+      return value === true || value === 1 || text === "1" || text === "true" || text === "yes" || text === "hot";
     }
 
     function getTabGroup(mc) {
@@ -513,9 +594,41 @@
       return list;
     }
 
+    function renderHotMcs(mcs) {
+      const sectionEl = document.getElementById("mcs-hot-section");
+      const listEl = document.getElementById("mcs-hot-list");
+      listEl.innerHTML = "";
+
+      if (!mcs || mcs.length === 0) {
+        sectionEl.classList.add("is-hidden");
+        return;
+      }
+
+      sectionEl.classList.remove("is-hidden");
+
+      mcs.forEach(mc => {
+        const li = document.createElement("li");
+        const mcId = String(mc.mc_id || "");
+        const name = String(mc.mc_name || "MC名不明");
+
+        if (mcId) {
+          li.innerHTML = `<a class="mcs-hot-link" href="detail_mc/${encodeURIComponent(mcId)}.html">${escapeHtml(name)}</a>`;
+        } else {
+          li.innerHTML = `<span class="mcs-hot-static">${escapeHtml(name)}</span>`;
+        }
+
+        listEl.appendChild(li);
+      });
+    }
+
     function renderTabs(groups, activeTab) {
       const tabsEl = document.getElementById("mcs-tabs");
       const allTitleEl = document.getElementById("mcs-all-title");
+      const hotSectionEl = document.getElementById("mcs-hot-section");
+
+      if (hotMcs.length > 0) {
+        hotSectionEl.classList.remove("is-hidden");
+      }
 
       allTitleEl.classList.remove("is-hidden");
       tabsEl.classList.remove("is-hidden");
@@ -560,9 +673,11 @@
     function renderSearchResults(keyword) {
       const tabsEl = document.getElementById("mcs-tabs");
       const allTitleEl = document.getElementById("mcs-all-title");
+      const hotSectionEl = document.getElementById("mcs-hot-section");
       const panelEl = document.getElementById("mcs-panel");
       const normalizedKeyword = normalizeSearchText(keyword);
 
+      hotSectionEl.classList.add("is-hidden");
       allTitleEl.classList.add("is-hidden");
       tabsEl.classList.add("is-hidden");
       panelEl.innerHTML = "";
@@ -598,6 +713,7 @@
       }
 
       clearEl.classList.add("is-hidden");
+      renderHotMcs(hotMcs);
       renderPanel(allGroups, currentTab);
     }
 
@@ -669,9 +785,11 @@
 
         allMcs = mcs;
         allGroups = groups;
+        hotMcs = sortMcs(mcs.filter(isHotMc));
 
         const firstTab = TAB_ORDER.find(tab => groups[tab] && groups[tab].length > 0) || "あ";
         currentTab = firstTab;
+        renderHotMcs(hotMcs);
         renderPanel(groups, firstTab);
         setupSearch();
         updateSearchView();
