@@ -181,6 +181,18 @@
       line-height: 1.48;
     }
 
+    .mcs-block-title {
+      margin: 4px 0 10px;
+      color: var(--accent);
+      font-size: 0.98rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .mcs-block-title.is-hidden {
+      display: none;
+    }
+
     .mcs-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -332,6 +344,11 @@
         line-height: 1.42;
       }
 
+      .mcs-block-title {
+        margin: 3px 0 9px;
+        font-size: 0.94rem;
+      }
+
       .mcs-tabs {
         gap: 7px;
         margin-bottom: 9px;
@@ -400,6 +417,7 @@
           <p class="mcs-search-help">MC名、読み仮名、カタカナ入力で絞り込めます。</p>
         </div>
 
+        <h2 id="mcs-all-title" class="mcs-block-title">全件表示</h2>
         <div id="mcs-tabs" class="mcs-tabs"></div>
         <p id="mcs-status" class="muted">読み込み中...</p>
         <div id="mcs-panel"></div>
@@ -414,6 +432,7 @@
     let allMcs = [];
     let allGroups = {};
     let currentTab = "あ";
+    let searchInitialized = false;
 
     function escapeHtml(value) {
       return String(value ?? "")
@@ -496,6 +515,9 @@
 
     function renderTabs(groups, activeTab) {
       const tabsEl = document.getElementById("mcs-tabs");
+      const allTitleEl = document.getElementById("mcs-all-title");
+
+      allTitleEl.classList.remove("is-hidden");
       tabsEl.classList.remove("is-hidden");
       tabsEl.innerHTML = "";
 
@@ -537,9 +559,11 @@
 
     function renderSearchResults(keyword) {
       const tabsEl = document.getElementById("mcs-tabs");
+      const allTitleEl = document.getElementById("mcs-all-title");
       const panelEl = document.getElementById("mcs-panel");
       const normalizedKeyword = normalizeSearchText(keyword);
 
+      allTitleEl.classList.add("is-hidden");
       tabsEl.classList.add("is-hidden");
       panelEl.innerHTML = "";
 
@@ -578,6 +602,8 @@
     }
 
     function setupSearch() {
+      if (searchInitialized) return;
+
       const inputEl = document.getElementById("mcs-search-input");
       const clearEl = document.getElementById("mcs-search-clear");
 
@@ -588,6 +614,8 @@
         inputEl.focus();
         updateSearchView();
       });
+
+      searchInitialized = true;
     }
 
     async function loadMcsJson() {
@@ -646,6 +674,7 @@
         currentTab = firstTab;
         renderPanel(groups, firstTab);
         setupSearch();
+        updateSearchView();
 
         if (mcs.length === 0) {
           statusEl.style.display = "block";
@@ -661,6 +690,14 @@
         statusEl.classList.add("error");
       }
     }
+
+    window.addEventListener("pageshow", function () {
+      setTimeout(function () {
+        if (allMcs.length > 0) {
+          updateSearchView();
+        }
+      }, 0);
+    });
 
     loadMcsList();
   </script>
