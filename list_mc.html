@@ -201,6 +201,10 @@
       display: none;
     }
 
+    .mcs-hot-title {
+      margin-top: 0;
+    }
+
     .mcs-hot-list {
       display: flex;
       flex-wrap: wrap;
@@ -407,6 +411,10 @@
         margin-bottom: 13px;
       }
 
+      .mcs-hot-title {
+        margin-top: 0;
+      }
+
       .mcs-hot-list {
         gap: 7px;
       }
@@ -486,11 +494,6 @@
           <p class="mcs-search-help">MC名、読み仮名、カタカナ入力で絞り込めます。</p>
         </div>
 
-        <div id="mcs-hot-section" class="mcs-hot-section">
-          <h2 class="mcs-block-title">注目度の高いMC</h2>
-          <ul id="mcs-hot-list" class="mcs-hot-list"></ul>
-        </div>
-
         <h2 id="mcs-all-title" class="mcs-block-title">全件表示</h2>
         <div id="mcs-tabs" class="mcs-tabs"></div>
         <p id="mcs-status" class="muted">読み込み中...</p>
@@ -505,7 +508,6 @@
 
     let allMcs = [];
     let allGroups = {};
-    let hotMcs = [];
     let currentTab = "あ";
     let searchInitialized = false;
 
@@ -594,19 +596,22 @@
       return list;
     }
 
-    function renderHotMcs(mcs) {
-      const sectionEl = document.getElementById("mcs-hot-section");
-      const listEl = document.getElementById("mcs-hot-list");
-      listEl.innerHTML = "";
+    function createHotMcsElement(mcs, activeTab) {
+      const target = (mcs || []).filter(mc => getTabGroup(mc) === activeTab && isHotMc(mc));
+      if (target.length === 0) return null;
 
-      if (!mcs || mcs.length === 0) {
-        sectionEl.classList.add("is-hidden");
-        return;
-      }
+      const sectionEl = document.createElement("div");
+      sectionEl.className = "mcs-hot-section";
 
-      sectionEl.classList.remove("is-hidden");
+      const titleEl = document.createElement("h2");
+      titleEl.className = "mcs-block-title mcs-hot-title";
+      titleEl.textContent = `${activeTab}行の注目度の高いMC`;
+      sectionEl.appendChild(titleEl);
 
-      mcs.forEach(mc => {
+      const listEl = document.createElement("ul");
+      listEl.className = "mcs-hot-list";
+
+      sortMcs(target).forEach(mc => {
         const li = document.createElement("li");
         const mcId = String(mc.mc_id || "");
         const name = String(mc.mc_name || "MC名不明");
@@ -619,16 +624,14 @@
 
         listEl.appendChild(li);
       });
+
+      sectionEl.appendChild(listEl);
+      return sectionEl;
     }
 
     function renderTabs(groups, activeTab) {
       const tabsEl = document.getElementById("mcs-tabs");
       const allTitleEl = document.getElementById("mcs-all-title");
-      const hotSectionEl = document.getElementById("mcs-hot-section");
-
-      if (hotMcs.length > 0) {
-        hotSectionEl.classList.remove("is-hidden");
-      }
 
       allTitleEl.classList.remove("is-hidden");
       tabsEl.classList.remove("is-hidden");
@@ -653,6 +656,11 @@
       const panelEl = document.getElementById("mcs-panel");
       panelEl.innerHTML = "";
 
+      const hotEl = createHotMcsElement(allMcs, activeTab);
+      if (hotEl) {
+        panelEl.appendChild(hotEl);
+      }
+
       const sectionTitle = document.createElement("h2");
       sectionTitle.className = "mcs-section-title";
       sectionTitle.textContent = `${activeTab}行`;
@@ -673,11 +681,9 @@
     function renderSearchResults(keyword) {
       const tabsEl = document.getElementById("mcs-tabs");
       const allTitleEl = document.getElementById("mcs-all-title");
-      const hotSectionEl = document.getElementById("mcs-hot-section");
       const panelEl = document.getElementById("mcs-panel");
       const normalizedKeyword = normalizeSearchText(keyword);
 
-      hotSectionEl.classList.add("is-hidden");
       allTitleEl.classList.add("is-hidden");
       tabsEl.classList.add("is-hidden");
       panelEl.innerHTML = "";
@@ -713,7 +719,6 @@
       }
 
       clearEl.classList.add("is-hidden");
-      renderHotMcs(hotMcs);
       renderPanel(allGroups, currentTab);
     }
 
@@ -785,11 +790,9 @@
 
         allMcs = mcs;
         allGroups = groups;
-        hotMcs = sortMcs(mcs.filter(isHotMc));
 
         const firstTab = TAB_ORDER.find(tab => groups[tab] && groups[tab].length > 0) || "あ";
         currentTab = firstTab;
-        renderHotMcs(hotMcs);
         renderPanel(groups, firstTab);
         setupSearch();
         updateSearchView();
