@@ -529,6 +529,14 @@ function getRoundSortValue(roundName) {
 
 function sortMatchHistory(items) {
   return [...items].sort((a, b) => {
+    const hotA = Number(a.opponent_hot_mc || 0);
+    const hotB = Number(b.opponent_hot_mc || 0);
+    if (hotA !== hotB) return hotB - hotA;
+
+    const peakA = firstValidNumber([a.opponent_peak_score], -1);
+    const peakB = firstValidNumber([b.opponent_peak_score], -1);
+    if (peakA !== peakB) return peakB - peakA;
+
     const dateA = String(a.event_date || "");
     const dateB = String(b.event_date || "");
     if (dateA !== dateB) return dateB.localeCompare(dateA);
