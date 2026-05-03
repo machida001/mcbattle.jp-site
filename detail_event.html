@@ -2,22 +2,22 @@
 <html lang="ja">
 <head>
   <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/favicon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon-180x180.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>大会詳細ページへ移動中 | MCBattle.jp</title>
   <meta name="robots" content="noindex,follow" />
-  <link rel="canonical" href="https://mcbattle.jp/list_event.html" />
 
   <script>
     (function () {
       const params = new URLSearchParams(window.location.search);
-      const eventId = String(params.get("event_id") || "").trim();
+      const rawEventId = String(params.get("event_id") || "").trim();
+      const safeEventId = rawEventId.replace(/[^A-Za-z0-9_-]/g, "");
 
-      if (eventId) {
-        location.replace("/detail_event/" + encodeURIComponent(eventId) + ".html");
+      if (safeEventId) {
+        location.replace("/detail_event/" + encodeURIComponent(safeEventId) + ".html");
         return;
       }
 
