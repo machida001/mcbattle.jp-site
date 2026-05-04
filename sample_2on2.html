@@ -701,6 +701,74 @@
         font-size:.76rem;
       }
     }
+
+    /* 2on2 / team battle layout: チーム単位の縦積み表示 */
+    .match-team-layout{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .match-team-side{
+      width: 100%;
+      min-width: 0;
+    }
+
+    .match-team-side.is-winner,
+    .match-team-side.is-loser{
+      display: block;
+    }
+
+    .match-member-list{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .match-team-side .team-name-label{
+      margin: 0 0 6px;
+    }
+
+    .match-vs{
+      width: 100%;
+      min-height: 0;
+      padding: 1px 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 900;
+      line-height: 1;
+      text-align: center;
+      letter-spacing: 0.08em;
+    }
+
+    .match-team-side .result-link-winner,
+    .match-team-side .result-link-loser{
+      width: auto;
+      min-width: 82px;
+      max-width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      .match-team-layout{
+        gap: 7px;
+      }
+
+      .match-member-list{
+        gap: 5px;
+      }
+
+      .match-vs{
+        font-size: 0.76rem;
+      }
+
+      .match-team-side .result-link-winner,
+      .match-team-side .result-link-loser{
+        min-width: 76px;
+      }
+    }
+
   </style>
 </head>
 <body>
