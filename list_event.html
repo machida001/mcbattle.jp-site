@@ -2,10 +2,11 @@
 <html lang="ja">
 <head>
   <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/favicon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon-180x180.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>大会一覧 | 国内MCバトル大会データベース | MCBattle.jp</title>
   <meta name="description" content="国内MCバトルの大会一覧ページです。開催済み大会をカテゴリ別に掲載し、各大会の詳細ページから開催日、優勝者、試合結果を確認できます。">
   <link rel="canonical" href="https://mcbattle.jp/list_event.html" />
@@ -30,7 +31,9 @@
     gtag('js', new Date());
     gtag('config', 'G-9C8VGD3THB');
   </script>
+
   <link rel="stylesheet" href="style.css" />
+
   <style>
     .event-group-list {
       display: flex;
@@ -105,6 +108,29 @@
 
     .event-group.is-open .event-group-body {
       display: block;
+    }
+
+    .event-group-description {
+      margin: 9px 0 8px;
+      padding: 11px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(216,180,106,0.22);
+      background:
+        linear-gradient(180deg, rgba(216,180,106,0.08), rgba(216,180,106,0.025)),
+        rgba(255,255,255,0.018);
+      color: #c7cedc;
+      font-size: 0.84rem;
+      line-height: 1.68;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .event-group-description p {
+      margin: 0;
+    }
+
+    .event-group-description p + p {
+      margin-top: 5px;
     }
 
     .event-list {
@@ -200,6 +226,18 @@
         padding: 0 8px 8px;
       }
 
+      .event-group-description {
+        margin: 8px 0 7px;
+        padding: 10px 11px;
+        border-radius: 13px;
+        font-size: 0.78rem;
+        line-height: 1.58;
+      }
+
+      .event-group-description p + p {
+        margin-top: 4px;
+      }
+
       .event-row {
         padding: 8px 9px 7px;
         border-radius: 12px;
@@ -256,8 +294,22 @@
 
     function formatDate(v) {
       if (!v) return "";
-      const d = new Date(v);
-      if (isNaN(d)) return v;
+
+      const s = String(v).trim();
+
+      if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+        const [y, m, d] = s.split("-");
+        return `${y}.${m}.${d}`;
+      }
+
+      if (/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(s)) {
+        const [y, m, d] = s.split("/");
+        return `${y}.${String(m).padStart(2, "0")}.${String(d).padStart(2, "0")}`;
+      }
+
+      const d = new Date(s);
+      if (Number.isNaN(d.getTime())) return s;
+
       return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
     }
 
@@ -273,6 +325,10 @@
       return String(e.category_name || "").trim() || String(e.event_category || "").trim() || "その他";
     }
 
+    function getCategoryDescription(e) {
+      return String(e.category_description || "").trim();
+    }
+
     function getCategoryShowOrder(e) {
       const n = Number(e.category_show_order);
       return Number.isFinite(n) ? n : 999999;
@@ -280,8 +336,21 @@
 
     function getDateValue(v) {
       if (!v) return null;
-      const d = new Date(v);
-      return isNaN(d) ? null : d;
+
+      const s = String(v).trim();
+
+      if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+        const [y, m, d] = s.split("-");
+        return new Date(Number(y), Number(m) - 1, Number(d));
+      }
+
+      if (/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(s)) {
+        const [y, m, d] = s.split("/");
+        return new Date(Number(y), Number(m) - 1, Number(d));
+      }
+
+      const d = new Date(s);
+      return Number.isNaN(d.getTime()) ? null : d;
     }
 
     function compareEventsByDateDesc(a, b) {
@@ -300,23 +369,32 @@
 
       events.forEach(event => {
         const categoryName = getCategoryName(event);
+        const categoryDescription = getCategoryDescription(event);
         const key = `${getCategoryShowOrder(event)}__${categoryName}`;
 
         if (!map.has(key)) {
           map.set(key, {
             category_name: categoryName,
             category_show_order: getCategoryShowOrder(event),
+            category_description: categoryDescription,
             items: []
           });
         }
 
-        map.get(key).items.push(event);
+        const group = map.get(key);
+
+        if (!group.category_description && categoryDescription) {
+          group.category_description = categoryDescription;
+        }
+
+        group.items.push(event);
       });
 
       const groups = Array.from(map.values()).map(group => {
         return {
           category: group.category_name,
           category_show_order: group.category_show_order,
+          category_description: group.category_description,
           items: group.items.slice().sort(compareEventsByDateDesc)
         };
       });
@@ -329,6 +407,27 @@
       });
 
       return groups;
+    }
+
+    function buildCategoryDescriptionHtml(description) {
+      const text = String(description || "").trim();
+      if (!text) return "";
+
+      const lines = text
+        .replace(/\r\n/g, "\n")
+        .replace(/\r/g, "\n")
+        .replace(/<br\s*\/?>/gi, "\n")
+        .split("\n")
+        .map(line => line.trim())
+        .filter(Boolean);
+
+      if (!lines.length) return "";
+
+      return `
+        <div class="event-group-description">
+          ${lines.map(line => `<p>${escapeHtml(line)}</p>`).join("")}
+        </div>
+      `;
     }
 
     async function loadEventsJson() {
@@ -366,6 +465,7 @@
         btn.addEventListener("click", () => {
           const group = btn.closest(".event-group");
           if (!group) return;
+
           group.classList.toggle("is-open");
 
           const expanded = group.classList.contains("is-open");
@@ -393,6 +493,7 @@
         });
 
         if (!events.length) {
+          listEl.innerHTML = "";
           statusEl.textContent = "大会がありません";
           return;
         }
@@ -401,6 +502,7 @@
 
         listEl.innerHTML = groups.map((group, index) => {
           const bodyId = `event-group-body-${index}`;
+          const descriptionHtml = buildCategoryDescriptionHtml(group.category_description);
           const rows = group.items.map(buildEventRow).join("");
 
           return `
@@ -417,6 +519,7 @@
                 <span class="event-group-icon">▼</span>
               </button>
               <div id="${bodyId}" class="event-group-body">
+                ${descriptionHtml}
                 <div class="event-list">
                   ${rows}
                 </div>
