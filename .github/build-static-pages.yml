@@ -1,0 +1,45 @@
+name: Build static pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-static-pages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate static event detail pages
+        run: node scripts/generate-events.js
+
+      - name: Generate static MC detail pages
+        run: node scripts/generate-mcs.js
+
+      - name: Generate static event list page
+        run: node scripts/generate-list-event.js
+
+      - name: Generate sitemap
+        run: node scripts/generate-sitemap.js
+
+      - name: Commit generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Generate static pages"
+          file_pattern: |
+            list_event.html
+            detail_event/*.html
+            detail_mc/*.html
+            sitemap.xml
