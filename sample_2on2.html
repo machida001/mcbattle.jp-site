@@ -1248,6 +1248,113 @@
       }
     }
 
+
+    /* 2on2 adjustment v5: 結果欄のメダル横チーム名を確定表示 */
+    .meta-list .result-team-summary-block{
+      display:block !important;
+      line-height:1.35 !important;
+    }
+
+    .meta-list .result-team-summary-block .result-line{
+      display:grid !important;
+      grid-template-columns:26px minmax(0, 1fr) !important;
+      gap:7px !important;
+      align-items:start !important;
+      margin:0 !important;
+      padding:0 !important;
+    }
+
+    .meta-list .result-team-summary-block .result-line + .result-line{
+      margin-top:7px !important;
+    }
+
+    .meta-list .result-team-summary-block .result-medal{
+      display:inline-flex !important;
+      align-items:flex-start !important;
+      justify-content:center !important;
+      width:26px !important;
+      line-height:1 !important;
+      padding-top:1px !important;
+    }
+
+    .meta-list .result-team-summary{
+      display:block !important;
+      min-width:0 !important;
+    }
+
+    .meta-list .result-team-header{
+      display:inline-block !important;
+      margin:0 8px 0 0 !important;
+      color:var(--accent) !important;
+      font-size:.78rem !important;
+      font-weight:800 !important;
+      line-height:1.25 !important;
+      letter-spacing:.04em !important;
+      white-space:nowrap !important;
+      vertical-align:baseline !important;
+    }
+
+    .meta-list .result-team-member-row{
+      display:inline !important;
+      color:var(--text) !important;
+      font-size:.98rem !important;
+      font-weight:800 !important;
+      line-height:1.35 !important;
+    }
+
+    .meta-list .result-line.is-sub .result-team-member-row{
+      color:#b4bac8 !important;
+      font-weight:700 !important;
+    }
+
+    .meta-list .result-team-summary-block .team-member-link{
+      color:inherit !important;
+      text-decoration:none !important;
+      border-bottom:1px solid rgba(216,180,106,.22) !important;
+      border-radius:0 !important;
+      background:transparent !important;
+      box-shadow:none !important;
+      padding:0 !important;
+      min-width:0 !important;
+      min-height:0 !important;
+      font-size:inherit !important;
+      font-weight:inherit !important;
+      display:inline !important;
+    }
+
+    .match-vs{
+      text-align:left !important;
+      margin:-2px 0 -2px 0 !important;
+      padding:0 !important;
+      font-size:.70rem !important;
+      line-height:1.05 !important;
+    }
+
+    @media (max-width:640px){
+      .meta-list .result-team-summary-block .result-line{
+        grid-template-columns:24px minmax(0, 1fr) !important;
+        gap:6px !important;
+      }
+
+      .meta-list .result-team-summary-block .result-line + .result-line{
+        margin-top:6px !important;
+      }
+
+      .meta-list .result-team-summary-block .result-medal{
+        width:24px !important;
+      }
+
+      .meta-list .result-team-header{
+        display:inline-block !important;
+        margin:0 7px 0 0 !important;
+        font-size:.72rem !important;
+      }
+
+      .meta-list .result-team-member-row{
+        font-size:.91rem !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1278,15 +1385,39 @@
           <li>
             <span class="meta-label">結果：</span>
             <span>
-              <span class="result-block">
-                <span class="result-line">🥇 <span class="result-team"><a href="../detail_mc/MC0434.html" class="result-link-winner">輪入道</a><a href="../detail_mc/MC0472.html" class="result-link-winner">崇勲</a></span></span>
-                <span class="result-line is-sub">🥈 <span class="result-team"><a href="../detail_mc/MC0466.html" class="result-link-loser is-long">Sitissy luvit</a><a href="../detail_mc/MC0222.html" class="result-link-loser">NAIKA MC</a></span></span>
-                <span class="result-line is-sub">🥉 <span class="result-team"><a href="../detail_mc/MC0118.html" class="result-link-loser">GIL</a><a href="../detail_mc/MC0280.html" class="result-link-loser">Simon jap</a></span></span>
-                <span class="result-line is-sub">🥉 <span class="result-team"><a href="../detail_mc/MC0469.html" class="result-link-loser">ミメイ</a><a href="../detail_mc/MC0444.html" class="result-link-loser">黄猿</a></span></span>
+              <span class="result-block result-team-summary-block">
+                <span class="result-line">
+                  <span class="result-medal">🥇</span>
+                  <span class="result-team-summary">
+                    <span class="result-team-header">チームA</span>
+                    <span class="result-team-member-row"><a class="team-member-link" href="../detail_mc/MC0434.html">輪入道</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC0472.html">崇勲</a></span>
+                  </span>
+                </span>
+                <span class="result-line is-sub">
+                  <span class="result-medal">🥈</span>
+                  <span class="result-team-summary">
+                    <span class="result-team-header">チームB</span>
+                    <span class="result-team-member-row"><a class="team-member-link" href="../detail_mc/MC0466.html">Sitissy luvit</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC0222.html">NAIKA MC</a></span>
+                  </span>
+                </span>
+                <span class="result-line is-sub">
+                  <span class="result-medal">🥉</span>
+                  <span class="result-team-summary">
+                    <span class="result-team-header">チームC</span>
+                    <span class="result-team-member-row"><a class="team-member-link" href="../detail_mc/MC0118.html">GIL</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC0280.html">Simon jap</a></span>
+                  </span>
+                </span>
+                <span class="result-line is-sub">
+                  <span class="result-medal">🥉</span>
+                  <span class="result-team-summary">
+                    <span class="result-team-header">チームD</span>
+                    <span class="result-team-member-row"><a class="team-member-link" href="../detail_mc/MC0469.html">ミメイ</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC0444.html">黄猿</a></span>
+                  </span>
+                </span>
               </span>
             </span>
           </li>
-          <li><span class="meta-label">優勝賞金：</span><span>¥1,000,000</span></li>
+<li><span class="meta-label">優勝賞金：</span><span>¥1,000,000</span></li>
         </ul>
       </div>
     </section>
