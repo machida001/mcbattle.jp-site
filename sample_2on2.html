@@ -1594,6 +1594,126 @@
       }
     }
 
+
+    /* 2on2 adjustment v8: 結果欄を確実にラベル下へ移動 */
+    .meta-list > li.meta-result-item.is-team-result{
+      display:block !important;
+      padding-top:8px !important;
+      padding-bottom:12px !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result > .meta-label{
+      display:block !important;
+      min-width:0 !important;
+      width:100% !important;
+      margin:0 0 7px 0 !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result > .team-result-body{
+      display:block !important;
+      width:100% !important;
+      min-width:0 !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result > .team-result-body > .result-team-summary-block{
+      display:block !important;
+      width:100% !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-line{
+      display:grid !important;
+      grid-template-columns:28px minmax(0, 1fr) !important;
+      gap:8px !important;
+      align-items:start !important;
+      margin:0 !important;
+      padding:0 !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-line + .result-line{
+      margin-top:8px !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-medal{
+      display:inline-flex !important;
+      align-items:flex-start !important;
+      justify-content:center !important;
+      width:28px !important;
+      line-height:1 !important;
+      padding-top:1px !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-team-summary{
+      display:block !important;
+      min-width:0 !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-team-header{
+      display:block !important;
+      margin:0 0 2px 0 !important;
+      color:var(--accent) !important;
+      font-size:.78rem !important;
+      font-weight:800 !important;
+      line-height:1.25 !important;
+      letter-spacing:.04em !important;
+      white-space:normal !important;
+      overflow-wrap:anywhere !important;
+      word-break:break-word !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-team-member-row{
+      display:block !important;
+      color:var(--text) !important;
+      font-size:.98rem !important;
+      font-weight:800 !important;
+      line-height:1.35 !important;
+      overflow-wrap:anywhere !important;
+      word-break:keep-all !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-line.is-sub .result-team-member-row{
+      color:#b4bac8 !important;
+      font-weight:700 !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .team-member-link{
+      color:inherit !important;
+      text-decoration:none !important;
+      border-bottom:1px solid rgba(216,180,106,.22) !important;
+      border-radius:0 !important;
+      background:transparent !important;
+      box-shadow:none !important;
+      padding:0 !important;
+      min-width:0 !important;
+      min-height:0 !important;
+      font-size:inherit !important;
+      font-weight:inherit !important;
+      display:inline !important;
+    }
+
+    @media (max-width:640px){
+      .meta-list > li.meta-result-item.is-team-result .result-line{
+        grid-template-columns:26px minmax(0, 1fr) !important;
+        gap:7px !important;
+      }
+
+      .meta-list > li.meta-result-item.is-team-result .result-line + .result-line{
+        margin-top:7px !important;
+      }
+
+      .meta-list > li.meta-result-item.is-team-result .result-medal{
+        width:26px !important;
+      }
+
+      .meta-list > li.meta-result-item.is-team-result .result-team-header{
+        font-size:.72rem !important;
+      }
+
+      .meta-list > li.meta-result-item.is-team-result .result-team-member-row{
+        font-size:.91rem !important;
+        line-height:1.32 !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1621,9 +1741,9 @@
         <ul id="event-info-list" class="meta-list">
           <li><span class="meta-label">開催日：</span><span>2026.05.04</span></li>
           <li><span class="meta-label">場所：</span><span>渋谷WOMB</span></li>
-          <li class="meta-result-item is-team-result">
-            <span class="meta-label">結果：</span>
-            <span class="team-result-body">
+          <li class="meta-result-item is-team-result" style="display:block !important;">
+            <span class="meta-label" style="display:block !important; margin:0 0 7px 0 !important;">結果：</span>
+            <span class="team-result-body" style="display:block !important; width:100% !important;">
               <span class="result-block result-team-summary-block">
                 <span class="result-line">
                   <span class="result-medal">🥇</span>
