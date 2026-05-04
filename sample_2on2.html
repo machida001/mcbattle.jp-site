@@ -702,131 +702,22 @@
       }
     }
 
-    /* 2on2 / team battle layout: チーム単位の縦積み表示 */
-    .match-team-layout{
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      align-items: stretch;
-    }
-
-    .match-team-side{
-      width: 100%;
-      min-width: 0;
-    }
-
-    .match-team-side.is-winner,
-    .match-team-side.is-loser{
+    /* 2on2 final fixed layout: チーム単位で表示 */
+    .result-block-team{
       display: block;
     }
 
-    .match-member-list{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      align-items: center;
-    }
-
-    .match-team-side .team-name-label{
-      margin: 0 0 6px;
-    }
-
-    .match-vs{
-      width: 100%;
-      min-height: 0;
-      padding: 1px 0;
-      color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 900;
-      line-height: 1;
-      text-align: center;
-      letter-spacing: 0.08em;
-    }
-
-    .match-team-side .result-link-winner,
-    .match-team-side .result-link-loser{
-      width: auto;
-      min-width: 82px;
-      max-width: 100%;
-    }
-
-    @media (max-width: 640px) {
-      .match-team-layout{
-        gap: 7px;
-      }
-
-      .match-member-list{
-        gap: 5px;
-      }
-
-      .match-vs{
-        font-size: 0.76rem;
-      }
-
-      .match-team-side .result-link-winner,
-      .match-team-side .result-link-loser{
-        min-width: 76px;
-      }
-    }
-
-
-    /* 2on2 compact layout: チーム単位を1行で見せる */
     .result-team{
-      display: block;
-      margin: 0 0 5px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
     }
 
     .result-team .team-name-label{
       display: inline-block;
-      margin: 0 8px 0 0;
-      min-width: 4.8em;
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 800;
-      line-height: 1.25;
-      letter-spacing: 0.04em;
-      vertical-align: middle;
-    }
-
-    .result-team-members{
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      align-items: center;
-      vertical-align: middle;
-    }
-
-    .team-member-join{
-      color: rgba(244,245,247,.58);
-      font-size: .9rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .match-row-box{
-      padding: 10px 12px;
-      border-radius: 13px;
-    }
-
-    .match-team-layout{
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 7px;
-      align-items: stretch;
-    }
-
-    .match-team-side{
-      display: grid !important;
-      grid-template-columns: 5.8em minmax(0, 1fr);
-      gap: 8px;
-      align-items: center;
-      width: 100%;
-      min-width: 0;
-    }
-
-    .match-team-side .team-name-label{
       margin: 0;
-      min-width: 0;
       color: var(--accent);
       font-size: 0.78rem;
       font-weight: 800;
@@ -835,264 +726,21 @@
       white-space: nowrap;
     }
 
-    .match-member-list{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      align-items: center;
-      min-width: 0;
-    }
-
-    .match-vs{
-      width: auto;
-      min-height: 0;
-      margin-left: 5.8em;
-      padding: 0;
-      color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 900;
-      line-height: 1;
-      text-align: left;
-      letter-spacing: 0.08em;
-      opacity: .9;
-    }
-
-    .match-team-side .result-link-winner,
-    .match-team-side .result-link-loser{
-      width: auto !important;
-      min-width: 72px;
-      max-width: 100%;
-    }
-
-    @media (max-width: 640px) {
-      .result-team{
-        margin-bottom: 4px;
-      }
-
-      .result-team .team-name-label{
-        min-width: 4.3em;
-        margin-right: 6px;
-        font-size: 0.73rem;
-      }
-
-      .result-team-members{
-        gap: 5px;
-      }
-
-      .team-member-join{
-        font-size: .78rem;
-      }
-
-      .match-row-box{
-        padding: 8px 9px;
-        border-radius: 11px;
-      }
-
-      .match-team-layout{
-        gap: 6px;
-      }
-
-      .match-team-side{
-        grid-template-columns: 4.7em minmax(0, 1fr);
-        gap: 6px;
-      }
-
-      .match-team-side .team-name-label{
-        font-size: 0.72rem;
-      }
-
-      .match-member-list{
-        gap: 5px;
-      }
-
-      .match-vs{
-        margin-left: 4.7em;
-        font-size: 0.72rem;
-      }
-
-      .match-team-side .result-link-winner,
-      .match-team-side .result-link-loser{
-        min-width: 66px;
-      }
-    }
-
-
-    /* 2on2 fixed layout: チーム名→メンバー1行→VS→チーム名→メンバー1行 */
-    .match-row-box{
-      padding: 10px 12px;
-      border-radius: 13px;
-    }
-
-    .match-team-layout{
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 8px !important;
-      align-items: stretch !important;
-    }
-
-    .match-team-side{
-      display: block !important;
-      width: 100% !important;
-      min-width: 0 !important;
-    }
-
-    .match-team-side .team-name-label{
-      display: block !important;
-      margin: 0 0 5px !important;
-      color: var(--accent);
-      font-size: 0.78rem;
+    .result-team-members-text{
+      display: inline-block;
+      color: var(--text);
+      font-size: 0.98rem;
       font-weight: 800;
       line-height: 1.25;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      text-align: left;
+      overflow-wrap: anywhere;
+      word-break: keep-all;
     }
 
-    .match-member-list{
-      display: flex !important;
-      flex-wrap: nowrap !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      gap: 6px !important;
-      min-width: 0 !important;
-      width: 100% !important;
-      overflow: hidden !important;
+    .result-line.is-sub .result-team-members-text{
+      color: #b4bac8;
+      font-weight: 700;
     }
 
-    .team-member-join{
-      flex: 0 0 auto !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: auto !important;
-      margin: 0 !important;
-      color: rgba(244,245,247,.62);
-      font-size: .82rem;
-      font-weight: 900;
-      line-height: 1 !important;
-      white-space: nowrap !important;
-    }
-
-    .match-member-list .result-link-winner,
-    .match-member-list .result-link-loser{
-      flex: 0 1 auto !important;
-      width: auto !important;
-      min-width: 0 !important;
-      max-width: calc(50% - 12px) !important;
-      padding-left: 12px !important;
-      padding-right: 12px !important;
-      white-space: nowrap !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
-    }
-
-    .match-vs{
-      display: block !important;
-      width: 100% !important;
-      min-height: 0 !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 900;
-      line-height: 1.1;
-      text-align: center !important;
-      letter-spacing: 0.08em;
-      opacity: .88;
-    }
-
-    .result-team{
-      display: block;
-      margin: 0 0 8px;
-    }
-
-    .result-team .team-name-label{
-      display: block !important;
-      margin: 0 0 4px !important;
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 800;
-      line-height: 1.25;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-
-    .result-team-members{
-      display: flex !important;
-      flex-wrap: nowrap !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      gap: 6px !important;
-      min-width: 0 !important;
-      max-width: 100% !important;
-      overflow: hidden !important;
-    }
-
-    .result-team-members .result-link-winner,
-    .result-team-members .result-link-loser{
-      flex: 0 1 auto !important;
-      min-width: 0 !important;
-      max-width: calc(50% - 12px) !important;
-      white-space: nowrap !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
-    }
-
-    @media (max-width: 640px) {
-      .match-row-box{
-        padding: 8px 9px;
-        border-radius: 11px;
-      }
-
-      .match-team-layout{
-        gap: 7px !important;
-      }
-
-      .match-team-side .team-name-label{
-        margin-bottom: 4px !important;
-        font-size: 0.72rem;
-      }
-
-      .match-member-list{
-        gap: 5px !important;
-      }
-
-      .team-member-join{
-        font-size: .76rem;
-      }
-
-      .match-member-list .result-link-winner,
-      .match-member-list .result-link-loser{
-        max-width: calc(50% - 10px) !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-      }
-
-      .match-vs{
-        font-size: 0.72rem;
-      }
-
-      .result-team{
-        margin-bottom: 7px;
-      }
-
-      .result-team .team-name-label{
-        margin-bottom: 3px !important;
-        font-size: 0.72rem;
-      }
-
-      .result-team-members{
-        gap: 5px !important;
-      }
-
-      .result-team-members .result-link-winner,
-      .result-team-members .result-link-loser{
-        max-width: calc(50% - 10px) !important;
-      }
-    }
-
-
-    /* 2on2 final layout: 1チーム1pillで表示 */
     .match-row-box{
       padding: 9px 11px !important;
       border-radius: 12px !important;
@@ -1178,6 +826,18 @@
     }
 
     @media (max-width: 640px) {
+      .result-team{
+        gap: 5px;
+      }
+
+      .result-team .team-name-label{
+        font-size: 0.72rem;
+      }
+
+      .result-team-members-text{
+        font-size: 0.92rem;
+      }
+
       .match-row-box{
         padding: 8px 9px !important;
         border-radius: 11px !important;
@@ -1200,6 +860,208 @@
 
       .match-vs{
         font-size: 0.70rem;
+      }
+    }
+
+
+    /* 2on2 text-link layout: 個別MCリンクを残したチーム単位表示 */
+    .result-block-team-text{
+      display:block;
+    }
+
+    .result-block-team-text .result-line{
+      display:grid;
+      grid-template-columns: 26px minmax(0, 1fr);
+      gap:7px;
+      align-items:start;
+      margin-top:0;
+    }
+
+    .result-block-team-text .result-line + .result-line{
+      margin-top:7px;
+    }
+
+    .result-medal{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:26px;
+      min-height:1.6em;
+      line-height:1;
+      flex:0 0 auto;
+    }
+
+    .result-team-text{
+      display:block;
+      min-width:0;
+    }
+
+    .result-team-name{
+      display:inline-block;
+      margin:0 8px 0 0;
+      color:var(--accent);
+      font-size:.78rem;
+      font-weight:800;
+      line-height:1.3;
+      letter-spacing:.04em;
+      white-space:nowrap;
+      vertical-align:baseline;
+    }
+
+    .result-team-members{
+      display:inline;
+      min-width:0;
+      color:var(--text);
+      font-size:.98rem;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    .result-line.is-sub .result-team-members{
+      color:#b4bac8;
+      font-weight:700;
+    }
+
+    .team-member-link{
+      color:inherit;
+      text-decoration:none !important;
+      border-bottom:1px solid rgba(216,180,106,.22);
+      text-underline-offset:3px;
+      transition:color .18s ease, border-color .18s ease;
+    }
+
+    .team-member-link:hover{
+      color:#fff4dc;
+      border-bottom-color:rgba(216,180,106,.58);
+      text-decoration:none !important;
+    }
+
+    .team-member-separator{
+      display:inline-block;
+      margin:0 .32em;
+      color:rgba(244,245,247,.58);
+      font-weight:800;
+    }
+
+    .match-row-box{
+      padding:10px 12px !important;
+      border-radius:12px !important;
+    }
+
+    .match-team-layout{
+      display:flex !important;
+      flex-direction:column !important;
+      gap:7px !important;
+      align-items:stretch !important;
+    }
+
+    .match-team-side{
+      display:block !important;
+      width:100% !important;
+      min-width:0 !important;
+    }
+
+    .match-team-side .team-name-label{
+      display:block !important;
+      margin:0 0 3px !important;
+      color:var(--accent);
+      font-size:.76rem;
+      font-weight:800;
+      line-height:1.25;
+      letter-spacing:.04em;
+      white-space:nowrap;
+      text-align:left;
+    }
+
+    .team-members-text{
+      display:block;
+      width:100%;
+      min-width:0;
+      color:var(--text);
+      font-size:.98rem;
+      font-weight:800;
+      line-height:1.42;
+      overflow-wrap:anywhere;
+      word-break:keep-all;
+    }
+
+    .match-team-side.is-loser .team-members-text{
+      color:#8a92a5;
+      font-weight:700;
+    }
+
+    .match-vs{
+      display:block !important;
+      width:100% !important;
+      margin:-1px 0 !important;
+      padding:0 !important;
+      color:var(--muted);
+      font-size:.72rem;
+      font-weight:900;
+      line-height:1.1;
+      text-align:center !important;
+      letter-spacing:.08em;
+      opacity:.9;
+    }
+
+    .team-members-pill,
+    .match-member-list,
+    .team-member-join{
+      display:none !important;
+    }
+
+    @media (min-width:641px){
+      .match-list:not(.is-two-column) > li{
+        max-width:100% !important;
+      }
+    }
+
+    @media (max-width:640px){
+      .result-block-team-text .result-line{
+        grid-template-columns:24px minmax(0, 1fr);
+        gap:6px;
+      }
+
+      .result-block-team-text .result-line + .result-line{
+        margin-top:6px;
+      }
+
+      .result-medal{
+        width:24px;
+      }
+
+      .result-team-name{
+        display:block;
+        margin:0 0 2px;
+        font-size:.72rem;
+      }
+
+      .result-team-members{
+        font-size:.91rem;
+        line-height:1.32;
+      }
+
+      .match-row-box{
+        padding:8px 9px !important;
+        border-radius:11px !important;
+      }
+
+      .match-team-layout{
+        gap:6px !important;
+      }
+
+      .match-team-side .team-name-label{
+        font-size:.71rem;
+        margin-bottom:2px !important;
+      }
+
+      .team-members-text{
+        font-size:.90rem;
+        line-height:1.34;
+      }
+
+      .match-vs{
+        font-size:.70rem;
       }
     }
 
@@ -1252,134 +1114,125 @@
 
         <div id="matches-list">
           <div class="round-block">
-            <h3 class="round-heading">Final</h3>
-            <ul class="match-list">
-              <li class="match-row-wrap">
-                <div class="match-row-box">
-                  <div class="match-team-layout">
-
-<div class="match-team-side is-winner">
-  <div class="team-name-label">チームA</div>
-  <div class="team-members-pill is-winner"></div>
-</div>
-<div class="match-vs">VS</div>
-
-<div class="match-team-side is-loser">
-  <div class="team-name-label">チームB</div>
-  <div class="team-members-pill is-loser"></div>
-</div>
-</div
+<h3 class="round-heading">Final</h3>
+<ul class="match-list">
+<li class="match-row-wrap">
+  <div class="match-row-box">
+    <div class="match-team-layout">
+      <div class="match-team-side is-winner">
+        <div class="team-name-label">チームA</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC9991.html">輪入道</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9992.html">崇勲</a></div>
+      </div>
+      <div class="match-vs">VS</div>
+      <div class="match-team-side is-loser">
+        <div class="team-name-label">チームB</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC0466.html">Sitissy luvit</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9993.html">NAIKA MC</a></div>
+      </div>
+    </div>
+  </div>
 </li>
-            </ul>
-          </div>
-
-          <div class="round-block">
-            <h3 class="round-heading">Best4</h3>
-            <ul class="match-list is-two-column">
-              <li class="match-row-wrap">
-                <div class="match-row-box">
-                  <div class="match-team-layout">
-
-<div class="match-team-side is-winner">
-  <div class="team-name-label">チームB</div>
-  <div class="team-members-pill is-winner"></div>
+</ul>
 </div>
-<div class="match-vs">VS</div>
-
-<div class="match-team-side is-loser">
-  <div class="team-name-label">チームC</div>
-  <div class="team-members-pill is-loser"></div>
-</div>
-</div
+<div class="round-block">
+<h3 class="round-heading">Best4</h3>
+<ul class="match-list is-two-column">
+<li class="match-row-wrap">
+  <div class="match-row-box">
+    <div class="match-team-layout">
+      <div class="match-team-side is-winner">
+        <div class="team-name-label">チームB</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC0466.html">Sitissy luvit</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9993.html">NAIKA MC</a></div>
+      </div>
+      <div class="match-vs">VS</div>
+      <div class="match-team-side is-loser">
+        <div class="team-name-label">チームC</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC9994.html">GIL</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9995.html">Simon jap</a></div>
+      </div>
+    </div>
+  </div>
 </li>
-              <li class="match-row-wrap">
-                <div class="match-row-box">
-                  <div class="match-team-layout">
-
-<div class="match-team-side is-winner">
-  <div class="team-name-label">チームA</div>
-  <div class="team-members-pill is-winner"></div>
-</div>
-<div class="match-vs">VS</div>
-
-<div class="match-team-side is-loser">
-  <div class="team-name-label">チームD</div>
-  <div class="team-members-pill is-loser"></div>
-</div>
-</div
+<li class="match-row-wrap">
+  <div class="match-row-box">
+    <div class="match-team-layout">
+      <div class="match-team-side is-winner">
+        <div class="team-name-label">チームA</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC9991.html">輪入道</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9992.html">崇勲</a></div>
+      </div>
+      <div class="match-vs">VS</div>
+      <div class="match-team-side is-loser">
+        <div class="team-name-label">チームD</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC9996.html">ミメイ</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9997.html">黄猿</a></div>
+      </div>
+    </div>
+  </div>
 </li>
-            </ul>
-          </div>
-
-          <div class="round-block">
-            <h3 class="round-heading">Best8</h3>
-            <ul class="match-list is-two-column">
-              <li class="match-row-wrap">
-                <div class="match-row-box">
-                  <div class="match-team-layout">
-
-<div class="match-team-side is-winner">
-  <div class="team-name-label">チームB</div>
-  <div class="team-members-pill is-winner"></div>
+</ul>
 </div>
-<div class="match-vs">VS</div>
-
-<div class="match-team-side is-loser">
-  <div class="team-name-label">チームE</div>
-  <div class="team-members-pill is-loser"></div>
-</div>
-</div
+<div class="round-block">
+<h3 class="round-heading">Best8</h3>
+<ul class="match-list is-two-column">
+<li class="match-row-wrap">
+  <div class="match-row-box">
+    <div class="match-team-layout">
+      <div class="match-team-side is-winner">
+        <div class="team-name-label">チームB</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC0466.html">Sitissy luvit</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9993.html">NAIKA MC</a></div>
+      </div>
+      <div class="match-vs">VS</div>
+      <div class="match-team-side is-loser">
+        <div class="team-name-label">チームE</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC9998.html">Hawk-I</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9999.html">Ery10</a></div>
+      </div>
+    </div>
+  </div>
 </li>
-              <li class="match-row-wrap">
-                <div class="match-row-box">
-                  <div class="match-team-layout">
-
-<div class="match-team-side is-winner">
-  <div class="team-name-label">チームC</div>
-  <div class="team-members-pill is-winner"></div>
-</div>
-<div class="match-vs">VS</div>
-
-<div class="match-team-side is-loser">
-  <div class="team-name-label">チームF</div>
-  <div class="team-members-pill is-loser"></div>
-</div>
-</div
+<li class="match-row-wrap">
+  <div class="match-row-box">
+    <div class="match-team-layout">
+      <div class="match-team-side is-winner">
+        <div class="team-name-label">チームC</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC9994.html">GIL</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9995.html">Simon jap</a></div>
+      </div>
+      <div class="match-vs">VS</div>
+      <div class="match-team-side is-loser">
+        <div class="team-name-label">チームF</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC1000.html">RAWAXXX</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC1001.html">Yella goat</a></div>
+      </div>
+    </div>
+  </div>
 </li>
-              <li class="match-row-wrap">
-                <div class="match-row-box">
-                  <div class="match-team-layout">
-
-<div class="match-team-side is-winner">
-  <div class="team-name-label">チームD</div>
-  <div class="team-members-pill is-winner"></div>
-</div>
-<div class="match-vs">VS</div>
-
-<div class="match-team-side is-loser">
-  <div class="team-name-label">チームG</div>
-  <div class="team-members-pill is-loser"></div>
-</div>
-</div
+<li class="match-row-wrap">
+  <div class="match-row-box">
+    <div class="match-team-layout">
+      <div class="match-team-side is-winner">
+        <div class="team-name-label">チームA</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC9991.html">輪入道</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9992.html">崇勲</a></div>
+      </div>
+      <div class="match-vs">VS</div>
+      <div class="match-team-side is-loser">
+        <div class="team-name-label">チームG</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC1002.html">9for</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC1003.html">Keita</a></div>
+      </div>
+    </div>
+  </div>
 </li>
-              <li class="match-row-wrap">
-                <div class="match-row-box">
-                  <div class="match-team-layout">
-
-<div class="match-team-side is-winner">
-  <div class="team-name-label">チームA</div>
-  <div class="team-members-pill is-winner"></div>
-</div>
-<div class="match-vs">VS</div>
-
-<div class="match-team-side is-loser">
-  <div class="team-name-label">チームH</div>
-  <div class="team-members-pill is-loser"></div>
-</div>
-</div
+<li class="match-row-wrap">
+  <div class="match-row-box">
+    <div class="match-team-layout">
+      <div class="match-team-side is-winner">
+        <div class="team-name-label">チームD</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC9996.html">ミメイ</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC9997.html">黄猿</a></div>
+      </div>
+      <div class="match-vs">VS</div>
+      <div class="match-team-side is-loser">
+        <div class="team-name-label">チームH</div>
+        <div class="team-members-text"><a class="team-member-link" href="../detail_mc/MC1004.html">煩悩</a><span class="team-member-separator">・</span><a class="team-member-link" href="../detail_mc/MC1005.html">S-kaine</a></div>
+      </div>
+    </div>
+  </div>
 </li>
-            </ul>
-          </div>
+</ul>
+</div>
         </div>
 
         <a id="event-info-link" class="event-info-link" href="../contact.html?type=event&amp;event_name=SAMPLE%202on2%20MC%20BATTLE" target="_blank" rel="noopener noreferrer" aria-label="大会情報の情報提供フォームを新しいタブで開く">
