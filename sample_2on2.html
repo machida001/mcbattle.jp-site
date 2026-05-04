@@ -916,6 +916,181 @@
       }
     }
 
+
+    /* 2on2 fixed layout: チーム名→メンバー1行→VS→チーム名→メンバー1行 */
+    .match-row-box{
+      padding: 10px 12px;
+      border-radius: 13px;
+    }
+
+    .match-team-layout{
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px !important;
+      align-items: stretch !important;
+    }
+
+    .match-team-side{
+      display: block !important;
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    .match-team-side .team-name-label{
+      display: block !important;
+      margin: 0 0 5px !important;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      text-align: left;
+    }
+
+    .match-member-list{
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 6px !important;
+      min-width: 0 !important;
+      width: 100% !important;
+      overflow: hidden !important;
+    }
+
+    .team-member-join{
+      flex: 0 0 auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: auto !important;
+      margin: 0 !important;
+      color: rgba(244,245,247,.62);
+      font-size: .82rem;
+      font-weight: 900;
+      line-height: 1 !important;
+      white-space: nowrap !important;
+    }
+
+    .match-member-list .result-link-winner,
+    .match-member-list .result-link-loser{
+      flex: 0 1 auto !important;
+      width: auto !important;
+      min-width: 0 !important;
+      max-width: calc(50% - 12px) !important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
+    .match-vs{
+      display: block !important;
+      width: 100% !important;
+      min-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 900;
+      line-height: 1.1;
+      text-align: center !important;
+      letter-spacing: 0.08em;
+      opacity: .88;
+    }
+
+    .result-team{
+      display: block;
+      margin: 0 0 8px;
+    }
+
+    .result-team .team-name-label{
+      display: block !important;
+      margin: 0 0 4px !important;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .result-team-members{
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 6px !important;
+      min-width: 0 !important;
+      max-width: 100% !important;
+      overflow: hidden !important;
+    }
+
+    .result-team-members .result-link-winner,
+    .result-team-members .result-link-loser{
+      flex: 0 1 auto !important;
+      min-width: 0 !important;
+      max-width: calc(50% - 12px) !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
+    @media (max-width: 640px) {
+      .match-row-box{
+        padding: 8px 9px;
+        border-radius: 11px;
+      }
+
+      .match-team-layout{
+        gap: 7px !important;
+      }
+
+      .match-team-side .team-name-label{
+        margin-bottom: 4px !important;
+        font-size: 0.72rem;
+      }
+
+      .match-member-list{
+        gap: 5px !important;
+      }
+
+      .team-member-join{
+        font-size: .76rem;
+      }
+
+      .match-member-list .result-link-winner,
+      .match-member-list .result-link-loser{
+        max-width: calc(50% - 10px) !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+
+      .match-vs{
+        font-size: 0.72rem;
+      }
+
+      .result-team{
+        margin-bottom: 7px;
+      }
+
+      .result-team .team-name-label{
+        margin-bottom: 3px !important;
+        font-size: 0.72rem;
+      }
+
+      .result-team-members{
+        gap: 5px !important;
+      }
+
+      .result-team-members .result-link-winner,
+      .result-team-members .result-link-loser{
+        max-width: calc(50% - 10px) !important;
+      }
+    }
+
   </style>
 </head>
 <body>
