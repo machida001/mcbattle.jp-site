@@ -1091,6 +1091,118 @@
       }
     }
 
+
+    /* 2on2 final layout: 1チーム1pillで表示 */
+    .match-row-box{
+      padding: 9px 11px !important;
+      border-radius: 12px !important;
+    }
+
+    .match-team-layout{
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 7px !important;
+      align-items: stretch !important;
+    }
+
+    .match-team-side{
+      display: block !important;
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    .match-team-side .team-name-label{
+      display: block !important;
+      margin: 0 0 4px !important;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      text-align: left;
+    }
+
+    .team-members-pill{
+      display: block;
+      width: 100%;
+      min-height: 33px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 0.94rem;
+      font-weight: 800;
+      line-height: 1.25;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.02) inset;
+    }
+
+    .team-members-pill.is-winner{
+      background: linear-gradient(180deg, rgba(216,180,106,.18), rgba(216,180,106,.07));
+      border: 1px solid rgba(216,180,106,.34);
+      color: #fff4dc;
+    }
+
+    .team-members-pill.is-loser{
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(143,151,170,.14);
+      color: #8a92a5;
+      font-weight: 700;
+    }
+
+    .match-vs{
+      display: block !important;
+      width: 100% !important;
+      margin: -1px 0 !important;
+      padding: 0 !important;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 900;
+      line-height: 1.1;
+      text-align: center !important;
+      letter-spacing: 0.08em;
+      opacity: .9;
+    }
+
+    .match-member-list,
+    .team-member-join{
+      display: none !important;
+    }
+
+    @media (min-width: 641px) {
+      .match-list:not(.is-two-column) > li {
+        max-width: 100% !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .match-row-box{
+        padding: 8px 9px !important;
+        border-radius: 11px !important;
+      }
+
+      .match-team-layout{
+        gap: 6px !important;
+      }
+
+      .match-team-side .team-name-label{
+        margin-bottom: 3px !important;
+        font-size: 0.71rem;
+      }
+
+      .team-members-pill{
+        min-height: 30px;
+        padding: 5px 9px;
+        font-size: 0.86rem;
+      }
+
+      .match-vs{
+        font-size: 0.70rem;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1145,18 +1257,19 @@
               <li class="match-row-wrap">
                 <div class="match-row-box">
                   <div class="match-team-layout">
-                    <div class="match-team-side is-winner">
-                      <div class="team-name-label">チームA</div>
-<div class="match-member-list"><a href="../detail_mc/MC0434.html" class="result-link-winner">輪入道</a><span class="team-member-join">・</span><a href="../detail_mc/MC0472.html" class="result-link-winner">崇勲</a></div>
-                    </div>
-                    <div class="match-vs">VS</div>
-                    <div class="match-team-side is-loser">
-                      <div class="team-name-label">チームB</div>
-<div class="match-member-list"><a href="../detail_mc/MC0466.html" class="result-link-loser is-long">Sitissy luvit</a><span class="team-member-join">・</span><a href="../detail_mc/MC0222.html" class="result-link-loser">NAIKA MC</a></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+
+<div class="match-team-side is-winner">
+  <div class="team-name-label">チームA</div>
+  <div class="team-members-pill is-winner"></div>
+</div>
+<div class="match-vs">VS</div>
+
+<div class="match-team-side is-loser">
+  <div class="team-name-label">チームB</div>
+  <div class="team-members-pill is-loser"></div>
+</div>
+</div
+</li>
             </ul>
           </div>
 
@@ -1166,33 +1279,35 @@
               <li class="match-row-wrap">
                 <div class="match-row-box">
                   <div class="match-team-layout">
-                    <div class="match-team-side is-winner">
-                      <div class="team-name-label">チームB</div>
-<div class="match-member-list"><a href="../detail_mc/MC0466.html" class="result-link-winner is-long">Sitissy luvit</a><span class="team-member-join">・</span><a href="../detail_mc/MC0222.html" class="result-link-winner">NAIKA MC</a></div>
-                    </div>
-                    <div class="match-vs">VS</div>
-                    <div class="match-team-side is-loser">
-                      <div class="team-name-label">チームC</div>
-<div class="match-member-list"><a href="../detail_mc/MC0118.html" class="result-link-loser">GIL</a><span class="team-member-join">・</span><a href="../detail_mc/MC0280.html" class="result-link-loser">Simon jap</a></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+
+<div class="match-team-side is-winner">
+  <div class="team-name-label">チームB</div>
+  <div class="team-members-pill is-winner"></div>
+</div>
+<div class="match-vs">VS</div>
+
+<div class="match-team-side is-loser">
+  <div class="team-name-label">チームC</div>
+  <div class="team-members-pill is-loser"></div>
+</div>
+</div
+</li>
               <li class="match-row-wrap">
                 <div class="match-row-box">
                   <div class="match-team-layout">
-                    <div class="match-team-side is-winner">
-                      <div class="team-name-label">チームA</div>
-<div class="match-member-list"><a href="../detail_mc/MC0434.html" class="result-link-winner">輪入道</a><span class="team-member-join">・</span><a href="../detail_mc/MC0472.html" class="result-link-winner">崇勲</a></div>
-                    </div>
-                    <div class="match-vs">VS</div>
-                    <div class="match-team-side is-loser">
-                      <div class="team-name-label">チームD</div>
-<div class="match-member-list"><a href="../detail_mc/MC0469.html" class="result-link-loser">ミメイ</a><span class="team-member-join">・</span><a href="../detail_mc/MC0444.html" class="result-link-loser">黄猿</a></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+
+<div class="match-team-side is-winner">
+  <div class="team-name-label">チームA</div>
+  <div class="team-members-pill is-winner"></div>
+</div>
+<div class="match-vs">VS</div>
+
+<div class="match-team-side is-loser">
+  <div class="team-name-label">チームD</div>
+  <div class="team-members-pill is-loser"></div>
+</div>
+</div
+</li>
             </ul>
           </div>
 
@@ -1202,63 +1317,67 @@
               <li class="match-row-wrap">
                 <div class="match-row-box">
                   <div class="match-team-layout">
-                    <div class="match-team-side is-winner">
-                      <div class="team-name-label">チームB</div>
-<div class="match-member-list"><a href="../detail_mc/MC0466.html" class="result-link-winner is-long">Sitissy luvit</a><span class="team-member-join">・</span><a href="../detail_mc/MC0222.html" class="result-link-winner">NAIKA MC</a></div>
-                    </div>
-                    <div class="match-vs">VS</div>
-                    <div class="match-team-side is-loser">
-                      <div class="team-name-label">チームE</div>
-<div class="match-member-list"><a href="../detail_mc/MC0126.html" class="result-link-loser">Hawk-I</a><span class="team-member-join">・</span><a href="../detail_mc/MC0930.html" class="result-link-loser">Keita</a></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+
+<div class="match-team-side is-winner">
+  <div class="team-name-label">チームB</div>
+  <div class="team-members-pill is-winner"></div>
+</div>
+<div class="match-vs">VS</div>
+
+<div class="match-team-side is-loser">
+  <div class="team-name-label">チームE</div>
+  <div class="team-members-pill is-loser"></div>
+</div>
+</div
+</li>
               <li class="match-row-wrap">
                 <div class="match-row-box">
                   <div class="match-team-layout">
-                    <div class="match-team-side is-winner">
-                      <div class="team-name-label">チームC</div>
-<div class="match-member-list"><a href="../detail_mc/MC0118.html" class="result-link-winner">GIL</a><span class="team-member-join">・</span><a href="../detail_mc/MC0280.html" class="result-link-winner">Simon jap</a></div>
-                    </div>
-                    <div class="match-vs">VS</div>
-                    <div class="match-team-side is-loser">
-                      <div class="team-name-label">チームF</div>
-<div class="match-member-list"><a href="../detail_mc/MC0633.html" class="result-link-loser">煩悩</a><span class="team-member-join">・</span><a href="../detail_mc/MC0450.html" class="result-link-loser">Donatello</a></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+
+<div class="match-team-side is-winner">
+  <div class="team-name-label">チームC</div>
+  <div class="team-members-pill is-winner"></div>
+</div>
+<div class="match-vs">VS</div>
+
+<div class="match-team-side is-loser">
+  <div class="team-name-label">チームF</div>
+  <div class="team-members-pill is-loser"></div>
+</div>
+</div
+</li>
               <li class="match-row-wrap">
                 <div class="match-row-box">
                   <div class="match-team-layout">
-                    <div class="match-team-side is-winner">
-                      <div class="team-name-label">チームD</div>
-<div class="match-member-list"><a href="../detail_mc/MC0469.html" class="result-link-winner">ミメイ</a><span class="team-member-join">・</span><a href="../detail_mc/MC0444.html" class="result-link-winner">黄猿</a></div>
-                    </div>
-                    <div class="match-vs">VS</div>
-                    <div class="match-team-side is-loser">
-                      <div class="team-name-label">チームG</div>
-<div class="match-member-list"><a href="../detail_mc/MC0447.html" class="result-link-loser">9for</a><span class="team-member-join">・</span><a href="../detail_mc/MC1038.html" class="result-link-loser">Ery10</a></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+
+<div class="match-team-side is-winner">
+  <div class="team-name-label">チームD</div>
+  <div class="team-members-pill is-winner"></div>
+</div>
+<div class="match-vs">VS</div>
+
+<div class="match-team-side is-loser">
+  <div class="team-name-label">チームG</div>
+  <div class="team-members-pill is-loser"></div>
+</div>
+</div
+</li>
               <li class="match-row-wrap">
                 <div class="match-row-box">
                   <div class="match-team-layout">
-                    <div class="match-team-side is-winner">
-                      <div class="team-name-label">チームA</div>
-<div class="match-member-list"><a href="../detail_mc/MC0434.html" class="result-link-winner">輪入道</a><span class="team-member-join">・</span><a href="../detail_mc/MC0472.html" class="result-link-winner">崇勲</a></div>
-                    </div>
-                    <div class="match-vs">VS</div>
-                    <div class="match-team-side is-loser">
-                      <div class="team-name-label">チームH</div>
-<div class="match-member-list"><a href="../detail_mc/MC0023.html" class="result-link-loser">S-kainê</a><span class="team-member-join">・</span><a href="../detail_mc/MC0015.html" class="result-link-loser">MC☆ニガリ</a></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+
+<div class="match-team-side is-winner">
+  <div class="team-name-label">チームA</div>
+  <div class="team-members-pill is-winner"></div>
+</div>
+<div class="match-vs">VS</div>
+
+<div class="match-team-side is-loser">
+  <div class="team-name-label">チームH</div>
+  <div class="team-members-pill is-loser"></div>
+</div>
+</div
+</li>
             </ul>
           </div>
         </div>
