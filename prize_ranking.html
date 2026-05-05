@@ -312,7 +312,8 @@
 
     function formatMoney(v) {
       const n = toNumber(v);
-      return "¥" + (Number.isFinite(n) ? n : 0).toLocaleString("ja-JP");
+      const rounded = Number.isFinite(n) ? Math.round(n) : 0;
+      return "¥" + rounded.toLocaleString("ja-JP");
     }
 
     function getPrizeAmount(item) {
