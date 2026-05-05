@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-04T00:06:59.973Z",
-  "total": 163,
+  "updated_at": "2026-05-05T05:59:49.958Z",
+  "total": 164,
   "events": [
     {
       "event_id": "EVT0021",
@@ -19,6 +19,7 @@
       "location": "渋谷WOMB",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb-2025",
+      "battle_format": "1on1",
       "winner_name": "MC☆ニガリ"
     },
     {
@@ -38,6 +39,7 @@
       "location": "Club CITTA",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb-2024",
+      "battle_format": "1on1",
       "winner_name": "KOOPA"
     },
     {
@@ -57,6 +59,7 @@
       "location": "恵比寿LiquidRoom",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb-2023 / Winner prize manually corrected to 1000000 based on user confirmation",
+      "battle_format": "1on1",
       "winner_name": "GOTIT"
     },
     {
@@ -76,6 +79,7 @@
       "location": "Club CITTA",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb-2022",
+      "battle_format": "1on1",
       "winner_name": "SILENT KILLA JOINT"
     },
     {
@@ -95,6 +99,7 @@
       "location": "新木場StudioCoast",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb2021",
+      "battle_format": "1on1",
       "winner_name": "MC☆ニガリ"
     },
     {
@@ -114,6 +119,7 @@
       "location": "新木場StudioCoast",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb2020",
+      "battle_format": "1on1",
       "winner_name": "早雲"
     },
     {
@@ -133,6 +139,7 @@
       "location": "新木場StudioCoast",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb2019-report-promptly",
+      "battle_format": "1on1",
       "winner_name": "Authority"
     },
     {
@@ -152,6 +159,7 @@
       "location": "新木場StudioCoast",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb2018-c",
+      "battle_format": "1on1",
       "winner_name": "COCRGI WHITE"
     },
     {
@@ -171,6 +179,7 @@
       "location": "新木場StudioCoast",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb2017",
+      "battle_format": "1on1",
       "winner_name": "DOTAMA"
     },
     {
@@ -190,6 +199,7 @@
       "location": "新木場StudioCoast",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb2016-dvd",
+      "battle_format": "1on1",
       "winner_name": "NAIKA MC"
     },
     {
@@ -209,6 +219,7 @@
       "location": "新木場StudioCoast",
       "organizer": "",
       "notes": "Source: https://www.finance-accounting-value.com/entry/umb2015",
+      "battle_format": "1on1",
       "winner_name": "CHICO CARLITO"
     },
     {
@@ -228,6 +239,7 @@
       "location": "新木場StudioCoast",
       "organizer": "",
       "notes": "Source: https://i0.wp.com/jp-hphp.com/wp-content/uploads/2020/03/UMB2014%E6%9C%AC%E6%88%A6.png?resize=800%2C600&ssl=1",
+      "battle_format": "1on1",
       "winner_name": "R-指定"
     },
     {
@@ -247,6 +259,7 @@
       "location": "恵比寿LiquidRoom",
       "organizer": "",
       "notes": "Source: https://i0.wp.com/jp-hphp.com/wp-content/uploads/2020/03/UMB2013%E6%9C%AC%E6%88%A6.png?resize=800%2C600&ssl=1",
+      "battle_format": "1on1",
       "winner_name": "R-指定"
     },
     {
@@ -266,6 +279,7 @@
       "location": "恵比寿LiquidRoom",
       "organizer": "",
       "notes": "Source: https://i0.wp.com/jp-hphp.com/wp-content/uploads/2020/03/UMB2012%E6%9C%AC%E6%88%A6.png?resize=800%2C600&ssl=1",
+      "battle_format": "1on1",
       "winner_name": "R-指定"
     },
     {
@@ -285,6 +299,7 @@
       "location": "恵比寿LiquidRoom",
       "organizer": "",
       "notes": "Source: https://i0.wp.com/jp-hphp.com/wp-content/uploads/2020/03/UMB2011%E6%9C%AC%E6%88%A6.png?resize=800%2C600&ssl=1",
+      "battle_format": "1on1",
       "winner_name": "晋平太"
     },
     {
@@ -304,6 +319,7 @@
       "location": "Club CITTA",
       "organizer": "",
       "notes": "Source: https://i0.wp.com/jp-hphp.com/wp-content/uploads/2020/03/UMB2010%E6%9C%AC%E6%88%A6.png?resize=800%2C600&ssl=1",
+      "battle_format": "1on1",
       "winner_name": "晋平太"
     },
     {
@@ -323,6 +339,7 @@
       "location": "Club CITTA",
       "organizer": "",
       "notes": "Source: https://i0.wp.com/jp-hphp.com/wp-content/uploads/2020/03/UMB2009%E6%9C%AC%E6%88%A6.png?resize=800%2C600&ssl=1",
+      "battle_format": "1on1",
       "winner_name": "鎮座DOPENESS"
     },
     {
@@ -342,6 +359,7 @@
       "location": "なんばHatch",
       "organizer": "",
       "notes": "Source: https://i0.wp.com/jp-hphp.com/wp-content/uploads/2020/03/UMB2008%E6%9C%AC%E6%88%A6.png?resize=800%2C600&ssl=1",
+      "battle_format": "1on1",
       "winner_name": "般若"
     },
     {
@@ -361,6 +379,7 @@
       "location": "Club CITTA",
       "organizer": "",
       "notes": "Source: https://i0.wp.com/jp-hphp.com/wp-content/uploads/2020/03/UMB2007%E6%9C%AC%E6%88%A6.png?resize=800%2C600&ssl=1",
+      "battle_format": "1on1",
       "winner_name": "GOCCI"
     },
     {
@@ -380,6 +399,7 @@
       "location": "Club CITTA",
       "organizer": "",
       "notes": "Source: https://i0.wp.com/jp-hphp.com/wp-content/uploads/2020/03/UMB2006%E6%9C%AC%E6%88%A6.png?resize=800%2C600&ssl=1",
+      "battle_format": "1on1",
       "winner_name": "FORK"
     },
     {
@@ -399,6 +419,7 @@
       "location": "新宿LOFT",
       "organizer": "",
       "notes": "Source: https://i0.wp.com/jp-hphp.com/wp-content/uploads/2022/01/2005umb.png?resize=800%2C600&ssl=1",
+      "battle_format": "1on1",
       "winner_name": "カルデラビスタ"
     },
     {
@@ -418,6 +439,7 @@
       "location": "LIQUIDROOM",
       "organizer": "UMB",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "GIL"
     },
     {
@@ -437,6 +459,7 @@
       "location": "LIQUIDROOM",
       "organizer": "UMB",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "S-kainê"
     },
     {
@@ -456,6 +479,7 @@
       "location": "LIQUIDROOM",
       "organizer": "UMB",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -475,6 +499,7 @@
       "location": "LIQUIDROOM",
       "organizer": "UMB",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "鎮座DOPENESS"
     },
     {
@@ -494,6 +519,7 @@
       "location": "CLUB CITTA",
       "organizer": "UMB",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "ふぁんく"
     },
     {
@@ -513,6 +539,7 @@
       "location": "CLUB CITTA",
       "organizer": "UMB",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "句潤"
     },
     {
@@ -532,6 +559,7 @@
       "location": "Zepp Tokyo",
       "organizer": "UMB",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "RAWAXXX"
     },
     {
@@ -551,6 +579,7 @@
       "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/img/1770210453-1tuvU6gfmjlrILSqDaEhGxAM.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "T-TANGG"
     },
     {
@@ -570,6 +599,7 @@
       "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/img/1742137940-vrFpI2atDfWLMi3QhsN1T56H.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "9for"
     },
     {
@@ -589,6 +619,7 @@
       "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/127039143/picture_pc_726bb5b485aca365a485cf3238f8efdb.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "RAWAXXX"
     },
     {
@@ -608,6 +639,7 @@
       "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96441688/picture_pc_ff3ffc78302a73a5c964365deb686c9d.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "泰斗(裂固)"
     },
     {
@@ -627,6 +659,7 @@
       "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96441263/picture_pc_4362c0343b9b2691d11468ed124a93a5.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "FORK"
     },
     {
@@ -646,6 +679,7 @@
       "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96441062/picture_pc_ba9bd2d4766ec33e2912386bda2701fb.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -665,6 +699,7 @@
       "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96440768/picture_pc_c507b2d3248f828f0d4839653d65e590.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "RAWAXXX"
     },
     {
@@ -684,6 +719,7 @@
       "location": "豊洲PIT",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96440562/picture_pc_88da2af64bce7333e4d7997fb618340e.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -703,6 +739,7 @@
       "location": "ZeppTokyo",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96440306/picture_pc_498917403e491082382196e64c5c61f2.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "GADORO"
     },
     {
@@ -722,6 +759,7 @@
       "location": "ティファ有明",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96439896/picture_pc_a535db2b3995dc7e64215577da91410c.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "GADORO"
     },
     {
@@ -741,6 +779,7 @@
       "location": "新宿Reny",
       "organizer": "",
       "notes": "Sources: https://note.com/onoyu_hiphop/n/ncb58fb76f5cd | Bracket image: https://assets.st-note.com/production/uploads/images/96429956/picture_pc_b7e0b33c38eed88958da3f1db3f47592.png?width=1200 | Winner prize reference: https://jp-hphp.com/2020/02/13/kok/",
+      "battle_format": "1on1",
       "winner_name": "崇勲"
     },
     {
@@ -760,6 +799,7 @@
       "location": "Kアリーナ横浜",
       "organizer": "BUTTLE SUMMIT",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": ""
     },
     {
@@ -779,6 +819,7 @@
       "location": "代々木第一体育館",
       "organizer": "BUTTLE SUMMIT",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "般若"
     },
     {
@@ -798,6 +839,7 @@
       "location": "日本武道館",
       "organizer": "BUTTLE SUMMIT",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "Authority"
     },
     {
@@ -817,6 +859,7 @@
       "location": "渋谷WOMB",
       "organizer": "LUSHBOMU MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "輪入道"
     },
     {
@@ -836,6 +879,7 @@
       "location": "TOKYO FMホール",
       "organizer": "LUSHBOMU MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "Donatello"
     },
     {
@@ -855,6 +899,7 @@
       "location": "Aichi Sky Expo",
       "organizer": "LUSHBOMU MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "ミメイ"
     },
     {
@@ -874,6 +919,7 @@
       "location": "川崎CLUB CITTA'",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": ""
     },
     {
@@ -893,6 +939,7 @@
       "location": "両国Sunrise",
       "organizer": "戦極MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "椿"
     },
     {
@@ -912,6 +959,7 @@
       "location": "Zepp Osaka Bayside",
       "organizer": "戦極MCBATTLE",
       "notes": "https://abema.tv/live-event/09d65a23-9261-4cc5-81d2-b1f7b9c5c88f | https://abema.tv/video/title/243-76?s=243-76_s3000 | https://x.com/sengokumc/status/1926221969537597605 | source image provided in chat",
+      "battle_format": "1on1",
       "winner_name": "NAIKA MC"
     },
     {
@@ -931,6 +979,7 @@
       "location": "仙台PIT",
       "organizer": "戦極MCBATTLE",
       "notes": "https://sengokumc.exblog.jp/33498896/ | https://abema.tv/video/episode/243-76_s2000_p5",
+      "battle_format": "1on1",
       "winner_name": "Sitissy luvit"
     },
     {
@@ -950,6 +999,7 @@
       "location": "KT Zepp Yokohama",
       "organizer": "戦極MCBATTLE",
       "notes": "https://sengokumc.exblog.jp/32653799/ | https://sengokumc.exblog.jp/32653792/ | https://x.com/sengokumc/status/1801494965480210503",
+      "battle_format": "1on1",
       "winner_name": "KOPERU"
     },
     {
@@ -969,6 +1019,7 @@
       "location": "Zepp Sapporo",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "SAM"
     },
     {
@@ -988,6 +1039,7 @@
       "location": "両国国技館",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "SAM"
     },
     {
@@ -1007,6 +1059,7 @@
       "location": "なんばHATCH",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "ミメイ"
     },
     {
@@ -1026,6 +1079,7 @@
       "location": "Sendai PIT",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "COCRGI WHITE"
     },
     {
@@ -1045,6 +1099,7 @@
       "location": "Zepp Sapporo",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "COCRGI WHITE"
     },
     {
@@ -1064,6 +1119,7 @@
       "location": "Zepp DiverCity",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "SAM"
     },
     {
@@ -1083,6 +1139,7 @@
       "location": "日本武道館",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -1102,6 +1159,7 @@
       "location": "TSUTAYA O-EAST",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "SKRYU"
     },
     {
@@ -1121,6 +1179,7 @@
       "location": "TSUTAYA O-EAST",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "COCRGI WHITE"
     },
     {
@@ -1140,6 +1199,7 @@
       "location": "Zepp DiverCity",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "AUTHORITY"
     },
     {
@@ -1159,6 +1219,7 @@
       "location": "豊洲PIT",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "SAM"
     },
     {
@@ -1178,6 +1239,7 @@
       "location": "Zepp DiverCity",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "漢 a.k.a. GAMI"
     },
     {
@@ -1197,6 +1259,7 @@
       "location": "Zepp DiverCity",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "GIL"
     },
     {
@@ -1216,6 +1279,7 @@
       "location": "Osaka Joule",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "RAWAXXX"
     },
     {
@@ -1235,6 +1299,7 @@
       "location": "O-EAST",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "GADORO"
     },
     {
@@ -1254,7 +1319,28 @@
       "location": "Shibuya O-EAST",
       "organizer": "戦極MCBATTLE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/sengoku-15chapter",
+      "battle_format": "1on1",
       "winner_name": "GADORO"
+    },
+    {
+      "event_id": "EVT0173",
+      "event_name": "戦極MCBATTLE 第15章 (Tag match)",
+      "event_name_full": "戦極MCBATTLE 第15章 (Tag match)",
+      "event_name_simple": "戦極MCBATTLE 第15章 (Tag match)",
+      "event_date": "2016-05-29",
+      "prize_money_winner": 300000,
+      "prize_money_total": null,
+      "category_id": "EVTCat004",
+      "category_name": "戦極MC BATTLE",
+      "category_show_order": 500,
+      "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+      "event_category": "戦極MC BATTLE",
+      "event_stage": "本戦",
+      "location": "LIQUIDROOM",
+      "organizer": "戦極MC BATTLE",
+      "notes": "",
+      "battle_format": "team",
+      "winner_name": ""
     },
     {
       "event_id": "EVT0107",
@@ -1273,6 +1359,7 @@
       "location": "O-EAST",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "NAIKA MC"
     },
     {
@@ -1292,6 +1379,7 @@
       "location": "CLUB HARLEM",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -1311,6 +1399,7 @@
       "location": "OSAKA TRIANGLE",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "GOLBY"
     },
     {
@@ -1330,6 +1419,7 @@
       "location": "SHIBUYA SOUND MUSEUM VISION",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "晋平太"
     },
     {
@@ -1349,6 +1439,7 @@
       "location": "SHIBUYA THE GAME",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "DOTAMA"
     },
     {
@@ -1368,6 +1459,7 @@
       "location": "SHIBUYA THE GAME",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "サイプレス上野"
     },
     {
@@ -1387,6 +1479,7 @@
       "location": "SHIBUYA clubasia",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "DOTAMA"
     },
     {
@@ -1406,6 +1499,7 @@
       "location": "CLUB浦和BASE",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "鎮座DOPENESS"
     },
     {
@@ -1425,6 +1519,7 @@
       "location": "CLUB浦和BASE",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "チプルソ"
     },
     {
@@ -1444,6 +1539,7 @@
       "location": "CLUB浦和BASE",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "TKda黒ぶち"
     },
     {
@@ -1463,6 +1559,7 @@
       "location": "CLUB浦和BASE",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "TKda黒ぶち"
     },
     {
@@ -1482,6 +1579,7 @@
       "location": "CLUB浦和BASE",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "黄猿"
     },
     {
@@ -1501,6 +1599,7 @@
       "location": "CLUB浦和BASE",
       "organizer": "戦極MCBATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "晋平太"
     },
     {
@@ -1520,6 +1619,7 @@
       "location": "JOULE",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "レイジ"
     },
     {
@@ -1539,6 +1639,7 @@
       "location": "クリエイティブセンター大阪",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "CIMA"
     },
     {
@@ -1558,6 +1659,7 @@
       "location": "CLUB CITTA'",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "泰斗(裂固)"
     },
     {
@@ -1577,6 +1679,7 @@
       "location": "Zepp Osaka Bayside",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "MC☆ニガリ"
     },
     {
@@ -1596,6 +1699,7 @@
       "location": "Spoify O-east",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "輪入道"
     },
     {
@@ -1615,6 +1719,7 @@
       "location": "味園ユニバース",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "RAWAXXX"
     },
     {
@@ -1634,6 +1739,7 @@
       "location": "CLUB CITTA'",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "輪入道"
     },
     {
@@ -1653,6 +1759,7 @@
       "location": "CONPASS",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "MC☆ニガリ"
     },
     {
@@ -1672,6 +1779,7 @@
       "location": "CONPASS",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "輪入道"
     },
     {
@@ -1691,6 +1799,7 @@
       "location": "味園ユニバース",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "AUTHORITY"
     },
     {
@@ -1710,6 +1819,7 @@
       "location": "味園ユニバース",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -1729,6 +1839,7 @@
       "location": "味園ユニバース",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "RAWAXXX"
     },
     {
@@ -1748,6 +1859,7 @@
       "location": "Club Twice",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "泰斗(裂固)"
     },
     {
@@ -1767,6 +1879,7 @@
       "location": "Club Twice",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -1786,6 +1899,7 @@
       "location": "Club Twice",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "SURRY"
     },
     {
@@ -1805,6 +1919,7 @@
       "location": "BIGCAT",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "peko"
     },
     {
@@ -1824,6 +1939,7 @@
       "location": "BIGCAT",
       "organizer": "Spotlight",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "R-指定"
     },
     {
@@ -1843,6 +1959,7 @@
       "location": "Club Joule",
       "organizer": "凱旋MC battle",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "龍鬼"
     },
     {
@@ -1862,6 +1979,7 @@
       "location": "Zepp Namba",
       "organizer": "凱旋MC battle",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "T-TANGG"
     },
     {
@@ -1881,6 +1999,7 @@
       "location": "Club Bar Family",
       "organizer": "凱旋MC battle",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "Chance"
     },
     {
@@ -1900,6 +2019,7 @@
       "location": "豊洲PIT",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-tgk2",
+      "battle_format": "1on1",
       "winner_name": "S-kainê"
     },
     {
@@ -1919,6 +2039,7 @@
       "location": "Zepp Fukuoka",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-fukuoka",
+      "battle_format": "1on1",
       "winner_name": "RAWAXXX"
     },
     {
@@ -1938,6 +2059,7 @@
       "location": "東京ガーデンシアター",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-sp2023",
+      "battle_format": "1on1",
       "winner_name": "DOTAMA"
     },
     {
@@ -1957,6 +2079,7 @@
       "location": "なんばHatch",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-osaka",
+      "battle_format": "1on1",
       "winner_name": "がーどまん"
     },
     {
@@ -1976,6 +2099,7 @@
       "location": "豊洲PIT",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-tgk",
+      "battle_format": "1on1",
       "winner_name": "がーどまん"
     },
     {
@@ -1995,6 +2119,7 @@
       "location": "仙台PIT",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-sendai2023",
+      "battle_format": "1on1",
       "winner_name": "句潤"
     },
     {
@@ -2014,6 +2139,7 @@
       "location": "Zepp Sapporo",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-hokkaido",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -2033,6 +2159,7 @@
       "location": "さいたまスーパーアリーナ",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-arena2022",
+      "battle_format": "1on1",
       "winner_name": "T-Pablow"
     },
     {
@@ -2052,6 +2179,7 @@
       "location": "渋谷HARLEM",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-22-1",
+      "battle_format": "1on1",
       "winner_name": "輪入道"
     },
     {
@@ -2071,6 +2199,7 @@
       "location": "豊洲PIT",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-toyosu",
+      "battle_format": "1on1",
       "winner_name": "SAM"
     },
     {
@@ -2090,6 +2219,7 @@
       "location": "仙台PIT",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-sendai",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -2109,6 +2239,7 @@
       "location": "Zepp Osaka Bayside",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-21osaka",
+      "battle_format": "1on1",
       "winner_name": "SAM"
     },
     {
@@ -2128,6 +2259,7 @@
       "location": "Zeep Fukuoka",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-21fukuoka",
+      "battle_format": "1on1",
       "winner_name": "SKRYU"
     },
     {
@@ -2147,6 +2279,7 @@
       "location": "Zepp NAGOYA",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-21nagoya",
+      "battle_format": "1on1",
       "winner_name": "ID"
     },
     {
@@ -2166,6 +2299,7 @@
       "location": "KT Zepp Yokohama",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-21yokohama",
+      "battle_format": "1on1",
       "winner_name": "S-kainê"
     },
     {
@@ -2185,6 +2319,7 @@
       "location": "ぴあアリーナMM",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-arena",
+      "battle_format": "1on1",
       "winner_name": "輪入道"
     },
     {
@@ -2204,6 +2339,7 @@
       "location": "HARLEM Plus",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-abema",
+      "battle_format": "1on1",
       "winner_name": "RAWAXXX"
     },
     {
@@ -2223,6 +2359,7 @@
       "location": "CLUB CITTA'",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-2020-summer-result",
+      "battle_format": "1on1",
       "winner_name": "COCRGI WHITE"
     },
     {
@@ -2242,6 +2379,7 @@
       "location": "Zepp DiverCity TOKYO",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-2020-winter",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -2261,6 +2399,7 @@
       "location": "渋谷TSUTAYA O-EAST",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-2019-summer",
+      "battle_format": "1on1",
       "winner_name": "Authority"
     },
     {
@@ -2280,6 +2419,7 @@
       "location": "渋谷TSUTAYA O-EAST",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-2019-spring",
+      "battle_format": "1on1",
       "winner_name": "CIMA"
     },
     {
@@ -2299,6 +2439,7 @@
       "location": "VUENOS 渋谷",
       "organizer": "凱旋MC battle",
       "notes": "Source: https://www.finance-accounting-value.com/entry/gaisen-2018-0624",
+      "battle_format": "1on1",
       "winner_name": "K-razy"
     },
     {
@@ -2318,6 +2459,7 @@
       "location": "CLUB CITTA'",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/shinad-reggae",
+      "battle_format": "1on1",
       "winner_name": "POWER WAVE"
     },
     {
@@ -2337,6 +2479,7 @@
       "location": "KT Zepp Yokohama",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-ad-06",
+      "battle_format": "1on1",
       "winner_name": "Authority"
     },
     {
@@ -2356,6 +2499,7 @@
       "location": "Spotify O-EAST",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/sengoku-shinad",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -2375,6 +2519,7 @@
       "location": "CLUB CITTA'",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-ad-05",
+      "battle_format": "1on1",
       "winner_name": "晋平太"
     },
     {
@@ -2394,6 +2539,7 @@
       "location": "渋谷WOMB",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-reggae3",
+      "battle_format": "1on1",
       "winner_name": "CHEHON"
     },
     {
@@ -2413,6 +2559,7 @@
       "location": "渋谷WOMB",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenalin-2302",
+      "battle_format": "1on1",
       "winner_name": "晋平太"
     },
     {
@@ -2432,6 +2579,7 @@
       "location": "Spotify O-EAST",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-adrenaline-2210",
+      "battle_format": "1on1",
       "winner_name": "晋平太"
     },
     {
@@ -2451,6 +2599,7 @@
       "location": "SOUND MUSEUM VISION",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-reggae2",
+      "battle_format": "1on1",
       "winner_name": "DOTAMA"
     },
     {
@@ -2470,6 +2619,7 @@
       "location": "WOMB",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-22-3",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -2489,6 +2639,7 @@
       "location": "Zepp DiverCity",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-adrenaline-2202",
+      "battle_format": "1on1",
       "winner_name": "CIMA"
     },
     {
@@ -2508,6 +2659,7 @@
       "location": "SOUND MUSEUM VISION",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-reggae",
+      "battle_format": "1on1",
       "winner_name": "COCRGI WHITE"
     },
     {
@@ -2527,6 +2679,7 @@
       "location": "Zepp Fukuoka",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-fukuoka",
+      "battle_format": "1on1",
       "winner_name": "Fuma no KTR"
     },
     {
@@ -2546,6 +2699,7 @@
       "location": "KT Zepp Yokohama",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-adrenaline-2108",
+      "battle_format": "1on1",
       "winner_name": "句潤"
     },
     {
@@ -2565,6 +2719,7 @@
       "location": "SOUND MUSEUM VISION",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kok-vs-adrenaline",
+      "battle_format": "1on1",
       "winner_name": "FORK"
     },
     {
@@ -2584,6 +2739,7 @@
       "location": "CLUB CITTA'",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-abema",
+      "battle_format": "1on1",
       "winner_name": "孫GONG"
     },
     {
@@ -2603,6 +2759,7 @@
       "location": "TSUTAYA O-EAST",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/shinado-2020aut",
+      "battle_format": "1on1",
       "winner_name": "句潤"
     },
     {
@@ -2622,6 +2779,7 @@
       "location": "CLUB CITTA'",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/shin-adrenaline-2020summer",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -2641,6 +2799,7 @@
       "location": "TSUTAYA O-EAST",
       "organizer": "真 ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/shin-adrenaline-2020",
+      "battle_format": "1on1",
       "winner_name": "輪入道"
     },
     {
@@ -2660,6 +2819,7 @@
       "location": "渋谷VUENOS",
       "organizer": "ADRENALINE",
       "notes": "Source: https://www.finance-accounting-value.com/entry/adrenaline-2014",
+      "battle_format": "1on1",
       "winner_name": "R-指定"
     },
     {
@@ -2679,6 +2839,7 @@
       "location": "渋谷 WOMB",
       "organizer": "The罵倒",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "輪入道"
     },
     {
@@ -2698,6 +2859,7 @@
       "location": "渋谷 WOMB",
       "organizer": "The罵倒",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "Lick-G"
     },
     {
@@ -2717,6 +2879,7 @@
       "location": "渋谷 WOMB",
       "organizer": "The罵倒",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "輪入道"
     },
     {
@@ -2736,6 +2899,7 @@
       "location": "渋谷 WOMB",
       "organizer": "The罵倒",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "呂布カルマ"
     },
     {
@@ -2755,6 +2919,7 @@
       "location": "渋谷 WOMB",
       "organizer": "The罵倒",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "輪入道"
     },
     {
@@ -2774,6 +2939,7 @@
       "location": "渋谷 WOMB",
       "organizer": "The罵倒",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "GOLBY"
     },
     {
@@ -2793,6 +2959,7 @@
       "location": "Zepp Nagoya",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-2311",
+      "battle_format": "1on1",
       "winner_name": "句潤"
     },
     {
@@ -2812,6 +2979,7 @@
       "location": "club G",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-2309",
+      "battle_format": "1on1",
       "winner_name": "RAWAXXX"
     },
     {
@@ -2831,6 +2999,7 @@
       "location": "CLUB CITTA'",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-2301",
+      "battle_format": "1on1",
       "winner_name": "SKRYU"
     },
     {
@@ -2850,6 +3019,7 @@
       "location": "club G",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-2210",
+      "battle_format": "1on1",
       "winner_name": "泰斗(裂固)"
     },
     {
@@ -2869,6 +3039,7 @@
       "location": "Zepp Nagoya",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-sp",
+      "battle_format": "1on1",
       "winner_name": "RAWAXXX"
     },
     {
@@ -2888,6 +3059,7 @@
       "location": "TRIANGLE OSAKA",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-osaka",
+      "battle_format": "1on1",
       "winner_name": "KBD"
     },
     {
@@ -2907,6 +3079,7 @@
       "location": "club G",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka-kok",
+      "battle_format": "1on1",
       "winner_name": "晋平太"
     },
     {
@@ -2926,6 +3099,7 @@
       "location": "clubBLOCK",
       "organizer": "HIKIGANE SOUND",
       "notes": "Source: https://www.finance-accounting-value.com/entry/kuchigenka2020",
+      "battle_format": "1on1",
       "winner_name": "SILENT KILLA JOINT"
     },
     {
@@ -2945,6 +3119,7 @@
       "location": "HARLEM",
       "organizer": "NEO GENESIS MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "DOTAMA"
     },
     {
@@ -2964,6 +3139,7 @@
       "location": "JOULE",
       "organizer": "NEO GENESIS MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "REDWING"
     },
     {
@@ -2983,6 +3159,7 @@
       "location": "CLUB CITTA'",
       "organizer": "NEO GENESIS MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "Rude-α"
     },
     {
@@ -3002,6 +3179,7 @@
       "location": "HARLEM",
       "organizer": "NEO GENESIS MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "K-rush"
     },
     {
@@ -3021,6 +3199,7 @@
       "location": "HARLEM",
       "organizer": "NEO GENESIS MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "ミメイ"
     },
     {
@@ -3040,6 +3219,7 @@
       "location": "HARLEM",
       "organizer": "NEO GENESIS MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "楓"
     },
     {
@@ -3059,6 +3239,7 @@
       "location": "CLUB CITTA'",
       "organizer": "NEO GENESIS MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "Shamis"
     },
     {
@@ -3078,6 +3259,7 @@
       "location": "R-lounge 6F",
       "organizer": "NEO GENESIS MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "REDWING"
     },
     {
@@ -3097,6 +3279,7 @@
       "location": "R-lounge 6F",
       "organizer": "NEO GENESIS MC BATTLE",
       "notes": "",
+      "battle_format": "1on1",
       "winner_name": "ミメイ"
     }
   ]

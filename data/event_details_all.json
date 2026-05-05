@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-05-04T00:07:09.057Z",
-  "total": 163,
+  "updated_at": "2026-05-05T05:59:58.010Z",
+  "total": 164,
   "event_details": {
     "EVT0001": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0001",
         "event_name": "UMB2005 GrandChanpionShip",
@@ -18,6 +18,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "新宿LOFT",
@@ -36,7 +37,12 @@
             "mc_id": "MC0374",
             "mc_name": "吉田のブービー"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -198,7 +204,7 @@
       "total_matches": 15
     },
     "EVT0002": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0002",
         "event_name": "UMB2006 GrandChanpionShip",
@@ -213,6 +219,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "Club CITTA",
@@ -231,7 +238,12 @@
             "mc_id": "MC0108",
             "mc_name": "FEIDA-WAN"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -393,7 +405,7 @@
       "total_matches": 15
     },
     "EVT0003": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0003",
         "event_name": "UMB2007 GrandChanpionShip",
@@ -408,6 +420,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "Club CITTA",
@@ -426,7 +439,12 @@
             "mc_id": "MC0269",
             "mc_name": "S-SENCE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -588,7 +606,7 @@
       "total_matches": 15
     },
     "EVT0004": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0004",
         "event_name": "UMB2008 GrandChanpionShip",
@@ -603,6 +621,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "なんばHatch",
@@ -621,7 +640,12 @@
             "mc_id": "MC0237",
             "mc_name": "P-Pong"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -783,7 +807,7 @@
       "total_matches": 15
     },
     "EVT0005": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0005",
         "event_name": "UMB2009 GrandChanpionShip",
@@ -798,6 +822,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "Club CITTA",
@@ -816,7 +841,12 @@
             "mc_id": "MC0237",
             "mc_name": "P-PONG"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -992,7 +1022,7 @@
       "total_matches": 16
     },
     "EVT0006": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0006",
         "event_name": "UMB2010 GrandChanpionShip",
@@ -1007,6 +1037,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "Club CITTA",
@@ -1025,7 +1056,12 @@
             "mc_id": "MC0089",
             "mc_name": "D.D.S"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -1187,7 +1223,7 @@
       "total_matches": 15
     },
     "EVT0007": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0007",
         "event_name": "UMB2011 GrandChanpionShip",
@@ -1202,6 +1238,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "恵比寿LiquidRoom",
@@ -1220,7 +1257,12 @@
             "mc_id": "MC0100",
             "mc_name": "DOTAMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -1531,7 +1573,7 @@
       "total_matches": 31
     },
     "EVT0008": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0008",
         "event_name": "UMB2012 GrandChanpionShip",
@@ -1546,6 +1588,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "恵比寿LiquidRoom",
@@ -1564,7 +1607,12 @@
             "mc_id": "MC0393",
             "mc_name": "早雲"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -1875,7 +1923,7 @@
       "total_matches": 31
     },
     "EVT0009": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0009",
         "event_name": "UMB2013 GrandChanpionShip",
@@ -1890,6 +1938,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "恵比寿LiquidRoom",
@@ -1908,7 +1957,12 @@
             "mc_id": "MC0214",
             "mc_name": "RAWAXXX"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -2219,7 +2273,7 @@
       "total_matches": 31
     },
     "EVT0010": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0010",
         "event_name": "UMB2014 GrandChanpionShip",
@@ -2234,6 +2288,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "新木場StudioCoast",
@@ -2252,7 +2307,12 @@
             "mc_id": "MC0118",
             "mc_name": "GIL"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -2563,7 +2623,7 @@
       "total_matches": 31
     },
     "EVT0011": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0011",
         "event_name": "UMB2015 GrandChanpionShip",
@@ -2578,6 +2638,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "新木場StudioCoast",
@@ -2596,7 +2657,12 @@
             "mc_id": "MC0145",
             "mc_name": "JAKE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -2907,7 +2973,7 @@
       "total_matches": 31
     },
     "EVT0012": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0012",
         "event_name": "UMB2016 GrandChanpionShip",
@@ -2922,6 +2988,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "新木場StudioCoast",
@@ -2940,7 +3007,12 @@
             "mc_id": "MC0015",
             "mc_name": "MC☆ニガリ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -3400,7 +3472,7 @@
       "total_matches": 47
     },
     "EVT0013": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0013",
         "event_name": "UMB2017 GrandChanpionShip",
@@ -3415,6 +3487,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "新木場StudioCoast",
@@ -3433,7 +3506,12 @@
             "mc_id": "MC0376",
             "mc_name": "呂布カルマ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -3893,7 +3971,7 @@
       "total_matches": 47
     },
     "EVT0014": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0014",
         "event_name": "UMB2018 GrandChanpionShip",
@@ -3908,6 +3986,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "新木場StudioCoast",
@@ -3926,7 +4005,12 @@
             "mc_id": "MC0434",
             "mc_name": "輪入道"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -4386,7 +4470,7 @@
       "total_matches": 47
     },
     "EVT0015": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0015",
         "event_name": "UMB2019 GrandChanpionShip",
@@ -4401,6 +4485,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "新木場StudioCoast",
@@ -4419,7 +4504,12 @@
             "mc_id": "MC0275",
             "mc_name": "SHAMO"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -4879,7 +4969,7 @@
       "total_matches": 47
     },
     "EVT0016": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0016",
         "event_name": "UMB2020 GrandChanpionShip",
@@ -4894,6 +4984,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "新木場StudioCoast",
@@ -4912,7 +5003,12 @@
             "mc_id": "MC0376",
             "mc_name": "呂布カルマ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -5516,7 +5612,7 @@
       "total_matches": 63
     },
     "EVT0017": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0017",
         "event_name": "UMB2021 GrandChanpionShip",
@@ -5531,6 +5627,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "新木場StudioCoast",
@@ -5549,7 +5646,12 @@
             "mc_id": "MC0358",
             "mc_name": "ハイロ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -5860,7 +5962,7 @@
       "total_matches": 31
     },
     "EVT0018": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0018",
         "event_name": "UMB2022 GrandChanpionShip",
@@ -5875,6 +5977,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "Club CITTA",
@@ -5893,7 +5996,12 @@
             "mc_id": "MC0157",
             "mc_name": "K'iLL"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -6281,7 +6389,7 @@
       "total_matches": 39
     },
     "EVT0019": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0019",
         "event_name": "UMB2023 GrandChanpionShip",
@@ -6296,6 +6404,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "恵比寿LiquidRoom",
@@ -6314,7 +6423,12 @@
             "mc_id": "MC0222",
             "mc_name": "NAIKA MC"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -6774,7 +6888,7 @@
       "total_matches": 47
     },
     "EVT0020": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0020",
         "event_name": "UMB2024 GrandChanpionShip",
@@ -6789,6 +6903,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "Club CITTA",
@@ -6807,7 +6922,12 @@
             "mc_id": "MC0104",
             "mc_name": "ENEMY"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -7249,7 +7369,7 @@
       "total_matches": 45
     },
     "EVT0021": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0021",
         "event_name": "UMB2025 GrandChanpionShip",
@@ -7264,6 +7384,7 @@
         "category_name": "UMB 本戦",
         "category_show_order": 100,
         "category_description": "漢 a.k.a. GAMIを中心に立ち上げられ、2005年に始まったLibra Records主催のMCバトル大会。\r\n全国各地の予選を勝ち抜いたMCが年末の本戦に集まり、日本一を争う形式を定着させた。\r\nB BOY PARK以降のMCバトル文化を全国規模に広げ、日本語ラップ史に大きな足跡を残した重要なシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "UMB 本戦",
         "event_stage": "本戦",
         "location": "渋谷WOMB",
@@ -7282,7 +7403,12 @@
             "mc_id": "MC0144",
             "mc_name": "JAG-ME"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -7706,7 +7832,7 @@
       "total_matches": 43
     },
     "EVT0022": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0022",
         "event_name": "KOK2015 GrandChanpionShip",
@@ -7721,6 +7847,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "新宿Reny",
@@ -7739,7 +7866,12 @@
             "mc_id": "MC0128",
             "mc_name": "HI-KING TAKASE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -7901,7 +8033,7 @@
       "total_matches": 15
     },
     "EVT0023": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0023",
         "event_name": "KOK2016 GrandChanpionShip",
@@ -7916,6 +8048,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "ティファ有明",
@@ -7934,7 +8067,12 @@
             "mc_id": "MC0472",
             "mc_name": "崇勲"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -8096,7 +8234,7 @@
       "total_matches": 15
     },
     "EVT0024": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0024",
         "event_name": "KOK2017 GrandChanpionShip",
@@ -8111,6 +8249,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "ZeppTokyo",
@@ -8129,7 +8268,12 @@
             "mc_id": "MC0354",
             "mc_name": "スナフキン"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -8291,7 +8435,7 @@
       "total_matches": 15
     },
     "EVT0025": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0025",
         "event_name": "KOK2018 GrandChanpionShip",
@@ -8306,6 +8450,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -8324,7 +8469,12 @@
             "mc_id": "MC0055",
             "mc_name": "BASE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -8486,7 +8636,7 @@
       "total_matches": 15
     },
     "EVT0026": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0026",
         "event_name": "KOK2019 GrandChanpionShip",
@@ -8501,6 +8651,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -8519,7 +8670,12 @@
             "mc_id": "MC0376",
             "mc_name": "呂布カルマ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -8681,7 +8837,7 @@
       "total_matches": 15
     },
     "EVT0027": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0027",
         "event_name": "KOK2020 GrandChanpionShip",
@@ -8696,6 +8852,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -8714,7 +8871,12 @@
             "mc_id": "MC0434",
             "mc_name": "輪入道"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -8876,7 +9038,7 @@
       "total_matches": 15
     },
     "EVT0028": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0028",
         "event_name": "KOK2021 GrandChanpionShip",
@@ -8891,6 +9053,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -8909,7 +9072,12 @@
             "mc_id": "MC0399",
             "mc_name": "梵頭"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -9071,7 +9239,7 @@
       "total_matches": 15
     },
     "EVT0029": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0029",
         "event_name": "KOK2022 GrandChanpionShip",
@@ -9086,6 +9254,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -9104,7 +9273,12 @@
             "mc_id": "MC0279",
             "mc_name": "SILENT KILLA JOINT"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -9266,7 +9440,7 @@
       "total_matches": 15
     },
     "EVT0030": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0030",
         "event_name": "KOK2023 GrandChanpionShip",
@@ -9281,6 +9455,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -9299,7 +9474,12 @@
             "mc_id": "MC0046",
             "mc_name": "Authority"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -9461,7 +9641,7 @@
       "total_matches": 15
     },
     "EVT0031": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0031",
         "event_name": "KOK2024 GrandChanpionShip",
@@ -9476,6 +9656,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -9494,7 +9675,12 @@
             "mc_id": "MC0280",
             "mc_name": "SIMON JAP"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -9656,7 +9842,7 @@
       "total_matches": 15
     },
     "EVT0032": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0032",
         "event_name": "KOK2025 GrandChanpionShip",
@@ -9671,6 +9857,7 @@
         "category_name": "King of Kings 本戦",
         "category_show_order": 300,
         "category_description": "漢 a.k.a. GAMI presentsとして展開される、各大会王者・選抜MCが集まるMCバトル大会。\r\nUMB以後のシーンで、複数大会の勝者を横断して“真の王者”を決める構造を打ち出した。\r\n大会単体の強さだけでなく、シーン全体の勢力図を映すグランドチャンピオン型のシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "King of Kings 本戦",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -9689,7 +9876,12 @@
             "mc_id": "MC0245",
             "mc_name": "PONEY"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -9851,7 +10043,7 @@
       "total_matches": 15
     },
     "EVT0038": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0038",
         "event_name": "戦極MCBATTLE 第34章 -THE 32MCs王道in横浜-",
@@ -9866,6 +10058,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "KT Zepp Yokohama",
@@ -9884,7 +10077,12 @@
             "mc_id": "MC0373",
             "mc_name": "句潤"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -10195,7 +10393,7 @@
       "total_matches": 31
     },
     "EVT0039": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0039",
         "event_name": "戦極MCBATTLE 第36章 東北公演 2025開幕戦",
@@ -10210,6 +10408,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "仙台PIT",
@@ -10228,7 +10427,12 @@
             "mc_id": "MC0599",
             "mc_name": "Rude-α"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -10354,7 +10558,7 @@
       "total_matches": 11
     },
     "EVT0040": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0040",
         "event_name": "戦極MCBATTLE 第37章 -OSAKA- 王座奪還1on1",
@@ -10369,6 +10573,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "Zepp Osaka Bayside",
@@ -10387,7 +10592,12 @@
             "mc_id": "MC0469",
             "mc_name": "ミメイ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -10698,7 +10908,7 @@
       "total_matches": 31
     },
     "EVT0041": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0041",
         "event_name": "戦極MCBATTLE 第15章本選 JAPAN TOUR FINAL",
@@ -10713,6 +10923,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "Shibuya O-EAST",
@@ -10731,7 +10942,12 @@
             "mc_id": "MC0243",
             "mc_name": "PEKO"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -11335,7 +11551,7 @@
       "total_matches": 63
     },
     "EVT0045": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0045",
         "event_name": "口喧嘩祭 Special × KOK2020",
@@ -11350,6 +11566,7 @@
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
         "category_description": "岐阜・柳ヶ瀬を拠点とするHIKIGANE SOUND主催のMCバトルシリーズ。\r\n梵頭らの東海ヒップホップ文脈と結びつき、地方発の現場感を全国区へ押し上げた。\r\n抽選性や即興性の強いカード感も含め、口喧嘩的な生々しさを前面に出す大会。\r\n",
+        "battle_format": "1on1",
         "event_category": "口喧嘩祭",
         "event_stage": "本戦",
         "location": "clubBLOCK",
@@ -11368,7 +11585,12 @@
             "mc_id": "MC0080",
             "mc_name": "CIMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -11828,7 +12050,7 @@
       "total_matches": 47
     },
     "EVT0046": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0046",
         "event_name": "口喧嘩祭 Special × KOK2021",
@@ -11843,6 +12065,7 @@
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
         "category_description": "岐阜・柳ヶ瀬を拠点とするHIKIGANE SOUND主催のMCバトルシリーズ。\r\n梵頭らの東海ヒップホップ文脈と結びつき、地方発の現場感を全国区へ押し上げた。\r\n抽選性や即興性の強いカード感も含め、口喧嘩的な生々しさを前面に出す大会。\r\n",
+        "battle_format": "1on1",
         "event_category": "口喧嘩祭",
         "event_stage": "本戦",
         "location": "club G",
@@ -11861,7 +12084,12 @@
             "mc_id": "MC0376",
             "mc_name": "呂布カルマ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -12172,7 +12400,7 @@
       "total_matches": 31
     },
     "EVT0047": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0047",
         "event_name": "口喧嘩祭 大阪編",
@@ -12187,6 +12415,7 @@
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
         "category_description": "岐阜・柳ヶ瀬を拠点とするHIKIGANE SOUND主催のMCバトルシリーズ。\r\n梵頭らの東海ヒップホップ文脈と結びつき、地方発の現場感を全国区へ押し上げた。\r\n抽選性や即興性の強いカード感も含め、口喧嘩的な生々しさを前面に出す大会。\r\n",
+        "battle_format": "1on1",
         "event_category": "口喧嘩祭",
         "event_stage": "本戦",
         "location": "TRIANGLE OSAKA",
@@ -12205,7 +12434,12 @@
             "mc_id": "MC0214",
             "mc_name": "RAWAXXX"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -12516,7 +12750,7 @@
       "total_matches": 31
     },
     "EVT0048": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0048",
         "event_name": "口喧嘩祭 Special at Zepp Nagoya",
@@ -12531,6 +12765,7 @@
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
         "category_description": "岐阜・柳ヶ瀬を拠点とするHIKIGANE SOUND主催のMCバトルシリーズ。\r\n梵頭らの東海ヒップホップ文脈と結びつき、地方発の現場感を全国区へ押し上げた。\r\n抽選性や即興性の強いカード感も含め、口喧嘩的な生々しさを前面に出す大会。\r\n",
+        "battle_format": "1on1",
         "event_category": "口喧嘩祭",
         "event_stage": "本戦",
         "location": "Zepp Nagoya",
@@ -12549,7 +12784,12 @@
             "mc_id": "MC0756",
             "mc_name": "COCRGI WHITE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -12711,7 +12951,7 @@
       "total_matches": 15
     },
     "EVT0049": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0049",
         "event_name": "口喧嘩祭 Special × KOK2022",
@@ -12726,6 +12966,7 @@
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
         "category_description": "岐阜・柳ヶ瀬を拠点とするHIKIGANE SOUND主催のMCバトルシリーズ。\r\n梵頭らの東海ヒップホップ文脈と結びつき、地方発の現場感を全国区へ押し上げた。\r\n抽選性や即興性の強いカード感も含め、口喧嘩的な生々しさを前面に出す大会。\r\n",
+        "battle_format": "1on1",
         "event_category": "口喧嘩祭",
         "event_stage": "本戦",
         "location": "club G",
@@ -12744,7 +12985,12 @@
             "mc_id": "MC0171",
             "mc_name": "KBD"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -13055,7 +13301,7 @@
       "total_matches": 31
     },
     "EVT0050": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0050",
         "event_name": "口喧嘩祭 Special in CLUB CITTA'",
@@ -13070,6 +13316,7 @@
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
         "category_description": "岐阜・柳ヶ瀬を拠点とするHIKIGANE SOUND主催のMCバトルシリーズ。\r\n梵頭らの東海ヒップホップ文脈と結びつき、地方発の現場感を全国区へ押し上げた。\r\n抽選性や即興性の強いカード感も含め、口喧嘩的な生々しさを前面に出す大会。\r\n",
+        "battle_format": "1on1",
         "event_category": "口喧嘩祭",
         "event_stage": "本戦",
         "location": "CLUB CITTA'",
@@ -13088,7 +13335,12 @@
             "mc_id": "MC0756",
             "mc_name": "COCRGI WHITE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -13250,7 +13502,7 @@
       "total_matches": 15
     },
     "EVT0051": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0051",
         "event_name": "口喧嘩祭 Special × KOK2023",
@@ -13265,6 +13517,7 @@
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
         "category_description": "岐阜・柳ヶ瀬を拠点とするHIKIGANE SOUND主催のMCバトルシリーズ。\r\n梵頭らの東海ヒップホップ文脈と結びつき、地方発の現場感を全国区へ押し上げた。\r\n抽選性や即興性の強いカード感も含め、口喧嘩的な生々しさを前面に出す大会。\r\n",
+        "battle_format": "1on1",
         "event_category": "口喧嘩祭",
         "event_stage": "本戦",
         "location": "club G",
@@ -13283,7 +13536,12 @@
             "mc_id": "MC0614",
             "mc_name": "ID"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -13594,7 +13852,7 @@
       "total_matches": 31
     },
     "EVT0052": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0052",
         "event_name": "口喧嘩祭 Special at Zepp Nagoya",
@@ -13609,6 +13867,7 @@
         "category_name": "口喧嘩祭",
         "category_show_order": 900,
         "category_description": "岐阜・柳ヶ瀬を拠点とするHIKIGANE SOUND主催のMCバトルシリーズ。\r\n梵頭らの東海ヒップホップ文脈と結びつき、地方発の現場感を全国区へ押し上げた。\r\n抽選性や即興性の強いカード感も含め、口喧嘩的な生々しさを前面に出す大会。\r\n",
+        "battle_format": "1on1",
         "event_category": "口喧嘩祭",
         "event_stage": "本戦",
         "location": "Zepp Nagoya",
@@ -13627,7 +13886,12 @@
             "mc_id": "MC0204",
             "mc_name": "MAKA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -13789,7 +14053,7 @@
       "total_matches": 15
     },
     "EVT0053": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0053",
         "event_name": "凱旋MCbattle東西選抜",
@@ -13804,6 +14068,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "VUENOS 渋谷",
@@ -13822,7 +14087,12 @@
             "mc_id": "MC0763",
             "mc_name": "U-mallow"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -14282,7 +14552,7 @@
       "total_matches": 47
     },
     "EVT0054": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0054",
         "event_name": "凱旋2019春ノ陣",
@@ -14297,6 +14567,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "渋谷TSUTAYA O-EAST",
@@ -14315,7 +14586,12 @@
             "mc_id": "MC0046",
             "mc_name": "Authority"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -14775,7 +15051,7 @@
       "total_matches": 47
     },
     "EVT0055": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0055",
         "event_name": "凱旋MCbattle夏ノ陣2019",
@@ -14790,6 +15066,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "渋谷TSUTAYA O-EAST",
@@ -14808,7 +15085,12 @@
             "mc_id": "MC0452",
             "mc_name": "Hardy"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -15268,7 +15550,7 @@
       "total_matches": 47
     },
     "EVT0057": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0057",
         "event_name": "凱旋MCbattle東西選抜 冬ノ陣2020",
@@ -15283,6 +15565,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "Zepp DiverCity TOKYO",
@@ -15301,7 +15584,12 @@
             "mc_id": "MC0027",
             "mc_name": "ACE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -15761,7 +16049,7 @@
       "total_matches": 47
     },
     "EVT0058": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0058",
         "event_name": "凱旋MCBattle東西選抜 夏ノ陣2020",
@@ -15776,6 +16064,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "CLUB CITTA'",
@@ -15794,7 +16083,12 @@
             "mc_id": "MC0376",
             "mc_name": "呂布カルマ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -15956,7 +16250,7 @@
       "total_matches": 15
     },
     "EVT0059": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0059",
         "event_name": "凱旋MCbattle×ABEMATV",
@@ -15971,6 +16265,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "HARLEM Plus",
@@ -15989,7 +16284,12 @@
             "mc_id": "MC0279",
             "mc_name": "SILENT KILLA JOINT"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -16228,7 +16528,7 @@
       "total_matches": 23
     },
     "EVT0060": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0060",
         "event_name": "凱旋MCbattle Special アリーナの陣",
@@ -16243,6 +16543,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "ぴあアリーナMM",
@@ -16261,7 +16562,12 @@
             "mc_id": "MC0614",
             "mc_name": "ID"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -16482,7 +16788,7 @@
       "total_matches": 21
     },
     "EVT0061": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0061",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠横浜",
@@ -16497,6 +16803,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "KT Zepp Yokohama",
@@ -16515,7 +16822,12 @@
             "mc_id": "MC0159",
             "mc_name": "K-rush"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -16754,7 +17066,7 @@
       "total_matches": 23
     },
     "EVT0062": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0062",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠名古屋",
@@ -16769,6 +17081,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "Zepp NAGOYA",
@@ -16787,7 +17100,12 @@
             "mc_id": "MC0023",
             "mc_name": "S-kainê"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -16949,7 +17267,7 @@
       "total_matches": 15
     },
     "EVT0063": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0063",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠福岡",
@@ -16964,6 +17282,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "Zeep Fukuoka",
@@ -16982,7 +17301,12 @@
             "mc_id": "MC0015",
             "mc_name": "MC☆ニガリ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -17144,7 +17468,7 @@
       "total_matches": 15
     },
     "EVT0064": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0064",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠大阪",
@@ -17159,6 +17483,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "Zepp Osaka Bayside",
@@ -17177,7 +17502,12 @@
             "mc_id": "MC0756",
             "mc_name": "COCRGI WHITE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -17416,7 +17746,7 @@
       "total_matches": 23
     },
     "EVT0065": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0065",
         "event_name": "凱旋MC battle PIT TOUR 仙台",
@@ -17431,6 +17761,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "仙台PIT",
@@ -17449,7 +17780,12 @@
             "mc_id": "MC0451",
             "mc_name": "Fuma no KTR"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -17611,7 +17947,7 @@
       "total_matches": 15
     },
     "EVT0066": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0066",
         "event_name": "凱旋MC battle PIT TOUR 東京",
@@ -17626,6 +17962,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -17644,7 +17981,12 @@
             "mc_id": "MC0468",
             "mc_name": "がーどまん"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -17806,7 +18148,7 @@
       "total_matches": 15
     },
     "EVT0067": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0067",
         "event_name": "凱旋MC BATTLE 春のMC BATTLE 三連祭2022",
@@ -17821,6 +18163,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "渋谷HARLEM",
@@ -17839,7 +18182,12 @@
             "mc_id": "MC0214",
             "mc_name": "RAWAXXX"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -18001,7 +18349,7 @@
       "total_matches": 15
     },
     "EVT0068": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0068",
         "event_name": "凱旋MC battle in さいたまスーパーアリーナ",
@@ -18016,6 +18364,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "さいたまスーパーアリーナ",
@@ -18034,7 +18383,12 @@
             "mc_id": "MC0448",
             "mc_name": "CHEHON"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -18196,7 +18550,7 @@
       "total_matches": 15
     },
     "EVT0069": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0069",
         "event_name": "凱旋MC battle NORTH JAPAN TOUR2023 in 北海道",
@@ -18211,6 +18565,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "Zepp Sapporo",
@@ -18229,7 +18584,12 @@
             "mc_id": "MC0614",
             "mc_name": "ID"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -18391,7 +18751,7 @@
       "total_matches": 15
     },
     "EVT0070": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0070",
         "event_name": "凱旋MC battle NORTH JAPAN TOUR2023 in 仙台",
@@ -18406,6 +18766,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "仙台PIT",
@@ -18424,7 +18785,12 @@
             "mc_id": "MC0399",
             "mc_name": "梵頭"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -18586,7 +18952,7 @@
       "total_matches": 15
     },
     "EVT0071": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0071",
         "event_name": "凱旋MC battle THE GIANT KILLING ",
@@ -18601,6 +18967,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -18619,7 +18986,12 @@
             "mc_id": "MC0465",
             "mc_name": "Shamis"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -18930,7 +19302,7 @@
       "total_matches": 31
     },
     "EVT0072": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0072",
         "event_name": "凱旋MC battle 大阪ノ陣2023",
@@ -18945,6 +19317,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "なんばHatch",
@@ -18963,7 +19336,12 @@
             "mc_id": "MC0100",
             "mc_name": "DOTAMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -19125,7 +19503,7 @@
       "total_matches": 15
     },
     "EVT0073": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0073",
         "event_name": "凱旋MC battle Special2023",
@@ -19140,6 +19518,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "東京ガーデンシアター",
@@ -19158,7 +19537,12 @@
             "mc_id": "MC0761",
             "mc_name": "RYKEY DADDY DIRTY"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -19397,7 +19781,7 @@
       "total_matches": 23
     },
     "EVT0074": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0074",
         "event_name": "凱旋MC battle 冬ノ陣2023",
@@ -19412,6 +19796,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "Zepp Fukuoka",
@@ -19430,7 +19815,12 @@
             "mc_id": "MC0756",
             "mc_name": "COCRGI WHITE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -19592,7 +19982,7 @@
       "total_matches": 15
     },
     "EVT0075": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0075",
         "event_name": "凱旋MC battle THE GIANT KILLING 2",
@@ -19607,6 +19997,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -19625,7 +20016,12 @@
             "mc_id": "MC0159",
             "mc_name": "K-rush"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -19936,7 +20332,7 @@
       "total_matches": 31
     },
     "EVT0076": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0076",
         "event_name": "ADRENALINE2014",
@@ -19951,6 +20347,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "渋谷VUENOS",
@@ -19969,7 +20366,12 @@
             "mc_id": "MC0015",
             "mc_name": "MC☆ニガリ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -20280,7 +20682,7 @@
       "total_matches": 31
     },
     "EVT0077": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0077",
         "event_name": "真ADRENALINE2020",
@@ -20295,6 +20697,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "TSUTAYA O-EAST",
@@ -20313,7 +20716,12 @@
             "mc_id": "MC0448",
             "mc_name": "CHEHON"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -20516,7 +20924,7 @@
       "total_matches": 19
     },
     "EVT0078": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0078",
         "event_name": "ADRENALINE杯 夏の陣2020",
@@ -20531,6 +20939,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "CLUB CITTA'",
@@ -20549,7 +20958,12 @@
             "mc_id": "MC0751",
             "mc_name": "Jinmenusagi"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -20711,7 +21125,7 @@
       "total_matches": 15
     },
     "EVT0079": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0079",
         "event_name": "真ADRENALINE SPECIAL 杯真の陣+KINGDOM2020",
@@ -20726,6 +21140,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "TSUTAYA O-EAST",
@@ -20744,7 +21159,12 @@
             "mc_id": "MC0474",
             "mc_name": "泰斗(裂固)"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -20906,7 +21326,7 @@
       "total_matches": 15
     },
     "EVT0080": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0080",
         "event_name": "真 ADRENALINE ABEMAノ乱",
@@ -20921,6 +21341,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "CLUB CITTA'",
@@ -20939,7 +21360,12 @@
             "mc_id": "MC0434",
             "mc_name": "輪入道"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -21142,7 +21568,7 @@
       "total_matches": 19
     },
     "EVT0081": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0081",
         "event_name": "KING OF KINGS vs 真ADRENALINE",
@@ -21157,6 +21583,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "SOUND MUSEUM VISION",
@@ -21175,7 +21602,12 @@
             "mc_id": "MC0023",
             "mc_name": "S-kainê"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -21337,7 +21769,7 @@
       "total_matches": 15
     },
     "EVT0082": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0082",
         "event_name": "KING OF KINGS vs 真ADRENALINE #2",
@@ -21352,6 +21784,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "KT Zepp Yokohama",
@@ -21370,7 +21803,12 @@
             "mc_id": "MC0271",
             "mc_name": "SAM"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -21532,7 +21970,7 @@
       "total_matches": 15
     },
     "EVT0083": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0083",
         "event_name": "真 ADRENALINE 福岡ノ乱",
@@ -21547,6 +21985,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "Zepp Fukuoka",
@@ -21565,7 +22004,12 @@
             "mc_id": "MC0447",
             "mc_name": "9for"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -21718,7 +22162,7 @@
       "total_matches": 14
     },
     "EVT0084": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0084",
         "event_name": "渋谷レゲエ祭 vs 真 ADRENALINE 2021",
@@ -21733,6 +22177,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "SOUND MUSEUM VISION",
@@ -21751,7 +22196,12 @@
             "mc_id": "MC0753",
             "mc_name": "RAY"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -21913,7 +22363,7 @@
       "total_matches": 15
     },
     "EVT0085": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0085",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #3",
@@ -21928,6 +22378,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "Zepp DiverCity",
@@ -21946,7 +22397,12 @@
             "mc_id": "MC0272",
             "mc_name": "Scooby J"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -22108,7 +22564,7 @@
       "total_matches": 15
     },
     "EVT0086": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0086",
         "event_name": "真ADRENALINE 春のMC BATTLE 三連祭2022",
@@ -22123,6 +22579,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "WOMB",
@@ -22141,7 +22598,12 @@
             "mc_id": "MC0337",
             "mc_name": "ふぁんく"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -22303,7 +22765,7 @@
       "total_matches": 15
     },
     "EVT0087": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0087",
         "event_name": "渋谷レゲエ祭 vs 真ADRENALINE #2",
@@ -22318,6 +22780,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "SOUND MUSEUM VISION",
@@ -22336,7 +22799,12 @@
             "mc_id": "MC0692",
             "mc_name": "POWER WAVE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -22498,7 +22966,7 @@
       "total_matches": 15
     },
     "EVT0088": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0088",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #4",
@@ -22513,6 +22981,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "Spotify O-EAST",
@@ -22531,7 +23000,12 @@
             "mc_id": "MC0756",
             "mc_name": "COCRGI WHITE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -22693,7 +23167,7 @@
       "total_matches": 15
     },
     "EVT0089": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0089",
         "event_name": "真 ADRENALINE 2023 at 渋谷WOMB",
@@ -22708,6 +23182,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "渋谷WOMB",
@@ -22726,7 +23201,12 @@
             "mc_id": "MC0100",
             "mc_name": "DOTAMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -22888,7 +23368,7 @@
       "total_matches": 15
     },
     "EVT0090": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0090",
         "event_name": "渋谷レゲエ祭 vs 真ADRENALINE 2023",
@@ -22903,6 +23383,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "渋谷WOMB",
@@ -22921,7 +23402,12 @@
             "mc_id": "MC0756",
             "mc_name": "COCRGI WHITE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -23083,7 +23569,7 @@
       "total_matches": 15
     },
     "EVT0091": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0091",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #5",
@@ -23098,6 +23584,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "CLUB CITTA'",
@@ -23116,7 +23603,12 @@
             "mc_id": "MC0694",
             "mc_name": "018"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -23278,7 +23770,7 @@
       "total_matches": 15
     },
     "EVT0092": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0092",
         "event_name": "戦極MCBATTLE vs 真ADRENALINE",
@@ -23293,6 +23785,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "Spotify O-EAST",
@@ -23311,7 +23804,12 @@
             "mc_id": "MC0204",
             "mc_name": "MAKA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -23473,7 +23971,7 @@
       "total_matches": 15
     },
     "EVT0093": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0093",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #6",
@@ -23488,6 +23986,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "KT Zepp Yokohama",
@@ -23506,7 +24005,12 @@
             "mc_id": "MC0753",
             "mc_name": "RAY"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -23668,7 +24172,7 @@
       "total_matches": 15
     },
     "EVT0094": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0094",
         "event_name": "渋谷レゲエ祭 vs 真ADRENALINE",
@@ -23683,6 +24187,7 @@
         "category_name": "ADRENALINE",
         "category_show_order": 800,
         "category_description": "ACEとHIDEによるSound Luck主催のMCバトルシリーズ。\r\nADRENALINEから真ADRENALINEへと展開し、チーム戦・世代対抗・レゲエとの交差など独自企画を打ち出した。\r\n王道トーナメントだけでなく、企画性の強さでシーンに存在感を残す大会。\r",
+        "battle_format": "1on1",
         "event_category": "ADRENALINE",
         "event_stage": "本戦",
         "location": "CLUB CITTA'",
@@ -23701,7 +24206,12 @@
             "mc_id": "MC0214",
             "mc_name": "RAWAXXX"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -23863,7 +24373,7 @@
       "total_matches": 15
     },
     "EVT0095": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0095",
         "event_name": "戦極MCBATTLE 第1章 ",
@@ -23878,6 +24388,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "CLUB浦和BASE",
@@ -23896,7 +24407,12 @@
             "mc_id": "MC0444",
             "mc_name": "黄猿"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -24248,7 +24764,7 @@
       "total_matches": 35
     },
     "EVT0096": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0096",
         "event_name": "戦極MCBATTLE 第2章 ",
@@ -24263,6 +24779,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "CLUB浦和BASE",
@@ -24281,7 +24798,12 @@
             "mc_id": "MC0554",
             "mc_name": "オロカモノポテチ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -24443,7 +24965,7 @@
       "total_matches": 15
     },
     "EVT0097": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0097",
         "event_name": "戦極MCBATTLE 第3章 ",
@@ -24458,6 +24980,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "CLUB浦和BASE",
@@ -24476,7 +24999,12 @@
             "mc_id": "MC0089",
             "mc_name": "D.D.S"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -24638,7 +25166,7 @@
       "total_matches": 15
     },
     "EVT0098": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0098",
         "event_name": "戦極MCBATTLE 第4章 ",
@@ -24653,6 +25181,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "CLUB浦和BASE",
@@ -24671,7 +25200,12 @@
             "mc_id": "MC0589",
             "mc_name": "LifeSaver"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -24833,7 +25367,7 @@
       "total_matches": 15
     },
     "EVT0099": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0099",
         "event_name": "戦極MCBATTLE 第5章 ",
@@ -24848,6 +25382,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "CLUB浦和BASE",
@@ -24866,7 +25401,12 @@
             "mc_id": "MC0173",
             "mc_name": "KEN THE 390"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -25177,7 +25717,7 @@
       "total_matches": 31
     },
     "EVT0100": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0100",
         "event_name": "戦極MCBATTLE 第6章 ",
@@ -25192,6 +25732,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "CLUB浦和BASE",
@@ -25210,7 +25751,12 @@
             "mc_id": "MC0444",
             "mc_name": "黄猿"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -25521,7 +26067,7 @@
       "total_matches": 31
     },
     "EVT0101": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0101",
         "event_name": "戦極MCBATTLE 第7章 ",
@@ -25536,6 +26082,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "SHIBUYA clubasia",
@@ -25554,7 +26101,12 @@
             "mc_id": "MC0663",
             "mc_name": "NIHA-C"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -25865,7 +26417,7 @@
       "total_matches": 31
     },
     "EVT0102": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0102",
         "event_name": "戦極MCBATTLE 第8章 ",
@@ -25880,6 +26432,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "SHIBUYA THE GAME",
@@ -25898,7 +26451,12 @@
             "mc_id": "MC0080",
             "mc_name": "CIMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -26060,7 +26618,7 @@
       "total_matches": 15
     },
     "EVT0103": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0103",
         "event_name": "戦極MCBATTLE 第9章 ",
@@ -26075,6 +26633,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "SHIBUYA THE GAME",
@@ -26093,7 +26652,12 @@
             "mc_id": "MC0691",
             "mc_name": "Egavvo"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -26404,7 +26968,7 @@
       "total_matches": 31
     },
     "EVT0104": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0104",
         "event_name": "戦極MCBATTLE 第10章 ",
@@ -26419,6 +26983,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "SHIBUYA SOUND MUSEUM VISION",
@@ -26437,7 +27002,12 @@
             "mc_id": "MC0100",
             "mc_name": "DOTAMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -26599,7 +27169,7 @@
       "total_matches": 15
     },
     "EVT0105": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0105",
         "event_name": "戦極MCBATTLE 第11章 ",
@@ -26614,6 +27184,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "OSAKA TRIANGLE",
@@ -26632,7 +27203,12 @@
             "mc_id": "MC0578",
             "mc_name": "諒太"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -26794,7 +27370,7 @@
       "total_matches": 15
     },
     "EVT0106": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0106",
         "event_name": "戦極MCBATTLE 第12章 ",
@@ -26809,6 +27385,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "CLUB HARLEM",
@@ -26827,7 +27404,12 @@
             "mc_id": "MC0214",
             "mc_name": "RAWAXXX"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -26989,7 +27571,7 @@
       "total_matches": 15
     },
     "EVT0107": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0107",
         "event_name": "戦極MCBATTLE 第13章 ",
@@ -27004,6 +27586,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "O-EAST",
@@ -27022,7 +27605,12 @@
             "mc_id": "MC0171",
             "mc_name": "KBD"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -27184,7 +27772,7 @@
       "total_matches": 15
     },
     "EVT0108": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0108",
         "event_name": "戦極MCBATTLE 第15章 ",
@@ -27199,6 +27787,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "O-EAST",
@@ -27217,7 +27806,12 @@
             "mc_id": "MC0243",
             "mc_name": "peko"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -27821,7 +28415,7 @@
       "total_matches": 63
     },
     "EVT0109": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0109",
         "event_name": "戦極MCBATTLE 第16章 ",
@@ -27836,6 +28430,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "Osaka Joule",
@@ -27854,7 +28449,12 @@
             "mc_id": "MC0080",
             "mc_name": "CIMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -28458,7 +29058,7 @@
       "total_matches": 63
     },
     "EVT0110": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0110",
         "event_name": "戦極MCBATTLE 第17章 ",
@@ -28473,6 +29073,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "Zepp DiverCity",
@@ -28491,7 +29092,12 @@
             "mc_id": "MC0354",
             "mc_name": "スナフキン"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -29086,7 +29692,7 @@
       "total_matches": 62
     },
     "EVT0111": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0111",
         "event_name": "戦極MCBATTLE 第18章 ",
@@ -29101,6 +29707,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "Zepp DiverCity",
@@ -29119,7 +29726,12 @@
             "mc_id": "MC0756",
             "mc_name": "COCRGI WHITE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -29579,7 +30191,7 @@
       "total_matches": 47
     },
     "EVT0112": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0112",
         "event_name": "戦極MCBATTLE 第20章 ",
@@ -29594,6 +30206,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "豊洲PIT",
@@ -29612,7 +30225,12 @@
             "mc_id": "MC0337",
             "mc_name": "ふぁんく"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -30072,7 +30690,7 @@
       "total_matches": 47
     },
     "EVT0113": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0113",
         "event_name": "戦極MCBATTLE 第21章 ",
@@ -30087,6 +30705,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "Zepp DiverCity",
@@ -30105,7 +30724,12 @@
             "mc_id": "MC0614",
             "mc_name": "ID"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -30565,7 +31189,7 @@
       "total_matches": 47
     },
     "EVT0114": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0114",
         "event_name": "戦極MCBATTLE 第22章 ",
@@ -30580,6 +31204,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "TSUTAYA O-EAST",
@@ -30598,7 +31223,12 @@
             "mc_id": "MC0376",
             "mc_name": "呂布カルマ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -30909,7 +31539,7 @@
       "total_matches": 31
     },
     "EVT0115": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0115",
         "event_name": "戦極MCBATTLE 第23章 ",
@@ -30924,6 +31554,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "TSUTAYA O-EAST",
@@ -30942,7 +31573,12 @@
             "mc_id": "MC0023",
             "mc_name": "S-kainê"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -31253,7 +31889,7 @@
       "total_matches": 31
     },
     "EVT0116": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0116",
         "event_name": "戦極MCBATTLE 第24章 ",
@@ -31268,6 +31904,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "日本武道館",
@@ -31286,7 +31923,12 @@
             "mc_id": "MC0046",
             "mc_name": "Authority"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -31448,7 +32090,7 @@
       "total_matches": 15
     },
     "EVT0117": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0117",
         "event_name": "戦極MCBATTLE 第25章 ",
@@ -31463,6 +32105,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "Zepp DiverCity",
@@ -31481,7 +32124,12 @@
             "mc_id": "MC0767",
             "mc_name": "5LEEP3ALKER"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -31643,7 +32291,7 @@
       "total_matches": 15
     },
     "EVT0118": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0118",
         "event_name": "戦極MCBATTLE 第26章 ",
@@ -31658,6 +32306,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "Zepp Sapporo",
@@ -31676,7 +32325,12 @@
             "mc_id": "MC0902",
             "mc_name": "クフェア"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -31838,7 +32492,7 @@
       "total_matches": 15
     },
     "EVT0119": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0119",
         "event_name": "戦極MCBATTLE 第27章 ",
@@ -31853,6 +32507,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "Sendai PIT",
@@ -31871,7 +32526,12 @@
             "mc_id": "MC0376",
             "mc_name": "呂布カルマ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -32033,7 +32693,7 @@
       "total_matches": 15
     },
     "EVT0120": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0120",
         "event_name": "戦極MCBATTLE 第28章 ",
@@ -32048,6 +32708,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "なんばHATCH",
@@ -32066,7 +32727,12 @@
             "mc_id": "MC0395",
             "mc_name": "晋平太"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -32228,7 +32894,7 @@
       "total_matches": 15
     },
     "EVT0121": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0121",
         "event_name": "戦極MCBATTLE 第29章 ",
@@ -32243,6 +32909,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "両国国技館",
@@ -32261,7 +32928,12 @@
             "mc_id": "MC0077",
             "mc_name": "CHICO CARLITO"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -32500,7 +33172,7 @@
       "total_matches": 23
     },
     "EVT0122": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0122",
         "event_name": "戦極MCBATTLE 第30章 ",
@@ -32515,6 +33187,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "Zepp Sapporo",
@@ -32533,7 +33206,12 @@
             "mc_id": "MC0100",
             "mc_name": "DOTAMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -32695,7 +33373,7 @@
       "total_matches": 15
     },
     "EVT0123": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0123",
         "event_name": "UMB 2017 THE CHOICE IS YOURS Vol.1",
@@ -32710,6 +33388,7 @@
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
         "category_description": "UMB本戦とは別軸で開催された、UMB関連の選抜型MCバトルシリーズ。\r\n本戦常連から新世代までが交わり、通常の地方予選とは違うカード感でUMBの文脈を広げた。\r\nUMB本戦の歴史を補完する、スピンオフ的な位置づけの大会。\r",
+        "battle_format": "1on1",
         "event_category": "UMB The Choise is yours",
         "event_stage": "本戦",
         "location": "Zepp Tokyo",
@@ -32728,7 +33407,12 @@
             "mc_id": "MC0393",
             "mc_name": "早雲"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -33039,7 +33723,7 @@
       "total_matches": 31
     },
     "EVT0124": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0124",
         "event_name": "UMB 2018 THE CHOICE IS YOURS Vol.2",
@@ -33054,6 +33738,7 @@
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
         "category_description": "UMB本戦とは別軸で開催された、UMB関連の選抜型MCバトルシリーズ。\r\n本戦常連から新世代までが交わり、通常の地方予選とは違うカード感でUMBの文脈を広げた。\r\nUMB本戦の歴史を補完する、スピンオフ的な位置づけの大会。\r",
+        "battle_format": "1on1",
         "event_category": "UMB The Choise is yours",
         "event_stage": "本戦",
         "location": "CLUB CITTA",
@@ -33072,7 +33757,12 @@
             "mc_id": "MC0010",
             "mc_name": "BATTLE手裏剣"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -33383,7 +34073,7 @@
       "total_matches": 31
     },
     "EVT0125": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0125",
         "event_name": "UMB 2019 THE CHOICE IS YOURS Vol.3",
@@ -33398,6 +34088,7 @@
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
         "category_description": "UMB本戦とは別軸で開催された、UMB関連の選抜型MCバトルシリーズ。\r\n本戦常連から新世代までが交わり、通常の地方予選とは違うカード感でUMBの文脈を広げた。\r\nUMB本戦の歴史を補完する、スピンオフ的な位置づけの大会。\r",
+        "battle_format": "1on1",
         "event_category": "UMB The Choise is yours",
         "event_stage": "本戦",
         "location": "CLUB CITTA",
@@ -33416,7 +34107,12 @@
             "mc_id": "MC0335",
             "mc_name": "だーひー"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -33578,7 +34274,7 @@
       "total_matches": 15
     },
     "EVT0126": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0126",
         "event_name": "UMB 2020 THE CHOICE IS YOURS Vol.4",
@@ -33593,6 +34289,7 @@
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
         "category_description": "UMB本戦とは別軸で開催された、UMB関連の選抜型MCバトルシリーズ。\r\n本戦常連から新世代までが交わり、通常の地方予選とは違うカード感でUMBの文脈を広げた。\r\nUMB本戦の歴史を補完する、スピンオフ的な位置づけの大会。\r",
+        "battle_format": "1on1",
         "event_category": "UMB The Choise is yours",
         "event_stage": "本戦",
         "location": "LIQUIDROOM",
@@ -33611,7 +34308,12 @@
             "mc_id": "MC0376",
             "mc_name": "呂布カルマ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -33922,7 +34624,7 @@
       "total_matches": 31
     },
     "EVT0127": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0127",
         "event_name": "UMB 2021 THE CHOICE IS YOURS Vol.5",
@@ -33937,6 +34639,7 @@
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
         "category_description": "UMB本戦とは別軸で開催された、UMB関連の選抜型MCバトルシリーズ。\r\n本戦常連から新世代までが交わり、通常の地方予選とは違うカード感でUMBの文脈を広げた。\r\nUMB本戦の歴史を補完する、スピンオフ的な位置づけの大会。\r",
+        "battle_format": "1on1",
         "event_category": "UMB The Choise is yours",
         "event_stage": "本戦",
         "location": "LIQUIDROOM",
@@ -33955,7 +34658,12 @@
             "mc_id": "MC0222",
             "mc_name": "NAIKA MC"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -34266,7 +34974,7 @@
       "total_matches": 31
     },
     "EVT0128": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0128",
         "event_name": "UMB 2022 THE CHOICE IS YOURS Vol.6",
@@ -34281,6 +34989,7 @@
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
         "category_description": "UMB本戦とは別軸で開催された、UMB関連の選抜型MCバトルシリーズ。\r\n本戦常連から新世代までが交わり、通常の地方予選とは違うカード感でUMBの文脈を広げた。\r\nUMB本戦の歴史を補完する、スピンオフ的な位置づけの大会。\r",
+        "battle_format": "1on1",
         "event_category": "UMB The Choise is yours",
         "event_stage": "本戦",
         "location": "LIQUIDROOM",
@@ -34299,7 +35008,12 @@
             "mc_id": "MC0376",
             "mc_name": "呂布カルマ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -34610,7 +35324,7 @@
       "total_matches": 31
     },
     "EVT0129": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0129",
         "event_name": "UMB 2023 THE CHOICE IS YOURS Vol.7",
@@ -34625,6 +35339,7 @@
         "category_name": "UMB The Choise is yours",
         "category_show_order": 200,
         "category_description": "UMB本戦とは別軸で開催された、UMB関連の選抜型MCバトルシリーズ。\r\n本戦常連から新世代までが交わり、通常の地方予選とは違うカード感でUMBの文脈を広げた。\r\nUMB本戦の歴史を補完する、スピンオフ的な位置づけの大会。\r",
+        "battle_format": "1on1",
         "event_category": "UMB The Choise is yours",
         "event_stage": "本戦",
         "location": "LIQUIDROOM",
@@ -34643,7 +35358,12 @@
             "mc_id": "MC0434",
             "mc_name": "輪入道"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -34954,7 +35674,7 @@
       "total_matches": 31
     },
     "EVT0130": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0130",
         "event_name": "BATTLE SUMMITⅠ",
@@ -34969,6 +35689,7 @@
         "category_name": "BUTTLE SUMMIT",
         "category_show_order": 400,
         "category_description": "複数の主要MCバトル団体が交わる、大規模フェス型のMCバトルイベント。\r\n2022年には日本武道館で開催され、団体横断の選抜MCたちが同じ舞台に集まった。\r\n大会単体の王者決定というより、MCバトルシーン全体の熱量を可視化する大型シリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "BUTTLE SUMMIT",
         "event_stage": "本戦",
         "location": "日本武道館",
@@ -34987,7 +35708,12 @@
             "mc_id": "MC0920",
             "mc_name": "Zeebra"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -35190,7 +35916,7 @@
       "total_matches": 19
     },
     "EVT0131": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0131",
         "event_name": "BATTLE SUMMITⅡ",
@@ -35205,6 +35931,7 @@
         "category_name": "BUTTLE SUMMIT",
         "category_show_order": 400,
         "category_description": "複数の主要MCバトル団体が交わる、大規模フェス型のMCバトルイベント。\r\n2022年には日本武道館で開催され、団体横断の選抜MCたちが同じ舞台に集まった。\r\n大会単体の王者決定というより、MCバトルシーン全体の熱量を可視化する大型シリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "BUTTLE SUMMIT",
         "event_stage": "本戦",
         "location": "代々木第一体育館",
@@ -35223,7 +35950,12 @@
             "mc_id": "MC0283",
             "mc_name": "SKRYU"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -35385,7 +36117,7 @@
       "total_matches": 15
     },
     "EVT0132": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0132",
         "event_name": "NEO GENESIS MC BATTLE Vol.1",
@@ -35400,6 +36132,7 @@
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
         "category_description": "RunLine主催で始まった、新世代発掘色の強いMCバトルシリーズ。\r\n初心者からベテランまで参加できる開かれた形式を掲げ、若手MCの登竜門的な役割を担う。\r\nKOK協力大会にも加わり、次世代シーンの入口として存在感を広げている。\r",
+        "battle_format": "1on1",
         "event_category": "NEO GENESIS MC BATTLE",
         "event_stage": "本戦",
         "location": "R-lounge 6F",
@@ -35418,7 +36151,12 @@
             "mc_id": "MC0624",
             "mc_name": "しーじん"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -35657,7 +36395,7 @@
       "total_matches": 23
     },
     "EVT0133": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0133",
         "event_name": "NEO GENESIS MC BATTLE Vol.2",
@@ -35672,6 +36410,7 @@
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
         "category_description": "RunLine主催で始まった、新世代発掘色の強いMCバトルシリーズ。\r\n初心者からベテランまで参加できる開かれた形式を掲げ、若手MCの登竜門的な役割を担う。\r\nKOK協力大会にも加わり、次世代シーンの入口として存在感を広げている。\r",
+        "battle_format": "1on1",
         "event_category": "NEO GENESIS MC BATTLE",
         "event_stage": "本戦",
         "location": "R-lounge 6F",
@@ -35690,7 +36429,12 @@
             "mc_id": "MC0600",
             "mc_name": "ミステリオ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -35929,7 +36673,7 @@
       "total_matches": 23
     },
     "EVT0134": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0134",
         "event_name": "NEO GENESIS MC BATTLE Vol.3",
@@ -35944,6 +36688,7 @@
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
         "category_description": "RunLine主催で始まった、新世代発掘色の強いMCバトルシリーズ。\r\n初心者からベテランまで参加できる開かれた形式を掲げ、若手MCの登竜門的な役割を担う。\r\nKOK協力大会にも加わり、次世代シーンの入口として存在感を広げている。\r",
+        "battle_format": "1on1",
         "event_category": "NEO GENESIS MC BATTLE",
         "event_stage": "本戦",
         "location": "CLUB CITTA'",
@@ -35962,7 +36707,12 @@
             "mc_id": "MC0927",
             "mc_name": "JyaRi"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -36273,7 +37023,7 @@
       "total_matches": 31
     },
     "EVT0135": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0135",
         "event_name": "NEO GENESIS MC BATTLE Vol.4",
@@ -36288,6 +37038,7 @@
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
         "category_description": "RunLine主催で始まった、新世代発掘色の強いMCバトルシリーズ。\r\n初心者からベテランまで参加できる開かれた形式を掲げ、若手MCの登竜門的な役割を担う。\r\nKOK協力大会にも加わり、次世代シーンの入口として存在感を広げている。\r",
+        "battle_format": "1on1",
         "event_category": "NEO GENESIS MC BATTLE",
         "event_stage": "本戦",
         "location": "HARLEM",
@@ -36306,7 +37057,12 @@
             "mc_id": "MC0618",
             "mc_name": "ピラフ星人"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -36617,7 +37373,7 @@
       "total_matches": 31
     },
     "EVT0136": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0136",
         "event_name": "NEO GENESIS MC BATTLE Vol.5",
@@ -36632,6 +37388,7 @@
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
         "category_description": "RunLine主催で始まった、新世代発掘色の強いMCバトルシリーズ。\r\n初心者からベテランまで参加できる開かれた形式を掲げ、若手MCの登竜門的な役割を担う。\r\nKOK協力大会にも加わり、次世代シーンの入口として存在感を広げている。\r",
+        "battle_format": "1on1",
         "event_category": "NEO GENESIS MC BATTLE",
         "event_stage": "本戦",
         "location": "HARLEM",
@@ -36650,7 +37407,12 @@
             "mc_id": "MC0100",
             "mc_name": "DOTAMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -36961,7 +37723,7 @@
       "total_matches": 31
     },
     "EVT0137": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0137",
         "event_name": "NEO GENESIS MC BATTLE Vol.6",
@@ -36976,6 +37738,7 @@
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
         "category_description": "RunLine主催で始まった、新世代発掘色の強いMCバトルシリーズ。\r\n初心者からベテランまで参加できる開かれた形式を掲げ、若手MCの登竜門的な役割を担う。\r\nKOK協力大会にも加わり、次世代シーンの入口として存在感を広げている。\r",
+        "battle_format": "1on1",
         "event_category": "NEO GENESIS MC BATTLE",
         "event_stage": "本戦",
         "location": "HARLEM",
@@ -36994,7 +37757,12 @@
             "mc_id": "MC0015",
             "mc_name": "MC☆ニガリ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -37233,7 +38001,7 @@
       "total_matches": 23
     },
     "EVT0138": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0138",
         "event_name": "NEO GENESIS MC BATTLE Vol.7",
@@ -37248,6 +38016,7 @@
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
         "category_description": "RunLine主催で始まった、新世代発掘色の強いMCバトルシリーズ。\r\n初心者からベテランまで参加できる開かれた形式を掲げ、若手MCの登竜門的な役割を担う。\r\nKOK協力大会にも加わり、次世代シーンの入口として存在感を広げている。\r",
+        "battle_format": "1on1",
         "event_category": "NEO GENESIS MC BATTLE",
         "event_stage": "本戦",
         "location": "CLUB CITTA'",
@@ -37266,7 +38035,12 @@
             "mc_id": "MC0397",
             "mc_name": "杏地"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -37577,7 +38351,7 @@
       "total_matches": 31
     },
     "EVT0139": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0139",
         "event_name": "NEO GENESIS MC BATTLE Vol.8",
@@ -37592,6 +38366,7 @@
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
         "category_description": "RunLine主催で始まった、新世代発掘色の強いMCバトルシリーズ。\r\n初心者からベテランまで参加できる開かれた形式を掲げ、若手MCの登竜門的な役割を担う。\r\nKOK協力大会にも加わり、次世代シーンの入口として存在感を広げている。\r",
+        "battle_format": "1on1",
         "event_category": "NEO GENESIS MC BATTLE",
         "event_stage": "本戦",
         "location": "JOULE",
@@ -37610,7 +38385,12 @@
             "mc_id": "MC0636",
             "mc_name": "whimsyboy"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -37921,7 +38701,7 @@
       "total_matches": 31
     },
     "EVT0140": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0140",
         "event_name": "NEO GENESIS MC BATTLE Vol.9",
@@ -37936,6 +38716,7 @@
         "category_name": "NEO GENESIS MC BATTLE",
         "category_show_order": 1000,
         "category_description": "RunLine主催で始まった、新世代発掘色の強いMCバトルシリーズ。\r\n初心者からベテランまで参加できる開かれた形式を掲げ、若手MCの登竜門的な役割を担う。\r\nKOK協力大会にも加わり、次世代シーンの入口として存在感を広げている。\r",
+        "battle_format": "1on1",
         "event_category": "NEO GENESIS MC BATTLE",
         "event_stage": "本戦",
         "location": "HARLEM",
@@ -37954,7 +38735,12 @@
             "mc_id": "MC0709",
             "mc_name": "MC frog"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -38193,7 +38979,7 @@
       "total_matches": 23
     },
     "EVT0141": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0141",
         "event_name": "凱旋MC battle 東西選抜 春ノ陣　2024",
@@ -38208,6 +38994,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "Zepp Namba",
@@ -38226,7 +39013,12 @@
             "mc_id": "MC0080",
             "mc_name": "CIMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -38537,7 +39329,7 @@
       "total_matches": 31
     },
     "EVT0142": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0142",
         "event_name": "凱旋MC battle 夏ノ陣 U-27",
@@ -38552,6 +39344,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "Club Joule",
@@ -38570,7 +39363,12 @@
             "mc_id": "MC0452",
             "mc_name": "HARDY"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -38809,7 +39607,7 @@
       "total_matches": 23
     },
     "EVT0143": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0143",
         "event_name": "凱旋MC battle Gate24",
@@ -38824,6 +39622,7 @@
         "category_name": "凱旋MC battle",
         "category_show_order": 700,
         "category_description": "怨念JAPを中心に、2017年に渋谷から始まったMCバトルシリーズ。\n若手の勢いと大型会場への拡張力を武器に、短期間で全国規模の注目大会へ成長した。\nYouTube・配信時代のMCバトルを象徴する、エンタメ性と現場感を併せ持つシリーズ。\n",
+        "battle_format": "1on1",
         "event_category": "凱旋MC battle",
         "event_stage": "本戦",
         "location": "Club Bar Family",
@@ -38842,7 +39641,12 @@
             "mc_id": "MC0986",
             "mc_name": "sosume"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -39153,7 +39957,7 @@
       "total_matches": 31
     },
     "EVT0144": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0144",
         "event_name": "Spotlight 2024 関東編",
@@ -39168,6 +39972,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "CLUB CITTA'",
@@ -39186,7 +39991,12 @@
             "mc_id": "MC0214",
             "mc_name": "RAWAXXX"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -39348,7 +40158,7 @@
       "total_matches": 15
     },
     "EVT0145": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0145",
         "event_name": "Spotlight 2019",
@@ -39363,6 +40173,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "味園ユニバース",
@@ -39381,7 +40192,12 @@
             "mc_id": "MC0266",
             "mc_name": "RYO"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -39692,7 +40508,7 @@
       "total_matches": 31
     },
     "EVT0146": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0146",
         "event_name": "Spotlight 2017",
@@ -39707,6 +40523,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "味園ユニバース",
@@ -39725,7 +40542,12 @@
             "mc_id": "MC0222",
             "mc_name": "NAIKA MC"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -40036,7 +40858,7 @@
       "total_matches": 31
     },
     "EVT0147": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0147",
         "event_name": "Spotlight 2025",
@@ -40051,6 +40873,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "JOULE",
@@ -40069,7 +40892,12 @@
             "mc_id": "MC0434",
             "mc_name": "輪入道"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -40308,7 +41136,7 @@
       "total_matches": 23
     },
     "EVT0148": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0148",
         "event_name": "Spotlight 2024",
@@ -40323,6 +41151,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "クリエイティブセンター大阪",
@@ -40341,7 +41170,12 @@
             "mc_id": "MC0204",
             "mc_name": "MAKA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -40652,7 +41486,7 @@
       "total_matches": 31
     },
     "EVT0149": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0149",
         "event_name": "Spotlight 2023大阪編",
@@ -40667,6 +41501,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "Zepp Osaka Bayside",
@@ -40685,7 +41520,12 @@
             "mc_id": "MC0080",
             "mc_name": "CIMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -40996,7 +41836,7 @@
       "total_matches": 31
     },
     "EVT0150": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0150",
         "event_name": "Spotlight 2023東京編",
@@ -41011,6 +41851,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "Spoify O-east",
@@ -41029,7 +41870,12 @@
             "mc_id": "MC0600",
             "mc_name": "ミステリオ"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -41191,7 +42037,7 @@
       "total_matches": 15
     },
     "EVT0151": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0151",
         "event_name": "Spotlight 2022",
@@ -41206,6 +42052,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "味園ユニバース",
@@ -41224,7 +42071,12 @@
             "mc_id": "MC0100",
             "mc_name": "DOTAMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -41386,7 +42238,7 @@
       "total_matches": 15
     },
     "EVT0152": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0152",
         "event_name": "Spotlight 2022関東編",
@@ -41401,6 +42253,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "CLUB CITTA'",
@@ -41419,7 +42272,12 @@
             "mc_id": "MC0111",
             "mc_name": "FORK"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -41581,7 +42439,7 @@
       "total_matches": 15
     },
     "EVT0153": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0153",
         "event_name": "Spotlight 2021",
@@ -41596,6 +42454,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "CONPASS",
@@ -41614,7 +42473,12 @@
             "mc_id": "MC0080",
             "mc_name": "CIMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -41925,7 +42789,7 @@
       "total_matches": 31
     },
     "EVT0154": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0154",
         "event_name": "Spotlight 2020",
@@ -41940,6 +42804,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "CONPASS",
@@ -41958,7 +42823,12 @@
             "mc_id": "MC0080",
             "mc_name": "CIMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -42269,7 +43139,7 @@
       "total_matches": 31
     },
     "EVT0155": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0155",
         "event_name": "Spotlight 2018",
@@ -42284,6 +43154,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "味園ユニバース",
@@ -42302,7 +43173,12 @@
             "mc_id": "MC0222",
             "mc_name": "NAIKA MC"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -42613,7 +43489,7 @@
       "total_matches": 31
     },
     "EVT0156": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0156",
         "event_name": "Spotlight 2016",
@@ -42628,6 +43504,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "Club Twice",
@@ -42646,7 +43523,12 @@
             "mc_id": "MC0472",
             "mc_name": "崇勲"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -42808,7 +43690,7 @@
       "total_matches": 15
     },
     "EVT0157": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0157",
         "event_name": "Spotlight 2015",
@@ -42823,6 +43705,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "Club Twice",
@@ -42841,7 +43724,12 @@
             "mc_id": "MC0080",
             "mc_name": "CIMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -43003,7 +43891,7 @@
       "total_matches": 15
     },
     "EVT0158": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0158",
         "event_name": "Spotlight 2012",
@@ -43018,6 +43906,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "Club Twice",
@@ -43036,7 +43925,12 @@
             "mc_id": "MC0156",
             "mc_name": "JUNKY"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -43198,7 +44092,7 @@
       "total_matches": 15
     },
     "EVT0159": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0159",
         "event_name": "Spotlight 2010",
@@ -43213,6 +44107,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "BIGCAT",
@@ -43231,7 +44126,12 @@
             "mc_id": "MC0128",
             "mc_name": "HI-KING TAKASE"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -43366,7 +44266,7 @@
       "total_matches": 12
     },
     "EVT0160": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0160",
         "event_name": "Spotlight 2009",
@@ -43381,6 +44281,7 @@
         "category_name": "Spotlight",
         "category_show_order": 600,
         "category_description": "韻踏合組合が主催する、大阪発のMCバトルシリーズ。\r\nENTERなど関西の現場文化と接続し、実力派MCが集まる大会としてシーンに定着した。\r\n関西らしいビート感・ライブ感を持ち、全国大会とは違う現場色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "Spotlight",
         "event_stage": "本戦",
         "location": "BIGCAT",
@@ -43399,7 +44300,12 @@
             "mc_id": "MC0080",
             "mc_name": "CIMA"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -43484,7 +44390,7 @@
       "total_matches": 7
     },
     "EVT0161": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0161",
         "event_name": "戦極MCBATTLE 第42章",
@@ -43499,6 +44405,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "川崎CLUB CITTA'",
@@ -43508,13 +44415,18 @@
         "winner_mc_id": "",
         "runner_up_name": "",
         "runner_up_mc_id": "",
-        "best4": []
+        "best4": [],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [],
       "total_matches": 0
     },
     "EVT0162": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0162",
         "event_name": "BATTLE SUMMITⅢ",
@@ -43529,6 +44441,7 @@
         "category_name": "BUTTLE SUMMIT",
         "category_show_order": 400,
         "category_description": "複数の主要MCバトル団体が交わる、大規模フェス型のMCバトルイベント。\r\n2022年には日本武道館で開催され、団体横断の選抜MCたちが同じ舞台に集まった。\r\n大会単体の王者決定というより、MCバトルシーン全体の熱量を可視化する大型シリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "BUTTLE SUMMIT",
         "event_stage": "本戦",
         "location": "Kアリーナ横浜",
@@ -43538,13 +44451,18 @@
         "winner_mc_id": "",
         "runner_up_name": "",
         "runner_up_mc_id": "",
-        "best4": []
+        "best4": [],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [],
       "total_matches": 0
     },
     "EVT0163": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0163",
         "event_name": "戦極MCBATTLE vs THE罵倒",
@@ -43559,6 +44477,7 @@
         "category_name": "戦極MC BATTLE",
         "category_show_order": 500,
         "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "1on1",
         "event_category": "戦極MC BATTLE",
         "event_stage": "本戦",
         "location": "両国Sunrise",
@@ -43568,7 +44487,12 @@
         "winner_mc_id": "MC0400",
         "runner_up_name": "蘇流邪",
         "runner_up_mc_id": "MC0425",
-        "best4": []
+        "best4": [],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -43807,7 +44731,7 @@
       "total_matches": 23
     },
     "EVT0164": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0164",
         "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
@@ -44124,6 +45048,7 @@
         "category_name": "LUSHBOMU MC BATTLE",
         "category_show_order": 450,
         "category_description": "3150FIGHTとLUSHBOMUの文脈から生まれた、高額賞金型のMCバトル大会。\r\n勝ち上がるごとに賞金が発生するファイトマネー式で、従来の優勝賞金型とは違う緊張感を作った。\r\nボクシング興行的な見せ方とMCバトルを接続した、新しい興行色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "LUSHBOMU MC BATTLE",
         "event_stage": "本戦",
         "location": "渋谷WOMB",
@@ -44142,7 +45067,12 @@
             "mc_id": "MC0222",
             "mc_name": "NAIKA MC"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -44453,7 +45383,7 @@
       "total_matches": 31
     },
     "EVT0165": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0165",
         "event_name": "3150×LUSHBOMU MC BATTLE vol.2",
@@ -44770,6 +45700,7 @@
         "category_name": "LUSHBOMU MC BATTLE",
         "category_show_order": 450,
         "category_description": "3150FIGHTとLUSHBOMUの文脈から生まれた、高額賞金型のMCバトル大会。\r\n勝ち上がるごとに賞金が発生するファイトマネー式で、従来の優勝賞金型とは違う緊張感を作った。\r\nボクシング興行的な見せ方とMCバトルを接続した、新しい興行色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "LUSHBOMU MC BATTLE",
         "event_stage": "本戦",
         "location": "TOKYO FMホール",
@@ -44788,7 +45719,12 @@
             "mc_id": "MC0275",
             "mc_name": "SHAMO"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -45099,7 +46035,7 @@
       "total_matches": 31
     },
     "EVT0166": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0166",
         "event_name": "3150×LUSHBOMU MC BATTLE vol.1",
@@ -45416,6 +46352,7 @@
         "category_name": "LUSHBOMU MC BATTLE",
         "category_show_order": 450,
         "category_description": "3150FIGHTとLUSHBOMUの文脈から生まれた、高額賞金型のMCバトル大会。\r\n勝ち上がるごとに賞金が発生するファイトマネー式で、従来の優勝賞金型とは違う緊張感を作った。\r\nボクシング興行的な見せ方とMCバトルを接続した、新しい興行色の強いシリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "LUSHBOMU MC BATTLE",
         "event_stage": "本戦",
         "location": "Aichi Sky Expo",
@@ -45434,7 +46371,12 @@
             "mc_id": "MC0280",
             "mc_name": "SIMON JAP"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -45745,7 +46687,7 @@
       "total_matches": 31
     },
     "EVT0167": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0167",
         "event_name": "THE罵倒 2013 GRAND CHAMPIONSHIP",
@@ -45760,6 +46702,7 @@
         "category_name": "The罵倒",
         "category_show_order": 850,
         "category_description": "CASTLE RECORDS主催で、2007年に始まった東京発のMCバトルイベント。\r\nボディタッチ有り、喧嘩スレスレの緊張感を打ち出し、スキル偏重とは別のバチバチな美学を築いた。\r\n関東アンダーグラウンドの荒さと熱量を色濃く残す、異色の重要シリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "The罵倒",
         "event_stage": "本戦",
         "location": "渋谷 WOMB",
@@ -45778,7 +46721,12 @@
             "mc_id": "MC0222",
             "mc_name": "NAIKA MC"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -45940,7 +46888,7 @@
       "total_matches": 15
     },
     "EVT0168": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0168",
         "event_name": "THE罵倒 2014 GRAND CHAMPIONSHIP",
@@ -45955,6 +46903,7 @@
         "category_name": "The罵倒",
         "category_show_order": 850,
         "category_description": "CASTLE RECORDS主催で、2007年に始まった東京発のMCバトルイベント。\r\nボディタッチ有り、喧嘩スレスレの緊張感を打ち出し、スキル偏重とは別のバチバチな美学を築いた。\r\n関東アンダーグラウンドの荒さと熱量を色濃く残す、異色の重要シリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "The罵倒",
         "event_stage": "本戦",
         "location": "渋谷 WOMB",
@@ -45973,7 +46922,12 @@
             "mc_id": "MC0121",
             "mc_name": "GOLBY"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -46135,7 +47089,7 @@
       "total_matches": 15
     },
     "EVT0169": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0169",
         "event_name": "THE罵倒 2015 GRAND CHAMPIONSHIP",
@@ -46150,6 +47104,7 @@
         "category_name": "The罵倒",
         "category_show_order": 850,
         "category_description": "CASTLE RECORDS主催で、2007年に始まった東京発のMCバトルイベント。\r\nボディタッチ有り、喧嘩スレスレの緊張感を打ち出し、スキル偏重とは別のバチバチな美学を築いた。\r\n関東アンダーグラウンドの荒さと熱量を色濃く残す、異色の重要シリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "The罵倒",
         "event_stage": "本戦",
         "location": "渋谷 WOMB",
@@ -46168,7 +47123,12 @@
             "mc_id": "MC0354",
             "mc_name": "スナフキン"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -46330,7 +47290,7 @@
       "total_matches": 15
     },
     "EVT0170": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0170",
         "event_name": "THE罵倒 2016 GRAND CHAMPIONSHIP",
@@ -46345,6 +47305,7 @@
         "category_name": "The罵倒",
         "category_show_order": 850,
         "category_description": "CASTLE RECORDS主催で、2007年に始まった東京発のMCバトルイベント。\r\nボディタッチ有り、喧嘩スレスレの緊張感を打ち出し、スキル偏重とは別のバチバチな美学を築いた。\r\n関東アンダーグラウンドの荒さと熱量を色濃く残す、異色の重要シリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "The罵倒",
         "event_stage": "本戦",
         "location": "渋谷 WOMB",
@@ -46363,7 +47324,12 @@
             "mc_id": "MC0400",
             "mc_name": "椿"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -46548,7 +47514,7 @@
       "total_matches": 17
     },
     "EVT0171": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0171",
         "event_name": "THE罵倒 2017 GRAND CHAMPIONSHIP",
@@ -46563,6 +47529,7 @@
         "category_name": "The罵倒",
         "category_show_order": 850,
         "category_description": "CASTLE RECORDS主催で、2007年に始まった東京発のMCバトルイベント。\r\nボディタッチ有り、喧嘩スレスレの緊張感を打ち出し、スキル偏重とは別のバチバチな美学を築いた。\r\n関東アンダーグラウンドの荒さと熱量を色濃く残す、異色の重要シリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "The罵倒",
         "event_stage": "本戦",
         "location": "渋谷 WOMB",
@@ -46581,7 +47548,12 @@
             "mc_id": "MC0434",
             "mc_name": "輪入道"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -46892,7 +47864,7 @@
       "total_matches": 31
     },
     "EVT0172": {
-      "updated_at": "2026-05-04T00:07:09.057Z",
+      "updated_at": "2026-05-05T05:59:58.010Z",
       "event": {
         "event_id": "EVT0172",
         "event_name": "THE罵倒 2018 GRAND CHAMPIONSHIP",
@@ -46907,6 +47879,7 @@
         "category_name": "The罵倒",
         "category_show_order": 850,
         "category_description": "CASTLE RECORDS主催で、2007年に始まった東京発のMCバトルイベント。\r\nボディタッチ有り、喧嘩スレスレの緊張感を打ち出し、スキル偏重とは別のバチバチな美学を築いた。\r\n関東アンダーグラウンドの荒さと熱量を色濃く残す、異色の重要シリーズ。\r",
+        "battle_format": "1on1",
         "event_category": "The罵倒",
         "event_stage": "本戦",
         "location": "渋谷 WOMB",
@@ -46925,7 +47898,12 @@
             "mc_id": "MC0444",
             "mc_name": "黄猿"
           }
-        ]
+        ],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
       },
       "grouped_matches": [
         {
@@ -47234,6 +48212,42 @@
         }
       ],
       "total_matches": 31
+    },
+    "EVT0173": {
+      "updated_at": "2026-05-05T05:59:58.010Z",
+      "event": {
+        "event_id": "EVT0173",
+        "event_name": "戦極MCBATTLE 第15章 (Tag match)",
+        "event_name_full": "戦極MCBATTLE 第15章 (Tag match)",
+        "event_name_simple": "戦極MCBATTLE 第15章 (Tag match)",
+        "event_date": "2016-05-29",
+        "prize_money_winner": 300000,
+        "prize_money_total": null,
+        "prize_adjustments": [],
+        "prize_supplements": [],
+        "category_id": "EVTCat004",
+        "category_name": "戦極MC BATTLE",
+        "category_show_order": 500,
+        "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
+        "battle_format": "team",
+        "event_category": "戦極MC BATTLE",
+        "event_stage": "本戦",
+        "location": "LIQUIDROOM",
+        "organizer": "戦極MC BATTLE",
+        "notes": "",
+        "winner_name": "",
+        "winner_mc_id": "",
+        "runner_up_name": "",
+        "runner_up_mc_id": "",
+        "best4": [],
+        "winner_team_id": "",
+        "winner_team_name": "",
+        "runner_up_team_id": "",
+        "runner_up_team_name": "",
+        "team_results": []
+      },
+      "grouped_matches": [],
+      "total_matches": 0
     }
   }
 }
