@@ -46,8 +46,12 @@ function buildMcHtml(template, mcId, detail) {
   const ranking = detail.ranking || {};
   const summary = detail.summary || {};
   const appearances = sortAppearances(Array.isArray(detail.participated_events) ? detail.participated_events : []);
+  const teamAppearances = sortAppearances(Array.isArray(detail.team_participated_events) ? detail.team_participated_events : []);
   const wins = sortMatchHistory(Array.isArray(detail.wins_against) ? detail.wins_against : []);
   const losses = sortMatchHistory(Array.isArray(detail.losses_against) ? detail.losses_against : []);
+  const teamWins = sortTeamMatchHistory(Array.isArray(detail.team_wins) ? detail.team_wins : []);
+  const teamLosses = sortTeamMatchHistory(Array.isArray(detail.team_losses) ? detail.team_losses : []);
+  const teamSummary = detail.team_summary || {};
   const championships = Array.isArray(detail.championships) ? detail.championships : [];
   const prizeAdjustments = normalizePrizeAdjustments(detail);
   const totalPrizeMoney = detail.total_prize_money ?? 0;
@@ -56,7 +60,7 @@ function buildMcHtml(template, mcId, detail) {
   const mcSubName = safeString(mc.mc_name_sub || "").trim();
   const mcDescription = safeString(mc.mc_description || mc.description || mc.notes_public || "").trim();
   const pageTitle = `${mcName} | 戦績・優勝歴・賞金・出場大会 | MCBattle.jp`;
-  const metaDescription = buildMetaDescription(mcName, summary, championships, totalPrizeMoney);
+  const metaDescription = buildMetaDescription(mcName, summary, championships, totalPrizeMoney, teamSummary);
 
   const rankDisplay = getRankDisplay(ranking);
   const scoreDisplay = getScoreDisplay(ranking);
@@ -67,6 +71,7 @@ function buildMcHtml(template, mcId, detail) {
 
   const mcInfoListItems = buildMcInfoListItems({
     summary,
+    teamSummary,
     championships,
     totalPrizeMoney,
     rankingStatus,
@@ -78,14 +83,19 @@ function buildMcHtml(template, mcId, detail) {
 
   const winsListItems = buildBattleListItems(wins, "win");
   const lossesListItems = buildBattleListItems(losses, "loss");
-  const appearancesListItems = buildAppearanceListItems(appearances);
+  const teamWinsListItems = buildTeamBattleListItems(teamWins, "win");
+  const teamLossesListItems = buildTeamBattleListItems(teamLosses, "loss");
+  const allAppearances = mergeAppearances(appearances, teamAppearances);
+  const appearancesListItems = buildAppearanceListItems(allAppearances);
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(mcId, mcName);
   const profileJsonLd = buildProfileJsonLd(mcId, mcName, metaDescription);
 
   const winsHasMore = wins.length > COLLAPSE_LIMIT_BATTLE;
   const lossesHasMore = losses.length > COLLAPSE_LIMIT_BATTLE;
-  const appearancesHasMore = appearances.length > COLLAPSE_LIMIT_APPEARANCE;
+  const teamWinsHasMore = teamWins.length > COLLAPSE_LIMIT_BATTLE;
+  const teamLossesHasMore = teamLosses.length > COLLAPSE_LIMIT_BATTLE;
+  const appearancesHasMore = allAppearances.length > COLLAPSE_LIMIT_APPEARANCE;
 
   return template
     .replaceAll("__PAGE_TITLE__", escapeHtml(pageTitle))
@@ -114,14 +124,24 @@ function buildMcHtml(template, mcId, detail) {
     .replaceAll("__LOSSES_STATUS__", "")
     .replaceAll("__LOSSES_LIST_ITEMS__", lossesListItems)
     .replaceAll("__LOSSES_MORE_HIDDEN_CLASS__", lossesHasMore ? "" : "is-hidden")
+    .replaceAll("__TEAM_WINS_SECTION_HIDDEN_CLASS__", teamWins.length === 0 ? "is-hidden" : "")
+    .replaceAll("__TEAM_WINS_STATUS_HIDDEN_CLASS__", teamWins.length === 0 ? "" : "is-hidden")
+    .replaceAll("__TEAM_WINS_STATUS__", "")
+    .replaceAll("__TEAM_WINS_LIST_ITEMS__", teamWinsListItems)
+    .replaceAll("__TEAM_WINS_MORE_HIDDEN_CLASS__", teamWinsHasMore ? "" : "is-hidden")
+    .replaceAll("__TEAM_LOSSES_SECTION_HIDDEN_CLASS__", teamLosses.length === 0 ? "is-hidden" : "")
+    .replaceAll("__TEAM_LOSSES_STATUS_HIDDEN_CLASS__", teamLosses.length === 0 ? "" : "is-hidden")
+    .replaceAll("__TEAM_LOSSES_STATUS__", "")
+    .replaceAll("__TEAM_LOSSES_LIST_ITEMS__", teamLossesListItems)
+    .replaceAll("__TEAM_LOSSES_MORE_HIDDEN_CLASS__", teamLossesHasMore ? "" : "is-hidden")
     .replaceAll("__APPEARANCES_SECTION_HIDDEN_CLASS__", "")
-    .replaceAll("__APPEARANCES_STATUS_HIDDEN_CLASS__", appearances.length === 0 ? "" : "is-hidden")
-    .replaceAll("__APPEARANCES_STATUS__", appearances.length === 0 ? "出場大会がありません" : "")
+    .replaceAll("__APPEARANCES_STATUS_HIDDEN_CLASS__", allAppearances.length === 0 ? "" : "is-hidden")
+    .replaceAll("__APPEARANCES_STATUS__", allAppearances.length === 0 ? "出場大会がありません" : "")
     .replaceAll("__APPEARANCES_LIST_ITEMS__", appearancesListItems)
     .replaceAll("__APPEARANCES_MORE_HIDDEN_CLASS__", appearancesHasMore ? "" : "is-hidden");
 }
 
-function buildMetaDescription(mcName, summary, championships, totalPrizeMoney) {
+function buildMetaDescription(mcName, summary, championships, totalPrizeMoney, teamSummary = {}) {
   const totalMatches = summary && summary.total_matches !== undefined && summary.total_matches !== null
     ? Number(summary.total_matches)
     : null;
@@ -132,10 +152,23 @@ function buildMetaDescription(mcName, summary, championships, totalPrizeMoney) {
     ? Number(summary.losses)
     : null;
 
+  const teamTotalMatches = teamSummary && teamSummary.total_matches !== undefined && teamSummary.total_matches !== null
+    ? Number(teamSummary.total_matches)
+    : null;
+  const teamWins = teamSummary && teamSummary.wins !== undefined && teamSummary.wins !== null
+    ? Number(teamSummary.wins)
+    : null;
+  const teamLosses = teamSummary && teamSummary.losses !== undefined && teamSummary.losses !== null
+    ? Number(teamSummary.losses)
+    : null;
+
   const parts = [
     `${mcName}の戦績・優勝歴・出場大会ページです。`,
     totalMatches !== null && Number.isFinite(totalMatches) && wins !== null && Number.isFinite(wins) && losses !== null && Number.isFinite(losses)
       ? `戦績は${totalMatches}試合${wins}勝${losses}敗。`
+      : "",
+    teamTotalMatches !== null && Number.isFinite(teamTotalMatches) && teamWins !== null && Number.isFinite(teamWins) && teamLosses !== null && Number.isFinite(teamLosses) && teamTotalMatches > 0
+      ? `チーム戦績は${teamTotalMatches}試合${teamWins}勝${teamLosses}敗。`
       : "",
     championships.length
       ? `優勝歴は${championships.length}回。`
@@ -152,6 +185,7 @@ function buildMetaDescription(mcName, summary, championships, totalPrizeMoney) {
 function buildMcInfoListItems(params) {
   const {
     summary,
+    teamSummary,
     championships,
     totalPrizeMoney,
     rankingStatus,
@@ -167,10 +201,17 @@ function buildMcInfoListItems(params) {
     : "−";
 
   const battleSummary = `${displayValue(summary.total_matches)}試合 ${displayValue(summary.wins)}勝 ${displayValue(summary.losses)}敗`;
+  const hasTeamSummary = teamSummary && Number(teamSummary.total_matches || 0) > 0;
+  const teamBattleSummary = hasTeamSummary
+    ? `${displayValue(teamSummary.total_matches)}試合 ${displayValue(teamSummary.wins)}勝 ${displayValue(teamSummary.losses)}敗`
+    : "";
 
   const rows = [];
 
   rows.push(renderInfoRow("戦績", escapeHtml(battleSummary)));
+  if (hasTeamSummary) {
+    rows.push(renderInfoRow("チーム戦績", escapeHtml(teamBattleSummary)));
+  }
   rows.push(renderInfoRow("獲得賞金総額", escapeHtml(`¥${formatYen(totalPrizeMoney)}`)));
 
   if (hasChampionships) {
@@ -316,6 +357,87 @@ function buildBattleListItems(items, battleType) {
       "</li>"
     ].join("");
   }).join("\n");
+}
+
+function buildTeamBattleListItems(items, battleType) {
+  if (!items.length) {
+    return '<li class="is-static-empty">−</li>';
+  }
+
+  return items.map((item) => {
+    const ownTeamName = safeString(item.own_team_name || "").trim();
+    const opponentTeamName = safeString(item.opponent_team_name || "").trim();
+    const ownMembers = Array.isArray(item.own_members) ? item.own_members : [];
+    const opponentMembers = Array.isArray(item.opponent_members) ? item.opponent_members : [];
+    const eventHtml = renderTeamBattleEvent(item.event_name || "", item.event_id || "");
+
+    return [
+      "<li>",
+      '<div class="team-battle-card">',
+      '<div class="team-battle-main">',
+      '<div class="team-battle-side is-own">',
+      ownTeamName ? `<div class="team-name-label">${escapeHtml(ownTeamName)}</div>` : "",
+      `<div class="team-members-text">${renderTeamMemberLinks(ownMembers)}</div>`,
+      "</div>",
+      '<div class="team-battle-vs">VS</div>',
+      '<div class="team-battle-side is-opponent">',
+      opponentTeamName ? `<div class="team-name-label">${escapeHtml(opponentTeamName)}</div>` : "",
+      `<div class="team-members-text">${renderTeamMemberLinks(opponentMembers)}</div>`,
+      "</div>",
+      "</div>",
+      eventHtml,
+      "</div>",
+      "</li>"
+    ].join("");
+  }).join("\n");
+}
+
+function renderTeamMemberLinks(members) {
+  const list = Array.isArray(members) ? members : [];
+
+  return list
+    .map((member) => {
+      const name = safeString(member.mc_name || member.name || "").trim();
+      const mcId = safeString(member.mc_id || member.id || "").trim();
+      if (!name) return "";
+
+      const body = escapeHtml(name);
+      if (!mcId) return `<span class="team-member-text">${body}</span>`;
+
+      return `<a class="team-member-link" href="../detail_mc/${encodeURIComponent(mcId)}.html">${body}</a>`;
+    })
+    .filter(Boolean)
+    .join('<span class="team-member-separator">・</span>');
+}
+
+function renderTeamBattleEvent(name, eventId) {
+  const safeName = escapeHtml(name || "");
+  const safeId = String(eventId || "").trim();
+
+  if (!safeName) return "";
+  if (!safeId) return `<span class="team-battle-event">${safeName}</span>`;
+
+  return `
+        <span class="team-battle-event">
+          <a href="../detail_event/${encodeURIComponent(safeId)}.html" class="team-battle-event-link">${safeName}</a>
+        </span>
+      `.trim();
+}
+
+function mergeAppearances(baseAppearances, teamAppearances) {
+  const map = new Map();
+
+  [...baseAppearances, ...teamAppearances].forEach((item) => {
+    const eventId = String(item.event_id || "").trim();
+    const eventName = String(item.event_name || "").trim();
+    const eventDate = String(item.event_date || "").trim();
+    const key = eventId || `${eventName}__${eventDate}`;
+
+    if (!key || map.has(key)) return;
+    map.set(key, item);
+  });
+
+  return sortAppearances(Array.from(map.values()));
 }
 
 function buildAppearanceListItems(items) {
@@ -529,14 +651,6 @@ function getRoundSortValue(roundName) {
 
 function sortMatchHistory(items) {
   return [...items].sort((a, b) => {
-    const hotA = Number(a.opponent_hot_mc || 0);
-    const hotB = Number(b.opponent_hot_mc || 0);
-    if (hotA !== hotB) return hotB - hotA;
-
-    const peakA = firstValidNumber([a.opponent_peak_score], -1);
-    const peakB = firstValidNumber([b.opponent_peak_score], -1);
-    if (peakA !== peakB) return peakB - peakA;
-
     const dateA = String(a.event_date || "");
     const dateB = String(b.event_date || "");
     if (dateA !== dateB) return dateB.localeCompare(dateA);
@@ -552,6 +666,26 @@ function sortMatchHistory(items) {
     const oppA = String(a.opponent_name || "");
     const oppB = String(b.opponent_name || "");
     return oppA.localeCompare(oppB, "ja");
+  });
+}
+
+function sortTeamMatchHistory(items) {
+  return [...items].sort((a, b) => {
+    const dateA = String(a.event_date || "");
+    const dateB = String(b.event_date || "");
+    if (dateA !== dateB) return dateB.localeCompare(dateA);
+
+    const roundA = getRoundSortValue(a.round_name);
+    const roundB = getRoundSortValue(b.round_name);
+    if (roundA !== roundB) return roundA - roundB;
+
+    const eventA = String(a.event_name || "");
+    const eventB = String(b.event_name || "");
+    if (eventA !== eventB) return eventA.localeCompare(eventB, "ja");
+
+    const teamA = String(a.opponent_team_name || "");
+    const teamB = String(b.opponent_team_name || "");
+    return teamA.localeCompare(teamB, "ja");
   });
 }
 
