@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-05T11:18:05.683Z",
-  "total": 878,
+  "updated_at": "2026-05-05T14:08:55.454Z",
+  "total": 924,
   "mcs": [
     {
       "mc_id": "MC0040",
@@ -18,6 +18,16 @@
       "mc_name_sub": "",
       "mc_description": "U-22 MCBATTLE 2025 FINAL、戦極青春白書杯、unplugged MC battleなどに出場。",
       "mc_yomi": "あーくと",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC1110",
+      "mc_name": "EARTH THE KID",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "あーすざきっど",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "あ"
@@ -208,6 +218,16 @@
       "mc_name_sub": "",
       "mc_description": "國學院大学出身。大学生RAP選手権、戦極MCBATTLE、LEGALIZE MC BATTLEなどに出場。",
       "mc_yomi": "あくかげ",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC1118",
+      "mc_name": "Akusa",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "あくさ",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "あ"
@@ -733,6 +753,16 @@
       "kana_group": "あ"
     },
     {
+      "mc_id": "MC1094",
+      "mc_name": "いろは",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "いろは",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
       "mc_id": "MC0887",
       "mc_name": "INNTANA",
       "mc_name_sub": "",
@@ -1053,6 +1083,16 @@
       "kana_group": "あ"
     },
     {
+      "mc_id": "MC1081",
+      "mc_name": "NK-0",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "えぬけーぜろ",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
       "mc_id": "MC0104",
       "mc_name": "ENEMY",
       "mc_name_sub": "",
@@ -1148,6 +1188,16 @@
       "mc_name_sub": "",
       "mc_description": "埼玉県出身。THE罵倒開幕戦優勝、フリースタイルダンジョン出演。戦極MCBATTLE、THE罵倒などに出場。",
       "mc_yomi": "えむしーくれい",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC1098",
+      "mc_name": "MC玄武",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "えむしーげんぶ",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "あ"
@@ -1313,6 +1363,16 @@
       "kana_group": "あ"
     },
     {
+      "mc_id": "MC1082",
+      "mc_name": "mcRey",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "えむしーれい",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
       "mc_id": "MC0573",
       "mc_name": "M-6PO",
       "mc_name_sub": "",
@@ -1368,6 +1428,16 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "えんら",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC1097",
+      "mc_name": "桜京",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "おうきょう",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "あ"
@@ -1553,6 +1623,16 @@
       "kana_group": "あ"
     },
     {
+      "mc_id": "MC1079",
+      "mc_name": "ONO-D",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "おのでぃー",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
       "mc_id": "MC0233",
       "mc_name": "OLIVA",
       "mc_name_sub": "",
@@ -1588,6 +1668,16 @@
       "mc_name_sub": "",
       "mc_description": "岩手県釜石Rep、E.O.P所属。UMB 2018 岩手予選出場、UMB 2022 岩手予選出場。",
       "mc_yomi": "おわらいもん",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC1087",
+      "mc_name": "怨念JAP",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "おんねんじゃっぷ",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "あ"
@@ -1743,6 +1833,16 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1111",
+      "mc_name": "KAJA",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "かじゃ",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC1061",
       "mc_name": "がじゅまる",
       "mc_name_sub": "",
@@ -1758,6 +1858,16 @@
       "mc_name_sub": "",
       "mc_description": "UMB 2017 GRAND CHAMPIONSHIPベスト8。フリースタイルダンジョン出演。",
       "mc_yomi": "がじろうmic",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC1083",
+      "mc_name": "かしわ",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "かしわ",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "か"
@@ -1853,6 +1963,16 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1124",
+      "mc_name": "Gamito",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "がみと",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0167",
       "mc_name": "KaRaAgE",
       "mc_name_sub": "",
@@ -1923,6 +2043,16 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1105",
+      "mc_name": "かんぷ",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "かんぷ",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0175",
       "mc_name": "Key",
       "mc_name_sub": "",
@@ -1978,6 +2108,16 @@
       "mc_name_sub": "",
       "mc_description": "THE罵倒特別編U-20、TOHYO CYPHER day1などに出場。",
       "mc_yomi": "きすしょっと",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC1109",
+      "mc_name": "kichiro",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "きちろ",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "か"
@@ -2248,6 +2388,16 @@
       "mc_name_sub": "",
       "mc_description": "北海道Rep。第2回 激闘！ラップ甲子園決勝大会出場。お分かり！ラップ道場×戦極MCBATTLE第26章予選優勝。",
       "mc_yomi": "くふぇあ",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC1112",
+      "mc_name": "#久保田",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "くぼた",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "か"
@@ -2583,6 +2733,16 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1090",
+      "mc_name": "Kenny Bullard",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "けにーばらーど",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0905",
       "mc_name": "chemicl",
       "mc_name_sub": "",
@@ -2863,6 +3023,16 @@
       "kana_group": "か"
     },
     {
+      "mc_id": "MC1115",
+      "mc_name": "紺野ぶるま",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "こんのぶるま",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "か"
+    },
+    {
       "mc_id": "MC0937",
       "mc_name": "SURGE",
       "mc_name_sub": "",
@@ -3053,6 +3223,16 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1116",
+      "mc_name": "サバンナの鯖",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "さばんなのあり",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0470",
       "mc_name": "仙人掌",
       "mc_name_sub": "",
@@ -3128,6 +3308,16 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "さんじゅうご",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC1106",
+      "mc_name": "SUNSET",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "さんせっと",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "さ"
@@ -3243,6 +3433,16 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1092",
+      "mc_name": "しうた",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "しうた",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0145",
       "mc_name": "JAKE",
       "mc_name_sub": "",
@@ -3303,6 +3503,16 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1096",
+      "mc_name": "JEVA",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "じぇヴぁ",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0664",
       "mc_name": "JECT",
       "mc_name_sub": "",
@@ -3328,6 +3538,16 @@
       "mc_name_sub": "",
       "mc_description": "鹿児島代表としてUMB 2022 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "しおん",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC1119",
+      "mc_name": "Jiggy Rexx",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "じぎーれっくす",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "さ"
@@ -3473,6 +3693,16 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1085",
+      "mc_name": "siao",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "しゃお",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0919",
       "mc_name": "釈迦坊主",
       "mc_name_sub": "",
@@ -3519,6 +3749,16 @@
       "mc_description": "福島代表としてUMB 2013・2023・2025 GRAND CHAMPIONSHIP出場。",
       "mc_yomi": "じゃぐみー",
       "hot_mc": 1,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC1108",
+      "mc_name": "Juster",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "じゃすたー",
+      "hot_mc": 0,
       "notes": "",
       "kana_group": "さ"
     },
@@ -3853,6 +4093,16 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1104",
+      "mc_name": "SINJU",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "しんじゅ",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0895",
       "mc_name": "シンソリューム",
       "mc_name_sub": "",
@@ -3943,6 +4193,16 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1089",
+      "mc_name": "SUICIDE RYUSEI",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "すーさいどりゅうせい",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC0716",
       "mc_name": "SKY C",
       "mc_name_sub": "",
@@ -4008,6 +4268,16 @@
       "mc_name_sub": "",
       "mc_description": "U-22 MCBATTLE第五次予選2019決勝、凱旋MCbattle東西選抜春ノ陣2019などに出場。",
       "mc_yomi": "すたく",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC1120",
+      "mc_name": "Stack28",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "すたっく",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "さ"
@@ -4263,6 +4533,16 @@
       "kana_group": "さ"
     },
     {
+      "mc_id": "MC1095",
+      "mc_name": "ZERO-CORE",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ぜろこあ",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
       "mc_id": "MC1047",
       "mc_name": "Zen",
       "mc_name_sub": "",
@@ -4338,6 +4618,16 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "そりゅうじゃ",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC1102",
+      "mc_name": "Zor0 ZHE WRLD",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ぞろざわーるど",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "さ"
@@ -4823,6 +5113,16 @@
       "kana_group": "た"
     },
     {
+      "mc_id": "MC1084",
+      "mc_name": "宙チート",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ちゅうちーと",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
       "mc_id": "MC0079",
       "mc_name": "ChillER",
       "mc_name_sub": "",
@@ -4973,6 +5273,16 @@
       "kana_group": "た"
     },
     {
+      "mc_id": "MC1103",
+      "mc_name": "Deep",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "でぃーぷ",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
       "mc_id": "MC1064",
       "mc_name": "DEPP HELD",
       "mc_name_sub": "",
@@ -5083,6 +5393,16 @@
       "kana_group": "た"
     },
     {
+      "mc_id": "MC1099",
+      "mc_name": "でこ八",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "でこはち",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
       "mc_id": "MC0095",
       "mc_name": "DEJI",
       "mc_name_sub": "",
@@ -5128,6 +5448,16 @@
       "mc_name_sub": "",
       "mc_description": "1989年生まれ、東京都墨田区出身。424-RECORDS主宰。フリースタイルダンジョン、Monsters Warなどに出演。",
       "mc_yomi": "てのひらまぼろし",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC1091",
+      "mc_name": "David ronroll",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "でびっどろんろーる",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "た"
@@ -5368,6 +5698,16 @@
       "mc_name_sub": "",
       "mc_description": "1988年生まれ、神奈川県横浜市出身。UMB 2013 横浜予選優勝。アルバム『FORTIS』『掌ノ蕾。』、フリースタイルダンジョン出演など。",
       "mc_yomi": "どらごんわん",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC1086",
+      "mc_name": "TRASH",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "とらっしゅ",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "た"
@@ -6273,6 +6613,16 @@
       "kana_group": "は"
     },
     {
+      "mc_id": "MC1123",
+      "mc_name": "BB",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "びーびー",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
       "mc_id": "MC0237",
       "mc_name": "P-PONG",
       "mc_name_sub": "",
@@ -6343,6 +6693,16 @@
       "kana_group": "は"
     },
     {
+      "mc_id": "MC1122",
+      "mc_name": "火種",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ひだね",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
       "mc_id": "MC0529",
       "mc_name": "左流",
       "mc_name_sub": "",
@@ -6378,6 +6738,16 @@
       "mc_name_sub": "",
       "mc_description": "1975年生まれ、北海道札幌市出身。MIC JACK PRODUCTIONの創設メンバー。アルバム『THE LOST DOPE』『COME CLEAN』『RIZE AGAIN』など。",
       "mc_yomi": "びっぐじょー",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC1117",
+      "mc_name": "B.I.G.JOHN",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "びっぐじょん",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "は"
@@ -6543,6 +6913,16 @@
       "kana_group": "は"
     },
     {
+      "mc_id": "MC1088",
+      "mc_name": "famous",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ふぇいます",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
       "mc_id": "MC0111",
       "mc_name": "FORK",
       "mc_name_sub": "",
@@ -6628,6 +7008,16 @@
       "mc_name_sub": "",
       "mc_description": "宮崎県高鍋Rep、魔2daHow巣所属。戦極MCBATTLE 第15章 宮崎予選通過。同大会本戦に出場。",
       "mc_yomi": "ぶちゃん",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC1121",
+      "mc_name": "仏師",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ぶっし",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "は"
@@ -7673,6 +8063,16 @@
       "kana_group": "や"
     },
     {
+      "mc_id": "MC1101",
+      "mc_name": "u&k",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ゆーあんどけー",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "や"
+    },
+    {
       "mc_id": "MC1044",
       "mc_name": "YOUKEY",
       "mc_name_sub": "",
@@ -7783,6 +8183,16 @@
       "kana_group": "や"
     },
     {
+      "mc_id": "MC1093",
+      "mc_name": "ユキダル",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "ゆきだる",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "や"
+    },
+    {
       "mc_id": "MC1041",
       "mc_name": "Juda",
       "mc_name_sub": "",
@@ -7803,6 +8213,16 @@
       "kana_group": "や"
     },
     {
+      "mc_id": "MC1114",
+      "mc_name": "陽",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "よう",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "や"
+    },
+    {
       "mc_id": "MC0318",
       "mc_name": "YO-1",
       "mc_name_sub": "",
@@ -7818,6 +8238,16 @@
       "mc_name_sub": "",
       "mc_description": "NEO GENESIS vol.8 Road to KOK編、U-22 MCBATTLE関連イベントなどに出場。",
       "mc_yomi": "よーだい",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "や"
+    },
+    {
+      "mc_id": "MC1100",
+      "mc_name": "ヨシダイラ",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "よしだいら",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "や"
@@ -8153,6 +8583,16 @@
       "kana_group": "ら"
     },
     {
+      "mc_id": "MC1113",
+      "mc_name": "Riddle-K",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "りどるけー",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
       "mc_id": "MC0740",
       "mc_name": "River kid",
       "mc_name_sub": "",
@@ -8178,6 +8618,16 @@
       "mc_name_sub": "",
       "mc_description": "",
       "mc_yomi": "りゅう",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC1107",
+      "mc_name": "Ryu_ki",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "りゅうき",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "ら"
@@ -8268,6 +8718,16 @@
       "mc_name_sub": "",
       "mc_description": "新潟代表としてUMB 2017・2018 GRAND CHAMPIONSHIP出場。UMB 2017・2018 新潟予選優勝。",
       "mc_yomi": "りりかる",
+      "hot_mc": 0,
+      "notes": "",
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC1080",
+      "mc_name": "lilAshes",
+      "mc_name_sub": "",
+      "mc_description": "",
+      "mc_yomi": "りるああっしゅ",
       "hot_mc": 0,
       "notes": "",
       "kana_group": "ら"

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-05T11:18:04.274Z",
+  "updated_at": "2026-05-05T14:08:53.676Z",
   "recent_events": [
     {
       "event_id": "EVT0164",
@@ -28,6 +28,20 @@
       "location": "両国Sunrise",
       "battle_format": "1on1",
       "winner_name": "椿"
+    },
+    {
+      "event_id": "EVT0186",
+      "event_name": "戦極MCBATTLE 第41章 DOUBLE FACE 2on2",
+      "event_name_full": "戦極MCBATTLE 第41章 DOUBLE FACE 2on2",
+      "event_name_simple": "戦極MCBATTLE 第41章",
+      "event_date": "2026-02-14",
+      "prize_money_winner": 300000,
+      "prize_money_total": 300000,
+      "event_category": "",
+      "event_stage": "",
+      "location": "大阪 club JOULE",
+      "battle_format": "team",
+      "winner_name": ""
     },
     {
       "event_id": "EVT0032",
@@ -114,32 +128,18 @@
       "winner_name": "Donatello"
     },
     {
-      "event_id": "EVT0040",
-      "event_name": "戦極MCBATTLE 第37章 -OSAKA- 王座奪還1on1",
-      "event_name_full": "戦極MCBATTLE 第37章 -OSAKA- 王座奪還1on1",
-      "event_name_simple": "戦極MCBATTLE 第37章",
-      "event_date": "2025-05-24",
-      "prize_money_winner": 300000,
-      "prize_money_total": null,
+      "event_id": "EVT0185",
+      "event_name": "戦極MCBATTLE 第39章 -YOKOHAMA- TEAM OF 3on3",
+      "event_name_full": "戦極MCBATTLE 第39章 -YOKOHAMA- TEAM OF 3on3",
+      "event_name_simple": "戦極MCBATTLE 第39章",
+      "event_date": "2025-06-08",
+      "prize_money_winner": 50000,
+      "prize_money_total": 50000,
       "event_category": "戦極MC BATTLE",
       "event_stage": "本戦",
-      "location": "Zepp Osaka Bayside",
-      "battle_format": "1on1",
-      "winner_name": "NAIKA MC"
-    },
-    {
-      "event_id": "EVT0138",
-      "event_name": "NEO GENESIS MC BATTLE Vol.7",
-      "event_name_full": "NEO GENESIS MC BATTLE Vol.7",
-      "event_name_simple": "NEO GENESIS MC BATTLE Vol.7",
-      "event_date": "2025-04-18",
-      "prize_money_winner": 300000,
-      "prize_money_total": null,
-      "event_category": "NEO GENESIS MC BATTLE",
-      "event_stage": "本戦",
-      "location": "CLUB CITTA'",
-      "battle_format": "1on1",
-      "winner_name": "Rude-α"
+      "location": "KT Zepp Yokohama",
+      "battle_format": "team",
+      "winner_name": ""
     }
   ],
   "upcoming_events": [
@@ -273,33 +273,33 @@
     },
     {
       "rank": 3,
+      "mc_id": "MC0376",
+      "mc_name": "呂布カルマ",
+      "total_prize_money": 10150000
+    },
+    {
+      "rank": 4,
       "mc_id": "MC0434",
       "mc_name": "輪入道",
       "total_prize_money": 10100000
     },
     {
-      "rank": 4,
-      "mc_id": "MC0376",
-      "mc_name": "呂布カルマ",
-      "total_prize_money": 10050000
+      "rank": 5,
+      "mc_id": "MC0469",
+      "mc_name": "ミメイ",
+      "total_prize_money": 8233333.33
     },
     {
-      "rank": 5,
+      "rank": 6,
       "mc_id": "MC0214",
       "mc_name": "RAWAXXX",
       "total_prize_money": 8000000
     },
     {
-      "rank": 6,
-      "mc_id": "MC0469",
-      "mc_name": "ミメイ",
-      "total_prize_money": 7850000
-    },
-    {
       "rank": 7,
       "mc_id": "MC0450",
       "mc_name": "Donatello",
-      "total_prize_money": 6800000
+      "total_prize_money": 6858333.33
     },
     {
       "rank": 8,
