@@ -44,27 +44,28 @@ function buildEventHtml(template, eventId, detail) {
   const event = detail.event || {};
   const groupedMatches = Array.isArray(detail.grouped_matches) ? detail.grouped_matches.slice() : [];
   const totalMatches = Number(detail.total_matches || 0);
+  const isTeamEvent = isTeamBattleEvent(event);
 
   groupedMatches.sort((a, b) => getRoundSortValue(a.round_name) - getRoundSortValue(b.round_name));
 
   const eventTitle = safeString(event.event_name_full || event.event_name || "大会名不明");
   const eventDateText = formatDateJP(event.event_date || "");
-  const winnerName = safeString(event.winner_name || "");
-  const runnerUpName = safeString(event.runner_up_name || "");
+  const winnerName = safeString(event.winner_name || event.winner_team_name || "");
+  const runnerUpName = safeString(event.runner_up_name || event.runner_up_team_name || "");
 
   const pageTitle = `${eventTitle} | 大会結果・優勝者・試合結果 | MCBattle.jp`;
-  const metaDescription = buildMetaDescription(eventTitle, eventDateText, winnerName, runnerUpName, totalMatches);
+  const metaDescription = buildMetaDescription(eventTitle, eventDateText, winnerName, runnerUpName, totalMatches, isTeamEvent);
 
   const eventInfoListItems = buildEventInfoListItems(detail, groupedMatches);
-  const matchesHtml = buildMatchesHtml(groupedMatches);
+  const matchesHtml = isTeamEvent ? buildTeamMatchesHtml(groupedMatches) : buildMatchesHtml(groupedMatches);
   const matchesStatusHtml = totalMatches === 0
     ? '<p id="matches-status" class="muted">試合結果がありません</p>'
     : "";
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(eventId, eventTitle);
-  const eventJsonLd = buildEventJsonLd(eventId, event, eventTitle, metaDescription, winnerName);
+  const eventJsonLd = buildEventJsonLd(eventId, event, eventTitle, metaDescription, winnerName, isTeamEvent);
 
-  return template
+  const html = template
     .replaceAll("__PAGE_TITLE__", escapeHtml(pageTitle))
     .replaceAll("__META_DESCRIPTION__", escapeHtml(metaDescription))
     .replaceAll("__EVENT_ID__", escapeHtml(String(eventId)))
@@ -75,14 +76,16 @@ function buildEventHtml(template, eventId, detail) {
     .replaceAll("__MATCHES_STATUS_HTML__", matchesStatusHtml)
     .replaceAll("__MATCHES_HTML__", matchesHtml)
     .replaceAll("__CONTACT_EVENT_NAME_URL__", escapeHtml(encodeURIComponent(eventTitle)));
+
+  return isTeamEvent ? injectTeamBattleCss(html) : html;
 }
 
-function buildMetaDescription(eventTitle, eventDateText, winnerName, runnerUpName, totalMatches) {
+function buildMetaDescription(eventTitle, eventDateText, winnerName, runnerUpName, totalMatches, isTeamEvent = false) {
   const parts = [
     `${eventTitle}の大会結果ページです。`,
     eventDateText ? `開催日は${eventDateText}。` : "",
-    winnerName ? `優勝者は${winnerName}。` : "",
-    runnerUpName ? `準優勝者は${runnerUpName}。` : "",
+    winnerName ? `${isTeamEvent ? "優勝チーム" : "優勝者"}は${winnerName}。` : "",
+    runnerUpName ? `${isTeamEvent ? "準優勝チーム" : "準優勝者"}は${runnerUpName}。` : "",
     totalMatches > 0 ? `全${totalMatches}試合の試合結果を掲載しています。` : "試合結果を掲載しています。"
   ].filter(Boolean);
 
@@ -91,6 +94,7 @@ function buildMetaDescription(eventTitle, eventDateText, winnerName, runnerUpNam
 
 function buildEventInfoListItems(detail, groupedMatches) {
   const event = detail && detail.event ? detail.event : {};
+  const isTeamEvent = isTeamBattleEvent(event);
   const resultsHtml = buildResultsHtml(event, groupedMatches);
   const formattedWinnerPrize = formatPrizeYen(event.prize_money_winner);
   const formattedLocation = safeString(event.location || "").trim();
@@ -99,12 +103,21 @@ function buildEventInfoListItems(detail, groupedMatches) {
   const items = [
     { label: "開催日", html: escapeHtml(formatDateJP(event.event_date || "")) },
     { label: "場所", html: escapeHtml(formattedLocation) },
-    { label: "結果", html: resultsHtml },
+    { label: "結果", html: resultsHtml, className: isTeamEvent ? "meta-result-item is-team-result" : "" },
     { label: "優勝賞金", html: escapeHtml(formattedWinnerPrize || "") },
     { label: "補足", html: prizeSupplementHtml }
   ].filter((item) => item.html !== "");
 
   return items.map((item) => {
+    if (item.className) {
+      return [
+        `<li class="${escapeHtml(item.className)}">`,
+        `<span class="meta-label">${escapeHtml(item.label)}：</span>`,
+        `<span class="team-result-body">${item.html}</span>`,
+        "</li>"
+      ].join("");
+    }
+
     return [
       "<li>",
       `<span class="meta-label">${escapeHtml(item.label)}：</span>`,
@@ -118,22 +131,26 @@ function buildPrizeSupplementHtml(detail) {
   const items = normalizeEventPrizeSupplements(detail);
   if (!items.length) return "";
 
-  const uniqueMap = new Map();
+  const lines = items
+    .map((item) => {
+      const mcName = safeString(item.mc_name || "").trim();
+      const label = safeString(item.label || "").trim();
+      const amount = formatPrizeYen(item.amount);
+      const note = safeString(item.note || "").trim();
 
-  items.forEach((item) => {
-    const label = getPrizeSupplementDisplayLabel(item);
-    const amount = formatPrizeYen(item.amount);
-    const amountKey = normalizePrizeAmountKey(item.amount);
+      if (!amount) return "";
 
-    if (!label || !amount || !amountKey) return;
+      const mainText = mcName
+        ? `${mcName} ${amount}`
+        : label
+          ? `${label} ${amount}`
+          : amount;
 
-    const key = `${label}__${amountKey}`;
-    if (!uniqueMap.has(key)) {
-      uniqueMap.set(key, `${label}: ${amount}`);
-    }
-  });
+      const noteText = note ? `:${note}` : "";
+      return `${mainText}${noteText}`;
+    })
+    .filter(Boolean);
 
-  const lines = Array.from(uniqueMap.values());
   if (!lines.length) return "";
 
   const prefix = "この大会は優勝以外にも賞金が発生します。";
@@ -142,27 +159,6 @@ function buildPrizeSupplementHtml(detail) {
     `<span class="event-prize-note">${escapeHtml(prefix)}</span>`,
     ...lines.map((line) => `<span class="event-prize-note">${escapeHtml(line)}</span>`)
   ].join("<br>");
-}
-
-function getPrizeSupplementDisplayLabel(item) {
-  const note = safeString(item.note || "").trim();
-  if (note) return note;
-
-  const label = safeString(item.label || "").trim();
-  if (label) return label;
-
-  return "賞金配当分";
-}
-
-function normalizePrizeAmountKey(value) {
-  if (value === null || value === undefined || value === "") return "";
-  const cleaned = String(value).replace(/,/g, "").replace(/[¥￥円\s]/g, "").trim();
-  if (!cleaned) return "";
-
-  const num = Number(cleaned);
-  if (Number.isFinite(num)) return String(num);
-
-  return cleaned;
 }
 
 function normalizeEventPrizeSupplements(detail) {
@@ -310,6 +306,10 @@ function getPrizeSupplementNote(item) {
 }
 
 function buildResultsHtml(event, groupedMatches) {
+  if (isTeamBattleEvent(event)) {
+    return buildTeamResultsHtml(event);
+  }
+
   const finalMatches = getRoundMatches(groupedMatches, "Final");
   const semiMatches = getRoundMatches(groupedMatches, "Best4");
 
@@ -372,6 +372,307 @@ function buildMatchesHtml(groupedMatches) {
   }).join("\n");
 }
 
+
+function buildTeamResultsHtml(event) {
+  const teamResults = Array.isArray(event.team_results) ? event.team_results : [];
+
+  const lines = teamResults
+    .map((item, index) => {
+      const rankLabel = safeString(item.rank_label || getFallbackTeamRankLabel(index));
+      const resultLabel = safeString(item.result_label || "");
+      const teamName = safeString(item.team_name || "");
+      const members = Array.isArray(item.members) ? item.members : [];
+      const subClass = resultLabel && resultLabel !== "winner" ? " is-sub" : "";
+
+      if (!teamName && !members.length) return "";
+
+      return [
+        `<span class="result-line${subClass}">`,
+        `<span class="result-medal">${escapeHtml(rankLabel)}</span>`,
+        '<span class="result-team-summary">',
+        teamName ? `<span class="result-team-header">${escapeHtml(teamName)}</span>` : "",
+        `<span class="result-team-member-row">${renderTeamMemberLinks(members)}</span>`,
+        "</span>",
+        "</span>"
+      ].join("");
+    })
+    .filter(Boolean);
+
+  if (!lines.length) return "−";
+  return `<span class="result-block result-team-summary-block">${lines.join("")}</span>`;
+}
+
+function buildTeamMatchesHtml(groupedMatches) {
+  return groupedMatches.map((group) => {
+    const roundName = normalizeRoundLabel(group.round_name) || "ラウンド不明";
+    const isTwoColumn = isTwoColumnRound(roundName);
+    const matches = Array.isArray(group.matches) ? group.matches : [];
+
+    const rows = matches.map((match) => {
+      const winnerTeamName = safeString(match.winner_team_name || "");
+      const loserTeamName = safeString(match.loser_team_name || "");
+      const winnerMembers = Array.isArray(match.winner_members) ? match.winner_members : [];
+      const loserMembers = Array.isArray(match.loser_members) ? match.loser_members : [];
+
+      return [
+        '<li class="match-row-wrap">',
+        '<div class="match-row-box">',
+        '<div class="match-team-layout">',
+        '<div class="match-team-side is-winner">',
+        winnerTeamName ? `<div class="team-name-label">${escapeHtml(winnerTeamName)}</div>` : "",
+        `<div class="team-members-text">${renderTeamMemberLinks(winnerMembers)}</div>`,
+        "</div>",
+        '<div class="match-vs">VS</div>',
+        '<div class="match-team-side is-loser">',
+        loserTeamName ? `<div class="team-name-label">${escapeHtml(loserTeamName)}</div>` : "",
+        `<div class="team-members-text">${renderTeamMemberLinks(loserMembers)}</div>`,
+        "</div>",
+        "</div>",
+        "</div>",
+        "</li>"
+      ].join("");
+    }).join("\n");
+
+    return [
+      '<div class="round-block">',
+      `<h3 class="round-heading">${escapeHtml(roundName)}</h3>`,
+      `<ul class="match-list${isTwoColumn ? " is-two-column" : ""}">`,
+      rows,
+      "</ul>",
+      "</div>"
+    ].join("\n");
+  }).join("\n");
+}
+
+function renderTeamMemberLinks(members) {
+  const list = Array.isArray(members) ? members : [];
+
+  return list
+    .map((member) => {
+      const name = safeString(member.mc_name || member.name || "");
+      const mcId = safeString(member.mc_id || member.id || "").trim();
+      if (!name) return "";
+
+      const body = escapeHtml(name);
+      if (!mcId) return `<span class="team-member-text">${body}</span>`;
+
+      return `<a class="team-member-link" href="../detail_mc/${encodeURIComponent(mcId)}.html">${body}</a>`;
+    })
+    .filter(Boolean)
+    .join('<span class="team-member-separator">・</span>');
+}
+
+function getFallbackTeamRankLabel(index) {
+  if (index === 0) return "🥇";
+  if (index === 1) return "🥈";
+  return "🥉";
+}
+
+function isTeamBattleEvent(event) {
+  const format = safeString(event && event.battle_format ? event.battle_format : "").trim().toLowerCase();
+  return format === "team";
+}
+
+function injectTeamBattleCss(html) {
+  if (html.includes("team-battle-generated-css")) return html;
+
+  const css = `
+    /* team-battle-generated-css */
+    .meta-list > li.meta-result-item.is-team-result{
+      display:block !important;
+      padding-top:8px !important;
+      padding-bottom:12px !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result > .meta-label{
+      display:block !important;
+      min-width:0 !important;
+      width:100% !important;
+      margin:0 0 7px 0 !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result > .team-result-body{
+      display:block !important;
+      width:100% !important;
+      min-width:0 !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result > .team-result-body > .result-team-summary-block{
+      display:block !important;
+      width:100% !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-line{
+      display:grid !important;
+      grid-template-columns:28px minmax(0, 1fr) !important;
+      gap:8px !important;
+      align-items:start !important;
+      margin:0 !important;
+      padding:0 !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-line + .result-line{
+      margin-top:8px !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-medal{
+      display:inline-flex !important;
+      align-items:flex-start !important;
+      justify-content:center !important;
+      width:28px !important;
+      line-height:1 !important;
+      padding-top:1px !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-team-summary{
+      display:block !important;
+      min-width:0 !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-team-header{
+      display:block !important;
+      margin:0 0 2px 0 !important;
+      color:var(--accent) !important;
+      font-size:.78rem !important;
+      font-weight:800 !important;
+      line-height:1.25 !important;
+      letter-spacing:.04em !important;
+      white-space:normal !important;
+      overflow-wrap:anywhere !important;
+      word-break:break-word !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-team-member-row{
+      display:block !important;
+      color:var(--text) !important;
+      font-size:.98rem !important;
+      font-weight:800 !important;
+      line-height:1.35 !important;
+      overflow-wrap:anywhere !important;
+      word-break:keep-all !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .result-line.is-sub .result-team-member-row{
+      color:var(--text) !important;
+      font-weight:800 !important;
+    }
+
+    .team-member-link,
+    .team-member-link:hover{
+      color:inherit !important;
+      text-decoration:none !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .team-member-link{
+      border-bottom:1px solid rgba(216,180,106,.22) !important;
+    }
+
+    .meta-list > li.meta-result-item.is-team-result .team-member-link:hover{
+      color:#fff4dc !important;
+      border-bottom-color:rgba(216,180,106,.58) !important;
+    }
+
+    .match-team-layout{
+      display:flex !important;
+      flex-direction:column !important;
+      align-items:stretch !important;
+      gap:4px !important;
+      min-width:0 !important;
+    }
+
+    .match-team-side{
+      min-width:0 !important;
+      display:block !important;
+    }
+
+    .match-team-side .team-name-label{
+      display:block !important;
+      margin:0 0 3px 0 !important;
+      color:var(--accent) !important;
+      font-size:.76rem !important;
+      font-weight:800 !important;
+      line-height:1.25 !important;
+      letter-spacing:.04em !important;
+      white-space:normal !important;
+      overflow-wrap:anywhere !important;
+      word-break:break-word !important;
+      text-align:left !important;
+    }
+
+    .match-team-side .team-members-text{
+      display:block !important;
+      width:100% !important;
+      min-width:0 !important;
+      color:var(--text) !important;
+      font-size:.98rem !important;
+      font-weight:800 !important;
+      line-height:1.42 !important;
+      overflow-wrap:anywhere !important;
+      word-break:keep-all !important;
+    }
+
+    .match-team-side.is-loser .team-members-text{
+      color:#8a92a5 !important;
+      font-weight:700 !important;
+    }
+
+    .match-vs{
+      display:block !important;
+      width:auto !important;
+      min-width:0 !important;
+      color:var(--muted) !important;
+      opacity:.9 !important;
+      text-align:left !important;
+      margin:-2px 0 -2px 0 !important;
+      padding:0 !important;
+      font-size:.70rem !important;
+      font-weight:800 !important;
+      line-height:1.05 !important;
+      letter-spacing:.08em !important;
+    }
+
+    @media (max-width:640px){
+      .meta-list > li.meta-result-item.is-team-result .result-line{
+        grid-template-columns:26px minmax(0, 1fr) !important;
+        gap:7px !important;
+      }
+
+      .meta-list > li.meta-result-item.is-team-result .result-line + .result-line{
+        margin-top:7px !important;
+      }
+
+      .meta-list > li.meta-result-item.is-team-result .result-medal{
+        width:26px !important;
+      }
+
+      .meta-list > li.meta-result-item.is-team-result .result-team-header{
+        font-size:.72rem !important;
+      }
+
+      .meta-list > li.meta-result-item.is-team-result .result-team-member-row{
+        font-size:.91rem !important;
+        line-height:1.32 !important;
+      }
+
+      .match-team-side .team-name-label{
+        font-size:.71rem !important;
+        margin-bottom:2px !important;
+      }
+
+      .match-team-side .team-members-text{
+        font-size:.90rem !important;
+        line-height:1.34 !important;
+      }
+    }
+`;
+
+  if (html.includes("</style>")) {
+    return html.replace("</style>", `${css}\n  </style>`);
+  }
+
+  return html.replace("</head>", `<style>${css}</style>\n</head>`);
+}
+
 function buildBreadcrumbJsonLd(eventId, eventTitle) {
   return JSON.stringify({
     "@context": "https://schema.org",
@@ -399,7 +700,7 @@ function buildBreadcrumbJsonLd(eventId, eventTitle) {
   }, null, 2);
 }
 
-function buildEventJsonLd(eventId, event, eventTitle, description, winnerName) {
+function buildEventJsonLd(eventId, event, eventTitle, description, winnerName, isTeamEvent = false) {
   const normalizedDate = normalizeDateForSchema(event.event_date || "");
   const locationName = safeString(event.location || "").trim();
 
@@ -438,7 +739,7 @@ function buildEventJsonLd(eventId, event, eventTitle, description, winnerName) {
 
   if (winnerName) {
     obj.performer = {
-      "@type": "Person",
+      "@type": isTeamEvent ? "Organization" : "Person",
       name: winnerName
     };
   }
