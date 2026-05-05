@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-05-05T05:59:58.010Z",
-  "total": 164,
+  "updated_at": "2026-05-05T10:58:03.539Z",
+  "total": 163,
   "event_details": {
     "EVT0001": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0001",
         "event_name": "UMB2005 GrandChanpionShip",
@@ -204,7 +204,7 @@
       "total_matches": 15
     },
     "EVT0002": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0002",
         "event_name": "UMB2006 GrandChanpionShip",
@@ -405,7 +405,7 @@
       "total_matches": 15
     },
     "EVT0003": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0003",
         "event_name": "UMB2007 GrandChanpionShip",
@@ -606,7 +606,7 @@
       "total_matches": 15
     },
     "EVT0004": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0004",
         "event_name": "UMB2008 GrandChanpionShip",
@@ -807,7 +807,7 @@
       "total_matches": 15
     },
     "EVT0005": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0005",
         "event_name": "UMB2009 GrandChanpionShip",
@@ -1022,7 +1022,7 @@
       "total_matches": 16
     },
     "EVT0006": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0006",
         "event_name": "UMB2010 GrandChanpionShip",
@@ -1223,7 +1223,7 @@
       "total_matches": 15
     },
     "EVT0007": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0007",
         "event_name": "UMB2011 GrandChanpionShip",
@@ -1573,7 +1573,7 @@
       "total_matches": 31
     },
     "EVT0008": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0008",
         "event_name": "UMB2012 GrandChanpionShip",
@@ -1923,7 +1923,7 @@
       "total_matches": 31
     },
     "EVT0009": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0009",
         "event_name": "UMB2013 GrandChanpionShip",
@@ -2273,7 +2273,7 @@
       "total_matches": 31
     },
     "EVT0010": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0010",
         "event_name": "UMB2014 GrandChanpionShip",
@@ -2623,7 +2623,7 @@
       "total_matches": 31
     },
     "EVT0011": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0011",
         "event_name": "UMB2015 GrandChanpionShip",
@@ -2973,7 +2973,7 @@
       "total_matches": 31
     },
     "EVT0012": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0012",
         "event_name": "UMB2016 GrandChanpionShip",
@@ -3472,7 +3472,7 @@
       "total_matches": 47
     },
     "EVT0013": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0013",
         "event_name": "UMB2017 GrandChanpionShip",
@@ -3971,7 +3971,7 @@
       "total_matches": 47
     },
     "EVT0014": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0014",
         "event_name": "UMB2018 GrandChanpionShip",
@@ -4470,7 +4470,7 @@
       "total_matches": 47
     },
     "EVT0015": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0015",
         "event_name": "UMB2019 GrandChanpionShip",
@@ -4969,7 +4969,7 @@
       "total_matches": 47
     },
     "EVT0016": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0016",
         "event_name": "UMB2020 GrandChanpionShip",
@@ -5612,7 +5612,7 @@
       "total_matches": 63
     },
     "EVT0017": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0017",
         "event_name": "UMB2021 GrandChanpionShip",
@@ -5962,7 +5962,7 @@
       "total_matches": 31
     },
     "EVT0018": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0018",
         "event_name": "UMB2022 GrandChanpionShip",
@@ -6389,7 +6389,7 @@
       "total_matches": 39
     },
     "EVT0019": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0019",
         "event_name": "UMB2023 GrandChanpionShip",
@@ -6888,7 +6888,7 @@
       "total_matches": 47
     },
     "EVT0020": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0020",
         "event_name": "UMB2024 GrandChanpionShip",
@@ -7369,7 +7369,7 @@
       "total_matches": 45
     },
     "EVT0021": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0021",
         "event_name": "UMB2025 GrandChanpionShip",
@@ -7832,7 +7832,7 @@
       "total_matches": 43
     },
     "EVT0022": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0022",
         "event_name": "KOK2015 GrandChanpionShip",
@@ -8033,7 +8033,7 @@
       "total_matches": 15
     },
     "EVT0023": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0023",
         "event_name": "KOK2016 GrandChanpionShip",
@@ -8234,7 +8234,7 @@
       "total_matches": 15
     },
     "EVT0024": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0024",
         "event_name": "KOK2017 GrandChanpionShip",
@@ -8435,7 +8435,7 @@
       "total_matches": 15
     },
     "EVT0025": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0025",
         "event_name": "KOK2018 GrandChanpionShip",
@@ -8636,7 +8636,7 @@
       "total_matches": 15
     },
     "EVT0026": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0026",
         "event_name": "KOK2019 GrandChanpionShip",
@@ -8837,7 +8837,7 @@
       "total_matches": 15
     },
     "EVT0027": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0027",
         "event_name": "KOK2020 GrandChanpionShip",
@@ -9038,7 +9038,7 @@
       "total_matches": 15
     },
     "EVT0028": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0028",
         "event_name": "KOK2021 GrandChanpionShip",
@@ -9239,7 +9239,7 @@
       "total_matches": 15
     },
     "EVT0029": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0029",
         "event_name": "KOK2022 GrandChanpionShip",
@@ -9440,7 +9440,7 @@
       "total_matches": 15
     },
     "EVT0030": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0030",
         "event_name": "KOK2023 GrandChanpionShip",
@@ -9641,7 +9641,7 @@
       "total_matches": 15
     },
     "EVT0031": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0031",
         "event_name": "KOK2024 GrandChanpionShip",
@@ -9842,7 +9842,7 @@
       "total_matches": 15
     },
     "EVT0032": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0032",
         "event_name": "KOK2025 GrandChanpionShip",
@@ -10043,7 +10043,7 @@
       "total_matches": 15
     },
     "EVT0038": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0038",
         "event_name": "戦極MCBATTLE 第34章 -THE 32MCs王道in横浜-",
@@ -10393,7 +10393,7 @@
       "total_matches": 31
     },
     "EVT0039": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0039",
         "event_name": "戦極MCBATTLE 第36章 東北公演 2025開幕戦",
@@ -10558,7 +10558,7 @@
       "total_matches": 11
     },
     "EVT0040": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0040",
         "event_name": "戦極MCBATTLE 第37章 -OSAKA- 王座奪還1on1",
@@ -10908,7 +10908,7 @@
       "total_matches": 31
     },
     "EVT0041": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0041",
         "event_name": "戦極MCBATTLE 第15章本選 JAPAN TOUR FINAL",
@@ -11551,7 +11551,7 @@
       "total_matches": 63
     },
     "EVT0045": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0045",
         "event_name": "口喧嘩祭 Special × KOK2020",
@@ -12050,7 +12050,7 @@
       "total_matches": 47
     },
     "EVT0046": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0046",
         "event_name": "口喧嘩祭 Special × KOK2021",
@@ -12400,7 +12400,7 @@
       "total_matches": 31
     },
     "EVT0047": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0047",
         "event_name": "口喧嘩祭 大阪編",
@@ -12750,7 +12750,7 @@
       "total_matches": 31
     },
     "EVT0048": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0048",
         "event_name": "口喧嘩祭 Special at Zepp Nagoya",
@@ -12951,7 +12951,7 @@
       "total_matches": 15
     },
     "EVT0049": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0049",
         "event_name": "口喧嘩祭 Special × KOK2022",
@@ -13301,7 +13301,7 @@
       "total_matches": 31
     },
     "EVT0050": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0050",
         "event_name": "口喧嘩祭 Special in CLUB CITTA'",
@@ -13502,7 +13502,7 @@
       "total_matches": 15
     },
     "EVT0051": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0051",
         "event_name": "口喧嘩祭 Special × KOK2023",
@@ -13852,7 +13852,7 @@
       "total_matches": 31
     },
     "EVT0052": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0052",
         "event_name": "口喧嘩祭 Special at Zepp Nagoya",
@@ -14053,7 +14053,7 @@
       "total_matches": 15
     },
     "EVT0053": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0053",
         "event_name": "凱旋MCbattle東西選抜",
@@ -14552,7 +14552,7 @@
       "total_matches": 47
     },
     "EVT0054": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0054",
         "event_name": "凱旋2019春ノ陣",
@@ -15051,7 +15051,7 @@
       "total_matches": 47
     },
     "EVT0055": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0055",
         "event_name": "凱旋MCbattle夏ノ陣2019",
@@ -15550,7 +15550,7 @@
       "total_matches": 47
     },
     "EVT0057": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0057",
         "event_name": "凱旋MCbattle東西選抜 冬ノ陣2020",
@@ -16049,7 +16049,7 @@
       "total_matches": 47
     },
     "EVT0058": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0058",
         "event_name": "凱旋MCBattle東西選抜 夏ノ陣2020",
@@ -16250,7 +16250,7 @@
       "total_matches": 15
     },
     "EVT0059": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0059",
         "event_name": "凱旋MCbattle×ABEMATV",
@@ -16528,7 +16528,7 @@
       "total_matches": 23
     },
     "EVT0060": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0060",
         "event_name": "凱旋MCbattle Special アリーナの陣",
@@ -16788,7 +16788,7 @@
       "total_matches": 21
     },
     "EVT0061": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0061",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠横浜",
@@ -17066,7 +17066,7 @@
       "total_matches": 23
     },
     "EVT0062": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0062",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠名古屋",
@@ -17267,7 +17267,7 @@
       "total_matches": 15
     },
     "EVT0063": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0063",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠福岡",
@@ -17468,7 +17468,7 @@
       "total_matches": 15
     },
     "EVT0064": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0064",
         "event_name": "凱旋MC Battle 西日本ZEPP TOUR ＠大阪",
@@ -17746,7 +17746,7 @@
       "total_matches": 23
     },
     "EVT0065": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0065",
         "event_name": "凱旋MC battle PIT TOUR 仙台",
@@ -17947,7 +17947,7 @@
       "total_matches": 15
     },
     "EVT0066": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0066",
         "event_name": "凱旋MC battle PIT TOUR 東京",
@@ -18148,7 +18148,7 @@
       "total_matches": 15
     },
     "EVT0067": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0067",
         "event_name": "凱旋MC BATTLE 春のMC BATTLE 三連祭2022",
@@ -18349,7 +18349,7 @@
       "total_matches": 15
     },
     "EVT0068": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0068",
         "event_name": "凱旋MC battle in さいたまスーパーアリーナ",
@@ -18550,7 +18550,7 @@
       "total_matches": 15
     },
     "EVT0069": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0069",
         "event_name": "凱旋MC battle NORTH JAPAN TOUR2023 in 北海道",
@@ -18751,7 +18751,7 @@
       "total_matches": 15
     },
     "EVT0070": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0070",
         "event_name": "凱旋MC battle NORTH JAPAN TOUR2023 in 仙台",
@@ -18952,7 +18952,7 @@
       "total_matches": 15
     },
     "EVT0071": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0071",
         "event_name": "凱旋MC battle THE GIANT KILLING ",
@@ -19302,7 +19302,7 @@
       "total_matches": 31
     },
     "EVT0072": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0072",
         "event_name": "凱旋MC battle 大阪ノ陣2023",
@@ -19503,7 +19503,7 @@
       "total_matches": 15
     },
     "EVT0073": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0073",
         "event_name": "凱旋MC battle Special2023",
@@ -19781,7 +19781,7 @@
       "total_matches": 23
     },
     "EVT0074": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0074",
         "event_name": "凱旋MC battle 冬ノ陣2023",
@@ -19982,7 +19982,7 @@
       "total_matches": 15
     },
     "EVT0075": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0075",
         "event_name": "凱旋MC battle THE GIANT KILLING 2",
@@ -20332,7 +20332,7 @@
       "total_matches": 31
     },
     "EVT0076": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0076",
         "event_name": "ADRENALINE2014",
@@ -20682,7 +20682,7 @@
       "total_matches": 31
     },
     "EVT0077": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0077",
         "event_name": "真ADRENALINE2020",
@@ -20924,7 +20924,7 @@
       "total_matches": 19
     },
     "EVT0078": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0078",
         "event_name": "ADRENALINE杯 夏の陣2020",
@@ -21125,7 +21125,7 @@
       "total_matches": 15
     },
     "EVT0079": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0079",
         "event_name": "真ADRENALINE SPECIAL 杯真の陣+KINGDOM2020",
@@ -21326,7 +21326,7 @@
       "total_matches": 15
     },
     "EVT0080": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0080",
         "event_name": "真 ADRENALINE ABEMAノ乱",
@@ -21568,7 +21568,7 @@
       "total_matches": 19
     },
     "EVT0081": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0081",
         "event_name": "KING OF KINGS vs 真ADRENALINE",
@@ -21769,7 +21769,7 @@
       "total_matches": 15
     },
     "EVT0082": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0082",
         "event_name": "KING OF KINGS vs 真ADRENALINE #2",
@@ -21970,7 +21970,7 @@
       "total_matches": 15
     },
     "EVT0083": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0083",
         "event_name": "真 ADRENALINE 福岡ノ乱",
@@ -22162,7 +22162,7 @@
       "total_matches": 14
     },
     "EVT0084": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0084",
         "event_name": "渋谷レゲエ祭 vs 真 ADRENALINE 2021",
@@ -22363,7 +22363,7 @@
       "total_matches": 15
     },
     "EVT0085": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0085",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #3",
@@ -22564,7 +22564,7 @@
       "total_matches": 15
     },
     "EVT0086": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0086",
         "event_name": "真ADRENALINE 春のMC BATTLE 三連祭2022",
@@ -22765,7 +22765,7 @@
       "total_matches": 15
     },
     "EVT0087": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0087",
         "event_name": "渋谷レゲエ祭 vs 真ADRENALINE #2",
@@ -22966,7 +22966,7 @@
       "total_matches": 15
     },
     "EVT0088": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0088",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #4",
@@ -23167,7 +23167,7 @@
       "total_matches": 15
     },
     "EVT0089": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0089",
         "event_name": "真 ADRENALINE 2023 at 渋谷WOMB",
@@ -23368,7 +23368,7 @@
       "total_matches": 15
     },
     "EVT0090": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0090",
         "event_name": "渋谷レゲエ祭 vs 真ADRENALINE 2023",
@@ -23569,7 +23569,7 @@
       "total_matches": 15
     },
     "EVT0091": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0091",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #5",
@@ -23770,7 +23770,7 @@
       "total_matches": 15
     },
     "EVT0092": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0092",
         "event_name": "戦極MCBATTLE vs 真ADRENALINE",
@@ -23971,7 +23971,7 @@
       "total_matches": 15
     },
     "EVT0093": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0093",
         "event_name": "KING OF KINGS vs 真 ADRENALINE #6",
@@ -24172,7 +24172,7 @@
       "total_matches": 15
     },
     "EVT0094": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0094",
         "event_name": "渋谷レゲエ祭 vs 真ADRENALINE",
@@ -24373,7 +24373,7 @@
       "total_matches": 15
     },
     "EVT0095": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0095",
         "event_name": "戦極MCBATTLE 第1章 ",
@@ -24764,7 +24764,7 @@
       "total_matches": 35
     },
     "EVT0096": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0096",
         "event_name": "戦極MCBATTLE 第2章 ",
@@ -24965,7 +24965,7 @@
       "total_matches": 15
     },
     "EVT0097": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0097",
         "event_name": "戦極MCBATTLE 第3章 ",
@@ -25166,7 +25166,7 @@
       "total_matches": 15
     },
     "EVT0098": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0098",
         "event_name": "戦極MCBATTLE 第4章 ",
@@ -25367,7 +25367,7 @@
       "total_matches": 15
     },
     "EVT0099": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0099",
         "event_name": "戦極MCBATTLE 第5章 ",
@@ -25717,7 +25717,7 @@
       "total_matches": 31
     },
     "EVT0100": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0100",
         "event_name": "戦極MCBATTLE 第6章 ",
@@ -26067,7 +26067,7 @@
       "total_matches": 31
     },
     "EVT0101": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0101",
         "event_name": "戦極MCBATTLE 第7章 ",
@@ -26417,7 +26417,7 @@
       "total_matches": 31
     },
     "EVT0102": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0102",
         "event_name": "戦極MCBATTLE 第8章 ",
@@ -26618,7 +26618,7 @@
       "total_matches": 15
     },
     "EVT0103": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0103",
         "event_name": "戦極MCBATTLE 第9章 ",
@@ -26968,7 +26968,7 @@
       "total_matches": 31
     },
     "EVT0104": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0104",
         "event_name": "戦極MCBATTLE 第10章 ",
@@ -27169,7 +27169,7 @@
       "total_matches": 15
     },
     "EVT0105": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0105",
         "event_name": "戦極MCBATTLE 第11章 ",
@@ -27370,7 +27370,7 @@
       "total_matches": 15
     },
     "EVT0106": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0106",
         "event_name": "戦極MCBATTLE 第12章 ",
@@ -27571,7 +27571,7 @@
       "total_matches": 15
     },
     "EVT0107": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0107",
         "event_name": "戦極MCBATTLE 第13章 ",
@@ -27771,651 +27771,8 @@
       ],
       "total_matches": 15
     },
-    "EVT0108": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
-      "event": {
-        "event_id": "EVT0108",
-        "event_name": "戦極MCBATTLE 第15章 ",
-        "event_name_full": "戦極MCBATTLE 第15章 ",
-        "event_name_simple": "戦極MCBATTLE 第15章 ",
-        "event_date": "2016-11-06",
-        "prize_money_winner": 500000,
-        "prize_money_total": null,
-        "prize_adjustments": [],
-        "prize_supplements": [],
-        "category_id": "EVTCat004",
-        "category_name": "戦極MC BATTLE",
-        "category_show_order": 500,
-        "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
-        "battle_format": "1on1",
-        "event_category": "戦極MC BATTLE",
-        "event_stage": "本戦",
-        "location": "O-EAST",
-        "organizer": "戦極MCBATTLE",
-        "notes": "",
-        "winner_name": "GADORO",
-        "winner_mc_id": "MC0116",
-        "runner_up_name": "RAWAXXX",
-        "runner_up_mc_id": "MC0214",
-        "best4": [
-          {
-            "mc_id": "MC0456",
-            "mc_name": "Lick-G"
-          },
-          {
-            "mc_id": "MC0243",
-            "mc_name": "peko"
-          }
-        ],
-        "winner_team_id": "",
-        "winner_team_name": "",
-        "runner_up_team_id": "",
-        "runner_up_team_name": "",
-        "team_results": []
-      },
-      "grouped_matches": [
-        {
-          "round_name": "Final",
-          "matches": [
-            {
-              "match_id": "MAT002718",
-              "round_name": "Final",
-              "winner_name": "GADORO",
-              "winner_mc_id": "MC0116",
-              "loser_name": "RAWAXXX",
-              "loser_mc_id": "MC0214",
-              "judge_method": ""
-            }
-          ]
-        },
-        {
-          "round_name": "Best4",
-          "matches": [
-            {
-              "match_id": "MAT002719",
-              "round_name": "Best4",
-              "winner_name": "RAWAXXX",
-              "winner_mc_id": "MC0214",
-              "loser_name": "Lick-G",
-              "loser_mc_id": "MC0456",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002720",
-              "round_name": "Best4",
-              "winner_name": "GADORO",
-              "winner_mc_id": "MC0116",
-              "loser_name": "peko",
-              "loser_mc_id": "MC0243",
-              "judge_method": ""
-            }
-          ]
-        },
-        {
-          "round_name": "Best8",
-          "matches": [
-            {
-              "match_id": "MAT002721",
-              "round_name": "Best8",
-              "winner_name": "RAWAXXX",
-              "winner_mc_id": "MC0214",
-              "loser_name": "Dragon One",
-              "loser_mc_id": "MC0101",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002722",
-              "round_name": "Best8",
-              "winner_name": "Lick-G",
-              "winner_mc_id": "MC0456",
-              "loser_name": "ぶーちゃん",
-              "loser_mc_id": "MC0647",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002723",
-              "round_name": "Best8",
-              "winner_name": "peko",
-              "winner_mc_id": "MC0243",
-              "loser_name": "PONEY",
-              "loser_mc_id": "MC0245",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002724",
-              "round_name": "Best8",
-              "winner_name": "GADORO",
-              "winner_mc_id": "MC0116",
-              "loser_name": "DOTAMA",
-              "loser_mc_id": "MC0100",
-              "judge_method": ""
-            }
-          ]
-        },
-        {
-          "round_name": "Best16",
-          "matches": [
-            {
-              "match_id": "MAT002725",
-              "round_name": "Best16",
-              "winner_name": "RAWAXXX",
-              "winner_mc_id": "MC0214",
-              "loser_name": "Ken THE 390",
-              "loser_mc_id": "MC0173",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002726",
-              "round_name": "Best16",
-              "winner_name": "Dragon One",
-              "winner_mc_id": "MC0101",
-              "loser_name": "呂布カルマ",
-              "loser_mc_id": "MC0376",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002727",
-              "round_name": "Best16",
-              "winner_name": "ぶーちゃん",
-              "winner_mc_id": "MC0647",
-              "loser_name": "KOOPA",
-              "loser_mc_id": "MC0181",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002728",
-              "round_name": "Best16",
-              "winner_name": "Lick-G",
-              "winner_mc_id": "MC0456",
-              "loser_name": "TKda黒ぶち",
-              "loser_mc_id": "MC0025",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002729",
-              "round_name": "Best16",
-              "winner_name": "PONEY",
-              "winner_mc_id": "MC0245",
-              "loser_name": "ハハノシキュウ",
-              "loser_mc_id": "MC0608",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002730",
-              "round_name": "Best16",
-              "winner_name": "peko",
-              "winner_mc_id": "MC0243",
-              "loser_name": "黒さき海斗",
-              "loser_mc_id": "MC0446",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002731",
-              "round_name": "Best16",
-              "winner_name": "DOTAMA",
-              "winner_mc_id": "MC0100",
-              "loser_name": "崇勲",
-              "loser_mc_id": "MC0472",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002732",
-              "round_name": "Best16",
-              "winner_name": "GADORO",
-              "winner_mc_id": "MC0116",
-              "loser_name": "輪入道",
-              "loser_mc_id": "MC0434",
-              "judge_method": ""
-            }
-          ]
-        },
-        {
-          "round_name": "Best32",
-          "matches": [
-            {
-              "match_id": "MAT002733",
-              "round_name": "Best32",
-              "winner_name": "Ken THE 390",
-              "winner_mc_id": "MC0173",
-              "loser_name": "ENEMY",
-              "loser_mc_id": "MC0104",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002734",
-              "round_name": "Best32",
-              "winner_name": "RAWAXXX",
-              "winner_mc_id": "MC0214",
-              "loser_name": "BASE",
-              "loser_mc_id": "MC0055",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002735",
-              "round_name": "Best32",
-              "winner_name": "Dragon One",
-              "winner_mc_id": "MC0101",
-              "loser_name": "Meiso",
-              "loser_mc_id": "MC0631",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002736",
-              "round_name": "Best32",
-              "winner_name": "呂布カルマ",
-              "winner_mc_id": "MC0376",
-              "loser_name": "ERONE",
-              "loser_mc_id": "MC0106",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002737",
-              "round_name": "Best32",
-              "winner_name": "ぶーちゃん",
-              "winner_mc_id": "MC0647",
-              "loser_name": "ACE",
-              "loser_mc_id": "MC0027",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002738",
-              "round_name": "Best32",
-              "winner_name": "KOOPA",
-              "winner_mc_id": "MC0181",
-              "loser_name": "MC松島",
-              "loser_mc_id": "MC0020",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002739",
-              "round_name": "Best32",
-              "winner_name": "Lick-G",
-              "winner_mc_id": "MC0456",
-              "loser_name": "MIRI",
-              "loser_mc_id": "MC0595",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002740",
-              "round_name": "Best32",
-              "winner_name": "TKda黒ぶち",
-              "winner_mc_id": "MC0025",
-              "loser_name": "掌幻",
-              "loser_mc_id": "MC0652",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002741",
-              "round_name": "Best32",
-              "winner_name": "ハハノシキュウ",
-              "winner_mc_id": "MC0608",
-              "loser_name": "スナフキン",
-              "loser_mc_id": "MC0354",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002742",
-              "round_name": "Best32",
-              "winner_name": "PONEY",
-              "winner_mc_id": "MC0245",
-              "loser_name": "MC☆ニガリ",
-              "loser_mc_id": "MC0015",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002743",
-              "round_name": "Best32",
-              "winner_name": "黒さき海斗",
-              "winner_mc_id": "MC0446",
-              "loser_name": "ミステリオ",
-              "loser_mc_id": "MC0600",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002744",
-              "round_name": "Best32",
-              "winner_name": "PEKO",
-              "winner_mc_id": "MC0243",
-              "loser_name": "MC KUREI",
-              "loser_mc_id": "MC0539",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002745",
-              "round_name": "Best32",
-              "winner_name": "DOTAMA",
-              "winner_mc_id": "MC0100",
-              "loser_name": "CIMA",
-              "loser_mc_id": "MC0080",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002746",
-              "round_name": "Best32",
-              "winner_name": "崇勲",
-              "winner_mc_id": "MC0472",
-              "loser_name": "NIHA-C",
-              "loser_mc_id": "MC0663",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002747",
-              "round_name": "Best32",
-              "winner_name": "輪入道",
-              "winner_mc_id": "MC0434",
-              "loser_name": "黄猿",
-              "loser_mc_id": "MC0444",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002748",
-              "round_name": "Best32",
-              "winner_name": "GADORO",
-              "winner_mc_id": "MC0116",
-              "loser_name": "泰斗(裂固)",
-              "loser_mc_id": "MC0474",
-              "judge_method": ""
-            }
-          ]
-        },
-        {
-          "round_name": "Best64",
-          "matches": [
-            {
-              "match_id": "MAT002749",
-              "round_name": "Best64",
-              "winner_name": "Ken THE 390",
-              "winner_mc_id": "MC0173",
-              "loser_name": "押忍マン",
-              "loser_mc_id": "MC0473",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002750",
-              "round_name": "Best64",
-              "winner_name": "ENEMY",
-              "winner_mc_id": "MC0104",
-              "loser_name": "鉄ちゃん",
-              "loser_mc_id": "MC0643",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002751",
-              "round_name": "Best64",
-              "winner_name": "BASE",
-              "winner_mc_id": "MC0055",
-              "loser_name": "KOPERU",
-              "loser_mc_id": "MC0454",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002752",
-              "round_name": "Best64",
-              "winner_name": "RAWAXXX",
-              "winner_mc_id": "MC0214",
-              "loser_name": "A-men",
-              "loser_mc_id": "MC0644",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002753",
-              "round_name": "Best64",
-              "winner_name": "Dragon One",
-              "winner_mc_id": "MC0101",
-              "loser_name": "MAKA",
-              "loser_mc_id": "MC0204",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002754",
-              "round_name": "Best64",
-              "winner_name": "Meiso",
-              "winner_mc_id": "MC0631",
-              "loser_name": "8busuru",
-              "loser_mc_id": "MC0537",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002755",
-              "round_name": "Best64",
-              "winner_name": "ERONE",
-              "winner_mc_id": "MC0106",
-              "loser_name": "9for",
-              "loser_mc_id": "MC0447",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002756",
-              "round_name": "Best64",
-              "winner_name": "呂布カルマ",
-              "winner_mc_id": "MC0376",
-              "loser_name": "AMATERAS",
-              "loser_mc_id": "MC0609",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002757",
-              "round_name": "Best64",
-              "winner_name": "ぶーちゃん",
-              "winner_mc_id": "MC0647",
-              "loser_name": "Icerey",
-              "loser_mc_id": "MC0648",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002758",
-              "round_name": "Best64",
-              "winner_name": "ACE",
-              "winner_mc_id": "MC0027",
-              "loser_name": "抹",
-              "loser_mc_id": "MC0649",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002759",
-              "round_name": "Best64",
-              "winner_name": "MC松島",
-              "winner_mc_id": "MC0020",
-              "loser_name": "SAM",
-              "loser_mc_id": "MC0271",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002760",
-              "round_name": "Best64",
-              "winner_name": "KOOPA",
-              "winner_mc_id": "MC0181",
-              "loser_name": "カルデラビスタ",
-              "loser_mc_id": "MC0345",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002761",
-              "round_name": "Best64",
-              "winner_name": "Lick-G",
-              "winner_mc_id": "MC0456",
-              "loser_name": "TENGG",
-              "loser_mc_id": "MC0299",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002762",
-              "round_name": "Best64",
-              "winner_name": "MIRI",
-              "winner_mc_id": "MC0595",
-              "loser_name": "ドイケン",
-              "loser_mc_id": "MC1051",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002763",
-              "round_name": "Best64",
-              "winner_name": "掌幻",
-              "winner_mc_id": "MC0652",
-              "loser_name": "龍道",
-              "loser_mc_id": "MC0653",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002764",
-              "round_name": "Best64",
-              "winner_name": "TKda黒ぶち",
-              "winner_mc_id": "MC0025",
-              "loser_name": "じょう",
-              "loser_mc_id": "MC0334",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002765",
-              "round_name": "Best64",
-              "winner_name": "スナフキン",
-              "winner_mc_id": "MC0354",
-              "loser_name": "T-TANGG",
-              "loser_mc_id": "MC0296",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002766",
-              "round_name": "Best64",
-              "winner_name": "ハハノシキュウ",
-              "winner_mc_id": "MC0608",
-              "loser_name": "NAIKA MC",
-              "loser_mc_id": "MC0222",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002767",
-              "round_name": "Best64",
-              "winner_name": "PONEY",
-              "winner_mc_id": "MC0245",
-              "loser_name": "GOLBY",
-              "loser_mc_id": "MC0121",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002768",
-              "round_name": "Best64",
-              "winner_name": "MC☆ニガリ",
-              "winner_mc_id": "MC0015",
-              "loser_name": "ADAM",
-              "loser_mc_id": "MC0657",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002769",
-              "round_name": "Best64",
-              "winner_name": "ミステリオ",
-              "winner_mc_id": "MC0600",
-              "loser_name": "あっこゴリラ",
-              "loser_mc_id": "MC0545",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002770",
-              "round_name": "Best64",
-              "winner_name": "黒さき海斗",
-              "winner_mc_id": "MC0446",
-              "loser_name": "瑞雲 the third",
-              "loser_mc_id": "MC0906",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002771",
-              "round_name": "Best64",
-              "winner_name": "MC kurei",
-              "winner_mc_id": "MC0539",
-              "loser_name": "OSCAR",
-              "loser_mc_id": "MC0235",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002772",
-              "round_name": "Best64",
-              "winner_name": "PEKO",
-              "winner_mc_id": "MC0243",
-              "loser_name": "漢 a.k.a. GAMI",
-              "loser_mc_id": "MC0475",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002773",
-              "round_name": "Best64",
-              "winner_name": "DOTAMA",
-              "winner_mc_id": "MC0100",
-              "loser_name": "LAYGAN",
-              "loser_mc_id": "MC0661",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002774",
-              "round_name": "Best64",
-              "winner_name": "CIMA",
-              "winner_mc_id": "MC0080",
-              "loser_name": "GOTIT",
-              "loser_mc_id": "MC0122",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002775",
-              "round_name": "Best64",
-              "winner_name": "崇勲",
-              "winner_mc_id": "MC0472",
-              "loser_name": "MCたっくん",
-              "loser_mc_id": "MC0662",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002776",
-              "round_name": "Best64",
-              "winner_name": "NIHA-C",
-              "winner_mc_id": "MC0663",
-              "loser_name": "JECT",
-              "loser_mc_id": "MC0664",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002777",
-              "round_name": "Best64",
-              "winner_name": "黄猿",
-              "winner_mc_id": "MC0444",
-              "loser_name": "JAG-ME",
-              "loser_mc_id": "MC0144",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002778",
-              "round_name": "Best64",
-              "winner_name": "輪入道",
-              "winner_mc_id": "MC0434",
-              "loser_name": "句潤",
-              "loser_mc_id": "MC0373",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002779",
-              "round_name": "Best64",
-              "winner_name": "泰斗(裂固)",
-              "winner_mc_id": "MC0474",
-              "loser_name": "TAIC",
-              "loser_mc_id": "MC0665",
-              "judge_method": ""
-            },
-            {
-              "match_id": "MAT002780",
-              "round_name": "Best64",
-              "winner_name": "GADORO",
-              "winner_mc_id": "MC0116",
-              "loser_name": "Rude-α",
-              "loser_mc_id": "MC0599",
-              "judge_method": ""
-            }
-          ]
-        }
-      ],
-      "total_matches": 63
-    },
     "EVT0109": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0109",
         "event_name": "戦極MCBATTLE 第16章 ",
@@ -29058,7 +28415,7 @@
       "total_matches": 63
     },
     "EVT0110": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0110",
         "event_name": "戦極MCBATTLE 第17章 ",
@@ -29692,7 +29049,7 @@
       "total_matches": 62
     },
     "EVT0111": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0111",
         "event_name": "戦極MCBATTLE 第18章 ",
@@ -30191,7 +29548,7 @@
       "total_matches": 47
     },
     "EVT0112": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0112",
         "event_name": "戦極MCBATTLE 第20章 ",
@@ -30690,7 +30047,7 @@
       "total_matches": 47
     },
     "EVT0113": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0113",
         "event_name": "戦極MCBATTLE 第21章 ",
@@ -31189,7 +30546,7 @@
       "total_matches": 47
     },
     "EVT0114": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0114",
         "event_name": "戦極MCBATTLE 第22章 ",
@@ -31539,7 +30896,7 @@
       "total_matches": 31
     },
     "EVT0115": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0115",
         "event_name": "戦極MCBATTLE 第23章 ",
@@ -31889,7 +31246,7 @@
       "total_matches": 31
     },
     "EVT0116": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0116",
         "event_name": "戦極MCBATTLE 第24章 ",
@@ -32090,7 +31447,7 @@
       "total_matches": 15
     },
     "EVT0117": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0117",
         "event_name": "戦極MCBATTLE 第25章 ",
@@ -32291,7 +31648,7 @@
       "total_matches": 15
     },
     "EVT0118": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0118",
         "event_name": "戦極MCBATTLE 第26章 ",
@@ -32492,7 +31849,7 @@
       "total_matches": 15
     },
     "EVT0119": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0119",
         "event_name": "戦極MCBATTLE 第27章 ",
@@ -32693,7 +32050,7 @@
       "total_matches": 15
     },
     "EVT0120": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0120",
         "event_name": "戦極MCBATTLE 第28章 ",
@@ -32894,7 +32251,7 @@
       "total_matches": 15
     },
     "EVT0121": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0121",
         "event_name": "戦極MCBATTLE 第29章 ",
@@ -33172,7 +32529,7 @@
       "total_matches": 23
     },
     "EVT0122": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0122",
         "event_name": "戦極MCBATTLE 第30章 ",
@@ -33373,7 +32730,7 @@
       "total_matches": 15
     },
     "EVT0123": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0123",
         "event_name": "UMB 2017 THE CHOICE IS YOURS Vol.1",
@@ -33723,7 +33080,7 @@
       "total_matches": 31
     },
     "EVT0124": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0124",
         "event_name": "UMB 2018 THE CHOICE IS YOURS Vol.2",
@@ -34073,7 +33430,7 @@
       "total_matches": 31
     },
     "EVT0125": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0125",
         "event_name": "UMB 2019 THE CHOICE IS YOURS Vol.3",
@@ -34274,7 +33631,7 @@
       "total_matches": 15
     },
     "EVT0126": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0126",
         "event_name": "UMB 2020 THE CHOICE IS YOURS Vol.4",
@@ -34624,7 +33981,7 @@
       "total_matches": 31
     },
     "EVT0127": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0127",
         "event_name": "UMB 2021 THE CHOICE IS YOURS Vol.5",
@@ -34974,7 +34331,7 @@
       "total_matches": 31
     },
     "EVT0128": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0128",
         "event_name": "UMB 2022 THE CHOICE IS YOURS Vol.6",
@@ -35324,7 +34681,7 @@
       "total_matches": 31
     },
     "EVT0129": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0129",
         "event_name": "UMB 2023 THE CHOICE IS YOURS Vol.7",
@@ -35674,7 +35031,7 @@
       "total_matches": 31
     },
     "EVT0130": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0130",
         "event_name": "BATTLE SUMMITⅠ",
@@ -35916,7 +35273,7 @@
       "total_matches": 19
     },
     "EVT0131": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0131",
         "event_name": "BATTLE SUMMITⅡ",
@@ -36117,7 +35474,7 @@
       "total_matches": 15
     },
     "EVT0132": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0132",
         "event_name": "NEO GENESIS MC BATTLE Vol.1",
@@ -36395,7 +35752,7 @@
       "total_matches": 23
     },
     "EVT0133": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0133",
         "event_name": "NEO GENESIS MC BATTLE Vol.2",
@@ -36673,7 +36030,7 @@
       "total_matches": 23
     },
     "EVT0134": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0134",
         "event_name": "NEO GENESIS MC BATTLE Vol.3",
@@ -37023,7 +36380,7 @@
       "total_matches": 31
     },
     "EVT0135": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0135",
         "event_name": "NEO GENESIS MC BATTLE Vol.4",
@@ -37373,7 +36730,7 @@
       "total_matches": 31
     },
     "EVT0136": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0136",
         "event_name": "NEO GENESIS MC BATTLE Vol.5",
@@ -37723,7 +37080,7 @@
       "total_matches": 31
     },
     "EVT0137": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0137",
         "event_name": "NEO GENESIS MC BATTLE Vol.6",
@@ -38001,7 +37358,7 @@
       "total_matches": 23
     },
     "EVT0138": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0138",
         "event_name": "NEO GENESIS MC BATTLE Vol.7",
@@ -38351,7 +37708,7 @@
       "total_matches": 31
     },
     "EVT0139": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0139",
         "event_name": "NEO GENESIS MC BATTLE Vol.8",
@@ -38701,7 +38058,7 @@
       "total_matches": 31
     },
     "EVT0140": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0140",
         "event_name": "NEO GENESIS MC BATTLE Vol.9",
@@ -38979,7 +38336,7 @@
       "total_matches": 23
     },
     "EVT0141": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0141",
         "event_name": "凱旋MC battle 東西選抜 春ノ陣　2024",
@@ -39329,7 +38686,7 @@
       "total_matches": 31
     },
     "EVT0142": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0142",
         "event_name": "凱旋MC battle 夏ノ陣 U-27",
@@ -39607,7 +38964,7 @@
       "total_matches": 23
     },
     "EVT0143": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0143",
         "event_name": "凱旋MC battle Gate24",
@@ -39957,7 +39314,7 @@
       "total_matches": 31
     },
     "EVT0144": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0144",
         "event_name": "Spotlight 2024 関東編",
@@ -40158,7 +39515,7 @@
       "total_matches": 15
     },
     "EVT0145": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0145",
         "event_name": "Spotlight 2019",
@@ -40508,7 +39865,7 @@
       "total_matches": 31
     },
     "EVT0146": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0146",
         "event_name": "Spotlight 2017",
@@ -40858,7 +40215,7 @@
       "total_matches": 31
     },
     "EVT0147": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0147",
         "event_name": "Spotlight 2025",
@@ -41136,7 +40493,7 @@
       "total_matches": 23
     },
     "EVT0148": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0148",
         "event_name": "Spotlight 2024",
@@ -41486,7 +40843,7 @@
       "total_matches": 31
     },
     "EVT0149": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0149",
         "event_name": "Spotlight 2023大阪編",
@@ -41836,7 +41193,7 @@
       "total_matches": 31
     },
     "EVT0150": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0150",
         "event_name": "Spotlight 2023東京編",
@@ -42037,7 +41394,7 @@
       "total_matches": 15
     },
     "EVT0151": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0151",
         "event_name": "Spotlight 2022",
@@ -42238,7 +41595,7 @@
       "total_matches": 15
     },
     "EVT0152": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0152",
         "event_name": "Spotlight 2022関東編",
@@ -42439,7 +41796,7 @@
       "total_matches": 15
     },
     "EVT0153": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0153",
         "event_name": "Spotlight 2021",
@@ -42789,7 +42146,7 @@
       "total_matches": 31
     },
     "EVT0154": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0154",
         "event_name": "Spotlight 2020",
@@ -43139,7 +42496,7 @@
       "total_matches": 31
     },
     "EVT0155": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0155",
         "event_name": "Spotlight 2018",
@@ -43489,7 +42846,7 @@
       "total_matches": 31
     },
     "EVT0156": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0156",
         "event_name": "Spotlight 2016",
@@ -43690,7 +43047,7 @@
       "total_matches": 15
     },
     "EVT0157": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0157",
         "event_name": "Spotlight 2015",
@@ -43891,7 +43248,7 @@
       "total_matches": 15
     },
     "EVT0158": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0158",
         "event_name": "Spotlight 2012",
@@ -44092,7 +43449,7 @@
       "total_matches": 15
     },
     "EVT0159": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0159",
         "event_name": "Spotlight 2010",
@@ -44266,7 +43623,7 @@
       "total_matches": 12
     },
     "EVT0160": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0160",
         "event_name": "Spotlight 2009",
@@ -44390,7 +43747,7 @@
       "total_matches": 7
     },
     "EVT0161": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0161",
         "event_name": "戦極MCBATTLE 第42章",
@@ -44426,7 +43783,7 @@
       "total_matches": 0
     },
     "EVT0162": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0162",
         "event_name": "BATTLE SUMMITⅢ",
@@ -44462,7 +43819,7 @@
       "total_matches": 0
     },
     "EVT0163": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0163",
         "event_name": "戦極MCBATTLE vs THE罵倒",
@@ -44731,7 +44088,7 @@
       "total_matches": 23
     },
     "EVT0164": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0164",
         "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
@@ -45383,7 +44740,7 @@
       "total_matches": 31
     },
     "EVT0165": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0165",
         "event_name": "3150×LUSHBOMU MC BATTLE vol.2",
@@ -46035,7 +45392,7 @@
       "total_matches": 31
     },
     "EVT0166": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0166",
         "event_name": "3150×LUSHBOMU MC BATTLE vol.1",
@@ -46687,7 +46044,7 @@
       "total_matches": 31
     },
     "EVT0167": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0167",
         "event_name": "THE罵倒 2013 GRAND CHAMPIONSHIP",
@@ -46888,7 +46245,7 @@
       "total_matches": 15
     },
     "EVT0168": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0168",
         "event_name": "THE罵倒 2014 GRAND CHAMPIONSHIP",
@@ -47089,7 +46446,7 @@
       "total_matches": 15
     },
     "EVT0169": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0169",
         "event_name": "THE罵倒 2015 GRAND CHAMPIONSHIP",
@@ -47290,7 +46647,7 @@
       "total_matches": 15
     },
     "EVT0170": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0170",
         "event_name": "THE罵倒 2016 GRAND CHAMPIONSHIP",
@@ -47514,7 +46871,7 @@
       "total_matches": 17
     },
     "EVT0171": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0171",
         "event_name": "THE罵倒 2017 GRAND CHAMPIONSHIP",
@@ -47864,7 +47221,7 @@
       "total_matches": 31
     },
     "EVT0172": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0172",
         "event_name": "THE罵倒 2018 GRAND CHAMPIONSHIP",
@@ -48214,7 +47571,7 @@
       "total_matches": 31
     },
     "EVT0173": {
-      "updated_at": "2026-05-05T05:59:58.010Z",
+      "updated_at": "2026-05-05T10:58:03.539Z",
       "event": {
         "event_id": "EVT0173",
         "event_name": "戦極MCBATTLE 第15章 (Tag match)",
@@ -48235,19 +47592,899 @@
         "location": "LIQUIDROOM",
         "organizer": "戦極MC BATTLE",
         "notes": "",
-        "winner_name": "",
+        "winner_name": "ザ＊どストライクス",
         "winner_mc_id": "",
-        "runner_up_name": "",
+        "runner_up_name": "今日の2MC",
         "runner_up_mc_id": "",
-        "best4": [],
-        "winner_team_id": "",
-        "winner_team_name": "",
-        "runner_up_team_id": "",
-        "runner_up_team_name": "",
-        "team_results": []
+        "best4": [
+          {
+            "team_id": "TM17304",
+            "team_name": "韻Fighterz",
+            "members": [
+              {
+                "mc_id": "MC0121",
+                "mc_name": "Golby",
+                "member_order": 1
+              },
+              {
+                "mc_id": "MC1073",
+                "mc_name": "UZIthe9mm",
+                "member_order": 2
+              }
+            ]
+          },
+          {
+            "team_id": "TM17306",
+            "team_name": "栃木2000万パワーズ",
+            "members": [
+              {
+                "mc_id": "MC0271",
+                "mc_name": "SAM",
+                "member_order": 1
+              },
+              {
+                "mc_id": "MC0204",
+                "mc_name": "MAKA",
+                "member_order": 2
+              }
+            ]
+          }
+        ],
+        "winner_team_id": "TM17301",
+        "winner_team_name": "ザ＊どストライクス",
+        "runner_up_team_id": "TM17307",
+        "runner_up_team_name": "今日の2MC",
+        "team_results": [
+          {
+            "rank_label": "🥇",
+            "result_label": "winner",
+            "team_id": "TM17301",
+            "team_name": "ザ＊どストライクス",
+            "members": [
+              {
+                "mc_id": "MC0376",
+                "mc_name": "呂布カルマ",
+                "member_order": 1
+              },
+              {
+                "mc_id": "MC0161",
+                "mc_name": "K.Lee",
+                "member_order": 2
+              }
+            ]
+          },
+          {
+            "rank_label": "🥈",
+            "result_label": "runner_up",
+            "team_id": "TM17307",
+            "team_name": "今日の2MC",
+            "members": [
+              {
+                "mc_id": "MC0100",
+                "mc_name": "DOTAMA",
+                "member_order": 1
+              },
+              {
+                "mc_id": "MC0222",
+                "mc_name": "Naika mc",
+                "member_order": 2
+              }
+            ]
+          },
+          {
+            "rank_label": "🥉",
+            "result_label": "best4",
+            "team_id": "TM17304",
+            "team_name": "韻Fighterz",
+            "members": [
+              {
+                "mc_id": "MC0121",
+                "mc_name": "Golby",
+                "member_order": 1
+              },
+              {
+                "mc_id": "MC1073",
+                "mc_name": "UZIthe9mm",
+                "member_order": 2
+              }
+            ]
+          },
+          {
+            "rank_label": "🥉",
+            "result_label": "best4",
+            "team_id": "TM17306",
+            "team_name": "栃木2000万パワーズ",
+            "members": [
+              {
+                "mc_id": "MC0271",
+                "mc_name": "SAM",
+                "member_order": 1
+              },
+              {
+                "mc_id": "MC0204",
+                "mc_name": "MAKA",
+                "member_order": 2
+              }
+            ]
+          }
+        ]
       },
-      "grouped_matches": [],
-      "total_matches": 0
+      "grouped_matches": [
+        {
+          "round_name": "Final",
+          "matches": [
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Final",
+              "match_format": "team",
+              "winner_team_id": "TM17301",
+              "winner_team_name": "ザ＊どストライクス",
+              "winner_members": [
+                {
+                  "mc_id": "MC0376",
+                  "mc_name": "呂布カルマ",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0161",
+                  "mc_name": "K.Lee",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17307",
+              "loser_team_name": "今日の2MC",
+              "loser_members": [
+                {
+                  "mc_id": "MC0100",
+                  "mc_name": "DOTAMA",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0222",
+                  "mc_name": "Naika mc",
+                  "member_order": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "round_name": "Best4",
+          "matches": [
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best4",
+              "match_format": "team",
+              "winner_team_id": "TM17301",
+              "winner_team_name": "ザ＊どストライクス",
+              "winner_members": [
+                {
+                  "mc_id": "MC0376",
+                  "mc_name": "呂布カルマ",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0161",
+                  "mc_name": "K.Lee",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17304",
+              "loser_team_name": "韻Fighterz",
+              "loser_members": [
+                {
+                  "mc_id": "MC0121",
+                  "mc_name": "Golby",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC1073",
+                  "mc_name": "UZIthe9mm",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best4",
+              "match_format": "team",
+              "winner_team_id": "TM17307",
+              "winner_team_name": "今日の2MC",
+              "winner_members": [
+                {
+                  "mc_id": "MC0100",
+                  "mc_name": "DOTAMA",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0222",
+                  "mc_name": "Naika mc",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17306",
+              "loser_team_name": "栃木2000万パワーズ",
+              "loser_members": [
+                {
+                  "mc_id": "MC0271",
+                  "mc_name": "SAM",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0204",
+                  "mc_name": "MAKA",
+                  "member_order": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "round_name": "Best8",
+          "matches": [
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best8",
+              "match_format": "team",
+              "winner_team_id": "TM17301",
+              "winner_team_name": "ザ＊どストライクス",
+              "winner_members": [
+                {
+                  "mc_id": "MC0376",
+                  "mc_name": "呂布カルマ",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0161",
+                  "mc_name": "K.Lee",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17302",
+              "loser_team_name": "GIANT KILL",
+              "loser_members": [
+                {
+                  "mc_id": "MC0393",
+                  "mc_name": "早雲",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0145",
+                  "mc_name": "JAKE",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best8",
+              "match_format": "team",
+              "winner_team_id": "TM17304",
+              "winner_team_name": "韻Fighterz",
+              "winner_members": [
+                {
+                  "mc_id": "MC0121",
+                  "mc_name": "Golby",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC1073",
+                  "mc_name": "UZIthe9mm",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17317",
+              "loser_team_name": "ジャッキー・チェン",
+              "loser_members": [
+                {
+                  "mc_id": "MC0337",
+                  "mc_name": "ふぁんく",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0020",
+                  "mc_name": "MC松島",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best8",
+              "match_format": "team",
+              "winner_team_id": "TM17306",
+              "winner_team_name": "栃木2000万パワーズ",
+              "winner_members": [
+                {
+                  "mc_id": "MC0271",
+                  "mc_name": "SAM",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0204",
+                  "mc_name": "MAKA",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17318",
+              "loser_team_name": "KANDY TOWN",
+              "loser_members": [
+                {
+                  "mc_id": "MC0842",
+                  "mc_name": "kikumaru",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC1075",
+                  "mc_name": "B.S.C",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best8",
+              "match_format": "team",
+              "winner_team_id": "TM17307",
+              "winner_team_name": "今日の2MC",
+              "winner_members": [
+                {
+                  "mc_id": "MC0100",
+                  "mc_name": "DOTAMA",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0222",
+                  "mc_name": "Naika mc",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17319",
+              "loser_team_name": "後ろ指刺され組",
+              "loser_members": [
+                {
+                  "mc_id": "MC0351",
+                  "mc_name": "サイプレス上野",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC1076",
+                  "mc_name": "MCサーモン",
+                  "member_order": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "round_name": "Best16",
+          "matches": [
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best16",
+              "match_format": "team",
+              "winner_team_id": "TM17301",
+              "winner_team_name": "ザ＊どストライクス",
+              "winner_members": [
+                {
+                  "mc_id": "MC0376",
+                  "mc_name": "呂布カルマ",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0161",
+                  "mc_name": "K.Lee",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17320",
+              "loser_team_name": "B.T.W",
+              "loser_members": [
+                {
+                  "mc_id": "MC0027",
+                  "mc_name": "ace",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC1057",
+                  "mc_name": "luiz",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best16",
+              "match_format": "team",
+              "winner_team_id": "TM17302",
+              "winner_team_name": "GIANT KILL",
+              "winner_members": [
+                {
+                  "mc_id": "MC0393",
+                  "mc_name": "早雲",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0145",
+                  "mc_name": "JAKE",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17321",
+              "loser_team_name": "WORD OF MOUTH",
+              "loser_members": [
+                {
+                  "mc_id": "MC0412",
+                  "mc_name": "田中光",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0631",
+                  "mc_name": "meiso",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best16",
+              "match_format": "team",
+              "winner_team_id": "TM17317",
+              "winner_team_name": "ジャッキー・チェン",
+              "winner_members": [
+                {
+                  "mc_id": "MC0337",
+                  "mc_name": "ふぁんく",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0020",
+                  "mc_name": "MC松島",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17303",
+              "loser_team_name": "チーム墨田",
+              "loser_members": [
+                {
+                  "mc_id": "MC0580",
+                  "mc_name": "はなび",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0652",
+                  "mc_name": "掌幻",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best16",
+              "match_format": "team",
+              "winner_team_id": "TM17304",
+              "winner_team_name": "韻Fighterz",
+              "winner_members": [
+                {
+                  "mc_id": "MC0121",
+                  "mc_name": "Golby",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC1073",
+                  "mc_name": "UZIthe9mm",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17322",
+              "loser_team_name": "ぬもんちゅが",
+              "loser_members": [
+                {
+                  "mc_id": "MC0456",
+                  "mc_name": "lick-g",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0354",
+                  "mc_name": "スナフキン",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best16",
+              "match_format": "team",
+              "winner_team_id": "TM17306",
+              "winner_team_name": "栃木2000万パワーズ",
+              "winner_members": [
+                {
+                  "mc_id": "MC0271",
+                  "mc_name": "SAM",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0204",
+                  "mc_name": "MAKA",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17323",
+              "loser_team_name": "四筒七筒両面ズ",
+              "loser_members": [
+                {
+                  "mc_id": "MC0472",
+                  "mc_name": "崇勲",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0077",
+                  "mc_name": "chico carlito",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best16",
+              "match_format": "team",
+              "winner_team_id": "TM17318",
+              "winner_team_name": "KANDY TOWN",
+              "winner_members": [
+                {
+                  "mc_id": "MC0842",
+                  "mc_name": "kikumaru",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC1075",
+                  "mc_name": "B.S.C",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17305",
+              "loser_team_name": "笑う53",
+              "loser_members": [
+                {
+                  "mc_id": "MC0214",
+                  "mc_name": "rawaxxx",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0691",
+                  "mc_name": "egavvo",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best16",
+              "match_format": "team",
+              "winner_team_id": "TM17307",
+              "winner_team_name": "今日の2MC",
+              "winner_members": [
+                {
+                  "mc_id": "MC0100",
+                  "mc_name": "DOTAMA",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0222",
+                  "mc_name": "Naika mc",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17305",
+              "loser_team_name": "笑う53",
+              "loser_members": [
+                {
+                  "mc_id": "MC0214",
+                  "mc_name": "rawaxxx",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0691",
+                  "mc_name": "egavvo",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best16",
+              "match_format": "team",
+              "winner_team_id": "TM17319",
+              "winner_team_name": "後ろ指刺され組",
+              "winner_members": [
+                {
+                  "mc_id": "MC0351",
+                  "mc_name": "サイプレス上野",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC1076",
+                  "mc_name": "MCサーモン",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17308",
+              "loser_team_name": "バズーカ",
+              "loser_members": [
+                {
+                  "mc_id": "MC0770",
+                  "mc_name": "T-pablow",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0015",
+                  "mc_name": "MC☆ニガリ",
+                  "member_order": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "round_name": "Best24",
+          "matches": [
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best24",
+              "match_format": "team",
+              "winner_team_id": "TM17301",
+              "winner_team_name": "ザ＊どストライクス",
+              "winner_members": [
+                {
+                  "mc_id": "MC0376",
+                  "mc_name": "呂布カルマ",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0161",
+                  "mc_name": "K.Lee",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17309",
+              "loser_team_name": "クリティカルヒッターズ",
+              "loser_members": [
+                {
+                  "mc_id": "MC0245",
+                  "mc_name": "PONEY",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0373",
+                  "mc_name": "句潤",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best24",
+              "match_format": "team",
+              "winner_team_id": "TM17302",
+              "winner_team_name": "GIANT KILL",
+              "winner_members": [
+                {
+                  "mc_id": "MC0393",
+                  "mc_name": "早雲",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0145",
+                  "mc_name": "JAKE",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17310",
+              "loser_team_name": "マグマムシ",
+              "loser_members": [
+                {
+                  "mc_id": "MC0599",
+                  "mc_name": "rude－α",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0334",
+                  "mc_name": "じょう",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best24",
+              "match_format": "team",
+              "winner_team_id": "TM17303",
+              "winner_team_name": "チーム墨田",
+              "winner_members": [
+                {
+                  "mc_id": "MC0580",
+                  "mc_name": "はなび",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0652",
+                  "mc_name": "掌幻",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17311",
+              "loser_team_name": "ビューティベア",
+              "loser_members": [
+                {
+                  "mc_id": "MC0562",
+                  "mc_name": "CHARLES",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0545",
+                  "mc_name": "あっこゴリラ",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best24",
+              "match_format": "team",
+              "winner_team_id": "TM17304",
+              "winner_team_name": "韻Fighterz",
+              "winner_members": [
+                {
+                  "mc_id": "MC0121",
+                  "mc_name": "Golby",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC1073",
+                  "mc_name": "UZIthe9mm",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17312",
+              "loser_team_name": "Clibing up",
+              "loser_members": [
+                {
+                  "mc_id": "MC0182",
+                  "mc_name": "Kowree",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0291",
+                  "mc_name": "SURRY",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best24",
+              "match_format": "team",
+              "winner_team_id": "TM17305",
+              "winner_team_name": "笑う53",
+              "winner_members": [
+                {
+                  "mc_id": "MC0214",
+                  "mc_name": "rawaxxx",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0691",
+                  "mc_name": "egavvo",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17313",
+              "loser_team_name": "クレイＤクレイジー",
+              "loser_members": [
+                {
+                  "mc_id": "MC0539",
+                  "mc_name": "MC kurei",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0158",
+                  "mc_name": "k-razy",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best24",
+              "match_format": "team",
+              "winner_team_id": "TM17306",
+              "winner_team_name": "栃木2000万パワーズ",
+              "winner_members": [
+                {
+                  "mc_id": "MC0271",
+                  "mc_name": "SAM",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0204",
+                  "mc_name": "MAKA",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17314",
+              "loser_team_name": "東部ライオンズ",
+              "loser_members": [
+                {
+                  "mc_id": "MC0025",
+                  "mc_name": "tkda黒ぶち",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0299",
+                  "mc_name": "TENGG",
+                  "member_order": 2
+                }
+              ]
+            },
+            {
+              "match_id": "TMmatch0001",
+              "event_id": "EVT0173",
+              "round_name": "Best24",
+              "match_format": "team",
+              "winner_team_id": "TM17307",
+              "winner_team_name": "今日の2MC",
+              "winner_members": [
+                {
+                  "mc_id": "MC0100",
+                  "mc_name": "DOTAMA",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0222",
+                  "mc_name": "Naika mc",
+                  "member_order": 2
+                }
+              ],
+              "loser_team_id": "TM17315",
+              "loser_team_name": "8849mm",
+              "loser_members": [
+                {
+                  "mc_id": "MC0608",
+                  "mc_name": "ハハノシキュウ",
+                  "member_order": 1
+                },
+                {
+                  "mc_id": "MC0595",
+                  "mc_name": "miri",
+                  "member_order": 2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_matches": 22
     }
   }
 }

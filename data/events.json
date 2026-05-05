@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-05T05:59:49.958Z",
-  "total": 164,
+  "updated_at": "2026-05-05T10:57:54.424Z",
+  "total": 163,
   "events": [
     {
       "event_id": "EVT0021",
@@ -1281,26 +1281,6 @@
       "notes": "",
       "battle_format": "1on1",
       "winner_name": "RAWAXXX"
-    },
-    {
-      "event_id": "EVT0108",
-      "event_name": "戦極MCBATTLE 第15章 ",
-      "event_name_full": "戦極MCBATTLE 第15章 ",
-      "event_name_simple": "戦極MCBATTLE 第15章 ",
-      "event_date": "2016-11-06",
-      "prize_money_winner": 500000,
-      "prize_money_total": null,
-      "category_id": "EVTCat004",
-      "category_name": "戦極MC BATTLE",
-      "category_show_order": 500,
-      "category_description": "MC正社員を中心に発展した、国内最大級のMCバトルシリーズ。\r\n前身の戦慄MC BATTLEから戦極MC BATTLEへと展開し、YouTube時代のバトル普及を大きく押し進めた。\r\n武道館・国技館級の会場まで広がり、現代MCバトルの大衆化を象徴する大会。\r",
-      "event_category": "戦極MC BATTLE",
-      "event_stage": "本戦",
-      "location": "O-EAST",
-      "organizer": "戦極MCBATTLE",
-      "notes": "",
-      "battle_format": "1on1",
-      "winner_name": "GADORO"
     },
     {
       "event_id": "EVT0041",

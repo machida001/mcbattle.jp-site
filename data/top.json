@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-05T05:59:48.885Z",
+  "updated_at": "2026-05-05T10:57:52.893Z",
   "recent_events": [
     {
       "event_id": "EVT0164",
@@ -281,7 +281,7 @@
       "rank": 4,
       "mc_id": "MC0376",
       "mc_name": "呂布カルマ",
-      "total_prize_money": 9900000
+      "total_prize_money": 10050000
     },
     {
       "rank": 5,
@@ -297,15 +297,15 @@
     },
     {
       "rank": 7,
-      "mc_id": "MC0116",
-      "mc_name": "GADORO",
-      "total_prize_money": 7000000
-    },
-    {
-      "rank": 8,
       "mc_id": "MC0450",
       "mc_name": "Donatello",
       "total_prize_money": 6800000
+    },
+    {
+      "rank": 8,
+      "mc_id": "MC0116",
+      "mc_name": "GADORO",
+      "total_prize_money": 6500000
     },
     {
       "rank": 9,
