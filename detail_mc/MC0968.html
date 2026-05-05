@@ -563,6 +563,139 @@
       line-height: 1.32;
     }
 
+
+    .team-battle-list{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .team-battle-list li{
+      margin: 0;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .team-battle-list li:last-child{
+      border-bottom: none;
+    }
+
+    .team-battle-card{
+      display: block;
+      min-width: 0;
+    }
+
+    .team-battle-main{
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .team-battle-side{
+      min-width: 0;
+      display: block;
+    }
+
+    .team-battle-side .team-name-label{
+      display: block;
+      margin: 0 0 3px;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: 0.04em;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .team-battle-side .team-members-text{
+      display: block;
+      width: 100%;
+      min-width: 0;
+      color: var(--text);
+      font-size: 0.98rem;
+      font-weight: 800;
+      line-height: 1.42;
+      overflow-wrap: anywhere;
+      word-break: keep-all;
+    }
+
+    .team-battle-side.is-opponent .team-members-text{
+      color: #8a92a5;
+      font-weight: 700;
+    }
+
+    .team-battle-vs{
+      display: block;
+      color: var(--muted);
+      opacity: 0.9;
+      text-align: left;
+      margin: -2px 0;
+      padding: 0;
+      font-size: 0.70rem;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: 0.08em;
+    }
+
+    .team-member-link,
+    .team-member-link:hover{
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+
+    .team-member-link{
+      border-bottom: 1px solid rgba(216,180,106,0.22);
+    }
+
+    .team-member-link:hover{
+      color: #fff4dc !important;
+      border-bottom-color: rgba(216,180,106,0.58);
+    }
+
+    .team-battle-event{
+      display: block;
+      margin-top: 5px;
+      color: #8f97aa;
+      font-size: 0.88rem;
+      line-height: 1.34;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .team-battle-event-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.32em;
+      color: #8f97aa;
+      text-decoration: none !important;
+      border-bottom: none;
+      cursor: pointer;
+      max-width: 100%;
+    }
+
+    .team-battle-event-link::after{
+      content: "\203A";
+      font-size: 0.95em;
+      line-height: 1;
+      opacity: 0.78;
+      transform: translateY(-0.02em);
+      flex: 0 0 auto;
+    }
+
+    .team-battle-event-link:visited{
+      color: #8f97aa;
+      text-decoration: none !important;
+    }
+
+    .team-battle-event-link:hover{
+      color: #a3acc1;
+      text-decoration: none !important;
+      opacity: 1;
+    }
+
     @media (max-width: 640px) {
       .page-top{
         margin-bottom: 14px;
@@ -710,6 +843,26 @@
         line-height: 1.26;
       }
 
+      .team-battle-list li{
+        padding: 8px 0;
+      }
+
+      .team-battle-side .team-name-label{
+        margin-bottom: 2px;
+        font-size: 0.71rem;
+      }
+
+      .team-battle-side .team-members-text{
+        font-size: 0.90rem;
+        line-height: 1.34;
+      }
+
+      .team-battle-event{
+        margin-top: 4px;
+        font-size: 0.8rem;
+        line-height: 1.28;
+      }
+
       .more-button{
         margin-top: 10px;
         min-height: 38px;
@@ -819,6 +972,36 @@
         </span></li>
         </ul>
         <button id="losses-more-button" class="more-button is-hidden" type="button">すべて見る</button>
+      </div>
+    </section>
+
+    <section id="team-wins-section" class="card __TEAM_WINS_SECTION_HIDDEN_CLASS__">
+      <div class="mc-card-inner">
+        <h2 id="team-wins-heading" class="battle-section-heading">
+          <span class="section-heading-name">Chance</span>
+          <span class="section-heading-sep">/</span>
+          <span class="section-heading-label">チーム戦 Win</span>
+        </h2>
+        <p id="team-wins-status" class="muted __TEAM_WINS_STATUS_HIDDEN_CLASS__">__TEAM_WINS_STATUS__</p>
+        <ul id="team-wins-list" class="team-battle-list">
+__TEAM_WINS_LIST_ITEMS__
+        </ul>
+        <button id="team-wins-more-button" class="more-button __TEAM_WINS_MORE_HIDDEN_CLASS__" type="button">すべて見る</button>
+      </div>
+    </section>
+
+    <section id="team-losses-section" class="card __TEAM_LOSSES_SECTION_HIDDEN_CLASS__">
+      <div class="mc-card-inner">
+        <h2 id="team-losses-heading" class="battle-section-heading">
+          <span class="section-heading-name">Chance</span>
+          <span class="section-heading-sep">/</span>
+          <span class="section-heading-label">チーム戦 Lose</span>
+        </h2>
+        <p id="team-losses-status" class="muted __TEAM_LOSSES_STATUS_HIDDEN_CLASS__">__TEAM_LOSSES_STATUS__</p>
+        <ul id="team-losses-list" class="team-battle-list">
+__TEAM_LOSSES_LIST_ITEMS__
+        </ul>
+        <button id="team-losses-more-button" class="more-button __TEAM_LOSSES_MORE_HIDDEN_CLASS__" type="button">すべて見る</button>
       </div>
     </section>
 
@@ -934,6 +1117,8 @@
 
       setupCollapsibleList("wins-list", "wins-more-button", 5);
       setupCollapsibleList("losses-list", "losses-more-button", 5);
+      setupCollapsibleList("team-wins-list", "team-wins-more-button", 5);
+      setupCollapsibleList("team-losses-list", "team-losses-more-button", 5);
       setupCollapsibleList("appearances-list", "appearances-more-button", 10);
 
       window.addEventListener("load", applyBattleOpponentSmartAlign);
