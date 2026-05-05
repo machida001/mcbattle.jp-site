@@ -7,19 +7,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>賞金ランキング | MCバトル賞金ランキング | MCBattle.jp</title>
-  <meta name="description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。">
+  <meta name="description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。">
   <link rel="canonical" href="https://mcbattle.jp/prize_ranking.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="MCBattle.jp" />
   <meta property="og:title" content="賞金ランキング | MCバトル賞金ランキング | MCBattle.jp" />
-  <meta property="og:description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。" />
+  <meta property="og:description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。" />
   <meta property="og:url" content="https://mcbattle.jp/prize_ranking.html" />
   <meta property="og:image" content="https://mcbattle.jp/ogp.png?v=2" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="賞金ランキング | MCバトル賞金ランキング | MCBattle.jp" />
-  <meta name="twitter:description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。" />
+  <meta name="twitter:description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。" />
   <meta name="twitter:image" content="https://mcbattle.jp/ogp.png?v=2" />
 
   <!-- Google tag (gtag.js) -->
@@ -104,6 +104,15 @@
     .prize-card-inner {
       padding-left: 12px;
       padding-right: 12px;
+    }
+
+    .prize-note {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.52;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .prize-table-wrap {
@@ -211,6 +220,12 @@
         padding-right: 10px;
       }
 
+      .prize-note {
+        margin-bottom: 10px;
+        font-size: 0.78rem;
+        line-height: 1.42;
+      }
+
       table.prize-table col:nth-child(1) {
         width: 42px;
       }
@@ -259,6 +274,7 @@
 
     <section class="card">
       <div class="prize-card-inner">
+        <p class="prize-note">※チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。</p>
         <p id="prize-status" class="muted"></p>
 
         <div class="prize-table-wrap">
