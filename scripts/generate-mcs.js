@@ -600,7 +600,8 @@ function formatScore(value) {
 
 function formatYen(value) {
   const num = Number(value || 0);
-  return num.toLocaleString("ja-JP");
+  const rounded = Number.isFinite(num) ? Math.round(num) : 0;
+  return rounded.toLocaleString("ja-JP");
 }
 
 function displayValue(value) {
