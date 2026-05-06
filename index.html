@@ -136,12 +136,8 @@
       display:block;
     }
 
-    .home-header-copy{
+    .home-brand{
       min-width:0;
-    }
-
-    .header-simulation-link{
-      display:none;
     }
 
     .home-logo{
@@ -168,6 +164,10 @@
       font-weight:700;
       line-height:1.48;
       letter-spacing:-.02em;
+    }
+
+    .home-header-simulation{
+      display:none;
     }
 
     .home-tabs{
@@ -702,41 +702,52 @@
 
       .home-header-main{
         display:grid;
-        grid-template-columns:minmax(0, 1fr) 346px;
+        grid-template-columns:minmax(0, 1fr) 408px;
         align-items:center;
-        gap:34px;
-        margin-bottom:12px;
+        gap:42px;
+        width:100%;
+        margin:0 0 16px;
+      }
+
+      .home-brand{
+        justify-self:start;
+        width:100%;
+        min-width:0;
+        text-align:left;
       }
 
       .home-logo{
+        margin-left:0;
+        margin-right:0;
         font-size:3rem;
       }
 
       .home-lead{
+        max-width:420px;
         margin-bottom:0;
-        max-width:560px;
+        font-size:1rem;
       }
 
-      .header-simulation-link{
+      .home-header-simulation{
         position:relative;
-        display:block;
-        width:346px;
-        height:96px;
         justify-self:end;
+        display:block;
+        width:408px;
+        height:94px;
         overflow:hidden;
-        border:1px solid rgba(216,180,106,.34);
-        border-radius:14px;
+        border:1px solid rgba(216,180,106,.46);
+        border-radius:13px;
         background:#10131c;
         box-shadow:
-          0 0 0 1px rgba(255,255,255,.02) inset,
-          0 12px 26px rgba(0,0,0,.24);
+          0 0 0 1px rgba(255,255,255,.035) inset,
+          0 12px 28px rgba(0,0,0,.24);
         transition:
           transform .18s ease,
           border-color .18s ease,
           box-shadow .18s ease;
       }
 
-      .header-simulation-link::before{
+      .home-header-simulation::before{
         content:"";
         position:absolute;
         inset:0;
@@ -747,17 +758,22 @@
         pointer-events:none;
       }
 
-      .header-simulation-link:hover{
+      .home-header-simulation:hover{
         transform:translateY(-1px);
-        border-color:rgba(216,180,106,.56);
+        border-color:rgba(216,180,106,.66);
         box-shadow:
-          0 0 0 1px rgba(255,255,255,.026) inset,
-          0 16px 32px rgba(0,0,0,.28),
-          0 0 20px rgba(216,180,106,.10);
+          0 0 0 1px rgba(255,255,255,.04) inset,
+          0 16px 32px rgba(0,0,0,.28);
       }
 
       .home-tabs{
         width:100%;
+      }
+
+      .home-tab,
+      .home-menu-summary{
+        padding-top:12px;
+        padding-bottom:13px;
       }
 
       .main-stack{
@@ -993,12 +1009,12 @@
     <header class="home-header">
       <div class="home-header-inner">
         <div class="home-header-main">
-          <div class="home-header-copy">
+          <div class="home-brand">
             <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>
             <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
           </div>
 
-          <a class="header-simulation-link" href="simulation.html" aria-label="MCバトルシミュレーション"></a>
+          <a class="home-header-simulation" href="simulation.html" aria-label="MCバトルシミュレーション"></a>
         </div>
 
         <nav class="home-tabs" aria-label="主要メニュー">
