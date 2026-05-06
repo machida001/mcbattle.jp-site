@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon-180x180.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    const SITE_OPEN = true;
+    if (!SITE_OPEN) {
+      location.replace('./maintenance.html');
+    }
+  </script>
+
+  <title>MCBattle.jp | 国内MCバトル大会・MC・戦績データベース</title>
+  <meta name="description" content="国内MCバトルの大会記録、試合結果、MCごとの戦績、優勝歴、独自スコアを掲載するデータベースサイトです。">
+  <link rel="canonical" href="https://mcbattle.jp/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MCBattle.jp" />
+  <meta property="og:title" content="MCBattle.jp | 国内MCバトル大会・MC・戦績データベース" />
+  <meta property="og:description" content="国内MCバトルの大会記録、試合結果、MCごとの戦績、優勝歴、独自スコアを掲載するデータベースサイトです。" />
+  <meta property="og:url" content="https://mcbattle.jp/" />
+  <meta property="og:image" content="https://mcbattle.jp/ogp.png?v=2" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MCBattle.jp | 国内MCバトル大会・MC・戦績データベース" />
+  <meta name="twitter:description" content="国内MCバトルの大会記録、試合結果、MCごとの戦績、優勝歴、独自スコアを掲載するデータベースサイトです。" />
+  <meta name="twitter:image" content="https://mcbattle.jp/ogp.png?v=2" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://mcbattle.jp/#website",
+  "url": "https://mcbattle.jp/",
+  "name": "MCBattle.jp",
+  "alternateName": [
+    "MCBattle.jp",
+    "MCBattle",
+    "MCバトル.jp",
+    "MCバトル"
+  ],
+  "inLanguage": "ja"
+}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9C8VGD3THB');
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root{
+      --panel:#171922;
+      --panel-2:#1c1f2a;
+      --line:#2a3040;
+      --line-soft:rgba(255,255,255,.11);
+      --line-gold:rgba(216,180,106,.42);
+      --text:#f4f5f7;
+      --muted:#b2b8c7;
+      --muted-2:#8f97aa;
+      --accent:#d8b46a;
+      --accent-strong:#f1c96d;
+      --accent-2:#8fb3ff;
+      --danger:#d97f7f;
+      --shadow:0 18px 48px rgba(0,0,0,.28);
+      --radius:22px;
+      --content-max-home:980px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html,
+    body{
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      background:
+        radial-gradient(circle at 78% 6%, rgba(216,180,106,.10), transparent 26%),
+        radial-gradient(circle at 18% 0%, rgba(143,179,255,.07), transparent 28%),
+        linear-gradient(180deg, #11131a 0%, #090a0f 100%);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(calc(100% - (var(--page-gutter, 24px) * 2)), var(--content-max-home));
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .page-shell{
+      padding-bottom:40px;
+    }
+
+    .site-hero-header{
+      position:relative;
+      padding:28px 0 0;
+      border-bottom:1px solid rgba(255,255,255,.16);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.045), rgba(255,255,255,.012)),
+        radial-gradient(circle at 88% 0%, rgba(216,180,106,.08), transparent 30%);
+    }
+
+    .site-header-inner{
+      width:min(calc(100% - (var(--page-gutter, 24px) * 2)), var(--content-max-home));
+      margin:0 auto;
+      padding-bottom:0;
+    }
+
+    .page-mini-logo{
+      margin:0 0 9px;
+    }
+
+    .site-header-copy{
+      margin-bottom:17px;
+    }
+
+    .header-message{
+      margin:0;
+      max-width:760px;
+      color:#f3f4f7;
+      font-size:15px;
+      font-weight:700;
+      line-height:1.54;
+      letter-spacing:.01em;
+    }
+
+    .site-tabs{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:0;
+      border-top:1px solid rgba(255,255,255,.16);
+      overflow-x:auto;
+      scrollbar-width:none;
+      -webkit-overflow-scrolling:touch;
+    }
+
+    .site-tabs::-webkit-scrollbar{
+      display:none;
+    }
+
+    .site-tab{
+      position:relative;
+      flex:1 0 auto;
+      min-width:82px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      padding:0 10px;
+      color:#f4f5f7;
+      font-size:15px;
+      font-weight:800;
+      line-height:1.2;
+      white-space:nowrap;
+      opacity:.94;
+      transition:
+        color .18s ease,
+        opacity .18s ease,
+        background-color .18s ease;
+    }
+
+    .site-tab:hover{
+      color:#fff4dc;
+      opacity:1;
+      background:rgba(255,255,255,.025);
+    }
+
+    .site-tab.is-active{
+      color:var(--accent-strong);
+    }
+
+    .site-tab.is-active::after{
+      content:"";
+      position:absolute;
+      left:10px;
+      right:10px;
+      bottom:0;
+      height:3px;
+      border-radius:999px 999px 0 0;
+      background:var(--accent-strong);
+      box-shadow:0 0 16px rgba(216,180,106,.22);
+    }
+
+    .main-area{
+      padding-top:20px;
+    }
+
+    .home-stack{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .simulation-hero{
+      position:relative;
+      display:block;
+      overflow:hidden;
+      min-height:260px;
+      padding:28px 30px;
+      border:1px solid rgba(216,180,106,.52);
+      border-radius:24px;
+      background:
+        linear-gradient(90deg, rgba(12,13,18,.96) 0%, rgba(13,15,22,.92) 43%, rgba(13,15,22,.70) 62%, rgba(13,15,22,.86) 100%),
+        radial-gradient(circle at 78% 25%, rgba(241,201,109,.42), transparent 21%),
+        radial-gradient(circle at 88% 24%, rgba(255,255,255,.10), transparent 16%),
+        linear-gradient(135deg, rgba(216,180,106,.18), rgba(143,179,255,.05));
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.025) inset,
+        0 20px 48px rgba(0,0,0,.28);
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        background-color .18s ease;
+    }
+
+    .simulation-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.26), rgba(0,0,0,.06)),
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,255,255,.025) 0,
+          rgba(255,255,255,.025) 1px,
+          transparent 1px,
+          transparent 5px
+        );
+      opacity:.25;
+      pointer-events:none;
+    }
+
+    .simulation-hero::after{
+      content:"";
+      position:absolute;
+      right:52px;
+      bottom:-18px;
+      width:190px;
+      height:230px;
+      opacity:.82;
+      background:
+        radial-gradient(circle at 54% 18%, rgba(0,0,0,.98) 0 22px, transparent 23px),
+        linear-gradient(102deg, transparent 0 31%, rgba(0,0,0,.98) 32% 53%, transparent 54%),
+        linear-gradient(76deg, transparent 0 45%, rgba(0,0,0,.98) 46% 67%, transparent 68%),
+        linear-gradient(180deg, transparent 0 25%, rgba(0,0,0,.98) 26% 100%);
+      filter:blur(.1px);
+      clip-path:polygon(28% 7%, 63% 7%, 70% 30%, 83% 34%, 81% 43%, 70% 42%, 77% 100%, 16% 100%, 31% 43%, 21% 42%, 18% 34%, 33% 30%);
+      pointer-events:none;
+    }
+
+    .simulation-hero:hover{
+      transform:translateY(-1px);
+      border-color:rgba(216,180,106,.72);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.035) inset,
+        0 22px 52px rgba(0,0,0,.34),
+        0 0 28px rgba(216,180,106,.12);
+    }
+
+    .simulation-content{
+      position:relative;
+      z-index:2;
+      max-width:650px;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:37px;
+      padding:0 17px;
+      margin-bottom:21px;
+      border:1px solid rgba(216,180,106,.64);
+      border-radius:999px;
+      color:var(--accent-strong);
+      background:rgba(12,13,18,.52);
+      font-size:15px;
+      font-weight:900;
+      line-height:1.1;
+      box-shadow:0 0 0 1px rgba(255,255,255,.02) inset;
+    }
+
+    .simulation-title{
+      margin:0 0 10px;
+      color:var(--accent-strong);
+      font-size:clamp(30px, 4.2vw, 50px);
+      font-weight:900;
+      line-height:1.08;
+      letter-spacing:-.035em;
+    }
+
+    .simulation-lead{
+      margin:0 0 20px;
+      color:#f3f4f7;
+      font-size:16px;
+      font-weight:800;
+      line-height:1.55;
+      letter-spacing:.01em;
+    }
+
+    .simulation-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      min-width:292px;
+      min-height:54px;
+      padding:0 22px 0 24px;
+      border:2px solid rgba(216,180,106,.68);
+      border-radius:999px;
+      color:#ffe0a1;
+      background:rgba(12,13,18,.48);
+      font-size:16px;
+      font-weight:900;
+      line-height:1.1;
+      box-shadow:0 0 0 1px rgba(255,255,255,.02) inset;
+    }
+
+    .simulation-button-arrow{
+      font-size:28px;
+      line-height:1;
+      transform:translateY(-1px);
+    }
+
+    .quick-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
+    }
+
+    .quick-card{
+      display:grid;
+      grid-template-columns:40px minmax(0, 1fr) 18px;
+      align-items:center;
+      gap:12px;
+      min-height:88px;
+      padding:18px 22px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),
+        linear-gradient(135deg, rgba(38,43,58,.92), rgba(22,26,37,.92));
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.022) inset,
+        0 14px 30px rgba(0,0,0,.18);
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        background-color .18s ease;
+    }
+
+    .quick-card:hover{
+      transform:translateY(-1px);
+      border-color:rgba(216,180,106,.38);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.03) inset,
+        0 17px 36px rgba(0,0,0,.25);
+    }
+
+    .quick-icon{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;
+      height:34px;
+      color:var(--accent);
+      font-size:24px;
+      line-height:1;
+      opacity:.95;
+    }
+
+    .quick-title{
+      min-width:0;
+      color:#f6f7fb;
+      font-size:16px;
+      font-weight:900;
+      line-height:1.25;
+      white-space:normal;
+      overflow:visible;
+      text-overflow:clip;
+    }
+
+    .quick-arrow{
+      color:#f4f5f7;
+      opacity:.88;
+      font-size:28px;
+      line-height:1;
+      transform:translateY(-1px);
+    }
+
+    .content-card{
+      border:1px solid rgba(216,180,106,.28);
+      border-radius:22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015)),
+        linear-gradient(135deg, rgba(216,180,106,.060), rgba(143,179,255,.026));
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.018) inset,
+        0 16px 38px rgba(0,0,0,.22);
+    }
+
+    .content-card-inner{
+      padding:19px 24px;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin:0 0 14px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      margin:0;
+      color:var(--accent-strong);
+      font-size:20px;
+      font-weight:900;
+      line-height:1.25;
+      letter-spacing:.01em;
+    }
+
+    .section-title-icon{
+      font-size:22px;
+      line-height:1;
+    }
+
+    .section-more{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:#c8ceda;
+      font-size:13px;
+      font-weight:800;
+      line-height:1;
+      white-space:nowrap;
+      opacity:.9;
+      transition:color .18s ease, opacity .18s ease;
+    }
+
+    .section-more:hover{
+      color:#fff4dc;
+      opacity:1;
+    }
+
+    .section-more::after{
+      content:"›";
+      font-size:22px;
+      line-height:1;
+      transform:translateY(-1px);
+    }
+
+    .hot-mc-card{
+      display:none;
+    }
+
+    .hot-mc-card.is-visible{
+      display:block;
+    }
+
+    .hot-mc-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px 10px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .hot-mc-list li{
+      margin:0;
+      padding:0;
+    }
+
+    .hot-mc-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:37px;
+      padding:0 16px;
+      border:1px solid rgba(216,180,106,.36);
+      border-radius:999px;
+      background:rgba(255,255,255,.025);
+      color:#f4f5f7;
+      font-size:14px;
+      font-weight:900;
+      line-height:1.15;
+      white-space:nowrap;
+      box-shadow:0 0 0 1px rgba(255,255,255,.015) inset;
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background-color .18s ease,
+        color .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .hot-mc-link:hover{
+      transform:translateY(-1px);
+      border-color:rgba(216,180,106,.56);
+      background:rgba(216,180,106,.09);
+      color:#fff4dc;
+      box-shadow:0 10px 24px rgba(0,0,0,.17);
+    }
+
+    .dashboard{
+      padding:0 0 28px;
+    }
+
+    .dashboard-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:16px;
+      align-items:start;
+    }
+
+    .dashboard-card{
+      min-width:0;
+    }
+
+    .dashboard-card.is-empty{
+      display:none;
+    }
+
+    .dashboard-list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .event-row{
+      display:grid;
+      grid-template-columns:132px minmax(0, 1fr) 18px;
+      align-items:center;
+      gap:16px;
+      min-height:72px;
+      padding:12px 16px;
+      border:1px solid rgba(255,255,255,.13);
+      border-radius:17px;
+      background:rgba(255,255,255,.025);
+      box-shadow:0 0 0 1px rgba(255,255,255,.018) inset;
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background-color .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .event-row:hover{
+      transform:translateY(-1px);
+      border-color:rgba(216,180,106,.34);
+      background:rgba(255,255,255,.045);
+      box-shadow:0 12px 26px rgba(0,0,0,.18);
+    }
+
+    .event-date-box{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      min-width:0;
+      padding-right:14px;
+      border-right:1px solid rgba(255,255,255,.16);
+    }
+
+    .event-date-main{
+      color:var(--accent-strong);
+      font-size:16px;
+      font-weight:900;
+      line-height:1.15;
+      letter-spacing:.04em;
+      font-variant-numeric:tabular-nums;
+      white-space:nowrap;
+    }
+
+    .event-date-week{
+      margin-top:4px;
+      color:var(--accent);
+      font-size:12px;
+      font-weight:900;
+      line-height:1;
+      letter-spacing:.08em;
+      opacity:.92;
+    }
+
+    .event-text-box{
+      min-width:0;
+    }
+
+    .event-name{
+      display:block;
+      color:#f4f5f7;
+      font-size:15px;
+      font-weight:900;
+      line-height:1.32;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+    }
+
+    .event-stage{
+      display:block;
+      margin-top:3px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:600;
+      line-height:1.32;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+    }
+
+    .event-arrow{
+      color:#f4f5f7;
+      opacity:.86;
+      font-size:27px;
+      line-height:1;
+      transform:translateY(-1px);
+    }
+
+    .rank-row{
+      display:grid;
+      grid-template-columns:42px minmax(0,1fr) auto;
+      gap:10px;
+      align-items:center;
+      min-height:55px;
+      padding:11px 12px;
+      border:1px solid rgba(255,255,255,.13);
+      border-radius:15px;
+      background:rgba(255,255,255,.025);
+      box-shadow:0 0 0 1px rgba(255,255,255,.018) inset;
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background-color .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .rank-row:hover{
+      transform:translateY(-1px);
+      border-color:rgba(216,180,106,.34);
+      background:rgba(255,255,255,.045);
+      box-shadow:0 12px 26px rgba(0,0,0,.18);
+    }
+
+    .rank-num{
+      color:var(--accent-strong);
+      text-align:center;
+      font-size:19px;
+      font-weight:900;
+      line-height:1;
+      font-variant-numeric:tabular-nums;
+    }
+
+    .rank-name{
+      min-width:0;
+      color:#f4f5f7;
+      font-size:15px;
+      font-weight:900;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      line-height:1.2;
+    }
+
+    .rank-score{
+      color:#cfd5e2;
+      font-size:13px;
+      font-weight:800;
+      font-variant-numeric:tabular-nums;
+      white-space:nowrap;
+      line-height:1.2;
+    }
+
+    .status{
+      color:var(--muted);
+      font-size:13px;
+      padding:2px 2px 0;
+    }
+
+    .status.error{
+      color:var(--danger);
+    }
+
+    .status.hidden{
+      display:none;
+    }
+
+    .footer-space{
+      height:24px;
+    }
+
+    @media (min-width:1024px){
+      .site-header-inner,
+      .container{
+        width:min(var(--content-max-home), calc(100% - var(--pc-left-gutter, 64px) - var(--page-gutter, 24px)));
+        margin-left:var(--pc-left-gutter, 64px);
+        margin-right:auto;
+      }
+
+      .home-stack{
+        gap:18px;
+      }
+    }
+
+    @media (max-width:980px){
+      .dashboard-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:640px){
+      .container,
+      .site-header-inner{
+        width:calc(100% - 24px);
+      }
+
+      .page-shell{
+        padding-bottom:88px;
+      }
+
+      .site-hero-header{
+        padding-top:22px;
+      }
+
+      .page-mini-logo{
+        margin-bottom:8px;
+      }
+
+      .header-message{
+        font-size:14px;
+        line-height:1.46;
+      }
+
+      .site-header-copy{
+        margin-bottom:16px;
+      }
+
+      .site-tabs{
+        justify-content:flex-start;
+      }
+
+      .site-tab{
+        min-width:auto;
+        flex:0 0 auto;
+        min-height:54px;
+        padding:0 15px;
+        font-size:14px;
+      }
+
+      .site-tab.is-active::after{
+        left:10px;
+        right:10px;
+      }
+
+      .main-area{
+        padding-top:16px;
+      }
+
+      .home-stack{
+        gap:14px;
+      }
+
+      .simulation-hero{
+        min-height:258px;
+        padding:28px 20px 24px;
+        border-radius:23px;
+      }
+
+      .simulation-hero::after{
+        right:-8px;
+        bottom:-20px;
+        width:176px;
+        height:220px;
+        opacity:.72;
+      }
+
+      .hero-badge{
+        min-height:34px;
+        padding:0 14px;
+        margin-bottom:24px;
+        font-size:14px;
+      }
+
+      .simulation-title{
+        max-width:280px;
+        margin-bottom:16px;
+        font-size:34px;
+        line-height:1.08;
+        letter-spacing:-.04em;
+      }
+
+      .simulation-lead{
+        max-width:310px;
+        margin-bottom:24px;
+        font-size:15px;
+        line-height:1.48;
+      }
+
+      .simulation-button{
+        min-width:min(100%, 282px);
+        min-height:50px;
+        padding:0 18px 0 20px;
+        font-size:15px;
+      }
+
+      .quick-grid{
+        gap:12px;
+      }
+
+      .quick-card{
+        grid-template-columns:31px minmax(0, 1fr) 16px;
+        gap:10px;
+        min-height:92px;
+        padding:15px 14px;
+        border-radius:18px;
+      }
+
+      .quick-icon{
+        width:28px;
+        height:28px;
+        font-size:21px;
+      }
+
+      .quick-title{
+        font-size:17px;
+        line-height:1.22;
+      }
+
+      .quick-arrow{
+        font-size:25px;
+      }
+
+      .content-card{
+        border-radius:21px;
+      }
+
+      .content-card-inner{
+        padding:16px 16px;
+      }
+
+      .section-title{
+        font-size:19px;
+      }
+
+      .section-title-icon{
+        font-size:21px;
+      }
+
+      .section-more{
+        font-size:13px;
+      }
+
+      .hot-mc-list{
+        gap:8px 8px;
+        max-height:92px;
+        overflow:hidden;
+      }
+
+      .hot-mc-link{
+        min-height:35px;
+        padding:0 13px;
+        font-size:14px;
+      }
+
+      .dashboard{
+        padding-bottom:24px;
+      }
+
+      .dashboard-grid{
+        gap:14px;
+      }
+
+      .event-row{
+        grid-template-columns:112px minmax(0, 1fr) 16px;
+        gap:12px;
+        min-height:70px;
+        padding:11px 12px;
+        border-radius:16px;
+      }
+
+      .event-date-box{
+        padding-right:10px;
+      }
+
+      .event-date-main{
+        font-size:15px;
+      }
+
+      .event-date-week{
+        font-size:11px;
+      }
+
+      .event-name{
+        font-size:14px;
+        line-height:1.28;
+      }
+
+      .event-stage{
+        font-size:12px;
+      }
+
+      .event-arrow{
+        font-size:25px;
+      }
+
+      .rank-row{
+        grid-template-columns:34px minmax(0,1fr) auto;
+        gap:8px;
+        min-height:52px;
+        padding:10px 10px;
+      }
+
+      .rank-num{
+        font-size:17px;
+      }
+
+      .rank-name{
+        font-size:14px;
+      }
+
+      .rank-score{
+        font-size:12px;
+      }
+
+      .status{
+        font-size:12px;
+      }
+
+      .footer-space{
+        height:80px;
+      }
+    }
+
+    @media (max-width:380px){
+      .site-tab{
+        padding:0 13px;
+        font-size:13px;
+      }
+
+      .simulation-title{
+        font-size:31px;
+        max-width:250px;
+      }
+
+      .quick-card{
+        grid-template-columns:28px minmax(0, 1fr) 14px;
+        padding:14px 12px;
+      }
+
+      .quick-title{
+        font-size:15px;
+      }
+
+      .event-row{
+        grid-template-columns:98px minmax(0, 1fr) 14px;
+      }
+
+      .event-date-main{
+        font-size:13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="site-hero-header">
+      <div class="site-header-inner">
+        <p class="page-mini-logo"><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
+
+        <div class="site-header-copy">
+          <p class="header-message">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
+        </div>
+
+        <nav class="site-tabs" aria-label="主要メニュー">
+          <a class="site-tab is-active" href="./">ホーム</a>
+          <a class="site-tab" href="list_event.html">大会一覧</a>
+          <a class="site-tab" href="list_mc.html">MC一覧</a>
+          <a class="site-tab" href="score_ranking.html">ランキング</a>
+          <a class="site-tab" href="#hot-mc-card">人気MC</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-area">
+      <section class="container home-stack">
+        <a class="simulation-hero" href="simulation.html">
+          <div class="simulation-content">
+            <span class="hero-badge">仮想</span>
+            <h1 class="simulation-title">MCバトルシミュレーション</h1>
+            <p class="simulation-lead">現役勢の8人を選んで戦わせよう。<br>独自スコアで勝敗をシミュレート！</p>
+            <span class="simulation-button">
+              <span>シミュレーションを始める</span>
+              <span class="simulation-button-arrow" aria-hidden="true">›</span>
+            </span>
+          </div>
+        </a>
+
+        <div class="quick-grid" aria-label="主要リンク">
+          <a class="quick-card" href="score_ranking.html">
+            <span class="quick-icon" aria-hidden="true">🏆</span>
+            <span class="quick-title">スコアランキング</span>
+            <span class="quick-arrow" aria-hidden="true">›</span>
+          </a>
+
+          <a class="quick-card" href="prize_ranking.html">
+            <span class="quick-icon" aria-hidden="true">♛</span>
+            <span class="quick-title">賞金ランキング</span>
+            <span class="quick-arrow" aria-hidden="true">›</span>
+          </a>
+
+          <a class="quick-card" href="list_event.html">
+            <span class="quick-icon" aria-hidden="true">▣</span>
+            <span class="quick-title">大会一覧</span>
+            <span class="quick-arrow" aria-hidden="true">›</span>
+          </a>
+
+          <a class="quick-card" href="list_mc.html">
+            <span class="quick-icon" aria-hidden="true">♙</span>
+            <span class="quick-title">MC一覧</span>
+            <span class="quick-arrow" aria-hidden="true">›</span>
+          </a>
+        </div>
+
+        <section id="hot-mc-card" class="content-card hot-mc-card" aria-label="閲覧数の多いMC">
+          <div class="content-card-inner">
+            <div class="section-head">
+              <h2 class="section-title">
+                <span class="section-title-icon" aria-hidden="true">🔥</span>
+                <span>閲覧数の多いMC</span>
+              </h2>
+              <a class="section-more" href="list_mc.html">もっと見る</a>
+            </div>
+            <ul id="hot-mc-list" class="hot-mc-list"></ul>
+          </div>
+        </section>
+
+        <section class="dashboard">
+          <div class="dashboard-grid">
+            <section id="future-events-card" class="content-card dashboard-card">
+              <div class="content-card-inner">
+                <div class="section-head">
+                  <h2 class="section-title">
+                    <span class="section-title-icon" aria-hidden="true">▣</span>
+                    <span>Upcoming</span>
+                  </h2>
+                  <a class="section-more" href="list_event.html">もっと見る</a>
+                </div>
+                <div id="future-events" class="dashboard-list"></div>
+                <div id="future-events-status" class="status">読み込み中…</div>
+              </div>
+            </section>
+
+            <section class="content-card dashboard-card">
+              <div class="content-card-inner">
+                <div class="section-head">
+                  <h2 class="section-title">
+                    <span class="section-title-icon" aria-hidden="true">▣</span>
+                    <span>Recent Events</span>
+                  </h2>
+                  <a class="section-more" href="list_event.html">もっと見る</a>
+                </div>
+                <div id="recent-events" class="dashboard-list"></div>
+                <div id="recent-events-status" class="status">読み込み中…</div>
+              </div>
+            </section>
+
+            <section class="content-card dashboard-card">
+              <div class="content-card-inner">
+                <div class="section-head">
+                  <h2 class="section-title">
+                    <span class="section-title-icon" aria-hidden="true">🏆</span>
+                    <span>スコアランキング</span>
+                  </h2>
+                  <a class="section-more" href="score_ranking.html">もっと見る</a>
+                </div>
+                <div id="score-ranking" class="dashboard-list"></div>
+                <div id="score-ranking-status" class="status">読み込み中…</div>
+              </div>
+            </section>
+
+            <section class="content-card dashboard-card">
+              <div class="content-card-inner">
+                <div class="section-head">
+                  <h2 class="section-title">
+                    <span class="section-title-icon" aria-hidden="true">♛</span>
+                    <span>賞金ランキング</span>
+                  </h2>
+                  <a class="section-more" href="prize_ranking.html">もっと見る</a>
+                </div>
+                <div id="prize-ranking" class="dashboard-list"></div>
+                <div id="prize-ranking-status" class="status">読み込み中…</div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </section>
+
+      <div class="footer-space"></div>
+    </main>
+  </div>
+
+  <script>
+    const TOP_JSON_URL = "./data/top.json";
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function formatDateJP(raw) {
+      if (!raw) return "";
+      const s = String(raw).trim();
+
+      if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+        const [y, m, d] = s.split("-");
+        return `${y}.${m}.${d}`;
+      }
+
+      if (/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(s)) {
+        const [y, m, d] = s.split("/");
+        return `${y}.${String(m).padStart(2, "0")}.${String(d).padStart(2, "0")}`;
+      }
+
+      const date = new Date(s);
+      if (!Number.isNaN(date.getTime())) {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, "0");
+        const d = String(date.getDate()).padStart(2, "0");
+        return `${y}.${m}.${d}`;
+      }
+
+      return s;
+    }
+
+    function getWeekLabel(raw) {
+      if (!raw) return "";
+      const s = String(raw).trim();
+      let date = null;
+
+      if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+        date = new Date(`${s}T00:00:00`);
+      } else if (/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(s)) {
+        const [y, m, d] = s.split("/");
+        date = new Date(Number(y), Number(m) - 1, Number(d));
+      } else {
+        const parsed = new Date(s);
+        if (!Number.isNaN(parsed.getTime())) date = parsed;
+      }
+
+      if (!date || Number.isNaN(date.getTime())) return "";
+
+      const labels = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+      return labels[date.getDay()] || "";
+    }
+
+    function getEventId(event) {
+      return event.event_id || event.id || event.eventId || "";
+    }
+
+    function getEventName(event) {
+      return event.event_name || event.event_name_full || event.event_name_simple || event.name || event.title || "";
+    }
+
+    function getEventDate(event) {
+      return event.event_date || event.date || event.EventDate || "";
+    }
+
+    function getEventStage(event) {
+      return event.event_stage || event.stage || "";
+    }
+
+    function getEventLocation(event) {
+      return event.location || "";
+    }
+
+    function getUpcomingSubText(event) {
+      const location = String(getEventLocation(event) || "").trim();
+      if (location) return location;
+
+      const stage = String(getEventStage(event) || "").trim();
+      if (stage) return stage;
+
+      return "";
+    }
+
+    function getMcId(item) {
+      return item.mc_id || item.id || item.mcId || "";
+    }
+
+    function getMcName(item) {
+      return item.mc_name || item.name || item.mc || "";
+    }
+
+    function getRank(item, index) {
+      return item.rank || item.ranking || item.position || (index + 1);
+    }
+
+    function getScore(item) {
+      const raw =
+        item.current_strength_score_v2 ??
+        item.score ??
+        item.current_score ??
+        item.current_strength_score ??
+        item.rating ??
+        "";
+      const num = Number(raw);
+      if (Number.isFinite(num)) return num.toFixed(2);
+      return raw ? String(raw) : "";
+    }
+
+    function getPrize(item) {
+      const raw =
+        item.total_prize_money ??
+        item.prize_money ??
+        item.prize ??
+        item.total ??
+        "";
+      const num = Number(raw);
+      if (Number.isFinite(num)) {
+        const rounded = Math.round(num);
+        return "¥" + rounded.toLocaleString("ja-JP");
+      }
+      return raw ? String(raw) : "";
+    }
+
+    function setStatus(id, message, isError = false) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = message;
+      el.classList.toggle("error", !!isError);
+      el.classList.toggle("hidden", !message);
+    }
+
+    function setEmptyCard(cardId, isEmpty) {
+      const card = document.getElementById(cardId);
+      if (!card) return;
+      card.classList.toggle("is-empty", !!isEmpty);
+    }
+
+    function shuffleArray(items) {
+      const result = [...items];
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = result[i];
+        result[i] = result[j];
+        result[j] = temp;
+      }
+      return result;
+    }
+
+    async function loadTopJson() {
+      const res = await fetch(TOP_JSON_URL, { cache: "no-store" });
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      return await res.json();
+    }
+
+    function renderEventRows(containerId, items, emptyMessage, options = {}) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      if (!items.length) {
+        container.innerHTML = `<div class="status">${escapeHtml(emptyMessage)}</div>`;
+        return;
+      }
+
+      const clickable = options.clickable !== false;
+
+      container.innerHTML = items.map((event) => {
+        const eventId = getEventId(event);
+        const name = getEventName(event);
+        const rawDate = getEventDate(event);
+        const date = formatDateJP(rawDate);
+        const week = getWeekLabel(rawDate);
+        const subText = getUpcomingSubText(event);
+        const href = eventId ? `detail_event/${encodeURIComponent(eventId)}.html` : "list_event.html";
+        const tag = clickable ? "a" : "div";
+        const hrefAttr = clickable ? ` href="${href}"` : "";
+
+        return `
+          <${tag} class="event-row"${hrefAttr}>
+            <span class="event-date-box">
+              <span class="event-date-main">${escapeHtml(date)}</span>
+              ${week ? `<span class="event-date-week">${escapeHtml(week)}</span>` : ""}
+            </span>
+            <span class="event-text-box">
+              <span class="event-name">${escapeHtml(name)}</span>
+              ${subText ? `<span class="event-stage">${escapeHtml(subText)}</span>` : ""}
+            </span>
+            <span class="event-arrow" aria-hidden="true">›</span>
+          </${tag}>
+        `;
+      }).join("");
+    }
+
+    function renderScoreRanking(containerId, items, emptyMessage) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      if (!items.length) {
+        container.innerHTML = `<div class="status">${escapeHtml(emptyMessage)}</div>`;
+        return;
+      }
+
+      container.innerHTML = items.map((item, index) => {
+        const mcId = getMcId(item);
+        const name = getMcName(item);
+        const rank = getRank(item, index);
+        const score = getScore(item);
+        const href = mcId ? `detail_mc/${encodeURIComponent(mcId)}.html` : "list_mc.html";
+
+        return `
+          <a class="rank-row" href="${href}">
+            <span class="rank-num">${escapeHtml(rank)}</span>
+            <span class="rank-name">${escapeHtml(name)}</span>
+            <span class="rank-score">${escapeHtml(score)}</span>
+          </a>
+        `;
+      }).join("");
+    }
+
+    function renderPrizeRanking(containerId, items, emptyMessage) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      if (!items.length) {
+        container.innerHTML = `<div class="status">${escapeHtml(emptyMessage)}</div>`;
+        return;
+      }
+
+      container.innerHTML = items.map((item, index) => {
+        const mcId = getMcId(item);
+        const name = getMcName(item);
+        const rank = getRank(item, index);
+        const prize = getPrize(item);
+        const href = mcId ? `detail_mc/${encodeURIComponent(mcId)}.html` : "list_mc.html";
+
+        return `
+          <a class="rank-row" href="${href}">
+            <span class="rank-num">${escapeHtml(rank)}</span>
+            <span class="rank-name">${escapeHtml(name)}</span>
+            <span class="rank-score">${escapeHtml(prize)}</span>
+          </a>
+        `;
+      }).join("");
+    }
+
+    function renderHotMcs(items) {
+      const card = document.getElementById("hot-mc-card");
+      const list = document.getElementById("hot-mc-list");
+      if (!card || !list) return;
+
+      const hotMcs = Array.isArray(items) ? shuffleArray(items).slice(0, 10) : [];
+
+      if (!hotMcs.length) {
+        card.classList.remove("is-visible");
+        list.innerHTML = "";
+        return;
+      }
+
+      list.innerHTML = hotMcs.map((item) => {
+        const mcId = getMcId(item);
+        const name = getMcName(item);
+        const href = mcId ? `detail_mc/${encodeURIComponent(mcId)}.html` : "list_mc.html";
+
+        return `
+          <li>
+            <a class="hot-mc-link" href="${href}">${escapeHtml(name)}</a>
+          </li>
+        `;
+      }).join("");
+
+      card.classList.add("is-visible");
+    }
+
+    async function loadIndexData() {
+      try {
+        const payload = await loadTopJson();
+        if (payload?.error) throw new Error(payload.message || "top data error");
+
+        const recentEvents = Array.isArray(payload?.recent_events) ? payload.recent_events.slice(0, 5) : [];
+        const upcomingEvents = Array.isArray(payload?.upcoming_events) ? payload.upcoming_events.slice(0, 5) : [];
+        const scoreRankings = Array.isArray(payload?.score_rankings) ? payload.score_rankings.slice(0, 10) : [];
+        const prizeRankings = Array.isArray(payload?.prize_rankings) ? payload.prize_rankings.slice(0, 10) : [];
+        const hotMcs = Array.isArray(payload?.hot_mcs) ? payload.hot_mcs : [];
+
+        renderHotMcs(hotMcs);
+
+        renderEventRows("recent-events", recentEvents, "データがありません", { clickable: true });
+        setStatus("recent-events-status", recentEvents.length ? "" : "データがありません");
+
+        renderEventRows("future-events", upcomingEvents, "今後開催予定の大会はありません", { clickable: false });
+        setStatus("future-events-status", upcomingEvents.length ? "" : "今後開催予定の大会はありません");
+        setEmptyCard("future-events-card", upcomingEvents.length === 0);
+
+        renderScoreRanking("score-ranking", scoreRankings, "データがありません");
+        setStatus("score-ranking-status", scoreRankings.length ? "" : "データがありません");
+
+        renderPrizeRanking("prize-ranking", prizeRankings, "データがありません");
+        setStatus("prize-ranking-status", prizeRankings.length ? "" : "データがありません");
+      } catch (error) {
+        console.error(error);
+        setStatus("recent-events-status", "直近大会の読み込みに失敗しました。", true);
+        setStatus("future-events-status", "今後開催予定の大会の読み込みに失敗しました。", true);
+        setStatus("score-ranking-status", "スコアランキングの読み込みに失敗しました。", true);
+        setStatus("prize-ranking-status", "賞金ランキングの読み込みに失敗しました。", true);
+        setEmptyCard("future-events-card", false);
+      }
+    }
+
+    loadIndexData();
+  </script>
+</body>
+</html>
