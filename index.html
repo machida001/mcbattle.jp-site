@@ -132,6 +132,18 @@
       margin-right:auto;
     }
 
+    .home-header-main{
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) 270px;
+      align-items:center;
+      gap:22px;
+      margin-bottom:13px;
+    }
+
+    .home-header-copy{
+      min-width:0;
+    }
+
     .home-logo{
       margin:0 0 6px;
       font-family:"Times New Roman", Georgia, serif;
@@ -150,7 +162,7 @@
     }
 
     .home-lead{
-      margin:0 0 13px;
+      margin:0;
       color:#f0f2f6;
       font-size:1rem;
       font-weight:700;
@@ -308,50 +320,49 @@
       gap:10px;
     }
 
-    .simulation-hero-wrap{
-      display:flex;
-      justify-content:center;
-      width:100%;
-    }
-
     .simulation-hero{
       position:relative;
       display:block;
-      width:min(100%, 700px);
-      aspect-ratio:4 / 1;
-      height:auto;
-      min-height:0;
       overflow:hidden;
-      border:none;
-      border-radius:16px;
-      background:#05070b;
-      box-shadow:0 10px 24px rgba(0,0,0,.22);
+      border:1px solid rgba(216,180,106,.32);
+      border-radius:15px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.42), rgba(0,0,0,.04)),
+        #10131c url("images/simulation-hero.jpg?v=6") center / cover no-repeat;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.02) inset,
+        0 10px 24px rgba(0,0,0,.22);
       transition:
         transform .18s ease,
+        border-color .18s ease,
         box-shadow .18s ease;
-    }
-
-    .simulation-hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:16px;
-      background-image:url("images/simulation-hero.jpg?v=10");
-      background-repeat:no-repeat;
-      background-size:contain;
-      background-position:center;
-      background-color:#05070b;
-      box-shadow:none;
-      pointer-events:none;
-    }
-
-    .simulation-hero::after{
-      content:none;
     }
 
     .simulation-hero:hover{
       transform:translateY(-1px);
-      box-shadow:0 14px 30px rgba(0,0,0,.28);
+      border-color:rgba(216,180,106,.54);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.025) inset,
+        0 14px 30px rgba(0,0,0,.28),
+        0 0 20px rgba(216,180,106,.10);
+    }
+
+    .simulation-hero-header{
+      width:270px;
+      aspect-ratio:4 / 1;
+      justify-self:end;
+      background-size:cover;
+      background-position:center;
+    }
+
+    .simulation-hero-mobile-wrap{
+      display:none;
+    }
+
+    .simulation-hero-mobile{
+      width:100%;
+      min-height:124px;
+      border-radius:19px;
     }
 
     .home-card{
@@ -706,10 +717,6 @@
         gap:11px;
       }
 
-      .simulation-hero{
-        width:min(78%, 680px);
-      }
-
       .dashboard-grid{
         display:grid;
         grid-template-columns:repeat(2, minmax(0, 1fr));
@@ -722,6 +729,17 @@
         display:flex;
         flex-direction:column;
         gap:11px;
+      }
+    }
+
+    @media (max-width: 820px){
+      .home-header-main{
+        grid-template-columns:minmax(0, 1fr) 220px;
+        gap:16px;
+      }
+
+      .simulation-hero-header{
+        width:220px;
       }
     }
 
@@ -741,16 +759,28 @@
         padding:38px 0 0;
       }
 
+      .home-header-main{
+        display:block;
+        margin-bottom:12px;
+      }
+
       .home-logo{
         margin-bottom:5px;
         font-size:2.42rem;
       }
 
       .home-lead{
-        margin-bottom:12px;
         font-size:.96rem;
         line-height:1.42;
         letter-spacing:-.025em;
+      }
+
+      .simulation-hero-header{
+        display:none;
+      }
+
+      .simulation-hero-mobile-wrap{
+        display:block;
       }
 
       .home-tabs{
@@ -783,16 +813,6 @@
 
       .main-stack{
         gap:9px;
-      }
-
-      .simulation-hero{
-        width:100%;
-        aspect-ratio:4 / 1;
-        border-radius:16px;
-      }
-
-      .simulation-hero::before{
-        border-radius:16px;
       }
 
       .home-card{
@@ -933,8 +953,14 @@
   <div class="site-shell">
     <header class="home-header">
       <div class="home-header-inner">
-        <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>
-        <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
+        <div class="home-header-main">
+          <div class="home-header-copy">
+            <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>
+            <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
+          </div>
+
+          <a class="simulation-hero simulation-hero-header" href="simulation.html" aria-label="MCバトルシミュレーション"></a>
+        </div>
 
         <nav class="home-tabs" aria-label="主要メニュー">
           <a class="home-tab is-active" href="./">ホーム</a>
@@ -963,8 +989,8 @@
 
     <main class="container">
       <div class="main-stack">
-        <div class="simulation-hero-wrap">
-          <a class="simulation-hero" href="simulation.html" aria-label="MCバトルシミュレーション"></a>
+        <div class="simulation-hero-mobile-wrap">
+          <a class="simulation-hero simulation-hero-mobile" href="simulation.html" aria-label="MCバトルシミュレーション"></a>
         </div>
 
         <section id="hot-mc-card" class="home-card hot-mc-card" aria-label="閲覧数の多いMC">
