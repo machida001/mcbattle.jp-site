@@ -76,7 +76,7 @@
       --shadow:0 16px 42px rgba(0,0,0,.25);
       --radius:20px;
 
-      --home-header-max:1080px;
+      --home-header-max:1040px;
       --home-content-max:760px;
     }
 
@@ -178,19 +178,6 @@
       letter-spacing:-.02em;
     }
 
-    .home-header-simulation{
-      display:none;
-    }
-
-    .home-header-simulation img{
-      display:block;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      border-radius:13px;
-    }
-
     .home-tabs{
       position:relative;
       display:flex;
@@ -218,12 +205,14 @@
       opacity:.96;
       transition:color .18s ease, opacity .18s ease;
       cursor:pointer;
+      text-decoration:none !important;
     }
 
     .home-tab:hover,
     .home-menu-summary:hover{
       color:#fff7e8;
       opacity:1;
+      text-decoration:none !important;
     }
 
     .home-tab.is-active{
@@ -339,42 +328,6 @@
       display:flex;
       flex-direction:column;
       gap:10px;
-    }
-
-    .simulation-hero{
-      position:relative;
-      display:block;
-      min-height:146px;
-      overflow:hidden;
-      border:none;
-      border-radius:20px;
-      background:#10131c;
-      box-shadow:0 12px 28px rgba(0,0,0,.22);
-      transition:
-        transform .18s ease,
-        box-shadow .18s ease;
-    }
-
-    .simulation-hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:20px;
-      background-image:url("images/simulation-hero.jpg?v=6");
-      background-repeat:no-repeat;
-      background-size:cover;
-      background-position:center;
-      box-shadow:none;
-      pointer-events:none;
-    }
-
-    .simulation-hero::after{
-      content:none;
-    }
-
-    .simulation-hero:hover{
-      transform:translateY(-1px);
-      box-shadow:0 16px 34px rgba(0,0,0,.28);
     }
 
     .home-card{
@@ -728,16 +681,6 @@
         width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter, 72px) - var(--page-gutter, 24px)));
         margin-left:var(--pc-left-gutter, 72px);
         margin-right:auto;
-        padding:20px 24px 0;
-        border:1px solid rgba(255,255,255,.13);
-        border-radius:0;
-        background:
-          linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),
-          radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%),
-          rgba(24,28,39,.42);
-        box-shadow:
-          0 0 0 1px rgba(255,255,255,.015) inset,
-          0 16px 38px rgba(0,0,0,.16);
       }
 
       .container{
@@ -747,10 +690,7 @@
       }
 
       .home-header-main{
-        display:grid;
-        grid-template-columns:minmax(0, 1fr) 414px;
-        align-items:center;
-        gap:30px;
+        display:block;
         margin-bottom:14px;
       }
 
@@ -764,32 +704,7 @@
         max-width:100%;
         font-size:1rem;
         line-height:1.48;
-      }
-
-      .home-header-simulation{
-        display:block;
-        width:414px;
-        height:118px;
-        overflow:hidden;
-        border:1px solid rgba(216,180,106,.44);
-        border-radius:15px;
-        background:#10131c;
-        box-shadow:
-          0 0 0 1px rgba(255,255,255,.03) inset,
-          0 12px 26px rgba(0,0,0,.20);
-        transition:
-          transform .18s ease,
-          border-color .18s ease,
-          box-shadow .18s ease;
-      }
-
-      .home-header-simulation:hover{
-        transform:translateY(-1px);
-        border-color:rgba(216,180,106,.62);
-        box-shadow:
-          0 0 0 1px rgba(255,255,255,.035) inset,
-          0 16px 32px rgba(0,0,0,.25),
-          0 0 22px rgba(216,180,106,.12);
+        white-space:nowrap;
       }
 
       .home-tabs{
@@ -805,10 +720,6 @@
 
       .main-stack{
         gap:12px;
-      }
-
-      .simulation-hero{
-        display:none;
       }
 
       .dashboard-grid{
@@ -892,17 +803,6 @@
 
       .main-stack{
         gap:9px;
-      }
-
-      .simulation-hero{
-        min-height:124px;
-        padding:0;
-        border-radius:19px;
-      }
-
-      .simulation-hero::before{
-        inset:0;
-        border-radius:19px;
       }
 
       .home-card{
@@ -1048,17 +948,11 @@
             <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>
             <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
           </div>
-
-          <a class="home-header-simulation" href="simulation.html" aria-label="MCバトルシミュレーション">
-            <img src="images/simulation-hero.jpg?v=6" alt="MCバトルシミュレーション" />
-          </a>
         </div>
 
         <nav class="home-tabs" aria-label="主要メニュー">
-          <a class="home-tab is-active" href="./">ホーム</a>
-
           <details class="home-menu" data-menu="data">
-            <summary class="home-menu-summary">データ</summary>
+            <summary class="home-menu-summary">Data</summary>
             <div class="home-submenu">
               <a href="list_mc.html">MC一覧</a>
               <a href="list_event.html">大会一覧</a>
@@ -1066,7 +960,7 @@
           </details>
 
           <details class="home-menu" data-menu="ranking">
-            <summary class="home-menu-summary">ランキング</summary>
+            <summary class="home-menu-summary">Ranking</summary>
             <div class="home-submenu">
               <a href="score_ranking.html">スコアランキング</a>
               <a href="prize_ranking.html">賞金ランキング</a>
@@ -1074,15 +968,14 @@
             </div>
           </details>
 
-          <a class="home-tab" href="articles.html">読み物</a>
+          <a class="home-tab" href="simulation.html">Simulation</a>
+          <a class="home-tab" href="articles.html">Reading</a>
         </nav>
       </div>
     </header>
 
     <main class="container">
       <div class="main-stack">
-        <a class="simulation-hero" href="simulation.html" aria-label="MCバトルシミュレーション"></a>
-
         <section id="hot-mc-card" class="home-card hot-mc-card" aria-label="アクセスの多いMC(ランダム10件)">
           <div class="home-card-inner">
             <div class="section-head">
