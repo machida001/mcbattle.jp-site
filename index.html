@@ -308,18 +308,23 @@
       gap:10px;
     }
 
+    .simulation-hero-wrap{
+      display:flex;
+      justify-content:center;
+      width:100%;
+    }
+
     .simulation-hero{
       position:relative;
       display:block;
-      width:min(100%, 760px);
-      height:118px;
+      width:min(100%, 700px);
+      aspect-ratio:4 / 1;
+      height:auto;
       min-height:0;
-      margin-left:auto;
-      margin-right:auto;
       overflow:hidden;
       border:none;
       border-radius:16px;
-      background:#10131c;
+      background:#05070b;
       box-shadow:0 10px 24px rgba(0,0,0,.22);
       transition:
         transform .18s ease,
@@ -331,10 +336,11 @@
       position:absolute;
       inset:0;
       border-radius:16px;
-      background-image:url("images/simulation-hero.jpg?v=9");
+      background-image:url("images/simulation-hero.jpg?v=10");
       background-repeat:no-repeat;
-      background-size:cover;
+      background-size:contain;
       background-position:center;
+      background-color:#05070b;
       box-shadow:none;
       pointer-events:none;
     }
@@ -701,15 +707,7 @@
       }
 
       .simulation-hero{
-        width:min(100%, 760px);
-        height:118px;
-        min-height:0;
-        border-radius:16px;
-      }
-
-      .simulation-hero::before{
-        inset:0;
-        border-radius:16px;
+        width:min(78%, 680px);
       }
 
       .dashboard-grid{
@@ -789,17 +787,12 @@
 
       .simulation-hero{
         width:100%;
-        height:124px;
-        min-height:0;
-        padding:0;
-        border-radius:17px;
+        aspect-ratio:4 / 1;
+        border-radius:16px;
       }
 
       .simulation-hero::before{
-        inset:0;
-        border-radius:17px;
-        background-size:cover;
-        background-position:center;
+        border-radius:16px;
       }
 
       .home-card{
@@ -970,7 +963,9 @@
 
     <main class="container">
       <div class="main-stack">
-        <a class="simulation-hero" href="simulation.html" aria-label="MCバトルシミュレーション"></a>
+        <div class="simulation-hero-wrap">
+          <a class="simulation-hero" href="simulation.html" aria-label="MCバトルシミュレーション"></a>
+        </div>
 
         <section id="hot-mc-card" class="home-card hot-mc-card" aria-label="閲覧数の多いMC">
           <div class="home-card-inner">
