@@ -56,26 +56,35 @@
 
     gtag('config', 'G-9C8VGD3THB');
   </script>
+
   <link rel="stylesheet" href="style.css" />
+
   <style>
     :root{
       --panel:#171922;
       --panel-2:#1c1f2a;
       --line:#2a3040;
+      --line-soft:rgba(255,255,255,.12);
       --text:#f4f5f7;
       --muted:#b2b8c7;
+      --muted-2:#8790a3;
       --accent:#d8b46a;
+      --accent-strong:#f0cd87;
       --accent-2:#8fb3ff;
       --danger:#d97f7f;
       --shadow:0 18px 48px rgba(0,0,0,.28);
       --radius:22px;
+      --home-max:1040px;
+      --home-gutter:24px;
     }
 
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
+
     body{
       background:
-        radial-gradient(circle at top, rgba(216,180,106,.08), transparent 28%),
+        radial-gradient(circle at 78% 0%, rgba(216,180,106,.12), transparent 24%),
+        radial-gradient(circle at 18% 0%, rgba(143,179,255,.08), transparent 26%),
         linear-gradient(180deg, #11131a 0%, #0c0d12 100%);
       color:var(--text);
       font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
@@ -88,233 +97,387 @@
       text-decoration:none;
     }
 
-    .container{
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
-      margin-left:auto;
-      margin-right:auto;
+    .home-shell{
+      width:min(calc(100% - (var(--home-gutter) * 2)), var(--home-max));
+      margin:0 auto;
     }
 
-    .page-top{
-      margin-bottom:5px;
+    .home-header{
+      padding:28px 0 0;
     }
 
-    .page-mini-logo{
-      margin:0 0 4px;
-    }
-
-    .site-header-copy{
-      min-width:0;
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-      align-items:flex-start;
-    }
-
-    .header-message{
+    .home-brand{
       margin:0;
-      font-size:15px;
-      font-weight:600;
-      line-height:1.5;
-      color:var(--text);
-      text-align:left;
+      line-height:1;
     }
 
-    .header-spec-link,
-    .header-spec-link:hover,
-    .sim-card,
-    .sim-card:hover,
-    .hot-mc-link,
-    .hot-mc-link:hover,
-    .link-card,
-    .link-card:hover,
-    .list-row,
-    .list-row:hover,
-    .list-row-static,
-    .header-spec-link *,
-    .header-spec-link:hover *,
-    .sim-card *,
-    .sim-card:hover *,
-    .hot-mc-link *,
-    .hot-mc-link:hover *,
-    .link-card *,
-    .link-card:hover *,
-    .list-row *,
-    .list-row:hover *,
-    .list-row-static * {
-      text-decoration: none !important;
-    }
-
-    .header-spec-link{
+    .home-brand a{
       display:inline-block;
-      width:fit-content;
-      max-width:100%;
-      padding:7px 12px;
-      border-radius:14px;
-      border:1px solid rgba(216,180,106,.34);
-      background:linear-gradient(180deg, rgba(216,180,106,.12), rgba(216,180,106,.05));
-      font-size:13px;
-      font-weight:700;
-      white-space:nowrap;
-      transition:
-        transform .18s ease,
-        border-color .18s ease,
-        background-color .18s ease,
-        color .18s ease,
-        box-shadow .18s ease;
-      box-shadow:0 0 0 1px rgba(255,255,255,.03) inset;
-    }
-
-    .header-spec-link:hover{
-      transform:translateY(-1px);
-      border-color:rgba(216,180,106,.52);
-      background:linear-gradient(180deg, rgba(216,180,106,.18), rgba(216,180,106,.08));
-      color:#fff4dc;
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-    }
-
-    .hero{
-      padding:2px 0 7px;
-    }
-
-    .hero-stack{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-
-    .sim-card{
-      display:block;
-      padding:12px 15px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.14);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)),
-        linear-gradient(180deg, rgba(143,179,255,.16), rgba(143,179,255,.06));
-      transition:
-        transform .18s ease,
-        border-color .18s ease,
-        background-color .18s ease,
-        box-shadow .18s ease,
-        color .18s ease;
-      box-shadow:0 0 0 1px rgba(255,255,255,.02) inset;
-    }
-
-    .sim-card:hover{
-      transform:translateY(-1px);
-      border-color:rgba(143,179,255,.48);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)),
-        linear-gradient(180deg, rgba(143,179,255,.22), rgba(143,179,255,.09));
-      box-shadow:0 14px 28px rgba(0,0,0,.18);
-    }
-
-    .sim-title{
-      margin:0;
-      font-size:16px;
+      color:var(--accent);
+      font-family:"Times New Roman", Georgia, serif;
+      font-size:clamp(2.05rem, 6vw, 3.2rem);
+      font-style:italic;
       font-weight:800;
-      line-height:1.32;
-      transition:color .18s ease;
+      letter-spacing:-.04em;
+      text-decoration:none !important;
+      text-shadow:0 0 18px rgba(216,180,106,.12);
     }
 
-    .sim-card:hover .sim-title{
-      color:#e8f0ff;
-    }
-
-    .sim-sub{
-      display:none;
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-      transition:color .18s ease;
-    }
-
-    .sim-card:hover .sim-sub{
-      color:#d1d9e8;
-    }
-
-    .sim-kicker{
-      display:block;
-      margin-bottom:1px;
-      color:#c7d8ff;
-      font-size:12px;
-      letter-spacing:.03em;
+    .home-lead{
+      margin:10px 0 0;
+      color:#eef1f7;
+      font-size:1rem;
       font-weight:700;
-      line-height:1.32;
-      transition:color .18s ease;
+      line-height:1.62;
+      letter-spacing:.01em;
     }
 
-    .sim-card:hover .sim-kicker{
-      color:#e2ebff;
+    .home-nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      margin-top:20px;
+      border-top:1px solid rgba(255,255,255,.14);
+      border-bottom:1px solid rgba(255,255,255,.14);
+      background:
+        linear-gradient(180deg, rgba(18,20,28,.94), rgba(14,16,23,.94));
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
 
-    .link-grid{
+    .home-nav-inner{
+      width:min(calc(100% - (var(--home-gutter) * 2)), var(--home-max));
+      margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(4, minmax(0, 1fr));
-      gap:8px;
+      grid-template-columns:repeat(5, minmax(0, 1fr));
+      gap:0;
     }
 
-    .link-card{
-      min-height:62px;
+    .home-nav-link{
+      position:relative;
+      min-height:54px;
       display:flex;
       align-items:center;
       justify-content:center;
-      text-align:center;
-      padding:10px 12px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.14);
+      padding:0 8px;
+      color:#f2f4f8;
+      font-size:.95rem;
+      font-weight:800;
+      line-height:1.2;
+      white-space:nowrap;
+      text-decoration:none !important;
+      transition:color .18s ease, background-color .18s ease;
+    }
+
+    .home-nav-link:hover{
+      color:#fff7e8;
+      background:rgba(255,255,255,.035);
+    }
+
+    .home-nav-link.is-active{
+      color:var(--accent);
+    }
+
+    .home-nav-link.is-active::after{
+      content:"";
+      position:absolute;
+      left:10px;
+      right:10px;
+      bottom:0;
+      height:3px;
+      border-radius:999px;
+      background:linear-gradient(90deg, rgba(216,180,106,.2), var(--accent), rgba(216,180,106,.2));
+      box-shadow:0 0 16px rgba(216,180,106,.22);
+    }
+
+    .home-main{
+      padding:20px 0 34px;
+    }
+
+    .home-stack{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .home-hero-card{
+      position:relative;
+      overflow:hidden;
+      display:block;
+      min-height:232px;
+      border:1px solid rgba(216,180,106,.48);
+      border-radius:22px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)),
-        linear-gradient(180deg, #242936, #1c202b);
+        radial-gradient(circle at 82% 18%, rgba(246,197,94,.36), transparent 18%),
+        radial-gradient(circle at 86% 48%, rgba(0,0,0,.18), transparent 34%),
+        linear-gradient(90deg, rgba(17,19,27,.98) 0%, rgba(17,19,27,.88) 47%, rgba(17,19,27,.42) 100%),
+        linear-gradient(135deg, rgba(216,180,106,.22), rgba(143,179,255,.08));
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.035) inset,
+        0 24px 54px rgba(0,0,0,.24);
+      text-decoration:none !important;
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        filter .18s ease;
+    }
+
+    .home-hero-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.12), rgba(0,0,0,.08)),
+        radial-gradient(circle at 75% 62%, rgba(0,0,0,.7) 0 8%, transparent 9%),
+        radial-gradient(circle at 74% 47%, rgba(0,0,0,.82) 0 7%, transparent 8%),
+        linear-gradient(78deg, transparent 0 58%, rgba(0,0,0,.72) 58% 64%, transparent 64%),
+        linear-gradient(108deg, transparent 0 67%, rgba(0,0,0,.84) 67% 72%, transparent 72%),
+        linear-gradient(155deg, transparent 0 70%, rgba(0,0,0,.72) 70% 75%, transparent 75%);
+      opacity:.72;
+      pointer-events:none;
+    }
+
+    .home-hero-card::after{
+      content:"";
+      position:absolute;
+      right:-8%;
+      bottom:-12%;
+      width:48%;
+      height:88%;
+      background:
+        radial-gradient(circle at 48% 10%, rgba(0,0,0,.88) 0 12%, transparent 13%),
+        linear-gradient(180deg, rgba(0,0,0,.86), rgba(0,0,0,.36));
+      clip-path:polygon(34% 12%, 55% 4%, 69% 17%, 66% 34%, 76% 46%, 76% 100%, 22% 100%, 22% 48%, 34% 34%);
+      opacity:.72;
+      filter:blur(.1px);
+      pointer-events:none;
+    }
+
+    .home-hero-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(216,180,106,.72);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.045) inset,
+        0 28px 62px rgba(0,0,0,.3),
+        0 0 34px rgba(216,180,106,.12);
+      filter:saturate(1.04);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:620px;
+      padding:28px 30px;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:34px;
+      padding:0 15px;
+      border:1px solid rgba(216,180,106,.68);
+      border-radius:999px;
+      color:var(--accent);
+      background:rgba(216,180,106,.07);
+      font-size:.95rem;
+      font-weight:900;
+      line-height:1;
+      letter-spacing:.03em;
+      box-shadow:0 0 0 1px rgba(255,255,255,.025) inset;
+    }
+
+    .hero-title{
+      margin:18px 0 8px;
+      color:var(--accent-strong);
+      font-size:clamp(2rem, 5vw, 3.15rem);
+      font-weight:900;
+      line-height:1.08;
+      letter-spacing:-.04em;
+    }
+
+    .hero-copy{
+      margin:0;
+      color:#f1f3f8;
+      font-size:1.05rem;
       font-weight:700;
-      font-size:15px;
-      line-height:1.24;
+      line-height:1.6;
+    }
+
+    .hero-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      min-height:48px;
+      margin-top:22px;
+      padding:0 22px;
+      border:1px solid rgba(216,180,106,.68);
+      border-radius:999px;
+      color:var(--accent);
+      background:rgba(17,19,27,.52);
+      font-size:1rem;
+      font-weight:900;
+      line-height:1;
+      box-shadow:0 0 0 1px rgba(255,255,255,.025) inset;
+      transition:
+        background-color .18s ease,
+        border-color .18s ease,
+        color .18s ease,
+        transform .18s ease;
+    }
+
+    .home-hero-card:hover .hero-cta{
+      color:#fff3d4;
+      border-color:rgba(216,180,106,.88);
+      background:rgba(216,180,106,.12);
+      transform:translateX(2px);
+    }
+
+    .hero-cta-arrow{
+      font-size:1.5rem;
+      line-height:1;
+      transform:translateY(-1px);
+    }
+
+    .quick-grid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:14px;
+    }
+
+    .quick-card{
+      display:grid;
+      grid-template-columns:auto minmax(0,1fr) auto;
+      align-items:center;
+      gap:14px;
+      min-height:74px;
+      padding:0 18px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018)),
+        linear-gradient(180deg, #202431, #181c27);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.02) inset,
+        0 14px 30px rgba(0,0,0,.14);
+      text-decoration:none !important;
       transition:
         transform .18s ease,
         border-color .18s ease,
         background-color .18s ease,
         box-shadow .18s ease,
         color .18s ease;
-      box-shadow:0 0 0 1px rgba(255,255,255,.02) inset;
     }
 
-    .link-card:hover{
-      transform:translateY(-1px);
-      border-color:rgba(255,255,255,.26);
+    .quick-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(216,180,106,.38);
       background:
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
-        linear-gradient(180deg, #2a3040, #222734);
-      color:#ffffff;
-      box-shadow:0 14px 28px rgba(0,0,0,.18);
+        linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02)),
+        linear-gradient(180deg, #252a38, #1b202c);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.028) inset,
+        0 20px 38px rgba(0,0,0,.18);
+      color:#fff;
     }
 
-    .hot-mc-card{
-      display:none;
-      padding:12px 13px;
-      border-radius:18px;
-      border:1px solid rgba(216,180,106,.24);
-      background:
-        linear-gradient(180deg, rgba(216,180,106,.09), rgba(216,180,106,.035)),
-        rgba(255,255,255,.025);
-      box-shadow:0 0 0 1px rgba(255,255,255,.02) inset;
-    }
-
-    .hot-mc-card.is-visible{
-      display:block;
-    }
-
-    .hot-mc-title{
-      margin:0 0 8px;
+    .quick-icon{
       color:var(--accent);
-      font-size:13px;
+      font-size:1.5rem;
+      line-height:1;
+      opacity:.96;
+    }
+
+    .quick-title{
+      min-width:0;
+      color:#f1f3f8;
+      font-size:1rem;
+      font-weight:900;
+      line-height:1.24;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .quick-arrow{
+      color:#d6dbea;
+      font-size:1.25rem;
+      line-height:1;
+      opacity:.82;
+    }
+
+    .home-panel{
+      border:1px solid rgba(255,255,255,.13);
+      border-radius:22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.016)),
+        rgba(20,23,32,.84);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.018) inset,
+        0 18px 46px rgba(0,0,0,.2);
+    }
+
+    .home-panel.is-gold{
+      border-color:rgba(216,180,106,.28);
+      background:
+        linear-gradient(180deg, rgba(216,180,106,.08), rgba(216,180,106,.028)),
+        rgba(20,23,32,.84);
+    }
+
+    .panel-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:18px 20px 0;
+    }
+
+    .panel-title{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      margin:0;
+      color:var(--accent);
+      font-size:1.18rem;
+      font-weight:900;
+      line-height:1.25;
+      letter-spacing:.01em;
+    }
+
+    .panel-title-icon{
+      font-size:1.25rem;
+      line-height:1;
+    }
+
+    .panel-more{
+      flex:0 0 auto;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:#c6ccda;
+      font-size:.82rem;
       font-weight:800;
-      line-height:1.34;
-      letter-spacing:.02em;
+      line-height:1;
+      text-decoration:none !important;
+      opacity:.9;
+      transition:color .18s ease, opacity .18s ease;
+    }
+
+    .panel-more:hover{
+      color:#fff4dc;
+      opacity:1;
+    }
+
+    .panel-body{
+      padding:14px 20px 18px;
     }
 
     .hot-mc-list{
       display:flex;
       flex-wrap:wrap;
-      gap:7px;
+      gap:9px 10px;
       margin:0;
       padding:0;
       list-style:none;
@@ -329,15 +492,16 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:32px;
-      padding:0 11px;
-      border:1px solid rgba(216,180,106,.28);
+      min-height:36px;
+      padding:0 14px;
+      border:1px solid rgba(216,180,106,.32);
       border-radius:999px;
-      background:rgba(216,180,106,.075);
-      color:var(--text);
-      font-size:13px;
-      font-weight:700;
+      background:rgba(216,180,106,.065);
+      color:#f4f5f7;
+      font-size:.9rem;
+      font-weight:900;
       line-height:1.2;
+      text-decoration:none !important;
       transition:
         transform .18s ease,
         border-color .18s ease,
@@ -348,442 +512,604 @@
 
     .hot-mc-link:hover{
       transform:translateY(-1px);
-      border-color:rgba(216,180,106,.44);
+      border-color:rgba(216,180,106,.52);
       background:rgba(216,180,106,.12);
       color:#fff7e8;
       box-shadow:0 10px 20px rgba(0,0,0,.14);
     }
 
-    .panel{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-
-    .dashboard{
-      padding:2px 0 28px;
-    }
-
     .dashboard-grid{
       display:grid;
       grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:12px;
+      gap:18px;
       align-items:start;
     }
 
-    .dashboard-card{
-      padding:16px 16px 9px;
-      min-width:0;
-    }
-
-    .dashboard-title{
-      margin:0 0 8px;
-      font-size:17px;
-      font-weight:800;
-      letter-spacing:.02em;
-      line-height:1.3;
-    }
-
-    .dashboard-list{
+    .home-list{
       display:flex;
       flex-direction:column;
-      gap:7px;
+      gap:10px;
     }
 
-    .list-row,
-    .list-row-static{
+    .event-card,
+    .ranking-card{
       display:block;
-      padding:9px 10px 8px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.025);
       min-width:0;
-      box-shadow:0 0 0 1px rgba(255,255,255,.02) inset;
-    }
-
-    .list-row{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:17px;
+      background:rgba(255,255,255,.026);
+      box-shadow:0 0 0 1px rgba(255,255,255,.014) inset;
+      text-decoration:none !important;
       transition:
         transform .18s ease,
         border-color .18s ease,
         background-color .18s ease,
-        box-shadow .18s ease,
-        color .18s ease;
+        box-shadow .18s ease;
     }
 
-    .list-row:hover{
+    .event-card:hover,
+    .ranking-card:hover{
       transform:translateY(-1px);
-      border-color:rgba(255,255,255,.24);
-      background:rgba(255,255,255,.05);
-      box-shadow:0 12px 24px rgba(0,0,0,.14);
+      border-color:rgba(216,180,106,.28);
+      background:rgba(255,255,255,.045);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.022) inset,
+        0 14px 28px rgba(0,0,0,.16);
     }
 
-    .event-date{
+    .event-card{
+      display:grid;
+      grid-template-columns:126px minmax(0,1fr) auto;
+      align-items:center;
+      gap:14px;
+      padding:13px 14px;
+    }
+
+    .event-date-box{
+      min-width:0;
+      padding-right:14px;
+      border-right:1px solid rgba(255,255,255,.14);
+      text-align:center;
+    }
+
+    .event-date-main{
       display:block;
       color:var(--accent);
-      font-size:12px;
-      font-weight:700;
+      font-size:1rem;
+      font-weight:900;
+      line-height:1.18;
       letter-spacing:.04em;
-      margin-bottom:2px;
-      line-height:1.25;
-      transition:color .18s ease;
+      font-variant-numeric:tabular-nums;
     }
 
-    .list-row:hover .event-date{
-      color:#f0cd87;
+    .event-date-week{
+      display:block;
+      margin-top:3px;
+      color:#c3a769;
+      font-size:.75rem;
+      font-weight:900;
+      line-height:1;
+      letter-spacing:.08em;
+    }
+
+    .event-main{
+      min-width:0;
     }
 
     .event-name{
       display:block;
-      font-size:14px;
-      font-weight:700;
-      line-height:1.34;
-      word-break:break-word;
-      transition:color .18s ease;
-    }
-
-    .list-row:hover .event-name{
-      color:#ffffff;
+      color:#f4f5f7;
+      font-size:1rem;
+      font-weight:900;
+      line-height:1.35;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
     }
 
     .event-stage{
       display:block;
       margin-top:2px;
       color:var(--muted);
-      font-size:12px;
-      line-height:1.34;
-      word-break:break-word;
+      font-size:.86rem;
+      font-weight:600;
+      line-height:1.3;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
     }
 
-    .rank-row{
+    .event-arrow,
+    .ranking-arrow{
+      color:#d9deeb;
+      font-size:1.25rem;
+      line-height:1;
+      opacity:.85;
+    }
+
+    .ranking-card{
+      padding:12px 13px;
+    }
+
+    .ranking-row{
       display:grid;
       grid-template-columns:42px minmax(0,1fr) auto;
-      gap:10px;
       align-items:center;
-    }
-
-    .rank-num{
-      font-family:"Times New Roman",Georgia,serif;
-      font-style:italic;
-      font-size:20px;
-      color:var(--accent);
-      text-align:center;
-      line-height:1;
-      transition:color .18s ease;
-    }
-
-    .list-row:hover .rank-num{
-      color:#f0cd87;
-    }
-
-    .rank-name{
+      gap:10px;
       min-width:0;
-      font-size:16px;
-      font-weight:700;
+    }
+
+    .ranking-num{
+      color:var(--accent);
+      font-family:"Times New Roman", Georgia, serif;
+      font-size:1.28rem;
+      font-style:italic;
+      font-weight:800;
+      line-height:1;
+      text-align:center;
+      font-variant-numeric:tabular-nums;
+    }
+
+    .ranking-name{
+      min-width:0;
+      color:#f4f5f7;
+      font-size:1rem;
+      font-weight:900;
+      line-height:1.24;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
-      line-height:1.24;
-      transition:color .18s ease;
     }
 
-    .list-row:hover .rank-name{
-      color:#ffffff;
-    }
-
-    .rank-score{
+    .ranking-score{
       color:var(--muted);
-      font-size:14px;
+      font-size:.92rem;
+      font-weight:800;
       font-variant-numeric:tabular-nums;
       white-space:nowrap;
-      line-height:1.24;
-      transition:color .18s ease;
-    }
-
-    .list-row:hover .rank-score{
-      color:#d7dee9;
+      line-height:1.2;
     }
 
     .status{
       color:var(--muted);
-      font-size:13px;
-      padding:2px 2px 0;
+      font-size:.86rem;
+      line-height:1.45;
     }
 
     .status.error{
       color:var(--danger);
+      font-weight:800;
     }
 
     .status.hidden{
       display:none;
     }
 
+    .is-hidden{
+      display:none !important;
+    }
+
     .footer-space{
-      height:14px;
+      height:12px;
     }
 
-    .dashboard-card.is-empty{
-      padding-bottom:6px;
-    }
+    @media (min-width: 1180px){
+      :root{
+        --home-gutter:34px;
+      }
 
-    .dashboard-card.is-empty .dashboard-list{
-      display:none;
-    }
-
-    .dashboard-card.is-empty .status{
-      padding-top:0;
-      padding-bottom:0;
-      line-height:1.35;
-    }
-
-    @media (min-width: 1024px){
-      .container{
-        width:min(var(--content-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
-        margin-left:var(--pc-left-gutter);
+      .home-shell,
+      .home-nav-inner{
+        margin-left:max(34px, calc((100vw - 1180px) / 2));
         margin-right:auto;
       }
     }
 
-    @media (max-width:980px){
+    @media (max-width: 980px){
+      :root{
+        --home-gutter:22px;
+      }
+
+      .quick-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:12px;
+      }
+
       .dashboard-grid{
         grid-template-columns:1fr;
       }
 
-      .link-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
+      .home-hero-card{
+        min-height:224px;
       }
     }
 
-    @media (max-width:640px){
-      .page-top{
-        margin-bottom:5px;
+    @media (max-width: 640px){
+      :root{
+        --home-gutter:16px;
       }
 
-      .page-mini-logo{
-        margin-bottom:4px;
+      .home-header{
+        padding-top:24px;
       }
 
-      .site-header-copy{
-        gap:4px;
+      .home-brand a{
+        font-size:2.36rem;
       }
 
-      .header-message{
-        font-size:13px;
-        line-height:1.36;
+      .home-lead{
+        margin-top:8px;
+        font-size:.92rem;
+        line-height:1.55;
       }
 
-      .header-spec-link{
-        width:100%;
-        white-space:normal;
-        padding:6px 10px;
-        min-height:0;
-        border-radius:13px;
-        font-size:12px;
+      .home-nav{
+        margin-top:17px;
       }
 
-      .hero{
-        padding:0 0 5px;
+      .home-nav-inner{
+        overflow-x:auto;
+        grid-template-columns:repeat(5, auto);
+        justify-content:start;
+        gap:0;
+        scrollbar-width:none;
+        -webkit-overflow-scrolling:touch;
       }
 
-      .hero-stack{
-        gap:6px;
+      .home-nav-inner::-webkit-scrollbar{
+        display:none;
       }
 
-      .sim-card{
-        padding:9px 11px;
-        border-radius:15px;
+      .home-nav-link{
+        min-width:86px;
+        min-height:48px;
+        padding:0 12px;
+        font-size:.88rem;
       }
 
-      .sim-kicker{
-        margin-bottom:1px;
-        font-size:11px;
-        line-height:1.24;
+      .home-nav-link.is-active::after{
+        left:8px;
+        right:8px;
       }
 
-      .sim-title{
-        font-size:14px;
-        line-height:1.18;
+      .home-main{
+        padding-top:18px;
       }
 
-      .link-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
-        gap:6px;
+      .home-stack{
+        gap:14px;
       }
 
-      .link-card{
-        min-height:50px;
-        padding:7px 8px;
-        border-radius:15px;
-        font-size:13px;
-        line-height:1.18;
-        overflow-wrap:anywhere;
-        word-break:break-word;
-      }
-
-      .hot-mc-card{
-        padding:10px 10px;
-        border-radius:15px;
-      }
-
-      .hot-mc-title{
-        margin-bottom:7px;
-        font-size:12px;
-        line-height:1.28;
-      }
-
-      .hot-mc-list{
-        gap:6px;
-      }
-
-      .hot-mc-link{
-        min-height:30px;
-        padding:0 10px;
-        font-size:12px;
-      }
-
-      .dashboard{
-        padding:0 0 22px;
-      }
-
-      .dashboard-grid{
-        gap:7px;
-      }
-
-      .dashboard-card{
-        padding:11px 10px 7px;
+      .home-hero-card{
+        min-height:214px;
         border-radius:18px;
       }
 
-      .dashboard-title{
-        margin:0 0 6px;
-        font-size:15px;
-        line-height:1.22;
+      .home-hero-card::after{
+        right:-17%;
+        width:62%;
+        opacity:.66;
       }
 
-      .dashboard-list{
-        gap:6px;
+      .hero-content{
+        padding:22px 20px;
       }
 
-      .list-row,
-      .list-row-static{
-        padding:7px 8px 6px;
-        border-radius:13px;
-        box-shadow:0 0 0 1px rgba(255,255,255,.015) inset;
+      .hero-badge{
+        min-height:31px;
+        padding:0 13px;
+        font-size:.84rem;
       }
 
-      .event-date{
-        font-size:11px;
-        margin-bottom:1px;
+      .hero-title{
+        margin-top:14px;
+        margin-bottom:8px;
+        font-size:2rem;
+        line-height:1.08;
       }
 
-      .event-name{
-        font-size:13px;
-        line-height:1.22;
+      .hero-copy{
+        max-width:70%;
+        font-size:.88rem;
+        line-height:1.54;
       }
 
-      .event-stage{
-        font-size:11px;
-        margin-top:1px;
-        line-height:1.24;
+      .hero-cta{
+        min-height:42px;
+        margin-top:18px;
+        padding:0 17px;
+        gap:11px;
+        font-size:.88rem;
       }
 
-      .rank-row{
-        grid-template-columns:28px minmax(0,1fr) auto;
+      .quick-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:10px;
+      }
+
+      .quick-card{
+        min-height:64px;
+        padding:0 13px;
+        border-radius:15px;
+        grid-template-columns:auto minmax(0,1fr) auto;
+        gap:10px;
+      }
+
+      .quick-icon{
+        font-size:1.22rem;
+      }
+
+      .quick-title{
+        font-size:.9rem;
+      }
+
+      .quick-arrow{
+        font-size:1.1rem;
+      }
+
+      .home-panel{
+        border-radius:18px;
+      }
+
+      .panel-head{
+        padding:15px 16px 0;
+      }
+
+      .panel-title{
+        gap:7px;
+        font-size:1.04rem;
+      }
+
+      .panel-title-icon{
+        font-size:1.12rem;
+      }
+
+      .panel-more{
+        font-size:.77rem;
+      }
+
+      .panel-body{
+        padding:12px 16px 16px;
+      }
+
+      .hot-mc-list{
         gap:8px;
       }
 
-      .rank-num{
-        font-size:17px;
+      .hot-mc-link{
+        min-height:34px;
+        padding:0 12px;
+        font-size:.83rem;
       }
 
-      .rank-name{
-        font-size:14px;
+      .home-list{
+        gap:9px;
       }
 
-      .rank-score{
-        font-size:12px;
+      .event-card{
+        grid-template-columns:94px minmax(0,1fr) auto;
+        gap:10px;
+        padding:11px 12px;
+        border-radius:15px;
+      }
+
+      .event-date-box{
+        padding-right:10px;
+      }
+
+      .event-date-main{
+        font-size:.9rem;
+      }
+
+      .event-date-week{
+        font-size:.68rem;
+      }
+
+      .event-name{
+        font-size:.9rem;
+      }
+
+      .event-stage{
+        font-size:.78rem;
+      }
+
+      .event-arrow,
+      .ranking-arrow{
+        font-size:1.08rem;
+      }
+
+      .ranking-card{
+        padding:10px 11px;
+        border-radius:15px;
+      }
+
+      .ranking-row{
+        grid-template-columns:32px minmax(0,1fr) auto;
+        gap:8px;
+      }
+
+      .ranking-num{
+        font-size:1.08rem;
+      }
+
+      .ranking-name{
+        font-size:.9rem;
+      }
+
+      .ranking-score{
+        font-size:.78rem;
       }
 
       .status{
-        font-size:12px;
-        padding:1px 1px 0;
-      }
-
-      .dashboard-card.is-empty{
-        padding-bottom:6px;
+        font-size:.8rem;
       }
 
       .footer-space{
         height:10px;
       }
     }
+
+    @media (max-width: 390px){
+      .hero-copy{
+        max-width:76%;
+      }
+
+      .quick-card{
+        padding:0 11px;
+      }
+
+      .quick-title{
+        font-size:.84rem;
+      }
+
+      .event-card{
+        grid-template-columns:84px minmax(0,1fr) auto;
+      }
+
+      .event-date-main{
+        font-size:.82rem;
+      }
+
+      .ranking-score{
+        font-size:.74rem;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header class="container page-top">
-    <p class="page-mini-logo"><a href="./" class="site-mini-logo">MCBattle.jp</a></p>
-    <div class="site-header-copy">
-      <p class="header-message">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
-      <a class="header-spec-link" href="score_spec.html">スコアリング仕様を見る</a>
+  <header class="home-header">
+    <div class="home-shell">
+      <p class="home-brand"><a href="./">MCBattle.jp</a></p>
+      <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
     </div>
+
+    <nav class="home-nav" aria-label="主要メニュー">
+      <div class="home-nav-inner">
+        <a class="home-nav-link is-active" href="./">ホーム</a>
+        <a class="home-nav-link" href="list_event.html">大会一覧</a>
+        <a class="home-nav-link" href="list_mc.html">MC一覧</a>
+        <a class="home-nav-link" href="score_ranking.html">ランキング</a>
+        <a class="home-nav-link" href="#hot-mc-panel">人気MC</a>
+      </div>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-stack">
-          <a class="sim-card" href="simulation.html">
-            <span class="sim-kicker">現役勢の8人を選んで戦わせる</span>
-            <h3 class="sim-title">仮想MCバトルシミュレーション</h3>
-            <p class="sim-sub"></p>
+  <main class="home-main">
+    <div class="home-shell">
+      <div class="home-stack">
+        <a class="home-hero-card" href="simulation.html">
+          <div class="hero-content">
+            <span class="hero-badge">仮想</span>
+            <h1 class="hero-title">MCバトルシミュレーション</h1>
+            <p class="hero-copy">現役勢の8人を選んで戦わせよう。<br>独自スコアで勝敗をシミュレート！</p>
+            <span class="hero-cta">
+              <span>シミュレーションを始める</span>
+              <span class="hero-cta-arrow" aria-hidden="true">›</span>
+            </span>
+          </div>
+        </a>
+
+        <section class="quick-grid" aria-label="主要ページ">
+          <a class="quick-card" href="score_ranking.html">
+            <span class="quick-icon" aria-hidden="true">🏆</span>
+            <span class="quick-title">スコアランキング</span>
+            <span class="quick-arrow" aria-hidden="true">›</span>
           </a>
 
-          <div class="link-grid">
-            <a class="link-card" href="score_ranking.html">スコアランキング</a>
-            <a class="link-card" href="prize_ranking.html">賞金ランキング</a>
-            <a class="link-card" href="list_event.html">大会一覧</a>
-            <a class="link-card" href="list_mc.html">MC一覧</a>
+          <a class="quick-card" href="prize_ranking.html">
+            <span class="quick-icon" aria-hidden="true">♕</span>
+            <span class="quick-title">賞金ランキング</span>
+            <span class="quick-arrow" aria-hidden="true">›</span>
+          </a>
+
+          <a class="quick-card" href="list_event.html">
+            <span class="quick-icon" aria-hidden="true">📅</span>
+            <span class="quick-title">大会一覧</span>
+            <span class="quick-arrow" aria-hidden="true">›</span>
+          </a>
+
+          <a class="quick-card" href="list_mc.html">
+            <span class="quick-icon" aria-hidden="true">♙</span>
+            <span class="quick-title">MC一覧</span>
+            <span class="quick-arrow" aria-hidden="true">›</span>
+          </a>
+        </section>
+
+        <section id="hot-mc-panel" class="home-panel is-gold is-hidden" aria-label="閲覧数の多いMC">
+          <div class="panel-head">
+            <h2 class="panel-title">
+              <span class="panel-title-icon" aria-hidden="true">🔥</span>
+              <span>閲覧数の多いMC</span>
+            </h2>
+            <a class="panel-more" href="list_mc.html">もっと見る <span aria-hidden="true">›</span></a>
           </div>
-
-          <section id="hot-mc-card" class="hot-mc-card" aria-label="閲覧数の多いMC">
-            <h2 class="hot-mc-title">閲覧数の多いMC(ランダム10件)</h2>
+          <div class="panel-body">
             <ul id="hot-mc-list" class="hot-mc-list"></ul>
-          </section>
-        </div>
-      </div>
-    </section>
+          </div>
+        </section>
 
-    <section class="dashboard">
-      <div class="container">
         <div class="dashboard-grid">
-          <section id="future-events-card" class="panel dashboard-card">
-            <h2 class="dashboard-title">Upcoming</h2>
-            <div id="future-events" class="dashboard-list"></div>
-            <div id="future-events-status" class="status">読み込み中…</div>
+          <section id="future-events-card" class="home-panel">
+            <div class="panel-head">
+              <h2 class="panel-title">
+                <span class="panel-title-icon" aria-hidden="true">🗓</span>
+                <span>Upcoming</span>
+              </h2>
+              <a class="panel-more" href="list_event.html">もっと見る <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="panel-body">
+              <div id="future-events" class="home-list"></div>
+              <div id="future-events-status" class="status">読み込み中…</div>
+            </div>
           </section>
 
-          <section class="panel dashboard-card">
-            <h2 class="dashboard-title">Recent Events</h2>
-            <div id="recent-events" class="dashboard-list"></div>
-            <div id="recent-events-status" class="status">読み込み中…</div>
+          <section class="home-panel">
+            <div class="panel-head">
+              <h2 class="panel-title">
+                <span class="panel-title-icon" aria-hidden="true">✓</span>
+                <span>Recent Events</span>
+              </h2>
+              <a class="panel-more" href="list_event.html">もっと見る <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="panel-body">
+              <div id="recent-events" class="home-list"></div>
+              <div id="recent-events-status" class="status">読み込み中…</div>
+            </div>
           </section>
 
-          <section class="panel dashboard-card">
-            <h2 class="dashboard-title">スコアランキング</h2>
-            <div id="score-ranking" class="dashboard-list"></div>
-            <div id="score-ranking-status" class="status">読み込み中…</div>
+          <section class="home-panel">
+            <div class="panel-head">
+              <h2 class="panel-title">
+                <span class="panel-title-icon" aria-hidden="true">🏆</span>
+                <span>スコアランキング</span>
+              </h2>
+              <a class="panel-more" href="score_ranking.html">もっと見る <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="panel-body">
+              <div id="score-ranking" class="home-list"></div>
+              <div id="score-ranking-status" class="status">読み込み中…</div>
+            </div>
           </section>
 
-          <section class="panel dashboard-card">
-            <h2 class="dashboard-title">賞金ランキング</h2>
-            <div id="prize-ranking" class="dashboard-list"></div>
-            <div id="prize-ranking-status" class="status">読み込み中…</div>
+          <section class="home-panel">
+            <div class="panel-head">
+              <h2 class="panel-title">
+                <span class="panel-title-icon" aria-hidden="true">♕</span>
+                <span>賞金ランキング</span>
+              </h2>
+              <a class="panel-more" href="prize_ranking.html">もっと見る <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="panel-body">
+              <div id="prize-ranking" class="home-list"></div>
+              <div id="prize-ranking-status" class="status">読み込み中…</div>
+            </div>
           </section>
         </div>
-      </div>
-    </section>
 
-    <div class="footer-space"></div>
+        <div class="footer-space"></div>
+      </div>
+    </div>
   </main>
 
   <script>
@@ -823,6 +1149,28 @@
       return s;
     }
 
+    function getWeekdayLabel(raw) {
+      if (!raw) return "";
+
+      const s = String(raw).trim();
+      let date = null;
+
+      if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+        const [y, m, d] = s.split("-").map(Number);
+        date = new Date(y, m - 1, d);
+      } else if (/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(s)) {
+        const [y, m, d] = s.split("/").map(Number);
+        date = new Date(y, m - 1, d);
+      } else {
+        const parsed = new Date(s);
+        if (!Number.isNaN(parsed.getTime())) date = parsed;
+      }
+
+      if (!date || Number.isNaN(date.getTime())) return "";
+
+      return ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"][date.getDay()];
+    }
+
     function getEventId(event) {
       return event.event_id || event.id || event.eventId || "";
     }
@@ -853,6 +1201,16 @@
       return "";
     }
 
+    function getRecentSubText(event) {
+      const location = String(getEventLocation(event) || "").trim();
+      if (location) return location;
+
+      const stage = String(getEventStage(event) || "").trim();
+      if (stage) return stage;
+
+      return "";
+    }
+
     function getMcId(item) {
       return item.mc_id || item.id || item.mcId || "";
     }
@@ -873,6 +1231,7 @@
         item.current_strength_score ??
         item.rating ??
         "";
+
       const num = Number(raw);
       if (Number.isFinite(num)) return num.toFixed(2);
       return raw ? String(raw) : "";
@@ -885,26 +1244,23 @@
         item.prize ??
         item.total ??
         "";
+
       const num = Number(raw);
       if (Number.isFinite(num)) {
         const rounded = Math.round(num);
         return "¥" + rounded.toLocaleString("ja-JP");
       }
+
       return raw ? String(raw) : "";
     }
 
     function setStatus(id, message, isError = false) {
       const el = document.getElementById(id);
       if (!el) return;
+
       el.textContent = message;
       el.classList.toggle("error", !!isError);
       el.classList.toggle("hidden", !message);
-    }
-
-    function setEmptyCard(cardId, isEmpty) {
-      const card = document.getElementById(cardId);
-      if (!card) return;
-      card.classList.toggle("is-empty", !!isEmpty);
     }
 
     function shuffleArray(items) {
@@ -926,7 +1282,7 @@
       return await res.json();
     }
 
-    function renderRecentEventList(containerId, items, emptyMessage) {
+    function renderEventList(containerId, items, emptyMessage, options = {}) {
       const container = document.getElementById(containerId);
       if (!container) return;
 
@@ -934,47 +1290,39 @@
         container.innerHTML = `<div class="status">${escapeHtml(emptyMessage)}</div>`;
         return;
       }
+
+      const isLinked = options.linked !== false;
 
       container.innerHTML = items.map((event) => {
         const eventId = getEventId(event);
         const name = getEventName(event);
-        const date = formatDateJP(getEventDate(event));
+        const dateRaw = getEventDate(event);
+        const date = formatDateJP(dateRaw);
+        const week = getWeekdayLabel(dateRaw);
+        const subText = options.subTextType === "upcoming" ? getUpcomingSubText(event) : getRecentSubText(event);
         const href = eventId ? `detail_event/${encodeURIComponent(eventId)}.html` : "list_event.html";
 
-        return `
-          <a class="list-row" href="${href}">
-            <span class="event-date">${escapeHtml(date)}</span>
-            <span class="event-name">${escapeHtml(name)}</span>
-          </a>
-        `;
-      }).join("");
-    }
-
-    function renderUpcomingEventList(containerId, items, emptyMessage) {
-      const container = document.getElementById(containerId);
-      if (!container) return;
-
-      if (!items.length) {
-        container.innerHTML = `<div class="status">${escapeHtml(emptyMessage)}</div>`;
-        return;
-      }
-
-      container.innerHTML = items.map((event) => {
-        const name = getEventName(event);
-        const date = formatDateJP(getEventDate(event));
-        const subText = getUpcomingSubText(event);
-
-        return `
-          <div class="list-row-static">
-            <span class="event-date">${escapeHtml(date)}</span>
+        const inner = `
+          <span class="event-date-box">
+            <span class="event-date-main">${escapeHtml(date)}</span>
+            ${week ? `<span class="event-date-week">${escapeHtml(week)}</span>` : ""}
+          </span>
+          <span class="event-main">
             <span class="event-name">${escapeHtml(name)}</span>
             ${subText ? `<span class="event-stage">${escapeHtml(subText)}</span>` : ""}
-          </div>
+          </span>
+          <span class="event-arrow" aria-hidden="true">›</span>
         `;
+
+        if (!isLinked) {
+          return `<div class="event-card">${inner}</div>`;
+        }
+
+        return `<a class="event-card" href="${href}">${inner}</a>`;
       }).join("");
     }
 
-    function renderScoreRanking(containerId, items, emptyMessage) {
+    function renderRanking(containerId, items, emptyMessage, type) {
       const container = document.getElementById(containerId);
       if (!container) return;
 
@@ -987,58 +1335,30 @@
         const mcId = getMcId(item);
         const name = getMcName(item);
         const rank = getRank(item, index);
-        const score = getScore(item);
+        const value = type === "prize" ? getPrize(item) : getScore(item);
         const href = mcId ? `detail_mc/${encodeURIComponent(mcId)}.html` : "list_mc.html";
 
         return `
-          <a class="list-row" href="${href}">
-            <div class="rank-row">
-              <div class="rank-num">${escapeHtml(rank)}</div>
-              <div class="rank-name">${escapeHtml(name)}</div>
-              <div class="rank-score">${escapeHtml(score)}</div>
-            </div>
-          </a>
-        `;
-      }).join("");
-    }
-
-    function renderPrizeRanking(containerId, items, emptyMessage) {
-      const container = document.getElementById(containerId);
-      if (!container) return;
-
-      if (!items.length) {
-        container.innerHTML = `<div class="status">${escapeHtml(emptyMessage)}</div>`;
-        return;
-      }
-
-      container.innerHTML = items.map((item, index) => {
-        const mcId = getMcId(item);
-        const name = getMcName(item);
-        const rank = getRank(item, index);
-        const prize = getPrize(item);
-        const href = mcId ? `detail_mc/${encodeURIComponent(mcId)}.html` : "list_mc.html";
-
-        return `
-          <a class="list-row" href="${href}">
-            <div class="rank-row">
-              <div class="rank-num">${escapeHtml(rank)}</div>
-              <div class="rank-name">${escapeHtml(name)}</div>
-              <div class="rank-score">${escapeHtml(prize)}</div>
-            </div>
+          <a class="ranking-card" href="${href}">
+            <span class="ranking-row">
+              <span class="ranking-num">${escapeHtml(rank)}</span>
+              <span class="ranking-name">${escapeHtml(name)}</span>
+              <span class="ranking-score">${escapeHtml(value)}</span>
+            </span>
           </a>
         `;
       }).join("");
     }
 
     function renderHotMcs(items) {
-      const card = document.getElementById("hot-mc-card");
+      const panel = document.getElementById("hot-mc-panel");
       const list = document.getElementById("hot-mc-list");
-      if (!card || !list) return;
+      if (!panel || !list) return;
 
       const hotMcs = Array.isArray(items) ? shuffleArray(items).slice(0, 10) : [];
 
       if (!hotMcs.length) {
-        card.classList.remove("is-visible");
+        panel.classList.add("is-hidden");
         list.innerHTML = "";
         return;
       }
@@ -1055,7 +1375,7 @@
         `;
       }).join("");
 
-      card.classList.add("is-visible");
+      panel.classList.remove("is-hidden");
     }
 
     async function loadIndexData() {
@@ -1063,33 +1383,37 @@
         const payload = await loadTopJson();
         if (payload?.error) throw new Error(payload.message || "top data error");
 
-        const recentEvents = Array.isArray(payload?.recent_events) ? payload.recent_events.slice(0, 5) : [];
-        const upcomingEvents = Array.isArray(payload?.upcoming_events) ? payload.upcoming_events.slice(0, 5) : [];
-        const scoreRankings = Array.isArray(payload?.score_rankings) ? payload.score_rankings.slice(0, 10) : [];
-        const prizeRankings = Array.isArray(payload?.prize_rankings) ? payload.prize_rankings.slice(0, 10) : [];
+        const recentEvents = Array.isArray(payload?.recent_events) ? payload.recent_events.slice(0, 4) : [];
+        const upcomingEvents = Array.isArray(payload?.upcoming_events) ? payload.upcoming_events.slice(0, 4) : [];
+        const scoreRankings = Array.isArray(payload?.score_rankings) ? payload.score_rankings.slice(0, 5) : [];
+        const prizeRankings = Array.isArray(payload?.prize_rankings) ? payload.prize_rankings.slice(0, 5) : [];
         const hotMcs = Array.isArray(payload?.hot_mcs) ? payload.hot_mcs : [];
 
         renderHotMcs(hotMcs);
 
-        renderRecentEventList("recent-events", recentEvents, "データがありません");
+        renderEventList("future-events", upcomingEvents, "今後開催予定の大会はありません", {
+          linked: false,
+          subTextType: "upcoming"
+        });
+        setStatus("future-events-status", upcomingEvents.length ? "" : "今後開催予定の大会はありません");
+
+        renderEventList("recent-events", recentEvents, "データがありません", {
+          linked: true,
+          subTextType: "recent"
+        });
         setStatus("recent-events-status", recentEvents.length ? "" : "データがありません");
 
-        renderUpcomingEventList("future-events", upcomingEvents, "今後開催予定の大会はありません");
-        setStatus("future-events-status", upcomingEvents.length ? "" : "今後開催予定の大会はありません");
-        setEmptyCard("future-events-card", upcomingEvents.length === 0);
-
-        renderScoreRanking("score-ranking", scoreRankings, "データがありません");
+        renderRanking("score-ranking", scoreRankings, "データがありません", "score");
         setStatus("score-ranking-status", scoreRankings.length ? "" : "データがありません");
 
-        renderPrizeRanking("prize-ranking", prizeRankings, "データがありません");
+        renderRanking("prize-ranking", prizeRankings, "データがありません", "prize");
         setStatus("prize-ranking-status", prizeRankings.length ? "" : "データがありません");
       } catch (error) {
         console.error(error);
-        setStatus("recent-events-status", "直近大会の読み込みに失敗しました。", true);
         setStatus("future-events-status", "今後開催予定の大会の読み込みに失敗しました。", true);
+        setStatus("recent-events-status", "直近大会の読み込みに失敗しました。", true);
         setStatus("score-ranking-status", "スコアランキングの読み込みに失敗しました。", true);
         setStatus("prize-ranking-status", "賞金ランキングの読み込みに失敗しました。", true);
-        setEmptyCard("future-events-card", false);
       }
     }
 
