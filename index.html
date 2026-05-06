@@ -133,20 +133,44 @@
     }
 
     .home-header-main{
-      display:grid;
-      grid-template-columns:minmax(0, 1fr);
-      gap:12px;
-      align-items:center;
-      margin:0;
+      display:block;
+      width:100%;
     }
 
     .home-header-text{
       min-width:0;
-      margin:0;
     }
 
     .home-header-promo{
       display:none;
+    }
+
+    .home-promo-link{
+      display:block;
+      width:100%;
+      overflow:hidden;
+      border:1px solid rgba(216,180,106,.34);
+      border-radius:14px;
+      background:#10131c;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .home-promo-link:hover{
+      transform:translateY(-1px);
+      border-color:rgba(216,180,106,.54);
+      box-shadow:0 14px 30px rgba(0,0,0,.24);
+    }
+
+    .home-promo-img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
     }
 
     .home-logo{
@@ -696,9 +720,10 @@
     @media (min-width: 1024px){
       .container,
       .home-header-inner{
-        width:min(var(--content-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
-        margin-left:var(--pc-left-gutter);
-        margin-right:auto;
+        width:calc(100% - 96px) !important;
+        max-width:1120px !important;
+        margin-left:48px !important;
+        margin-right:auto !important;
       }
 
       .home-header{
@@ -706,57 +731,69 @@
       }
 
       .home-header-main{
-        width:100%;
-        margin-left:0;
-        margin-right:0;
-        grid-template-columns:minmax(260px, 360px) minmax(360px, 1fr);
-        gap:34px;
-        justify-content:stretch;
+        display:grid !important;
+        grid-template-columns:minmax(0, 1fr) 480px !important;
+        gap:34px !important;
+        align-items:center !important;
+        width:100% !important;
+        margin:0 !important;
+        padding:0 !important;
       }
 
       .home-header-text{
-        margin-left:0;
-        margin-right:0;
+        justify-self:start !important;
+        align-self:center !important;
+        width:100% !important;
+        max-width:none !important;
+        margin:0 !important;
+        padding:0 !important;
+        text-align:left !important;
       }
 
       .home-logo{
+        margin-left:0 !important;
+        padding-left:0 !important;
+        text-align:left !important;
         font-size:3rem;
       }
 
       .home-lead{
-        max-width:360px;
+        margin-left:0 !important;
+        padding-left:0 !important;
+        text-align:left !important;
+        max-width:360px !important;
       }
 
       .home-header-promo{
-        display:block;
-        width:100%;
-        max-width:520px;
-        justify-self:end;
-        align-self:center;
-      }
-
-      .home-header-promo .simulation-hero{
-        min-height:128px;
-        width:100%;
-        border-radius:16px;
-        box-shadow:0 10px 24px rgba(0,0,0,.20);
-      }
-
-      .home-header-promo .simulation-hero::before{
-        border-radius:16px;
+        display:block !important;
+        justify-self:end !important;
+        align-self:center !important;
+        width:480px !important;
+        max-width:480px !important;
+        height:118px !important;
+        margin:0 !important;
+        padding:0 !important;
       }
 
       .home-tabs{
-        width:100%;
-        margin-left:0;
-        margin-right:0;
+        width:100% !important;
+        margin-left:0 !important;
+        margin-right:0 !important;
+        padding-left:0 !important;
+        padding-right:0 !important;
+      }
+
+      .home-tab,
+      .home-menu-summary{
+        padding-left:8px;
+        padding-right:8px;
       }
 
       .main-stack{
         gap:11px;
       }
 
-      main .main-stack > .simulation-hero{
+      .simulation-hero{
         display:none;
       }
 
@@ -789,6 +826,14 @@
       .home-header{
         margin-bottom:9px;
         padding:38px 0 0;
+      }
+
+      .home-header-main{
+        display:block;
+      }
+
+      .home-header-promo{
+        display:none;
       }
 
       .home-logo{
@@ -991,7 +1036,9 @@
           </div>
 
           <div class="home-header-promo" aria-label="MCバトルシミュレーション">
-            <a class="simulation-hero" href="simulation.html" aria-label="MCバトルシミュレーション"></a>
+            <a class="home-promo-link" href="simulation.html">
+              <img class="home-promo-img" src="images/simulation-hero.jpg?v=6" alt="MCバトルシミュレーション">
+            </a>
           </div>
         </div>
 
