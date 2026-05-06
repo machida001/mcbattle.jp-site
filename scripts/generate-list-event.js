@@ -84,6 +84,10 @@ ${escapeScriptJson(jsonLd)}
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    :root{
+      --home-header-max: 1040px;
+    }
+
     .home-header{
       position:relative;
       margin-bottom:18px;
@@ -96,7 +100,7 @@ ${escapeScriptJson(jsonLd)}
     }
 
     .home-header-inner{
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
+      width:min(calc(100% - (var(--page-gutter) * 2)), var(--home-header-max));
       margin-left:auto;
       margin-right:auto;
     }
@@ -478,13 +482,17 @@ ${escapeScriptJson(jsonLd)}
 
     @media (min-width: 1024px){
       .home-header-inner{
-        width:min(var(--content-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
+        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
         margin-left:var(--pc-left-gutter);
         margin-right:auto;
       }
 
       .home-logo{
         font-size:3rem;
+      }
+
+      .home-lead{
+        white-space:nowrap;
       }
     }
 
