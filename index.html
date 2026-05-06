@@ -129,6 +129,15 @@
       border-bottom:1px solid rgba(255,255,255,.14);
     }
 
+    /* style.css の header:not(.page-header) による幅固定を、トップページだけ解除 */
+    header.home-header{
+      width:100%;
+      max-width:none;
+      margin-left:0;
+      margin-right:0;
+      padding:26px 0 0;
+    }
+
     .home-header-inner{
       width:min(calc(100% - (var(--page-gutter, 24px) * 2)), var(--content-max, 980px));
       margin-left:auto;
@@ -707,6 +716,14 @@
         background:transparent;
       }
 
+      header.home-header{
+        width:100%;
+        max-width:none;
+        margin-left:0;
+        margin-right:0;
+        padding:26px 0 0;
+      }
+
       .home-header-inner{
         width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter, 72px) - var(--page-gutter, 24px)));
         margin-left:var(--pc-left-gutter, 72px);
@@ -822,6 +839,14 @@
 
       .home-header{
         margin-bottom:9px;
+        padding:38px 0 0;
+      }
+
+      header.home-header{
+        width:100%;
+        max-width:none;
+        margin-left:0;
+        margin-right:0;
         padding:38px 0 0;
       }
 
