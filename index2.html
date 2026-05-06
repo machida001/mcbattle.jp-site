@@ -68,6 +68,7 @@
       --muted:#aeb5c4;
       --accent:#d8b46a;
       --accent-strong:#f1c66d;
+      --accent-weak:rgba(216,180,106,.18);
       --accent-2:#8fb3ff;
       --danger:#d97f7f;
       --shadow:0 16px 42px rgba(0,0,0,.25);
@@ -313,9 +314,10 @@
       border:1px solid rgba(216,180,106,.52);
       border-radius:22px;
       background:
-        linear-gradient(90deg, rgba(13,15,22,.98) 0%, rgba(15,17,24,.88) 48%, rgba(15,17,24,.42) 100%),
-        radial-gradient(circle at 78% 24%, rgba(216,180,106,.34), transparent 25%),
-        linear-gradient(135deg, #11141d 0%, #1b1f2c 100%);
+        linear-gradient(90deg, rgba(13,15,22,.98) 0%, rgba(15,17,24,.9) 44%, rgba(15,17,24,.34) 100%),
+        radial-gradient(circle at 82% 18%, rgba(245,207,128,.32), transparent 23%),
+        radial-gradient(circle at 70% 58%, rgba(216,180,106,.18), transparent 24%),
+        linear-gradient(135deg, #10131c 0%, #1b1f2c 100%);
       box-shadow:
         0 0 0 1px rgba(255,255,255,.025) inset,
         0 16px 40px rgba(0,0,0,.28);
@@ -329,19 +331,14 @@
     .simulation-hero::before{
       content:"";
       position:absolute;
-      right:-3%;
-      top:0;
-      width:50%;
-      height:100%;
-      background:
-        radial-gradient(circle at 61% 26%, rgba(255,219,140,.38), transparent 21%),
-        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)),
-        url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20230'%3E%3Crect%20width='300'%20height='230'%20fill='none'/%3E%3Ccircle%20cx='190'%20cy='66'%20r='21'%20fill='%23040508'/%3E%3Cpath%20d='M171%2088%20C145%20106%20140%20142%20131%20230%20L262%20230%20C249%20147%20235%20108%20211%2089%20C199%20101%20181%20102%20171%2088Z'%20fill='%23040508'/%3E%3Cpath%20d='M151%20110%20L91%20130%20L99%20147%20L159%20127Z'%20fill='%23040508'/%3E%3Crect%20x='73'%20y='123'%20width='36'%20height='12'%20rx='6'%20fill='%23040508'/%3E%3Cpath%20d='M177%2051%20C190%2040%20210%2043%20220%2056%20C210%2050%20191%2049%20177%2051Z'%20fill='%23040508'/%3E%3C/svg%3E");
+      inset:0;
+      background-image:
+        linear-gradient(90deg, rgba(11,13,19,.06) 0%, rgba(11,13,19,.16) 42%, rgba(11,13,19,.12) 100%),
+        url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20360'%3E%3Cdefs%3E%3CradialGradient%20id='g1'%20cx='76%25'%20cy='18%25'%20r='55%25'%3E%3Cstop%20offset='0%25'%20stop-color='%23f0c96f'%20stop-opacity='.72'/%3E%3Cstop%20offset='36%25'%20stop-color='%23b78131'%20stop-opacity='.25'/%3E%3Cstop%20offset='100%25'%20stop-color='%23080a0f'%20stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient%20id='floor'%20x1='0'%20x2='1'%20y1='0'%20y2='1'%3E%3Cstop%20offset='0%25'%20stop-color='%23121622'/%3E%3Cstop%20offset='100%25'%20stop-color='%23080a10'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='800'%20height='360'%20fill='url(%23floor)'/%3E%3Crect%20width='800'%20height='360'%20fill='url(%23g1)'/%3E%3Cpath%20d='M520%200%20L710%20360%20L800%20360%20L800%200Z'%20fill='%23f0c96f'%20opacity='.16'/%3E%3Cpath%20d='M360%200%20L540%20360%20L710%20360%20L490%200Z'%20fill='%23f0c96f'%20opacity='.09'/%3E%3Cellipse%20cx='636'%20cy='94'%20rx='32'%20ry='27'%20fill='%2306070a'/%3E%3Cpath%20d='M600%20122%20C557%20152%20542%20216%20527%20360%20L728%20360%20C704%20217%20692%20150%20655%20120%20C640%20138%20616%20139%20600%20122Z'%20fill='%2306070a'/%3E%3Cpath%20d='M576%20160%20L434%20192%20L445%20213%20L589%20181Z'%20fill='%2306070a'/%3E%3Crect%20x='393'%20y='184'%20width='58'%20height='16'%20rx='8'%20fill='%2306070a'/%3E%3Cpath%20d='M611%2069%20C632%2051%20666%2057%20684%2076%20C662%2069%20635%2066%20611%2069Z'%20fill='%2306070a'/%3E%3Ccircle%20cx='670'%20cy='55'%20r='10'%20fill='%23f0c96f'%20opacity='.38'/%3E%3Ccircle%20cx='714'%20cy='48'%20r='7'%20fill='%23f0c96f'%20opacity='.32'/%3E%3Ccircle%20cx='744'%20cy='72'%20r='11'%20fill='%23f0c96f'%20opacity='.25'/%3E%3C/svg%3E");
       background-repeat:no-repeat;
       background-size:cover;
-      background-position:center right;
-      opacity:.9;
-      filter:drop-shadow(0 18px 26px rgba(0,0,0,.35));
+      background-position:center center;
+      opacity:.92;
       pointer-events:none;
     }
 
@@ -350,8 +347,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg, rgba(10,12,18,0) 0%, rgba(10,12,18,.05) 42%, rgba(10,12,18,.22) 100%),
-        radial-gradient(circle at 83% 25%, rgba(216,180,106,.13), transparent 22%);
+        linear-gradient(90deg, rgba(10,12,18,.64) 0%, rgba(10,12,18,.38) 42%, rgba(10,12,18,.08) 100%),
+        radial-gradient(circle at 82% 22%, rgba(216,180,106,.12), transparent 25%);
       pointer-events:none;
     }
 
@@ -614,11 +611,15 @@
         box-shadow .18s ease;
     }
 
-    .event-row:hover{
+    a.event-row:hover{
       transform:translateY(-1px);
       border-color:rgba(216,180,106,.35);
       background:rgba(18,22,33,.55);
       box-shadow:0 10px 22px rgba(0,0,0,.18);
+    }
+
+    .event-row.is-static{
+      cursor:default;
     }
 
     .event-date-box{
@@ -671,7 +672,18 @@
       color:var(--muted);
       font-size:.82rem;
       font-weight:700;
-      line-height:1.25;
+      line-height:1.28;
+      word-break:break-word;
+      overflow-wrap:anywhere;
+    }
+
+    .event-winner{
+      display:block;
+      margin-top:2px;
+      color:#d4d9e5;
+      font-size:.82rem;
+      font-weight:800;
+      line-height:1.28;
       word-break:break-word;
       overflow-wrap:anywhere;
     }
@@ -686,6 +698,10 @@
       line-height:1;
       opacity:.9;
       transform:translateY(-1px);
+    }
+
+    .event-row.is-static .event-arrow{
+      display:none;
     }
 
     .ranking-row{
@@ -884,14 +900,8 @@
         border-radius:20px;
       }
 
-      .simulation-hero::before{
-        right:-7%;
-        width:55%;
-        opacity:.86;
-      }
-
       .simulation-content{
-        width:71%;
+        width:70%;
         min-height:178px;
         padding:23px 22px 21px;
       }
@@ -995,7 +1005,8 @@
         line-height:1.22;
       }
 
-      .event-sub{
+      .event-sub,
+      .event-winner{
         margin-top:2px;
         font-size:.75rem;
       }
@@ -1054,7 +1065,7 @@
       }
 
       .simulation-content{
-        width:74%;
+        width:72%;
         padding-left:19px;
         padding-right:17px;
       }
@@ -1097,7 +1108,7 @@
         <nav class="home-tabs" aria-label="主要メニュー">
           <a class="home-tab is-active" href="./">ホーム</a>
 
-          <details class="home-menu">
+          <details class="home-menu" data-menu="data">
             <summary class="home-menu-summary">データ</summary>
             <div class="home-submenu">
               <a href="list_mc.html">MC一覧</a>
@@ -1105,7 +1116,7 @@
             </div>
           </details>
 
-          <details class="home-menu">
+          <details class="home-menu" data-menu="ranking">
             <summary class="home-menu-summary">ランキング</summary>
             <div class="home-submenu">
               <a href="score_ranking.html">スコアランキング</a>
@@ -1167,7 +1178,6 @@
               <h2 class="section-title">
                 <span class="section-title-label">閲覧数の多いMC</span>
               </h2>
-              <a class="section-more" href="list_mc.html">もっと見る</a>
             </div>
             <ul id="hot-mc-list" class="hot-mc-list"></ul>
           </div>
@@ -1179,7 +1189,6 @@
               <h2 class="section-title">
                 <span class="section-title-label">Upcoming</span>
               </h2>
-              <a class="section-more" href="list_event.html">もっと見る</a>
             </div>
             <div id="future-events" class="event-list"></div>
             <div id="future-events-status" class="status">読み込み中…</div>
@@ -1240,6 +1249,33 @@
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
+    }
+
+    function setupExclusiveMenus() {
+      const menus = Array.from(document.querySelectorAll(".home-menu"));
+
+      menus.forEach((menu) => {
+        menu.addEventListener("toggle", () => {
+          if (!menu.open) return;
+
+          menus.forEach((other) => {
+            if (other !== menu) other.removeAttribute("open");
+          });
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        if (target.closest(".home-menu")) return;
+
+        menus.forEach((menu) => menu.removeAttribute("open"));
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        menus.forEach((menu) => menu.removeAttribute("open"));
+      });
     }
 
     function formatDateJP(raw) {
@@ -1306,6 +1342,10 @@
 
     function getEventLocation(event) {
       return event.location || "";
+    }
+
+    function getWinnerName(event) {
+      return event.winner_name || event.winner_team_name || event.champion_name || event.champion || "";
     }
 
     function getEventSubText(event) {
@@ -1410,6 +1450,8 @@
 
       const limit = Number(options.limit || items.length);
       const source = items.slice(0, limit);
+      const includeWinner = options.includeWinner === true;
+      const linkEvents = options.linkEvents !== false;
 
       container.innerHTML = source.map((event) => {
         const eventId = getEventId(event);
@@ -1418,12 +1460,13 @@
         const date = formatDateJP(rawDate);
         const day = getDayOfWeekJP(rawDate);
         const subText = getEventSubText(event);
+        const winnerName = includeWinner ? String(getWinnerName(event) || "").trim() : "";
 
-        const href = options.linkEvents === false
-          ? ""
-          : eventId
+        const href = linkEvents
+          ? eventId
             ? `detail_event/${encodeURIComponent(eventId)}.html`
-            : "list_event.html";
+            : "list_event.html"
+          : "";
 
         const inner = `
           <span class="event-date-box">
@@ -1433,6 +1476,7 @@
           <span class="event-body">
             <span class="event-name">${escapeHtml(name)}</span>
             ${subText ? `<span class="event-sub">${escapeHtml(subText)}</span>` : ""}
+            ${winnerName ? `<span class="event-winner">優勝：${escapeHtml(winnerName)}</span>` : ""}
           </span>
           <span class="event-arrow" aria-hidden="true">›</span>
         `;
@@ -1441,7 +1485,7 @@
           return `<a class="event-row" href="${href}">${inner}</a>`;
         }
 
-        return `<div class="event-row">${inner}</div>`;
+        return `<div class="event-row is-static">${inner}</div>`;
       }).join("");
     }
 
@@ -1517,14 +1561,16 @@
 
         renderEventList("future-events", upcomingEvents, "今後開催予定の大会はありません", {
           limit: 2,
-          linkEvents: false
+          linkEvents: false,
+          includeWinner: false
         });
         setStatus("future-events-status", upcomingEvents.length ? "" : "今後開催予定の大会はありません");
         setEmptyCard("future-events-card", upcomingEvents.length === 0);
 
         renderEventList("recent-events", recentEvents, "データがありません", {
           limit: 3,
-          linkEvents: true
+          linkEvents: true,
+          includeWinner: true
         });
         setStatus("recent-events-status", recentEvents.length ? "" : "データがありません");
 
@@ -1549,6 +1595,7 @@
       }
     }
 
+    setupExclusiveMenus();
     loadIndexData();
   </script>
 </body>
