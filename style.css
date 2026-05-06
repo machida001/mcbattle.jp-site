@@ -22,6 +22,7 @@
 
   /* layout */
   --content-max: 800px;
+  --home-header-max: 1040px;
   --pc-left-gutter: 130px;
   --page-gutter: 16px;
 }
@@ -95,7 +96,12 @@ header.page-header {
   margin-bottom: 28px;
 }
 
-header:not(.page-header) {
+/*
+  .home-header は各ページ側のCSSで index.html 風の広いヘッダーとして制御する。
+  ここで通常 header と同じ幅制限をかけると、.home-header 全体が 800px に縮み、
+  各ページで指定した .home-header-inner の 1040px 幅が効かなくなる。
+*/
+header:not(.page-header):not(.home-header) {
   width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
   margin-left: auto;
   margin-right: auto;
@@ -129,7 +135,7 @@ body > p:first-of-type {
     margin-right: auto;
   }
 
-  header:not(.page-header),
+  header:not(.page-header):not(.home-header),
   body > p:first-of-type {
     width: min(var(--content-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
     margin-left: var(--pc-left-gutter);
@@ -512,7 +518,7 @@ hr {
       56px;
   }
 
-  header:not(.page-header) {
+  header:not(.page-header):not(.home-header) {
     padding:
       calc(20px + env(safe-area-inset-top))
       12px
