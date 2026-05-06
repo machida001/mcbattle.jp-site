@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -34,6 +35,8 @@
   <style>
     :root{
       --home-header-max: 1040px;
+      --page-gutter: 16px;
+      --pc-left-gutter: 52px;
     }
 
     .home-header{
@@ -216,6 +219,11 @@
       background:rgba(216,180,106,.1);
       color:#fff7e8;
       text-decoration:none !important;
+    }
+
+    .mcs-page{
+      width:min(calc(100% - (var(--page-gutter) * 2)), var(--home-header-max));
+      margin:0 auto 44px;
     }
 
     .page-top{
@@ -559,7 +567,8 @@
     }
 
     @media (min-width: 1024px){
-      .home-header-inner{
+      .home-header-inner,
+      .mcs-page{
         width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
         margin-left:var(--pc-left-gutter);
         margin-right:auto;
@@ -580,7 +589,8 @@
         padding:38px 0 0;
       }
 
-      .home-header-inner{
+      .home-header-inner,
+      .mcs-page{
         width:calc(100% - 24px);
       }
 
@@ -735,7 +745,8 @@
     }
 
     @media (max-width: 390px){
-      .home-header-inner{
+      .home-header-inner,
+      .mcs-page{
         width:calc(100% - 20px);
       }
 
