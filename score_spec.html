@@ -42,11 +42,7 @@
       overflow-x: hidden;  
     }  
   
-    .spec-page {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding-left: 24px;
-      padding-right: 24px;  
+    .spec-page {  
       overflow-x: hidden;  
     }  
   
@@ -513,38 +509,566 @@
         padding-right:4px;  
         font-size:.84rem;  
       }  
-    }  
+    }
+
+/* === Header matched to score_ranking: override block === */
+.home-header {    
+      position:relative;    
+      margin-bottom:18px;    
+      padding:26px 0 0;    
+      background:    
+        linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),    
+        radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);    
+      border-bottom:1px solid rgba(255,255,255,.14);    
+      z-index:40;    
+    }
+
+.home-header-inner {    
+      width:min(calc(100% - (var(--page-gutter) * 2)), var(--home-header-max));    
+      margin-left:auto;    
+      margin-right:auto;    
+    }
+
+.home-logo {    
+      margin:0 0 6px;    
+      font-family:"Times New Roman", Georgia, serif;    
+      font-style:italic;    
+      font-size:clamp(2.08rem, 7.8vw, 3.15rem);    
+      font-weight:800;    
+      line-height:.95;    
+      letter-spacing:-.055em;    
+      color:var(--accent);    
+      text-shadow:0 10px 26px rgba(0,0,0,.18);    
+    }
+
+.home-logo a {    
+      color:inherit;    
+      text-decoration:none !important;    
+    }
+
+.home-lead {    
+      margin:0 0 13px;    
+      color:#f0f2f6;    
+      font-size:1rem;    
+      font-weight:700;    
+      line-height:1.48;    
+      letter-spacing:-.02em;    
+    }
+
+.home-tabs {    
+      position:relative;    
+      display:flex;    
+      align-items:center;    
+      gap:0;    
+      width:100%;    
+      border-top:1px solid rgba(255,255,255,.13);    
+      border-bottom:1px solid rgba(255,255,255,.13);    
+      overflow:visible;    
+      z-index:50;    
+    }
+
+.home-tab,    
+    .home-menu-summary {    
+      position:relative;    
+      flex:1 1 0;    
+      min-width:0;    
+      padding:11px 8px 12px;    
+      color:#f3f4f6;    
+      font-size:.96rem;    
+      font-weight:800;    
+      line-height:1.1;    
+      text-align:center;    
+      white-space:nowrap;    
+      opacity:.96;    
+      transition:color .18s ease, opacity .18s ease;    
+      cursor:pointer;    
+      text-decoration:none !important;    
+    }
+
+.home-tab:hover,    
+    .home-menu-summary:hover {    
+      color:#fff7e8;    
+      opacity:1;    
+      text-decoration:none !important;    
+    }
+
+.home-tab.is-active,    
+    .home-menu.is-current .home-menu-summary {    
+      color:var(--accent);    
+    }
+
+.home-tab.is-active::after,    
+    .home-menu.is-current .home-menu-summary::before,    
+    .home-menu[open] .home-menu-summary::before {    
+      content:"";    
+      position:absolute;    
+      left:12px;    
+      right:12px;    
+      bottom:-1px;    
+      height:3px;    
+      border-radius:999px 999px 0 0;    
+      background:var(--accent);    
+      box-shadow:0 0 18px rgba(216,180,106,.28);    
+    }
+
+.home-menu {    
+      position:relative;    
+      flex:1 1 0;    
+      min-width:0;    
+    }
+
+.home-menu summary {    
+      list-style:none;    
+    }
+
+.home-menu summary::-webkit-details-marker {    
+      display:none;    
+    }
+
+.home-menu-summary::after {    
+      content:"";    
+      display:inline-block;    
+      width:0;    
+      height:0;    
+      margin-left:5px;    
+      border-left:4px solid transparent;    
+      border-right:4px solid transparent;    
+      border-top:5px solid currentColor;    
+      transform:translateY(-1px);    
+      opacity:.75;    
+    }
+
+.home-menu[open] .home-menu-summary {    
+      color:var(--accent);    
+    }
+
+.home-submenu {    
+      position:absolute;    
+      top:calc(100% + 8px);    
+      left:50%;    
+      z-index:80;    
+      min-width:176px;    
+      padding:8px;    
+      border:1px solid rgba(216,180,106,.24);    
+      border-radius:14px;    
+      background:    
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),    
+        rgba(18,21,30,.98);    
+      box-shadow:    
+        0 16px 34px rgba(0,0,0,.34),    
+        0 0 0 1px rgba(255,255,255,.018) inset;    
+      transform:translateX(-50%);    
+    }
+
+.home-submenu a {    
+      display:flex;    
+      align-items:center;    
+      justify-content:space-between;    
+      gap:12px;    
+      min-height:38px;    
+      padding:0 12px;    
+      border-radius:10px;    
+      color:#f3f4f6;    
+      font-size:.9rem;    
+      font-weight:800;    
+      line-height:1;    
+      white-space:nowrap;    
+      text-decoration:none !important;    
+      transition:    
+        background-color .18s ease,    
+        color .18s ease,    
+        opacity .18s ease;    
+    }
+
+.home-submenu a::after {    
+      content:"›";    
+      color:var(--accent);    
+      font-size:1.15rem;    
+      line-height:1;    
+      opacity:.8;    
+    }
+
+.home-submenu a:hover {    
+      background:rgba(216,180,106,.1);    
+      color:#fff7e8;    
+      text-decoration:none !important;    
+    }
+
+.home-header-inner {    
+        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));    
+        margin-left:var(--pc-left-gutter);    
+        margin-right:auto;    
+      }
+
+.home-logo {    
+        font-size:3rem;    
+      }
+
+.home-lead {    
+        white-space:nowrap;    
+      }
+
+.home-header {    
+        margin-bottom:14px;    
+        padding:38px 0 0;    
+      }
+
+.home-header-inner {    
+        width:calc(100% - 24px);    
+      }
+
+.home-logo {    
+        margin-bottom:5px;    
+        font-size:2.42rem;    
+      }
+
+.home-lead {    
+        margin-bottom:12px;    
+        font-size:.96rem;    
+        line-height:1.42;    
+        letter-spacing:-.025em;    
+      }
+
+.home-tabs {    
+        margin-left:-1px;    
+        margin-right:-1px;    
+      }
+
+.home-tab,    
+      .home-menu-summary {    
+        padding:10px 5px 11px;    
+        font-size:.9rem;    
+      }
+
+.home-tab.is-active::after,    
+      .home-menu.is-current .home-menu-summary::before,    
+      .home-menu[open] .home-menu-summary::before {    
+        left:8px;    
+        right:8px;    
+        height:3px;    
+      }
+
+.home-submenu {    
+        min-width:158px;    
+        top:calc(100% + 7px);    
+      }
+
+.home-menu[data-menu="data"] .home-submenu {    
+        left:0;    
+        transform:none;    
+      }
+
+.home-submenu a {    
+        min-height:37px;    
+        font-size:.86rem;    
+      }
+
+.home-header-inner {    
+        width:calc(100% - 20px);    
+      }
+
+.home-logo {    
+        font-size:2.32rem;    
+      }
+
+.home-lead {    
+        font-size:.92rem;    
+      }
+
+.home-tab,    
+      .home-menu-summary {    
+        padding-left:4px;    
+        padding-right:4px;    
+        font-size:.84rem;    
+      }
+
+@media (min-width: 1024px){    
+      .home-header-inner{    
+        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));    
+        margin-left:var(--pc-left-gutter);    
+        margin-right:auto;    
+      }    
+    
+      .home-logo{    
+        font-size:3rem;    
+      }    
+    
+      .home-lead{    
+        white-space:nowrap;    
+      }    
+    }
+
+@media (max-width: 640px) {    
+      .home-header{    
+        margin-bottom:14px;    
+        padding:38px 0 0;    
+      }    
+    
+      .home-header-inner{    
+        width:calc(100% - 24px);    
+      }    
+    
+      .home-logo{    
+        margin-bottom:5px;    
+        font-size:2.42rem;    
+      }    
+    
+      .home-lead{    
+        margin-bottom:12px;    
+        font-size:.96rem;    
+        line-height:1.42;    
+        letter-spacing:-.025em;    
+      }    
+    
+      .home-tabs{    
+        margin-left:-1px;    
+        margin-right:-1px;    
+      }    
+    
+      .home-tab,    
+      .home-menu-summary{    
+        padding:10px 5px 11px;    
+        font-size:.9rem;    
+      }    
+    
+      .home-tab.is-active::after,    
+      .home-menu.is-current .home-menu-summary::before,    
+      .home-menu[open] .home-menu-summary::before{    
+        left:8px;    
+        right:8px;    
+        height:3px;    
+      }    
+    
+      .home-submenu{    
+        min-width:158px;    
+        top:calc(100% + 7px);    
+      }    
+    
+      .home-menu[data-menu="data"] .home-submenu{    
+        left:0;    
+        transform:none;    
+      }    
+    
+      .home-submenu a{    
+        min-height:37px;    
+        font-size:.86rem;    
+      }    
+    
+      .page-top{    
+        margin-bottom:12px;    
+      }    
+    
+      .page-header-block{    
+        margin-bottom:12px;    
+      }    
+    
+      .page-header-block h1{    
+        font-size:clamp(1.5rem, 5.3vw, 1.95rem);    
+        line-height:1.12;    
+      }    
+    
+      .spec-card-link{    
+        margin-bottom: 8px;    
+        padding: 10px 12px;    
+        border-radius: 15px;    
+      }    
+    
+      .spec-card-title{    
+        font-size: 0.9rem;    
+      }    
+    
+      .top3-row {    
+        gap: 10px;    
+        padding: 10px 0;    
+      }    
+    
+      .top3-left {    
+        gap: 7px;    
+        font-size: 0.98rem;    
+      }    
+    
+      .top3-medal {    
+        font-size: 0.92em;    
+      }    
+    
+      .top3-score {    
+        font-size: 0.98rem;    
+      }    
+    
+      .rankings-card-inner {    
+        padding-left: 10px;    
+        padding-right: 10px;    
+      }    
+    
+      .rankings-card-head{    
+        margin-bottom: 6px;    
+      }    
+    
+      table.rankings-table col:nth-child(1) {    
+        width: 42px;    
+      }    
+    
+      table.rankings-table col:nth-child(3) {    
+        width: 62px;    
+      }    
+    
+      table.rankings-table td {    
+        padding: 8px 4px;    
+        font-size: 0.9rem;    
+      }    
+    
+      .rank-name-link,    
+      .rank-name-text {    
+        line-height: 1.28;    
+      }    
+    
+      .rank-score {    
+        font-size: 0.94rem;    
+      }    
+    }
+
+@media (max-width: 390px){    
+      .home-header-inner{    
+        width:calc(100% - 20px);    
+      }    
+    
+      .home-logo{    
+        font-size:2.32rem;    
+      }    
+    
+      .home-lead{    
+        font-size:.92rem;    
+      }    
+    
+      .home-tab,    
+      .home-menu-summary{    
+        padding-left:4px;    
+        padding-right:4px;    
+        font-size:.84rem;    
+      }    
+    }
+
+    /* === Safety override: prevent mobile header overflow === */
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .home-header {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: clip;
+      box-sizing: border-box;
+    }
+
+    .home-header-inner {
+      box-sizing: border-box;
+      width: min(calc(100% - (var(--page-gutter, 24px) * 2)), var(--home-header-max, 1040px)) !important;
+      max-width: calc(100% - (var(--page-gutter, 24px) * 2)) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .home-logo,
+    .home-lead,
+    .home-tabs {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .home-lead {
+      overflow-wrap: anywhere;
+    }
+
+    .home-tabs {
+      width: 100%;
+      min-width: 0;
+      overflow: visible;
+    }
+
+    .home-tab,
+    .home-menu,
+    .home-menu-summary {
+      min-width: 0;
+    }
+
+    @media (max-width: 767px) {
+      .home-header {
+        padding-top: 26px;
+      }
+
+      .home-header-inner {
+        width: calc(100% - 48px) !important;
+        max-width: calc(100% - 48px) !important;
+        margin-left: 24px !important;
+        margin-right: 24px !important;
+      }
+
+      .home-logo {
+        font-size: clamp(2.08rem, 7.8vw, 3.15rem);
+        line-height: .95;
+        white-space: nowrap;
+      }
+
+      .home-lead {
+        font-size: 1rem;
+        line-height: 1.45;
+      }
+
+      .home-tabs {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .home-tab,
+      .home-menu-summary {
+        padding-left: 6px;
+        padding-right: 6px;
+        font-size: .96rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .home-header-inner {
+        width: min(var(--home-header-max, 1040px), calc(100% - var(--pc-left-gutter, 24px) - var(--page-gutter, 24px))) !important;
+        max-width: min(var(--home-header-max, 1040px), calc(100% - var(--pc-left-gutter, 24px) - var(--page-gutter, 24px))) !important;
+        margin-left: var(--pc-left-gutter, 24px) !important;
+        margin-right: auto !important;
+      }
+    }
+  
   </style>  
 </head>  
 <body>  
-  <header class="home-header">  
-    <div class="home-header-inner">  
-      <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>  
-      <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>  
-  
-      <nav class="home-tabs" aria-label="主要メニュー">  
-        <a class="home-tab" href="./">ホーム</a>  
-  
-        <details class="home-menu" data-menu="data">  
-          <summary class="home-menu-summary">データ</summary>  
-          <div class="home-submenu">  
-            <a href="list_mc.html">MC一覧</a>  
-            <a href="list_event.html">大会一覧</a>  
-          </div>  
-        </details>  
-  
-        <details class="home-menu is-current" data-menu="ranking">  
-          <summary class="home-menu-summary">ランキング</summary>  
-          <div class="home-submenu">  
-            <a href="score_ranking.html">スコアランキング</a>  
-            <a href="prize_ranking.html">賞金ランキング</a>  
-            <a href="score_spec.html">スコアリング仕様</a>  
-          </div>  
-        </details>  
-  
-        <a class="home-tab" href="articles.html">読み物</a>  
-      </nav>  
-    </div>  
+  <header class="home-header">    
+    <div class="home-header-inner">    
+      <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>    
+      <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>    
+    
+      <nav class="home-tabs" aria-label="主要メニュー">    
+        <details class="home-menu" data-menu="data">    
+          <summary class="home-menu-summary">Data</summary>    
+          <div class="home-submenu">    
+            <a href="list_mc.html">MC一覧</a>    
+            <a href="list_event.html">大会一覧</a>    
+          </div>    
+        </details>    
+    
+        <details class="home-menu is-current" data-menu="ranking">    
+          <summary class="home-menu-summary">Ranking</summary>    
+          <div class="home-submenu">    
+            <a href="score_ranking.html">スコアランキング</a>    
+            <a href="prize_ranking.html">賞金ランキング</a>    
+            <a href="score_spec.html">スコアリング仕様</a>    
+          </div>    
+        </details>    
+    
+        <a class="home-tab" href="simulation.html">Simulation</a>    
+        <a class="home-tab" href="articles.html">Reading</a>    
+      </nav>    
+    </div>    
   </header>  
   
   <div class="page spec-page">  
