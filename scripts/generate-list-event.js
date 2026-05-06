@@ -168,6 +168,25 @@ ${escapeScriptJson(jsonLd)}
       text-decoration:none !important;
     }
 
+    .home-tab.is-active,
+    .home-menu.is-current .home-menu-summary{
+      color:var(--accent);
+    }
+
+    .home-tab.is-active::after,
+    .home-menu.is-current .home-menu-summary::before,
+    .home-menu[open] .home-menu-summary::before{
+      content:"";
+      position:absolute;
+      left:12px;
+      right:12px;
+      bottom:-1px;
+      height:3px;
+      border-radius:999px 999px 0 0;
+      background:var(--accent);
+      box-shadow:0 0 18px rgba(216,180,106,.28);
+    }
+
     .home-menu{
       position:relative;
       flex:1 1 0;
@@ -197,18 +216,6 @@ ${escapeScriptJson(jsonLd)}
 
     .home-menu[open] .home-menu-summary{
       color:var(--accent);
-    }
-
-    .home-menu[open] .home-menu-summary::before{
-      content:"";
-      position:absolute;
-      left:12px;
-      right:12px;
-      bottom:-1px;
-      height:3px;
-      border-radius:999px 999px 0 0;
-      background:var(--accent);
-      box-shadow:0 0 18px rgba(216,180,106,.28);
     }
 
     .home-submenu{
@@ -529,6 +536,8 @@ ${escapeScriptJson(jsonLd)}
         font-size:.9rem;
       }
 
+      .home-tab.is-active::after,
+      .home-menu.is-current .home-menu-summary::before,
       .home-menu[open] .home-menu-summary::before{
         left:8px;
         right:8px;
@@ -538,6 +547,11 @@ ${escapeScriptJson(jsonLd)}
       .home-submenu{
         min-width:158px;
         top:calc(100% + 7px);
+      }
+
+      .home-menu[data-menu="data"] .home-submenu{
+        left:0;
+        transform:none;
       }
 
       .home-submenu a{
@@ -649,10 +663,8 @@ ${escapeScriptJson(jsonLd)}
       <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
 
       <nav class="home-tabs" aria-label="主要メニュー">
-        <a class="home-tab" href="./">ホーム</a>
-
-        <details class="home-menu" data-menu="data">
-          <summary class="home-menu-summary">データ</summary>
+        <details class="home-menu is-current" data-menu="data">
+          <summary class="home-menu-summary">Data</summary>
           <div class="home-submenu">
             <a href="list_mc.html">MC一覧</a>
             <a href="list_event.html">大会一覧</a>
@@ -660,7 +672,7 @@ ${escapeScriptJson(jsonLd)}
         </details>
 
         <details class="home-menu" data-menu="ranking">
-          <summary class="home-menu-summary">ランキング</summary>
+          <summary class="home-menu-summary">Ranking</summary>
           <div class="home-submenu">
             <a href="score_ranking.html">スコアランキング</a>
             <a href="prize_ranking.html">賞金ランキング</a>
@@ -668,7 +680,8 @@ ${escapeScriptJson(jsonLd)}
           </div>
         </details>
 
-        <a class="home-tab" href="articles.html">読み物</a>
+        <a class="home-tab" href="simulation.html">Simulation</a>
+        <a class="home-tab" href="articles.html">Reading</a>
       </nav>
     </div>
   </header>
