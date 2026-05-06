@@ -362,25 +362,9 @@
       justify-content:center;
     }
 
-    .simulation-badge{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:31px;
-      margin:0 0 13px;
-      padding:0 13px;
-      border:1px solid rgba(216,180,106,.58);
-      border-radius:999px;
-      color:var(--accent-strong);
-      background:rgba(13,15,22,.48);
-      font-size:.84rem;
-      font-weight:900;
-      line-height:1;
-      letter-spacing:.02em;
-    }
 
     .simulation-title{
-      margin:0 0 9px;
+      margin:0 0 10px;
       color:var(--accent-strong);
       font-size:clamp(1.48rem, 4.65vw, 2rem);
       font-weight:900;
@@ -399,76 +383,6 @@
       letter-spacing:-.028em;
     }
 
-    .quick-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:8px 9px;
-    }
-
-    .quick-card{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      min-height:64px;
-      padding:0 16px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.13);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018)),
-        linear-gradient(135deg, rgba(37,43,58,.96), rgba(24,28,39,.96));
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.018) inset,
-        0 10px 26px rgba(0,0,0,.18);
-      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
-    }
-
-    .quick-card:hover{
-      transform:translateY(-1px);
-      border-color:rgba(216,180,106,.38);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.025) inset,
-        0 14px 30px rgba(0,0,0,.22);
-    }
-
-    .quick-main{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:0;
-    }
-
-    .quick-icon{
-      flex:0 0 auto;
-      width:20px;
-      color:var(--accent);
-      font-size:1rem;
-      line-height:1;
-      text-align:center;
-      opacity:.95;
-    }
-
-    .quick-text{
-      min-width:0;
-      color:#f7f8fb;
-      font-size:.94rem;
-      font-weight:900;
-      line-height:1.16;
-      letter-spacing:-.035em;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .quick-arrow{
-      flex:0 0 auto;
-      color:#d9deea;
-      font-size:1.35rem;
-      font-weight:800;
-      line-height:1;
-      opacity:.9;
-      transform:translateY(-1px);
-    }
 
     .home-card{
       border:1px solid rgba(255,255,255,.13);
@@ -812,13 +726,7 @@
         padding:24px 30px 23px;
       }
 
-      .quick-card{
-        min-height:70px;
-      }
 
-      .quick-text{
-        font-size:1rem;
-      }
 
       .dashboard-grid{
         display:grid;
@@ -919,14 +827,7 @@
         font-size:.82rem;
       }
 
-      .quick-card{
-        min-height:62px;
-        padding:0 11px;
-      }
 
-      .quick-text{
-        font-size:.86rem;
-      }
 
       .event-row{
         grid-template-columns:84px minmax(0, 1fr) 22px;
@@ -974,45 +875,10 @@
       <div class="main-stack">
         <a class="simulation-hero" href="simulation.html">
           <div class="simulation-content">
-            <span class="simulation-badge">仮想</span>
             <h2 class="simulation-title">MCバトルシミュレーション</h2>
             <p class="simulation-lead">独自スコアを用いた現役勢8人の大会シミュレーション</p>
           </div>
         </a>
-
-        <section class="quick-grid" aria-label="主要ページ">
-          <a class="quick-card" href="score_ranking.html">
-            <span class="quick-main">
-              <span class="quick-icon" aria-hidden="true">♕</span>
-              <span class="quick-text">スコアランキング</span>
-            </span>
-            <span class="quick-arrow" aria-hidden="true">›</span>
-          </a>
-
-          <a class="quick-card" href="prize_ranking.html">
-            <span class="quick-main">
-              <span class="quick-icon" aria-hidden="true">♔</span>
-              <span class="quick-text">賞金ランキング</span>
-            </span>
-            <span class="quick-arrow" aria-hidden="true">›</span>
-          </a>
-
-          <a class="quick-card" href="list_event.html">
-            <span class="quick-main">
-              <span class="quick-icon" aria-hidden="true">□</span>
-              <span class="quick-text">大会一覧</span>
-            </span>
-            <span class="quick-arrow" aria-hidden="true">›</span>
-          </a>
-
-          <a class="quick-card" href="list_mc.html">
-            <span class="quick-main">
-              <span class="quick-icon" aria-hidden="true">♙</span>
-              <span class="quick-text">MC一覧</span>
-            </span>
-            <span class="quick-arrow" aria-hidden="true">›</span>
-          </a>
-        </section>
 
         <section id="hot-mc-card" class="home-card hot-mc-card" aria-label="閲覧数の多いMC">
           <div class="home-card-inner">
