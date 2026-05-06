@@ -312,54 +312,36 @@
       position:relative;
       display:block;
       min-height:146px;
-      padding:8px;
       overflow:hidden;
       border:none;
-      border-radius:22px;
-      background:
-        linear-gradient(110deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),
-        radial-gradient(circle at 100% 0%, rgba(216,180,106,.06), transparent 34%),
-        rgba(24,28,39,.34);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.035) inset,
-        0 14px 34px rgba(0,0,0,.22);
+      border-radius:20px;
+      background:#10131c;
+      box-shadow:0 12px 28px rgba(0,0,0,.22);
       transition:
         transform .18s ease,
-        box-shadow .18s ease,
-        background-color .18s ease;
+        box-shadow .18s ease;
     }
 
     .simulation-hero::before{
       content:"";
       position:absolute;
-      inset:8px;
-      border-radius:16px;
-      background-image:url("images/simulation-hero.jpg?v=5");
+      inset:0;
+      border-radius:20px;
+      background-image:url("images/simulation-hero.jpg?v=6");
       background-repeat:no-repeat;
       background-size:cover;
       background-position:center;
-      box-shadow:
-        0 0 0 1px rgba(216,180,106,.22),
-        0 0 0 1px rgba(255,255,255,.018) inset;
+      box-shadow:none;
       pointer-events:none;
     }
 
     .simulation-hero::after{
-      content:"";
-      position:absolute;
-      inset:8px;
-      border-radius:16px;
-      background:
-        linear-gradient(90deg, rgba(8,10,16,.03) 0%, rgba(8,10,16,0) 52%, rgba(8,10,16,.04) 100%);
-      pointer-events:none;
+      content:none;
     }
 
     .simulation-hero:hover{
       transform:translateY(-1px);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.045) inset,
-        0 16px 38px rgba(0,0,0,.28),
-        0 0 20px rgba(216,180,106,.08);
+      box-shadow:0 16px 34px rgba(0,0,0,.28);
     }
 
     .home-card{
@@ -715,7 +697,7 @@
       }
 
       .simulation-hero{
-        min-height:150px;
+        min-height:146px;
       }
 
       .dashboard-grid{
@@ -795,14 +777,13 @@
 
       .simulation-hero{
         min-height:124px;
-        padding:7px;
+        padding:0;
         border-radius:19px;
       }
 
-      .simulation-hero::before,
-      .simulation-hero::after{
-        inset:7px;
-        border-radius:14px;
+      .simulation-hero::before{
+        inset:0;
+        border-radius:19px;
       }
 
       .home-card{
