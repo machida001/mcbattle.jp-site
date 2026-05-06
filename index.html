@@ -75,6 +75,13 @@
       --danger:#d97f7f;
       --shadow:0 16px 42px rgba(0,0,0,.25);
       --radius:20px;
+
+      /*
+        PC/スマホ共通の横幅基準。
+        ヘッダー、ナビ、下のカードを同じ左端・同じ横幅にそろえる。
+      */
+      --home-content-max:980px;
+      --home-gutter:24px;
     }
 
     *{
@@ -105,8 +112,9 @@
       text-decoration:none;
     }
 
-    .container{
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
+    .container,
+    .home-header-inner{
+      width:min(calc(100% - (var(--home-gutter) * 2)), var(--home-content-max));
       margin-left:auto;
       margin-right:auto;
     }
@@ -126,51 +134,13 @@
       border-bottom:1px solid rgba(255,255,255,.14);
     }
 
-    .home-header-inner{
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
-      margin-left:auto;
-      margin-right:auto;
-    }
-
     .home-header-main{
       display:block;
-      width:100%;
+      margin-bottom:13px;
     }
 
     .home-header-text{
       min-width:0;
-    }
-
-    .home-header-promo{
-      display:none;
-    }
-
-    .home-promo-link{
-      display:block;
-      width:100%;
-      overflow:hidden;
-      border:1px solid rgba(216,180,106,.34);
-      border-radius:14px;
-      background:#10131c;
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-      transition:
-        transform .18s ease,
-        border-color .18s ease,
-        box-shadow .18s ease;
-    }
-
-    .home-promo-link:hover{
-      transform:translateY(-1px);
-      border-color:rgba(216,180,106,.54);
-      box-shadow:0 14px 30px rgba(0,0,0,.24);
-    }
-
-    .home-promo-img{
-      display:block;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
     }
 
     .home-logo{
@@ -191,12 +161,53 @@
     }
 
     .home-lead{
-      margin:0 0 13px;
+      margin:0;
       color:#f0f2f6;
       font-size:1rem;
       font-weight:700;
       line-height:1.48;
       letter-spacing:-.02em;
+    }
+
+    /*
+      PC版ヘッダー右上のシミュレーションカード。
+      下のメニューへ食い込ませないため、ヘッダー本文グリッド内に閉じ込める。
+    */
+    .header-simulation-hero{
+      display:none;
+      position:relative;
+      min-width:0;
+      height:118px;
+      overflow:hidden;
+      border:1px solid rgba(216,180,106,.38);
+      border-radius:18px;
+      background:#10131c;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.02) inset,
+        0 12px 28px rgba(0,0,0,.22);
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .header-simulation-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:url("images/simulation-hero.jpg?v=6");
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-position:center;
+      pointer-events:none;
+    }
+
+    .header-simulation-hero:hover{
+      transform:translateY(-1px);
+      border-color:rgba(216,180,106,.58);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.025) inset,
+        0 16px 34px rgba(0,0,0,.28);
     }
 
     .home-tabs{
@@ -349,6 +360,10 @@
       gap:10px;
     }
 
+    /*
+      スマホ用の大きいシミュレーションカード。
+      PCではヘッダー右上に移すため非表示にする。
+    */
     .simulation-hero{
       position:relative;
       display:block;
@@ -718,82 +733,44 @@
     }
 
     @media (min-width: 1024px){
-      .container,
-      .home-header-inner{
-        width:calc(100% - 96px) !important;
-        max-width:1120px !important;
-        margin-left:48px !important;
-        margin-right:auto !important;
+      .site-shell{
+        padding-top:18px;
       }
 
       .home-header{
-        padding-top:26px;
+        padding-top:28px;
       }
 
       .home-header-main{
-        display:grid !important;
-        grid-template-columns:minmax(0, 1fr) 480px !important;
-        gap:34px !important;
-        align-items:center !important;
-        width:100% !important;
-        margin:0 !important;
-        padding:0 !important;
-      }
-
-      .home-header-text{
-        justify-self:start !important;
-        align-self:center !important;
-        width:100% !important;
-        max-width:none !important;
-        margin:0 !important;
-        padding:0 !important;
-        text-align:left !important;
+        display:grid;
+        grid-template-columns:minmax(0, 360px) minmax(360px, 1fr);
+        align-items:center;
+        gap:24px;
+        margin-bottom:14px;
       }
 
       .home-logo{
-        margin-left:0 !important;
-        padding-left:0 !important;
-        text-align:left !important;
         font-size:3rem;
       }
 
       .home-lead{
-        margin-left:0 !important;
-        padding-left:0 !important;
-        text-align:left !important;
-        max-width:360px !important;
+        max-width:360px;
+        font-size:1rem;
+        line-height:1.48;
       }
 
-      .home-header-promo{
-        display:block !important;
-        justify-self:end !important;
-        align-self:center !important;
-        width:480px !important;
-        max-width:480px !important;
-        height:118px !important;
-        margin:0 !important;
-        padding:0 !important;
-      }
-
-      .home-tabs{
-        width:100% !important;
-        margin-left:0 !important;
-        margin-right:0 !important;
-        padding-left:0 !important;
-        padding-right:0 !important;
-      }
-
-      .home-tab,
-      .home-menu-summary{
-        padding-left:8px;
-        padding-right:8px;
+      .header-simulation-hero{
+        display:block;
+        width:100%;
+        max-width:430px;
+        justify-self:end;
       }
 
       .main-stack{
         gap:11px;
       }
 
-      .simulation-hero{
+      .main-stack > .simulation-hero{
         display:none;
       }
 
@@ -813,14 +790,13 @@
     }
 
     @media (max-width: 640px){
+      :root{
+        --home-gutter:12px;
+      }
+
       .site-shell{
         padding-top:0;
         padding-bottom:22px;
-      }
-
-      .container,
-      .home-header-inner{
-        width:calc(100% - 24px);
       }
 
       .home-header{
@@ -829,11 +805,7 @@
       }
 
       .home-header-main{
-        display:block;
-      }
-
-      .home-header-promo{
-        display:none;
+        margin-bottom:12px;
       }
 
       .home-logo{
@@ -842,7 +814,7 @@
       }
 
       .home-lead{
-        margin-bottom:12px;
+        margin-bottom:0;
         font-size:.96rem;
         line-height:1.42;
         letter-spacing:-.025em;
@@ -990,9 +962,8 @@
     }
 
     @media (max-width: 390px){
-      .container,
-      .home-header-inner{
-        width:calc(100% - 20px);
+      :root{
+        --home-gutter:10px;
       }
 
       .home-logo{
@@ -1035,11 +1006,7 @@
             <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
           </div>
 
-          <div class="home-header-promo" aria-label="MCバトルシミュレーション">
-            <a class="home-promo-link" href="simulation.html">
-              <img class="home-promo-img" src="images/simulation-hero.jpg?v=6" alt="MCバトルシミュレーション">
-            </a>
-          </div>
+          <a class="header-simulation-hero" href="simulation.html" aria-label="MCバトルシミュレーション"></a>
         </div>
 
         <nav class="home-tabs" aria-label="主要メニュー">
