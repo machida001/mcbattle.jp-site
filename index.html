@@ -311,12 +311,12 @@
     .simulation-hero{
       position:relative;
       display:block;
-      min-height:146px;
+      min-height:106px;
       overflow:hidden;
       border:none;
-      border-radius:20px;
+      border-radius:16px;
       background:#10131c;
-      box-shadow:0 12px 28px rgba(0,0,0,.22);
+      box-shadow:0 10px 24px rgba(0,0,0,.22);
       transition:
         transform .18s ease,
         box-shadow .18s ease;
@@ -325,9 +325,9 @@
     .simulation-hero::before{
       content:"";
       position:absolute;
-      inset:0;
-      border-radius:20px;
-      background-image:url("images/simulation-hero.jpg?v=6");
+      inset:-2px;
+      border-radius:18px;
+      background-image:url("images/simulation-hero.jpg?v=7");
       background-repeat:no-repeat;
       background-size:cover;
       background-position:center;
@@ -341,7 +341,7 @@
 
     .simulation-hero:hover{
       transform:translateY(-1px);
-      box-shadow:0 16px 34px rgba(0,0,0,.28);
+      box-shadow:0 14px 30px rgba(0,0,0,.27);
     }
 
     .home-card{
@@ -697,7 +697,13 @@
       }
 
       .simulation-hero{
-        min-height:146px;
+        min-height:106px;
+        border-radius:16px;
+      }
+
+      .simulation-hero::before{
+        inset:-2px;
+        border-radius:18px;
       }
 
       .dashboard-grid{
@@ -776,13 +782,13 @@
       }
 
       .simulation-hero{
-        min-height:124px;
+        min-height:112px;
         padding:0;
-        border-radius:19px;
+        border-radius:17px;
       }
 
       .simulation-hero::before{
-        inset:0;
+        inset:-2px;
         border-radius:19px;
       }
 
