@@ -311,7 +311,9 @@
     .simulation-hero{
       position:relative;
       display:block;
-      min-height:106px;
+      width:100%;
+      min-height:0;
+      aspect-ratio:16 / 3.2;
       overflow:hidden;
       border:none;
       border-radius:16px;
@@ -325,11 +327,11 @@
     .simulation-hero::before{
       content:"";
       position:absolute;
-      inset:-2px;
-      border-radius:18px;
-      background-image:url("images/simulation-hero.jpg?v=7");
+      inset:0 -2px;
+      border-radius:16px;
+      background-image:url("images/simulation-hero.jpg?v=8");
       background-repeat:no-repeat;
-      background-size:cover;
+      background-size:100% 100%;
       background-position:center;
       box-shadow:none;
       pointer-events:none;
@@ -697,13 +699,13 @@
       }
 
       .simulation-hero{
-        min-height:106px;
+        aspect-ratio:16 / 3.2;
         border-radius:16px;
       }
 
       .simulation-hero::before{
-        inset:-2px;
-        border-radius:18px;
+        inset:0 -2px;
+        border-radius:16px;
       }
 
       .dashboard-grid{
@@ -782,14 +784,13 @@
       }
 
       .simulation-hero{
-        min-height:112px;
-        padding:0;
+        aspect-ratio:16 / 4.4;
         border-radius:17px;
       }
 
       .simulation-hero::before{
-        inset:-2px;
-        border-radius:19px;
+        inset:0 -2px;
+        border-radius:17px;
       }
 
       .home-card{
