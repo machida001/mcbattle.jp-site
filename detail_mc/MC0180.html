@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
   <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/favicon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon-180x180.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KONG | 戦績・優勝歴・賞金・出場大会 | MCBattle.jp</title>
@@ -75,21 +75,40 @@
 
   <link rel="stylesheet" href="../style.css" />
   <style>
+    /*
+      index.html のPC版ヘッダー見え方を detail_mc テンプレートにも反映。
+      重要：
+      - style.css の header:not(.page-header) が効いてしまうため、body > .home-header で強めに上書き。
+      - PCではヘッダーだけ広め、本文カードは既存の .mc-page 幅を維持。
+      - シミュレーションバナーはPCのみヘッダー右側に表示。
+    */
 
-    .home-header{
+    body > .home-header{
       position:relative;
-      margin:0 0 18px;
+      width:min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
+      margin:0 auto 18px;
       padding:26px 0 0;
       background:
         linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),
         radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);
-      border-bottom:1px solid rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 0 0 1px rgba(255,255,255,.018) inset;
+      z-index:40;
     }
 
     .home-header-inner{
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
-      margin-left:auto;
-      margin-right:auto;
+      width:100%;
+      max-width:none;
+      margin:0;
+      padding:0 18px;
+    }
+
+    .home-header-main{
+      display:block;
+    }
+
+    .home-brand-block{
+      min-width:0;
     }
 
     .home-logo{
@@ -116,6 +135,12 @@
       font-weight:700;
       line-height:1.48;
       letter-spacing:-.02em;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+    }
+
+    .home-simulation-link{
+      display:none;
     }
 
     .home-tabs{
@@ -127,7 +152,7 @@
       border-top:1px solid rgba(255,255,255,.13);
       border-bottom:1px solid rgba(255,255,255,.13);
       overflow:visible;
-      z-index:30;
+      z-index:50;
     }
 
     .home-tab,
@@ -209,7 +234,7 @@
       position:absolute;
       top:calc(100% + 8px);
       left:50%;
-      z-index:50;
+      z-index:80;
       min-width:176px;
       padding:8px;
       border:1px solid rgba(216,180,106,.24);
@@ -258,10 +283,72 @@
     }
 
     @media (min-width: 1024px){
-      .home-header-inner{
-        width:min(var(--content-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
+      body > .home-header{
+        width:min(960px, calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
         margin-left:var(--pc-left-gutter);
         margin-right:auto;
+        padding-top:26px;
+      }
+
+      .home-header-inner{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .home-header-main{
+        display:grid;
+        grid-template-columns:minmax(210px, 0.72fr) minmax(360px, 1.28fr);
+        align-items:center;
+        gap:22px;
+        padding-bottom:18px;
+      }
+
+      .home-logo{
+        font-size:3rem;
+      }
+
+      .home-lead{
+        margin-bottom:0;
+        font-size:.96rem;
+        line-height:1.42;
+        max-width:none;
+      }
+
+      .home-lead br{
+        display:none;
+      }
+
+      .home-simulation-link{
+        display:block;
+        min-height:112px;
+        border-radius:15px;
+        border:1px solid rgba(216,180,106,.46);
+        background:
+          linear-gradient(90deg, rgba(10,12,18,.10), rgba(10,12,18,.05)),
+          url("../images/simulation-hero.jpg?v=6") center / cover no-repeat,
+          #11131a;
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,.02) inset,
+          0 12px 24px rgba(0,0,0,.22);
+        overflow:hidden;
+        text-indent:-9999px;
+        white-space:nowrap;
+        transition:
+          transform .18s ease,
+          border-color .18s ease,
+          box-shadow .18s ease,
+          opacity .18s ease;
+      }
+
+      .home-simulation-link:hover{
+        transform:translateY(-1px);
+        border-color:rgba(216,180,106,.68);
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,.025) inset,
+          0 14px 28px rgba(0,0,0,.26),
+          0 0 22px rgba(216,180,106,.12);
+        opacity:1;
+        text-decoration:none !important;
       }
     }
 
@@ -762,7 +849,6 @@
       line-height: 1.32;
     }
 
-
     .team-battle-list{
       list-style: none;
       padding: 0;
@@ -905,55 +991,57 @@
     }
 
     @media (max-width: 640px) {
-
-      .home-header{
-        margin-bottom: 14px;
-        padding: 38px 0 0;
+      body > .home-header{
+        width:calc(100% - 24px);
+        margin-bottom:14px;
+        padding:38px 0 0;
       }
 
       .home-header-inner{
-        width: calc(100% - 24px);
+        width:100%;
+        padding-left:12px;
+        padding-right:12px;
       }
 
       .home-logo{
-        margin-bottom: 5px;
-        font-size: 2.42rem;
+        margin-bottom:5px;
+        font-size:2.42rem;
       }
 
       .home-lead{
-        margin-bottom: 12px;
-        font-size: .96rem;
-        line-height: 1.42;
-        letter-spacing: -.025em;
+        margin-bottom:12px;
+        font-size:.96rem;
+        line-height:1.42;
+        letter-spacing:-.025em;
       }
 
       .home-tabs{
-        margin-left: -1px;
-        margin-right: -1px;
+        margin-left:-1px;
+        margin-right:-1px;
       }
 
       .home-tab,
       .home-menu-summary{
-        padding: 10px 5px 11px;
-        font-size: .9rem;
+        padding:10px 5px 11px;
+        font-size:.9rem;
       }
 
       .home-tab.is-active::after,
       .home-menu.is-current .home-menu-summary::before,
       .home-menu[open] .home-menu-summary::before{
-        left: 8px;
-        right: 8px;
-        height: 3px;
+        left:8px;
+        right:8px;
+        height:3px;
       }
 
       .home-submenu{
-        min-width: 158px;
-        top: calc(100% + 7px);
+        min-width:158px;
+        top:calc(100% + 7px);
       }
 
       .home-submenu a{
-        min-height: 37px;
-        font-size: .86rem;
+        min-height:37px;
+        font-size:.86rem;
       }
 
       .page-top{
@@ -1131,25 +1219,29 @@
       }
     }
 
-
     @media (max-width: 390px){
+      body > .home-header{
+        width:calc(100% - 20px);
+      }
+
       .home-header-inner{
-        width: calc(100% - 20px);
+        padding-left:10px;
+        padding-right:10px;
       }
 
       .home-logo{
-        font-size: 2.32rem;
+        font-size:2.32rem;
       }
 
       .home-lead{
-        font-size: .92rem;
+        font-size:.92rem;
       }
 
       .home-tab,
       .home-menu-summary{
-        padding-left: 4px;
-        padding-right: 4px;
-        font-size: .84rem;
+        padding-left:4px;
+        padding-right:4px;
+        font-size:.84rem;
       }
     }
   </style>
@@ -1157,8 +1249,14 @@
 <body>
   <header class="home-header">
     <div class="home-header-inner">
-      <h1 class="home-logo"><a href="../">MCBattle.jp</a></h1>
-      <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
+      <div class="home-header-main">
+        <div class="home-brand-block">
+          <h1 class="home-logo"><a href="../">MCBattle.jp</a></h1>
+          <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
+        </div>
+
+        <a class="home-simulation-link" href="../simulation.html" aria-label="MCバトルシミュレーション">MCバトルシミュレーション</a>
+      </div>
 
       <nav class="home-tabs" aria-label="主要メニュー">
         <a class="home-tab" href="../">ホーム</a>
