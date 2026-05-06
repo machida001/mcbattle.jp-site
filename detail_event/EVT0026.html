@@ -88,11 +88,11 @@
   <link rel="stylesheet" href="../style.css" />
   <style>
     /*
-      index.html のPC版ヘッダー見え方を detail_event テンプレートにも反映。
-      重要：
-      - style.css の header:not(.page-header) が効いてしまうため、body > .home-header で強めに上書き。
-      - PCではヘッダーだけ広め、本文カードは既存の .event-page 幅を維持。
-      - シミュレーションバナーはPCのみヘッダー右側に表示。
+      共通ヘッダー方針：
+      - ロゴクリックでトップへ戻るため、Homeメニューは置かない。
+      - ヘッダーメニューは Data / Ranking / Simulation / Reading に統一。
+      - シミュレーションバナーは表示しない。
+      - PCでは score_ranking.html 側の軽いヘッダー見た目に寄せる。
     */
 
     body > .home-header{
@@ -103,8 +103,7 @@
       background:
         linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),
         radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:0 0 0 1px rgba(255,255,255,.018) inset;
+      border-bottom:1px solid rgba(255,255,255,.14);
       z-index:40;
     }
 
@@ -112,7 +111,7 @@
       width:100%;
       max-width:none;
       margin:0;
-      padding:0 18px;
+      padding:0;
     }
 
     .home-header-main{
@@ -149,10 +148,6 @@
       letter-spacing:-.02em;
       overflow-wrap:anywhere;
       word-break:break-word;
-    }
-
-    .home-simulation-link{
-      display:none;
     }
 
     .home-tabs{
@@ -192,11 +187,14 @@
       text-decoration:none !important;
     }
 
-    .home-tab.is-active{
+    .home-tab.is-active,
+    .home-menu.is-current .home-menu-summary{
       color:var(--accent);
     }
 
-    .home-tab.is-active::after{
+    .home-tab.is-active::after,
+    .home-menu.is-current .home-menu-summary::before,
+    .home-menu[open] .home-menu-summary::before{
       content:"";
       position:absolute;
       left:12px;
@@ -237,18 +235,6 @@
 
     .home-menu[open] .home-menu-summary{
       color:var(--accent);
-    }
-
-    .home-menu[open] .home-menu-summary::before{
-      content:"";
-      position:absolute;
-      left:12px;
-      right:12px;
-      bottom:-1px;
-      height:3px;
-      border-radius:999px 999px 0 0;
-      background:var(--accent);
-      box-shadow:0 0 18px rgba(216,180,106,.28);
     }
 
     .home-submenu{
@@ -885,23 +871,15 @@
 
     @media (min-width: 1024px){
       body > .home-header{
-        width:min(960px, calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
+        width:min(1040px, calc(100% - var(--pc-left-gutter) - var(--page-gutter)));
         margin-left:var(--pc-left-gutter);
         margin-right:auto;
         padding-top:26px;
       }
 
-      .home-header-inner{
-        padding-left:18px;
-        padding-right:18px;
-      }
-
       .home-header-main{
-        display:grid;
-        grid-template-columns:minmax(210px, 0.72fr) minmax(360px, 1.28fr);
-        align-items:center;
-        gap:22px;
-        padding-bottom:18px;
+        display:block;
+        margin-bottom:14px;
       }
 
       .home-logo{
@@ -910,46 +888,10 @@
 
       .home-lead{
         margin-bottom:0;
-        font-size:.96rem;
-        line-height:1.42;
+        font-size:1rem;
+        line-height:1.48;
         max-width:none;
-      }
-
-      .home-lead br{
-        display:none;
-      }
-
-      .home-simulation-link{
-        display:block;
-        min-height:112px;
-        border-radius:15px;
-        border:1px solid rgba(216,180,106,.46);
-        background:
-          linear-gradient(90deg, rgba(10,12,18,.10), rgba(10,12,18,.05)),
-          url("../images/simulation-hero.jpg?v=6") center / cover no-repeat,
-          #11131a;
-        box-shadow:
-          0 0 0 1px rgba(255,255,255,.02) inset,
-          0 12px 24px rgba(0,0,0,.22);
-        overflow:hidden;
-        text-indent:-9999px;
         white-space:nowrap;
-        transition:
-          transform .18s ease,
-          border-color .18s ease,
-          box-shadow .18s ease,
-          opacity .18s ease;
-      }
-
-      .home-simulation-link:hover{
-        transform:translateY(-1px);
-        border-color:rgba(216,180,106,.68);
-        box-shadow:
-          0 0 0 1px rgba(255,255,255,.025) inset,
-          0 14px 28px rgba(0,0,0,.26),
-          0 0 22px rgba(216,180,106,.12);
-        opacity:1;
-        text-decoration:none !important;
       }
     }
 
@@ -962,8 +904,6 @@
 
       .home-header-inner{
         width:100%;
-        padding-left:12px;
-        padding-right:12px;
       }
 
       .home-logo{
@@ -990,6 +930,7 @@
       }
 
       .home-tab.is-active::after,
+      .home-menu.is-current .home-menu-summary::before,
       .home-menu[open] .home-menu-summary::before{
         left:8px;
         right:8px;
@@ -999,6 +940,11 @@
       .home-submenu{
         min-width:158px;
         top:calc(100% + 7px);
+      }
+
+      .home-menu[data-menu="data"] .home-submenu{
+        left:0;
+        transform:none;
       }
 
       .home-submenu a{
@@ -1176,11 +1122,6 @@
         width:calc(100% - 20px);
       }
 
-      .home-header-inner{
-        padding-left:10px;
-        padding-right:10px;
-      }
-
       .home-logo{
         font-size:2.32rem;
       }
@@ -1206,15 +1147,11 @@
           <h1 class="home-logo"><a href="../">MCBattle.jp</a></h1>
           <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
         </div>
-
-        <a class="home-simulation-link" href="../simulation.html" aria-label="MCバトルシミュレーション">MCバトルシミュレーション</a>
       </div>
 
       <nav class="home-tabs" aria-label="主要メニュー">
-        <a class="home-tab" href="../">ホーム</a>
-
         <details class="home-menu" data-menu="data">
-          <summary class="home-menu-summary">データ</summary>
+          <summary class="home-menu-summary">Data</summary>
           <div class="home-submenu">
             <a href="../list_mc.html">MC一覧</a>
             <a href="../list_event.html">大会一覧</a>
@@ -1222,7 +1159,7 @@
         </details>
 
         <details class="home-menu" data-menu="ranking">
-          <summary class="home-menu-summary">ランキング</summary>
+          <summary class="home-menu-summary">Ranking</summary>
           <div class="home-submenu">
             <a href="../score_ranking.html">スコアランキング</a>
             <a href="../prize_ranking.html">賞金ランキング</a>
@@ -1230,7 +1167,8 @@
           </div>
         </details>
 
-        <a class="home-tab" href="../articles.html">読み物</a>
+        <a class="home-tab" href="../simulation.html">Simulation</a>
+        <a class="home-tab" href="../articles.html">Reading</a>
       </nav>
     </div>
   </header>
