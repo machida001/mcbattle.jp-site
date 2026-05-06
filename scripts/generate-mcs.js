@@ -348,7 +348,11 @@ function buildBattleListItems(items, battleType) {
 
   return items.map((item) => {
     const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "", battleType);
-    const eventHtml = renderBattleEvent(item.event_name || "", item.event_id || "");
+    const eventHtml = renderBattleEvent(
+      item.event_name || "",
+      item.event_id || "",
+      item.round_name || ""
+    );
 
     return [
       "<li>",
@@ -369,20 +373,32 @@ function buildTeamBattleListItems(items, battleType) {
     const opponentTeamName = safeString(item.opponent_team_name || "").trim();
     const ownMembers = Array.isArray(item.own_members) ? item.own_members : [];
     const opponentMembers = Array.isArray(item.opponent_members) ? item.opponent_members : [];
-    const eventHtml = renderTeamBattleEvent(item.event_name || "", item.event_id || "");
+
+    const showOpponentFirst = battleType === "loss";
+
+    const topTeamName = showOpponentFirst ? opponentTeamName : ownTeamName;
+    const topMembers = showOpponentFirst ? opponentMembers : ownMembers;
+    const bottomTeamName = showOpponentFirst ? ownTeamName : opponentTeamName;
+    const bottomMembers = showOpponentFirst ? ownMembers : opponentMembers;
+
+    const eventHtml = renderTeamBattleEvent(
+      item.event_name || "",
+      item.event_id || "",
+      item.round_name || ""
+    );
 
     return [
       "<li>",
       '<div class="team-battle-card">',
       '<div class="team-battle-main">',
       '<div class="team-battle-side is-own">',
-      ownTeamName ? `<div class="team-name-label">${escapeHtml(ownTeamName)}</div>` : "",
-      `<div class="team-members-text">${renderTeamMemberLinks(ownMembers)}</div>`,
+      topTeamName ? `<div class="team-name-label">${escapeHtml(topTeamName)}</div>` : "",
+      `<div class="team-members-text">${renderTeamMemberLinks(topMembers)}</div>`,
       "</div>",
       '<div class="team-battle-vs">VS</div>',
       '<div class="team-battle-side is-opponent">',
-      opponentTeamName ? `<div class="team-name-label">${escapeHtml(opponentTeamName)}</div>` : "",
-      `<div class="team-members-text">${renderTeamMemberLinks(opponentMembers)}</div>`,
+      bottomTeamName ? `<div class="team-name-label">${escapeHtml(bottomTeamName)}</div>` : "",
+      `<div class="team-members-text">${renderTeamMemberLinks(bottomMembers)}</div>`,
       "</div>",
       "</div>",
       eventHtml,
@@ -410,16 +426,24 @@ function renderTeamMemberLinks(members) {
     .join('<span class="team-member-separator">・</span>');
 }
 
-function renderTeamBattleEvent(name, eventId) {
+function renderTeamBattleEvent(name, eventId, roundName) {
   const safeName = escapeHtml(name || "");
   const safeId = String(eventId || "").trim();
+  const safeRound = escapeHtml(normalizeRoundLabel(roundName || ""));
 
-  if (!safeName) return "";
-  if (!safeId) return `<span class="team-battle-event">${safeName}</span>`;
+  const roundHtml = safeRound
+    ? `<span class="team-battle-event-round"> / ${safeRound}</span>`
+    : "";
+
+  if (!safeName && !safeRound) return "";
+
+  if (!safeId) {
+    return `<span class="team-battle-event">${safeName}${roundHtml}</span>`;
+  }
 
   return `
         <span class="team-battle-event">
-          <a href="../detail_event/${encodeURIComponent(safeId)}.html" class="team-battle-event-link">${safeName}</a>
+          <a href="../detail_event/${encodeURIComponent(safeId)}.html" class="team-battle-event-link">${safeName}</a>${roundHtml}
         </span>
       `.trim();
 }
@@ -511,16 +535,24 @@ function renderMcLink(name, mcId, battleType = "") {
   return `<a href="../detail_mc/${encodeURIComponent(safeId)}.html" class="${linkClass}">${labelHtml}</a>`;
 }
 
-function renderBattleEvent(name, eventId) {
+function renderBattleEvent(name, eventId, roundName) {
   const safeName = escapeHtml(name || "");
   const safeId = String(eventId || "").trim();
+  const safeRound = escapeHtml(normalizeRoundLabel(roundName || ""));
 
-  if (!safeName) return "";
-  if (!safeId) return `<span class="battle-event">${safeName}</span>`;
+  const roundHtml = safeRound
+    ? `<span class="battle-event-round"> / ${safeRound}</span>`
+    : "";
+
+  if (!safeName && !safeRound) return "";
+
+  if (!safeId) {
+    return `<span class="battle-event">${safeName}${roundHtml}</span>`;
+  }
 
   return `
         <span class="battle-event">
-          <a href="../detail_event/${encodeURIComponent(safeId)}.html" class="battle-event-link">${safeName}</a>
+          <a href="../detail_event/${encodeURIComponent(safeId)}.html" class="battle-event-link">${safeName}</a>${roundHtml}
         </span>
       `.trim();
 }
