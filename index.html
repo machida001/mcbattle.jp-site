@@ -60,6 +60,7 @@
   </script>
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="site-header.css" />
 
   <style>
     :root{
@@ -76,7 +77,6 @@
       --shadow:0 16px 42px rgba(0,0,0,.25);
       --radius:20px;
 
-      --home-header-max:1040px;
       --home-content-max:760px;
     }
 
@@ -115,213 +115,8 @@
     }
 
     .site-shell{
-      padding-top:16px;
+      padding-top:0;
       padding-bottom:28px;
-    }
-
-    .home-header{
-      position:relative;
-      margin-bottom:10px;
-      padding:26px 0 0;
-      background:
-        linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),
-        radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);
-      border-bottom:1px solid rgba(255,255,255,.14);
-    }
-
-    /* style.css の header:not(.page-header) による幅固定を、トップページだけ解除 */
-    header.home-header{
-      width:100%;
-      max-width:none;
-      margin-left:0;
-      margin-right:0;
-      padding:26px 0 0;
-    }
-
-    .home-header-inner{
-      width:min(calc(100% - (var(--page-gutter, 24px) * 2)), var(--content-max, 980px));
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .home-header-main{
-      display:block;
-    }
-
-    .home-header-text{
-      min-width:0;
-    }
-
-    .home-logo{
-      margin:0 0 6px;
-      font-family:"Times New Roman", Georgia, serif;
-      font-style:italic;
-      font-size:clamp(2.08rem, 7.8vw, 3.15rem);
-      font-weight:800;
-      line-height:.95;
-      letter-spacing:-.055em;
-      color:var(--accent);
-      text-shadow:0 10px 26px rgba(0,0,0,.18);
-    }
-
-    .home-logo a{
-      color:inherit;
-      text-decoration:none !important;
-    }
-
-    .home-lead{
-      margin:0 0 13px;
-      color:#f0f2f6;
-      font-size:1rem;
-      font-weight:700;
-      line-height:1.48;
-      letter-spacing:-.02em;
-    }
-
-    .home-tabs{
-      position:relative;
-      display:flex;
-      align-items:center;
-      gap:0;
-      width:100%;
-      border-top:1px solid rgba(255,255,255,.13);
-      border-bottom:1px solid rgba(255,255,255,.13);
-      overflow:visible;
-      z-index:30;
-    }
-
-    .home-tab,
-    .home-menu-summary{
-      position:relative;
-      flex:1 1 0;
-      min-width:0;
-      padding:11px 8px 12px;
-      color:#f3f4f6;
-      font-size:.96rem;
-      font-weight:800;
-      line-height:1.1;
-      text-align:center;
-      white-space:nowrap;
-      opacity:.96;
-      transition:color .18s ease, opacity .18s ease;
-      cursor:pointer;
-      text-decoration:none !important;
-    }
-
-    .home-tab:hover,
-    .home-menu-summary:hover{
-      color:#fff7e8;
-      opacity:1;
-      text-decoration:none !important;
-    }
-
-    .home-tab.is-active{
-      color:var(--accent-strong);
-    }
-
-    .home-tab.is-active::after{
-      content:"";
-      position:absolute;
-      left:12px;
-      right:12px;
-      bottom:-1px;
-      height:3px;
-      border-radius:999px 999px 0 0;
-      background:var(--accent-strong);
-      box-shadow:0 0 18px rgba(216,180,106,.28);
-    }
-
-    .home-menu{
-      position:relative;
-      flex:1 1 0;
-      min-width:0;
-    }
-
-    .home-menu summary{
-      list-style:none;
-    }
-
-    .home-menu summary::-webkit-details-marker{
-      display:none;
-    }
-
-    .home-menu-summary::after{
-      content:"";
-      display:inline-block;
-      width:0;
-      height:0;
-      margin-left:5px;
-      border-left:4px solid transparent;
-      border-right:4px solid transparent;
-      border-top:5px solid currentColor;
-      transform:translateY(-1px);
-      opacity:.75;
-    }
-
-    .home-menu[open] .home-menu-summary{
-      color:var(--accent-strong);
-    }
-
-    .home-menu[open] .home-menu-summary::before{
-      content:"";
-      position:absolute;
-      left:12px;
-      right:12px;
-      bottom:-1px;
-      height:3px;
-      border-radius:999px 999px 0 0;
-      background:var(--accent-strong);
-      box-shadow:0 0 18px rgba(216,180,106,.28);
-    }
-
-    .home-submenu{
-      position:absolute;
-      top:calc(100% + 8px);
-      left:50%;
-      z-index:50;
-      min-width:176px;
-      padding:8px;
-      border:1px solid rgba(216,180,106,.24);
-      border-radius:14px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),
-        rgba(18,21,30,.98);
-      box-shadow:
-        0 16px 34px rgba(0,0,0,.34),
-        0 0 0 1px rgba(255,255,255,.018) inset;
-      transform:translateX(-50%);
-    }
-
-    .home-submenu a{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      min-height:38px;
-      padding:0 12px;
-      border-radius:10px;
-      color:#f3f4f6;
-      font-size:.9rem;
-      font-weight:800;
-      line-height:1;
-      white-space:nowrap;
-      transition:
-        background-color .18s ease,
-        color .18s ease,
-        opacity .18s ease;
-    }
-
-    .home-submenu a::after{
-      content:"›";
-      color:var(--accent);
-      font-size:1.15rem;
-      line-height:1;
-      opacity:.8;
-    }
-
-    .home-submenu a:hover{
-      background:rgba(216,180,106,.1);
-      color:#fff7e8;
     }
 
     .main-stack{
@@ -663,59 +458,10 @@
     }
 
     @media (min-width: 1024px){
-      .home-header{
-        padding-top:26px;
-        border-bottom:none;
-        background:transparent;
-      }
-
-      header.home-header{
-        width:100%;
-        max-width:none;
-        margin-left:0;
-        margin-right:0;
-        padding:26px 0 0;
-      }
-
-      .home-header-inner{
-        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter, 72px) - var(--page-gutter, 24px)));
-        margin-left:var(--pc-left-gutter, 72px);
-        margin-right:auto;
-      }
-
       .container{
         width:min(var(--home-content-max), calc(100% - var(--pc-left-gutter, 72px) - var(--page-gutter, 24px)));
         margin-left:var(--pc-left-gutter, 72px);
         margin-right:auto;
-      }
-
-      .home-header-main{
-        display:block;
-        margin-bottom:14px;
-      }
-
-      .home-logo{
-        margin-bottom:8px;
-        font-size:3rem;
-      }
-
-      .home-lead{
-        margin:0;
-        max-width:100%;
-        font-size:1rem;
-        line-height:1.48;
-        white-space:nowrap;
-      }
-
-      .home-tabs{
-        margin-left:0;
-        margin-right:0;
-      }
-
-      .home-tab,
-      .home-menu-summary{
-        padding:13px 8px 14px;
-        font-size:.98rem;
       }
 
       .main-stack{
@@ -743,67 +489,8 @@
         padding-bottom:22px;
       }
 
-      .container,
-      .home-header-inner{
+      .container{
         width:calc(100% - 24px);
-      }
-
-      .home-header{
-        margin-bottom:9px;
-        padding:38px 0 0;
-      }
-
-      header.home-header{
-        width:100%;
-        max-width:none;
-        margin-left:0;
-        margin-right:0;
-        padding:38px 0 0;
-      }
-
-      .home-logo{
-        margin-bottom:5px;
-        font-size:2.42rem;
-      }
-
-      .home-lead{
-        margin-bottom:12px;
-        font-size:.96rem;
-        line-height:1.42;
-        letter-spacing:-.025em;
-      }
-
-      .home-tabs{
-        margin-left:-1px;
-        margin-right:-1px;
-      }
-
-      .home-tab,
-      .home-menu-summary{
-        padding:10px 5px 11px;
-        font-size:.9rem;
-      }
-
-      .home-tab.is-active::after,
-      .home-menu[open] .home-menu-summary::before{
-        left:8px;
-        right:8px;
-        height:3px;
-      }
-
-      .home-submenu{
-        min-width:158px;
-        top:calc(100% + 7px);
-      }
-
-      .home-menu[data-menu="data"] .home-submenu{
-        left:0;
-        transform:none;
-      }
-
-      .home-submenu a{
-        min-height:37px;
-        font-size:.86rem;
       }
 
       .main-stack{
@@ -909,24 +596,8 @@
     }
 
     @media (max-width: 390px){
-      .container,
-      .home-header-inner{
+      .container{
         width:calc(100% - 20px);
-      }
-
-      .home-logo{
-        font-size:2.32rem;
-      }
-
-      .home-lead{
-        font-size:.92rem;
-      }
-
-      .home-tab,
-      .home-menu-summary{
-        padding-left:4px;
-        padding-right:4px;
-        font-size:.84rem;
       }
 
       .event-row{
@@ -946,38 +617,7 @@
 
 <body>
   <div class="site-shell">
-    <header class="home-header">
-      <div class="home-header-inner">
-        <div class="home-header-main">
-          <div class="home-header-text">
-            <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>
-            <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
-          </div>
-        </div>
-
-        <nav class="home-tabs" aria-label="主要メニュー">
-          <details class="home-menu" data-menu="data">
-            <summary class="home-menu-summary">Data</summary>
-            <div class="home-submenu">
-              <a href="list_mc.html">MC一覧</a>
-              <a href="list_event.html">大会一覧</a>
-            </div>
-          </details>
-
-          <details class="home-menu" data-menu="ranking">
-            <summary class="home-menu-summary">Ranking</summary>
-            <div class="home-submenu">
-              <a href="score_ranking.html">スコアランキング</a>
-              <a href="prize_ranking.html">賞金ランキング</a>
-              <a href="score_spec.html">スコアリング仕様</a>
-            </div>
-          </details>
-
-          <a class="home-tab" href="simulation.html">Simulation</a>
-          <a class="home-tab" href="articles.html">Reading</a>
-        </nav>
-      </div>
-    </header>
+    <div id="site-header"></div>
 
     <main class="container">
       <div class="main-stack">
@@ -1058,37 +698,6 @@
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
-    }
-
-    function closeOtherMenus(currentMenu) {
-      const menus = document.querySelectorAll(".home-menu");
-      menus.forEach((menu) => {
-        if (menu !== currentMenu) {
-          menu.removeAttribute("open");
-        }
-      });
-    }
-
-    function setupHeaderMenus() {
-      const menus = document.querySelectorAll(".home-menu");
-
-      menus.forEach((menu) => {
-        menu.addEventListener("toggle", () => {
-          if (menu.open) {
-            closeOtherMenus(menu);
-          }
-        });
-      });
-
-      document.addEventListener("click", (event) => {
-        const target = event.target;
-        if (!(target instanceof Element)) return;
-        if (target.closest(".home-menu")) return;
-
-        menus.forEach((menu) => {
-          menu.removeAttribute("open");
-        });
-      });
     }
 
     function formatDateJP(raw) {
@@ -1410,8 +1019,8 @@
       }
     }
 
-    setupHeaderMenus();
     loadIndexData();
   </script>
+  <script src="site-header.js"></script>
 </body>
 </html>
