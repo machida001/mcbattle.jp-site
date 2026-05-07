@@ -1187,6 +1187,53 @@
       display: block;
     }
 
+    /* === Header menu focus visibility === */
+    .home-menu-summary:hover,
+    .home-menu-summary:focus,
+    .home-menu-summary:focus-visible,
+    .home-tab:hover,
+    .home-tab:focus,
+    .home-tab:focus-visible {
+      filter: brightness(1.18);
+      outline: none;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, .30) inset,
+        0 0 0 2px rgba(216, 180, 106, .22),
+        0 8px 18px rgba(0, 0, 0, .16);
+    }
+
+    .home-submenu a:hover,
+    .home-submenu a:focus,
+    .home-submenu a:focus-visible {
+      background: rgba(216, 180, 106, .14);
+      color: #ffffff;
+      outline: 1px solid rgba(255, 255, 255, .28);
+      outline-offset: -1px;
+    }
+
+    .home-menu:not(.is-current) .home-menu-summary:hover::before,
+    .home-menu:not(.is-current) .home-menu-summary:focus::before,
+    .home-menu:not(.is-current) .home-menu-summary:focus-visible::before,
+    .home-tab:not(.is-current):hover::before,
+    .home-tab:not(.is-current):focus::before,
+    .home-tab:not(.is-current):focus-visible::before {
+      display: none !important;
+      content: none !important;
+    }
+
+    @media (max-width: 767px) {
+      .home-menu-summary:hover,
+      .home-menu-summary:focus,
+      .home-menu-summary:focus-visible,
+      .home-tab:hover,
+      .home-tab:focus,
+      .home-tab:focus-visible {
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, .16) inset,
+          0 0 0 2px rgba(216, 180, 106, .16);
+      }
+    }
+
   </style>    
 </head>    
 <body>    
