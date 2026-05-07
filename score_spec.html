@@ -1244,6 +1244,23 @@
       content: none !important;
     }
 
+    /* === Menu tab border strength: bolder white === */
+    @media (min-width: 768px) {
+      .home-tabs {
+        border: 2px solid rgba(255, 255, 255, .86);
+        border-bottom-color: rgba(255, 255, 255, .56);
+      }
+
+      .home-menu,
+      .home-tab {
+        border-right: 2px solid rgba(255, 255, 255, .78);
+      }
+
+      .home-tab:last-child {
+        border-right: none;
+      }
+    }
+
   </style>    
 </head>    
 <body>    
