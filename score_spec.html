@@ -1278,34 +1278,7 @@
   </style>    
 </head>    
 <body>    
-  <header class="home-header">      
-    <div class="home-header-inner">      
-      <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>      
-      <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>      
-      
-      <nav class="home-tabs" aria-label="主要メニュー">      
-        <details class="home-menu" data-menu="data">      
-          <summary class="home-menu-summary">Data</summary>      
-          <div class="home-submenu">      
-            <a href="list_mc.html">MC一覧</a>      
-            <a href="list_event.html">大会一覧</a>      
-          </div>      
-        </details>      
-      
-        <details class="home-menu is-current" data-menu="ranking">      
-          <summary class="home-menu-summary">Ranking</summary>      
-          <div class="home-submenu">      
-            <a href="score_ranking.html">スコアランキング</a>      
-            <a href="prize_ranking.html">賞金ランキング</a>      
-            <a href="score_spec.html">スコアリング仕様</a>      
-          </div>      
-        </details>      
-      
-        <a class="home-tab" href="simulation.html">Simulator</a>      
-        <a class="home-tab" href="articles.html">Reading</a>      
-      </nav>      
-    </div>      
-  </header>    
+ <div id="site-header"></div>
     
   <div class="page spec-page">    
     <div class="page-top">    
@@ -1613,5 +1586,6 @@ ELO_RESIDUAL_RATE = 0.18</div>
     
     setupHeaderMenus();    
   </script>    
+  <script src="site-header.js"></script>
 </body>    
 </html>    
