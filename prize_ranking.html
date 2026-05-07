@@ -1,1442 +1,517 @@
-<!DOCTYPE html>  
-<html lang="ja">  
-<head>  
-  <link rel="icon" href="/favicon.ico" sizes="any">  
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">  
-  <link rel="apple-touch-icon" href="/favicon-180x180.png">  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-  <title>賞金ランキング | MCバトル賞金ランキング | MCBattle.jp</title>  
-  <meta name="description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。">  
-  <link rel="canonical" href="https://mcbattle.jp/prize_ranking.html" />  
-  
-  <meta property="og:type" content="website" />  
-  <meta property="og:site_name" content="MCBattle.jp" />  
-  <meta property="og:title" content="賞金ランキング | MCバトル賞金ランキング | MCBattle.jp" />  
-  <meta property="og:description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。" />  
-  <meta property="og:url" content="https://mcbattle.jp/prize_ranking.html" />  
-  <meta property="og:image" content="https://mcbattle.jp/ogp.png?v=2" />  
-  
-  <meta name="twitter:card" content="summary_large_image" />  
-  <meta name="twitter:title" content="賞金ランキング | MCバトル賞金ランキング | MCBattle.jp" />  
-  <meta name="twitter:description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。" />  
-  <meta name="twitter:image" content="https://mcbattle.jp/ogp.png?v=2" />  
-  
-  <!-- Google tag (gtag.js) -->  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>  
-  <script>  
-    window.dataLayer = window.dataLayer || [];  
-    function gtag(){dataLayer.push(arguments);}  
-    gtag('js', new Date());  
-  
-    gtag('config', 'G-9C8VGD3THB');  
-  </script>  
-  <link rel="stylesheet" href="style.css" />  
-  <style>  
-    :root{  
-      --home-header-max: 1040px;  
-    }  
-  
-    .home-header{  
-      position:relative;  
-      margin-bottom:18px;  
-      padding:26px 0 0;  
-      background:  
-        linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),  
-        radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);  
-      border-bottom:1px solid rgba(255,255,255,.14);  
-      z-index:40;  
-    }  
-  
-    .home-header-inner{  
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--home-header-max));  
-      margin-left:auto;  
-      margin-right:auto;  
-    }  
-  
-    .home-logo{  
-      margin:0 0 6px;  
-      font-family:"Times New Roman", Georgia, serif;  
-      font-style:italic;  
-      font-size:clamp(2.08rem, 7.8vw, 3.15rem);  
-      font-weight:800;  
-      line-height:.95;  
-      letter-spacing:-.055em;  
-      color:var(--accent);  
-      text-shadow:0 10px 26px rgba(0,0,0,.18);  
-    }  
-  
-    .home-logo a{  
-      color:inherit;  
-      text-decoration:none !important;  
-    }  
-  
-    .home-lead{  
-      margin:0 0 13px;  
-      color:#f0f2f6;  
-      font-size:1rem;  
-      font-weight:700;  
-      line-height:1.48;  
-      letter-spacing:-.02em;  
-    }  
-  
-    .home-tabs{  
-      position:relative;  
-      display:flex;  
-      align-items:center;  
-      gap:0;  
-      width:100%;  
-      border-top:1px solid rgba(255,255,255,.13);  
-      border-bottom:1px solid rgba(255,255,255,.13);  
-      overflow:visible;  
-      z-index:50;  
-    }  
-  
-    .home-tab,  
-    .home-menu-summary{  
-      position:relative;  
-      flex:1 1 0;  
-      min-width:0;  
-      padding:11px 8px 12px;  
-      color:#f3f4f6;  
-      font-size:.96rem;  
-      font-weight:800;  
-      line-height:1.1;  
-      text-align:center;  
-      white-space:nowrap;  
-      opacity:.96;  
-      transition:color .18s ease, opacity .18s ease;  
-      cursor:pointer;  
-      text-decoration:none !important;  
-    }  
-  
-    .home-tab:hover,  
-    .home-menu-summary:hover{  
-      color:#fff7e8;  
-      opacity:1;  
-      text-decoration:none !important;  
-    }  
-  
-    .home-tab.is-active,  
-    .home-menu.is-current .home-menu-summary{  
-      color:var(--accent);  
-    }  
-  
-    .home-tab.is-active::after,  
-    .home-menu.is-current .home-menu-summary::before,  
-    .home-menu[open] .home-menu-summary::before{  
-      content:"";  
-      position:absolute;  
-      left:12px;  
-      right:12px;  
-      bottom:-1px;  
-      height:3px;  
-      border-radius:999px 999px 0 0;  
-      background:var(--accent);  
-      box-shadow:0 0 18px rgba(216,180,106,.28);  
-    }  
-  
-    .home-menu{  
-      position:relative;  
-      flex:1 1 0;  
-      min-width:0;  
-    }  
-  
-    .home-menu summary{  
-      list-style:none;  
-    }  
-  
-    .home-menu summary::-webkit-details-marker{  
-      display:none;  
-    }  
-  
-    .home-menu-summary::after{  
-      content:"";  
-      display:inline-block;  
-      width:0;  
-      height:0;  
-      margin-left:5px;  
-      border-left:4px solid transparent;  
-      border-right:4px solid transparent;  
-      border-top:5px solid currentColor;  
-      transform:translateY(-1px);  
-      opacity:.75;  
-    }  
-  
-    .home-menu[open] .home-menu-summary{  
-      color:var(--accent);  
-    }  
-  
-    .home-submenu{  
-      position:absolute;  
-      top:calc(100% + 8px);  
-      left:50%;  
-      z-index:80;  
-      min-width:176px;  
-      padding:8px;  
-      border:1px solid rgba(216,180,106,.24);  
-      border-radius:14px;  
-      background:  
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),  
-        rgba(18,21,30,.98);  
-      box-shadow:  
-        0 16px 34px rgba(0,0,0,.34),  
-        0 0 0 1px rgba(255,255,255,.018) inset;  
-      transform:translateX(-50%);  
-    }  
-  
-    .home-submenu a{  
-      display:flex;  
-      align-items:center;  
-      justify-content:space-between;  
-      gap:12px;  
-      min-height:38px;  
-      padding:0 12px;  
-      border-radius:10px;  
-      color:#f3f4f6;  
-      font-size:.9rem;  
-      font-weight:800;  
-      line-height:1;  
-      white-space:nowrap;  
-      text-decoration:none !important;  
-      transition:  
-        background-color .18s ease,  
-        color .18s ease,  
-        opacity .18s ease;  
-    }  
-  
-    .home-submenu a::after{  
-      content:"›";  
-      color:var(--accent);  
-      font-size:1.15rem;  
-      line-height:1;  
-      opacity:.8;  
-    }  
-  
-    .home-submenu a:hover{  
-      background:rgba(216,180,106,.1);  
-      color:#fff7e8;  
-      text-decoration:none !important;  
-    }  
-  
-    .page-top{  
-      margin-bottom:14px;  
-    }  
-  
-    .page-header-block{  
-      margin-bottom:14px;  
-    }  
-  
-    .page-header-block h1{  
-      margin:0;  
-      text-wrap:balance;  
-      overflow-wrap:anywhere;  
-      word-break:break-word;  
-    }  
-  
-    .top3-wrap {  
-      margin-bottom: 18px;  
-    }  
-  
-    .top3-list {  
-      display: flex;  
-      flex-direction: column;  
-      gap: 0;  
-    }  
-  
-    .top3-row {  
-      display: grid;  
-      grid-template-columns: minmax(0, 1fr) auto;  
-      align-items: center;  
-      gap: 12px;  
-      padding: 12px 0;  
-    }  
-  
-    .top3-row + .top3-row {  
-      border-top: 1px solid rgba(255,255,255,0.08);  
-    }  
-  
-    .top3-left {  
-      min-width: 0;  
-      display: flex;  
-      align-items: center;  
-      gap: 8px;  
-      color: #ffffff;  
-      font-size: 1.12rem;  
-      font-weight: 700;  
-      line-height: 1.12;  
-      letter-spacing: -0.01em;  
-    }  
-  
-    .top3-medal {  
-      flex: 0 0 auto;  
-      font-size: 0.96em;  
-      line-height: 1;  
-    }  
-  
-    .top3-name {  
-      min-width: 0;  
-      white-space: nowrap;  
-      overflow: hidden;  
-      text-overflow: ellipsis;  
-    }  
-  
-    .top3-name a {  
-      color: inherit;  
-      text-decoration: underline;  
-      text-underline-offset: 0.15em;  
-    }  
-  
-    .top3-name a:hover {  
-      opacity: 0.85;  
-    }  
-  
-    .top3-amount {  
-      color: var(--accent);  
-      font-weight: 800;  
-      font-size: 1.08rem;  
-      line-height: 1;  
-      letter-spacing: -0.02em;  
-      white-space: nowrap;  
-      font-variant-numeric: tabular-nums;  
-      text-align: right;  
-    }  
-  
-    .prize-card-inner {  
-      padding-left: 12px;  
-      padding-right: 12px;  
-    }  
-  
-    .prize-note {  
-      margin: 0 0 12px;  
-      color: var(--muted);  
-      font-size: 0.86rem;  
-      line-height: 1.52;  
-      overflow-wrap: anywhere;  
-      word-break: break-word;  
-    }  
-  
-    .prize-table-wrap {  
-      overflow-x: visible;  
-      width: 100%;  
-    }  
-  
-    table.prize-table {  
-      width: 100%;  
-      max-width: 100%;  
-      min-width: 0;  
-      table-layout: fixed;  
-      border-collapse: collapse;  
-      margin-top: 0;  
-    }  
-  
-    table.prize-table col:nth-child(1) {  
-      width: 58px;  
-    }  
-  
-    table.prize-table col:nth-child(2) {  
-      width: auto;  
-    }  
-  
-    table.prize-table col:nth-child(3) {  
-      width: 168px;  
-    }  
-  
-    table.prize-table td {  
-      padding: 10px 8px;  
-      vertical-align: middle;  
-    }  
-  
-    table.prize-table td:nth-child(1) {  
-      text-align: right;  
-      white-space: nowrap;  
-    }  
-  
-    table.prize-table td:nth-child(2) {  
-      text-align: left;  
-      min-width: 0;  
-    }  
-  
-    table.prize-table td:nth-child(3) {  
-      text-align: right;  
-      white-space: nowrap;  
-      font-variant-numeric: tabular-nums;  
-    }  
-  
-    table.prize-table tbody tr + tr {  
-      border-top: 1px solid rgba(214,178,95,0.26);  
-    }  
-  
-    .prize-rank {  
-      color: #ffffff;  
-      font-weight: 700;  
-      font-variant-numeric: tabular-nums;  
-    }  
-  
-    .prize-name-link,  
-    .prize-name-text {  
-      display: block;  
-      color: inherit;  
-      text-decoration: underline;  
-      text-underline-offset: 0.15em;  
-      white-space: normal;  
-      overflow-wrap: anywhere;  
-      word-break: break-word;  
-      line-height: 1.35;  
-    }  
-  
-    .prize-name-link:hover {  
-      opacity: 0.85;  
-    }  
-  
-    .prize-amount {  
-      color: #ffffff;  
-      font-weight: 500;  
-      font-size: 1rem;  
-      font-variant-numeric: tabular-nums;  
-      letter-spacing: -0.01em;  
-    }  
-  
-    @media (min-width: 1024px){  
-      .home-header-inner{  
-        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));  
-        margin-left:var(--pc-left-gutter);  
-        margin-right:auto;  
-      }  
-  
-      .home-logo{  
-        font-size:3rem;  
-      }  
-  
-      .home-lead{  
-        white-space:nowrap;  
-      }  
-    }  
-  
-    @media (max-width: 640px) {  
-      .home-header{  
-        margin-bottom:14px;  
-        padding:38px 0 0;  
-      }  
-  
-      .home-header-inner{  
-        width:calc(100% - 24px);  
-      }  
-  
-      .home-logo{  
-        margin-bottom:5px;  
-        font-size:2.42rem;  
-      }  
-  
-      .home-lead{  
-        margin-bottom:12px;  
-        font-size:.96rem;  
-        line-height:1.42;  
-        letter-spacing:-.025em;  
-      }  
-  
-      .home-tabs{  
-        margin-left:-1px;  
-        margin-right:-1px;  
-      }  
-  
-      .home-tab,  
-      .home-menu-summary{  
-        padding:10px 5px 11px;  
-        font-size:.9rem;  
-      }  
-  
-      .home-tab.is-active::after,  
-      .home-menu.is-current .home-menu-summary::before,  
-      .home-menu[open] .home-menu-summary::before{  
-        left:8px;  
-        right:8px;  
-        height:3px;  
-      }  
-  
-      .home-submenu{  
-        min-width:158px;  
-        top:calc(100% + 7px);  
-      }  
-  
-      .home-submenu a{  
-        min-height:37px;  
-        font-size:.86rem;  
-      }  
-  
-      .page-top{  
-        margin-bottom:12px;  
-      }  
-  
-      .page-header-block{  
-        margin-bottom:12px;  
-      }  
-  
-      .page-header-block h1{  
-        font-size:clamp(1.5rem, 5.3vw, 1.95rem);  
-        line-height:1.12;  
-      }  
-  
-      .top3-row {  
-        gap: 10px;  
-        padding: 10px 0;  
-      }  
-  
-      .top3-left {  
-        gap: 7px;  
-        font-size: 0.98rem;  
-      }  
-  
-      .top3-medal {  
-        font-size: 0.92em;  
-      }  
-  
-      .top3-amount {  
-        font-size: 0.98rem;  
-      }  
-  
-      .prize-card-inner {  
-        padding-left: 10px;  
-        padding-right: 10px;  
-      }  
-  
-      .prize-note {  
-        margin-bottom: 10px;  
-        font-size: 0.78rem;  
-        line-height: 1.42;  
-      }  
-  
-      table.prize-table col:nth-child(1) {  
-        width: 42px;  
-      }  
-  
-      table.prize-table col:nth-child(3) {  
-        width: 116px;  
-      }  
-  
-      table.prize-table td {  
-        padding: 8px 4px;  
-        font-size: 0.9rem;  
-      }  
-  
-      .prize-name-link,  
-      .prize-name-text {  
-        line-height: 1.28;  
-      }  
-  
-      .prize-amount {  
-        font-size: 0.94rem;  
-      }  
-    }  
-  
-    @media (max-width: 390px){  
-      .home-header-inner{  
-        width:calc(100% - 20px);  
-      }  
-  
-      .home-logo{  
-        font-size:2.32rem;  
-      }  
-  
-      .home-lead{  
-        font-size:.92rem;  
-      }  
-  
-      .home-tab,  
-      .home-menu-summary{  
-        padding-left:4px;  
-        padding-right:4px;  
-        font-size:.84rem;  
-      }  
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon-180x180.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>賞金ランキング | MCバトル賞金ランキング | MCBattle.jp</title>
+  <meta name="description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。">
+  <link rel="canonical" href="https://mcbattle.jp/prize_ranking.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MCBattle.jp" />
+  <meta property="og:title" content="賞金ランキング | MCバトル賞金ランキング | MCBattle.jp" />
+  <meta property="og:description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。" />
+  <meta property="og:url" content="https://mcbattle.jp/prize_ranking.html" />
+  <meta property="og:image" content="https://mcbattle.jp/ogp.png?v=2" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="賞金ランキング | MCバトル賞金ランキング | MCBattle.jp" />
+  <meta name="twitter:description" content="国内MCバトルの獲得賞金ランキングページです。優勝賞金の累計をもとに、各MCの賞金順位を掲載しています。チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。" />
+  <meta name="twitter:image" content="https://mcbattle.jp/ogp.png?v=2" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9C8VGD3THB');
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="site-header.css" />
+
+  <style>
+    .page-top{
+      margin-bottom:14px;
     }
 
-/* === Header matched to score_ranking: override block === */
-.home-header {    
-      position:relative;    
-      margin-bottom:18px;    
-      padding:26px 0 0;    
-      background:    
-        linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),    
-        radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);    
-      border-bottom:1px solid rgba(255,255,255,.14);    
-      z-index:40;    
+    .page-header-block{
+      margin-bottom:14px;
     }
 
-.home-header-inner {    
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--home-header-max));    
-      margin-left:auto;    
-      margin-right:auto;    
+    .page-header-block h1{
+      margin:0;
+      text-wrap:balance;
+      overflow-wrap:anywhere;
+      word-break:break-word;
     }
 
-.home-logo {    
-      margin:0 0 6px;    
-      font-family:"Times New Roman", Georgia, serif;    
-      font-style:italic;    
-      font-size:clamp(2.08rem, 7.8vw, 3.15rem);    
-      font-weight:800;    
-      line-height:.95;    
-      letter-spacing:-.055em;    
-      color:var(--accent);    
-      text-shadow:0 10px 26px rgba(0,0,0,.18);    
+    .top3-wrap {
+      margin-bottom: 18px;
     }
 
-.home-logo a {    
-      color:inherit;    
-      text-decoration:none !important;    
+    .top3-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
 
-.home-lead {    
-      margin:0 0 13px;    
-      color:#f0f2f6;    
-      font-size:1rem;    
-      font-weight:700;    
-      line-height:1.48;    
-      letter-spacing:-.02em;    
+    .top3-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
     }
 
-.home-tabs {    
-      position:relative;    
-      display:flex;    
-      align-items:center;    
-      gap:0;    
-      width:100%;    
-      border-top:1px solid rgba(255,255,255,.13);    
-      border-bottom:1px solid rgba(255,255,255,.13);    
-      overflow:visible;    
-      z-index:50;    
+    .top3-row + .top3-row {
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-.home-tab,    
-    .home-menu-summary {    
-      position:relative;    
-      flex:1 1 0;    
-      min-width:0;    
-      padding:11px 8px 12px;    
-      color:#f3f4f6;    
-      font-size:.96rem;    
-      font-weight:800;    
-      line-height:1.1;    
-      text-align:center;    
-      white-space:nowrap;    
-      opacity:.96;    
-      transition:color .18s ease, opacity .18s ease;    
-      cursor:pointer;    
-      text-decoration:none !important;    
+    .top3-left {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      font-size: 1.12rem;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
     }
 
-.home-tab:hover,    
-    .home-menu-summary:hover {    
-      color:#fff7e8;    
-      opacity:1;    
-      text-decoration:none !important;    
+    .top3-medal {
+      flex: 0 0 auto;
+      font-size: 0.96em;
+      line-height: 1;
     }
 
-.home-tab.is-active,    
-    .home-menu.is-current .home-menu-summary {    
-      color:var(--accent);    
+    .top3-name {
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-.home-tab.is-active::after,    
-    .home-menu.is-current .home-menu-summary::before,    
-    .home-menu[open] .home-menu-summary::before {    
-      content:"";    
-      position:absolute;    
-      left:12px;    
-      right:12px;    
-      bottom:-1px;    
-      height:3px;    
-      border-radius:999px 999px 0 0;    
-      background:var(--accent);    
-      box-shadow:0 0 18px rgba(216,180,106,.28);    
+    .top3-name a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
     }
 
-.home-menu {    
-      position:relative;    
-      flex:1 1 0;    
-      min-width:0;    
+    .top3-name a:hover {
+      opacity: 0.85;
     }
 
-.home-menu summary {    
-      list-style:none;    
+    .top3-amount {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 1.08rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
     }
 
-.home-menu summary::-webkit-details-marker {    
-      display:none;    
+    .prize-card-inner {
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
-.home-menu-summary::after {    
-      content:"";    
-      display:inline-block;    
-      width:0;    
-      height:0;    
-      margin-left:5px;    
-      border-left:4px solid transparent;    
-      border-right:4px solid transparent;    
-      border-top:5px solid currentColor;    
-      transform:translateY(-1px);    
-      opacity:.75;    
-    }
-
-.home-menu[open] .home-menu-summary {    
-      color:var(--accent);    
-    }
-
-.home-submenu {    
-      position:absolute;    
-      top:calc(100% + 8px);    
-      left:50%;    
-      z-index:80;    
-      min-width:176px;    
-      padding:8px;    
-      border:1px solid rgba(216,180,106,.24);    
-      border-radius:14px;    
-      background:    
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),    
-        rgba(18,21,30,.98);    
-      box-shadow:    
-        0 16px 34px rgba(0,0,0,.34),    
-        0 0 0 1px rgba(255,255,255,.018) inset;    
-      transform:translateX(-50%);    
-    }
-
-.home-submenu a {    
-      display:flex;    
-      align-items:center;    
-      justify-content:space-between;    
-      gap:12px;    
-      min-height:38px;    
-      padding:0 12px;    
-      border-radius:10px;    
-      color:#f3f4f6;    
-      font-size:.9rem;    
-      font-weight:800;    
-      line-height:1;    
-      white-space:nowrap;    
-      text-decoration:none !important;    
-      transition:    
-        background-color .18s ease,    
-        color .18s ease,    
-        opacity .18s ease;    
-    }
-
-.home-submenu a::after {    
-      content:"›";    
-      color:var(--accent);    
-      font-size:1.15rem;    
-      line-height:1;    
-      opacity:.8;    
-    }
-
-.home-submenu a:hover {    
-      background:rgba(216,180,106,.1);    
-      color:#fff7e8;    
-      text-decoration:none !important;    
-    }
-
-.home-header-inner {    
-        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));    
-        margin-left:var(--pc-left-gutter);    
-        margin-right:auto;    
-      }
-
-.home-logo {    
-        font-size:3rem;    
-      }
-
-.home-lead {    
-        white-space:nowrap;    
-      }
-
-.home-header {    
-        margin-bottom:14px;    
-        padding:38px 0 0;    
-      }
-
-.home-header-inner {    
-        width:calc(100% - 24px);    
-      }
-
-.home-logo {    
-        margin-bottom:5px;    
-        font-size:2.42rem;    
-      }
-
-.home-lead {    
-        margin-bottom:12px;    
-        font-size:.96rem;    
-        line-height:1.42;    
-        letter-spacing:-.025em;    
-      }
-
-.home-tabs {    
-        margin-left:-1px;    
-        margin-right:-1px;    
-      }
-
-.home-tab,    
-      .home-menu-summary {    
-        padding:10px 5px 11px;    
-        font-size:.9rem;    
-      }
-
-.home-tab.is-active::after,    
-      .home-menu.is-current .home-menu-summary::before,    
-      .home-menu[open] .home-menu-summary::before {    
-        left:8px;    
-        right:8px;    
-        height:3px;    
-      }
-
-.home-submenu {    
-        min-width:158px;    
-        top:calc(100% + 7px);    
-      }
-
-.home-menu[data-menu="data"] .home-submenu {    
-        left:0;    
-        transform:none;    
-      }
-
-.home-submenu a {    
-        min-height:37px;    
-        font-size:.86rem;    
-      }
-
-.home-header-inner {    
-        width:calc(100% - 20px);    
-      }
-
-.home-logo {    
-        font-size:2.32rem;    
-      }
-
-.home-lead {    
-        font-size:.92rem;    
-      }
-
-.home-tab,    
-      .home-menu-summary {    
-        padding-left:4px;    
-        padding-right:4px;    
-        font-size:.84rem;    
-      }
-
-@media (min-width: 1024px){    
-      .home-header-inner{    
-        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));    
-        margin-left:var(--pc-left-gutter);    
-        margin-right:auto;    
-      }    
-    
-      .home-logo{    
-        font-size:3rem;    
-      }    
-    
-      .home-lead{    
-        white-space:nowrap;    
-      }    
-    }
-
-@media (max-width: 640px) {    
-      .home-header{    
-        margin-bottom:14px;    
-        padding:38px 0 0;    
-      }    
-    
-      .home-header-inner{    
-        width:calc(100% - 24px);    
-      }    
-    
-      .home-logo{    
-        margin-bottom:5px;    
-        font-size:2.42rem;    
-      }    
-    
-      .home-lead{    
-        margin-bottom:12px;    
-        font-size:.96rem;    
-        line-height:1.42;    
-        letter-spacing:-.025em;    
-      }    
-    
-      .home-tabs{    
-        margin-left:-1px;    
-        margin-right:-1px;    
-      }    
-    
-      .home-tab,    
-      .home-menu-summary{    
-        padding:10px 5px 11px;    
-        font-size:.9rem;    
-      }    
-    
-      .home-tab.is-active::after,    
-      .home-menu.is-current .home-menu-summary::before,    
-      .home-menu[open] .home-menu-summary::before{    
-        left:8px;    
-        right:8px;    
-        height:3px;    
-      }    
-    
-      .home-submenu{    
-        min-width:158px;    
-        top:calc(100% + 7px);    
-      }    
-    
-      .home-menu[data-menu="data"] .home-submenu{    
-        left:0;    
-        transform:none;    
-      }    
-    
-      .home-submenu a{    
-        min-height:37px;    
-        font-size:.86rem;    
-      }    
-    
-      .page-top{    
-        margin-bottom:12px;    
-      }    
-    
-      .page-header-block{    
-        margin-bottom:12px;    
-      }    
-    
-      .page-header-block h1{    
-        font-size:clamp(1.5rem, 5.3vw, 1.95rem);    
-        line-height:1.12;    
-      }    
-    
-      .spec-card-link{    
-        margin-bottom: 8px;    
-        padding: 10px 12px;    
-        border-radius: 15px;    
-      }    
-    
-      .spec-card-title{    
-        font-size: 0.9rem;    
-      }    
-    
-      .top3-row {    
-        gap: 10px;    
-        padding: 10px 0;    
-      }    
-    
-      .top3-left {    
-        gap: 7px;    
-        font-size: 0.98rem;    
-      }    
-    
-      .top3-medal {    
-        font-size: 0.92em;    
-      }    
-    
-      .top3-score {    
-        font-size: 0.98rem;    
-      }    
-    
-      .rankings-card-inner {    
-        padding-left: 10px;    
-        padding-right: 10px;    
-      }    
-    
-      .rankings-card-head{    
-        margin-bottom: 6px;    
-      }    
-    
-      table.rankings-table col:nth-child(1) {    
-        width: 42px;    
-      }    
-    
-      table.rankings-table col:nth-child(3) {    
-        width: 62px;    
-      }    
-    
-      table.rankings-table td {    
-        padding: 8px 4px;    
-        font-size: 0.9rem;    
-      }    
-    
-      .rank-name-link,    
-      .rank-name-text {    
-        line-height: 1.28;    
-      }    
-    
-      .rank-score {    
-        font-size: 0.94rem;    
-      }    
-    }
-
-@media (max-width: 390px){    
-      .home-header-inner{    
-        width:calc(100% - 20px);    
-      }    
-    
-      .home-logo{    
-        font-size:2.32rem;    
-      }    
-    
-      .home-lead{    
-        font-size:.92rem;    
-      }    
-    
-      .home-tab,    
-      .home-menu-summary{    
-        padding-left:4px;    
-        padding-right:4px;    
-        font-size:.84rem;    
-      }    
-    }
-
-    /* === Safety override: prevent mobile header overflow === */
-    html,
-    body {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
-    .home-header {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: clip;
-      box-sizing: border-box;
-    }
-
-    .home-header-inner {
-      box-sizing: border-box;
-      width: min(calc(100% - (var(--page-gutter, 24px) * 2)), var(--home-header-max, 1040px)) !important;
-      max-width: calc(100% - (var(--page-gutter, 24px) * 2)) !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    .home-logo,
-    .home-lead,
-    .home-tabs {
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    .home-lead {
+    .prize-note {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.52;
       overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
-    .home-tabs {
+    .prize-table-wrap {
+      overflow-x: visible;
       width: 100%;
+    }
+
+    table.prize-table {
+      width: 100%;
+      max-width: 100%;
       min-width: 0;
-      overflow: visible;
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin-top: 0;
     }
 
-    .home-tab,
-    .home-menu,
-    .home-menu-summary {
+    table.prize-table col:nth-child(1) {
+      width: 58px;
+    }
+
+    table.prize-table col:nth-child(2) {
+      width: auto;
+    }
+
+    table.prize-table col:nth-child(3) {
+      width: 168px;
+    }
+
+    table.prize-table td {
+      padding: 10px 8px;
+      vertical-align: middle;
+    }
+
+    table.prize-table td:nth-child(1) {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    table.prize-table td:nth-child(2) {
+      text-align: left;
       min-width: 0;
     }
 
-    @media (max-width: 767px) {
-      .home-header {
-        padding-top: 26px;
+    table.prize-table td:nth-child(3) {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    table.prize-table tbody tr + tr {
+      border-top: 1px solid rgba(214,178,95,0.26);
+    }
+
+    .prize-rank {
+      color: #ffffff;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .prize-name-link,
+    .prize-name-text {
+      display: block;
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.35;
+    }
+
+    .prize-name-link:hover {
+      opacity: 0.85;
+    }
+
+    .prize-amount {
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 1rem;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.01em;
+    }
+
+    @media (max-width: 640px) {
+      .page-top{
+        margin-bottom:12px;
       }
 
-      .home-header-inner {
-        width: calc(100% - 48px) !important;
-        max-width: calc(100% - 48px) !important;
-        margin-left: 24px !important;
-        margin-right: 24px !important;
+      .page-header-block{
+        margin-bottom:12px;
       }
 
-      .home-logo {
-        font-size: clamp(2.08rem, 7.8vw, 3.15rem);
-        line-height: .95;
-        white-space: nowrap;
+      .page-header-block h1{
+        font-size:clamp(1.5rem, 5.3vw, 1.95rem);
+        line-height:1.12;
       }
 
-      .home-lead {
-        font-size: 1rem;
-        line-height: 1.45;
+      .top3-row {
+        gap: 10px;
+        padding: 10px 0;
       }
 
-      .home-tabs {
-        display: flex;
-        width: 100%;
-        max-width: 100%;
+      .top3-left {
+        gap: 7px;
+        font-size: 0.98rem;
       }
 
-      .home-tab,
-      .home-menu-summary {
-        padding-left: 6px;
-        padding-right: 6px;
-        font-size: .96rem;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .home-header-inner {
-        width: min(var(--home-header-max, 1040px), calc(100% - var(--pc-left-gutter, 24px) - var(--page-gutter, 24px))) !important;
-        max-width: min(var(--home-header-max, 1040px), calc(100% - var(--pc-left-gutter, 24px) - var(--page-gutter, 24px))) !important;
-        margin-left: var(--pc-left-gutter, 24px) !important;
-        margin-right: auto !important;
-      }
-    }
-
-    /* === Menu color test: subtle category backgrounds === */
-    .home-menu[data-menu="data"] .home-menu-summary {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(10, 42, 32, .52);
-      border-radius: 12px 12px 0 0;
-    }
-
-    .home-menu[data-menu="ranking"] .home-menu-summary {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(18, 34, 64, .54);
-      border-radius: 12px 12px 0 0;
-    }
-
-    .home-tab[href="simulation.html"] {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(72, 22, 26, .50);
-      border-radius: 12px 12px 0 0;
-    }
-
-    .home-tab[href="articles.html"] {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(74, 50, 24, .50);
-      border-radius: 12px 12px 0 0;
-    }
-
-    .home-menu[data-menu="data"] .home-menu-summary:hover,
-    .home-menu[data-menu="ranking"] .home-menu-summary:hover,
-    .home-tab[href="simulation.html"]:hover,
-    .home-tab[href="articles.html"]:hover {
-      filter: brightness(1.12);
-    }
-
-    .home-tab.is-current {
-      color: var(--accent);
-      opacity: 1;
-      position: relative;
-    }
-
-    .home-tab.is-current::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 4px;
-      border-radius: 999px 999px 0 0;
-      background: var(--accent);
-      box-shadow: 0 0 12px rgba(216,180,106,.28);
-    }
-
-    .home-menu.is-current .home-menu-summary,
-    .home-tab.is-current {
-      color: var(--accent);
-    }
-
-    @media (max-width: 767px) {
-      .home-tab,
-      .home-menu-summary {
-        font-size: .92rem;
+      .top3-medal {
+        font-size: 0.92em;
       }
 
-      .home-tab[href="simulation.html"] {
-        letter-spacing: -.04em;
+      .top3-amount {
+        font-size: 0.98rem;
+      }
+
+      .prize-card-inner {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .prize-note {
+        margin-bottom: 10px;
+        font-size: 0.78rem;
+        line-height: 1.42;
+      }
+
+      table.prize-table col:nth-child(1) {
+        width: 42px;
+      }
+
+      table.prize-table col:nth-child(3) {
+        width: 116px;
+      }
+
+      table.prize-table td {
+        padding: 8px 4px;
+        font-size: 0.9rem;
+      }
+
+      .prize-name-link,
+      .prize-name-text {
+        line-height: 1.28;
+      }
+
+      .prize-amount {
+        font-size: 0.94rem;
       }
     }
+  </style>
+</head>
 
-  </style>  
-</head>  
-<body>  
-  <header class="home-header">    
-    <div class="home-header-inner">    
-      <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>    
-      <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>    
-    
-      <nav class="home-tabs" aria-label="主要メニュー">    
-        <details class="home-menu" data-menu="data">    
-          <summary class="home-menu-summary">Data</summary>    
-          <div class="home-submenu">    
-            <a href="list_mc.html">MC一覧</a>    
-            <a href="list_event.html">大会一覧</a>    
-          </div>    
-        </details>    
-    
-        <details class="home-menu is-current" data-menu="ranking">    
-          <summary class="home-menu-summary">Ranking</summary>    
-          <div class="home-submenu">    
-            <a href="score_ranking.html">スコアランキング</a>    
-            <a href="prize_ranking.html">賞金ランキング</a>    
-            <a href="score_spec.html">スコアリング仕様</a>    
-          </div>    
-        </details>    
-    
-        <a class="home-tab" href="simulation.html">Simulator</a>    
-        <a class="home-tab" href="articles.html">Reading</a>    
-      </nav>    
-    </div>    
-  </header>  
-  
-  <div class="rankings-page">  
-    <div class="page-top">  
-      <div class="page-header-block">  
-        <h1>賞金ランキング</h1>  
-      </div>  
-    </div>  
-  
-    <div class="top3-wrap">  
-      <div id="top3" class="top3-list"></div>  
-    </div>  
-  
-    <section class="card">  
-      <div class="prize-card-inner">  
-        <p class="prize-note">※チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。</p>  
-        <p id="prize-status" class="muted"></p>  
-  
-        <div class="prize-table-wrap">  
-          <table class="prize-table">  
-            <colgroup>  
-              <col />  
-              <col />  
-              <col />  
-            </colgroup>  
-            <tbody id="prize-body"></tbody>  
-          </table>  
-        </div>  
-      </div>  
-    </section>  
-  </div>  
-  
-  <script>  
-    const PRIZE_JSON_URL = "./data/prize_rankings.json";  
-  
-    function closeOtherMenus(currentMenu) {  
-      const menus = document.querySelectorAll(".home-menu");  
-      menus.forEach((menu) => {  
-        if (menu !== currentMenu) {  
-          menu.removeAttribute("open");  
-        }  
-      });  
-    }  
-  
-    function setupHeaderMenus() {  
-      const menus = document.querySelectorAll(".home-menu");  
-  
-      menus.forEach((menu) => {  
-        menu.addEventListener("toggle", () => {  
-          if (menu.open) {  
-            closeOtherMenus(menu);  
-          }  
-        });  
-      });  
-  
-      document.addEventListener("click", (event) => {  
-        const target = event.target;  
-        if (!(target instanceof Element)) return;  
-        if (target.closest(".home-menu")) return;  
-  
-        menus.forEach((menu) => {  
-          menu.removeAttribute("open");  
-        });  
-      });  
-    }  
-  
-    async function loadPrizeJson() {  
-      const res = await fetch(PRIZE_JSON_URL, { cache: "no-store" });  
-      if (!res.ok) {  
-        throw new Error(`HTTP ${res.status}`);  
-      }  
-      return await res.json();  
-    }  
-  
-    function toNumber(v) {  
-      if (v === null || v === undefined || v === "") return NaN;  
-      if (typeof v === "number") return Number.isFinite(v) ? v : NaN;  
-      const cleaned = String(v).replace(/[^\d.-]/g, "");  
-      const n = Number(cleaned);  
-      return Number.isFinite(n) ? n : NaN;  
-    }  
-  
-    function formatMoney(v) {  
-      const n = toNumber(v);  
-      const rounded = Number.isFinite(n) ? Math.round(n) : 0;  
-      return "¥" + rounded.toLocaleString("ja-JP");  
-    }  
-  
-    function getPrizeAmount(item) {  
-      const candidates = [  
-        item.total_prize_money,  
-        item.total_prize,  
-        item.prize_total,  
-        item.total_amount,  
-        item.amount,  
-        item.prize,  
-        item.prize_money,  
-        item.totalPrize,  
-        item.totalPrizeAmount,  
-        item.winning_amount,  
-        item.money,  
-        item.賞金,  
-        item.総賞金  
-      ];  
-  
-      for (const value of candidates) {  
-        const n = toNumber(value);  
-        if (Number.isFinite(n)) return n;  
-      }  
-      return 0;  
-    }  
-  
-    function medalEmoji(rank) {  
-      if (rank === 1) return "🥇";  
-      if (rank === 2) return "🥈";  
-      if (rank === 3) return "🥉";  
-      return "";  
-    }  
-  
-    function normalizeItems(data) {  
-      const source =  
-        Array.isArray(data.rankings) ? data.rankings :  
-        Array.isArray(data.items) ? data.items :  
-        Array.isArray(data.data) ? data.data :  
-        Array.isArray(data) ? data : [];  
-  
-      return source  
-        .map((item, index) => ({  
-          rank: Number(item.rank) || (index + 1),  
-          mc_id: item.mc_id || "",  
-          mc_name: item.mc_name || item.name || "名前不明",  
-          amount: getPrizeAmount(item)  
-        }))  
-        .filter(item => item.mc_name)  
-        .sort((a, b) => {  
-          if (b.amount !== a.amount) return b.amount - a.amount;  
-          return a.rank - b.rank;  
-        })  
-        .map((item, index) => ({  
-          ...item,  
-          rank: index + 1  
-        }));  
-    }  
-  
-    function buildTop3(items) {  
-      return items.map(item => {  
-        const wrapper = document.createElement("div");  
-        wrapper.className = "top3-row";  
-  
-        const left = document.createElement("div");  
-        left.className = "top3-left";  
-  
-        const medal = document.createElement("span");  
-        medal.className = "top3-medal";  
-        medal.setAttribute("aria-hidden", "true");  
-        medal.textContent = medalEmoji(item.rank);  
-  
-        const nameWrap = document.createElement("span");  
-        nameWrap.className = "top3-name";  
-  
-        if (item.mc_id) {  
-          const a = document.createElement("a");  
-          a.href = `detail_mc/${encodeURIComponent(item.mc_id)}.html`;  
-          a.textContent = item.mc_name;  
-          a.title = item.mc_name;  
-          nameWrap.appendChild(a);  
-        } else {  
-          nameWrap.textContent = item.mc_name;  
-          nameWrap.title = item.mc_name;  
-        }  
-  
-        const amount = document.createElement("div");  
-        amount.className = "top3-amount";  
-        amount.textContent = formatMoney(item.amount);  
-  
-        left.appendChild(medal);  
-        left.appendChild(nameWrap);  
-        wrapper.appendChild(left);  
-        wrapper.appendChild(amount);  
-  
-        return wrapper;  
-      });  
-    }  
-  
-    function loadPrizePage() {  
-      const statusEl = document.getElementById("prize-status");  
-      const top3El = document.getElementById("top3");  
-      const bodyEl = document.getElementById("prize-body");  
-  
-      loadPrizeJson()  
-        .then((data) => {  
-          console.log("prize rankings page:", data);  
-  
-          top3El.innerHTML = "";  
-          bodyEl.innerHTML = "";  
-          statusEl.classList.remove("error");  
-  
-          try {  
-            if (data.error) {  
-              statusEl.textContent = "賞金ランキングの取得に失敗しました: " + (data.message || "");  
-              statusEl.classList.add("error");  
-              return;  
-            }  
-  
-            const items = normalizeItems(data);  
-            const top3 = items.slice(0, 3);  
-            const rest = items.slice(3);  
-  
-            buildTop3(top3).forEach(node => top3El.appendChild(node));  
-  
-            rest.forEach((item) => {  
-              const tr = document.createElement("tr");  
-  
-              const rankTd = document.createElement("td");  
-              const nameTd = document.createElement("td");  
-              const amountTd = document.createElement("td");  
-  
-              rankTd.textContent = item.rank;  
-              rankTd.className = "prize-rank";  
-  
-              if (item.mc_id) {  
-                const a = document.createElement("a");  
-                a.href = `detail_mc/${encodeURIComponent(item.mc_id)}.html`;  
-                a.textContent = item.mc_name;  
-                a.className = "prize-name-link";  
-                nameTd.appendChild(a);  
-              } else {  
-                const span = document.createElement("span");  
-                span.textContent = item.mc_name;  
-                span.className = "prize-name-text";  
-                nameTd.appendChild(span);  
-              }  
-  
-              amountTd.textContent = formatMoney(item.amount);  
-              amountTd.className = "prize-amount";  
-  
-              tr.appendChild(rankTd);  
-              tr.appendChild(nameTd);  
-              tr.appendChild(amountTd);  
-  
-              bodyEl.appendChild(tr);  
-            });  
-  
-            statusEl.textContent = "";  
-          } catch (err) {  
-            console.error(err);  
-            statusEl.textContent = "賞金ランキングの描画に失敗しました";  
-            statusEl.classList.add("error");  
-          }  
-        })  
-        .catch((err) => {  
-          console.error(err);  
-          statusEl.textContent = "賞金ランキングの読み込みに失敗しました";  
-          statusEl.classList.add("error");  
-        });  
-    }  
-  
-    setupHeaderMenus();  
-    loadPrizePage();  
-  </script>  
-</body>  
-</html>  
+<body>
+  <div id="site-header"></div>
+
+  <div class="rankings-page">
+    <div class="page-top">
+      <div class="page-header-block">
+        <h1>賞金ランキング</h1>
+      </div>
+    </div>
+
+    <div class="top3-wrap">
+      <div id="top3" class="top3-list"></div>
+    </div>
+
+    <section class="card">
+      <div class="prize-card-inner">
+        <p class="prize-note">※チーム戦の優勝賞金は、優勝チームの所属人数で按分して集計しています。</p>
+        <p id="prize-status" class="muted"></p>
+
+        <div class="prize-table-wrap">
+          <table class="prize-table">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <tbody id="prize-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const PRIZE_JSON_URL = "./data/prize_rankings.json";
+
+    async function loadPrizeJson() {
+      const res = await fetch(PRIZE_JSON_URL, { cache: "no-store" });
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      return await res.json();
+    }
+
+    function toNumber(v) {
+      if (v === null || v === undefined || v === "") return NaN;
+      if (typeof v === "number") return Number.isFinite(v) ? v : NaN;
+      const cleaned = String(v).replace(/[^\d.-]/g, "");
+      const n = Number(cleaned);
+      return Number.isFinite(n) ? n : NaN;
+    }
+
+    function formatMoney(v) {
+      const n = toNumber(v);
+      const rounded = Number.isFinite(n) ? Math.round(n) : 0;
+      return "¥" + rounded.toLocaleString("ja-JP");
+    }
+
+    function getPrizeAmount(item) {
+      const candidates = [
+        item.total_prize_money,
+        item.total_prize,
+        item.prize_total,
+        item.total_amount,
+        item.amount,
+        item.prize,
+        item.prize_money,
+        item.totalPrize,
+        item.totalPrizeAmount,
+        item.winning_amount,
+        item.money,
+        item.賞金,
+        item.総賞金
+      ];
+
+      for (const value of candidates) {
+        const n = toNumber(value);
+        if (Number.isFinite(n)) return n;
+      }
+      return 0;
+    }
+
+    function medalEmoji(rank) {
+      if (rank === 1) return "🥇";
+      if (rank === 2) return "🥈";
+      if (rank === 3) return "🥉";
+      return "";
+    }
+
+    function normalizeItems(data) {
+      const source =
+        Array.isArray(data.rankings) ? data.rankings :
+        Array.isArray(data.items) ? data.items :
+        Array.isArray(data.data) ? data.data :
+        Array.isArray(data) ? data : [];
+
+      return source
+        .map((item, index) => ({
+          rank: Number(item.rank) || (index + 1),
+          mc_id: item.mc_id || "",
+          mc_name: item.mc_name || item.name || "名前不明",
+          amount: getPrizeAmount(item)
+        }))
+        .filter(item => item.mc_name)
+        .sort((a, b) => {
+          if (b.amount !== a.amount) return b.amount - a.amount;
+          return a.rank - b.rank;
+        })
+        .map((item, index) => ({
+          ...item,
+          rank: index + 1
+        }));
+    }
+
+    function buildTop3(items) {
+      return items.map(item => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "top3-row";
+
+        const left = document.createElement("div");
+        left.className = "top3-left";
+
+        const medal = document.createElement("span");
+        medal.className = "top3-medal";
+        medal.setAttribute("aria-hidden", "true");
+        medal.textContent = medalEmoji(item.rank);
+
+        const nameWrap = document.createElement("span");
+        nameWrap.className = "top3-name";
+
+        if (item.mc_id) {
+          const a = document.createElement("a");
+          a.href = `detail_mc/${encodeURIComponent(item.mc_id)}.html`;
+          a.textContent = item.mc_name;
+          a.title = item.mc_name;
+          nameWrap.appendChild(a);
+        } else {
+          nameWrap.textContent = item.mc_name;
+          nameWrap.title = item.mc_name;
+        }
+
+        const amount = document.createElement("div");
+        amount.className = "top3-amount";
+        amount.textContent = formatMoney(item.amount);
+
+        left.appendChild(medal);
+        left.appendChild(nameWrap);
+        wrapper.appendChild(left);
+        wrapper.appendChild(amount);
+
+        return wrapper;
+      });
+    }
+
+    function loadPrizePage() {
+      const statusEl = document.getElementById("prize-status");
+      const top3El = document.getElementById("top3");
+      const bodyEl = document.getElementById("prize-body");
+
+      loadPrizeJson()
+        .then((data) => {
+          console.log("prize rankings page:", data);
+
+          top3El.innerHTML = "";
+          bodyEl.innerHTML = "";
+          statusEl.classList.remove("error");
+
+          try {
+            if (data.error) {
+              statusEl.textContent = "賞金ランキングの取得に失敗しました: " + (data.message || "");
+              statusEl.classList.add("error");
+              return;
+            }
+
+            const items = normalizeItems(data);
+            const top3 = items.slice(0, 3);
+            const rest = items.slice(3);
+
+            buildTop3(top3).forEach(node => top3El.appendChild(node));
+
+            rest.forEach((item) => {
+              const tr = document.createElement("tr");
+
+              const rankTd = document.createElement("td");
+              const nameTd = document.createElement("td");
+              const amountTd = document.createElement("td");
+
+              rankTd.textContent = item.rank;
+              rankTd.className = "prize-rank";
+
+              if (item.mc_id) {
+                const a = document.createElement("a");
+                a.href = `detail_mc/${encodeURIComponent(item.mc_id)}.html`;
+                a.textContent = item.mc_name;
+                a.className = "prize-name-link";
+                nameTd.appendChild(a);
+              } else {
+                const span = document.createElement("span");
+                span.textContent = item.mc_name;
+                span.className = "prize-name-text";
+                nameTd.appendChild(span);
+              }
+
+              amountTd.textContent = formatMoney(item.amount);
+              amountTd.className = "prize-amount";
+
+              tr.appendChild(rankTd);
+              tr.appendChild(nameTd);
+              tr.appendChild(amountTd);
+
+              bodyEl.appendChild(tr);
+            });
+
+            statusEl.textContent = "";
+          } catch (err) {
+            console.error(err);
+            statusEl.textContent = "賞金ランキングの描画に失敗しました";
+            statusEl.classList.add("error");
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          statusEl.textContent = "賞金ランキングの読み込みに失敗しました";
+          statusEl.classList.add("error");
+        });
+    }
+
+    loadPrizePage();
+  </script>
+  <script src="site-header.js"></script>
+</body>
+</html>
