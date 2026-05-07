@@ -4,10 +4,15 @@
 (function () {
   function getBasePrefix() {
     const path = window.location.pathname || "";
-    if (path.includes("/detail_mc/") || path.includes("/detail_event/")) {
+
+    if (
+      path.includes("/detail_mc/") ||
+      path.includes("/detail_event/")
+    ) {
       return "../";
     }
-    return "";
+
+    return "./";
   }
 
   function getCurrentSection() {
@@ -65,12 +70,20 @@
     return `
       <header class="home-header">
         <div class="home-header-inner">
-          <h1 class="home-logo"><a href="${base}">MCBattle.jp</a></h1>
-          <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>
+          <h1 class="home-logo">
+            <a href="${base}">MCBattle.jp</a>
+          </h1>
+
+          <p class="home-lead">
+            日本一情報量の多いMCバトルポータル。<br>
+            大会記録・戦績・独自スコアをまとめています。
+          </p>
 
           <nav class="home-tabs" aria-label="主要メニュー">
+
             <details class="home-menu ${current === "data" ? "is-current" : ""}" data-menu="data">
               <summary class="home-menu-summary">Data</summary>
+
               <div class="home-submenu">
                 <a href="${base}list_mc.html">MC一覧</a>
                 <a href="${base}list_event.html">大会一覧</a>
@@ -79,6 +92,7 @@
 
             <details class="home-menu ${current === "ranking" ? "is-current" : ""}" data-menu="ranking">
               <summary class="home-menu-summary">Ranking</summary>
+
               <div class="home-submenu">
                 <a href="${base}score_ranking.html">スコアランキング</a>
                 <a href="${base}prize_ranking.html">賞金ランキング</a>
@@ -86,8 +100,20 @@
               </div>
             </details>
 
-            <a class="home-tab ${current === "simulator" ? "is-current" : ""}" href="${base}simulation.html">Simulator</a>
-            <a class="home-tab ${current === "reading" ? "is-current" : ""}" href="${base}articles.html">Reading</a>
+            <a
+              class="home-tab ${current === "simulator" ? "is-current" : ""}"
+              href="${base}simulation.html"
+            >
+              Simulator
+            </a>
+
+            <a
+              class="home-tab ${current === "reading" ? "is-current" : ""}"
+              href="${base}articles.html"
+            >
+              Reading
+            </a>
+
           </nav>
         </div>
       </header>
@@ -102,7 +128,9 @@
 
     document.querySelectorAll(".home-menu").forEach(function (menu) {
       menu.addEventListener("toggle", function () {
-        if (menu.open) closeOtherMenus(menu);
+        if (menu.open) {
+          closeOtherMenus(menu);
+        }
       });
     });
 
