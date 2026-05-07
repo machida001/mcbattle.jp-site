@@ -524,39 +524,7 @@ ELO_RESIDUAL_RATE = 0.18</div>
   </div>      
       
   <script>      
-    function closeOtherMenus(currentMenu) {      
-      const menus = document.querySelectorAll(".home-menu");      
-      menus.forEach((menu) => {      
-        if (menu !== currentMenu) {      
-          menu.removeAttribute("open");      
-        }      
-      });      
-    }      
-      
-    function setupHeaderMenus() {      
-      const menus = document.querySelectorAll(".home-menu");      
-      
-      menus.forEach((menu) => {      
-        menu.addEventListener("toggle", () => {      
-          if (menu.open) {      
-            closeOtherMenus(menu);      
-          }      
-        });      
-      });      
-      
-      document.addEventListener("click", (event) => {      
-        const target = event.target;      
-        if (!(target instanceof Element)) return;      
-        if (target.closest(".home-menu")) return;      
-      
-        menus.forEach((menu) => {      
-          menu.removeAttribute("open");      
-        });      
-      });      
-    }      
-      
-    setupHeaderMenus();      
-  </script>      
+    
   <script src="site-header.js"></script>  
 </body>      
 </html>      
