@@ -1,1779 +1,854 @@
-<!DOCTYPE html>  
-<html lang="ja">  
-<head>  
-  <link rel="icon" href="/favicon.ico" sizes="any">  
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">  
-  <link rel="apple-touch-icon" href="/favicon-180x180.png">  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-  <title>MC一覧 | 国内MCバトルMCデータベース | MCBattle.jp</title>  
-  <meta name="description" content="国内MCバトルに出場したMCの一覧ページです。五十音順でMCを探せて、各MCの詳細ページから戦績、出場大会、優勝歴、獲得賞金、スコアを確認できます。">  
-  <link rel="canonical" href="https://mcbattle.jp/list_mc.html" />  
-  
-  <meta property="og:type" content="website" />  
-  <meta property="og:site_name" content="MCBattle.jp" />  
-  <meta property="og:title" content="MC一覧 | 国内MCバトルMCデータベース | MCBattle.jp" />  
-  <meta property="og:description" content="国内MCバトルに出場したMCの一覧ページです。五十音順でMCを探せて、各MCの詳細ページから戦績、出場大会、優勝歴、獲得賞金、スコアを確認できます。" />  
-  <meta property="og:url" content="https://mcbattle.jp/list_mc.html" />  
-  <meta property="og:image" content="https://mcbattle.jp/ogp.png?v=2" />  
-  
-  <meta name="twitter:card" content="summary_large_image" />  
-  <meta name="twitter:title" content="MC一覧 | 国内MCバトルMCデータベース | MCBattle.jp" />  
-  <meta name="twitter:description" content="国内MCバトルに出場したMCの一覧ページです。五十音順でMCを探せて、各MCの詳細ページから戦績、出場大会、優勝歴、獲得賞金、スコアを確認できます。" />  
-  <meta name="twitter:image" content="https://mcbattle.jp/ogp.png?v=2" />  
-  
-  <!-- Google tag (gtag.js) -->  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>  
-  <script>  
-    window.dataLayer = window.dataLayer || [];  
-    function gtag(){dataLayer.push(arguments);}  
-    gtag('js', new Date());  
-    gtag('config', 'G-9C8VGD3THB');  
-  </script>  
-  <link rel="stylesheet" href="style.css" />  
-  <style>  
-    :root{  
-      --home-header-max: 1040px;  
-    }  
-  
-    .home-header{  
-      position:relative;  
-      margin-bottom:18px;  
-      padding:26px 0 0;  
-      background:  
-        linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),  
-        radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);  
-      border-bottom:1px solid rgba(255,255,255,.14);  
-      z-index:40;  
-    }  
-  
-    .home-header-inner{  
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--home-header-max));  
-      margin-left:auto;  
-      margin-right:auto;  
-    }  
-  
-    .home-logo{  
-      margin:0 0 6px;  
-      font-family:"Times New Roman", Georgia, serif;  
-      font-style:italic;  
-      font-size:clamp(2.08rem, 7.8vw, 3.15rem);  
-      font-weight:800;  
-      line-height:.95;  
-      letter-spacing:-.055em;  
-      color:var(--accent);  
-      text-shadow:0 10px 26px rgba(0,0,0,.18);  
-    }  
-  
-    .home-logo a{  
-      color:inherit;  
-      text-decoration:none !important;  
-    }  
-  
-    .home-lead{  
-      margin:0 0 13px;  
-      color:#f0f2f6;  
-      font-size:1rem;  
-      font-weight:700;  
-      line-height:1.48;  
-      letter-spacing:-.02em;  
-    }  
-  
-    .home-tabs{  
-      position:relative;  
-      display:flex;  
-      align-items:center;  
-      gap:0;  
-      width:100%;  
-      border-top:1px solid rgba(255,255,255,.13);  
-      border-bottom:1px solid rgba(255,255,255,.13);  
-      overflow:visible;  
-      z-index:50;  
-    }  
-  
-    .home-tab,  
-    .home-menu-summary{  
-      position:relative;  
-      flex:1 1 0;  
-      min-width:0;  
-      padding:11px 8px 12px;  
-      color:#f3f4f6;  
-      font-size:.96rem;  
-      font-weight:800;  
-      line-height:1.1;  
-      text-align:center;  
-      white-space:nowrap;  
-      opacity:.96;  
-      transition:color .18s ease, opacity .18s ease;  
-      cursor:pointer;  
-      text-decoration:none !important;  
-    }  
-  
-    .home-tab:hover,  
-    .home-menu-summary:hover{  
-      color:#fff7e8;  
-      opacity:1;  
-      text-decoration:none !important;  
-    }  
-  
-    .home-tab.is-active,  
-    .home-menu.is-current .home-menu-summary{  
-      color:var(--accent);  
-    }  
-  
-    .home-tab.is-active::after,  
-    .home-menu.is-current .home-menu-summary::before,  
-    .home-menu[open] .home-menu-summary::before{  
-      content:"";  
-      position:absolute;  
-      left:12px;  
-      right:12px;  
-      bottom:-1px;  
-      height:3px;  
-      border-radius:999px 999px 0 0;  
-      background:var(--accent);  
-      box-shadow:0 0 18px rgba(216,180,106,.28);  
-    }  
-  
-    .home-menu{  
-      position:relative;  
-      flex:1 1 0;  
-      min-width:0;  
-    }  
-  
-    .home-menu summary{  
-      list-style:none;  
-    }  
-  
-    .home-menu summary::-webkit-details-marker{  
-      display:none;  
-    }  
-  
-    .home-menu-summary::after{  
-      content:"";  
-      display:inline-block;  
-      width:0;  
-      height:0;  
-      margin-left:5px;  
-      border-left:4px solid transparent;  
-      border-right:4px solid transparent;  
-      border-top:5px solid currentColor;  
-      transform:translateY(-1px);  
-      opacity:.75;  
-    }  
-  
-    .home-menu[open] .home-menu-summary{  
-      color:var(--accent);  
-    }  
-  
-    .home-submenu{  
-      position:absolute;  
-      top:calc(100% + 8px);  
-      left:50%;  
-      z-index:80;  
-      min-width:176px;  
-      padding:8px;  
-      border:1px solid rgba(216,180,106,.24);  
-      border-radius:14px;  
-      background:  
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),  
-        rgba(18,21,30,.98);  
-      box-shadow:  
-        0 16px 34px rgba(0,0,0,.34),  
-        0 0 0 1px rgba(255,255,255,.018) inset;  
-      transform:translateX(-50%);  
-    }  
-  
-    .home-submenu a{  
-      display:flex;  
-      align-items:center;  
-      justify-content:space-between;  
-      gap:12px;  
-      min-height:38px;  
-      padding:0 12px;  
-      border-radius:10px;  
-      color:#f3f4f6;  
-      font-size:.9rem;  
-      font-weight:800;  
-      line-height:1;  
-      white-space:nowrap;  
-      text-decoration:none !important;  
-      transition:  
-        background-color .18s ease,  
-        color .18s ease,  
-        opacity .18s ease;  
-    }  
-  
-    .home-submenu a::after{  
-      content:"›";  
-      color:var(--accent);  
-      font-size:1.15rem;  
-      line-height:1;  
-      opacity:.8;  
-    }  
-  
-    .home-submenu a:hover{  
-      background:rgba(216,180,106,.1);  
-      color:#fff7e8;  
-      text-decoration:none !important;  
-    }  
-  
-    .page-top{  
-      margin-bottom:14px;  
-    }  
-  
-    .page-header-block{  
-      margin-bottom:14px;  
-    }  
-  
-    .page-header-block h1{  
-      margin:0;  
-      text-wrap:balance;  
-      overflow-wrap:anywhere;  
-      word-break:break-word;  
-    }  
-  
-    .mcs-info-link{  
-      display:block;  
-      margin:0 0 14px;  
-      text-decoration:none !important;  
-      color:inherit;  
-    }  
-  
-    .mcs-info-link:hover,  
-    .mcs-info-link:focus,  
-    .mcs-info-link:active,  
-    .mcs-info-link:visited{  
-      text-decoration:none !important;  
-      color:inherit;  
-    }  
-  
-    .mcs-info-card{  
-      display:block;  
-      padding:13px 14px;  
-      border:1px solid rgba(216,180,106,0.44);  
-      border-radius:16px;  
-      background:  
-        linear-gradient(180deg, rgba(216,180,106,0.22) 0%, rgba(216,180,106,0.10) 100%),  
-        rgba(255,255,255,0.04);  
-      color:#f1f4fb;  
-      line-height:1.58;  
-      font-size:0.92rem;  
-      box-shadow:  
-        0 0 0 1px rgba(255,255,255,0.03) inset,  
-        0 14px 28px rgba(0,0,0,0.18);  
-      transition:  
-        transform 0.18s ease,  
-        background-color 0.18s ease,  
-        border-color 0.18s ease,  
-        box-shadow 0.18s ease,  
-        opacity 0.18s ease;  
-    }  
-  
-    .mcs-info-link:hover .mcs-info-card,  
-    .mcs-info-link:focus-visible .mcs-info-card{  
-      transform:translateY(-2px);  
-      border-color:rgba(216,180,106,0.78);  
-      background:  
-        linear-gradient(180deg, rgba(216,180,106,0.34) 0%, rgba(216,180,106,0.16) 100%),  
-        rgba(255,255,255,0.07);  
-      box-shadow:  
-        0 0 0 1px rgba(255,255,255,0.04) inset,  
-        0 18px 34px rgba(0,0,0,0.24),  
-        0 0 26px rgba(216,180,106,0.16);  
-      opacity:1;  
-    }  
-  
-    .mcs-info-link:focus-visible{  
-      outline:none;  
-    }  
-  
-    .mcs-list-wrap {  
-      padding-left: 12px;  
-      padding-right: 12px;  
-    }  
-  
-    .mcs-search {  
-      display: flex;  
-      flex-direction: column;  
-      gap: 7px;  
-      margin: 0 0 12px;  
-    }  
-  
-    .mcs-search-label {  
-      color: var(--accent);  
-      font-size: 0.86rem;  
-      font-weight: 700;  
-      line-height: 1.35;  
-    }  
-  
-    .mcs-search-row {  
-      display: flex;  
-      align-items: center;  
-      gap: 8px;  
-      min-width: 0;  
-    }  
-  
-    .mcs-search-input {  
-      width: 100%;  
-      min-height: 42px;  
-      border: 1px solid var(--line);  
-      border-radius: 999px;  
-      background: rgba(255,255,255,0.04);  
-      color: var(--text);  
-      font: inherit;  
-      font-size: 0.94rem;  
-      line-height: 1.3;  
-      padding: 0 14px;  
-      outline: none;  
-      box-sizing: border-box;  
-      transition:  
-        border-color 0.18s ease,  
-        box-shadow 0.18s ease,  
-        background-color 0.18s ease;  
-    }  
-  
-    .mcs-search-input::placeholder {  
-      color: rgba(241,244,251,0.44);  
-    }  
-  
-    .mcs-search-input:focus {  
-      border-color: var(--line-strong);  
-      box-shadow: 0 0 0 3px rgba(216,180,106,0.08);  
-      background: rgba(255,255,255,0.055);  
-    }  
-  
-    .mcs-search-clear {  
-      flex: 0 0 auto;  
-      min-width: 42px;  
-      min-height: 42px;  
-      border: 1px solid var(--line);  
-      border-radius: 999px;  
-      background: rgba(255,255,255,0.035);  
-      color: var(--muted);  
-      font: inherit;  
-      font-size: 1rem;  
-      font-weight: 800;  
-      line-height: 1;  
-      cursor: pointer;  
-      transition:  
-        transform 0.18s ease,  
-        background-color 0.18s ease,  
-        border-color 0.18s ease,  
-        color 0.18s ease,  
-        opacity 0.18s ease;  
-    }  
-  
-    .mcs-search-clear:hover {  
-      transform: translateY(-1px);  
-      background: rgba(255,255,255,0.07);  
-      border-color: var(--line-strong);  
-      color: var(--text);  
-    }  
-  
-    .mcs-search-clear.is-hidden {  
-      display: none;  
-    }  
-  
-    .mcs-search-help {  
-      margin: 0;  
-      color: var(--muted);  
-      font-size: 0.78rem;  
-      line-height: 1.48;  
-    }  
-  
-    .mcs-block-title {  
-      margin: 4px 0 10px;  
-      color: var(--accent);  
-      font-size: 0.86rem;  
-      font-weight: 700;  
-      line-height: 1.35;  
-    }  
-  
-    .mcs-block-title.is-hidden {  
-      display: none;  
-    }  
-  
-    .mcs-hot-section {  
-      margin: 0 0 14px;  
-    }  
-  
-    .mcs-hot-section.is-hidden {  
-      display: none;  
-    }  
-  
-    .mcs-hot-title {  
-      margin-top: 0;  
-    }  
-  
-    .mcs-hot-list {  
-      display: flex;  
-      flex-wrap: wrap;  
-      gap: 8px;  
-      list-style: none;  
-      padding: 0;  
-      margin: 0;  
-    }  
-  
-    .mcs-hot-list li {  
-      margin: 0;  
-      padding: 0;  
-    }  
-  
-    .mcs-hot-link,  
-    .mcs-hot-static {  
-      display: inline-flex;  
-      align-items: center;  
-      justify-content: center;  
-      min-height: 34px;  
-      padding: 0 12px;  
-      border: 1px solid rgba(216,180,106,0.28);  
-      border-radius: 999px;  
-      background: rgba(216,180,106,0.08);  
-      color: var(--text);  
-      font-size: 0.9rem;  
-      font-weight: 700;  
-      line-height: 1.2;  
-      text-decoration: none;  
-      transition:  
-        transform 0.18s ease,  
-        background-color 0.18s ease,  
-        border-color 0.18s ease,  
-        box-shadow 0.18s ease,  
-        opacity 0.18s ease;  
-    }  
-  
-    .mcs-hot-link:hover {  
-      transform: translateY(-1px);  
-      background: rgba(216,180,106,0.13);  
-      border-color: rgba(216,180,106,0.42);  
-      box-shadow: 0 0 14px rgba(216,180,106,0.10);  
-      text-decoration: none;  
-      opacity: 1;  
-    }  
-  
-    .mcs-tabs {  
-      display: flex;  
-      flex-wrap: wrap;  
-      gap: 8px;  
-      margin-bottom: 10px;  
-    }  
-  
-    .mcs-tabs.is-hidden {  
-      display: none;  
-    }  
-  
-    .mcs-tab {  
-      appearance: none;  
-      border: 1px solid var(--line);  
-      background: rgba(255,255,255,0.03);  
-      color: var(--accent);  
-      border-radius: 999px;  
-      padding: 6px 12px;  
-      min-width: 0;  
-      min-height: 38px;  
-      font: inherit;  
-      font-size: 0.98rem;  
-      cursor: pointer;  
-      transition:  
-        background-color 0.18s ease,  
-        border-color 0.18s ease,  
-        box-shadow 0.18s ease,  
-        color 0.18s ease,  
-        transform 0.18s ease;  
-    }  
-  
-    .mcs-tab:hover {  
-      background: rgba(255,255,255,0.06);  
-      transform: translateY(-1px);  
-    }  
-  
-    .mcs-tab.is-active {  
-      background: rgba(255,255,255,0.10);  
-      border-color: var(--line-strong);  
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;  
-    }  
-  
-    #mcs-status {  
-      display: none;  
-      margin-bottom: 10px;  
-    }  
-  
-    .mcs-section-title {  
-      margin: 4px 0 6px;  
-      color: var(--accent);  
-      font-size: 0.86rem;  
-      font-weight: 700;  
-      line-height: 1.35;  
-    }  
-  
-    .mcs-result-count {  
-      color: var(--muted);  
-      font-weight: 600;  
-      font-size: 0.86rem;  
-    }  
-  
-    .mcs-list {  
-      list-style: none;  
-      padding: 0;  
-      margin: 0;  
-    }  
-  
-    .mcs-list li {  
-      margin: 0;  
-      padding: 0;  
-      border-bottom: 1px solid var(--line);  
-    }  
-  
-    .mcs-list li:last-child {  
-      border-bottom: none;  
-    }  
-  
-    .mc-link,  
-    .mc-link-static {  
-      display: block;  
-      padding: 9px 0;  
-      color: inherit;  
-      border-radius: 8px;  
-      line-height: 1.32;  
-    }  
-  
-    .mc-link {  
-      text-decoration: underline;  
-      text-underline-offset: 0.15em;  
-    }  
-  
-    .mc-link:hover {  
-      opacity: 0.9;  
-      background: rgba(255,255,255,0.03);  
-      text-decoration: underline;  
-    }  
-  
-    .mc-link-static {  
-      text-decoration: none;  
-    }  
-  
-    .mcs-empty {  
-      color: var(--muted);  
-      padding: 8px 0;  
-    }  
-  
-    @media (min-width: 1024px){  
-      .home-header-inner{  
-        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));  
-        margin-left:var(--pc-left-gutter);  
-        margin-right:auto;  
-      }  
-  
-      .home-logo{  
-        font-size:3rem;  
-      }  
-  
-      .home-lead{  
-        white-space:nowrap;  
-      }  
-    }  
-  
-    @media (max-width: 640px) {  
-      .home-header{  
-        margin-bottom:14px;  
-        padding:38px 0 0;  
-      }  
-  
-      .home-header-inner{  
-        width:calc(100% - 24px);  
-      }  
-  
-      .home-logo{  
-        margin-bottom:5px;  
-        font-size:2.42rem;  
-      }  
-  
-      .home-lead{  
-        margin-bottom:12px;  
-        font-size:.96rem;  
-        line-height:1.42;  
-        letter-spacing:-.025em;  
-      }  
-  
-      .home-tabs{  
-        margin-left:-1px;  
-        margin-right:-1px;  
-      }  
-  
-      .home-tab,  
-      .home-menu-summary{  
-        padding:10px 5px 11px;  
-        font-size:.9rem;  
-      }  
-  
-      .home-tab.is-active::after,  
-      .home-menu.is-current .home-menu-summary::before,  
-      .home-menu[open] .home-menu-summary::before{  
-        left:8px;  
-        right:8px;  
-        height:3px;  
-      }  
-  
-      .home-submenu{  
-        min-width:158px;  
-        top:calc(100% + 7px);  
-      }  
-  
-      .home-submenu a{  
-        min-height:37px;  
-        font-size:.86rem;  
-      }  
-  
-      .page-top{  
-        margin-bottom:12px;  
-      }  
-  
-      .page-header-block{  
-        margin-bottom:12px;  
-      }  
-  
-      .page-header-block h1{  
-        font-size:clamp(1.5rem, 5.3vw, 1.95rem);  
-        line-height:1.12;  
-      }  
-  
-      .mcs-info-link{  
-        margin-bottom:12px;  
-      }  
-  
-      .mcs-info-card{  
-        padding:11px 12px;  
-        font-size:0.85rem;  
-        line-height:1.46;  
-        border-radius:15px;  
-      }  
-  
-      .mcs-list-wrap {  
-        padding-left: 10px;  
-        padding-right: 10px;  
-      }  
-  
-      .mcs-search {  
-        gap: 6px;  
-        margin-bottom: 11px;  
-      }  
-  
-      .mcs-search-label {  
-        font-size: 0.82rem;  
-      }  
-  
-      .mcs-search-row {  
-        gap: 7px;  
-      }  
-  
-      .mcs-search-input {  
-        min-height: 40px;  
-        padding: 0 13px;  
-        font-size: 0.9rem;  
-      }  
-  
-      .mcs-search-clear {  
-        min-width: 40px;  
-        min-height: 40px;  
-        font-size: 0.95rem;  
-      }  
-  
-      .mcs-search-help {  
-        font-size: 0.75rem;  
-        line-height: 1.42;  
-      }  
-  
-      .mcs-block-title {  
-        margin: 3px 0 9px;  
-        font-size: 0.82rem;  
-      }  
-  
-      .mcs-hot-section {  
-        margin-bottom: 13px;  
-      }  
-  
-      .mcs-hot-title {  
-        margin-top: 0;  
-      }  
-  
-      .mcs-hot-list {  
-        gap: 7px;  
-      }  
-  
-      .mcs-hot-link,  
-      .mcs-hot-static {  
-        min-height: 32px;  
-        padding: 0 11px;  
-        font-size: 0.84rem;  
-      }  
-  
-      .mcs-tabs {  
-        gap: 7px;  
-        margin-bottom: 9px;  
-      }  
-  
-      .mcs-tab {  
-        padding: 5px 11px;  
-        min-height: 34px;  
-        font-size: 0.92rem;  
-      }  
-  
-      .mc-link,  
-      .mc-link-static {  
-        padding: 8px 0;  
-      }  
-  
-      .mcs-section-title {  
-        margin: 3px 0 5px;  
-        font-size: 0.82rem;  
-      }  
-  
-      .mcs-result-count {  
-        font-size: 0.82rem;  
-      }  
-    }  
-  
-    @media (max-width: 390px){  
-      .home-header-inner{  
-        width:calc(100% - 20px);  
-      }  
-  
-      .home-logo{  
-        font-size:2.32rem;  
-      }  
-  
-      .home-lead{  
-        font-size:.92rem;  
-      }  
-  
-      .home-tab,  
-      .home-menu-summary{  
-        padding-left:4px;  
-        padding-right:4px;  
-        font-size:.84rem;  
-      }  
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon-180x180.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MC一覧 | 国内MCバトルMCデータベース | MCBattle.jp</title>
+  <meta name="description" content="国内MCバトルに出場したMCの一覧ページです。五十音順でMCを探せて、各MCの詳細ページから戦績、出場大会、優勝歴、獲得賞金、スコアを確認できます。">
+  <link rel="canonical" href="https://mcbattle.jp/list_mc.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MCBattle.jp" />
+  <meta property="og:title" content="MC一覧 | 国内MCバトルMCデータベース | MCBattle.jp" />
+  <meta property="og:description" content="国内MCバトルに出場したMCの一覧ページです。五十音順でMCを探せて、各MCの詳細ページから戦績、出場大会、優勝歴、獲得賞金、スコアを確認できます。" />
+  <meta property="og:url" content="https://mcbattle.jp/list_mc.html" />
+  <meta property="og:image" content="https://mcbattle.jp/ogp.png?v=2" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MC一覧 | 国内MCバトルMCデータベース | MCBattle.jp" />
+  <meta name="twitter:description" content="国内MCバトルに出場したMCの一覧ページです。五十音順でMCを探せて、各MCの詳細ページから戦績、出場大会、優勝歴、獲得賞金、スコアを確認できます。" />
+  <meta name="twitter:image" content="https://mcbattle.jp/ogp.png?v=2" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9C8VGD3THB');
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="site-header.css" />
+
+  <style>
+    .page-top{
+      margin-bottom:14px;
     }
 
-/* === Header matched to score_ranking: override block === */
-.home-header {    
-      position:relative;    
-      margin-bottom:18px;    
-      padding:26px 0 0;    
-      background:    
-        linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),    
-        radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);    
-      border-bottom:1px solid rgba(255,255,255,.14);    
-      z-index:40;    
+    .page-header-block{
+      margin-bottom:14px;
     }
 
-.home-header-inner {    
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--home-header-max));    
-      margin-left:auto;    
-      margin-right:auto;    
+    .page-header-block h1{
+      margin:0;
+      text-wrap:balance;
+      overflow-wrap:anywhere;
+      word-break:break-word;
     }
 
-.home-logo {    
-      margin:0 0 6px;    
-      font-family:"Times New Roman", Georgia, serif;    
-      font-style:italic;    
-      font-size:clamp(2.08rem, 7.8vw, 3.15rem);    
-      font-weight:800;    
-      line-height:.95;    
-      letter-spacing:-.055em;    
-      color:var(--accent);    
-      text-shadow:0 10px 26px rgba(0,0,0,.18);    
+    .mcs-info-link{
+      display:block;
+      margin:0 0 14px;
+      text-decoration:none !important;
+      color:inherit;
     }
 
-.home-logo a {    
-      color:inherit;    
-      text-decoration:none !important;    
+    .mcs-info-link:hover,
+    .mcs-info-link:focus,
+    .mcs-info-link:active,
+    .mcs-info-link:visited{
+      text-decoration:none !important;
+      color:inherit;
     }
 
-.home-lead {    
-      margin:0 0 13px;    
-      color:#f0f2f6;    
-      font-size:1rem;    
-      font-weight:700;    
-      line-height:1.48;    
-      letter-spacing:-.02em;    
-    }
-
-.home-tabs {    
-      position:relative;    
-      display:flex;    
-      align-items:center;    
-      gap:0;    
-      width:100%;    
-      border-top:1px solid rgba(255,255,255,.13);    
-      border-bottom:1px solid rgba(255,255,255,.13);    
-      overflow:visible;    
-      z-index:50;    
-    }
-
-.home-tab,    
-    .home-menu-summary {    
-      position:relative;    
-      flex:1 1 0;    
-      min-width:0;    
-      padding:11px 8px 12px;    
-      color:#f3f4f6;    
-      font-size:.96rem;    
-      font-weight:800;    
-      line-height:1.1;    
-      text-align:center;    
-      white-space:nowrap;    
-      opacity:.96;    
-      transition:color .18s ease, opacity .18s ease;    
-      cursor:pointer;    
-      text-decoration:none !important;    
-    }
-
-.home-tab:hover,    
-    .home-menu-summary:hover {    
-      color:#fff7e8;    
-      opacity:1;    
-      text-decoration:none !important;    
-    }
-
-.home-tab.is-active,    
-    .home-menu.is-current .home-menu-summary {    
-      color:var(--accent);    
-    }
-
-.home-tab.is-active::after,    
-    .home-menu.is-current .home-menu-summary::before,    
-    .home-menu[open] .home-menu-summary::before {    
-      content:"";    
-      position:absolute;    
-      left:12px;    
-      right:12px;    
-      bottom:-1px;    
-      height:3px;    
-      border-radius:999px 999px 0 0;    
-      background:var(--accent);    
-      box-shadow:0 0 18px rgba(216,180,106,.28);    
-    }
-
-.home-menu {    
-      position:relative;    
-      flex:1 1 0;    
-      min-width:0;    
-    }
-
-.home-menu summary {    
-      list-style:none;    
-    }
-
-.home-menu summary::-webkit-details-marker {    
-      display:none;    
-    }
-
-.home-menu-summary::after {    
-      content:"";    
-      display:inline-block;    
-      width:0;    
-      height:0;    
-      margin-left:5px;    
-      border-left:4px solid transparent;    
-      border-right:4px solid transparent;    
-      border-top:5px solid currentColor;    
-      transform:translateY(-1px);    
-      opacity:.75;    
-    }
-
-.home-menu[open] .home-menu-summary {    
-      color:var(--accent);    
-    }
-
-.home-submenu {    
-      position:absolute;    
-      top:calc(100% + 8px);    
-      left:50%;    
-      z-index:80;    
-      min-width:176px;    
-      padding:8px;    
-      border:1px solid rgba(216,180,106,.24);    
-      border-radius:14px;    
-      background:    
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),    
-        rgba(18,21,30,.98);    
-      box-shadow:    
-        0 16px 34px rgba(0,0,0,.34),    
-        0 0 0 1px rgba(255,255,255,.018) inset;    
-      transform:translateX(-50%);    
-    }
-
-.home-submenu a {    
-      display:flex;    
-      align-items:center;    
-      justify-content:space-between;    
-      gap:12px;    
-      min-height:38px;    
-      padding:0 12px;    
-      border-radius:10px;    
-      color:#f3f4f6;    
-      font-size:.9rem;    
-      font-weight:800;    
-      line-height:1;    
-      white-space:nowrap;    
-      text-decoration:none !important;    
-      transition:    
-        background-color .18s ease,    
-        color .18s ease,    
-        opacity .18s ease;    
-    }
-
-.home-submenu a::after {    
-      content:"›";    
-      color:var(--accent);    
-      font-size:1.15rem;    
-      line-height:1;    
-      opacity:.8;    
-    }
-
-.home-submenu a:hover {    
-      background:rgba(216,180,106,.1);    
-      color:#fff7e8;    
-      text-decoration:none !important;    
-    }
-
-.home-header-inner {    
-        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));    
-        margin-left:var(--pc-left-gutter);    
-        margin-right:auto;    
-      }
-
-.home-logo {    
-        font-size:3rem;    
-      }
-
-.home-lead {    
-        white-space:nowrap;    
-      }
-
-.home-header {    
-        margin-bottom:14px;    
-        padding:38px 0 0;    
-      }
-
-.home-header-inner {    
-        width:calc(100% - 24px);    
-      }
-
-.home-logo {    
-        margin-bottom:5px;    
-        font-size:2.42rem;    
-      }
-
-.home-lead {    
-        margin-bottom:12px;    
-        font-size:.96rem;    
-        line-height:1.42;    
-        letter-spacing:-.025em;    
-      }
-
-.home-tabs {    
-        margin-left:-1px;    
-        margin-right:-1px;    
-      }
-
-.home-tab,    
-      .home-menu-summary {    
-        padding:10px 5px 11px;    
-        font-size:.9rem;    
-      }
-
-.home-tab.is-active::after,    
-      .home-menu.is-current .home-menu-summary::before,    
-      .home-menu[open] .home-menu-summary::before {    
-        left:8px;    
-        right:8px;    
-        height:3px;    
-      }
-
-.home-submenu {    
-        min-width:158px;    
-        top:calc(100% + 7px);    
-      }
-
-.home-menu[data-menu="data"] .home-submenu {    
-        left:0;    
-        transform:none;    
-      }
-
-.home-submenu a {    
-        min-height:37px;    
-        font-size:.86rem;    
-      }
-
-.home-header-inner {    
-        width:calc(100% - 20px);    
-      }
-
-.home-logo {    
-        font-size:2.32rem;    
-      }
-
-.home-lead {    
-        font-size:.92rem;    
-      }
-
-.home-tab,    
-      .home-menu-summary {    
-        padding-left:4px;    
-        padding-right:4px;    
-        font-size:.84rem;    
-      }
-
-@media (min-width: 1024px){    
-      .home-header-inner{    
-        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));    
-        margin-left:var(--pc-left-gutter);    
-        margin-right:auto;    
-      }    
-    
-      .home-logo{    
-        font-size:3rem;    
-      }    
-    
-      .home-lead{    
-        white-space:nowrap;    
-      }    
-    }
-
-@media (max-width: 640px) {    
-      .home-header{    
-        margin-bottom:14px;    
-        padding:38px 0 0;    
-      }    
-    
-      .home-header-inner{    
-        width:calc(100% - 24px);    
-      }    
-    
-      .home-logo{    
-        margin-bottom:5px;    
-        font-size:2.42rem;    
-      }    
-    
-      .home-lead{    
-        margin-bottom:12px;    
-        font-size:.96rem;    
-        line-height:1.42;    
-        letter-spacing:-.025em;    
-      }    
-    
-      .home-tabs{    
-        margin-left:-1px;    
-        margin-right:-1px;    
-      }    
-    
-      .home-tab,    
-      .home-menu-summary{    
-        padding:10px 5px 11px;    
-        font-size:.9rem;    
-      }    
-    
-      .home-tab.is-active::after,    
-      .home-menu.is-current .home-menu-summary::before,    
-      .home-menu[open] .home-menu-summary::before{    
-        left:8px;    
-        right:8px;    
-        height:3px;    
-      }    
-    
-      .home-submenu{    
-        min-width:158px;    
-        top:calc(100% + 7px);    
-      }    
-    
-      .home-menu[data-menu="data"] .home-submenu{    
-        left:0;    
-        transform:none;    
-      }    
-    
-      .home-submenu a{    
-        min-height:37px;    
-        font-size:.86rem;    
-      }    
-    
-      .page-top{    
-        margin-bottom:12px;    
-      }    
-    
-      .page-header-block{    
-        margin-bottom:12px;    
-      }    
-    
-      .page-header-block h1{    
-        font-size:clamp(1.5rem, 5.3vw, 1.95rem);    
-        line-height:1.12;    
-      }    
-    
-      .spec-card-link{    
-        margin-bottom: 8px;    
-        padding: 10px 12px;    
-        border-radius: 15px;    
-      }    
-    
-      .spec-card-title{    
-        font-size: 0.9rem;    
-      }    
-    
-      .top3-row {    
-        gap: 10px;    
-        padding: 10px 0;    
-      }    
-    
-      .top3-left {    
-        gap: 7px;    
-        font-size: 0.98rem;    
-      }    
-    
-      .top3-medal {    
-        font-size: 0.92em;    
-      }    
-    
-      .top3-score {    
-        font-size: 0.98rem;    
-      }    
-    
-      .rankings-card-inner {    
-        padding-left: 10px;    
-        padding-right: 10px;    
-      }    
-    
-      .rankings-card-head{    
-        margin-bottom: 6px;    
-      }    
-    
-      table.rankings-table col:nth-child(1) {    
-        width: 42px;    
-      }    
-    
-      table.rankings-table col:nth-child(3) {    
-        width: 62px;    
-      }    
-    
-      table.rankings-table td {    
-        padding: 8px 4px;    
-        font-size: 0.9rem;    
-      }    
-    
-      .rank-name-link,    
-      .rank-name-text {    
-        line-height: 1.28;    
-      }    
-    
-      .rank-score {    
-        font-size: 0.94rem;    
-      }    
-    }
-
-@media (max-width: 390px){    
-      .home-header-inner{    
-        width:calc(100% - 20px);    
-      }    
-    
-      .home-logo{    
-        font-size:2.32rem;    
-      }    
-    
-      .home-lead{    
-        font-size:.92rem;    
-      }    
-    
-      .home-tab,    
-      .home-menu-summary{    
-        padding-left:4px;    
-        padding-right:4px;    
-        font-size:.84rem;    
-      }    
-    }
-
-    /* === Safety override: prevent mobile header overflow === */
-    html,
-    body {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
-    .home-header {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: clip;
-      box-sizing: border-box;
-    }
-
-    .home-header-inner {
-      box-sizing: border-box;
-      width: min(calc(100% - (var(--page-gutter, 24px) * 2)), var(--home-header-max, 1040px)) !important;
-      max-width: calc(100% - (var(--page-gutter, 24px) * 2)) !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    .home-logo,
-    .home-lead,
-    .home-tabs {
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    .home-lead {
-      overflow-wrap: anywhere;
-    }
-
-    .home-tabs {
-      width: 100%;
-      min-width: 0;
-      overflow: visible;
-    }
-
-    .home-tab,
-    .home-menu,
-    .home-menu-summary {
-      min-width: 0;
-    }
-
-    @media (max-width: 767px) {
-      .home-header {
-        padding-top: 26px;
-      }
-
-      .home-header-inner {
-        width: calc(100% - 48px) !important;
-        max-width: calc(100% - 48px) !important;
-        margin-left: 24px !important;
-        margin-right: 24px !important;
-      }
-
-      .home-logo {
-        font-size: clamp(2.08rem, 7.8vw, 3.15rem);
-        line-height: .95;
-        white-space: nowrap;
-      }
-
-      .home-lead {
-        font-size: 1rem;
-        line-height: 1.45;
-      }
-
-      .home-tabs {
-        display: flex;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .home-tab,
-      .home-menu-summary {
-        padding-left: 6px;
-        padding-right: 6px;
-        font-size: .96rem;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .home-header-inner {
-        width: min(var(--home-header-max, 1040px), calc(100% - var(--pc-left-gutter, 24px) - var(--page-gutter, 24px))) !important;
-        max-width: min(var(--home-header-max, 1040px), calc(100% - var(--pc-left-gutter, 24px) - var(--page-gutter, 24px))) !important;
-        margin-left: var(--pc-left-gutter, 24px) !important;
-        margin-right: auto !important;
-      }
-    }
-
-    /* === Menu color test: subtle category backgrounds === */
-    .home-menu[data-menu="data"] .home-menu-summary {
+    .mcs-info-card{
+      display:block;
+      padding:13px 14px;
+      border:1px solid rgba(216,180,106,0.44);
+      border-radius:16px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(10, 42, 32, .52);
-      border-radius: 12px 12px 0 0;
+        linear-gradient(180deg, rgba(216,180,106,0.22) 0%, rgba(216,180,106,0.10) 100%),
+        rgba(255,255,255,0.04);
+      color:#f1f4fb;
+      line-height:1.58;
+      font-size:0.92rem;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.03) inset,
+        0 14px 28px rgba(0,0,0,0.18);
+      transition:
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
     }
 
-    .home-menu[data-menu="ranking"] .home-menu-summary {
+    .mcs-info-link:hover .mcs-info-card,
+    .mcs-info-link:focus-visible .mcs-info-card{
+      transform:translateY(-2px);
+      border-color:rgba(216,180,106,0.78);
       background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(18, 34, 64, .54);
-      border-radius: 12px 12px 0 0;
+        linear-gradient(180deg, rgba(216,180,106,0.34) 0%, rgba(216,180,106,0.16) 100%),
+        rgba(255,255,255,0.07);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04) inset,
+        0 18px 34px rgba(0,0,0,0.24),
+        0 0 26px rgba(216,180,106,0.16);
+      opacity:1;
     }
 
-    .home-tab[href="simulation.html"] {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(72, 22, 26, .50);
-      border-radius: 12px 12px 0 0;
+    .mcs-info-link:focus-visible{
+      outline:none;
     }
 
-    .home-tab[href="articles.html"] {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(74, 50, 24, .50);
-      border-radius: 12px 12px 0 0;
+    .mcs-list-wrap {
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
-    .home-menu[data-menu="data"] .home-menu-summary:hover,
-    .home-menu[data-menu="ranking"] .home-menu-summary:hover,
-    .home-tab[href="simulation.html"]:hover,
-    .home-tab[href="articles.html"]:hover {
-      filter: brightness(1.12);
+    .mcs-search {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin: 0 0 12px;
     }
 
-    .home-tab.is-current {
+    .mcs-search-label {
       color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .mcs-search-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .mcs-search-input {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font: inherit;
+      font-size: 0.94rem;
+      line-height: 1.3;
+      padding: 0 14px;
+      outline: none;
+      box-sizing: border-box;
+      transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background-color 0.18s ease;
+    }
+
+    .mcs-search-input::placeholder {
+      color: rgba(241,244,251,0.44);
+    }
+
+    .mcs-search-input:focus {
+      border-color: var(--line-strong);
+      box-shadow: 0 0 0 3px rgba(216,180,106,0.08);
+      background: rgba(255,255,255,0.055);
+    }
+
+    .mcs-search-clear {
+      flex: 0 0 auto;
+      min-width: 42px;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.035);
+      color: var(--muted);
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+      transition:
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .mcs-search-clear:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.07);
+      border-color: var(--line-strong);
+      color: var(--text);
+    }
+
+    .mcs-search-clear.is-hidden {
+      display: none;
+    }
+
+    .mcs-search-help {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.48;
+    }
+
+    .mcs-block-title {
+      margin: 4px 0 10px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .mcs-block-title.is-hidden {
+      display: none;
+    }
+
+    .mcs-hot-section {
+      margin: 0 0 14px;
+    }
+
+    .mcs-hot-section.is-hidden {
+      display: none;
+    }
+
+    .mcs-hot-title {
+      margin-top: 0;
+    }
+
+    .mcs-hot-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mcs-hot-list li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .mcs-hot-link,
+    .mcs-hot-static {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid rgba(216,180,106,0.28);
+      border-radius: 999px;
+      background: rgba(216,180,106,0.08);
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+      transition:
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .mcs-hot-link:hover {
+      transform: translateY(-1px);
+      background: rgba(216,180,106,0.13);
+      border-color: rgba(216,180,106,0.42);
+      box-shadow: 0 0 14px rgba(216,180,106,0.10);
+      text-decoration: none;
       opacity: 1;
-      position: relative;
     }
 
-    .home-tab.is-current::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 4px;
-      border-radius: 999px 999px 0 0;
-      background: var(--accent);
-      box-shadow: 0 0 12px rgba(216,180,106,.28);
+    .mcs-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
     }
 
-    .home-menu.is-current .home-menu-summary,
-    .home-tab.is-current {
+    .mcs-tabs.is-hidden {
+      display: none;
+    }
+
+    .mcs-tab {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
       color: var(--accent);
+      border-radius: 999px;
+      padding: 6px 12px;
+      min-width: 0;
+      min-height: 38px;
+      font: inherit;
+      font-size: 0.98rem;
+      cursor: pointer;
+      transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
     }
 
-    @media (max-width: 767px) {
-      .home-tab,
-      .home-menu-summary {
-        font-size: .92rem;
+    .mcs-tab:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-1px);
+    }
+
+    .mcs-tab.is-active {
+      background: rgba(255,255,255,0.10);
+      border-color: var(--line-strong);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+    }
+
+    #mcs-status {
+      display: none;
+      margin-bottom: 10px;
+    }
+
+    .mcs-section-title {
+      margin: 4px 0 6px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .mcs-result-count {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.86rem;
+    }
+
+    .mcs-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mcs-list li {
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mcs-list li:last-child {
+      border-bottom: none;
+    }
+
+    .mc-link,
+    .mc-link-static {
+      display: block;
+      padding: 9px 0;
+      color: inherit;
+      border-radius: 8px;
+      line-height: 1.32;
+    }
+
+    .mc-link {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
+    .mc-link:hover {
+      opacity: 0.9;
+      background: rgba(255,255,255,0.03);
+      text-decoration: underline;
+    }
+
+    .mc-link-static {
+      text-decoration: none;
+    }
+
+    .mcs-empty {
+      color: var(--muted);
+      padding: 8px 0;
+    }
+
+    @media (max-width: 640px) {
+      .page-top{
+        margin-bottom:12px;
       }
 
-      .home-tab[href="simulation.html"] {
-        letter-spacing: -.04em;
+      .page-header-block{
+        margin-bottom:12px;
+      }
+
+      .page-header-block h1{
+        font-size:clamp(1.5rem, 5.3vw, 1.95rem);
+        line-height:1.12;
+      }
+
+      .mcs-info-link{
+        margin-bottom:12px;
+      }
+
+      .mcs-info-card{
+        padding:11px 12px;
+        font-size:0.85rem;
+        line-height:1.46;
+        border-radius:15px;
+      }
+
+      .mcs-list-wrap {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .mcs-search {
+        gap: 6px;
+        margin-bottom: 11px;
+      }
+
+      .mcs-search-label {
+        font-size: 0.82rem;
+      }
+
+      .mcs-search-row {
+        gap: 7px;
+      }
+
+      .mcs-search-input {
+        min-height: 40px;
+        padding: 0 13px;
+        font-size: 0.9rem;
+      }
+
+      .mcs-search-clear {
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 0.95rem;
+      }
+
+      .mcs-search-help {
+        font-size: 0.75rem;
+        line-height: 1.42;
+      }
+
+      .mcs-block-title {
+        margin: 3px 0 9px;
+        font-size: 0.82rem;
+      }
+
+      .mcs-hot-section {
+        margin-bottom: 13px;
+      }
+
+      .mcs-hot-title {
+        margin-top: 0;
+      }
+
+      .mcs-hot-list {
+        gap: 7px;
+      }
+
+      .mcs-hot-link,
+      .mcs-hot-static {
+        min-height: 32px;
+        padding: 0 11px;
+        font-size: 0.84rem;
+      }
+
+      .mcs-tabs {
+        gap: 7px;
+        margin-bottom: 9px;
+      }
+
+      .mcs-tab {
+        padding: 5px 11px;
+        min-height: 34px;
+        font-size: 0.92rem;
+      }
+
+      .mc-link,
+      .mc-link-static {
+        padding: 8px 0;
+      }
+
+      .mcs-section-title {
+        margin: 3px 0 5px;
+        font-size: 0.82rem;
+      }
+
+      .mcs-result-count {
+        font-size: 0.82rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <div class="mcs-page">
+    <div class="page-top">
+      <div class="page-header-block">
+        <h1>MC一覧</h1>
+      </div>
+
+      <a class="mcs-info-link" href="contact.html" target="_blank" rel="noopener noreferrer" aria-label="情報提供フォームを新しいタブで開く">
+        <div class="mcs-info-card">
+          MC名の読み誤り、同一人物重複、表記ゆれなどありましたら情報提供をお願いします。
+        </div>
+      </a>
+    </div>
+
+    <section class="card">
+      <div class="mcs-list-wrap">
+        <div class="mcs-search" role="search" aria-label="MC検索">
+          <label class="mcs-search-label" for="mcs-search-input">MC名・読み仮名で検索</label>
+          <div class="mcs-search-row">
+            <input
+              id="mcs-search-input"
+              class="mcs-search-input"
+              type="search"
+              placeholder="例：R-指定 / りょふ / Authority"
+              autocomplete="off"
+            />
+            <button id="mcs-search-clear" class="mcs-search-clear is-hidden" type="button" aria-label="検索語をクリア">×</button>
+          </div>
+          <p class="mcs-search-help">MC名、読み仮名、カタカナ入力で絞り込めます。</p>
+        </div>
+
+        <h2 id="mcs-all-title" class="mcs-block-title">全件表示</h2>
+        <div id="mcs-tabs" class="mcs-tabs"></div>
+        <p id="mcs-status" class="muted">読み込み中...</p>
+        <div id="mcs-panel"></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const MCS_JSON_URL = "./data/mcs.json";
+    const TAB_ORDER = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ"];
+
+    let allMcs = [];
+    let allGroups = {};
+    let currentTab = "あ";
+    let searchInitialized = false;
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function toHiragana(str) {
+      return String(str || "").replace(/[\u30a1-\u30f6]/g, ch =>
+        String.fromCharCode(ch.charCodeAt(0) - 0x60)
+      );
+    }
+
+    function normalizeSearchText(value) {
+      return toHiragana(String(value || ""))
+        .toLowerCase()
+        .replace(/\s+/g, "")
+        .trim();
+    }
+
+    function getSearchText(mc) {
+      return normalizeSearchText([
+        mc.mc_name || "",
+        mc.mc_yomi || ""
+      ].join(" "));
+    }
+
+    function isHotMc(mc) {
+      const value = mc ? mc.hot_mc : "";
+      const text = String(value ?? "").toLowerCase().trim();
+      return value === true || value === 1 || text === "1" || text === "true" || text === "yes" || text === "hot";
+    }
+
+    function getTabGroup(mc) {
+      const yomi = toHiragana(String(mc.mc_yomi || mc.mc_name || "").trim());
+      const first = yomi.charAt(0);
+
+      if ("あいうえお".includes(first)) return "あ";
+      if ("かきくけこがぎぐげご".includes(first)) return "か";
+      if ("さしすせそざじずぜぞ".includes(first)) return "さ";
+      if ("たちつてとだぢづでど".includes(first)) return "た";
+      if ("なにぬねの".includes(first)) return "な";
+      if ("はひふへほばびぶべぼぱぴぷぺぽ".includes(first)) return "は";
+      if ("まみむめも".includes(first)) return "ま";
+      if ("やゆよ".includes(first)) return "や";
+      if ("らりるれろ".includes(first)) return "ら";
+      if ("わをん".includes(first)) return "わ";
+
+      return "";
+    }
+
+    function sortMcs(mcs) {
+      return [...mcs].sort((a, b) => {
+        const ay = String(a.mc_yomi || a.mc_name || "");
+        const by = String(b.mc_yomi || b.mc_name || "");
+        const yomiCompare = ay.localeCompare(by, "ja");
+        if (yomiCompare !== 0) return yomiCompare;
+
+        return String(a.mc_name || "").localeCompare(String(b.mc_name || ""), "ja");
+      });
+    }
+
+    function createMcList(mcs) {
+      const list = document.createElement("ul");
+      list.className = "mcs-list";
+
+      mcs.forEach(mc => {
+        const li = document.createElement("li");
+        const mcId = String(mc.mc_id || "");
+        const name = String(mc.mc_name || "MC名不明");
+
+        if (mcId) {
+          li.innerHTML = `<a class="mc-link" href="detail_mc/${encodeURIComponent(mcId)}.html">${escapeHtml(name)}</a>`;
+        } else {
+          li.innerHTML = `<span class="mc-link-static">${escapeHtml(name)}</span>`;
+        }
+
+        list.appendChild(li);
+      });
+
+      return list;
+    }
+
+    function createHotMcsElement(mcs, activeTab) {
+      const target = (mcs || []).filter(mc => getTabGroup(mc) === activeTab && isHotMc(mc));
+      if (target.length === 0) return null;
+
+      const sectionEl = document.createElement("div");
+      sectionEl.className = "mcs-hot-section";
+
+      const titleEl = document.createElement("h2");
+      titleEl.className = "mcs-block-title mcs-hot-title";
+      titleEl.textContent = `${activeTab}行の閲覧数の多いMC`;
+      sectionEl.appendChild(titleEl);
+
+      const listEl = document.createElement("ul");
+      listEl.className = "mcs-hot-list";
+
+      sortMcs(target).forEach(mc => {
+        const li = document.createElement("li");
+        const mcId = String(mc.mc_id || "");
+        const name = String(mc.mc_name || "MC名不明");
+
+        if (mcId) {
+          li.innerHTML = `<a class="mcs-hot-link" href="detail_mc/${encodeURIComponent(mcId)}.html">${escapeHtml(name)}</a>`;
+        } else {
+          li.innerHTML = `<span class="mcs-hot-static">${escapeHtml(name)}</span>`;
+        }
+
+        listEl.appendChild(li);
+      });
+
+      sectionEl.appendChild(listEl);
+      return sectionEl;
+    }
+
+    function renderTabs(groups, activeTab) {
+      const tabsEl = document.getElementById("mcs-tabs");
+      const allTitleEl = document.getElementById("mcs-all-title");
+
+      allTitleEl.classList.remove("is-hidden");
+      tabsEl.classList.remove("is-hidden");
+      tabsEl.innerHTML = "";
+
+      TAB_ORDER.forEach(tabName => {
+        if (!groups[tabName] || groups[tabName].length === 0) return;
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "mcs-tab" + (tabName === activeTab ? " is-active" : "");
+        btn.textContent = tabName;
+        btn.addEventListener("click", () => renderPanel(groups, tabName));
+        tabsEl.appendChild(btn);
+      });
+    }
+
+    function renderPanel(groups, activeTab) {
+      currentTab = activeTab;
+      renderTabs(groups, activeTab);
+
+      const panelEl = document.getElementById("mcs-panel");
+      panelEl.innerHTML = "";
+
+      const hotEl = createHotMcsElement(allMcs, activeTab);
+      if (hotEl) {
+        panelEl.appendChild(hotEl);
+      }
+
+      const sectionTitle = document.createElement("h2");
+      sectionTitle.className = "mcs-section-title";
+      sectionTitle.textContent = `${activeTab}行`;
+      panelEl.appendChild(sectionTitle);
+
+      const target = groups[activeTab] || [];
+      if (target.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "mcs-empty";
+        empty.textContent = "該当するMCがいません";
+        panelEl.appendChild(empty);
+        return;
+      }
+
+      panelEl.appendChild(createMcList(target));
+    }
+
+    function renderSearchResults(keyword) {
+      const tabsEl = document.getElementById("mcs-tabs");
+      const allTitleEl = document.getElementById("mcs-all-title");
+      const panelEl = document.getElementById("mcs-panel");
+      const normalizedKeyword = normalizeSearchText(keyword);
+
+      allTitleEl.classList.add("is-hidden");
+      tabsEl.classList.add("is-hidden");
+      panelEl.innerHTML = "";
+
+      const results = allMcs.filter(mc => getSearchText(mc).includes(normalizedKeyword));
+
+      const sectionTitle = document.createElement("h2");
+      sectionTitle.className = "mcs-section-title";
+      sectionTitle.innerHTML = `検索結果 <span class="mcs-result-count">${results.length}件</span>`;
+      panelEl.appendChild(sectionTitle);
+
+      if (results.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "mcs-empty";
+        empty.textContent = "該当するMCがいません";
+        panelEl.appendChild(empty);
+        return;
+      }
+
+      panelEl.appendChild(createMcList(results));
+    }
+
+    function updateSearchView() {
+      const inputEl = document.getElementById("mcs-search-input");
+      const clearEl = document.getElementById("mcs-search-clear");
+      const keyword = inputEl.value || "";
+      const normalizedKeyword = normalizeSearchText(keyword);
+
+      if (normalizedKeyword) {
+        clearEl.classList.remove("is-hidden");
+        renderSearchResults(keyword);
+        return;
+      }
+
+      clearEl.classList.add("is-hidden");
+      renderPanel(allGroups, currentTab);
+    }
+
+    function setupSearch() {
+      if (searchInitialized) return;
+
+      const inputEl = document.getElementById("mcs-search-input");
+      const clearEl = document.getElementById("mcs-search-clear");
+
+      inputEl.addEventListener("input", updateSearchView);
+
+      clearEl.addEventListener("click", () => {
+        inputEl.value = "";
+        inputEl.focus();
+        updateSearchView();
+      });
+
+      searchInitialized = true;
+    }
+
+    async function loadMcsJson() {
+      const res = await fetch(MCS_JSON_URL, { cache: "no-store" });
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      return await res.json();
+    }
+
+    async function loadMcsList() {
+      const statusEl = document.getElementById("mcs-status");
+      statusEl.classList.remove("error");
+
+      try {
+        const data = await loadMcsJson();
+        console.log("mcs list:", data);
+
+        if (data.error) {
+          statusEl.style.display = "block";
+          statusEl.textContent = "MC一覧の取得に失敗しました: " + (data.message || "");
+          statusEl.classList.add("error");
+          return;
+        }
+
+        const mcs = Array.isArray(data.mcs) ? sortMcs(data.mcs) : [];
+        const groups = {};
+
+        TAB_ORDER.forEach(tab => {
+          groups[tab] = [];
+        });
+
+        const skipped = [];
+
+        mcs.forEach(mc => {
+          const group = getTabGroup(mc);
+          if (!group) {
+            skipped.push({
+              mc_id: mc.mc_id || "",
+              mc_name: mc.mc_name || "",
+              mc_yomi: mc.mc_yomi || ""
+            });
+            return;
+          }
+          groups[group].push(mc);
+        });
+
+        if (skipped.length > 0) {
+          console.log("mcs skipped because group was not found:", skipped);
+        }
+
+        allMcs = mcs;
+        allGroups = groups;
+
+        const firstTab = TAB_ORDER.find(tab => groups[tab] && groups[tab].length > 0) || "あ";
+        currentTab = firstTab;
+        renderPanel(groups, firstTab);
+        setupSearch();
+        updateSearchView();
+
+        if (mcs.length === 0) {
+          statusEl.style.display = "block";
+          statusEl.textContent = "表示できるMCがいません";
+        } else {
+          statusEl.style.display = "none";
+          statusEl.textContent = "";
+        }
+      } catch (err) {
+        console.error(err);
+        statusEl.style.display = "block";
+        statusEl.textContent = "MC一覧の読み込みに失敗しました";
+        statusEl.classList.add("error");
       }
     }
 
-  </style>  
-</head>  
-<body>  
-  <header class="home-header">    
-    <div class="home-header-inner">    
-      <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>    
-      <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>    
-    
-      <nav class="home-tabs" aria-label="主要メニュー">    
-        <details class="home-menu is-current" data-menu="data">    
-          <summary class="home-menu-summary">Data</summary>    
-          <div class="home-submenu">    
-            <a href="list_mc.html">MC一覧</a>    
-            <a href="list_event.html">大会一覧</a>    
-          </div>    
-        </details>    
-    
-        <details class="home-menu" data-menu="ranking">    
-          <summary class="home-menu-summary">Ranking</summary>    
-          <div class="home-submenu">    
-            <a href="score_ranking.html">スコアランキング</a>    
-            <a href="prize_ranking.html">賞金ランキング</a>    
-            <a href="score_spec.html">スコアリング仕様</a>    
-          </div>    
-        </details>    
-    
-        <a class="home-tab" href="simulation.html">Simulator</a>    
-        <a class="home-tab" href="articles.html">Reading</a>    
-      </nav>    
-    </div>    
-  </header>  
-  
-  <div class="mcs-page">  
-    <div class="page-top">  
-      <div class="page-header-block">  
-        <h1>MC一覧</h1>  
-      </div>  
-  
-      <a class="mcs-info-link" href="contact.html" target="_blank" rel="noopener noreferrer" aria-label="情報提供フォームを新しいタブで開く">  
-        <div class="mcs-info-card">  
-          MC名の読み誤り、同一人物重複、表記ゆれなどありましたら情報提供をお願いします。  
-        </div>  
-      </a>  
-    </div>  
-  
-    <section class="card">  
-      <div class="mcs-list-wrap">  
-        <div class="mcs-search" role="search" aria-label="MC検索">  
-          <label class="mcs-search-label" for="mcs-search-input">MC名・読み仮名で検索</label>  
-          <div class="mcs-search-row">  
-            <input  
-              id="mcs-search-input"  
-              class="mcs-search-input"  
-              type="search"  
-              placeholder="例：R-指定 / りょふ / Authority"  
-              autocomplete="off"  
-            />  
-            <button id="mcs-search-clear" class="mcs-search-clear is-hidden" type="button" aria-label="検索語をクリア">×</button>  
-          </div>  
-          <p class="mcs-search-help">MC名、読み仮名、カタカナ入力で絞り込めます。</p>  
-        </div>  
-  
-        <h2 id="mcs-all-title" class="mcs-block-title">全件表示</h2>  
-        <div id="mcs-tabs" class="mcs-tabs"></div>  
-        <p id="mcs-status" class="muted">読み込み中...</p>  
-        <div id="mcs-panel"></div>  
-      </div>  
-    </section>  
-  </div>  
-  
-  <script>  
-    const MCS_JSON_URL = "./data/mcs.json";  
-    const TAB_ORDER = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ"];  
-  
-    let allMcs = [];  
-    let allGroups = {};  
-    let currentTab = "あ";  
-    let searchInitialized = false;  
-  
-    function closeOtherMenus(currentMenu) {  
-      const menus = document.querySelectorAll(".home-menu");  
-      menus.forEach((menu) => {  
-        if (menu !== currentMenu) {  
-          menu.removeAttribute("open");  
-        }  
-      });  
-    }  
-  
-    function setupHeaderMenus() {  
-      const menus = document.querySelectorAll(".home-menu");  
-  
-      menus.forEach((menu) => {  
-        menu.addEventListener("toggle", () => {  
-          if (menu.open) {  
-            closeOtherMenus(menu);  
-          }  
-        });  
-      });  
-  
-      document.addEventListener("click", (event) => {  
-        const target = event.target;  
-        if (!(target instanceof Element)) return;  
-        if (target.closest(".home-menu")) return;  
-  
-        menus.forEach((menu) => {  
-          menu.removeAttribute("open");  
-        });  
-      });  
-    }  
-  
-    function escapeHtml(value) {  
-      return String(value ?? "")  
-        .replace(/&/g, "&amp;")  
-        .replace(/</g, "&lt;")  
-        .replace(/>/g, "&gt;")  
-        .replace(/"/g, "&quot;")  
-        .replace(/'/g, "&#39;");  
-    }  
-  
-    function toHiragana(str) {  
-      return String(str || "").replace(/[\u30a1-\u30f6]/g, ch =>  
-        String.fromCharCode(ch.charCodeAt(0) - 0x60)  
-      );  
-    }  
-  
-    function normalizeSearchText(value) {  
-      return toHiragana(String(value || ""))  
-        .toLowerCase()  
-        .replace(/\s+/g, "")  
-        .trim();  
-    }  
-  
-    function getSearchText(mc) {  
-      return normalizeSearchText([  
-        mc.mc_name || "",  
-        mc.mc_yomi || ""  
-      ].join(" "));  
-    }  
-  
-    function isHotMc(mc) {  
-      const value = mc ? mc.hot_mc : "";  
-      const text = String(value ?? "").toLowerCase().trim();  
-      return value === true || value === 1 || text === "1" || text === "true" || text === "yes" || text === "hot";  
-    }  
-  
-    function getTabGroup(mc) {  
-      const yomi = toHiragana(String(mc.mc_yomi || mc.mc_name || "").trim());  
-      const first = yomi.charAt(0);  
-  
-      if ("あいうえお".includes(first)) return "あ";  
-      if ("かきくけこがぎぐげご".includes(first)) return "か";  
-      if ("さしすせそざじずぜぞ".includes(first)) return "さ";  
-      if ("たちつてとだぢづでど".includes(first)) return "た";  
-      if ("なにぬねの".includes(first)) return "な";  
-      if ("はひふへほばびぶべぼぱぴぷぺぽ".includes(first)) return "は";  
-      if ("まみむめも".includes(first)) return "ま";  
-      if ("やゆよ".includes(first)) return "や";  
-      if ("らりるれろ".includes(first)) return "ら";  
-      if ("わをん".includes(first)) return "わ";  
-  
-      return "";  
-    }  
-  
-    function sortMcs(mcs) {  
-      return [...mcs].sort((a, b) => {  
-        const ay = String(a.mc_yomi || a.mc_name || "");  
-        const by = String(b.mc_yomi || b.mc_name || "");  
-        const yomiCompare = ay.localeCompare(by, "ja");  
-        if (yomiCompare !== 0) return yomiCompare;  
-  
-        return String(a.mc_name || "").localeCompare(String(b.mc_name || ""), "ja");  
-      });  
-    }  
-  
-    function createMcList(mcs) {  
-      const list = document.createElement("ul");  
-      list.className = "mcs-list";  
-  
-      mcs.forEach(mc => {  
-        const li = document.createElement("li");  
-        const mcId = String(mc.mc_id || "");  
-        const name = String(mc.mc_name || "MC名不明");  
-  
-        if (mcId) {  
-          li.innerHTML = `<a class="mc-link" href="detail_mc/${encodeURIComponent(mcId)}.html">${escapeHtml(name)}</a>`;  
-        } else {  
-          li.innerHTML = `<span class="mc-link-static">${escapeHtml(name)}</span>`;  
-        }  
-  
-        list.appendChild(li);  
-      });  
-  
-      return list;  
-    }  
-  
-    function createHotMcsElement(mcs, activeTab) {  
-      const target = (mcs || []).filter(mc => getTabGroup(mc) === activeTab && isHotMc(mc));  
-      if (target.length === 0) return null;  
-  
-      const sectionEl = document.createElement("div");  
-      sectionEl.className = "mcs-hot-section";  
-  
-      const titleEl = document.createElement("h2");  
-      titleEl.className = "mcs-block-title mcs-hot-title";  
-      titleEl.textContent = `${activeTab}行の閲覧数の多いMC`;  
-      sectionEl.appendChild(titleEl);  
-  
-      const listEl = document.createElement("ul");  
-      listEl.className = "mcs-hot-list";  
-  
-      sortMcs(target).forEach(mc => {  
-        const li = document.createElement("li");  
-        const mcId = String(mc.mc_id || "");  
-        const name = String(mc.mc_name || "MC名不明");  
-  
-        if (mcId) {  
-          li.innerHTML = `<a class="mcs-hot-link" href="detail_mc/${encodeURIComponent(mcId)}.html">${escapeHtml(name)}</a>`;  
-        } else {  
-          li.innerHTML = `<span class="mcs-hot-static">${escapeHtml(name)}</span>`;  
-        }  
-  
-        listEl.appendChild(li);  
-      });  
-  
-      sectionEl.appendChild(listEl);  
-      return sectionEl;  
-    }  
-  
-    function renderTabs(groups, activeTab) {  
-      const tabsEl = document.getElementById("mcs-tabs");  
-      const allTitleEl = document.getElementById("mcs-all-title");  
-  
-      allTitleEl.classList.remove("is-hidden");  
-      tabsEl.classList.remove("is-hidden");  
-      tabsEl.innerHTML = "";  
-  
-      TAB_ORDER.forEach(tabName => {  
-        if (!groups[tabName] || groups[tabName].length === 0) return;  
-  
-        const btn = document.createElement("button");  
-        btn.type = "button";  
-        btn.className = "mcs-tab" + (tabName === activeTab ? " is-active" : "");  
-        btn.textContent = tabName;  
-        btn.addEventListener("click", () => renderPanel(groups, tabName));  
-        tabsEl.appendChild(btn);  
-      });  
-    }  
-  
-    function renderPanel(groups, activeTab) {  
-      currentTab = activeTab;  
-      renderTabs(groups, activeTab);  
-  
-      const panelEl = document.getElementById("mcs-panel");  
-      panelEl.innerHTML = "";  
-  
-      const hotEl = createHotMcsElement(allMcs, activeTab);  
-      if (hotEl) {  
-        panelEl.appendChild(hotEl);  
-      }  
-  
-      const sectionTitle = document.createElement("h2");  
-      sectionTitle.className = "mcs-section-title";  
-      sectionTitle.textContent = `${activeTab}行`;  
-      panelEl.appendChild(sectionTitle);  
-  
-      const target = groups[activeTab] || [];  
-      if (target.length === 0) {  
-        const empty = document.createElement("p");  
-        empty.className = "mcs-empty";  
-        empty.textContent = "該当するMCがいません";  
-        panelEl.appendChild(empty);  
-        return;  
-      }  
-  
-      panelEl.appendChild(createMcList(target));  
-    }  
-  
-    function renderSearchResults(keyword) {  
-      const tabsEl = document.getElementById("mcs-tabs");  
-      const allTitleEl = document.getElementById("mcs-all-title");  
-      const panelEl = document.getElementById("mcs-panel");  
-      const normalizedKeyword = normalizeSearchText(keyword);  
-  
-      allTitleEl.classList.add("is-hidden");  
-      tabsEl.classList.add("is-hidden");  
-      panelEl.innerHTML = "";  
-  
-      const results = allMcs.filter(mc => getSearchText(mc).includes(normalizedKeyword));  
-  
-      const sectionTitle = document.createElement("h2");  
-      sectionTitle.className = "mcs-section-title";  
-      sectionTitle.innerHTML = `検索結果 <span class="mcs-result-count">${results.length}件</span>`;  
-      panelEl.appendChild(sectionTitle);  
-  
-      if (results.length === 0) {  
-        const empty = document.createElement("p");  
-        empty.className = "mcs-empty";  
-        empty.textContent = "該当するMCがいません";  
-        panelEl.appendChild(empty);  
-        return;  
-      }  
-  
-      panelEl.appendChild(createMcList(results));  
-    }  
-  
-    function updateSearchView() {  
-      const inputEl = document.getElementById("mcs-search-input");  
-      const clearEl = document.getElementById("mcs-search-clear");  
-      const keyword = inputEl.value || "";  
-      const normalizedKeyword = normalizeSearchText(keyword);  
-  
-      if (normalizedKeyword) {  
-        clearEl.classList.remove("is-hidden");  
-        renderSearchResults(keyword);  
-        return;  
-      }  
-  
-      clearEl.classList.add("is-hidden");  
-      renderPanel(allGroups, currentTab);  
-    }  
-  
-    function setupSearch() {  
-      if (searchInitialized) return;  
-  
-      const inputEl = document.getElementById("mcs-search-input");  
-      const clearEl = document.getElementById("mcs-search-clear");  
-  
-      inputEl.addEventListener("input", updateSearchView);  
-  
-      clearEl.addEventListener("click", () => {  
-        inputEl.value = "";  
-        inputEl.focus();  
-        updateSearchView();  
-      });  
-  
-      searchInitialized = true;  
-    }  
-  
-    async function loadMcsJson() {  
-      const res = await fetch(MCS_JSON_URL, { cache: "no-store" });  
-      if (!res.ok) {  
-        throw new Error(`HTTP ${res.status}`);  
-      }  
-      return await res.json();  
-    }  
-  
-    async function loadMcsList() {  
-      const statusEl = document.getElementById("mcs-status");  
-      statusEl.classList.remove("error");  
-  
-      try {  
-        const data = await loadMcsJson();  
-        console.log("mcs list:", data);  
-  
-        if (data.error) {  
-          statusEl.style.display = "block";  
-          statusEl.textContent = "MC一覧の取得に失敗しました: " + (data.message || "");  
-          statusEl.classList.add("error");  
-          return;  
-        }  
-  
-        const mcs = Array.isArray(data.mcs) ? sortMcs(data.mcs) : [];  
-        const groups = {};  
-  
-        TAB_ORDER.forEach(tab => {  
-          groups[tab] = [];  
-        });  
-  
-        const skipped = [];  
-  
-        mcs.forEach(mc => {  
-          const group = getTabGroup(mc);  
-          if (!group) {  
-            skipped.push({  
-              mc_id: mc.mc_id || "",  
-              mc_name: mc.mc_name || "",  
-              mc_yomi: mc.mc_yomi || ""  
-            });  
-            return;  
-          }  
-          groups[group].push(mc);  
-        });  
-  
-        if (skipped.length > 0) {  
-          console.log("mcs skipped because group was not found:", skipped);  
-        }  
-  
-        allMcs = mcs;  
-        allGroups = groups;  
-  
-        const firstTab = TAB_ORDER.find(tab => groups[tab] && groups[tab].length > 0) || "あ";  
-        currentTab = firstTab;  
-        renderPanel(groups, firstTab);  
-        setupSearch();  
-        updateSearchView();  
-  
-        if (mcs.length === 0) {  
-          statusEl.style.display = "block";  
-          statusEl.textContent = "表示できるMCがいません";  
-        } else {  
-          statusEl.style.display = "none";  
-          statusEl.textContent = "";  
-        }  
-      } catch (err) {  
-        console.error(err);  
-        statusEl.style.display = "block";  
-        statusEl.textContent = "MC一覧の読み込みに失敗しました";  
-        statusEl.classList.add("error");  
-      }  
-    }  
-  
-    window.addEventListener("pageshow", function () {  
-      setTimeout(function () {  
-        if (allMcs.length > 0) {  
-          updateSearchView();  
-        }  
-      }, 0);  
-    });  
-  
-    setupHeaderMenus();  
-    loadMcsList();  
-  </script>  
-</body>  
-</html>  
+    window.addEventListener("pageshow", function () {
+      setTimeout(function () {
+        if (allMcs.length > 0) {
+          updateSearchView();
+        }
+      }, 0);
+    });
+
+    loadMcsList();
+  </script>
+  <script src="site-header.js"></script>
+</body>
+</html>
