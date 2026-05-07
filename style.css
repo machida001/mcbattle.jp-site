@@ -1180,3 +1180,21 @@ hr {
     font-size: 0.95rem;
   }
 
+/* ===== PCだけカード境界を少し強調 ===== */
+
+@media (min-width: 1024px) {
+  .card,
+  .spec-card,
+  .contact-card,
+  .home-card,
+  .event-group {
+    border-color: rgba(216, 180, 106, 0.30);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0.020) 100%),
+      linear-gradient(180deg, rgba(28,31,42,0.98) 0%, rgba(13,16,24,0.995) 100%);
+    box-shadow:
+      0 24px 58px rgba(0, 0, 0, 0.42),
+      0 0 0 1px rgba(255,255,255,0.045) inset,
+      0 0 26px rgba(216,180,106,0.055);
+  }
+}
