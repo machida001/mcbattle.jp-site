@@ -1,899 +1,750 @@
-<!DOCTYPE html>  
-<html lang="ja">  
-<head>  
-  <link rel="icon" href="/favicon.ico" sizes="any">  
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">  
-  <link rel="apple-touch-icon" href="/favicon-180x180.png">  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-  <title>MCバトルシミュレーター | MCBattle.jp</title>  
-  <meta name="description" content="直近4年でバトル参加実績のあるMCを対象に、2005年以降の試合結果をもとにした現在スコアと直接対戦相性を加味して、8人トーナメントを100回シミュレーションするページです。">  
-  <link rel="canonical" href="https://mcbattle.jp/simulation.html" />  
-  
-  <meta property="og:type" content="website" />  
-  <meta property="og:site_name" content="MCBattle.jp" />  
-  <meta property="og:title" content="MCバトルシミュレーター | MCBattle.jp" />  
-  <meta property="og:description" content="直近4年でバトル参加実績のあるMCを対象に、2005年以降の試合結果をもとにした現在スコアと直接対戦相性を加味して、8人トーナメントを100回シミュレーションするページです。" />  
-  <meta property="og:url" content="https://mcbattle.jp/simulation.html" />  
-  <meta property="og:image" content="https://mcbattle.jp/ogp.png?v=2" />  
-  
-  <meta name="twitter:card" content="summary_large_image" />  
-  <meta name="twitter:title" content="MCバトルシミュレーター | MCBattle.jp" />  
-  <meta name="twitter:description" content="直近4年でバトル参加実績のあるMCを対象に、2005年以降の試合結果をもとにした現在スコアと直接対戦相性を加味して、8人トーナメントを100回シミュレーションするページです。" />  
-  <meta name="twitter:image" content="https://mcbattle.jp/ogp.png?v=2" />  
-  
-  <!-- Google tag (gtag.js) -->  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>  
-  <script>  
-    window.dataLayer = window.dataLayer || [];  
-    function gtag(){dataLayer.push(arguments);}  
-    gtag('js', new Date());  
-    gtag('config', 'G-9C8VGD3THB');  
-  </script>  
-  
-  <link rel="stylesheet" href="style.css" />  
-  <style>  
-    :root{    
-      --home-header-max: 1040px;    
-    }
-
-.home-header{    
-      position:relative;    
-      margin-bottom:18px;    
-      padding:26px 0 0;    
-      background:    
-        linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),    
-        radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);    
-      border-bottom:1px solid rgba(255,255,255,.14);    
-      z-index:40;    
+<!DOCTYPE html>    
+<html lang="ja">    
+<head>    
+  <link rel="icon" href="/favicon.ico" sizes="any">    
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">    
+  <link rel="apple-touch-icon" href="/favicon-180x180.png">    
+  <meta charset="UTF-8" />    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+  <title>MCバトルシミュレーター | MCBattle.jp</title>    
+  <meta name="description" content="直近4年でバトル参加実績のあるMCを対象に、2005年以降の試合結果をもとにした現在スコアと直接対戦相性を加味して、8人トーナメントを100回シミュレーションするページです。">    
+  <link rel="canonical" href="https://mcbattle.jp/simulation.html" />    
+    
+  <meta property="og:type" content="website" />    
+  <meta property="og:site_name" content="MCBattle.jp" />    
+  <meta property="og:title" content="MCバトルシミュレーター | MCBattle.jp" />    
+  <meta property="og:description" content="直近4年でバトル参加実績のあるMCを対象に、2005年以降の試合結果をもとにした現在スコアと直接対戦相性を加味して、8人トーナメントを100回シミュレーションするページです。" />    
+  <meta property="og:url" content="https://mcbattle.jp/simulation.html" />    
+  <meta property="og:image" content="https://mcbattle.jp/ogp.png?v=2" />    
+    
+  <meta name="twitter:card" content="summary_large_image" />    
+  <meta name="twitter:title" content="MCバトルシミュレーター | MCBattle.jp" />    
+  <meta name="twitter:description" content="直近4年でバトル参加実績のあるMCを対象に、2005年以降の試合結果をもとにした現在スコアと直接対戦相性を加味して、8人トーナメントを100回シミュレーションするページです。" />    
+  <meta name="twitter:image" content="https://mcbattle.jp/ogp.png?v=2" />    
+    
+  <!-- Google tag (gtag.js) -->    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C8VGD3THB"></script>    
+  <script>    
+    window.dataLayer = window.dataLayer || [];    
+    function gtag(){dataLayer.push(arguments);}    
+    gtag('js', new Date());    
+    gtag('config', 'G-9C8VGD3THB');    
+  </script>    
+    
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="site-header.css" />    
+  <style>    
+    :root{      
+      --home-header-max: 1040px;      
     }  
   
-    .home-header-inner{    
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--home-header-max));    
-      margin-left:auto;    
-      margin-right:auto;    
-    }  
-  
-    .home-logo{    
-      margin:0 0 6px;    
-      font-family:"Times New Roman", Georgia, serif;    
-      font-style:italic;    
-      font-size:clamp(2.08rem, 7.8vw, 3.15rem);    
-      font-weight:800;    
-      line-height:.95;    
-      letter-spacing:-.055em;    
-      color:var(--accent);    
-      text-shadow:0 10px 26px rgba(0,0,0,.18);    
-    }  
-  
-    .home-logo a{    
-      color:inherit;    
-      text-decoration:none !important;    
-    }  
-  
-    .home-lead{    
-      margin:0 0 13px;    
-      color:#f0f2f6;    
-      font-size:1rem;    
-      font-weight:700;    
-      line-height:1.48;    
-      letter-spacing:-.02em;    
-    }  
-  
-    .home-tabs{    
-      position:relative;    
-      display:flex;    
-      align-items:center;    
-      gap:0;    
-      width:100%;    
-      border-top:1px solid rgba(255,255,255,.13);    
-      border-bottom:1px solid rgba(255,255,255,.13);    
-      overflow:visible;    
-      z-index:50;    
-    }  
-  
-    .home-tab,  
-    .home-menu-summary{    
-      position:relative;    
-      flex:1 1 0;    
-      min-width:0;    
-      padding:11px 8px 12px;    
-      color:#f3f4f6;    
-      font-size:.96rem;    
-      font-weight:800;    
-      line-height:1.1;    
-      text-align:center;    
-      white-space:nowrap;    
-      opacity:.96;    
-      transition:color .18s ease, opacity .18s ease;    
-      cursor:pointer;    
-      text-decoration:none !important;    
-    }  
-  
-    .home-tab:hover,  
-    .home-menu-summary:hover{  
-      color:#fff7e8;  
-      opacity:1;  
-      text-decoration:none !important;  
-    }  
-  
-    .home-menu{    
-      position:relative;    
-      flex:1 1 0;    
-      min-width:0;    
-    }  
-  
-    .home-menu summary{  
-      list-style:none;  
-    }  
-  
-    .home-menu summary::-webkit-details-marker{  
-      display:none;  
-    }  
-  
-    .home-menu-summary::after{    
-      content:"";    
-      display:inline-block;    
-      width:0;    
-      height:0;    
-      margin-left:5px;    
-      border-left:4px solid transparent;    
-      border-right:4px solid transparent;    
-      border-top:5px solid currentColor;    
-      transform:translateY(-1px);    
-      opacity:.75;    
-    }  
-  
-    .home-menu[open] .home-menu-summary{  
-      color:var(--accent);  
-    }  
-  
-    .home-menu[open] .home-menu-summary::before{  
-      content:"";  
-      position:absolute;  
-      left:12px;  
-      right:12px;  
-      bottom:-1px;  
-      height:3px;  
-      border-radius:999px 999px 0 0;  
-      background:var(--accent);  
-      box-shadow:0 0 18px rgba(216,180,106,.28);  
-    }  
-  
-    .home-submenu{    
-      position:absolute;    
-      top:calc(100% + 8px);    
-      left:50%;    
-      z-index:80;    
-      min-width:176px;    
-      padding:8px;    
-      border:1px solid rgba(216,180,106,.24);    
-      border-radius:14px;    
-      background:    
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),    
-        rgba(18,21,30,.98);    
-      box-shadow:    
-        0 16px 34px rgba(0,0,0,.34),    
-        0 0 0 1px rgba(255,255,255,.018) inset;    
-      transform:translateX(-50%);    
-    }  
-  
-    .home-submenu a{    
-      display:flex;    
-      align-items:center;    
-      justify-content:space-between;    
-      gap:12px;    
-      min-height:38px;    
-      padding:0 12px;    
-      border-radius:10px;    
-      color:#f3f4f6;    
-      font-size:.9rem;    
-      font-weight:800;    
-      line-height:1;    
-      white-space:nowrap;    
-      text-decoration:none !important;    
-      transition:    
-        background-color .18s ease,    
-        color .18s ease,    
-        opacity .18s ease;    
-    }  
-  
-    .home-submenu a::after{  
-      content:"›";  
-      color:var(--accent);  
-      font-size:1.15rem;  
-      line-height:1;  
-      opacity:.8;  
-    }  
-  
-    .home-submenu a:hover{    
-      background:rgba(216,180,106,.1);    
+.home-header{      
+      position:relative;      
+      margin-bottom:18px;      
+      padding:26px 0 0;      
+      background:      
+        linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),      
+        radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);      
+      border-bottom:1px solid rgba(255,255,255,.14);      
+      z-index:40;      
+    }    
+    
+    .home-header-inner{      
+      width:min(calc(100% - (var(--page-gutter) * 2)), var(--home-header-max));      
+      margin-left:auto;      
+      margin-right:auto;      
+    }    
+    
+    .home-logo{      
+      margin:0 0 6px;      
+      font-family:"Times New Roman", Georgia, serif;      
+      font-style:italic;      
+      font-size:clamp(2.08rem, 7.8vw, 3.15rem);      
+      font-weight:800;      
+      line-height:.95;      
+      letter-spacing:-.055em;      
+      color:var(--accent);      
+      text-shadow:0 10px 26px rgba(0,0,0,.18);      
+    }    
+    
+    .home-logo a{      
+      color:inherit;      
+      text-decoration:none !important;      
+    }    
+    
+    .home-lead{      
+      margin:0 0 13px;      
+      color:#f0f2f6;      
+      font-size:1rem;      
+      font-weight:700;      
+      line-height:1.48;      
+      letter-spacing:-.02em;      
+    }    
+    
+    .home-tabs{      
+      position:relative;      
+      display:flex;      
+      align-items:center;      
+      gap:0;      
+      width:100%;      
+      border-top:1px solid rgba(255,255,255,.13);      
+      border-bottom:1px solid rgba(255,255,255,.13);      
+      overflow:visible;      
+      z-index:50;      
+    }    
+    
+    .home-tab,    
+    .home-menu-summary{      
+      position:relative;      
+      flex:1 1 0;      
+      min-width:0;      
+      padding:11px 8px 12px;      
+      color:#f3f4f6;      
+      font-size:.96rem;      
+      font-weight:800;      
+      line-height:1.1;      
+      text-align:center;      
+      white-space:nowrap;      
+      opacity:.96;      
+      transition:color .18s ease, opacity .18s ease;      
+      cursor:pointer;      
+      text-decoration:none !important;      
+    }    
+    
+    .home-tab:hover,    
+    .home-menu-summary:hover{    
       color:#fff7e8;    
+      opacity:1;    
       text-decoration:none !important;    
-    }  
-  
-    .page-top{  
-      margin-bottom:14px;  
-    }  
-  
-    .page-header-block{  
-      margin-bottom:14px;  
-    }  
-  
-    .page-header-block h1{  
-      margin:0;  
-      text-wrap:balance;  
-      overflow-wrap:anywhere;  
-      word-break:break-word;  
-    }  
-  
-    .vt-version{  
-      color: var(--muted);  
-      font-size: .76rem;  
-      line-height: 1.2;  
-      letter-spacing: .03em;  
-      white-space: nowrap;  
-    }  
-  
-    .vt-hero{  
-      margin-top: 0;  
-      margin-bottom: 18px;  
-    }  
-  
-    .vt-lead{  
-      margin: 0 0 10px;  
-      color: var(--muted);  
-      font-size: .96rem;  
-      line-height: 1.72;  
-      max-width: 760px;  
-      overflow-wrap: anywhere;  
-      word-break: break-word;  
-    }  
-  
-    .vt-main-grid{  
-      display: grid;  
-      grid-template-columns: 1fr;  
-      gap: 14px;  
-      align-items: start;  
-    }  
-  
-    .vt-card{  
-      min-width: 0;  
-    }  
-  
-    .vt-step-label{  
-      display: block;  
-      margin: 0 0 10px;  
-      font-size: 1rem;  
-      font-weight: 800;  
-      color: var(--accent);  
-      letter-spacing: .01em;  
-    }  
-  
-    .vt-search-row{  
-      display: grid;  
-      grid-template-columns: minmax(0,1fr);  
-      gap: 10px;  
-      align-items: center;  
-      margin-top: 2px;  
-    }  
-  
-    .vt-search-box{  
-      width: 100%;  
-      min-height: 50px;  
-      border-radius: 14px;  
-      border: 1px solid var(--line);  
-      background: rgba(255,255,255,0.04);  
-      color: var(--text);  
-      padding: 0 14px;  
-      font: inherit;  
-      font-size: .95rem;  
-      outline: none;  
-      box-sizing: border-box;  
-    }  
-  
-    .vt-search-box:focus{  
-      border-color: var(--line-strong);  
-      box-shadow: 0 0 0 3px rgba(216,180,106,.10);  
-    }  
-  
-    .vt-search-box::placeholder{  
-      color: #9ea7ba;  
-    }  
-  
-    .vt-search-note{  
-      margin: 6px 0 0;  
-      color: #95a0b4;  
-      font-size: .84rem;  
-      line-height: 1.4;  
-    }  
-  
-    .vt-candidates{  
-      margin-top: 8px;  
-    }  
-  
-    .vt-candidate-list{  
-      display: grid;  
-      grid-template-columns: repeat(2, minmax(0,1fr));  
-      gap: 8px;  
-      margin-top: 0;  
-    }  
-  
-    .vt-candidate-btn{  
-      width: 100%;  
-      min-height: 42px;  
-      padding: 0 12px;  
-      border-radius: 14px;  
-      border: 1px solid var(--line);  
-      background: rgba(255,255,255,.03);  
-      color: var(--text);  
-      font: inherit;  
-      font-size: .9rem;  
-      font-weight: 600;  
-      text-align: left;  
-      cursor: pointer;  
-      transition:  
-        transform .18s ease,  
-        background-color .18s ease,  
-        border-color .18s ease,  
-        box-shadow .18s ease;  
-      overflow: hidden;  
-      text-overflow: ellipsis;  
-      white-space: nowrap;  
-      box-sizing: border-box;  
-    }  
-  
-    .vt-candidate-btn:hover{  
-      transform: translateY(-1px);  
-      background: rgba(255,255,255,.06);  
-      border-color: var(--line-strong);  
-      box-shadow: 0 0 18px var(--glow);  
-    }  
-  
-    .vt-helper{  
-      margin: 0;  
-      color: var(--muted);  
-      font-size: .9rem;  
-      line-height: 1.6;  
-    }  
-  
-    .vt-action-stack{  
-      display: grid;  
-      grid-template-columns: repeat(2, minmax(0, 1fr));  
-      gap: 8px;  
-      margin-top: 10px;  
-    }  
-  
-    .vt-sub-button,  
-    .vt-main-button{  
-      width: 100%;  
-      min-width: 0;  
-      border-radius: 14px;  
-      font: inherit;  
-      cursor: pointer;  
-      transition:  
-        transform .18s ease,  
-        background-color .18s ease,  
-        border-color .18s ease,  
-        box-shadow .18s ease,  
-        opacity .18s ease;  
-      box-sizing: border-box;  
-    }  
-  
-    .vt-sub-button{  
-      min-height: 42px;  
-      padding: 0 12px;  
-      border: 1px solid var(--line);  
-      background: rgba(255,255,255,0.04);  
-      color: var(--accent);  
-      font-size: .9rem;  
-      font-weight: 700;  
-    }  
-  
-    .vt-sub-button:hover{  
-      transform: translateY(-1px);  
-      background: rgba(255,255,255,0.07);  
-      border-color: var(--line-strong);  
-      box-shadow: 0 0 18px var(--glow);  
-    }  
-  
-    .vt-run-button-wrap{  
-      margin-top: 14px;  
-    }  
-  
-    .vt-main-button{  
-      min-height: 50px;  
-      border: 1px solid rgba(216,180,106,.34);  
-      background: linear-gradient(180deg, rgba(216,180,106,.16), rgba(216,180,106,.06));  
-      color: var(--text);  
-      font-size: .98rem;  
-      font-weight: 800;  
-    }  
-  
-    .vt-main-button:hover{  
-      transform: translateY(-1px);  
-      background: linear-gradient(180deg, rgba(216,180,106,.20), rgba(216,180,106,.08));  
-      border-color: rgba(216,180,106,.48);  
-      box-shadow: 0 0 18px var(--glow);  
-    }  
-  
-    .vt-main-button.is-disabled{  
-      opacity: .45 !important;  
-      cursor: default;  
-      pointer-events: none;  
-      box-shadow: none;  
-      transform: none;  
-    }  
-  
-    .vt-selected-wrap{  
-      margin-top: 14px;  
-    }  
-  
-    .vt-selected-title{  
-      margin: 0 0 8px;  
-      font-size: 1.04rem;  
-      line-height: 1.2;  
-      font-weight: 800;  
-      color: var(--accent);  
-    }  
-  
-    .vt-selected-grid{  
-      display: grid;  
-      grid-template-columns: repeat(2, minmax(0,1fr));  
-      gap: 8px;  
-    }  
-  
-    .vt-selected-grid.is-single{  
-      grid-template-columns: 1fr;  
-    }  
-  
-    .vt-selected-item{  
-      display: grid;  
-      grid-template-columns: minmax(0,1fr) 20px;  
-      align-items: center;  
-      gap: 8px;  
-      min-height: 52px;  
-      padding: 8px 11px;  
-      border-radius: 14px;  
-      border: 1px solid var(--line);  
-      background: rgba(255,255,255,0.03);  
-    }  
-  
-    .vt-selected-name{  
-      min-width: 0;  
-      display: -webkit-box;  
-      -webkit-line-clamp: 2;  
-      -webkit-box-orient: vertical;  
-      overflow: hidden;  
-      white-space: normal;  
-      line-height: 1.18;  
-      font-size: .83rem;  
-      font-weight: 400;  
-      color: var(--text);  
-      word-break: break-word;  
-      overflow-wrap: anywhere;  
-    }  
-  
-    .vt-remove-btn{  
-      align-self: center;  
-      border: none;  
-      background: transparent;  
-      color: #dbe1ed;  
-      font: inherit;  
-      font-size: 1.25rem;  
-      line-height: 1;  
-      cursor: pointer;  
-      padding: 0;  
-      width: 20px;  
-      height: 20px;  
-      flex: 0 0 auto;  
-    }  
-  
-    .vt-status{  
-      margin: 0;  
-      color: var(--muted);  
-      font-size: .9rem;  
-      line-height: 1.6;  
-      white-space: pre-line;  
-      overflow-wrap: anywhere;  
-      word-break: break-word;  
-    }  
-  
-    .vt-run-area{  
-      display: flex;  
-      flex-direction: column;  
-      gap: 12px;  
-    }  
-  
-    .vt-hero-result{  
-      padding: 13px 14px 12px;  
-      border-radius: 16px;  
-      border: 1px solid rgba(216,180,106,.22);  
-      background: linear-gradient(180deg, rgba(216,180,106,.14), rgba(216,180,106,.05));  
-    }  
-  
-    .vt-hero-result-label{  
-      display: block;  
-      color: var(--muted);  
-      font-size: .92rem;  
-      line-height: 1.4;  
-      margin-bottom: 6px;  
-      overflow-wrap: anywhere;  
-      word-break: break-word;  
-    }  
-  
-    .vt-hero-result-name{  
-      display: block;  
-      font-size: 1.45rem;  
-      line-height: 1.15;  
-      font-weight: 900;  
-      word-break: break-word;  
-      overflow-wrap: anywhere;  
-    }  
-  
-    .vt-summary-card,  
-    .vt-pair-card{  
-      padding: 13px 14px 11px;  
-      border-radius: 16px;  
-      border: 1px solid var(--line);  
-      background: rgba(255,255,255,.025);  
-    }  
-  
-    .vt-summary-title,  
-    .vt-table-title,  
-    .vt-pair-title{  
-      margin: 0 0 10px;  
-      color: var(--accent);  
-      font-size: 1.06rem;  
-      line-height: 1.2;  
-      overflow-wrap: anywhere;  
-      word-break: break-word;  
-    }  
-  
-    .vt-summary-lines{  
-      display: flex;  
-      flex-direction: column;  
-      gap: 10px;  
-    }  
-  
-    .vt-summary-lines p{  
-      margin: 0;  
-      color: var(--text);  
-      line-height: 1.75;  
-      font-size: .93rem;  
-      overflow-wrap: anywhere;  
-      word-break: break-word;  
-    }  
-  
-    .vt-pair-list{  
-      display: flex;  
-      flex-direction: column;  
-      gap: 8px;  
-    }  
-  
-    .vt-pair-line{  
-      margin: 0;  
-      color: var(--text);  
-      font-size: .92rem;  
-      line-height: 1.6;  
-      overflow-wrap: anywhere;  
-      word-break: break-word;  
-    }  
-  
-    .vt-dist-card-head,  
-    .vt-dist-row{  
-      display: grid;  
-      grid-template-columns: minmax(0, 1fr) 56px 56px 64px;  
-      gap: 8px;  
-      align-items: center;  
-      width: 100%;  
-      box-sizing: border-box;  
-    }  
-  
-    .vt-dist-card-head{  
-      padding: 12px 10px;  
-      border-bottom: 1px solid var(--line);  
-      background: rgba(255,255,255,.03);  
-      color: #b8bfd0;  
-      font-size: .83rem;  
-      font-weight: 800;  
-      border-radius: 12px 12px 0 0;  
-    }  
-  
-    .vt-dist-list{  
-      display: flex;  
-      flex-direction: column;  
-    }  
-  
-    .vt-dist-row{  
-      padding: 12px 10px;  
-      border-bottom: 1px solid var(--line);  
-    }  
-  
-    .vt-dist-row:last-child{  
-      border-bottom: none;  
-    }  
-  
-    .vt-dist-name{  
-      min-width: 0;  
-      white-space: normal;  
-      overflow: visible;  
-      text-overflow: clip;  
-      word-break: break-word;  
-      overflow-wrap: anywhere;  
-      font-size: .92rem;  
-      line-height: 1.35;  
-      padding-right: 4px;  
-    }  
-  
-    .vt-dist-metric{  
-      text-align: right;  
-      white-space: nowrap;  
-      font-variant-numeric: tabular-nums;  
-      font-size: .9rem;  
-      line-height: 1.35;  
-      min-width: 0;  
-    }  
-  
-    .vt-dist-card-head > div:nth-child(2),  
-    .vt-dist-row > div:nth-child(2){  
-      color: #d97f7f;  
-      font-weight: 800;  
-    }  
-  
-    .vt-overlay{  
-      position: fixed;  
-      inset: 0;  
-      z-index: 9999;  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      background: rgba(7,9,14,.92);  
-      backdrop-filter: blur(6px);  
-      -webkit-backdrop-filter: blur(6px);  
-      padding: 24px;  
-    }  
-  
-    .vt-overlay-box{  
-      width: min(100%, 420px);  
-      display: flex;  
-      flex-direction: column;  
-      align-items: center;  
-      justify-content: center;  
-      gap: 14px;  
-      text-align: center;  
-    }  
-  
-    .vt-overlay-clock{  
-      position: relative;  
-      width: 66px;  
-      height: 66px;  
-      animation: vt-spin 1s linear infinite;  
-    }  
-  
-    .vt-overlay-clock-face{  
-      position: absolute;  
-      inset: 0;  
-      border-radius: 50%;  
-      border: 4px solid rgba(255,255,255,.85);  
-      box-sizing: border-box;  
-    }  
-  
-    .vt-overlay-clock-center{  
-      position: absolute;  
-      left: 50%;  
-      top: 50%;  
-      width: 8px;  
-      height: 8px;  
-      margin-left: -4px;  
-      margin-top: -4px;  
-      border-radius: 50%;  
-      background: #ffffff;  
-    }  
-  
-    .vt-overlay-hand-long,  
-    .vt-overlay-hand-short{  
-      position: absolute;  
-      left: 50%;  
-      bottom: 50%;  
-      transform-origin: 50% 100%;  
-      background: #ffffff;  
-      border-radius: 999px;  
-    }  
-  
-    .vt-overlay-hand-long{  
-      width: 4px;  
-      height: 22px;  
-      margin-left: -2px;  
-      transform: rotate(35deg);  
-    }  
-  
-    .vt-overlay-hand-short{  
-      width: 4px;  
-      height: 15px;  
-      margin-left: -2px;  
-      transform: rotate(-55deg);  
-    }  
-  
-    .vt-overlay-text{  
-      margin: 0;  
-      color: #f3f5fa;  
-      font-size: 1rem;  
-      font-weight: 700;  
-      line-height: 1.6;  
-    }  
-  
-    .vt-overlay-count{  
-      margin: 0;  
-      color: #ffffff;  
-      font-size: 3.2rem;  
-      font-weight: 900;  
-      line-height: 1;  
-      letter-spacing: .02em;  
-    }  
-  
-    @keyframes vt-spin{  
-      from{ transform: rotate(0deg); }  
-      to{ transform: rotate(360deg); }  
-    }  
-  
-    .is-hidden{  
-      display: none !important;  
-    }  
-  
-    @media (min-width: 1024px){  
-      .home-header-inner{  
-        width:min(var(--content-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));  
-        margin-left:var(--pc-left-gutter);  
-        margin-right:auto;  
-      }  
-  
-      .home-logo{  
-        font-size:3rem;  
-      }  
-    }  
-  
-    @media (max-width: 640px){  
-      .home-header{  
-        margin-bottom:14px;  
-        padding:38px 0 0;  
-      }  
-  
-      .home-header-inner{  
-        width:calc(100% - 24px);  
-      }  
-  
-      .home-logo{  
-        margin-bottom:5px;  
-        font-size:2.42rem;  
-      }  
-  
-      .home-lead{  
-        margin-bottom:12px;  
-        font-size:.96rem;  
-        line-height:1.42;  
-        letter-spacing:-.025em;  
-      }  
-  
-      .home-tabs{  
-        margin-left:-1px;  
-        margin-right:-1px;  
-      }  
-  
-      .home-tab,  
-      .home-menu-summary{  
-        padding:10px 5px 11px;  
-        font-size:.9rem;  
-      }  
-  
-      .home-menu[open] .home-menu-summary::before{  
-        left:8px;  
-        right:8px;  
-        height:3px;  
-      }  
-  
-      .home-submenu{  
-        min-width:158px;  
-        top:calc(100% + 7px);  
-      }  
-  
-      .home-submenu a{  
-        min-height:37px;  
-        font-size:.86rem;  
-      }  
-  
-      .page-top{  
-        margin-bottom:12px;  
-      }  
-  
-      .page-header-block{  
-        margin-bottom:12px;  
-      }  
-  
-      .page-header-block h1{  
-        font-size:clamp(1.5rem, 5.3vw, 1.95rem);  
-        line-height:1.12;  
-      }  
-  
-      .vt-version{  
-        font-size: .7rem;  
-      }  
-  
-      .vt-lead{  
-        font-size: .94rem;  
-        line-height: 1.66;  
-      }  
-  
-      .vt-candidate-list{  
-        grid-template-columns: repeat(2, minmax(0,1fr));  
-      }  
-  
-      .vt-action-stack{  
-        grid-template-columns: 1fr;  
-      }  
-  
-      .vt-sub-button{  
-        font-size: .9rem;  
-        padding: 0 10px;  
-      }  
-  
-      .vt-overlay-count{  
-        font-size: 2.8rem;  
-      }  
-  
-      .vt-dist-card-head,  
-      .vt-dist-row{  
-        grid-template-columns: minmax(0, 1fr) 34px 34px 42px;  
-        gap: 5px;  
-      }  
-  
-      .vt-dist-card-head{  
-        padding: 10px 8px;  
-        font-size: .72rem;  
-      }  
-  
-      .vt-dist-row{  
-        padding: 10px 8px;  
-      }  
-  
-      .vt-dist-name{  
-        font-size: .83rem;  
-        line-height: 1.3;  
-      }  
-  
-      .vt-dist-metric{  
-        font-size: .79rem;  
-      }  
-    }  
-  
-    @media (max-width: 390px){  
-      .home-header-inner{  
-        width:calc(100% - 20px);  
-      }  
-  
-      .home-logo{  
-        font-size:2.32rem;  
-      }  
-  
-      .home-lead{  
-        font-size:.92rem;  
-      }  
-  
-      .home-tab,  
-      .home-menu-summary{  
-        padding-left:4px;  
-        padding-right:4px;  
-        font-size:.84rem;  
-      }  
-    }
-
-.home-menu.is-current .home-menu-summary{    
+    }    
+    
+    .home-menu{      
+      position:relative;      
+      flex:1 1 0;      
+      min-width:0;      
+    }    
+    
+    .home-menu summary{    
+      list-style:none;    
+    }    
+    
+    .home-menu summary::-webkit-details-marker{    
+      display:none;    
+    }    
+    
+    .home-menu-summary::after{      
+      content:"";      
+      display:inline-block;      
+      width:0;      
+      height:0;      
+      margin-left:5px;      
+      border-left:4px solid transparent;      
+      border-right:4px solid transparent;      
+      border-top:5px solid currentColor;      
+      transform:translateY(-1px);      
+      opacity:.75;      
+    }    
+    
+    .home-menu[open] .home-menu-summary{    
       color:var(--accent);    
-    }
-
-@media (min-width: 1024px){    
+    }    
+    
+    .home-menu[open] .home-menu-summary::before{    
+      content:"";    
+      position:absolute;    
+      left:12px;    
+      right:12px;    
+      bottom:-1px;    
+      height:3px;    
+      border-radius:999px 999px 0 0;    
+      background:var(--accent);    
+      box-shadow:0 0 18px rgba(216,180,106,.28);    
+    }    
+    
+    .home-submenu{      
+      position:absolute;      
+      top:calc(100% + 8px);      
+      left:50%;      
+      z-index:80;      
+      min-width:176px;      
+      padding:8px;      
+      border:1px solid rgba(216,180,106,.24);      
+      border-radius:14px;      
+      background:      
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),      
+        rgba(18,21,30,.98);      
+      box-shadow:      
+        0 16px 34px rgba(0,0,0,.34),      
+        0 0 0 1px rgba(255,255,255,.018) inset;      
+      transform:translateX(-50%);      
+    }    
+    
+    .home-submenu a{      
+      display:flex;      
+      align-items:center;      
+      justify-content:space-between;      
+      gap:12px;      
+      min-height:38px;      
+      padding:0 12px;      
+      border-radius:10px;      
+      color:#f3f4f6;      
+      font-size:.9rem;      
+      font-weight:800;      
+      line-height:1;      
+      white-space:nowrap;      
+      text-decoration:none !important;      
+      transition:      
+        background-color .18s ease,      
+        color .18s ease,      
+        opacity .18s ease;      
+    }    
+    
+    .home-submenu a::after{    
+      content:"›";    
+      color:var(--accent);    
+      font-size:1.15rem;    
+      line-height:1;    
+      opacity:.8;    
+    }    
+    
+    .home-submenu a:hover{      
+      background:rgba(216,180,106,.1);      
+      color:#fff7e8;      
+      text-decoration:none !important;      
+    }    
+    
+    .page-top{    
+      margin-bottom:14px;    
+    }    
+    
+    .page-header-block{    
+      margin-bottom:14px;    
+    }    
+    
+    .page-header-block h1{    
+      margin:0;    
+      text-wrap:balance;    
+      overflow-wrap:anywhere;    
+      word-break:break-word;    
+    }    
+    
+    .vt-version{    
+      color: var(--muted);    
+      font-size: .76rem;    
+      line-height: 1.2;    
+      letter-spacing: .03em;    
+      white-space: nowrap;    
+    }    
+    
+    .vt-hero{    
+      margin-top: 0;    
+      margin-bottom: 18px;    
+    }    
+    
+    .vt-lead{    
+      margin: 0 0 10px;    
+      color: var(--muted);    
+      font-size: .96rem;    
+      line-height: 1.72;    
+      max-width: 760px;    
+      overflow-wrap: anywhere;    
+      word-break: break-word;    
+    }    
+    
+    .vt-main-grid{    
+      display: grid;    
+      grid-template-columns: 1fr;    
+      gap: 14px;    
+      align-items: start;    
+    }    
+    
+    .vt-card{    
+      min-width: 0;    
+    }    
+    
+    .vt-step-label{    
+      display: block;    
+      margin: 0 0 10px;    
+      font-size: 1rem;    
+      font-weight: 800;    
+      color: var(--accent);    
+      letter-spacing: .01em;    
+    }    
+    
+    .vt-search-row{    
+      display: grid;    
+      grid-template-columns: minmax(0,1fr);    
+      gap: 10px;    
+      align-items: center;    
+      margin-top: 2px;    
+    }    
+    
+    .vt-search-box{    
+      width: 100%;    
+      min-height: 50px;    
+      border-radius: 14px;    
+      border: 1px solid var(--line);    
+      background: rgba(255,255,255,0.04);    
+      color: var(--text);    
+      padding: 0 14px;    
+      font: inherit;    
+      font-size: .95rem;    
+      outline: none;    
+      box-sizing: border-box;    
+    }    
+    
+    .vt-search-box:focus{    
+      border-color: var(--line-strong);    
+      box-shadow: 0 0 0 3px rgba(216,180,106,.10);    
+    }    
+    
+    .vt-search-box::placeholder{    
+      color: #9ea7ba;    
+    }    
+    
+    .vt-search-note{    
+      margin: 6px 0 0;    
+      color: #95a0b4;    
+      font-size: .84rem;    
+      line-height: 1.4;    
+    }    
+    
+    .vt-candidates{    
+      margin-top: 8px;    
+    }    
+    
+    .vt-candidate-list{    
+      display: grid;    
+      grid-template-columns: repeat(2, minmax(0,1fr));    
+      gap: 8px;    
+      margin-top: 0;    
+    }    
+    
+    .vt-candidate-btn{    
+      width: 100%;    
+      min-height: 42px;    
+      padding: 0 12px;    
+      border-radius: 14px;    
+      border: 1px solid var(--line);    
+      background: rgba(255,255,255,.03);    
+      color: var(--text);    
+      font: inherit;    
+      font-size: .9rem;    
+      font-weight: 600;    
+      text-align: left;    
+      cursor: pointer;    
+      transition:    
+        transform .18s ease,    
+        background-color .18s ease,    
+        border-color .18s ease,    
+        box-shadow .18s ease;    
+      overflow: hidden;    
+      text-overflow: ellipsis;    
+      white-space: nowrap;    
+      box-sizing: border-box;    
+    }    
+    
+    .vt-candidate-btn:hover{    
+      transform: translateY(-1px);    
+      background: rgba(255,255,255,.06);    
+      border-color: var(--line-strong);    
+      box-shadow: 0 0 18px var(--glow);    
+    }    
+    
+    .vt-helper{    
+      margin: 0;    
+      color: var(--muted);    
+      font-size: .9rem;    
+      line-height: 1.6;    
+    }    
+    
+    .vt-action-stack{    
+      display: grid;    
+      grid-template-columns: repeat(2, minmax(0, 1fr));    
+      gap: 8px;    
+      margin-top: 10px;    
+    }    
+    
+    .vt-sub-button,    
+    .vt-main-button{    
+      width: 100%;    
+      min-width: 0;    
+      border-radius: 14px;    
+      font: inherit;    
+      cursor: pointer;    
+      transition:    
+        transform .18s ease,    
+        background-color .18s ease,    
+        border-color .18s ease,    
+        box-shadow .18s ease,    
+        opacity .18s ease;    
+      box-sizing: border-box;    
+    }    
+    
+    .vt-sub-button{    
+      min-height: 42px;    
+      padding: 0 12px;    
+      border: 1px solid var(--line);    
+      background: rgba(255,255,255,0.04);    
+      color: var(--accent);    
+      font-size: .9rem;    
+      font-weight: 700;    
+    }    
+    
+    .vt-sub-button:hover{    
+      transform: translateY(-1px);    
+      background: rgba(255,255,255,0.07);    
+      border-color: var(--line-strong);    
+      box-shadow: 0 0 18px var(--glow);    
+    }    
+    
+    .vt-run-button-wrap{    
+      margin-top: 14px;    
+    }    
+    
+    .vt-main-button{    
+      min-height: 50px;    
+      border: 1px solid rgba(216,180,106,.34);    
+      background: linear-gradient(180deg, rgba(216,180,106,.16), rgba(216,180,106,.06));    
+      color: var(--text);    
+      font-size: .98rem;    
+      font-weight: 800;    
+    }    
+    
+    .vt-main-button:hover{    
+      transform: translateY(-1px);    
+      background: linear-gradient(180deg, rgba(216,180,106,.20), rgba(216,180,106,.08));    
+      border-color: rgba(216,180,106,.48);    
+      box-shadow: 0 0 18px var(--glow);    
+    }    
+    
+    .vt-main-button.is-disabled{    
+      opacity: .45 !important;    
+      cursor: default;    
+      pointer-events: none;    
+      box-shadow: none;    
+      transform: none;    
+    }    
+    
+    .vt-selected-wrap{    
+      margin-top: 14px;    
+    }    
+    
+    .vt-selected-title{    
+      margin: 0 0 8px;    
+      font-size: 1.04rem;    
+      line-height: 1.2;    
+      font-weight: 800;    
+      color: var(--accent);    
+    }    
+    
+    .vt-selected-grid{    
+      display: grid;    
+      grid-template-columns: repeat(2, minmax(0,1fr));    
+      gap: 8px;    
+    }    
+    
+    .vt-selected-grid.is-single{    
+      grid-template-columns: 1fr;    
+    }    
+    
+    .vt-selected-item{    
+      display: grid;    
+      grid-template-columns: minmax(0,1fr) 20px;    
+      align-items: center;    
+      gap: 8px;    
+      min-height: 52px;    
+      padding: 8px 11px;    
+      border-radius: 14px;    
+      border: 1px solid var(--line);    
+      background: rgba(255,255,255,0.03);    
+    }    
+    
+    .vt-selected-name{    
+      min-width: 0;    
+      display: -webkit-box;    
+      -webkit-line-clamp: 2;    
+      -webkit-box-orient: vertical;    
+      overflow: hidden;    
+      white-space: normal;    
+      line-height: 1.18;    
+      font-size: .83rem;    
+      font-weight: 400;    
+      color: var(--text);    
+      word-break: break-word;    
+      overflow-wrap: anywhere;    
+    }    
+    
+    .vt-remove-btn{    
+      align-self: center;    
+      border: none;    
+      background: transparent;    
+      color: #dbe1ed;    
+      font: inherit;    
+      font-size: 1.25rem;    
+      line-height: 1;    
+      cursor: pointer;    
+      padding: 0;    
+      width: 20px;    
+      height: 20px;    
+      flex: 0 0 auto;    
+    }    
+    
+    .vt-status{    
+      margin: 0;    
+      color: var(--muted);    
+      font-size: .9rem;    
+      line-height: 1.6;    
+      white-space: pre-line;    
+      overflow-wrap: anywhere;    
+      word-break: break-word;    
+    }    
+    
+    .vt-run-area{    
+      display: flex;    
+      flex-direction: column;    
+      gap: 12px;    
+    }    
+    
+    .vt-hero-result{    
+      padding: 13px 14px 12px;    
+      border-radius: 16px;    
+      border: 1px solid rgba(216,180,106,.22);    
+      background: linear-gradient(180deg, rgba(216,180,106,.14), rgba(216,180,106,.05));    
+    }    
+    
+    .vt-hero-result-label{    
+      display: block;    
+      color: var(--muted);    
+      font-size: .92rem;    
+      line-height: 1.4;    
+      margin-bottom: 6px;    
+      overflow-wrap: anywhere;    
+      word-break: break-word;    
+    }    
+    
+    .vt-hero-result-name{    
+      display: block;    
+      font-size: 1.45rem;    
+      line-height: 1.15;    
+      font-weight: 900;    
+      word-break: break-word;    
+      overflow-wrap: anywhere;    
+    }    
+    
+    .vt-summary-card,    
+    .vt-pair-card{    
+      padding: 13px 14px 11px;    
+      border-radius: 16px;    
+      border: 1px solid var(--line);    
+      background: rgba(255,255,255,.025);    
+    }    
+    
+    .vt-summary-title,    
+    .vt-table-title,    
+    .vt-pair-title{    
+      margin: 0 0 10px;    
+      color: var(--accent);    
+      font-size: 1.06rem;    
+      line-height: 1.2;    
+      overflow-wrap: anywhere;    
+      word-break: break-word;    
+    }    
+    
+    .vt-summary-lines{    
+      display: flex;    
+      flex-direction: column;    
+      gap: 10px;    
+    }    
+    
+    .vt-summary-lines p{    
+      margin: 0;    
+      color: var(--text);    
+      line-height: 1.75;    
+      font-size: .93rem;    
+      overflow-wrap: anywhere;    
+      word-break: break-word;    
+    }    
+    
+    .vt-pair-list{    
+      display: flex;    
+      flex-direction: column;    
+      gap: 8px;    
+    }    
+    
+    .vt-pair-line{    
+      margin: 0;    
+      color: var(--text);    
+      font-size: .92rem;    
+      line-height: 1.6;    
+      overflow-wrap: anywhere;    
+      word-break: break-word;    
+    }    
+    
+    .vt-dist-card-head,    
+    .vt-dist-row{    
+      display: grid;    
+      grid-template-columns: minmax(0, 1fr) 56px 56px 64px;    
+      gap: 8px;    
+      align-items: center;    
+      width: 100%;    
+      box-sizing: border-box;    
+    }    
+    
+    .vt-dist-card-head{    
+      padding: 12px 10px;    
+      border-bottom: 1px solid var(--line);    
+      background: rgba(255,255,255,.03);    
+      color: #b8bfd0;    
+      font-size: .83rem;    
+      font-weight: 800;    
+      border-radius: 12px 12px 0 0;    
+    }    
+    
+    .vt-dist-list{    
+      display: flex;    
+      flex-direction: column;    
+    }    
+    
+    .vt-dist-row{    
+      padding: 12px 10px;    
+      border-bottom: 1px solid var(--line);    
+    }    
+    
+    .vt-dist-row:last-child{    
+      border-bottom: none;    
+    }    
+    
+    .vt-dist-name{    
+      min-width: 0;    
+      white-space: normal;    
+      overflow: visible;    
+      text-overflow: clip;    
+      word-break: break-word;    
+      overflow-wrap: anywhere;    
+      font-size: .92rem;    
+      line-height: 1.35;    
+      padding-right: 4px;    
+    }    
+    
+    .vt-dist-metric{    
+      text-align: right;    
+      white-space: nowrap;    
+      font-variant-numeric: tabular-nums;    
+      font-size: .9rem;    
+      line-height: 1.35;    
+      min-width: 0;    
+    }    
+    
+    .vt-dist-card-head > div:nth-child(2),    
+    .vt-dist-row > div:nth-child(2){    
+      color: #d97f7f;    
+      font-weight: 800;    
+    }    
+    
+    .vt-overlay{    
+      position: fixed;    
+      inset: 0;    
+      z-index: 9999;    
+      display: flex;    
+      align-items: center;    
+      justify-content: center;    
+      background: rgba(7,9,14,.92);    
+      backdrop-filter: blur(6px);    
+      -webkit-backdrop-filter: blur(6px);    
+      padding: 24px;    
+    }    
+    
+    .vt-overlay-box{    
+      width: min(100%, 420px);    
+      display: flex;    
+      flex-direction: column;    
+      align-items: center;    
+      justify-content: center;    
+      gap: 14px;    
+      text-align: center;    
+    }    
+    
+    .vt-overlay-clock{    
+      position: relative;    
+      width: 66px;    
+      height: 66px;    
+      animation: vt-spin 1s linear infinite;    
+    }    
+    
+    .vt-overlay-clock-face{    
+      position: absolute;    
+      inset: 0;    
+      border-radius: 50%;    
+      border: 4px solid rgba(255,255,255,.85);    
+      box-sizing: border-box;    
+    }    
+    
+    .vt-overlay-clock-center{    
+      position: absolute;    
+      left: 50%;    
+      top: 50%;    
+      width: 8px;    
+      height: 8px;    
+      margin-left: -4px;    
+      margin-top: -4px;    
+      border-radius: 50%;    
+      background: #ffffff;    
+    }    
+    
+    .vt-overlay-hand-long,    
+    .vt-overlay-hand-short{    
+      position: absolute;    
+      left: 50%;    
+      bottom: 50%;    
+      transform-origin: 50% 100%;    
+      background: #ffffff;    
+      border-radius: 999px;    
+    }    
+    
+    .vt-overlay-hand-long{    
+      width: 4px;    
+      height: 22px;    
+      margin-left: -2px;    
+      transform: rotate(35deg);    
+    }    
+    
+    .vt-overlay-hand-short{    
+      width: 4px;    
+      height: 15px;    
+      margin-left: -2px;    
+      transform: rotate(-55deg);    
+    }    
+    
+    .vt-overlay-text{    
+      margin: 0;    
+      color: #f3f5fa;    
+      font-size: 1rem;    
+      font-weight: 700;    
+      line-height: 1.6;    
+    }    
+    
+    .vt-overlay-count{    
+      margin: 0;    
+      color: #ffffff;    
+      font-size: 3.2rem;    
+      font-weight: 900;    
+      line-height: 1;    
+      letter-spacing: .02em;    
+    }    
+    
+    @keyframes vt-spin{    
+      from{ transform: rotate(0deg); }    
+      to{ transform: rotate(360deg); }    
+    }    
+    
+    .is-hidden{    
+      display: none !important;    
+    }    
+    
+    @media (min-width: 1024px){    
       .home-header-inner{    
-        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));    
+        width:min(var(--content-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));    
         margin-left:var(--pc-left-gutter);    
         margin-right:auto;    
       }    
@@ -901,13 +752,9 @@
       .home-logo{    
         font-size:3rem;    
       }    
+    }    
     
-      .home-lead{    
-        white-space:nowrap;    
-      }    
-    }
-
-@media (max-width: 640px) {    
+    @media (max-width: 640px){    
       .home-header{    
         margin-bottom:14px;    
         padding:38px 0 0;    
@@ -940,8 +787,6 @@
         font-size:.9rem;    
       }    
     
-      .home-tab.is-active::after,    
-      .home-menu.is-current .home-menu-summary::before,    
       .home-menu[open] .home-menu-summary::before{    
         left:8px;    
         right:8px;    
@@ -951,11 +796,6 @@
       .home-submenu{    
         min-width:158px;    
         top:calc(100% + 7px);    
-      }    
-    
-      .home-menu[data-menu="data"] .home-submenu{    
-        left:0;    
-        transform:none;    
       }    
     
       .home-submenu a{    
@@ -976,67 +816,58 @@
         line-height:1.12;    
       }    
     
-      .spec-card-link{    
-        margin-bottom: 8px;    
-        padding: 10px 12px;    
-        border-radius: 15px;    
+      .vt-version{    
+        font-size: .7rem;    
       }    
     
-      .spec-card-title{    
-        font-size: 0.9rem;    
+      .vt-lead{    
+        font-size: .94rem;    
+        line-height: 1.66;    
       }    
     
-      .top3-row {    
-        gap: 10px;    
-        padding: 10px 0;    
+      .vt-candidate-list{    
+        grid-template-columns: repeat(2, minmax(0,1fr));    
       }    
     
-      .top3-left {    
-        gap: 7px;    
-        font-size: 0.98rem;    
+      .vt-action-stack{    
+        grid-template-columns: 1fr;    
       }    
     
-      .top3-medal {    
-        font-size: 0.92em;    
+      .vt-sub-button{    
+        font-size: .9rem;    
+        padding: 0 10px;    
       }    
     
-      .top3-score {    
-        font-size: 0.98rem;    
+      .vt-overlay-count{    
+        font-size: 2.8rem;    
       }    
     
-      .rankings-card-inner {    
-        padding-left: 10px;    
-        padding-right: 10px;    
+      .vt-dist-card-head,    
+      .vt-dist-row{    
+        grid-template-columns: minmax(0, 1fr) 34px 34px 42px;    
+        gap: 5px;    
       }    
     
-      .rankings-card-head{    
-        margin-bottom: 6px;    
+      .vt-dist-card-head{    
+        padding: 10px 8px;    
+        font-size: .72rem;    
       }    
     
-      table.rankings-table col:nth-child(1) {    
-        width: 42px;    
+      .vt-dist-row{    
+        padding: 10px 8px;    
       }    
     
-      table.rankings-table col:nth-child(3) {    
-        width: 62px;    
+      .vt-dist-name{    
+        font-size: .83rem;    
+        line-height: 1.3;    
       }    
     
-      table.rankings-table td {    
-        padding: 8px 4px;    
-        font-size: 0.9rem;    
+      .vt-dist-metric{    
+        font-size: .79rem;    
       }    
+    }    
     
-      .rank-name-link,    
-      .rank-name-text {    
-        line-height: 1.28;    
-      }    
-    
-      .rank-score {    
-        font-size: 0.94rem;    
-      }    
-    }
-
-@media (max-width: 390px){    
+    @media (max-width: 390px){    
       .home-header-inner{    
         width:calc(100% - 20px);    
       }    
@@ -1055,1240 +886,952 @@
         padding-right:4px;    
         font-size:.84rem;    
       }    
-    }
+    }  
+  
+.home-menu.is-current .home-menu-summary{      
+      color:var(--accent);      
+    }  
+  
+@media (min-width: 1024px){      
+      .home-header-inner{      
+        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));      
+        margin-left:var(--pc-left-gutter);      
+        margin-right:auto;      
+      }      
+      
+      .home-logo{      
+        font-size:3rem;      
+      }      
+      
+      .home-lead{      
+        white-space:nowrap;      
+      }      
+    }  
+  
+@media (max-width: 640px) {      
+      .home-header{      
+        margin-bottom:14px;      
+        padding:38px 0 0;      
+      }      
+      
+      .home-header-inner{      
+        width:calc(100% - 24px);      
+      }      
+      
+      .home-logo{      
+        margin-bottom:5px;      
+        font-size:2.42rem;      
+      }      
+      
+      .home-lead{      
+        margin-bottom:12px;      
+        font-size:.96rem;      
+        line-height:1.42;      
+        letter-spacing:-.025em;      
+      }      
+      
+      .home-tabs{      
+        margin-left:-1px;      
+        margin-right:-1px;      
+      }      
+      
+      .home-tab,      
+      .home-menu-summary{      
+        padding:10px 5px 11px;      
+        font-size:.9rem;      
+      }      
+      
+      .home-tab.is-active::after,      
+      .home-menu.is-current .home-menu-summary::before,      
+      .home-menu[open] .home-menu-summary::before{      
+        left:8px;      
+        right:8px;      
+        height:3px;      
+      }      
+      
+      .home-submenu{      
+        min-width:158px;      
+        top:calc(100% + 7px);      
+      }      
+      
+      .home-menu[data-menu="data"] .home-submenu{      
+        left:0;      
+        transform:none;      
+      }      
+      
+      .home-submenu a{      
+        min-height:37px;      
+        font-size:.86rem;      
+      }      
+      
+      .page-top{      
+        margin-bottom:12px;      
+      }      
+      
+      .page-header-block{      
+        margin-bottom:12px;      
+      }      
+      
+      .page-header-block h1{      
+        font-size:clamp(1.5rem, 5.3vw, 1.95rem);      
+        line-height:1.12;      
+      }      
+      
+      .spec-card-link{      
+        margin-bottom: 8px;      
+        padding: 10px 12px;      
+        border-radius: 15px;      
+      }      
+      
+      .spec-card-title{      
+        font-size: 0.9rem;      
+      }      
+      
+      .top3-row {      
+        gap: 10px;      
+        padding: 10px 0;      
+      }      
+      
+      .top3-left {      
+        gap: 7px;      
+        font-size: 0.98rem;      
+      }      
+      
+      .top3-medal {      
+        font-size: 0.92em;      
+      }      
+      
+      .top3-score {      
+        font-size: 0.98rem;      
+      }      
+      
+      .rankings-card-inner {      
+        padding-left: 10px;      
+        padding-right: 10px;      
+      }      
+      
+      .rankings-card-head{      
+        margin-bottom: 6px;      
+      }      
+      
+      table.rankings-table col:nth-child(1) {      
+        width: 42px;      
+      }      
+      
+      table.rankings-table col:nth-child(3) {      
+        width: 62px;      
+      }      
+      
+      table.rankings-table td {      
+        padding: 8px 4px;      
+        font-size: 0.9rem;      
+      }      
+      
+      .rank-name-link,      
+      .rank-name-text {      
+        line-height: 1.28;      
+      }      
+      
+      .rank-score {      
+        font-size: 0.94rem;      
+      }      
+    }  
+  
+@media (max-width: 390px){      
+      .home-header-inner{      
+        width:calc(100% - 20px);      
+      }      
+      
+      .home-logo{      
+        font-size:2.32rem;      
+      }      
+      
+      .home-lead{      
+        font-size:.92rem;      
+      }      
+      
+      .home-tab,      
+      .home-menu-summary{      
+        padding-left:4px;      
+        padding-right:4px;      
+        font-size:.84rem;      
+      }      
+    }  
+  
+  </style>    
+</head>    
+<body>
+  <div id="site-header"></div>
 
-/* === Header matched to score_ranking: override block === */
-.home-header {    
-      position:relative;    
-      margin-bottom:18px;    
-      padding:26px 0 0;    
-      background:    
-        linear-gradient(120deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),    
-        radial-gradient(circle at 96% 0%, rgba(216,180,106,.07), transparent 34%);    
-      border-bottom:1px solid rgba(255,255,255,.14);    
-      z-index:40;    
-    }
-
-.home-header-inner {    
-      width:min(calc(100% - (var(--page-gutter) * 2)), var(--home-header-max));    
-      margin-left:auto;    
-      margin-right:auto;    
-    }
-
-.home-logo {    
-      margin:0 0 6px;    
-      font-family:"Times New Roman", Georgia, serif;    
-      font-style:italic;    
-      font-size:clamp(2.08rem, 7.8vw, 3.15rem);    
-      font-weight:800;    
-      line-height:.95;    
-      letter-spacing:-.055em;    
-      color:var(--accent);    
-      text-shadow:0 10px 26px rgba(0,0,0,.18);    
-    }
-
-.home-logo a {    
-      color:inherit;    
-      text-decoration:none !important;    
-    }
-
-.home-lead {    
-      margin:0 0 13px;    
-      color:#f0f2f6;    
-      font-size:1rem;    
-      font-weight:700;    
-      line-height:1.48;    
-      letter-spacing:-.02em;    
-    }
-
-.home-tabs {    
-      position:relative;    
-      display:flex;    
-      align-items:center;    
-      gap:0;    
-      width:100%;    
-      border-top:1px solid rgba(255,255,255,.13);    
-      border-bottom:1px solid rgba(255,255,255,.13);    
-      overflow:visible;    
-      z-index:50;    
-    }
-
-.home-tab,    
-    .home-menu-summary {    
-      position:relative;    
-      flex:1 1 0;    
-      min-width:0;    
-      padding:11px 8px 12px;    
-      color:#f3f4f6;    
-      font-size:.96rem;    
-      font-weight:800;    
-      line-height:1.1;    
-      text-align:center;    
-      white-space:nowrap;    
-      opacity:.96;    
-      transition:color .18s ease, opacity .18s ease;    
-      cursor:pointer;    
-      text-decoration:none !important;    
-    }
-
-.home-tab:hover,    
-    .home-menu-summary:hover {    
-      color:#fff7e8;    
-      opacity:1;    
-      text-decoration:none !important;    
-    }
-
-.home-tab.is-active,    
-    .home-menu.is-current .home-menu-summary {    
-      color:var(--accent);    
-    }
-
-.home-tab.is-active::after,    
-    .home-menu.is-current .home-menu-summary::before,    
-    .home-menu[open] .home-menu-summary::before {    
-      content:"";    
-      position:absolute;    
-      left:12px;    
-      right:12px;    
-      bottom:-1px;    
-      height:3px;    
-      border-radius:999px 999px 0 0;    
-      background:var(--accent);    
-      box-shadow:0 0 18px rgba(216,180,106,.28);    
-    }
-
-.home-menu {    
-      position:relative;    
-      flex:1 1 0;    
-      min-width:0;    
-    }
-
-.home-menu summary {    
-      list-style:none;    
-    }
-
-.home-menu summary::-webkit-details-marker {    
-      display:none;    
-    }
-
-.home-menu-summary::after {    
-      content:"";    
-      display:inline-block;    
-      width:0;    
-      height:0;    
-      margin-left:5px;    
-      border-left:4px solid transparent;    
-      border-right:4px solid transparent;    
-      border-top:5px solid currentColor;    
-      transform:translateY(-1px);    
-      opacity:.75;    
-    }
-
-.home-menu[open] .home-menu-summary {    
-      color:var(--accent);    
-    }
-
-.home-submenu {    
-      position:absolute;    
-      top:calc(100% + 8px);    
-      left:50%;    
-      z-index:80;    
-      min-width:176px;    
-      padding:8px;    
-      border:1px solid rgba(216,180,106,.24);    
-      border-radius:14px;    
-      background:    
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),    
-        rgba(18,21,30,.98);    
-      box-shadow:    
-        0 16px 34px rgba(0,0,0,.34),    
-        0 0 0 1px rgba(255,255,255,.018) inset;    
-      transform:translateX(-50%);    
-    }
-
-.home-submenu a {    
-      display:flex;    
-      align-items:center;    
-      justify-content:space-between;    
-      gap:12px;    
-      min-height:38px;    
-      padding:0 12px;    
-      border-radius:10px;    
-      color:#f3f4f6;    
-      font-size:.9rem;    
-      font-weight:800;    
-      line-height:1;    
-      white-space:nowrap;    
-      text-decoration:none !important;    
-      transition:    
-        background-color .18s ease,    
-        color .18s ease,    
-        opacity .18s ease;    
-    }
-
-.home-submenu a::after {    
-      content:"›";    
-      color:var(--accent);    
-      font-size:1.15rem;    
-      line-height:1;    
-      opacity:.8;    
-    }
-
-.home-submenu a:hover {    
-      background:rgba(216,180,106,.1);    
-      color:#fff7e8;    
-      text-decoration:none !important;    
-    }
-
-.home-header-inner {    
-        width:min(var(--home-header-max), calc(100% - var(--pc-left-gutter) - var(--page-gutter)));    
-        margin-left:var(--pc-left-gutter);    
-        margin-right:auto;    
-      }
-
-.home-logo {    
-        font-size:3rem;    
-      }
-
-.home-lead {    
-        white-space:nowrap;    
-      }
-
-.home-header {    
-        margin-bottom:14px;    
-        padding:38px 0 0;    
-      }
-
-.home-header-inner {    
-        width:calc(100% - 24px);    
-      }
-
-.home-logo {    
-        margin-bottom:5px;    
-        font-size:2.42rem;    
-      }
-
-.home-lead {    
-        margin-bottom:12px;    
-        font-size:.96rem;    
-        line-height:1.42;    
-        letter-spacing:-.025em;    
-      }
-
-.home-tabs {    
-        margin-left:-1px;    
-        margin-right:-1px;    
-      }
-
-.home-tab,    
-      .home-menu-summary {    
-        padding:10px 5px 11px;    
-        font-size:.9rem;    
-      }
-
-.home-tab.is-active::after,    
-      .home-menu.is-current .home-menu-summary::before,    
-      .home-menu[open] .home-menu-summary::before {    
-        left:8px;    
-        right:8px;    
-        height:3px;    
-      }
-
-.home-submenu {    
-        min-width:158px;    
-        top:calc(100% + 7px);    
-      }
-
-.home-menu[data-menu="data"] .home-submenu {    
-        left:0;    
-        transform:none;    
-      }
-
-.home-submenu a {    
-        min-height:37px;    
-        font-size:.86rem;    
-      }
-
-.home-header-inner {    
-        width:calc(100% - 20px);    
-      }
-
-.home-logo {    
-        font-size:2.32rem;    
-      }
-
-.home-lead {    
-        font-size:.92rem;    
-      }
-
-.home-tab,    
-      .home-menu-summary {    
-        padding-left:4px;    
-        padding-right:4px;    
-        font-size:.84rem;    
-      }
-
-    /* === Safety override: prevent mobile header overflow === */
-    html,
-    body {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
-    .home-header {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: clip;
-      box-sizing: border-box;
-    }
-
-    .home-header-inner {
-      box-sizing: border-box;
-      width: min(calc(100% - (var(--page-gutter, 24px) * 2)), var(--home-header-max, 1040px)) !important;
-      max-width: calc(100% - (var(--page-gutter, 24px) * 2)) !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    .home-logo,
-    .home-lead,
-    .home-tabs {
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    .home-lead {
-      overflow-wrap: anywhere;
-    }
-
-    .home-tabs {
-      width: 100%;
-      min-width: 0;
-      overflow: visible;
-    }
-
-    .home-tab,
-    .home-menu,
-    .home-menu-summary {
-      min-width: 0;
-    }
-
-    @media (max-width: 767px) {
-      .home-header {
-        padding-top: 26px;
-      }
-
-      .home-header-inner {
-        width: calc(100% - 48px) !important;
-        max-width: calc(100% - 48px) !important;
-        margin-left: 24px !important;
-        margin-right: 24px !important;
-      }
-
-      .home-logo {
-        font-size: clamp(2.08rem, 7.8vw, 3.15rem);
-        line-height: .95;
-        white-space: nowrap;
-      }
-
-      .home-lead {
-        font-size: 1rem;
-        line-height: 1.45;
-      }
-
-      .home-tabs {
-        display: flex;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .home-tab,
-      .home-menu-summary {
-        padding-left: 6px;
-        padding-right: 6px;
-        font-size: .96rem;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .home-header-inner {
-        width: min(var(--home-header-max, 1040px), calc(100% - var(--pc-left-gutter, 24px) - var(--page-gutter, 24px))) !important;
-        max-width: min(var(--home-header-max, 1040px), calc(100% - var(--pc-left-gutter, 24px) - var(--page-gutter, 24px))) !important;
-        margin-left: var(--pc-left-gutter, 24px) !important;
-        margin-right: auto !important;
-      }
-    }
-
-    /* === Menu color test: subtle category backgrounds === */
-    .home-menu[data-menu="data"] .home-menu-summary {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(10, 42, 32, .52);
-      border-radius: 12px 12px 0 0;
-    }
-
-    .home-menu[data-menu="ranking"] .home-menu-summary {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(18, 34, 64, .54);
-      border-radius: 12px 12px 0 0;
-    }
-
-    .home-tab[href="simulation.html"] {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(72, 22, 26, .50);
-      border-radius: 12px 12px 0 0;
-    }
-
-    .home-tab[href="articles.html"] {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.010)),
-        rgba(74, 50, 24, .50);
-      border-radius: 12px 12px 0 0;
-    }
-
-    .home-menu[data-menu="data"] .home-menu-summary:hover,
-    .home-menu[data-menu="ranking"] .home-menu-summary:hover,
-    .home-tab[href="simulation.html"]:hover,
-    .home-tab[href="articles.html"]:hover {
-      filter: brightness(1.12);
-    }
-
-    .home-tab.is-current {
-      color: var(--accent);
-      opacity: 1;
-      position: relative;
-    }
-
-    .home-tab.is-current::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 4px;
-      border-radius: 999px 999px 0 0;
-      background: var(--accent);
-      box-shadow: 0 0 12px rgba(216,180,106,.28);
-    }
-
-    .home-menu.is-current .home-menu-summary,
-    .home-tab.is-current {
-      color: var(--accent);
-    }
-
-    @media (max-width: 767px) {
-      .home-tab,
-      .home-menu-summary {
-        font-size: .92rem;
-      }
-
-      .home-tab[href="simulation.html"] {
-        letter-spacing: -.04em;
-      }
-    }
-
-  </style>  
-</head>  
-<body>  
-  <header class="home-header">    
-    <div class="home-header-inner">    
-      <h1 class="home-logo"><a href="./">MCBattle.jp</a></h1>    
-      <p class="home-lead">日本一情報量の多いMCバトルポータル。<br>大会記録・戦績・独自スコアをまとめています。</p>    
-    
-      <nav class="home-tabs" aria-label="主要メニュー">    
-        <details class="home-menu" data-menu="data">    
-          <summary class="home-menu-summary">Data</summary>    
-          <div class="home-submenu">    
-            <a href="list_mc.html">MC一覧</a>    
-            <a href="list_event.html">大会一覧</a>    
-          </div>    
-        </details>    
-    
-        <details class="home-menu" data-menu="ranking">    
-          <summary class="home-menu-summary">Ranking</summary>    
-          <div class="home-submenu">    
-            <a href="score_ranking.html">スコアランキング</a>    
-            <a href="prize_ranking.html">賞金ランキング</a>    
-            <a href="score_spec.html">スコアリング仕様</a>    
-          </div>    
-        </details>    
-    
-        <a class="home-tab is-current" href="simulation.html">Simulator</a>    
-        <a class="home-tab" href="articles.html">Reading</a>    
-      </nav>    
+<div class="page">    
+    <div class="page-top">    
+      <div class="page-header-block">    
+        <h1>バトルシミュレータ</h1>    
+        <div class="vt-version">Ver.1.125</div>    
+      </div>    
     </div>    
-  </header>  
-  
-  <div class="page">  
-    <div class="page-top">  
-      <div class="page-header-block">  
-        <h1>バトルシミュレータ</h1>  
-        <div class="vt-version">Ver.1.125</div>  
-      </div>  
-    </div>  
-  
-    <section class="vt-hero">  
-      <p class="vt-lead">直近4年でバトル参加実績のあるMCを対象に、大会結果をシミュレーションします。<br>2005年以降の全試合をもとに算出した現在スコアをベースに、特定のMC同士の相性も少しだけ加味して結果を出します。</p>  
-      <p class="vt-lead">あくまでも保持しているデータをもとにしたエンタメ的なシミュレーションです。実際の勝敗や相性を保証・断定するものではありません。</p>  
-    </section>  
-  
-    <div class="vt-main-grid">  
-      <div class="vt-left-col">  
-        <section class="card vt-card">  
-          <span class="vt-step-label">①MCを選ぶ</span>  
-  
-          <div class="vt-search-row">  
-            <input id="mc-search-input" class="vt-search-box" type="text" placeholder="MC名/読み仮名で検索" autocomplete="off" />  
-          </div>  
-  
-          <p class="vt-search-note">2文字以上で候補表示</p>  
-  
-          <div id="candidate-area" class="vt-candidates">  
-            <div id="candidate-list" class="vt-candidate-list"></div>  
-            <p id="candidate-empty" class="vt-helper is-hidden">候補がありません。</p>  
-          </div>  
-  
-          <div class="vt-action-stack">  
-            <button id="fill-random-btn" class="vt-sub-button" type="button">残りを上位100位からランダム入力</button>  
-            <button id="clear-selected-btn" class="vt-sub-button" type="button">全クリア</button>  
-          </div>  
-  
-          <div class="vt-selected-wrap">  
-            <h2 class="vt-selected-title">選択中の8人</h2>  
-            <div id="selected-grid" class="vt-selected-grid"></div>  
-          </div>  
-  
-          <div class="vt-run-button-wrap">  
-            <button id="run-sim-btn" class="vt-main-button" type="button">100回この組み合わせで戦う</button>  
-          </div>  
-        </section>  
-      </div>  
-  
-      <div class="vt-right-col">  
-        <section id="result-panel" class="card vt-card">  
-          <span class="vt-step-label">②結果</span>  
-  
-          <div class="vt-run-area">  
-            <p id="sim-status" class="vt-status">8人選ぶとシミュレーションできます。</p>  
-  
-            <div id="top-result-card" class="vt-hero-result is-hidden">  
-              <span class="vt-hero-result-label">最も優勝確率が高いMC</span>  
-              <span id="top-result-name" class="vt-hero-result-name">-</span>  
-            </div>  
-  
-            <div id="dist-card" class="vt-summary-card is-hidden">  
-              <h2 class="vt-table-title">全体分布</h2>  
-              <div class="vt-dist-card-head">  
-                <div>MC</div>  
-                <div style="text-align:right;">優勝</div>  
-                <div style="text-align:right;">決勝</div>  
-                <div style="text-align:right;">Best4</div>  
-              </div>  
-              <div id="dist-list" class="vt-dist-list"></div>  
-            </div>  
-  
-            <div id="pair-adjustment-card" class="vt-pair-card is-hidden">  
-              <h2 class="vt-pair-title">過去実績を基にした相性補正</h2>  
-              <div id="pair-adjustment-list" class="vt-pair-list"></div>  
-            </div>  
-  
-            <div id="summary-card" class="vt-summary-card is-hidden">  
-              <h2 class="vt-summary-title">結果サマリ</h2>  
-              <div id="summary-lines" class="vt-summary-lines"></div>  
-            </div>  
-          </div>  
-        </section>  
-      </div>  
-    </div>  
-  </div>  
-  
-  <div id="sim-overlay" class="vt-overlay is-hidden" aria-hidden="true">  
-    <div class="vt-overlay-box">  
-      <div class="vt-overlay-clock" aria-hidden="true">  
-        <div class="vt-overlay-clock-face"></div>  
-        <div class="vt-overlay-hand-long"></div>  
-        <div class="vt-overlay-hand-short"></div>  
-        <div class="vt-overlay-clock-center"></div>  
-      </div>  
-      <p class="vt-overlay-text">100回戦ってもらっています</p>  
-      <p id="sim-overlay-count" class="vt-overlay-count">5</p>  
-    </div>  
-  </div>  
-  
-  <script>  
-    const CANDIDATES_URL = "./data/mcs.json";  
-    const STRENGTHS_URL = "./data/rankings.json";  
-    const HEAD_TO_HEAD_URL = "./data/head_to_head.json";  
-    const MAX_SELECTED = 8;  
-    const SIM_COUNT = 100;  
-  
-    const HEAD_TO_HEAD_SCORE_CAP = 12;  
-    const WIN_PROB_DIVISOR = 280;  
-    const WIN_PROB_MIN = 0.12;  
-    const WIN_PROB_MAX = 0.88;  
-  
-    let allCandidates = [];  
-    let strengthMap = {};  
-    let headToHeadMap = {};  
-    let selectedMcs = [];  
-    let filteredCandidates = [];  
-    let overlayTimer = null;  
-    let hasSimulatedCurrentSelection = false;  
-  
-    function closeOtherMenus(currentMenu) {  
-      const menus = document.querySelectorAll(".home-menu");  
-      menus.forEach((menu) => {  
-        if (menu !== currentMenu) {  
-          menu.removeAttribute("open");  
-        }  
-      });  
-    }  
-  
-    function setupHeaderMenus() {  
-      const menus = document.querySelectorAll(".home-menu");  
-  
-      menus.forEach((menu) => {  
-        menu.addEventListener("toggle", () => {  
-          if (menu.open) {  
-            closeOtherMenus(menu);  
-          }  
-        });  
-      });  
-  
-      document.addEventListener("click", (event) => {  
-        const target = event.target;  
-        if (!(target instanceof Element)) return;  
-        if (target.closest(".home-menu")) return;  
-  
-        menus.forEach((menu) => {  
-          menu.removeAttribute("open");  
-        });  
-      });  
-    }  
-  
-    async function loadJson(url) {  
-      const res = await fetch(url, { cache: "no-store" });  
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);  
-      return await res.json();  
-    }  
-  
-    async function loadOptionalJson(url) {  
-      try {  
-        const res = await fetch(url, { cache: "no-store" });  
-        if (!res.ok) return null;  
-        return await res.json();  
-      } catch (e) {  
-        return null;  
-      }  
-    }  
-  
-    function normalizeText(value) {  
-      return String(value || "")  
-        .toLowerCase()  
-        .replace(/[ァ-ヶ]/g, function(ch) {  
-          return String.fromCharCode(ch.charCodeAt(0) - 0x60);  
-        })  
-        .replace(/\s+/g, "")  
-        .trim();  
-    }  
-  
-    function shuffleArray(arr) {  
-      const copy = [...arr];  
-      for (let i = copy.length - 1; i > 0; i--) {  
-        const j = Math.floor(Math.random() * (i + 1));  
-        [copy[i], copy[j]] = [copy[j], copy[i]];  
-      }  
-      return copy;  
-    }  
-  
-    function escapeHtml(value) {  
-      return String(value ?? "")  
-        .replace(/&/g, "&amp;")  
-        .replace(/</g, "&lt;")  
-        .replace(/>/g, "&gt;")  
-        .replace(/"/g, "&quot;")  
-        .replace(/'/g, "&#39;");  
-    }  
-  
-    function clamp(value, min, max) {  
-      return Math.max(min, Math.min(max, value));  
-    }  
-  
-    function markSelectionChanged() {  
-      hasSimulatedCurrentSelection = false;  
-      hidePairAdjustments();  
-    }  
-  
-    function getTop100Pool() {  
-      return Object.values(strengthMap)  
-        .filter(item => item && item.mc_id && item.mc_name)  
-        .sort((a, b) => (b.current_score || 0) - (a.current_score || 0))  
-        .slice(0, 100)  
-        .map(item => allCandidates.find(mc => mc.mc_id === item.mc_id))  
-        .filter(Boolean);  
-    }  
-  
-    function getPairKey(mcIdA, mcIdB) {  
-      const a = String(mcIdA || "").trim();  
-      const b = String(mcIdB || "").trim();  
-      return a <= b ? `${a}__${b}` : `${b}__${a}`;  
-    }  
-  
-    function getHeadToHeadBonus(scoreA, scoreB) {  
-      const winsA = Number(scoreA || 0);  
-      const winsB = Number(scoreB || 0);  
-      const total = winsA + winsB;  
-  
-      if (total < 2) return 0;  
-      if (winsA === winsB) return 0;  
-  
-      const diff = Math.abs(winsA - winsB);  
-      const isSweep = (winsA === total || winsB === total);  
-  
-      let bonus = 0;  
-  
-      if (isSweep && total >= 3) {  
-        bonus = 12;  
-      } else if (diff === 1) {  
-        bonus = 3;  
-      } else if (diff === 2) {  
-        bonus = 7;  
-      } else {  
-        bonus = 10;  
-      }  
-  
-      if (bonus > HEAD_TO_HEAD_SCORE_CAP) {  
-        bonus = HEAD_TO_HEAD_SCORE_CAP;  
-      }  
-  
-      return winsA > winsB ? bonus : -bonus;  
-    }  
-  
-    function getHeadToHeadScoreAdjustment(mcIdA, mcIdB) {  
-      const key = getPairKey(mcIdA, mcIdB);  
-      const pair = headToHeadMap[key];  
-      if (!pair) return 0;  
-  
-      const idA = String(mcIdA || "").trim();  
-      const mcIdSmall = String(pair.mc_id_a || "").trim();  
-      const mcIdLarge = String(pair.mc_id_b || "").trim();  
-  
-      const aWinsRaw = Number(pair.a_wins || 0);  
-      const bWinsRaw = Number(pair.b_wins || 0);  
-  
-      if (idA === mcIdSmall) {  
-        return getHeadToHeadBonus(aWinsRaw, bWinsRaw);  
-      }  
-      if (idA === mcIdLarge) {  
-        return getHeadToHeadBonus(bWinsRaw, aWinsRaw);  
-      }  
-  
-      return 0;  
-    }  
-  
-    function getHeadToHeadAdvantageLabel(adjustment, pair) {  
-      const abs = Math.abs(Number(adjustment || 0));  
-      const totalMatches = Number(pair?.total_matches || 0);  
-      const aWins = Number(pair?.a_wins || 0);  
-      const bWins = Number(pair?.b_wins || 0);  
-      const isSweep = totalMatches >= 3 && (aWins === totalMatches || bWins === totalMatches);  
-  
-      if (isSweep) return "有利";  
-      if (abs >= 10) return "やや有利";  
-      if (abs >= 3) return "少し有利";  
-      return "";  
-    }  
-  
-    function formatHeadToHeadRecord(favored, other, pair) {  
-      if (!pair) return "";  
-  
-      const smallId = String(pair.mc_id_a || "").trim();  
-      const largeId = String(pair.mc_id_b || "").trim();  
-      const aWins = Number(pair.a_wins || 0);  
-      const bWins = Number(pair.b_wins || 0);  
-      const totalMatches = Number(pair.total_matches || (aWins + bWins) || 0);  
-  
-      if (!totalMatches) return "";  
-  
-      let favoredWins = 0;  
-      if (String(favored.mc_id || "").trim() === smallId && String(other.mc_id || "").trim() === largeId) {  
-        favoredWins = aWins;  
-      } else if (String(favored.mc_id || "").trim() === largeId && String(other.mc_id || "").trim() === smallId) {  
-        favoredWins = bWins;  
-      } else {  
-        return "";  
-      }  
-  
-      return `（${totalMatches}戦中${favoredWins}勝）`;  
-    }  
-  
-    function hidePairAdjustments() {  
-      document.getElementById("pair-adjustment-card").classList.add("is-hidden");  
-      document.getElementById("pair-adjustment-list").innerHTML = "";  
-    }  
-  
-    function renderPairAdjustments() {  
-      const card = document.getElementById("pair-adjustment-card");  
-      const list = document.getElementById("pair-adjustment-list");  
-  
-      const rows = [];  
-  
-      for (let i = 0; i < selectedMcs.length; i++) {  
-        for (let j = i + 1; j < selectedMcs.length; j++) {  
-          const a = selectedMcs[i];  
-          const b = selectedMcs[j];  
-          const key = getPairKey(a.mc_id, b.mc_id);  
-          const pair = headToHeadMap[key];  
-          const adjustment = getHeadToHeadScoreAdjustment(a.mc_id, b.mc_id);  
-          if (!pair || !adjustment) continue;  
-  
-          const favored = adjustment > 0 ? a : b;  
-          const other = adjustment > 0 ? b : a;  
-          const label = getHeadToHeadAdvantageLabel(adjustment, pair);  
-          if (!label) continue;  
-  
-          const totalMatches = Number(pair.total_matches || 0);  
-          const recordText = formatHeadToHeadRecord(favored, other, pair);  
-  
-          rows.push({  
-            abs: Math.abs(adjustment),  
-            totalMatches,  
-            text: `${favored.mc_name}が${other.mc_name}に対して${label}${recordText}`  
-          });  
-        }  
-      }  
-  
-      rows.sort((a, b) => b.abs - a.abs || b.totalMatches - a.totalMatches);  
-  
-      if (!rows.length) {  
-        hidePairAdjustments();  
-        return;  
-      }  
-  
-      list.innerHTML = rows.map(row => `<p class="vt-pair-line">${escapeHtml(row.text)}</p>`).join("");  
-      card.classList.remove("is-hidden");  
-    }  
-  
-    function renderSelected() {  
-      const grid = document.getElementById("selected-grid");  
-  
-      grid.classList.toggle("is-single", selectedMcs.length === 1);  
-  
-      if (selectedMcs.length === 0) {  
-        grid.innerHTML = "";  
-        return;  
-      }  
-  
-      grid.innerHTML = selectedMcs.map(mc => `  
-        <div class="vt-selected-item">  
-          <div class="vt-selected-name">${escapeHtml(mc.mc_name)}</div>  
-          <button class="vt-remove-btn" type="button" data-remove-id="${escapeHtml(mc.mc_id)}">×</button>  
-        </div>  
-      `).join("");  
-  
-      grid.querySelectorAll(".vt-remove-btn").forEach(btn => {  
-        btn.addEventListener("click", () => {  
-          const mcId = btn.getAttribute("data-remove-id");  
-          selectedMcs = selectedMcs.filter(mc => mc.mc_id !== mcId);  
-          markSelectionChanged();  
-          renderSelected();  
-          renderCandidates();  
-          updateSimReadyState();  
-        });  
-      });  
-    }  
-  
-    function renderCandidates() {  
-      const list = document.getElementById("candidate-list");  
-      const empty = document.getElementById("candidate-empty");  
-      const keyword = normalizeText(document.getElementById("mc-search-input").value);  
-      const selectedIds = new Set(selectedMcs.map(mc => mc.mc_id));  
-  
-      if (selectedMcs.length >= MAX_SELECTED) {  
-        list.innerHTML = "";  
-        empty.classList.add("is-hidden");  
-        return;  
-      }  
-  
-      if (keyword.length < 2) {  
-        list.innerHTML = "";  
-        empty.classList.add("is-hidden");  
-        return;  
-      }  
-  
-      filteredCandidates = allCandidates.filter(mc => {  
-        if (selectedIds.has(mc.mc_id)) return false;  
-        const name = normalizeText(mc.mc_name);  
-        const yomi = normalizeText(mc.mc_yomi);  
-        return name.includes(keyword) || yomi.includes(keyword);  
-      }).slice(0, 20);  
-  
-      if (filteredCandidates.length === 0) {  
-        list.innerHTML = "";  
-        empty.classList.remove("is-hidden");  
-        return;  
-      }  
-  
-      empty.classList.add("is-hidden");  
-      list.innerHTML = filteredCandidates.map(mc => `  
-        <button class="vt-candidate-btn" type="button" data-add-id="${escapeHtml(mc.mc_id)}" title="${escapeHtml(mc.mc_name)}">  
-          ${escapeHtml(mc.mc_name)}  
-        </button>  
-      `).join("");  
-  
-      list.querySelectorAll(".vt-candidate-btn").forEach(btn => {  
-        btn.addEventListener("click", () => {  
-          if (selectedMcs.length >= MAX_SELECTED) return;  
-          const mcId = btn.getAttribute("data-add-id");  
-          const mc = allCandidates.find(item => item.mc_id === mcId);  
-          if (!mc) return;  
-          selectedMcs.push(mc);  
-          markSelectionChanged();  
-          document.getElementById("mc-search-input").value = "";  
-          renderSelected();  
-          renderCandidates();  
-          updateSimReadyState();  
-        });  
-      });  
-    }  
-  
-    function updateRunButtonDisabledState(disabled) {  
-      const runBtn = document.getElementById("run-sim-btn");  
-      runBtn.disabled = disabled;  
-      runBtn.classList.toggle("is-disabled", disabled);  
-    }  
-  
-    function updateSimReadyState() {  
-      const status = document.getElementById("sim-status");  
-  
-      if (selectedMcs.length === MAX_SELECTED) {  
-        if (hasSimulatedCurrentSelection) {  
-          status.textContent = "この組み合わせはシミュレーション済みです。MCを変更すると再実行できます。";  
-          updateRunButtonDisabledState(true);  
-        } else {  
-          status.textContent = "8人そろいました。シミュレーションできます。";  
-          updateRunButtonDisabledState(false);  
-        }  
-      } else {  
-        status.textContent = `あと${MAX_SELECTED - selectedMcs.length}人選んでください。`;  
-        updateRunButtonDisabledState(true);  
-      }  
-    }  
-  
-    function getMatchWinProbability(a, b) {  
-      const scoreA = strengthMap[a.mc_id]?.current_score ?? 1500;  
-      const scoreB = strengthMap[b.mc_id]?.current_score ?? 1500;  
-      const h2hAdjustA = getHeadToHeadScoreAdjustment(a.mc_id, b.mc_id);  
-  
-      const adjustedDiff = (scoreA + h2hAdjustA) - scoreB;  
-      const raw = 1 / (1 + Math.pow(10, -adjustedDiff / WIN_PROB_DIVISOR));  
-  
-      return clamp(raw, WIN_PROB_MIN, WIN_PROB_MAX);  
-    }  
-  
-    function simulateTournamentOnce(participants) {  
-      function playMatch(a, b) {  
-        const pA = getMatchWinProbability(a, b);  
-        return Math.random() < pA ? a : b;  
-      }  
-  
-      const quarterWinners = [];  
-      for (let i = 0; i < participants.length; i += 2) {  
-        quarterWinners.push(playMatch(participants[i], participants[i + 1]));  
-      }  
-  
-      const semiWinners = [];  
-      for (let i = 0; i < quarterWinners.length; i += 2) {  
-        semiWinners.push(playMatch(quarterWinners[i], quarterWinners[i + 1]));  
-      }  
-  
-      const champion = playMatch(semiWinners[0], semiWinners[1]);  
-  
-      return {  
-        best4Ids: quarterWinners.map(mc => mc.mc_id),  
-        finalIds: semiWinners.map(mc => mc.mc_id),  
-        championId: champion.mc_id  
-      };  
-    }  
-  
-    function buildShortSummaryLines(sortedResults) {  
-      const top = sortedResults[0];  
-      const second = sortedResults[1];  
-      const third = sortedResults[2];  
-      const fourth = sortedResults[3];  
-      const lines = [];  
-  
-      if (top) {  
-        if (top.championRate >= 60) {  
-          lines.push(`${top.mc_name}がかなり優勢ですが、独走というよりは明確な本命寄りの結果でした。`);  
-        } else if (top.championRate >= 40) {  
-          lines.push(`${top.mc_name}がやや優勢で、決勝まで含めた安定感もありました。`);  
-        } else {  
-          lines.push(`上位が拮抗していて、組み合わせ次第で優勝が入れ替わる混戦傾向でした。`);  
-        }  
-      }  
-  
-      if (second && fourth) {  
-        lines.push(`${second.mc_name}以下も十分にチャンスがあり、${fourth.mc_name}あたりまで優勝候補に入る展開でした。`);  
-      } else if (second && third) {  
-        lines.push(`${second.mc_name}や${third.mc_name}も対抗圏に入り、差し込みの余地がある組み合わせでした。`);  
-      }  
-  
-      return lines;  
-    }  
-  
-    function renderSimulationResults(results) {  
-      const topCard = document.getElementById("top-result-card");  
-      const topName = document.getElementById("top-result-name");  
-      const distCard = document.getElementById("dist-card");  
-      const distList = document.getElementById("dist-list");  
-      const summaryCard = document.getElementById("summary-card");  
-      const summaryLines = document.getElementById("summary-lines");  
-  
-      const sortedResults = Object.values(results)  
-        .sort((a, b) => b.championRate - a.championRate || b.finalRate - a.finalRate || a.mc_name.localeCompare(b.mc_name, "ja"));  
-  
-      if (sortedResults.length === 0) return;  
-  
-      topName.textContent = sortedResults[0].mc_name;  
-      topCard.classList.remove("is-hidden");  
-  
-      distList.innerHTML = sortedResults.map(item => `  
-        <div class="vt-dist-row">  
-          <div class="vt-dist-name">${escapeHtml(item.mc_name)}</div>  
-          <div class="vt-dist-metric">${item.championRate}%</div>  
-          <div class="vt-dist-metric">${item.finalRate}%</div>  
-          <div class="vt-dist-metric">${item.best4Rate}%</div>  
-        </div>  
-      `).join("");  
-      distCard.classList.remove("is-hidden");  
-  
-      renderPairAdjustments();  
-  
-      const lines = buildShortSummaryLines(sortedResults);  
-      summaryLines.innerHTML = lines.map(line => `<p>${escapeHtml(line)}</p>`).join("");  
-      summaryCard.classList.remove("is-hidden");  
-    }  
-  
-    function hideSimulationResults() {  
-      document.getElementById("top-result-card").classList.add("is-hidden");  
-      document.getElementById("dist-card").classList.add("is-hidden");  
-      document.getElementById("summary-card").classList.add("is-hidden");  
-      hidePairAdjustments();  
-    }  
-  
-    function showOverlay() {  
-      document.getElementById("sim-overlay").classList.remove("is-hidden");  
-      document.getElementById("sim-overlay").setAttribute("aria-hidden", "false");  
-    }  
-  
-    function hideOverlay() {  
-      document.getElementById("sim-overlay").classList.add("is-hidden");  
-      document.getElementById("sim-overlay").setAttribute("aria-hidden", "true");  
-    }  
-  
-    function scrollToResultPanel() {  
-      document.getElementById("result-panel").scrollIntoView({ behavior: "smooth", block: "start" });  
-    }  
-  
-    function runSimulationCore() {  
-      const results = {};  
-      selectedMcs.forEach(mc => {  
-        results[mc.mc_id] = {  
-          mc_id: mc.mc_id,  
-          mc_name: mc.mc_name,  
-          championCount: 0,  
-          finalCount: 0,  
-          best4Count: 0,  
-          championRate: 0,  
-          finalRate: 0,  
-          best4Rate: 0  
-        };  
-      });  
-  
-      for (let i = 0; i < SIM_COUNT; i++) {  
-        const shuffled = shuffleArray(selectedMcs);  
-        const outcome = simulateTournamentOnce(shuffled);  
-  
-        outcome.best4Ids.forEach(id => {  
-          if (results[id]) results[id].best4Count += 1;  
-        });  
-  
-        outcome.finalIds.forEach(id => {  
-          if (results[id]) results[id].finalCount += 1;  
-        });  
-  
-        if (results[outcome.championId]) {  
-          results[outcome.championId].championCount += 1;  
-        }  
-      }  
-  
-      Object.values(results).forEach(item => {  
-        item.championRate = Math.round((item.championCount / SIM_COUNT) * 100);  
-        item.finalRate = Math.round((item.finalCount / SIM_COUNT) * 100);  
-        item.best4Rate = Math.round((item.best4Count / SIM_COUNT) * 100);  
-      });  
-  
-      return results;  
-    }  
-  
-    function startSimulationSequence() {  
-      if (selectedMcs.length !== MAX_SELECTED) return;  
-      if (hasSimulatedCurrentSelection) return;  
-  
-      const status = document.getElementById("sim-status");  
-      const countEl = document.getElementById("sim-overlay-count");  
-  
-      if (overlayTimer) {  
-        clearInterval(overlayTimer);  
-        overlayTimer = null;  
-      }  
-  
-      hideSimulationResults();  
-      showOverlay();  
-      countEl.textContent = "5";  
-      status.textContent = "100回戦ってもらっています。\n2005年以降の全試合をもとに算出した現在スコアをベースに、直接対戦の相性も少しだけ加味しています。\n実際の結果を保証するものではなく、数的理解に基づく確率論だと解釈して下さい。";  
-      updateRunButtonDisabledState(true);  
-  
-      let count = 5;  
-  
-      overlayTimer = setInterval(() => {  
-        count -= 1;  
-  
-        if (count >= 1) {  
-          countEl.textContent = String(count);  
-          return;  
-        }  
-  
-        clearInterval(overlayTimer);  
-        overlayTimer = null;  
-  
-        const results = runSimulationCore();  
-        hideOverlay();  
-        renderSimulationResults(results);  
-        hasSimulatedCurrentSelection = true;  
-        updateSimReadyState();  
-        scrollToResultPanel();  
-      }, 700);  
-    }  
-  
-    async function initPage() {  
-      try {  
-        const [mcsData, rankingsData, headToHeadData] = await Promise.all([  
-          loadJson(CANDIDATES_URL),  
-          loadJson(STRENGTHS_URL),  
-          loadOptionalJson(HEAD_TO_HEAD_URL)  
-        ]);  
-  
-        const rankings = Array.isArray(rankingsData?.rankings)  
-          ? rankingsData.rankings  
-          : Array.isArray(rankingsData?.strengths)  
-            ? rankingsData.strengths  
-            : [];  
-  
-        const rawMcs = Array.isArray(mcsData?.mcs)  
-          ? mcsData.mcs  
-          : Array.isArray(mcsData?.candidates)  
-            ? mcsData.candidates  
-            : [];  
-  
-        const mcsById = {};  
-        rawMcs.forEach(mc => {  
-          const id = String(mc.mc_id || "").trim();  
-          if (!id) return;  
-          mcsById[id] = {  
-            mc_id: id,  
-            mc_name: mc.mc_name || "",  
-            mc_yomi: mc.mc_yomi || ""  
-          };  
-        });  
-  
-        strengthMap = {};  
-        rankings.forEach(item => {  
-          const mcId = String(item.mc_id || "").trim();  
-          if (!mcId) return;  
-          strengthMap[mcId] = {  
-            mc_id: mcId,  
-            mc_name: item.mc_name || "",  
-            current_score: Number(item.current_score ?? item.score ?? 1500)  
-          };  
-        });  
-  
-        headToHeadMap = {};  
-        const summaries = Array.isArray(headToHeadData?.summaries) ? headToHeadData.summaries : [];  
-        summaries.forEach(item => {  
-          const a = String(item.mc_id_a || "").trim();  
-          const b = String(item.mc_id_b || "").trim();  
-          if (!a || !b) return;  
-          const key = getPairKey(a, b);  
-          headToHeadMap[key] = item;  
-        });  
-  
-        allCandidates = rankings  
-          .map(item => {  
-            const mcId = String(item.mc_id || "").trim();  
-            if (!mcId) return null;  
-            const master = mcsById[mcId];  
-            return {  
-              mc_id: mcId,  
-              mc_name: (master && master.mc_name) || item.mc_name || "",  
-              mc_yomi: (master && master.mc_yomi) || ""  
-            };  
-          })  
-          .filter(item => item && item.mc_id && item.mc_name);  
-  
-        renderSelected();  
-        renderCandidates();  
-        updateSimReadyState();  
-        hideSimulationResults();  
-        hideOverlay();  
-  
-        document.getElementById("mc-search-input").addEventListener("input", () => {  
-          renderCandidates();  
-        });  
-  
-        document.getElementById("fill-random-btn").addEventListener("click", () => {  
-          const selectedIds = new Set(selectedMcs.map(mc => mc.mc_id));  
-          const pool = getTop100Pool().filter(mc => !selectedIds.has(mc.mc_id));  
-          const shuffled = shuffleArray(pool);  
-  
-          while (selectedMcs.length < MAX_SELECTED && shuffled.length > 0) {  
-            selectedMcs.push(shuffled.shift());  
-          }  
-  
-          markSelectionChanged();  
-          renderSelected();  
-          renderCandidates();  
-          updateSimReadyState();  
-          hideSimulationResults();  
-        });  
-  
-        document.getElementById("clear-selected-btn").addEventListener("click", () => {  
-          if (overlayTimer) {  
-            clearInterval(overlayTimer);  
-            overlayTimer = null;  
-          }  
-          selectedMcs = [];  
-          markSelectionChanged();  
-          renderSelected();  
-          renderCandidates();  
-          updateSimReadyState();  
-          hideSimulationResults();  
-          hideOverlay();  
-          document.getElementById("sim-status").textContent = "8人選ぶとシミュレーションできます。";  
-        });  
-  
-        document.getElementById("run-sim-btn").addEventListener("click", startSimulationSequence);  
-      } catch (err) {  
-        console.error(err);  
-        document.getElementById("sim-status").textContent = `データの読み込みに失敗しました。${err && err.message ? " " + err.message : ""}`;  
-      }  
-    }  
-  
-    setupHeaderMenus();  
-    initPage();  
-  </script>  
-</body>  
-</html>  
+    
+    <section class="vt-hero">    
+      <p class="vt-lead">直近4年でバトル参加実績のあるMCを対象に、大会結果をシミュレーションします。<br>2005年以降の全試合をもとに算出した現在スコアをベースに、特定のMC同士の相性も少しだけ加味して結果を出します。</p>    
+      <p class="vt-lead">あくまでも保持しているデータをもとにしたエンタメ的なシミュレーションです。実際の勝敗や相性を保証・断定するものではありません。</p>    
+    </section>    
+    
+    <div class="vt-main-grid">    
+      <div class="vt-left-col">    
+        <section class="card vt-card">    
+          <span class="vt-step-label">①MCを選ぶ</span>    
+    
+          <div class="vt-search-row">    
+            <input id="mc-search-input" class="vt-search-box" type="text" placeholder="MC名/読み仮名で検索" autocomplete="off" />    
+          </div>    
+    
+          <p class="vt-search-note">2文字以上で候補表示</p>    
+    
+          <div id="candidate-area" class="vt-candidates">    
+            <div id="candidate-list" class="vt-candidate-list"></div>    
+            <p id="candidate-empty" class="vt-helper is-hidden">候補がありません。</p>    
+          </div>    
+    
+          <div class="vt-action-stack">    
+            <button id="fill-random-btn" class="vt-sub-button" type="button">残りを上位100位からランダム入力</button>    
+            <button id="clear-selected-btn" class="vt-sub-button" type="button">全クリア</button>    
+          </div>    
+    
+          <div class="vt-selected-wrap">    
+            <h2 class="vt-selected-title">選択中の8人</h2>    
+            <div id="selected-grid" class="vt-selected-grid"></div>    
+          </div>    
+    
+          <div class="vt-run-button-wrap">    
+            <button id="run-sim-btn" class="vt-main-button" type="button">100回この組み合わせで戦う</button>    
+          </div>    
+        </section>    
+      </div>    
+    
+      <div class="vt-right-col">    
+        <section id="result-panel" class="card vt-card">    
+          <span class="vt-step-label">②結果</span>    
+    
+          <div class="vt-run-area">    
+            <p id="sim-status" class="vt-status">8人選ぶとシミュレーションできます。</p>    
+    
+            <div id="top-result-card" class="vt-hero-result is-hidden">    
+              <span class="vt-hero-result-label">最も優勝確率が高いMC</span>    
+              <span id="top-result-name" class="vt-hero-result-name">-</span>    
+            </div>    
+    
+            <div id="dist-card" class="vt-summary-card is-hidden">    
+              <h2 class="vt-table-title">全体分布</h2>    
+              <div class="vt-dist-card-head">    
+                <div>MC</div>    
+                <div style="text-align:right;">優勝</div>    
+                <div style="text-align:right;">決勝</div>    
+                <div style="text-align:right;">Best4</div>    
+              </div>    
+              <div id="dist-list" class="vt-dist-list"></div>    
+            </div>    
+    
+            <div id="pair-adjustment-card" class="vt-pair-card is-hidden">    
+              <h2 class="vt-pair-title">過去実績を基にした相性補正</h2>    
+              <div id="pair-adjustment-list" class="vt-pair-list"></div>    
+            </div>    
+    
+            <div id="summary-card" class="vt-summary-card is-hidden">    
+              <h2 class="vt-summary-title">結果サマリ</h2>    
+              <div id="summary-lines" class="vt-summary-lines"></div>    
+            </div>    
+          </div>    
+        </section>    
+      </div>    
+    </div>    
+  </div>    
+    
+  <div id="sim-overlay" class="vt-overlay is-hidden" aria-hidden="true">    
+    <div class="vt-overlay-box">    
+      <div class="vt-overlay-clock" aria-hidden="true">    
+        <div class="vt-overlay-clock-face"></div>    
+        <div class="vt-overlay-hand-long"></div>    
+        <div class="vt-overlay-hand-short"></div>    
+        <div class="vt-overlay-clock-center"></div>    
+      </div>    
+      <p class="vt-overlay-text">100回戦ってもらっています</p>    
+      <p id="sim-overlay-count" class="vt-overlay-count">5</p>    
+    </div>    
+  </div>    
+    
+  <script>    
+    const CANDIDATES_URL = "./data/mcs.json";    
+    const STRENGTHS_URL = "./data/rankings.json";    
+    const HEAD_TO_HEAD_URL = "./data/head_to_head.json";    
+    const MAX_SELECTED = 8;    
+    const SIM_COUNT = 100;    
+    
+    const HEAD_TO_HEAD_SCORE_CAP = 12;    
+    const WIN_PROB_DIVISOR = 280;    
+    const WIN_PROB_MIN = 0.12;    
+    const WIN_PROB_MAX = 0.88;    
+    
+    let allCandidates = [];    
+    let strengthMap = {};    
+    let headToHeadMap = {};    
+    let selectedMcs = [];    
+    let filteredCandidates = [];    
+    let overlayTimer = null;    
+    let hasSimulatedCurrentSelection = false;    
+    
+    function closeOtherMenus(currentMenu) {    
+      const menus = document.querySelectorAll(".home-menu");    
+      menus.forEach((menu) => {    
+        if (menu !== currentMenu) {    
+          menu.removeAttribute("open");    
+        }    
+      });    
+    }    
+    
+    function setupHeaderMenus() {    
+      const menus = document.querySelectorAll(".home-menu");    
+    
+      menus.forEach((menu) => {    
+        menu.addEventListener("toggle", () => {    
+          if (menu.open) {    
+            closeOtherMenus(menu);    
+          }    
+        });    
+      });    
+    
+      document.addEventListener("click", (event) => {    
+        const target = event.target;    
+        if (!(target instanceof Element)) return;    
+        if (target.closest(".home-menu")) return;    
+    
+        menus.forEach((menu) => {    
+          menu.removeAttribute("open");    
+        });    
+      });    
+    }    
+    
+    async function loadJson(url) {    
+      const res = await fetch(url, { cache: "no-store" });    
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);    
+      return await res.json();    
+    }    
+    
+    async function loadOptionalJson(url) {    
+      try {    
+        const res = await fetch(url, { cache: "no-store" });    
+        if (!res.ok) return null;    
+        return await res.json();    
+      } catch (e) {    
+        return null;    
+      }    
+    }    
+    
+    function normalizeText(value) {    
+      return String(value || "")    
+        .toLowerCase()    
+        .replace(/[ァ-ヶ]/g, function(ch) {    
+          return String.fromCharCode(ch.charCodeAt(0) - 0x60);    
+        })    
+        .replace(/\s+/g, "")    
+        .trim();    
+    }    
+    
+    function shuffleArray(arr) {    
+      const copy = [...arr];    
+      for (let i = copy.length - 1; i > 0; i--) {    
+        const j = Math.floor(Math.random() * (i + 1));    
+        [copy[i], copy[j]] = [copy[j], copy[i]];    
+      }    
+      return copy;    
+    }    
+    
+    function escapeHtml(value) {    
+      return String(value ?? "")    
+        .replace(/&/g, "&amp;")    
+        .replace(/</g, "&lt;")    
+        .replace(/>/g, "&gt;")    
+        .replace(/"/g, "&quot;")    
+        .replace(/'/g, "&#39;");    
+    }    
+    
+    function clamp(value, min, max) {    
+      return Math.max(min, Math.min(max, value));    
+    }    
+    
+    function markSelectionChanged() {    
+      hasSimulatedCurrentSelection = false;    
+      hidePairAdjustments();    
+    }    
+    
+    function getTop100Pool() {    
+      return Object.values(strengthMap)    
+        .filter(item => item && item.mc_id && item.mc_name)    
+        .sort((a, b) => (b.current_score || 0) - (a.current_score || 0))    
+        .slice(0, 100)    
+        .map(item => allCandidates.find(mc => mc.mc_id === item.mc_id))    
+        .filter(Boolean);    
+    }    
+    
+    function getPairKey(mcIdA, mcIdB) {    
+      const a = String(mcIdA || "").trim();    
+      const b = String(mcIdB || "").trim();    
+      return a <= b ? `${a}__${b}` : `${b}__${a}`;    
+    }    
+    
+    function getHeadToHeadBonus(scoreA, scoreB) {    
+      const winsA = Number(scoreA || 0);    
+      const winsB = Number(scoreB || 0);    
+      const total = winsA + winsB;    
+    
+      if (total < 2) return 0;    
+      if (winsA === winsB) return 0;    
+    
+      const diff = Math.abs(winsA - winsB);    
+      const isSweep = (winsA === total || winsB === total);    
+    
+      let bonus = 0;    
+    
+      if (isSweep && total >= 3) {    
+        bonus = 12;    
+      } else if (diff === 1) {    
+        bonus = 3;    
+      } else if (diff === 2) {    
+        bonus = 7;    
+      } else {    
+        bonus = 10;    
+      }    
+    
+      if (bonus > HEAD_TO_HEAD_SCORE_CAP) {    
+        bonus = HEAD_TO_HEAD_SCORE_CAP;    
+      }    
+    
+      return winsA > winsB ? bonus : -bonus;    
+    }    
+    
+    function getHeadToHeadScoreAdjustment(mcIdA, mcIdB) {    
+      const key = getPairKey(mcIdA, mcIdB);    
+      const pair = headToHeadMap[key];    
+      if (!pair) return 0;    
+    
+      const idA = String(mcIdA || "").trim();    
+      const mcIdSmall = String(pair.mc_id_a || "").trim();    
+      const mcIdLarge = String(pair.mc_id_b || "").trim();    
+    
+      const aWinsRaw = Number(pair.a_wins || 0);    
+      const bWinsRaw = Number(pair.b_wins || 0);    
+    
+      if (idA === mcIdSmall) {    
+        return getHeadToHeadBonus(aWinsRaw, bWinsRaw);    
+      }    
+      if (idA === mcIdLarge) {    
+        return getHeadToHeadBonus(bWinsRaw, aWinsRaw);    
+      }    
+    
+      return 0;    
+    }    
+    
+    function getHeadToHeadAdvantageLabel(adjustment, pair) {    
+      const abs = Math.abs(Number(adjustment || 0));    
+      const totalMatches = Number(pair?.total_matches || 0);    
+      const aWins = Number(pair?.a_wins || 0);    
+      const bWins = Number(pair?.b_wins || 0);    
+      const isSweep = totalMatches >= 3 && (aWins === totalMatches || bWins === totalMatches);    
+    
+      if (isSweep) return "有利";    
+      if (abs >= 10) return "やや有利";    
+      if (abs >= 3) return "少し有利";    
+      return "";    
+    }    
+    
+    function formatHeadToHeadRecord(favored, other, pair) {    
+      if (!pair) return "";    
+    
+      const smallId = String(pair.mc_id_a || "").trim();    
+      const largeId = String(pair.mc_id_b || "").trim();    
+      const aWins = Number(pair.a_wins || 0);    
+      const bWins = Number(pair.b_wins || 0);    
+      const totalMatches = Number(pair.total_matches || (aWins + bWins) || 0);    
+    
+      if (!totalMatches) return "";    
+    
+      let favoredWins = 0;    
+      if (String(favored.mc_id || "").trim() === smallId && String(other.mc_id || "").trim() === largeId) {    
+        favoredWins = aWins;    
+      } else if (String(favored.mc_id || "").trim() === largeId && String(other.mc_id || "").trim() === smallId) {    
+        favoredWins = bWins;    
+      } else {    
+        return "";    
+      }    
+    
+      return `（${totalMatches}戦中${favoredWins}勝）`;    
+    }    
+    
+    function hidePairAdjustments() {    
+      document.getElementById("pair-adjustment-card").classList.add("is-hidden");    
+      document.getElementById("pair-adjustment-list").innerHTML = "";    
+    }    
+    
+    function renderPairAdjustments() {    
+      const card = document.getElementById("pair-adjustment-card");    
+      const list = document.getElementById("pair-adjustment-list");    
+    
+      const rows = [];    
+    
+      for (let i = 0; i < selectedMcs.length; i++) {    
+        for (let j = i + 1; j < selectedMcs.length; j++) {    
+          const a = selectedMcs[i];    
+          const b = selectedMcs[j];    
+          const key = getPairKey(a.mc_id, b.mc_id);    
+          const pair = headToHeadMap[key];    
+          const adjustment = getHeadToHeadScoreAdjustment(a.mc_id, b.mc_id);    
+          if (!pair || !adjustment) continue;    
+    
+          const favored = adjustment > 0 ? a : b;    
+          const other = adjustment > 0 ? b : a;    
+          const label = getHeadToHeadAdvantageLabel(adjustment, pair);    
+          if (!label) continue;    
+    
+          const totalMatches = Number(pair.total_matches || 0);    
+          const recordText = formatHeadToHeadRecord(favored, other, pair);    
+    
+          rows.push({    
+            abs: Math.abs(adjustment),    
+            totalMatches,    
+            text: `${favored.mc_name}が${other.mc_name}に対して${label}${recordText}`    
+          });    
+        }    
+      }    
+    
+      rows.sort((a, b) => b.abs - a.abs || b.totalMatches - a.totalMatches);    
+    
+      if (!rows.length) {    
+        hidePairAdjustments();    
+        return;    
+      }    
+    
+      list.innerHTML = rows.map(row => `<p class="vt-pair-line">${escapeHtml(row.text)}</p>`).join("");    
+      card.classList.remove("is-hidden");    
+    }    
+    
+    function renderSelected() {    
+      const grid = document.getElementById("selected-grid");    
+    
+      grid.classList.toggle("is-single", selectedMcs.length === 1);    
+    
+      if (selectedMcs.length === 0) {    
+        grid.innerHTML = "";    
+        return;    
+      }    
+    
+      grid.innerHTML = selectedMcs.map(mc => `    
+        <div class="vt-selected-item">    
+          <div class="vt-selected-name">${escapeHtml(mc.mc_name)}</div>    
+          <button class="vt-remove-btn" type="button" data-remove-id="${escapeHtml(mc.mc_id)}">×</button>    
+        </div>    
+      `).join("");    
+    
+      grid.querySelectorAll(".vt-remove-btn").forEach(btn => {    
+        btn.addEventListener("click", () => {    
+          const mcId = btn.getAttribute("data-remove-id");    
+          selectedMcs = selectedMcs.filter(mc => mc.mc_id !== mcId);    
+          markSelectionChanged();    
+          renderSelected();    
+          renderCandidates();    
+          updateSimReadyState();    
+        });    
+      });    
+    }    
+    
+    function renderCandidates() {    
+      const list = document.getElementById("candidate-list");    
+      const empty = document.getElementById("candidate-empty");    
+      const keyword = normalizeText(document.getElementById("mc-search-input").value);    
+      const selectedIds = new Set(selectedMcs.map(mc => mc.mc_id));    
+    
+      if (selectedMcs.length >= MAX_SELECTED) {    
+        list.innerHTML = "";    
+        empty.classList.add("is-hidden");    
+        return;    
+      }    
+    
+      if (keyword.length < 2) {    
+        list.innerHTML = "";    
+        empty.classList.add("is-hidden");    
+        return;    
+      }    
+    
+      filteredCandidates = allCandidates.filter(mc => {    
+        if (selectedIds.has(mc.mc_id)) return false;    
+        const name = normalizeText(mc.mc_name);    
+        const yomi = normalizeText(mc.mc_yomi);    
+        return name.includes(keyword) || yomi.includes(keyword);    
+      }).slice(0, 20);    
+    
+      if (filteredCandidates.length === 0) {    
+        list.innerHTML = "";    
+        empty.classList.remove("is-hidden");    
+        return;    
+      }    
+    
+      empty.classList.add("is-hidden");    
+      list.innerHTML = filteredCandidates.map(mc => `    
+        <button class="vt-candidate-btn" type="button" data-add-id="${escapeHtml(mc.mc_id)}" title="${escapeHtml(mc.mc_name)}">    
+          ${escapeHtml(mc.mc_name)}    
+        </button>    
+      `).join("");    
+    
+      list.querySelectorAll(".vt-candidate-btn").forEach(btn => {    
+        btn.addEventListener("click", () => {    
+          if (selectedMcs.length >= MAX_SELECTED) return;    
+          const mcId = btn.getAttribute("data-add-id");    
+          const mc = allCandidates.find(item => item.mc_id === mcId);    
+          if (!mc) return;    
+          selectedMcs.push(mc);    
+          markSelectionChanged();    
+          document.getElementById("mc-search-input").value = "";    
+          renderSelected();    
+          renderCandidates();    
+          updateSimReadyState();    
+        });    
+      });    
+    }    
+    
+    function updateRunButtonDisabledState(disabled) {    
+      const runBtn = document.getElementById("run-sim-btn");    
+      runBtn.disabled = disabled;    
+      runBtn.classList.toggle("is-disabled", disabled);    
+    }    
+    
+    function updateSimReadyState() {    
+      const status = document.getElementById("sim-status");    
+    
+      if (selectedMcs.length === MAX_SELECTED) {    
+        if (hasSimulatedCurrentSelection) {    
+          status.textContent = "この組み合わせはシミュレーション済みです。MCを変更すると再実行できます。";    
+          updateRunButtonDisabledState(true);    
+        } else {    
+          status.textContent = "8人そろいました。シミュレーションできます。";    
+          updateRunButtonDisabledState(false);    
+        }    
+      } else {    
+        status.textContent = `あと${MAX_SELECTED - selectedMcs.length}人選んでください。`;    
+        updateRunButtonDisabledState(true);    
+      }    
+    }    
+    
+    function getMatchWinProbability(a, b) {    
+      const scoreA = strengthMap[a.mc_id]?.current_score ?? 1500;    
+      const scoreB = strengthMap[b.mc_id]?.current_score ?? 1500;    
+      const h2hAdjustA = getHeadToHeadScoreAdjustment(a.mc_id, b.mc_id);    
+    
+      const adjustedDiff = (scoreA + h2hAdjustA) - scoreB;    
+      const raw = 1 / (1 + Math.pow(10, -adjustedDiff / WIN_PROB_DIVISOR));    
+    
+      return clamp(raw, WIN_PROB_MIN, WIN_PROB_MAX);    
+    }    
+    
+    function simulateTournamentOnce(participants) {    
+      function playMatch(a, b) {    
+        const pA = getMatchWinProbability(a, b);    
+        return Math.random() < pA ? a : b;    
+      }    
+    
+      const quarterWinners = [];    
+      for (let i = 0; i < participants.length; i += 2) {    
+        quarterWinners.push(playMatch(participants[i], participants[i + 1]));    
+      }    
+    
+      const semiWinners = [];    
+      for (let i = 0; i < quarterWinners.length; i += 2) {    
+        semiWinners.push(playMatch(quarterWinners[i], quarterWinners[i + 1]));    
+      }    
+    
+      const champion = playMatch(semiWinners[0], semiWinners[1]);    
+    
+      return {    
+        best4Ids: quarterWinners.map(mc => mc.mc_id),    
+        finalIds: semiWinners.map(mc => mc.mc_id),    
+        championId: champion.mc_id    
+      };    
+    }    
+    
+    function buildShortSummaryLines(sortedResults) {    
+      const top = sortedResults[0];    
+      const second = sortedResults[1];    
+      const third = sortedResults[2];    
+      const fourth = sortedResults[3];    
+      const lines = [];    
+    
+      if (top) {    
+        if (top.championRate >= 60) {    
+          lines.push(`${top.mc_name}がかなり優勢ですが、独走というよりは明確な本命寄りの結果でした。`);    
+        } else if (top.championRate >= 40) {    
+          lines.push(`${top.mc_name}がやや優勢で、決勝まで含めた安定感もありました。`);    
+        } else {    
+          lines.push(`上位が拮抗していて、組み合わせ次第で優勝が入れ替わる混戦傾向でした。`);    
+        }    
+      }    
+    
+      if (second && fourth) {    
+        lines.push(`${second.mc_name}以下も十分にチャンスがあり、${fourth.mc_name}あたりまで優勝候補に入る展開でした。`);    
+      } else if (second && third) {    
+        lines.push(`${second.mc_name}や${third.mc_name}も対抗圏に入り、差し込みの余地がある組み合わせでした。`);    
+      }    
+    
+      return lines;    
+    }    
+    
+    function renderSimulationResults(results) {    
+      const topCard = document.getElementById("top-result-card");    
+      const topName = document.getElementById("top-result-name");    
+      const distCard = document.getElementById("dist-card");    
+      const distList = document.getElementById("dist-list");    
+      const summaryCard = document.getElementById("summary-card");    
+      const summaryLines = document.getElementById("summary-lines");    
+    
+      const sortedResults = Object.values(results)    
+        .sort((a, b) => b.championRate - a.championRate || b.finalRate - a.finalRate || a.mc_name.localeCompare(b.mc_name, "ja"));    
+    
+      if (sortedResults.length === 0) return;    
+    
+      topName.textContent = sortedResults[0].mc_name;    
+      topCard.classList.remove("is-hidden");    
+    
+      distList.innerHTML = sortedResults.map(item => `    
+        <div class="vt-dist-row">    
+          <div class="vt-dist-name">${escapeHtml(item.mc_name)}</div>    
+          <div class="vt-dist-metric">${item.championRate}%</div>    
+          <div class="vt-dist-metric">${item.finalRate}%</div>    
+          <div class="vt-dist-metric">${item.best4Rate}%</div>    
+        </div>    
+      `).join("");    
+      distCard.classList.remove("is-hidden");    
+    
+      renderPairAdjustments();    
+    
+      const lines = buildShortSummaryLines(sortedResults);    
+      summaryLines.innerHTML = lines.map(line => `<p>${escapeHtml(line)}</p>`).join("");    
+      summaryCard.classList.remove("is-hidden");    
+    }    
+    
+    function hideSimulationResults() {    
+      document.getElementById("top-result-card").classList.add("is-hidden");    
+      document.getElementById("dist-card").classList.add("is-hidden");    
+      document.getElementById("summary-card").classList.add("is-hidden");    
+      hidePairAdjustments();    
+    }    
+    
+    function showOverlay() {    
+      document.getElementById("sim-overlay").classList.remove("is-hidden");    
+      document.getElementById("sim-overlay").setAttribute("aria-hidden", "false");    
+    }    
+    
+    function hideOverlay() {    
+      document.getElementById("sim-overlay").classList.add("is-hidden");    
+      document.getElementById("sim-overlay").setAttribute("aria-hidden", "true");    
+    }    
+    
+    function scrollToResultPanel() {    
+      document.getElementById("result-panel").scrollIntoView({ behavior: "smooth", block: "start" });    
+    }    
+    
+    function runSimulationCore() {    
+      const results = {};    
+      selectedMcs.forEach(mc => {    
+        results[mc.mc_id] = {    
+          mc_id: mc.mc_id,    
+          mc_name: mc.mc_name,    
+          championCount: 0,    
+          finalCount: 0,    
+          best4Count: 0,    
+          championRate: 0,    
+          finalRate: 0,    
+          best4Rate: 0    
+        };    
+      });    
+    
+      for (let i = 0; i < SIM_COUNT; i++) {    
+        const shuffled = shuffleArray(selectedMcs);    
+        const outcome = simulateTournamentOnce(shuffled);    
+    
+        outcome.best4Ids.forEach(id => {    
+          if (results[id]) results[id].best4Count += 1;    
+        });    
+    
+        outcome.finalIds.forEach(id => {    
+          if (results[id]) results[id].finalCount += 1;    
+        });    
+    
+        if (results[outcome.championId]) {    
+          results[outcome.championId].championCount += 1;    
+        }    
+      }    
+    
+      Object.values(results).forEach(item => {    
+        item.championRate = Math.round((item.championCount / SIM_COUNT) * 100);    
+        item.finalRate = Math.round((item.finalCount / SIM_COUNT) * 100);    
+        item.best4Rate = Math.round((item.best4Count / SIM_COUNT) * 100);    
+      });    
+    
+      return results;    
+    }    
+    
+    function startSimulationSequence() {    
+      if (selectedMcs.length !== MAX_SELECTED) return;    
+      if (hasSimulatedCurrentSelection) return;    
+    
+      const status = document.getElementById("sim-status");    
+      const countEl = document.getElementById("sim-overlay-count");    
+    
+      if (overlayTimer) {    
+        clearInterval(overlayTimer);    
+        overlayTimer = null;    
+      }    
+    
+      hideSimulationResults();    
+      showOverlay();    
+      countEl.textContent = "5";    
+      status.textContent = "100回戦ってもらっています。\n2005年以降の全試合をもとに算出した現在スコアをベースに、直接対戦の相性も少しだけ加味しています。\n実際の結果を保証するものではなく、数的理解に基づく確率論だと解釈して下さい。";    
+      updateRunButtonDisabledState(true);    
+    
+      let count = 5;    
+    
+      overlayTimer = setInterval(() => {    
+        count -= 1;    
+    
+        if (count >= 1) {    
+          countEl.textContent = String(count);    
+          return;    
+        }    
+    
+        clearInterval(overlayTimer);    
+        overlayTimer = null;    
+    
+        const results = runSimulationCore();    
+        hideOverlay();    
+        renderSimulationResults(results);    
+        hasSimulatedCurrentSelection = true;    
+        updateSimReadyState();    
+        scrollToResultPanel();    
+      }, 700);    
+    }    
+    
+    async function initPage() {    
+      try {    
+        const [mcsData, rankingsData, headToHeadData] = await Promise.all([    
+          loadJson(CANDIDATES_URL),    
+          loadJson(STRENGTHS_URL),    
+          loadOptionalJson(HEAD_TO_HEAD_URL)    
+        ]);    
+    
+        const rankings = Array.isArray(rankingsData?.rankings)    
+          ? rankingsData.rankings    
+          : Array.isArray(rankingsData?.strengths)    
+            ? rankingsData.strengths    
+            : [];    
+    
+        const rawMcs = Array.isArray(mcsData?.mcs)    
+          ? mcsData.mcs    
+          : Array.isArray(mcsData?.candidates)    
+            ? mcsData.candidates    
+            : [];    
+    
+        const mcsById = {};    
+        rawMcs.forEach(mc => {    
+          const id = String(mc.mc_id || "").trim();    
+          if (!id) return;    
+          mcsById[id] = {    
+            mc_id: id,    
+            mc_name: mc.mc_name || "",    
+            mc_yomi: mc.mc_yomi || ""    
+          };    
+        });    
+    
+        strengthMap = {};    
+        rankings.forEach(item => {    
+          const mcId = String(item.mc_id || "").trim();    
+          if (!mcId) return;    
+          strengthMap[mcId] = {    
+            mc_id: mcId,    
+            mc_name: item.mc_name || "",    
+            current_score: Number(item.current_score ?? item.score ?? 1500)    
+          };    
+        });    
+    
+        headToHeadMap = {};    
+        const summaries = Array.isArray(headToHeadData?.summaries) ? headToHeadData.summaries : [];    
+        summaries.forEach(item => {    
+          const a = String(item.mc_id_a || "").trim();    
+          const b = String(item.mc_id_b || "").trim();    
+          if (!a || !b) return;    
+          const key = getPairKey(a, b);    
+          headToHeadMap[key] = item;    
+        });    
+    
+        allCandidates = rankings    
+          .map(item => {    
+            const mcId = String(item.mc_id || "").trim();    
+            if (!mcId) return null;    
+            const master = mcsById[mcId];    
+            return {    
+              mc_id: mcId,    
+              mc_name: (master && master.mc_name) || item.mc_name || "",    
+              mc_yomi: (master && master.mc_yomi) || ""    
+            };    
+          })    
+          .filter(item => item && item.mc_id && item.mc_name);    
+    
+        renderSelected();    
+        renderCandidates();    
+        updateSimReadyState();    
+        hideSimulationResults();    
+        hideOverlay();    
+    
+        document.getElementById("mc-search-input").addEventListener("input", () => {    
+          renderCandidates();    
+        });    
+    
+        document.getElementById("fill-random-btn").addEventListener("click", () => {    
+          const selectedIds = new Set(selectedMcs.map(mc => mc.mc_id));    
+          const pool = getTop100Pool().filter(mc => !selectedIds.has(mc.mc_id));    
+          const shuffled = shuffleArray(pool);    
+    
+          while (selectedMcs.length < MAX_SELECTED && shuffled.length > 0) {    
+            selectedMcs.push(shuffled.shift());    
+          }    
+    
+          markSelectionChanged();    
+          renderSelected();    
+          renderCandidates();    
+          updateSimReadyState();    
+          hideSimulationResults();    
+        });    
+    
+        document.getElementById("clear-selected-btn").addEventListener("click", () => {    
+          if (overlayTimer) {    
+            clearInterval(overlayTimer);    
+            overlayTimer = null;    
+          }    
+          selectedMcs = [];    
+          markSelectionChanged();    
+          renderSelected();    
+          renderCandidates();    
+          updateSimReadyState();    
+          hideSimulationResults();    
+          hideOverlay();    
+          document.getElementById("sim-status").textContent = "8人選ぶとシミュレーションできます。";    
+        });    
+    
+        document.getElementById("run-sim-btn").addEventListener("click", startSimulationSequence);    
+      } catch (err) {    
+        console.error(err);    
+        document.getElementById("sim-status").textContent = `データの読み込みに失敗しました。${err && err.message ? " " + err.message : ""}`;    
+      }    
+    }    
+    
+    setupHeaderMenus();    
+    initPage();    
+  </script>
+  <script src="site-header.js"></script>
+</body>    
+</html>    
