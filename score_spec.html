@@ -1187,28 +1187,36 @@
       display: block;
     }
 
-    /* === Header menu focus visibility === */
+    /* === Header menu focus visibility: stronger === */
     .home-menu-summary:hover,
     .home-menu-summary:focus,
     .home-menu-summary:focus-visible,
     .home-tab:hover,
     .home-tab:focus,
     .home-tab:focus-visible {
-      filter: brightness(1.18);
+      filter: brightness(1.32) saturate(1.08);
       outline: none;
+      color: #ffffff;
+      background-blend-mode: screen, normal;
       box-shadow:
-        0 0 0 1px rgba(255, 255, 255, .30) inset,
-        0 0 0 2px rgba(216, 180, 106, .22),
-        0 8px 18px rgba(0, 0, 0, .16);
+        0 0 0 1px rgba(255, 255, 255, .52) inset,
+        0 0 0 2px rgba(216, 180, 106, .42),
+        0 0 18px rgba(216, 180, 106, .20),
+        0 10px 22px rgba(0, 0, 0, .22);
     }
 
     .home-submenu a:hover,
     .home-submenu a:focus,
     .home-submenu a:focus-visible {
-      background: rgba(216, 180, 106, .14);
+      background:
+        linear-gradient(180deg, rgba(216, 180, 106, .26), rgba(216, 180, 106, .13)),
+        rgba(255, 255, 255, .06);
       color: #ffffff;
-      outline: 1px solid rgba(255, 255, 255, .28);
+      outline: 1px solid rgba(255, 255, 255, .46);
       outline-offset: -1px;
+      box-shadow:
+        0 0 0 1px rgba(216, 180, 106, .18) inset,
+        0 0 12px rgba(216, 180, 106, .14);
     }
 
     .home-menu:not(.is-current) .home-menu-summary:hover::before,
@@ -1228,9 +1236,10 @@
       .home-tab:hover,
       .home-tab:focus,
       .home-tab:focus-visible {
+        filter: brightness(1.22);
         box-shadow:
-          0 0 0 1px rgba(255, 255, 255, .16) inset,
-          0 0 0 2px rgba(216, 180, 106, .16);
+          0 0 0 1px rgba(255, 255, 255, .26) inset,
+          0 0 0 2px rgba(216, 180, 106, .28);
       }
     }
 
