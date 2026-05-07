@@ -313,3 +313,14 @@
     letter-spacing: -.04em;
   }
 }
+
+/* PC separator fix: keep Simulator-Reading divider */
+@media (min-width: 768px) {
+  .home-tab[href$="simulation.html"] {
+    border-right: 2px solid rgba(255, 255, 255, .82) !important;
+  }
+
+  .home-tab[href$="articles.html"] {
+    border-right: none !important;
+  }
+}
