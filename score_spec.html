@@ -1108,42 +1108,6 @@
       }
     }
 
-    /* === Menu border test: PC white borders only === */
-    @media (min-width: 768px) {
-      .home-menu[data-menu="data"] .home-menu-summary,
-      .home-menu[data-menu="ranking"] .home-menu-summary,
-      .home-tab[href="simulation.html"],
-      .home-tab[href="articles.html"] {
-        border: 1px solid rgba(255, 255, 255, .72);
-        box-shadow:
-          0 0 0 1px rgba(0, 0, 0, .20) inset,
-          0 8px 18px rgba(0, 0, 0, .14);
-      }
-
-      .home-menu.is-current .home-menu-summary,
-      .home-tab.is-current {
-        border-color: rgba(255, 255, 255, .88);
-      }
-
-      .home-tabs {
-        gap: 6px;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .home-menu[data-menu="data"] .home-menu-summary,
-      .home-menu[data-menu="ranking"] .home-menu-summary,
-      .home-tab[href="simulation.html"],
-      .home-tab[href="articles.html"] {
-        border: none;
-        box-shadow: none;
-      }
-
-      .home-tabs {
-        gap: 0;
-      }
-    }
-
     /* === Current-only underline fix === */
     .home-menu:not(.is-current) .home-menu-summary::before,
     .home-menu:not(.is-current) .home-menu-summary::after,
@@ -1187,36 +1151,87 @@
       display: block;
     }
 
-    /* === Header menu focus visibility: stronger === */
-    .home-menu-summary:hover,
-    .home-menu-summary:focus,
-    .home-menu-summary:focus-visible,
-    .home-tab:hover,
-    .home-tab:focus,
-    .home-tab:focus-visible {
-      filter: brightness(1.32) saturate(1.08);
-      outline: none;
-      color: #ffffff;
-      background-blend-mode: screen, normal;
-      box-shadow:
-        0 0 0 1px rgba(255, 255, 255, .52) inset,
-        0 0 0 2px rgba(216, 180, 106, .42),
-        0 0 18px rgba(216, 180, 106, .20),
-        0 10px 22px rgba(0, 0, 0, .22);
+    /* === Menu tab shape test: connected square tabs === */
+    @media (min-width: 768px) {
+      .home-tabs {
+        gap: 0;
+        border: 1px solid rgba(255, 255, 255, .68);
+        border-bottom-color: rgba(255, 255, 255, .38);
+        border-radius: 4px 4px 0 0;
+        overflow: visible;
+      }
+
+      .home-menu,
+      .home-tab {
+        border-right: 1px solid rgba(255, 255, 255, .58);
+      }
+
+      .home-tab:last-child {
+        border-right: none;
+      }
+
+      .home-menu[data-menu="data"] .home-menu-summary,
+      .home-menu[data-menu="ranking"] .home-menu-summary,
+      .home-tab[href="simulation.html"],
+      .home-tab[href="articles.html"] {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .home-menu:first-child .home-menu-summary {
+        border-top-left-radius: 3px;
+      }
+
+      .home-tab:last-child {
+        border-top-right-radius: 3px;
+      }
+
+      .home-menu-summary:hover,
+      .home-menu-summary:focus,
+      .home-menu-summary:focus-visible,
+      .home-tab:hover,
+      .home-tab:focus,
+      .home-tab:focus-visible {
+        filter: brightness(1.28) saturate(1.06);
+        outline: none;
+        color: #ffffff;
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, .18) inset,
+          0 0 14px rgba(216, 180, 106, .16);
+      }
+
+      .home-submenu a:hover,
+      .home-submenu a:focus,
+      .home-submenu a:focus-visible {
+        background:
+          linear-gradient(180deg, rgba(216, 180, 106, .26), rgba(216, 180, 106, .13)),
+          rgba(255, 255, 255, .06);
+        color: #ffffff;
+        outline: 1px solid rgba(255, 255, 255, .46);
+        outline-offset: -1px;
+      }
     }
 
-    .home-submenu a:hover,
-    .home-submenu a:focus,
-    .home-submenu a:focus-visible {
-      background:
-        linear-gradient(180deg, rgba(216, 180, 106, .26), rgba(216, 180, 106, .13)),
-        rgba(255, 255, 255, .06);
-      color: #ffffff;
-      outline: 1px solid rgba(255, 255, 255, .46);
-      outline-offset: -1px;
-      box-shadow:
-        0 0 0 1px rgba(216, 180, 106, .18) inset,
-        0 0 12px rgba(216, 180, 106, .14);
+    @media (max-width: 767px) {
+      .home-tabs {
+        gap: 0;
+        border: none;
+      }
+
+      .home-menu,
+      .home-tab {
+        border-right: none;
+      }
+
+      .home-menu[data-menu="data"] .home-menu-summary,
+      .home-menu[data-menu="ranking"] .home-menu-summary,
+      .home-tab[href="simulation.html"],
+      .home-tab[href="articles.html"] {
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+      }
     }
 
     .home-menu:not(.is-current) .home-menu-summary:hover::before,
@@ -1227,20 +1242,6 @@
     .home-tab:not(.is-current):focus-visible::before {
       display: none !important;
       content: none !important;
-    }
-
-    @media (max-width: 767px) {
-      .home-menu-summary:hover,
-      .home-menu-summary:focus,
-      .home-menu-summary:focus-visible,
-      .home-tab:hover,
-      .home-tab:focus,
-      .home-tab:focus-visible {
-        filter: brightness(1.22);
-        box-shadow:
-          0 0 0 1px rgba(255, 255, 255, .26) inset,
-          0 0 0 2px rgba(216, 180, 106, .28);
-      }
     }
 
   </style>    
