@@ -318,7 +318,7 @@
     }
 
     .mcs-section-title {
-      margin: 4px 0 6px;
+      margin: 4px 0 8px;
       color: var(--accent);
       font-size: 0.86rem;
       font-weight: 700;
@@ -332,6 +332,9 @@
     }
 
     .mcs-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
       list-style: none;
       padding: 0;
       margin: 0;
@@ -340,40 +343,54 @@
     .mcs-list li {
       margin: 0;
       padding: 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .mcs-list li:last-child {
-      border-bottom: none;
+      min-width: 0;
     }
 
     .mc-link,
     .mc-link-static {
-      display: block;
-      padding: 9px 0;
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      min-height: 38px;
+      padding: 0 11px;
+      border: 1px solid rgba(216,180,106,0.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.025);
       color: inherit;
-      border-radius: 8px;
-      line-height: 1.32;
+      line-height: 1.2;
+      overflow: hidden;
     }
 
     .mc-link {
-      text-decoration: underline;
-      text-underline-offset: 0.15em;
+      text-decoration: none;
     }
 
     .mc-link:hover {
-      opacity: 0.9;
-      background: rgba(255,255,255,0.03);
-      text-decoration: underline;
+      opacity: 0.95;
+      background: rgba(216,180,106,0.08);
+      border-color: rgba(216,180,106,0.36);
+      text-decoration: none;
     }
 
     .mc-link-static {
       text-decoration: none;
     }
 
+    .mc-link,
+    .mc-link-static {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
     .mcs-empty {
       color: var(--muted);
       padding: 8px 0;
+    }
+
+    @media (min-width: 1024px) {
+      .mcs-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 640px) {
@@ -471,13 +488,19 @@
         font-size: 0.92rem;
       }
 
+      .mcs-list {
+        gap: 7px;
+      }
+
       .mc-link,
       .mc-link-static {
-        padding: 8px 0;
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 0.88rem;
       }
 
       .mcs-section-title {
-        margin: 3px 0 5px;
+        margin: 3px 0 7px;
         font-size: 0.82rem;
       }
 
