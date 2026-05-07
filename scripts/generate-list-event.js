@@ -302,6 +302,13 @@ ${escapeScriptJson(jsonLd)}
       color: var(--danger);
     }
 
+    @media (min-width: 1024px){
+      .event-winner {
+        display: inline;
+        margin-left: 0.45em;
+      }
+    }
+
     @media (max-width: 640px) {
       .page-top{
         margin-bottom:12px;
@@ -471,11 +478,8 @@ function buildEventRowHtml(event) {
 
   return `<a class="event-row" href="${escapeHtml(href)}">
   <div class="event-date">${escapeHtml(date)}</div>
-  <div class="event-name">
-    ${escapeHtml(name)}
-    ${winnerHtml}
-    ${metaHtml}
-  </div>
+  <div class="event-name">${escapeHtml(name)}${winnerHtml}</div>
+  ${metaHtml}
 </a>`;
 }
 
