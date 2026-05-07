@@ -1260,6 +1260,21 @@
       transform: none;
     }
 
+    /* === Square current underline fix === */
+    .home-menu.is-current .home-menu-summary::before,
+    .home-tab.is-current::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 4px;
+      border-radius: 0 !important;
+      background: var(--accent);
+      box-shadow: none !important;
+      display: block;
+    }
+
   </style>    
 </head>    
 <body>    
