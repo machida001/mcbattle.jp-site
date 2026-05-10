@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-05T14:11:12.093Z",
+  "updated_at": "2026-05-10T22:23:35.177Z",
   "min_matches": 2,
   "total": 431,
   "summaries": [
@@ -158,6 +158,19 @@
       "last_match_date": "2023-09-10",
       "last_event_id": "EVT0051",
       "last_event_name": "口喧嘩祭 SP × KOK2023"
+    },
+    {
+      "pair_key": "MC0376__MC0756",
+      "mc_id_a": "MC0376",
+      "mc_name_a": "呂布カルマ",
+      "mc_id_b": "MC0756",
+      "mc_name_b": "COCRGI WHITE",
+      "a_wins": 3,
+      "b_wins": 3,
+      "total_matches": 6,
+      "last_match_date": "2022-10-29",
+      "last_event_id": "EVT0119",
+      "last_event_name": "戦極MCBATTLE 第27章 "
     },
     {
       "pair_key": "MC0283__MC0376",
@@ -368,19 +381,6 @@
       "last_event_name": "真ADRENALINE 春のMC BATTLE 三連祭2022"
     },
     {
-      "pair_key": "MC0376__MC0756",
-      "mc_id_a": "MC0376",
-      "mc_name_a": "呂布カルマ",
-      "mc_id_b": "MC0756",
-      "mc_name_b": "COCRGI WHITE",
-      "a_wins": 3,
-      "b_wins": 2,
-      "total_matches": 5,
-      "last_match_date": "2021-12-30",
-      "last_event_id": "EVT0117",
-      "last_event_name": "戦極MCBATTLE 第25章 "
-    },
-    {
       "pair_key": "MC0080__MC0222",
       "mc_id_a": "MC0080",
       "mc_name_a": "CIMA",
@@ -483,19 +483,6 @@
       "last_match_date": "2024-02-02",
       "last_event_id": "EVT0094",
       "last_event_name": "渋谷レゲエ祭 vs 真ADRENALINE"
-    },
-    {
-      "pair_key": "MC0100__MC0756",
-      "mc_id_a": "MC0100",
-      "mc_name_a": "DOTAMA",
-      "mc_id_b": "MC0756",
-      "mc_name_b": "COCRGI WHITE",
-      "a_wins": 1,
-      "b_wins": 3,
-      "total_matches": 4,
-      "last_match_date": "2023-12-10",
-      "last_event_id": "EVT0074",
-      "last_event_name": "凱旋MC battle 冬ノ陣2023"
     },
     {
       "pair_key": "MC0376__MC0600",
@@ -1120,6 +1107,19 @@
       "last_match_date": "2023-12-17",
       "last_event_id": "EVT0093",
       "last_event_name": "KING OF KINGS vs 真 ADRENALINE #6"
+    },
+    {
+      "pair_key": "MC0100__MC0756",
+      "mc_id_a": "MC0100",
+      "mc_name_a": "DOTAMA",
+      "mc_id_b": "MC0756",
+      "mc_name_b": "COCRGI WHITE",
+      "a_wins": 1,
+      "b_wins": 2,
+      "total_matches": 3,
+      "last_match_date": "2023-12-10",
+      "last_event_id": "EVT0074",
+      "last_event_name": "凱旋MC battle 冬ノ陣2023"
     },
     {
       "pair_key": "MC0100__MC0279",
@@ -2778,8 +2778,8 @@
       "mc_name_a": "DOTAMA",
       "mc_id_b": "MC0376",
       "mc_name_b": "呂布カルマ",
-      "a_wins": 1,
-      "b_wins": 1,
+      "a_wins": 0,
+      "b_wins": 2,
       "total_matches": 2,
       "last_match_date": "2023-11-26",
       "last_event_id": "EVT0052",
