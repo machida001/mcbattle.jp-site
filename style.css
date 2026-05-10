@@ -623,3 +623,150 @@ hr {
     background: transparent;
   }
 }
+
+/* ===== MC detail: Win/Lose 表示調整 ===== */
+/*
+  他ページへの影響を避けるため、.mc-page 配下だけに限定する。
+  既存の共通クラスは削除・上書きしない。
+*/
+
+.mc-page .battle-section-heading,
+.mc-page .appearance-section-heading {
+  position: static;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 10px;
+  padding: 0 0 8px;
+  border: none;
+  border-bottom: 1px solid rgba(216,180,106,0.18);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: var(--accent);
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  font-size: 1.02rem;
+  line-height: 1.28;
+  letter-spacing: 0.02em;
+}
+
+.mc-page .section-heading-name,
+.mc-page .section-heading-label {
+  display: inline;
+  max-width: none;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  font-weight: 800;
+}
+
+.mc-page .section-heading-name {
+  color: var(--accent);
+}
+
+.mc-page .section-heading-label {
+  color: var(--text);
+}
+
+.mc-page .section-heading-sep {
+  color: var(--muted);
+  opacity: 0.85;
+}
+
+.mc-page .battle-filter-wrap {
+  margin: 0 0 8px;
+}
+
+.mc-page .battle-filter-input {
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 11px;
+  border: 1px solid rgba(216,180,106,0.18);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.035);
+  color: var(--text);
+  outline: none;
+  font: inherit;
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+
+.mc-page .battle-filter-input::placeholder {
+  color: rgba(178,184,199,0.72);
+}
+
+.mc-page .battle-filter-input:focus {
+  border-color: rgba(216,180,106,0.34);
+  box-shadow: 0 0 0 3px rgba(216,180,106,0.08);
+}
+
+.mc-page .battle-filter-empty {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.mc-page .battle-opponent-link {
+  display: inline;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text) !important;
+  text-decoration: none !important;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  font-weight: 800;
+}
+
+.mc-page .battle-opponent-link:hover {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: #fff4dc !important;
+  transform: none;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+.mc-page .battle-opponent-link.is-long {
+  padding: 0;
+  font-size: inherit;
+  text-align: left;
+}
+
+.mc-page .battle-opponent-label {
+  display: inline;
+  white-space: normal;
+}
+
+.mc-page .battle-list li.is-filter-hidden,
+.mc-page .team-battle-list li.is-filter-hidden {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .mc-page .battle-section-heading,
+  .mc-page .appearance-section-heading {
+    margin-bottom: 8px;
+    padding-bottom: 7px;
+    font-size: 0.94rem;
+    line-height: 1.25;
+  }
+
+  .mc-page .battle-filter-input {
+    min-height: 36px;
+    padding: 7px 10px;
+    font-size: 0.82rem;
+  }
+}
