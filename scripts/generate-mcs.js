@@ -117,21 +117,25 @@ function buildMcHtml(template, mcId, detail) {
     .replaceAll("__WINS_SECTION_HIDDEN_CLASS__", "")
     .replaceAll("__WINS_STATUS_HIDDEN_CLASS__", wins.length === 0 ? "" : "is-hidden")
     .replaceAll("__WINS_STATUS__", "")
+    .replaceAll("__WINS_SEARCH_HIDDEN_CLASS__", wins.length > COLLAPSE_LIMIT_BATTLE ? "" : "is-hidden")
     .replaceAll("__WINS_LIST_ITEMS__", winsListItems)
     .replaceAll("__WINS_MORE_HIDDEN_CLASS__", winsHasMore ? "" : "is-hidden")
     .replaceAll("__LOSSES_SECTION_HIDDEN_CLASS__", "")
     .replaceAll("__LOSSES_STATUS_HIDDEN_CLASS__", losses.length === 0 ? "" : "is-hidden")
     .replaceAll("__LOSSES_STATUS__", "")
+    .replaceAll("__LOSSES_SEARCH_HIDDEN_CLASS__", losses.length > COLLAPSE_LIMIT_BATTLE ? "" : "is-hidden")
     .replaceAll("__LOSSES_LIST_ITEMS__", lossesListItems)
     .replaceAll("__LOSSES_MORE_HIDDEN_CLASS__", lossesHasMore ? "" : "is-hidden")
     .replaceAll("__TEAM_WINS_SECTION_HIDDEN_CLASS__", teamWins.length === 0 ? "is-hidden" : "")
     .replaceAll("__TEAM_WINS_STATUS_HIDDEN_CLASS__", teamWins.length === 0 ? "" : "is-hidden")
     .replaceAll("__TEAM_WINS_STATUS__", "")
+    .replaceAll("__TEAM_WINS_SEARCH_HIDDEN_CLASS__", teamWins.length > COLLAPSE_LIMIT_BATTLE ? "" : "is-hidden")
     .replaceAll("__TEAM_WINS_LIST_ITEMS__", teamWinsListItems)
     .replaceAll("__TEAM_WINS_MORE_HIDDEN_CLASS__", teamWinsHasMore ? "" : "is-hidden")
     .replaceAll("__TEAM_LOSSES_SECTION_HIDDEN_CLASS__", teamLosses.length === 0 ? "is-hidden" : "")
     .replaceAll("__TEAM_LOSSES_STATUS_HIDDEN_CLASS__", teamLosses.length === 0 ? "" : "is-hidden")
     .replaceAll("__TEAM_LOSSES_STATUS__", "")
+    .replaceAll("__TEAM_LOSSES_SEARCH_HIDDEN_CLASS__", teamLosses.length > COLLAPSE_LIMIT_BATTLE ? "" : "is-hidden")
     .replaceAll("__TEAM_LOSSES_LIST_ITEMS__", teamLossesListItems)
     .replaceAll("__TEAM_LOSSES_MORE_HIDDEN_CLASS__", teamLossesHasMore ? "" : "is-hidden")
     .replaceAll("__APPEARANCES_SECTION_HIDDEN_CLASS__", "")
@@ -347,15 +351,15 @@ function buildBattleListItems(items, battleType) {
   }
 
   return items.map((item) => {
-    const opponentHtml = renderMcLink(item.opponent_name || "不明", item.opponent_mc_id || "", battleType);
-    const eventHtml = renderBattleEvent(
-      item.event_name || "",
-      item.event_id || "",
-      item.round_name || ""
-    );
+    const opponentName = item.opponent_name || "不明";
+    const eventName = item.event_name || "";
+    const roundName = normalizeRoundLabel(item.round_name || "");
+    const opponentHtml = renderMcLink(opponentName, item.opponent_mc_id || "", battleType);
+    const eventHtml = renderBattleEvent(eventName, item.event_id || "", roundName);
+    const filterText = buildFilterText([opponentName, eventName, roundName]);
 
     return [
-      "<li>",
+      `<li class="battle-list-item" data-filter-text="${escapeHtml(filterText)}">`,
       `<span class="battle-opponent">${opponentHtml}</span>`,
       eventHtml,
       "</li>"
@@ -381,14 +385,20 @@ function buildTeamBattleListItems(items, battleType) {
     const bottomTeamName = showOpponentFirst ? ownTeamName : opponentTeamName;
     const bottomMembers = showOpponentFirst ? ownMembers : opponentMembers;
 
-    const eventHtml = renderTeamBattleEvent(
-      item.event_name || "",
-      item.event_id || "",
-      item.round_name || ""
-    );
+    const eventName = item.event_name || "";
+    const roundName = normalizeRoundLabel(item.round_name || "");
+    const eventHtml = renderTeamBattleEvent(eventName, item.event_id || "", roundName);
+    const filterText = buildFilterText([
+      ownTeamName,
+      opponentTeamName,
+      memberNamesForFilter(ownMembers),
+      memberNamesForFilter(opponentMembers),
+      eventName,
+      roundName
+    ]);
 
     return [
-      "<li>",
+      `<li class="team-battle-list-item" data-filter-text="${escapeHtml(filterText)}">`,
       '<div class="team-battle-card">',
       '<div class="team-battle-main">',
       '<div class="team-battle-side is-own">',
@@ -406,6 +416,21 @@ function buildTeamBattleListItems(items, battleType) {
       "</li>"
     ].join("");
   }).join("\n");
+}
+
+function buildFilterText(values) {
+  return values
+    .map(value => safeString(value).trim())
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+}
+
+function memberNamesForFilter(members) {
+  return (Array.isArray(members) ? members : [])
+    .map(member => safeString(member.mc_name || member.name || "").trim())
+    .filter(Boolean)
+    .join(" ");
 }
 
 function renderTeamMemberLinks(members) {
