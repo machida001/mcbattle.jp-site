@@ -19,21 +19,20 @@
     const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
     const path = window.location.pathname.toLowerCase();
 
-    if (
-      file === "list_mc.html" ||
-      file === "list_event.html" ||
-      path.includes("/detail_mc/") ||
-      path.includes("/detail_event/")
-    ) {
-      return "data";
+    if (file === "list_event.html" || path.includes("/detail_event/")) {
+      return "events";
     }
 
-    if (
-      file === "score_ranking.html" ||
-      file === "prize_ranking.html" ||
-      file === "score_spec.html"
-    ) {
-      return "ranking";
+    if (file === "list_mc.html" || path.includes("/detail_mc/")) {
+      return "mcs";
+    }
+
+    if (file === "score_ranking.html" || file === "score_spec.html") {
+      return "score";
+    }
+
+    if (file === "prize_ranking.html") {
+      return "prize";
     }
 
     if (file === "simulation.html") {
@@ -45,22 +44,6 @@
     }
 
     return "";
-  }
-
-  function closeOtherMenus(currentMenu) {
-    document.querySelectorAll(".home-menu[open]").forEach(function (menu) {
-      if (menu !== currentMenu) {
-        menu.removeAttribute("open");
-      }
-    });
-  }
-
-  function closeMenusOnOutsideClick(event) {
-    if (!event.target.closest(".home-menu")) {
-      document.querySelectorAll(".home-menu[open]").forEach(function (menu) {
-        menu.removeAttribute("open");
-      });
-    }
   }
 
   function createHeader() {
@@ -80,40 +63,57 @@
           </p>
 
           <nav class="home-tabs" aria-label="主要メニュー">
+            <div class="home-tabs-row home-tabs-row-primary">
+              <a
+                class="home-tab home-tab-events ${current === "events" ? "is-current" : ""}"
+                href="${base}list_event.html"
+              >
+                <span class="home-tab-icon" aria-hidden="true">🏆</span>
+                <span class="home-tab-text">大会一覧</span>
+              </a>
 
-            <details class="home-menu ${current === "data" ? "is-current" : ""}" data-menu="data">
-              <summary class="home-menu-summary">Data</summary>
+              <a
+                class="home-tab home-tab-mcs ${current === "mcs" ? "is-current" : ""}"
+                href="${base}list_mc.html"
+              >
+                <span class="home-tab-icon" aria-hidden="true">👤</span>
+                <span class="home-tab-text">MC一覧</span>
+              </a>
 
-              <div class="home-submenu">
-                <a href="${base}list_mc.html">MC一覧</a>
-                <a href="${base}list_event.html">大会一覧</a>
-              </div>
-            </details>
+              <a
+                class="home-tab home-tab-score ${current === "score" ? "is-current" : ""}"
+                href="${base}score_ranking.html"
+              >
+                <span class="home-tab-icon" aria-hidden="true">📈</span>
+                <span class="home-tab-text">スコア</span>
+              </a>
 
-            <details class="home-menu ${current === "ranking" ? "is-current" : ""}" data-menu="ranking">
-              <summary class="home-menu-summary">Ranking</summary>
+              <a
+                class="home-tab home-tab-prize ${current === "prize" ? "is-current" : ""}"
+                href="${base}prize_ranking.html"
+              >
+                <span class="home-tab-icon" aria-hidden="true">💰</span>
+                <span class="home-tab-text">賞金</span>
+              </a>
+            </div>
 
-              <div class="home-submenu">
-                <a href="${base}score_ranking.html">スコアランキング</a>
-                <a href="${base}prize_ranking.html">賞金ランキング</a>
-                <a href="${base}score_spec.html">スコアリング仕様</a>
-              </div>
-            </details>
+            <div class="home-tabs-row home-tabs-row-secondary">
+              <a
+                class="home-tab home-tab-simulator ${current === "simulator" ? "is-current" : ""}"
+                href="${base}simulation.html"
+              >
+                <span class="home-tab-icon" aria-hidden="true">⚔️</span>
+                <span class="home-tab-text">Simulator</span>
+              </a>
 
-            <a
-              class="home-tab ${current === "simulator" ? "is-current" : ""}"
-              href="${base}simulation.html"
-            >
-              Simulator
-            </a>
-
-            <a
-              class="home-tab ${current === "reading" ? "is-current" : ""}"
-              href="${base}articles.html"
-            >
-              Reading
-            </a>
-
+              <a
+                class="home-tab home-tab-reading ${current === "reading" ? "is-current" : ""}"
+                href="${base}articles.html"
+              >
+                <span class="home-tab-icon" aria-hidden="true">📖</span>
+                <span class="home-tab-text">Reading</span>
+              </a>
+            </div>
           </nav>
         </div>
       </header>
@@ -125,16 +125,6 @@
     if (!mount) return;
 
     mount.innerHTML = createHeader();
-
-    document.querySelectorAll(".home-menu").forEach(function (menu) {
-      menu.addEventListener("toggle", function () {
-        if (menu.open) {
-          closeOtherMenus(menu);
-        }
-      });
-    });
-
-    document.addEventListener("click", closeMenusOnOutsideClick);
   }
 
   if (document.readyState === "loading") {
