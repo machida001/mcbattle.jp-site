@@ -1401,7 +1401,8 @@
 
   <script>
     (function () {
-      const API_BASE_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
+      const API_BASE_URL = "https://script.google.com/macros/s/AKfycbzhHrTz16hM0AtyXw1tr8Z63veK24Q-DJvQk2jOXUJ1tde2YwKKf1xj9OHe0bawfYgkeg/exec";
+      const COMMENTS_JSON_URL = "../data/event_comments.json";
       const EVENT_ID = "EVT0038";
       const USER_KEY_STORAGE = "mcbattle_comment_user_key";
       const LIKED_STORAGE_PREFIX = "mcbattle_liked_comment_";
@@ -1564,18 +1565,15 @@
         if (!listEl) return;
 
         try {
-          const payload = await jsonpRequest({
-            mode: "event_comments",
-            event_id: EVENT_ID
-          });
+          const response = await fetch(COMMENTS_JSON_URL, { method: "GET" });
 
-          if (payload && payload.error) {
-            throw new Error(payload.message || "Comment取得に失敗しました。");
+          if (!response.ok) {
+            throw new Error("Comment JSON取得に失敗しました。");
           }
 
-          const comments = normalizeComments(payload).filter((item) => {
-            return !item.status || item.status === "visible";
-          });
+          const payload = await response.json();
+          const commentsByEventId = payload && payload.comments_by_event_id ? payload.comments_by_event_id : {};
+          const comments = Array.isArray(commentsByEventId[EVENT_ID]) ? commentsByEventId[EVENT_ID] : [];
 
           renderComments(comments);
         } catch (error) {
