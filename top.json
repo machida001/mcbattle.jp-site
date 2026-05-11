@@ -1,0 +1,871 @@
+{
+  "updated_at": "2026-05-11T22:20:37.857Z",
+  "recent_events": [
+    {
+      "event_id": "EVT0164",
+      "event_name": "3150×LUSHBOMU MC BATTLE vol.3",
+      "event_name_full": "3150×LUSHBOMU MC BATTLE vol.3",
+      "event_name_simple": "3150×LUSHBOMU MC BATTLE vol.3",
+      "event_date": "2026-04-26",
+      "prize_money_winner": 6800000,
+      "prize_money_total": null,
+      "event_category": "LUSHBOMU MC BATTLE",
+      "event_stage": "本戦",
+      "location": "渋谷WOMB",
+      "battle_format": "1on1",
+      "winner_name": "輪入道"
+    },
+    {
+      "event_id": "EVT0163",
+      "event_name": "戦極MCBATTLE vs THE罵倒",
+      "event_name_full": "戦極MCBATTLE vs THE罵倒",
+      "event_name_simple": "戦極MCBATTLE vs THE罵倒",
+      "event_date": "2026-04-19",
+      "prize_money_winner": 100000,
+      "prize_money_total": null,
+      "event_category": "戦極MC BATTLE",
+      "event_stage": "本戦",
+      "location": "両国Sunrise",
+      "battle_format": "1on1",
+      "winner_name": "椿"
+    },
+    {
+      "event_id": "EVT0186",
+      "event_name": "戦極MCBATTLE 第41章 DOUBLE FACE 2on2",
+      "event_name_full": "戦極MCBATTLE 第41章 DOUBLE FACE 2on2",
+      "event_name_simple": "戦極MCBATTLE 第41章",
+      "event_date": "2026-02-14",
+      "prize_money_winner": 300000,
+      "prize_money_total": 300000,
+      "event_category": "",
+      "event_stage": "",
+      "location": "大阪 club JOULE",
+      "battle_format": "team",
+      "winner_name": ""
+    },
+    {
+      "event_id": "EVT0032",
+      "event_name": "KOK2025 GrandChanpionShip",
+      "event_name_full": "KOK2025 GrandChanpionShip",
+      "event_name_simple": "KOK2025本戦",
+      "event_date": "2026-01-10",
+      "prize_money_winner": 3000000,
+      "prize_money_total": null,
+      "event_category": "King of Kings 本戦",
+      "event_stage": "本戦",
+      "location": "豊洲PIT",
+      "battle_format": "1on1",
+      "winner_name": "T-TANGG"
+    },
+    {
+      "event_id": "EVT0140",
+      "event_name": "NEO GENESIS MC BATTLE Vol.9",
+      "event_name_full": "NEO GENESIS MC BATTLE Vol.9",
+      "event_name_simple": "NEO GENESIS MC BATTLE Vol.9",
+      "event_date": "2026-01-04",
+      "prize_money_winner": 100000,
+      "prize_money_total": null,
+      "event_category": "NEO GENESIS MC BATTLE",
+      "event_stage": "本戦",
+      "location": "HARLEM",
+      "battle_format": "1on1",
+      "winner_name": "DOTAMA"
+    },
+    {
+      "event_id": "EVT0021",
+      "event_name": "UMB2025 GrandChanpionShip",
+      "event_name_full": "UMB2025 GrandChanpionShip",
+      "event_name_simple": "UMB2025本戦",
+      "event_date": "2025-12-29",
+      "prize_money_winner": 1000000,
+      "prize_money_total": null,
+      "event_category": "UMB 本戦",
+      "event_stage": "本戦",
+      "location": "渋谷WOMB",
+      "battle_format": "1on1",
+      "winner_name": "MC☆ニガリ"
+    },
+    {
+      "event_id": "EVT0147",
+      "event_name": "Spotlight 2025",
+      "event_name_full": "Spotlight 2025",
+      "event_name_simple": "Spotlight 2025",
+      "event_date": "2025-12-20",
+      "prize_money_winner": 300000,
+      "prize_money_total": null,
+      "event_category": "Spotlight",
+      "event_stage": "本戦",
+      "location": "JOULE",
+      "battle_format": "1on1",
+      "winner_name": "レイジ"
+    },
+    {
+      "event_id": "EVT0139",
+      "event_name": "NEO GENESIS MC BATTLE Vol.8",
+      "event_name_full": "NEO GENESIS MC BATTLE Vol.8",
+      "event_name_simple": "NEO GENESIS MC BATTLE Vol.8",
+      "event_date": "2025-10-05",
+      "prize_money_winner": 150000,
+      "prize_money_total": null,
+      "event_category": "NEO GENESIS MC BATTLE",
+      "event_stage": "本戦",
+      "location": "JOULE",
+      "battle_format": "1on1",
+      "winner_name": "REDWING"
+    },
+    {
+      "event_id": "EVT0165",
+      "event_name": "3150×LUSHBOMU MC BATTLE vol.2",
+      "event_name_full": "3150×LUSHBOMU MC BATTLE vol.2",
+      "event_name_simple": "3150×LUSHBOMU MC BATTLE vol.2",
+      "event_date": "2025-09-27",
+      "prize_money_winner": 6800000,
+      "prize_money_total": null,
+      "event_category": "LUSHBOMU MC BATTLE",
+      "event_stage": "本戦",
+      "location": "TOKYO FMホール",
+      "battle_format": "1on1",
+      "winner_name": "Donatello"
+    },
+    {
+      "event_id": "EVT0185",
+      "event_name": "戦極MCBATTLE 第39章 -YOKOHAMA- TEAM OF 3on3",
+      "event_name_full": "戦極MCBATTLE 第39章 -YOKOHAMA- TEAM OF 3on3",
+      "event_name_simple": "戦極MCBATTLE 第39章",
+      "event_date": "2025-06-08",
+      "prize_money_winner": 50000,
+      "prize_money_total": 50000,
+      "event_category": "戦極MC BATTLE",
+      "event_stage": "本戦",
+      "location": "KT Zepp Yokohama",
+      "battle_format": "team",
+      "winner_name": ""
+    }
+  ],
+  "upcoming_events": [
+    {
+      "event_date": "2026-06-20",
+      "event_name": "戦極MCBATTLE 第42章",
+      "event_stage": "本戦",
+      "location": "川崎CLUB CITTA'"
+    },
+    {
+      "event_date": "2026-08-11",
+      "event_name": "BATTLE SUMMITⅢ",
+      "event_stage": "本戦",
+      "location": "Kアリーナ横浜"
+    }
+  ],
+  "score_rankings": [
+    {
+      "rank": 1,
+      "mc_id": "MC0434",
+      "mc_name": "輪入道",
+      "score": 2805.17,
+      "total_matches": 160,
+      "wins": 119,
+      "losses": 41,
+      "last_match_date": "2026-04-26"
+    },
+    {
+      "rank": 2,
+      "mc_id": "MC0376",
+      "mc_name": "呂布カルマ",
+      "score": 2745.15,
+      "total_matches": 253,
+      "wins": 186,
+      "losses": 67,
+      "last_match_date": "2025-02-02"
+    },
+    {
+      "rank": 3,
+      "mc_id": "MC0214",
+      "mc_name": "RAWAXXX",
+      "score": 2596.29,
+      "total_matches": 198,
+      "wins": 137,
+      "losses": 61,
+      "last_match_date": "2026-04-26"
+    },
+    {
+      "rank": 4,
+      "mc_id": "MC0080",
+      "mc_name": "CIMA",
+      "score": 2233.71,
+      "total_matches": 176,
+      "wins": 118,
+      "losses": 58,
+      "last_match_date": "2026-04-19"
+    },
+    {
+      "rank": 5,
+      "mc_id": "MC0469",
+      "mc_name": "ミメイ",
+      "score": 2222.81,
+      "total_matches": 121,
+      "wins": 75,
+      "losses": 46,
+      "last_match_date": "2026-04-26"
+    },
+    {
+      "rank": 6,
+      "mc_id": "MC0100",
+      "mc_name": "DOTAMA",
+      "score": 2219.97,
+      "total_matches": 143,
+      "wins": 96,
+      "losses": 47,
+      "last_match_date": "2026-01-04"
+    },
+    {
+      "rank": 7,
+      "mc_id": "MC0756",
+      "mc_name": "COCRGI WHITE",
+      "score": 2175.13,
+      "total_matches": 157,
+      "wins": 102,
+      "losses": 55,
+      "last_match_date": "2024-03-28"
+    },
+    {
+      "rank": 8,
+      "mc_id": "MC0023",
+      "mc_name": "S-kainê",
+      "score": 2119.98,
+      "total_matches": 89,
+      "wins": 60,
+      "losses": 29,
+      "last_match_date": "2026-04-26"
+    },
+    {
+      "rank": 9,
+      "mc_id": "MC0271",
+      "mc_name": "SAM",
+      "score": 2119.9,
+      "total_matches": 70,
+      "wins": 51,
+      "losses": 19,
+      "last_match_date": "2025-09-27"
+    },
+    {
+      "rank": 10,
+      "mc_id": "MC0222",
+      "mc_name": "NAIKA MC",
+      "score": 2097.91,
+      "total_matches": 140,
+      "wins": 91,
+      "losses": 49,
+      "last_match_date": "2026-04-26"
+    }
+  ],
+  "prize_rankings": [
+    {
+      "rank": 1,
+      "mc_id": "MC0422",
+      "mc_name": "般若",
+      "total_prize_money": 20500000
+    },
+    {
+      "rank": 2,
+      "mc_id": "MC0046",
+      "mc_name": "AUTHORITY",
+      "total_prize_money": 12550000
+    },
+    {
+      "rank": 3,
+      "mc_id": "MC0376",
+      "mc_name": "呂布カルマ",
+      "total_prize_money": 10150000
+    },
+    {
+      "rank": 4,
+      "mc_id": "MC0434",
+      "mc_name": "輪入道",
+      "total_prize_money": 10100000
+    },
+    {
+      "rank": 5,
+      "mc_id": "MC0469",
+      "mc_name": "ミメイ",
+      "total_prize_money": 8233333.33
+    },
+    {
+      "rank": 6,
+      "mc_id": "MC0214",
+      "mc_name": "RAWAXXX",
+      "total_prize_money": 8000000
+    },
+    {
+      "rank": 7,
+      "mc_id": "MC0450",
+      "mc_name": "Donatello",
+      "total_prize_money": 6858333.33
+    },
+    {
+      "rank": 8,
+      "mc_id": "MC0116",
+      "mc_name": "GADORO",
+      "total_prize_money": 6500000
+    },
+    {
+      "rank": 9,
+      "mc_id": "MC0111",
+      "mc_name": "FORK",
+      "total_prize_money": 4500000
+    },
+    {
+      "rank": 10,
+      "mc_id": "MC0222",
+      "mc_name": "NAIKA MC",
+      "total_prize_money": 4350000
+    }
+  ],
+  "hot_mcs": [
+    {
+      "mc_id": "MC0021",
+      "mc_name": "R-指定",
+      "mc_yomi": "あーるしてい",
+      "hot_mc": 1,
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC0046",
+      "mc_name": "Authority",
+      "mc_yomi": "あうそりてぃ　おーそりてぃ",
+      "hot_mc": 1,
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC0467",
+      "mc_name": "Yella goat",
+      "mc_yomi": "いぇらごーと",
+      "hot_mc": 1,
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC0023",
+      "mc_name": "S-kainê",
+      "mc_yomi": "えすかいね",
+      "hot_mc": 1,
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC0015",
+      "mc_name": "MC☆ニガリ",
+      "mc_yomi": "えむしーにがり",
+      "hot_mc": 1,
+      "kana_group": "あ"
+    },
+    {
+      "mc_id": "MC0468",
+      "mc_name": "がーどまん",
+      "mc_yomi": "がーどまん",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0122",
+      "mc_name": "GOTIT",
+      "mc_yomi": "がってぃ",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0116",
+      "mc_name": "GADORO",
+      "mc_yomi": "がどろ",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0475",
+      "mc_name": "漢 a.k.a. GAMI",
+      "mc_yomi": "かんえーけーえーがみ",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0444",
+      "mc_name": "黄猿",
+      "mc_yomi": "きざる",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0118",
+      "mc_name": "GIL",
+      "mc_yomi": "ぎる",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0181",
+      "mc_name": "KOOPA",
+      "mc_yomi": "くーぱ",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0373",
+      "mc_name": "句潤",
+      "mc_yomi": "くうる",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0159",
+      "mc_name": "K-rush",
+      "mc_yomi": "けいらっしゅ",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0157",
+      "mc_name": "K'iLL",
+      "mc_yomi": "けーいる",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0171",
+      "mc_name": "KBD",
+      "mc_yomi": "けーびーでぃー",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0182",
+      "mc_name": "Kowree",
+      "mc_yomi": "こうりー",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0756",
+      "mc_name": "COCRGI WHITE",
+      "mc_yomi": "こーぎーほわいとむーとん",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0689",
+      "mc_name": "GOMESS",
+      "mc_yomi": "ごめす",
+      "hot_mc": 1,
+      "kana_group": "か"
+    },
+    {
+      "mc_id": "MC0351",
+      "mc_name": "サイプレス上野",
+      "mc_yomi": "さいぷれすうえの",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0280",
+      "mc_name": "SIMON JAP",
+      "mc_yomi": "さいもんじゃっぷ",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0279",
+      "mc_name": "SILENT KILLA JOINT",
+      "mc_yomi": "さいれんときらーじょいんと",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0080",
+      "mc_name": "CIMA",
+      "mc_yomi": "しーま",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0145",
+      "mc_name": "JAKE",
+      "mc_yomi": "じぇいく",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0922",
+      "mc_name": "J-REXXX",
+      "mc_yomi": "じぇいれっくす",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0466",
+      "mc_name": "Sitissy luvit",
+      "mc_yomi": "しってぃしぃ",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0001",
+      "mc_name": "$IVA",
+      "mc_yomi": "しば",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0920",
+      "mc_name": "Zeebra",
+      "mc_yomi": "じぶら",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0144",
+      "mc_name": "JAG-ME",
+      "mc_yomi": "じゃぐみー",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0395",
+      "mc_name": "晋平太",
+      "mc_yomi": "しんぺいた",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0283",
+      "mc_name": "SKRYU",
+      "mc_yomi": "すくりゅ",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0354",
+      "mc_name": "スナフキン",
+      "mc_yomi": "すなふきん",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0393",
+      "mc_name": "早雲",
+      "mc_yomi": "そううん",
+      "hot_mc": 1,
+      "kana_group": "さ"
+    },
+    {
+      "mc_id": "MC0474",
+      "mc_name": "泰斗(裂固)",
+      "mc_yomi": "たいとakaれっこ",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0421",
+      "mc_name": "脱走",
+      "mc_yomi": "だっそう",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0335",
+      "mc_name": "だーひー",
+      "mc_yomi": "だひ",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0448",
+      "mc_name": "CHEHON",
+      "mc_yomi": "ちぇほん",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0077",
+      "mc_name": "CHICO CARLITO",
+      "mc_yomi": "ちこかりーと",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0357",
+      "mc_name": "チプルソ",
+      "mc_yomi": "ちぷるそ",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0440",
+      "mc_name": "鎮座DOPENESS",
+      "mc_yomi": "ちんざdopeness",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0725",
+      "mc_name": "ツチヤチカら",
+      "mc_yomi": "つちやちから",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0400",
+      "mc_name": "椿",
+      "mc_yomi": "つばき",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0025",
+      "mc_name": "TKda黒ぶち",
+      "mc_yomi": "てぃーけーだ",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0295",
+      "mc_name": "T-STONE",
+      "mc_yomi": "てぃすとん",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0296",
+      "mc_name": "T-TANGG",
+      "mc_yomi": "てぃたんぐ",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0770",
+      "mc_name": "T-Pablow",
+      "mc_yomi": "てぃぱぶろ",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0932",
+      "mc_name": "天涯孤独の民",
+      "mc_yomi": "てんがいこどくのたみ",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0100",
+      "mc_name": "DOTAMA",
+      "mc_yomi": "どたま",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0450",
+      "mc_name": "Donatello",
+      "mc_yomi": "どなてろ",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0396",
+      "mc_name": "智大",
+      "mc_yomi": "ともひろ",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0302",
+      "mc_name": "TORA",
+      "mc_yomi": "とら",
+      "hot_mc": 1,
+      "kana_group": "た"
+    },
+    {
+      "mc_id": "MC0222",
+      "mc_name": "NAIKA MC",
+      "mc_yomi": "ないかえむしー",
+      "hot_mc": 1,
+      "kana_group": "な"
+    },
+    {
+      "mc_id": "MC0447",
+      "mc_name": "9for",
+      "mc_yomi": "ないんふぉー",
+      "hot_mc": 1,
+      "kana_group": "な"
+    },
+    {
+      "mc_id": "MC0807",
+      "mc_name": "Novel Core",
+      "mc_yomi": "のべるこあ",
+      "hot_mc": 1,
+      "kana_group": "な"
+    },
+    {
+      "mc_id": "MC0010",
+      "mc_name": "BATTLE手裏剣",
+      "mc_yomi": "ばとるしゅりけん",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0050",
+      "mc_name": "BALA a.k.a SBKN",
+      "mc_yomi": "ばらえーけーえーしばけん",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0692",
+      "mc_name": "POWER WAVE",
+      "mc_yomi": "ぱわーうぇいぶ",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0727",
+      "mc_name": "寿君",
+      "mc_yomi": "ひさしくん",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0337",
+      "mc_name": "ふぁんく",
+      "mc_yomi": "ふぁんく",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0451",
+      "mc_name": "Fuma no KTR",
+      "mc_yomi": "ふーま",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0111",
+      "mc_name": "FORK",
+      "mc_yomi": "ふぉーく",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0055",
+      "mc_name": "BASE",
+      "mc_yomi": "べーす",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0243",
+      "mc_name": "peko",
+      "mc_yomi": "ぺこ",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0416",
+      "mc_name": "紅桜",
+      "mc_yomi": "べにざくら",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0923",
+      "mc_name": "Benjazzy",
+      "mc_yomi": "べんじゃじー",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0245",
+      "mc_name": "PONEY",
+      "mc_yomi": "ぽにー",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0402",
+      "mc_name": "歩歩",
+      "mc_yomi": "ぽぽ",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0399",
+      "mc_name": "梵頭",
+      "mc_yomi": "ぼんず",
+      "hot_mc": 1,
+      "kana_group": "は"
+    },
+    {
+      "mc_id": "MC0764",
+      "mc_name": "孫GONG",
+      "mc_yomi": "まごgong",
+      "hot_mc": 1,
+      "kana_group": "ま"
+    },
+    {
+      "mc_id": "MC0469",
+      "mc_name": "ミメイ",
+      "mc_yomi": "みめい",
+      "hot_mc": 1,
+      "kana_group": "ま"
+    },
+    {
+      "mc_id": "MC0563",
+      "mc_name": "言×THEANSWER",
+      "mc_yomi": "ゆうとぅざあんさー",
+      "hot_mc": 1,
+      "kana_group": "や"
+    },
+    {
+      "mc_id": "MC0462",
+      "mc_name": "Randy Wati Sati",
+      "mc_yomi": "らんでぃわてぃ",
+      "hot_mc": 1,
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC0761",
+      "mc_name": "RYKEY DADDY DIRTY",
+      "mc_yomi": "りっきーだでぃだーてぃ",
+      "hot_mc": 1,
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC0376",
+      "mc_name": "呂布カルマ",
+      "mc_yomi": "りょふかるま",
+      "hot_mc": 1,
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC0367",
+      "mc_name": "レイジ",
+      "mc_yomi": "れいじ",
+      "hot_mc": 1,
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC0925",
+      "mc_name": "Red Eye",
+      "mc_yomi": "れっどあい",
+      "hot_mc": 1,
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC0214",
+      "mc_name": "RAWAXXX",
+      "mc_yomi": "ろーわっくす",
+      "hot_mc": 1,
+      "kana_group": "ら"
+    },
+    {
+      "mc_id": "MC0434",
+      "mc_name": "輪入道",
+      "mc_yomi": "わにゅうどう",
+      "hot_mc": 1,
+      "kana_group": "わ"
+    }
+  ]
+}
