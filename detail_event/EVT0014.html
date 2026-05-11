@@ -1335,12 +1335,14 @@
     })();
   </script>
 
+
   <script>
     (function () {
       const API_BASE_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
       const EVENT_ID = "EVT0014";
       const USER_KEY_STORAGE = "mcbattle_comment_user_key";
       const LIKED_STORAGE_PREFIX = "mcbattle_liked_comment_";
+      const JSONP_TIMEOUT_MS = 15000;
 
       const form = document.getElementById("event-comment-form");
       const nameInput = document.getElementById("event-comment-name");
@@ -1348,6 +1350,8 @@
       const submitButton = document.getElementById("event-comment-submit");
       const statusEl = document.getElementById("event-comment-status");
       const listEl = document.getElementById("event-comment-list");
+
+      let jsonpSeq = 0;
 
       function escapeHtml(value) {
         return String(value ?? "")
@@ -1409,6 +1413,60 @@
         return raw;
       }
 
+      function jsonpRequest(params) {
+        return new Promise(function (resolve, reject) {
+          jsonpSeq += 1;
+          const callbackName = "__mcbattleJsonpCallback_" + Date.now().toString(36) + "_" + jsonpSeq;
+          const query = new URLSearchParams();
+
+          Object.keys(params || {}).forEach(function (key) {
+            const value = params[key];
+            if (value === undefined || value === null) return;
+            query.append(key, String(value));
+          });
+
+          query.append("callback", callbackName);
+          query.append("_", String(Date.now()));
+
+          const script = document.createElement("script");
+          script.src = API_BASE_URL + "?" + query.toString();
+          script.async = true;
+
+          let done = false;
+
+          const timer = window.setTimeout(function () {
+            cleanup();
+            reject(new Error("通信がタイムアウトしました。"));
+          }, JSONP_TIMEOUT_MS);
+
+          function cleanup() {
+            if (done) return;
+            done = true;
+            window.clearTimeout(timer);
+            try {
+              delete window[callbackName];
+            } catch (error) {
+              window[callbackName] = undefined;
+            }
+            if (script && script.parentNode) {
+              script.parentNode.removeChild(script);
+            }
+          }
+
+          window[callbackName] = function (payload) {
+            cleanup();
+            resolve(payload);
+          };
+
+          script.onerror = function () {
+            cleanup();
+            reject(new Error("通信に失敗しました。"));
+          };
+
+          document.body.appendChild(script);
+        });
+      }
+
       function renderComments(comments) {
         if (!listEl) return;
 
@@ -1443,14 +1501,15 @@
         if (!listEl) return;
 
         try {
-          const url = `${API_BASE_URL}?mode=event_comments&event_id=${encodeURIComponent(EVENT_ID)}`;
-          const response = await fetch(url, { method: "GET" });
+          const payload = await jsonpRequest({
+            mode: "event_comments",
+            event_id: EVENT_ID
+          });
 
-          if (!response.ok) {
-            throw new Error("Comment取得に失敗しました。");
+          if (payload && payload.error) {
+            throw new Error(payload.message || "Comment取得に失敗しました。");
           }
 
-          const payload = await response.json();
           const comments = normalizeComments(payload).filter((item) => {
             return !item.status || item.status === "visible";
           });
@@ -1476,29 +1535,20 @@
         submitButton.disabled = true;
         setStatus("送信中です。", "");
 
-        const params = new URLSearchParams();
-        params.append("mode", "post_event_comment");
-        params.append("event_id", EVENT_ID);
-        params.append("user_name", userName);
-        params.append("comment", comment);
-        params.append("user_key", getUserKey());
-
         try {
-          const response = await fetch(API_BASE_URL, {
-            method: "POST",
-            body: params
+          const payload = await jsonpRequest({
+            mode: "post_event_comment",
+            event_id: EVENT_ID,
+            user_name: userName,
+            comment: comment,
+            user_key: getUserKey()
           });
 
-          if (!response.ok) {
-            throw new Error("投稿に失敗しました。");
-          }
-
-          const payload = await response.json();
           if (payload && payload.error) {
             throw new Error(payload.message || "投稿に失敗しました。");
           }
 
-          commentInput.value = "";
+          if (commentInput) commentInput.value = "";
           setStatus("投稿を受け付けました。管理者確認後に公開されます。", "is-success");
         } catch (error) {
           setStatus(error && error.message ? error.message : "投稿に失敗しました。時間をおいて再度お試しください。", "is-error");
@@ -1513,23 +1563,14 @@
 
         button.disabled = true;
 
-        const params = new URLSearchParams();
-        params.append("mode", "like_event_comment");
-        params.append("comment_id", commentId);
-        params.append("event_id", EVENT_ID);
-        params.append("user_key", getUserKey());
-
         try {
-          const response = await fetch(API_BASE_URL, {
-            method: "POST",
-            body: params
+          const payload = await jsonpRequest({
+            mode: "like_event_comment",
+            comment_id: commentId,
+            event_id: EVENT_ID,
+            user_key: getUserKey()
           });
 
-          if (!response.ok) {
-            throw new Error("いいねに失敗しました。");
-          }
-
-          const payload = await response.json();
           if (payload && payload.error) {
             throw new Error(payload.message || "いいねに失敗しました。");
           }
