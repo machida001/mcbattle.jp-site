@@ -578,10 +578,18 @@
 
     <section class="card" id="event-comments-section">
       <div class="event-card-inner">
-        <h2>この大会について一言</h2>
+        <h2>Commentフォーム</h2>
         <p class="event-comments-lead">
-          感想、現地の空気、好きな試合、好きなパンチラインなどを一言で投稿できます。投稿内容は管理者確認後に公開されます。
+          感想や好きなパンチラインなどを2,3文程度で投稿できます。<br>
+          投稿内容は管理者確認後に公開されます。
         </p>
+
+        <div class="event-comments-approved">
+          <h3 class="event-comments-subheading">公開済みコメント</h3>
+          <div id="event-comment-list" class="event-comment-list">
+            <p class="event-comment-empty">コメントを読み込み中です。</p>
+          </div>
+        </div>
 
         <form id="event-comment-form" class="event-comment-form">
           <input type="hidden" id="event-comment-event-id" name="event_id" value="EVT0005">
@@ -593,7 +601,7 @@
 
           <div class="event-comment-row">
             <label class="event-comment-label" for="event-comment-body">コメント（必須）</label>
-            <textarea id="event-comment-body" class="event-comment-textarea" name="comment" maxlength="280" required placeholder="例：この年の鎮座DOPENESSの空気感が好き。"></textarea>
+            <textarea id="event-comment-body" class="event-comment-textarea" name="comment" maxlength="280" required placeholder="感想や好きなパンチラインなど"></textarea>
           </div>
 
           <button id="event-comment-submit" class="event-comment-submit" type="submit">
@@ -602,13 +610,6 @@
 
           <p id="event-comment-status" class="event-comment-status" aria-live="polite"></p>
         </form>
-
-        <div class="event-comments-approved">
-          <h3 class="event-comments-subheading">公開済みコメント</h3>
-          <div id="event-comment-list" class="event-comment-list">
-            <p class="event-comment-empty">コメントを読み込み中です。</p>
-          </div>
-        </div>
       </div>
     </section>
   </div>
@@ -701,22 +702,7 @@
       const statusEl = document.getElementById("event-comment-status");
       const listEl = document.getElementById("event-comment-list");
 
-      const SAMPLE_COMMENTS = [
-        {
-          comment_id: "sample-001",
-          user_name: "匿名",
-          comment: "鎮座DOPENESSの余裕とグルーヴが強すぎる年。",
-          like_count: 12,
-          created_at: "2009.12.26"
-        },
-        {
-          comment_id: "sample-002",
-          user_name: "現地勢",
-          comment: "Finalの空気感がかなり重かった記憶がある。",
-          like_count: 8,
-          created_at: "2009.12.26"
-        }
-      ];
+      const SAMPLE_COMMENTS = [];
 
       function escapeHtml(value) {
         return String(value ?? "")
@@ -784,7 +770,6 @@
 
           renderComments(comments);
         } catch (error) {
-          // Sample_comment.htmlでは、API未実装でも見た目確認できるようにサンプルを表示
           renderComments(SAMPLE_COMMENTS);
         }
       }
