@@ -83,7 +83,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
   min-width: 0;
   min-height: 48px;
   padding: 11px 8px 12px;
@@ -108,19 +107,6 @@
 .home-tabs-row-primary .home-tab + .home-tab,
 .home-tabs-row-secondary .home-tab + .home-tab {
   border-left: 1px solid rgba(255,255,255,.14);
-}
-
-.home-tab-mark{
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1em;
-  color: currentColor;
-  font-size: .88em;
-  font-weight: 800;
-  line-height: 1;
-  opacity: .92;
 }
 
 .home-tab-text {
@@ -239,14 +225,9 @@
 
   .home-tab {
     min-height: 45px;
-    gap: 5px;
     padding: 9px 5px 10px;
-    font-size: .82rem;
+    font-size: .84rem;
     letter-spacing: -.035em;
-  }
-
-  .home-tab-mark {
-    font-size: .82em;
   }
 
   .home-tab-simulator,
@@ -265,10 +246,9 @@
   }
 
   .home-tab {
-    gap: 4px;
     padding-left: 4px;
     padding-right: 4px;
-    font-size: .76rem;
+    font-size: .78rem;
   }
 
   .home-tab-simulator,
