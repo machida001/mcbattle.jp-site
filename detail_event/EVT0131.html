@@ -704,6 +704,77 @@
     }
 
 
+
+    .matches-accordion{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012)),
+        rgba(255,255,255,.015);
+      overflow: hidden;
+    }
+
+    .matches-accordion[open]{
+      border-color: rgba(216,180,106,.24);
+    }
+
+    .matches-accordion-summary{
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 16px;
+      color: var(--text);
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.2;
+      user-select: none;
+    }
+
+    .matches-accordion-summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .matches-accordion-icon{
+      position: relative;
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+    }
+
+    .matches-accordion-icon::before,
+    .matches-accordion-icon::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 14px;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(216,180,106,.92);
+      transform-origin: center;
+      transition: transform .18s ease, opacity .18s ease;
+    }
+
+    .matches-accordion-icon::after{
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    .matches-accordion-icon::before{
+      transform: translateY(-50%);
+    }
+
+    .matches-accordion[open] .matches-accordion-icon::after{
+      opacity: 0;
+      transform: translateY(-50%) rotate(90deg) scaleX(.4);
+    }
+
+    .matches-accordion-body{
+      padding: 0 0 2px;
+    }
+
     .event-comments-lead{
       margin: 0 0 14px;
       color: var(--muted);
@@ -1074,6 +1145,12 @@
         line-height:1.34 !important;
       }
 
+
+      .matches-accordion-summary{
+        padding: 14px 14px;
+        font-size: .98rem;
+      }
+
       .event-comment-form{
         padding: 11px;
         border-radius: 14px;
@@ -1122,10 +1199,17 @@
 
     <section class="card">
       <div class="event-card-inner">
-        <h2>試合結果</h2>
-        
-        <div id="matches-list">
-          <div class="round-block">
+        <details class="matches-accordion">
+          <summary class="matches-accordion-summary">
+            <span>試合結果</span>
+            <span class="matches-accordion-icon" aria-hidden="true"></span>
+          </summary>
+
+          <div class="matches-accordion-body">
+            
+
+            <div id="matches-list">
+              <div class="round-block">
 <h3 class="round-heading">Final</h3>
 <ul class="match-list">
 <li class="match-row-wrap"><div class="match-row-box"><div class="match-single-line"><span class="match-name is-winner"><a href="../detail_mc/MC0422.html" class="result-link-winner">般若</a></span><span class="match-separator">/</span><span class="match-name is-loser"><a href="../detail_mc/MC0923.html" class="result-link-loser">Benjazzy</a></span></div></div></li>
@@ -1160,19 +1244,21 @@
 <li class="match-row-wrap"><div class="match-row-box"><div class="match-single-line"><span class="match-name is-winner"><a href="../detail_mc/MC0422.html" class="result-link-winner">般若</a></span><span class="match-separator">/</span><span class="match-name is-loser"><a href="../detail_mc/MC0475.html" class="result-link-loser is-long">漢 a.k.a. GAMI</a></span></div></div></li>
 </ul>
 </div>
-        </div>
+            </div>
 
-        <a id="event-info-link" class="event-info-link" href="../contact.html?type=event&amp;event_name=BATTLE%20SUMMIT%E2%85%A1" target="_blank" rel="noopener noreferrer" aria-label="大会情報の情報提供フォームを新しいタブで開く">
-          <div class="event-info-card">
-            大会情報、試合結果に誤りを見つけた場合は、情報提供をお願いします。
+            <a id="event-info-link" class="event-info-link" href="../contact.html?type=event&amp;event_name=BATTLE%20SUMMIT%E2%85%A1" target="_blank" rel="noopener noreferrer" aria-label="大会情報の情報提供フォームを新しいタブで開く">
+              <div class="event-info-card">
+                大会情報、試合結果に誤りを見つけた場合は、情報提供をお願いします。
+              </div>
+            </a>
           </div>
-        </a>
+        </details>
       </div>
     </section>
 
     <section class="card" id="event-comments-approved-section">
       <div class="event-card-inner">
-        <h2>Comment</h2>
+        <h2>公開済みComment</h2>
         <div class="event-comments-approved">
           <div id="event-comment-list" class="event-comment-list">
             <p class="event-comment-empty">コメントを読み込み中です。</p>
@@ -1199,7 +1285,7 @@
 
           <div class="event-comment-row">
             <label class="event-comment-label" for="event-comment-body">コメント（必須）</label>
-            <textarea id="event-comment-body" class="event-comment-textarea" name="comment" maxlength="280" required placeholder=""></textarea>
+            <textarea id="event-comment-body" class="event-comment-textarea" name="comment" maxlength="280" required placeholder="例：この大会の好きな試合やパンチラインを書いてください。"></textarea>
           </div>
 
           <button id="event-comment-submit" class="event-comment-submit" type="submit">
@@ -1300,7 +1386,7 @@
 
   <script>
     (function () {
-      const API_BASE_URL = "https://script.google.com/macros/s/AKfycbzhHrTz16hM0AtyXw1tr8Z63veK24Q-DJvQk2jOXUJ1tde2YwKKf1xj9OHe0bawfYgkeg/exec";
+      const API_BASE_URL = "https://script.google.com/macros/s/AKfycbyhs1MAehpfkicBmd5GfebPdrQqtanheYtONWAOsJ-D30s79xEf0wHB1afK9JShGJMgUQ/exec";
       const EVENT_ID = "EVT0131";
       const USER_KEY_STORAGE = "mcbattle_comment_user_key";
       const LIKED_STORAGE_PREFIX = "mcbattle_liked_comment_";
