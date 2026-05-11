@@ -63,12 +63,14 @@
           </p>
 
           <nav class="home-tabs" aria-label="主要メニュー">
+
             <div class="home-tabs-row home-tabs-row-primary">
+
               <a
                 class="home-tab home-tab-events ${current === "events" ? "is-current" : ""}"
                 href="${base}list_event.html"
               >
-                <span class="home-tab-icon" aria-hidden="true">🏆</span>
+                <span class="home-tab-mark" aria-hidden="true">◇</span>
                 <span class="home-tab-text">大会一覧</span>
               </a>
 
@@ -76,7 +78,7 @@
                 class="home-tab home-tab-mcs ${current === "mcs" ? "is-current" : ""}"
                 href="${base}list_mc.html"
               >
-                <span class="home-tab-icon" aria-hidden="true">👤</span>
+                <span class="home-tab-mark" aria-hidden="true">○</span>
                 <span class="home-tab-text">MC一覧</span>
               </a>
 
@@ -84,7 +86,7 @@
                 class="home-tab home-tab-score ${current === "score" ? "is-current" : ""}"
                 href="${base}score_ranking.html"
               >
-                <span class="home-tab-icon" aria-hidden="true">📈</span>
+                <span class="home-tab-mark" aria-hidden="true">△</span>
                 <span class="home-tab-text">スコア</span>
               </a>
 
@@ -92,17 +94,19 @@
                 class="home-tab home-tab-prize ${current === "prize" ? "is-current" : ""}"
                 href="${base}prize_ranking.html"
               >
-                <span class="home-tab-icon" aria-hidden="true">💰</span>
+                <span class="home-tab-mark" aria-hidden="true">□</span>
                 <span class="home-tab-text">賞金</span>
               </a>
+
             </div>
 
             <div class="home-tabs-row home-tabs-row-secondary">
+
               <a
                 class="home-tab home-tab-simulator ${current === "simulator" ? "is-current" : ""}"
                 href="${base}simulation.html"
               >
-                <span class="home-tab-icon" aria-hidden="true">⚔️</span>
+                <span class="home-tab-mark" aria-hidden="true">×</span>
                 <span class="home-tab-text">Simulator</span>
               </a>
 
@@ -110,10 +114,12 @@
                 class="home-tab home-tab-reading ${current === "reading" ? "is-current" : ""}"
                 href="${base}articles.html"
               >
-                <span class="home-tab-icon" aria-hidden="true">📖</span>
+                <span class="home-tab-mark" aria-hidden="true">—</span>
                 <span class="home-tab-text">Reading</span>
               </a>
+
             </div>
+
           </nav>
         </div>
       </header>
