@@ -362,9 +362,8 @@
     .event-comment-status.is-error{ color:#ff9b9b; }
 
     .event-comments-approved{
-      margin-top:18px;
-      padding-top:16px;
-      border-top:1px solid rgba(255,255,255,.12);
+      margin-top:0;
+      padding-top:0;
     }
 
     .event-comments-subheading{
@@ -576,6 +575,17 @@
       </div>
     </section>
 
+    <section class="card" id="event-comments-approved-section">
+      <div class="event-card-inner">
+        <h2>公開済みComment</h2>
+        <div class="event-comments-approved">
+          <div id="event-comment-list" class="event-comment-list">
+            <p class="event-comment-empty">コメントを読み込み中です。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="card" id="event-comments-section">
       <div class="event-card-inner">
         <h2>Commentフォーム</h2>
@@ -583,13 +593,6 @@
           感想や好きなパンチラインなどを2,3文程度で投稿できます。<br>
           投稿内容は管理者確認後に公開されます。
         </p>
-
-        <div class="event-comments-approved">
-          <h3 class="event-comments-subheading">公開済みコメント</h3>
-          <div id="event-comment-list" class="event-comment-list">
-            <p class="event-comment-empty">コメントを読み込み中です。</p>
-          </div>
-        </div>
 
         <form id="event-comment-form" class="event-comment-form">
           <input type="hidden" id="event-comment-event-id" name="event_id" value="EVT0005">
@@ -601,7 +604,7 @@
 
           <div class="event-comment-row">
             <label class="event-comment-label" for="event-comment-body">コメント（必須）</label>
-            <textarea id="event-comment-body" class="event-comment-textarea" name="comment" maxlength="280" required placeholder="感想や好きなパンチラインなど"></textarea>
+            <textarea id="event-comment-body" class="event-comment-textarea" name="comment" maxlength="280" required placeholder="例：この年の鎮座DOPENESSの空気感が好き。"></textarea>
           </div>
 
           <button id="event-comment-submit" class="event-comment-submit" type="submit">
@@ -731,7 +734,7 @@
         const visibleComments = normalizeComments(comments);
 
         if (!visibleComments.length) {
-          listEl.innerHTML = '<p class="event-comment-empty">まだ公開済みコメントはありません。</p>';
+          listEl.innerHTML = '<p class="event-comment-empty">まだ公開済みCommentはありません。</p>';
           return;
         }
 
