@@ -4,6 +4,7 @@ const path = require("path");
 const ROOT_DIR = process.cwd();
 const TEMPLATE_PATH = path.join(ROOT_DIR, "templates", "event-template.html");
 const DATA_PATH = path.join(ROOT_DIR, "data", "event_details_all.json");
+const MC_DETAILS_PATH = path.join(ROOT_DIR, "data", "mc_details_all.json");
 const OUTPUT_DIR = path.join(ROOT_DIR, "detail_event");
 const LONG_NAME_THRESHOLD = 10;
 
@@ -16,6 +17,7 @@ function main() {
   const template = fs.readFileSync(TEMPLATE_PATH, "utf8");
   const raw = fs.readFileSync(DATA_PATH, "utf8");
   const data = JSON.parse(raw);
+  const mcNameById = loadCanonicalMcNameMap(data);
 
   const detailMap = data && data.event_details ? data.event_details : {};
   const eventIds = Object.keys(detailMap);
@@ -31,7 +33,7 @@ function main() {
     const detail = detailMap[eventId];
     if (!detail || !detail.event) continue;
 
-    const html = buildEventHtml(template, eventId, detail);
+    const html = buildEventHtml(template, eventId, detail, mcNameById);
     const outPath = path.join(OUTPUT_DIR, `${eventId}.html`);
     fs.writeFileSync(outPath, html, "utf8");
     generatedCount += 1;
@@ -40,7 +42,7 @@ function main() {
   console.log(`大会静的ページ生成完了: ${generatedCount}件`);
 }
 
-function buildEventHtml(template, eventId, detail) {
+function buildEventHtml(template, eventId, detail, mcNameById) {
   const event = detail.event || {};
   const groupedMatches = Array.isArray(detail.grouped_matches) ? detail.grouped_matches.slice() : [];
   const totalMatches = Number(detail.total_matches || 0);
@@ -56,8 +58,8 @@ function buildEventHtml(template, eventId, detail) {
   const pageTitle = `${eventTitle} | 大会結果・優勝者・試合結果 | MCBattle.jp`;
   const metaDescription = buildMetaDescription(eventTitle, eventDateText, winnerName, runnerUpName, totalMatches, isTeamEvent);
 
-  const eventInfoListItems = buildEventInfoListItems(detail, groupedMatches);
-  const matchesHtml = isTeamEvent ? buildTeamMatchesHtml(groupedMatches) : buildMatchesHtml(groupedMatches);
+  const eventInfoListItems = buildEventInfoListItems(detail, groupedMatches, mcNameById);
+  const matchesHtml = isTeamEvent ? buildTeamMatchesHtml(groupedMatches, mcNameById) : buildMatchesHtml(groupedMatches);
   const matchesStatusHtml = totalMatches === 0
     ? '<p id="matches-status" class="muted">試合結果がありません</p>'
     : "";
@@ -92,10 +94,10 @@ function buildMetaDescription(eventTitle, eventDateText, winnerName, runnerUpNam
   return parts.join(" ");
 }
 
-function buildEventInfoListItems(detail, groupedMatches) {
+function buildEventInfoListItems(detail, groupedMatches, mcNameById) {
   const event = detail && detail.event ? detail.event : {};
   const isTeamEvent = isTeamBattleEvent(event);
-  const resultsHtml = buildResultsHtml(event, groupedMatches);
+  const resultsHtml = buildResultsHtml(event, groupedMatches, mcNameById);
   const formattedWinnerPrize = formatPrizeYen(event.prize_money_winner);
   const formattedLocation = safeString(event.location || "").trim();
   const prizeSupplementHtml = buildPrizeSupplementHtml(detail);
@@ -305,9 +307,9 @@ function getPrizeSupplementNote(item) {
   ).trim();
 }
 
-function buildResultsHtml(event, groupedMatches) {
+function buildResultsHtml(event, groupedMatches, mcNameById) {
   if (isTeamBattleEvent(event)) {
-    return buildTeamResultsHtml(event);
+    return buildTeamResultsHtml(event, mcNameById);
   }
 
   const finalMatches = getRoundMatches(groupedMatches, "Final");
@@ -373,7 +375,7 @@ function buildMatchesHtml(groupedMatches) {
 }
 
 
-function buildTeamResultsHtml(event) {
+function buildTeamResultsHtml(event, mcNameById) {
   const teamResults = Array.isArray(event.team_results) ? event.team_results : [];
 
   const lines = teamResults
@@ -391,7 +393,7 @@ function buildTeamResultsHtml(event) {
         `<span class="result-medal">${escapeHtml(rankLabel)}</span>`,
         '<span class="result-team-summary">',
         teamName ? `<span class="result-team-header">${escapeHtml(teamName)}</span>` : "",
-        `<span class="result-team-member-row">${renderTeamMemberLinks(members)}</span>`,
+        `<span class="result-team-member-row">${renderTeamMemberLinks(members, mcNameById)}</span>`,
         "</span>",
         "</span>"
       ].join("");
@@ -402,7 +404,7 @@ function buildTeamResultsHtml(event) {
   return `<span class="result-block result-team-summary-block">${lines.join("")}</span>`;
 }
 
-function buildTeamMatchesHtml(groupedMatches) {
+function buildTeamMatchesHtml(groupedMatches, mcNameById) {
   return groupedMatches.map((group) => {
     const roundName = normalizeRoundLabel(group.round_name) || "ラウンド不明";
     const isTwoColumn = isTwoColumnRound(roundName);
@@ -420,12 +422,12 @@ function buildTeamMatchesHtml(groupedMatches) {
         '<div class="match-team-layout">',
         '<div class="match-team-side is-winner">',
         winnerTeamName ? `<div class="team-name-label">${escapeHtml(winnerTeamName)}</div>` : "",
-        `<div class="team-members-text">${renderTeamMemberLinks(winnerMembers)}</div>`,
+        `<div class="team-members-text">${renderTeamMemberLinks(winnerMembers, mcNameById)}</div>`,
         "</div>",
         '<div class="match-vs">VS</div>',
         '<div class="match-team-side is-loser">',
         loserTeamName ? `<div class="team-name-label">${escapeHtml(loserTeamName)}</div>` : "",
-        `<div class="team-members-text">${renderTeamMemberLinks(loserMembers)}</div>`,
+        `<div class="team-members-text">${renderTeamMemberLinks(loserMembers, mcNameById)}</div>`,
         "</div>",
         "</div>",
         "</div>",
@@ -444,13 +446,13 @@ function buildTeamMatchesHtml(groupedMatches) {
   }).join("\n");
 }
 
-function renderTeamMemberLinks(members) {
+function renderTeamMemberLinks(members, mcNameById) {
   const list = Array.isArray(members) ? members : [];
 
   return list
     .map((member) => {
-      const name = safeString(member.mc_name || member.name || "");
       const mcId = safeString(member.mc_id || member.id || "").trim();
+      const name = getCanonicalTeamMemberName(member, mcNameById);
       if (!name) return "";
 
       const body = escapeHtml(name);
@@ -460,6 +462,111 @@ function renderTeamMemberLinks(members) {
     })
     .filter(Boolean)
     .join('<span class="team-member-separator">・</span>');
+}
+
+function getCanonicalTeamMemberName(member, mcNameById) {
+  const mcId = safeString(member && (member.mc_id || member.id) || "").trim();
+
+  if (mcId && mcNameById && mcNameById.has(mcId)) {
+    return mcNameById.get(mcId);
+  }
+
+  return safeString(
+    member && (
+      member.mc_name ??
+      member.name ??
+      member.member_name ??
+      member.display_name ??
+      ""
+    )
+  ).trim();
+}
+
+function loadCanonicalMcNameMap(eventData) {
+  const mcNameById = new Map();
+
+  collectMcNamesFromData(eventData, mcNameById);
+
+  if (fs.existsSync(MC_DETAILS_PATH)) {
+    try {
+      const raw = fs.readFileSync(MC_DETAILS_PATH, "utf8");
+      const mcData = JSON.parse(raw);
+      collectMcNamesFromData(mcData, mcNameById);
+      console.log(`MC正規名マップ読込: ${mcNameById.size}件`);
+    } catch (error) {
+      console.warn(`MC正規名マップ読込失敗: ${MC_DETAILS_PATH}`);
+      console.warn(error.message);
+    }
+  } else {
+    console.warn(`MC正規名マップファイルなし: ${MC_DETAILS_PATH}`);
+  }
+
+  return mcNameById;
+}
+
+function collectMcNamesFromData(data, mcNameById) {
+  if (!data || !mcNameById) return;
+
+  if (Array.isArray(data)) {
+    data.forEach((item) => collectOneMcName(item, mcNameById));
+    return;
+  }
+
+  if (data.mc && typeof data.mc === "object") {
+    collectOneMcName(data.mc, mcNameById);
+  }
+
+  if (Array.isArray(data.mcs)) {
+    data.mcs.forEach((item) => collectOneMcName(item, mcNameById));
+  }
+
+  if (Array.isArray(data.mc_master)) {
+    data.mc_master.forEach((item) => collectOneMcName(item, mcNameById));
+  }
+
+  if (Array.isArray(data.MC_Master)) {
+    data.MC_Master.forEach((item) => collectOneMcName(item, mcNameById));
+  }
+
+  if (data.mc_details && typeof data.mc_details === "object") {
+    Object.values(data.mc_details).forEach((detail) => {
+      if (detail && detail.mc) {
+        collectOneMcName(detail.mc, mcNameById);
+      } else {
+        collectOneMcName(detail, mcNameById);
+      }
+    });
+  }
+
+  if (data.mc_map && typeof data.mc_map === "object") {
+    Object.values(data.mc_map).forEach((item) => collectOneMcName(item, mcNameById));
+  }
+}
+
+function collectOneMcName(item, mcNameById) {
+  if (!item || typeof item !== "object") return;
+
+  const mcId = safeString(
+    item.mc_id ??
+    item.id ??
+    item.MC_ID ??
+    item.mcId ??
+    ""
+  ).trim();
+
+  const mcName = safeString(
+    item.mc_name ??
+    item.name ??
+    item.MC名 ??
+    item.mcName ??
+    ""
+  ).trim();
+
+  if (!mcId || !mcName) return;
+
+  if (!mcNameById.has(mcId)) {
+    mcNameById.set(mcId, mcName);
+  }
 }
 
 function getFallbackTeamRankLabel(index) {
