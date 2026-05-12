@@ -657,13 +657,14 @@
 
 
 
-    .matches-accordion{
+    .matches-lower-accordion{
       display:block;
-      margin:0;
-      padding:0;
+      margin: 14px 0 0;
+      padding: 0;
+      border-top: 1px solid rgba(255,255,255,.10);
     }
 
-    .matches-accordion-summary{
+    .matches-lower-summary{
       list-style: none;
       cursor: pointer;
       display: flex;
@@ -671,15 +672,15 @@
       justify-content: space-between;
       gap: 12px;
       margin:0;
-      padding: 0;
-      color: var(--text);
-      font-size: 1.05rem;
+      padding: 13px 0 0;
+      color: var(--muted);
+      font-size: .86rem;
       font-weight: 800;
-      line-height: 1.2;
+      line-height: 1.35;
       user-select: none;
     }
 
-    .matches-accordion-summary::-webkit-details-marker{
+    .matches-lower-summary::-webkit-details-marker{
       display:none;
     }
 
@@ -712,13 +713,13 @@
       transform: translateY(-50%);
     }
 
-    .matches-accordion[open] .matches-accordion-icon::after{
+    .matches-lower-accordion[open] .matches-accordion-icon::after{
       opacity: 0;
       transform: translateY(-50%) rotate(90deg) scaleX(.4);
     }
 
-    .matches-accordion-body{
-      margin-top: 14px;
+    .matches-lower-body{
+      margin-top: 12px;
       padding: 0;
     }
 
@@ -1093,8 +1094,8 @@
       }
 
 
-      .matches-accordion-summary{
-        font-size: .98rem;
+      .matches-lower-summary{
+        font-size: .82rem;
       }
 
       .event-comment-form{
@@ -1142,26 +1143,18 @@
 
     <section class="card">
       <div class="event-card-inner">
-        <details class="matches-accordion">
-          <summary class="matches-accordion-summary">
-            <span>試合結果</span>
-            <span class="matches-accordion-icon" aria-hidden="true"></span>
-          </summary>
+        <h2>試合結果</h2>
+        __MATCHES_STATUS_HTML__
 
-          <div class="matches-accordion-body">
-            __MATCHES_STATUS_HTML__
+        <div id="matches-list">
+          __MATCHES_HTML__
+        </div>
 
-            <div id="matches-list">
-              __MATCHES_HTML__
-            </div>
-
-            <a id="event-info-link" class="event-info-link" href="../contact.html?type=event&amp;event_name=__CONTACT_EVENT_NAME_URL__" target="_blank" rel="noopener noreferrer" aria-label="大会情報の情報提供フォームを新しいタブで開く">
-              <div class="event-info-card">
-                大会情報、試合結果に誤りを見つけた場合は、情報提供をお願いします。
-              </div>
-            </a>
+        <a id="event-info-link" class="event-info-link" href="../contact.html?type=event&amp;event_name=__CONTACT_EVENT_NAME_URL__" target="_blank" rel="noopener noreferrer" aria-label="大会情報の情報提供フォームを新しいタブで開く">
+          <div class="event-info-card">
+            大会情報、試合結果に誤りを見つけた場合は、情報提供をお願いします。
           </div>
-        </details>
+        </a>
       </div>
     </section>
 
