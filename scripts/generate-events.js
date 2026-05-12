@@ -92,7 +92,7 @@ function buildMetaDescription(eventTitle, eventDateText, winnerName, runnerUpNam
     totalMatches > 0 ? `全${totalMatches}試合の試合結果を掲載しています。` : "試合結果を掲載しています。"
   ].filter(Boolean);
 
-  return parts.join(" ");
+  return parts.join("\n");
 }
 
 function buildEventInfoListItems(detail, groupedMatches, mcNameById) {
@@ -118,7 +118,7 @@ function buildEventInfoListItems(detail, groupedMatches, mcNameById) {
         `<span class="meta-label">${escapeHtml(item.label)}：</span>`,
         `<span class="team-result-body">${item.html}</span>`,
         "</li>"
-      ].join("");
+      ].join("\n");
     }
 
     return [
@@ -126,7 +126,7 @@ function buildEventInfoListItems(detail, groupedMatches, mcNameById) {
       `<span class="meta-label">${escapeHtml(item.label)}：</span>`,
       `<span>${item.html}</span>`,
       "</li>"
-    ].join("");
+    ].join("\n");
   }).join("\n");
 }
 
@@ -338,7 +338,7 @@ function buildResultsHtml(event, groupedMatches, mcNameById) {
   best4List.forEach((line) => lines.push(`<span class="result-line is-sub">${line}</span>`));
 
   if (!lines.length) return "−";
-  return `<span class="result-block">${lines.join("")}</span>`;
+  return `<span class="result-block">${lines.join("\n")}</span>`;
 }
 
 function buildMatchesHtml(groupedMatches) {
@@ -357,13 +357,11 @@ function buildMatchesHtml(groupedMatches) {
 
   const visibleHtml = visibleGroups
     .map((group) => buildOneRoundMatchesHtml(group))
-    .join("
-");
+    .join("\n");
 
   const collapsedHtml = collapsedGroups
     .map((group) => buildOneRoundMatchesHtml(group))
-    .join("
-");
+    .join("\n");
 
   if (!collapsedHtml) {
     return visibleHtml;
@@ -380,8 +378,7 @@ function buildMatchesHtml(groupedMatches) {
     collapsedHtml,
     '</div>',
     '</details>'
-  ].filter(Boolean).join("
-");
+  ].filter(Boolean).join("\n");
 }
 
 function buildOneRoundMatchesHtml(group) {
@@ -403,9 +400,8 @@ function buildOneRoundMatchesHtml(group) {
       "</div>",
       "</div>",
       "</li>"
-    ].join("");
-  }).join("
-");
+    ].join("\n");
+  }).join("\n");
 
   return [
     '<div class="round-block">',
@@ -414,8 +410,7 @@ function buildOneRoundMatchesHtml(group) {
     rows,
     "</ul>",
     "</div>"
-  ].join("
-");
+  ].join("\n");
 }
 
 
@@ -440,12 +435,12 @@ function buildTeamResultsHtml(event, mcNameById) {
         `<span class="result-team-member-row">${renderTeamMemberLinks(members, mcNameById)}</span>`,
         "</span>",
         "</span>"
-      ].join("");
+      ].join("\n");
     })
     .filter(Boolean);
 
   if (!lines.length) return "−";
-  return `<span class="result-block result-team-summary-block">${lines.join("")}</span>`;
+  return `<span class="result-block result-team-summary-block">${lines.join("\n")}</span>`;
 }
 
 function buildTeamMatchesHtml(groupedMatches, mcNameById) {
@@ -464,13 +459,11 @@ function buildTeamMatchesHtml(groupedMatches, mcNameById) {
 
   const visibleHtml = visibleGroups
     .map((group) => buildOneTeamRoundMatchesHtml(group, mcNameById))
-    .join("
-");
+    .join("\n");
 
   const collapsedHtml = collapsedGroups
     .map((group) => buildOneTeamRoundMatchesHtml(group, mcNameById))
-    .join("
-");
+    .join("\n");
 
   if (!collapsedHtml) {
     return visibleHtml;
@@ -487,8 +480,7 @@ function buildTeamMatchesHtml(groupedMatches, mcNameById) {
     collapsedHtml,
     '</div>',
     '</details>'
-  ].filter(Boolean).join("
-");
+  ].filter(Boolean).join("\n");
 }
 
 function buildOneTeamRoundMatchesHtml(group, mcNameById) {
@@ -518,9 +510,8 @@ function buildOneTeamRoundMatchesHtml(group, mcNameById) {
       "</div>",
       "</div>",
       "</li>"
-    ].join("");
-  }).join("
-");
+    ].join("\n");
+  }).join("\n");
 
   return [
     '<div class="round-block">',
@@ -529,8 +520,7 @@ function buildOneTeamRoundMatchesHtml(group, mcNameById) {
     rows,
     "</ul>",
     "</div>"
-  ].join("
-");
+  ].join("\n");
 }
 
 function renderTeamMemberLinks(members, mcNameById) {
