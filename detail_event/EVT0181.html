@@ -1246,7 +1246,7 @@
 
     <section class="card" id="event-comments-approved-section">
       <div class="event-card-inner">
-        <h2>Comment</h2>
+        <h2>公開済みComment</h2>
         <div class="event-comments-approved">
           <div id="event-comment-list" class="event-comment-list">
             <p class="event-comment-empty">コメントを読み込み中です。</p>
@@ -1273,7 +1273,7 @@
 
           <div class="event-comment-row">
             <label class="event-comment-label" for="event-comment-body">コメント（必須）</label>
-            <textarea id="event-comment-body" class="event-comment-textarea" name="comment" maxlength="280" required placeholder="。"></textarea>
+            <textarea id="event-comment-body" class="event-comment-textarea" name="comment" maxlength="280" required placeholder="例：この大会の好きな試合やパンチラインを書いてください。"></textarea>
           </div>
 
           <button id="event-comment-submit" class="event-comment-submit" type="submit">
@@ -1379,7 +1379,7 @@
       const EVENT_ID = "EVT0181";
       const USER_KEY_STORAGE = "mcbattle_comment_user_key";
       const LIKED_STORAGE_PREFIX = "mcbattle_liked_comment_";
-      const JSONP_TIMEOUT_MS = 15000;
+      const JSONP_TIMEOUT_MS = 30000;
 
       const form = document.getElementById("event-comment-form");
       const nameInput = document.getElementById("event-comment-name");
@@ -1510,7 +1510,7 @@
         const visibleComments = normalizeComments(comments);
 
         if (!visibleComments.length) {
-          listEl.innerHTML = '<p class="event-comment-empty">まだCommentはありません。</p>';
+          listEl.innerHTML = '<p class="event-comment-empty">まだ公開済みCommentはありません。</p>';
           return;
         }
 
@@ -1585,7 +1585,12 @@
           if (commentInput) commentInput.value = "";
           setStatus("投稿を受け付けました。管理者確認後に公開されます。", "is-success");
         } catch (error) {
-          setStatus(error && error.message ? error.message : "投稿に失敗しました。時間をおいて再度お試しください。", "is-error");
+          const errorMessage = error && error.message ? error.message : "";
+          if (errorMessage.indexOf("タイムアウト") >= 0) {
+            setStatus("送信確認に時間がかかっています。投稿済みの可能性があるため、再投稿は少し時間をおいてからお願いします。", "is-error");
+          } else {
+            setStatus(errorMessage || "投稿に失敗しました。時間をおいて再度お試しください。", "is-error");
+          }
         } finally {
           submitButton.disabled = false;
         }
