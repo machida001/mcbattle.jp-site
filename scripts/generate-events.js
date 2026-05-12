@@ -7,6 +7,7 @@ const DATA_PATH = path.join(ROOT_DIR, "data", "event_details_all.json");
 const MC_DETAILS_PATH = path.join(ROOT_DIR, "data", "mc_details_all.json");
 const OUTPUT_DIR = path.join(ROOT_DIR, "detail_event");
 const LONG_NAME_THRESHOLD = 10;
+const VISIBLE_MATCH_ROUNDS = new Set(["Final", "Best4", "Best8"]);
 
 function main() {
   ensureFileExists(TEMPLATE_PATH);
@@ -341,37 +342,80 @@ function buildResultsHtml(event, groupedMatches, mcNameById) {
 }
 
 function buildMatchesHtml(groupedMatches) {
-  return groupedMatches.map((group) => {
+  const visibleGroups = [];
+  const collapsedGroups = [];
+
+  groupedMatches.forEach((group) => {
     const roundName = normalizeRoundLabel(group.round_name) || "ラウンド不明";
-    const isTwoColumn = isTwoColumnRound(roundName);
-    const matches = Array.isArray(group.matches) ? group.matches : [];
 
-    const rows = matches.map((match) => {
-      const winnerHtml = renderMcLink(match.winner_name || "不明", match.winner_mc_id || "", "winner");
-      const loserHtml = renderMcLink(match.loser_name || "不明", match.loser_mc_id || "", "loser");
+    if (VISIBLE_MATCH_ROUNDS.has(roundName)) {
+      visibleGroups.push(group);
+    } else {
+      collapsedGroups.push(group);
+    }
+  });
 
-      return [
-        '<li class="match-row-wrap">',
-        '<div class="match-row-box">',
-        '<div class="match-single-line">',
-        `<span class="match-name is-winner">${winnerHtml}</span>`,
-        '<span class="match-separator">/</span>',
-        `<span class="match-name is-loser">${loserHtml}</span>`,
-        "</div>",
-        "</div>",
-        "</li>"
-      ].join("");
-    }).join("\n");
+  const visibleHtml = visibleGroups
+    .map((group) => buildOneRoundMatchesHtml(group))
+    .join("
+");
+
+  const collapsedHtml = collapsedGroups
+    .map((group) => buildOneRoundMatchesHtml(group))
+    .join("
+");
+
+  if (!collapsedHtml) {
+    return visibleHtml;
+  }
+
+  return [
+    visibleHtml,
+    '<details class="matches-lower-accordion">',
+    '<summary class="matches-lower-summary">',
+    '<span>Best16以前の試合結果を表示</span>',
+    '<span class="matches-accordion-icon" aria-hidden="true"></span>',
+    '</summary>',
+    '<div class="matches-lower-body">',
+    collapsedHtml,
+    '</div>',
+    '</details>'
+  ].filter(Boolean).join("
+");
+}
+
+function buildOneRoundMatchesHtml(group) {
+  const roundName = normalizeRoundLabel(group.round_name) || "ラウンド不明";
+  const isTwoColumn = isTwoColumnRound(roundName);
+  const matches = Array.isArray(group.matches) ? group.matches : [];
+
+  const rows = matches.map((match) => {
+    const winnerHtml = renderMcLink(match.winner_name || "不明", match.winner_mc_id || "", "winner");
+    const loserHtml = renderMcLink(match.loser_name || "不明", match.loser_mc_id || "", "loser");
 
     return [
-      '<div class="round-block">',
-      `<h3 class="round-heading">${escapeHtml(roundName)}</h3>`,
-      `<ul class="match-list${isTwoColumn ? " is-two-column" : ""}">`,
-      rows,
-      "</ul>",
-      "</div>"
-    ].join("\n");
-  }).join("\n");
+      '<li class="match-row-wrap">',
+      '<div class="match-row-box">',
+      '<div class="match-single-line">',
+      `<span class="match-name is-winner">${winnerHtml}</span>`,
+      '<span class="match-separator">/</span>',
+      `<span class="match-name is-loser">${loserHtml}</span>`,
+      "</div>",
+      "</div>",
+      "</li>"
+    ].join("");
+  }).join("
+");
+
+  return [
+    '<div class="round-block">',
+    `<h3 class="round-heading">${escapeHtml(roundName)}</h3>`,
+    `<ul class="match-list${isTwoColumn ? " is-two-column" : ""}">`,
+    rows,
+    "</ul>",
+    "</div>"
+  ].join("
+");
 }
 
 
@@ -405,45 +449,88 @@ function buildTeamResultsHtml(event, mcNameById) {
 }
 
 function buildTeamMatchesHtml(groupedMatches, mcNameById) {
-  return groupedMatches.map((group) => {
+  const visibleGroups = [];
+  const collapsedGroups = [];
+
+  groupedMatches.forEach((group) => {
     const roundName = normalizeRoundLabel(group.round_name) || "ラウンド不明";
-    const isTwoColumn = isTwoColumnRound(roundName);
-    const matches = Array.isArray(group.matches) ? group.matches : [];
 
-    const rows = matches.map((match) => {
-      const winnerTeamName = safeString(match.winner_team_name || "");
-      const loserTeamName = safeString(match.loser_team_name || "");
-      const winnerMembers = Array.isArray(match.winner_members) ? match.winner_members : [];
-      const loserMembers = Array.isArray(match.loser_members) ? match.loser_members : [];
+    if (VISIBLE_MATCH_ROUNDS.has(roundName)) {
+      visibleGroups.push(group);
+    } else {
+      collapsedGroups.push(group);
+    }
+  });
 
-      return [
-        '<li class="match-row-wrap">',
-        '<div class="match-row-box">',
-        '<div class="match-team-layout">',
-        '<div class="match-team-side is-winner">',
-        winnerTeamName ? `<div class="team-name-label">${escapeHtml(winnerTeamName)}</div>` : "",
-        `<div class="team-members-text">${renderTeamMemberLinks(winnerMembers, mcNameById)}</div>`,
-        "</div>",
-        '<div class="match-vs">VS</div>',
-        '<div class="match-team-side is-loser">',
-        loserTeamName ? `<div class="team-name-label">${escapeHtml(loserTeamName)}</div>` : "",
-        `<div class="team-members-text">${renderTeamMemberLinks(loserMembers, mcNameById)}</div>`,
-        "</div>",
-        "</div>",
-        "</div>",
-        "</li>"
-      ].join("");
-    }).join("\n");
+  const visibleHtml = visibleGroups
+    .map((group) => buildOneTeamRoundMatchesHtml(group, mcNameById))
+    .join("
+");
+
+  const collapsedHtml = collapsedGroups
+    .map((group) => buildOneTeamRoundMatchesHtml(group, mcNameById))
+    .join("
+");
+
+  if (!collapsedHtml) {
+    return visibleHtml;
+  }
+
+  return [
+    visibleHtml,
+    '<details class="matches-lower-accordion">',
+    '<summary class="matches-lower-summary">',
+    '<span>Best16以前の試合結果を表示</span>',
+    '<span class="matches-accordion-icon" aria-hidden="true"></span>',
+    '</summary>',
+    '<div class="matches-lower-body">',
+    collapsedHtml,
+    '</div>',
+    '</details>'
+  ].filter(Boolean).join("
+");
+}
+
+function buildOneTeamRoundMatchesHtml(group, mcNameById) {
+  const roundName = normalizeRoundLabel(group.round_name) || "ラウンド不明";
+  const isTwoColumn = isTwoColumnRound(roundName);
+  const matches = Array.isArray(group.matches) ? group.matches : [];
+
+  const rows = matches.map((match) => {
+    const winnerTeamName = safeString(match.winner_team_name || "");
+    const loserTeamName = safeString(match.loser_team_name || "");
+    const winnerMembers = Array.isArray(match.winner_members) ? match.winner_members : [];
+    const loserMembers = Array.isArray(match.loser_members) ? match.loser_members : [];
 
     return [
-      '<div class="round-block">',
-      `<h3 class="round-heading">${escapeHtml(roundName)}</h3>`,
-      `<ul class="match-list${isTwoColumn ? " is-two-column" : ""}">`,
-      rows,
-      "</ul>",
-      "</div>"
-    ].join("\n");
-  }).join("\n");
+      '<li class="match-row-wrap">',
+      '<div class="match-row-box">',
+      '<div class="match-team-layout">',
+      '<div class="match-team-side is-winner">',
+      winnerTeamName ? `<div class="team-name-label">${escapeHtml(winnerTeamName)}</div>` : "",
+      `<div class="team-members-text">${renderTeamMemberLinks(winnerMembers, mcNameById)}</div>`,
+      "</div>",
+      '<div class="match-vs">VS</div>',
+      '<div class="match-team-side is-loser">',
+      loserTeamName ? `<div class="team-name-label">${escapeHtml(loserTeamName)}</div>` : "",
+      `<div class="team-members-text">${renderTeamMemberLinks(loserMembers, mcNameById)}</div>`,
+      "</div>",
+      "</div>",
+      "</div>",
+      "</li>"
+    ].join("");
+  }).join("
+");
+
+  return [
+    '<div class="round-block">',
+    `<h3 class="round-heading">${escapeHtml(roundName)}</h3>`,
+    `<ul class="match-list${isTwoColumn ? " is-two-column" : ""}">`,
+    rows,
+    "</ul>",
+    "</div>"
+  ].join("
+");
 }
 
 function renderTeamMemberLinks(members, mcNameById) {
