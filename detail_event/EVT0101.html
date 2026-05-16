@@ -961,6 +961,72 @@
       line-height: 1.6;
     }
 
+
+    .event-neighbor-nav{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:14px;
+      padding-top:13px;
+      border-top:1px solid rgba(255,255,255,0.12);
+    }
+
+    .event-neighbor-link{
+      display:block;
+      min-width:0;
+      padding:10px 11px;
+      border:1px solid rgba(216,180,106,0.22);
+      border-radius:13px;
+      background:rgba(255,255,255,0.025);
+      color:inherit;
+      text-decoration:none !important;
+      transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        background-color 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .event-neighbor-link:hover,
+    .event-neighbor-link:focus-visible{
+      transform:translateY(-1px);
+      border-color:rgba(216,180,106,0.44);
+      background:rgba(216,180,106,0.075);
+      box-shadow:0 0 18px rgba(216,180,106,0.10);
+      outline:none;
+    }
+
+    .event-neighbor-link.is-next{
+      text-align:right;
+    }
+
+    .event-neighbor-label{
+      display:block;
+      color:var(--accent);
+      font-size:0.76rem;
+      font-weight:800;
+      line-height:1.25;
+      letter-spacing:0.03em;
+    }
+
+    .event-neighbor-title{
+      display:block;
+      margin-top:4px;
+      color:var(--text);
+      font-size:0.86rem;
+      font-weight:800;
+      line-height:1.35;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .event-neighbor-link.is-disabled{
+      opacity:0.42;
+      pointer-events:none;
+    }
+
+
     @media (max-width: 640px) {
       .page-top{
         margin-bottom: 10px;
@@ -1160,6 +1226,30 @@
         width: 100%;
         justify-self: stretch;
       }
+
+
+      .event-neighbor-nav{
+        grid-template-columns:1fr;
+        gap:8px;
+        margin-top:12px;
+        padding-top:11px;
+      }
+
+      .event-neighbor-link,
+      .event-neighbor-link.is-next{
+        text-align:left;
+        padding:9px 10px;
+        border-radius:12px;
+      }
+
+      .event-neighbor-label{
+        font-size:0.72rem;
+      }
+
+      .event-neighbor-title{
+        font-size:0.82rem;
+      }
+
     }
   </style>
 </head>
@@ -1205,6 +1295,7 @@
 <span>¥50,000</span>
 </li>
         </ul>
+        __EVENT_NEIGHBOR_NAV_HTML__
       </div>
     </section>
 
