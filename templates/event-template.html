@@ -926,7 +926,7 @@
     .event-neighbor-link{
       display:block;
       min-width:0;
-      padding:10px 11px;
+      padding:11px 12px;
       border:1px solid rgba(216,180,106,0.22);
       border-radius:13px;
       background:rgba(255,255,255,0.025);
@@ -955,21 +955,10 @@
     .event-neighbor-label{
       display:block;
       color:var(--accent);
-      font-size:0.76rem;
-      font-weight:800;
-      line-height:1.25;
-      letter-spacing:0.03em;
-    }
-
-    .event-neighbor-title{
-      display:block;
-      margin-top:4px;
-      color:var(--text);
       font-size:0.86rem;
-      font-weight:800;
-      line-height:1.35;
-      overflow:hidden;
-      text-overflow:ellipsis;
+      font-weight:900;
+      line-height:1.25;
+      letter-spacing:0.02em;
       white-space:nowrap;
     }
 
@@ -1181,25 +1170,23 @@
 
 
       .event-neighbor-nav{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr 1fr;
         gap:8px;
         margin-top:12px;
         padding-top:11px;
       }
 
-      .event-neighbor-link,
-      .event-neighbor-link.is-next{
-        text-align:left;
-        padding:9px 10px;
+      .event-neighbor-link{
+        padding:10px 10px;
         border-radius:12px;
       }
 
-      .event-neighbor-label{
-        font-size:0.72rem;
+      .event-neighbor-link.is-next{
+        text-align:right;
       }
 
-      .event-neighbor-title{
-        font-size:0.82rem;
+      .event-neighbor-label{
+        font-size:0.78rem;
       }
 
     }
