@@ -159,7 +159,6 @@ function buildEventNeighborLinkHtml(item, direction) {
     return [
       `<span class="event-neighbor-link${isNext ? " is-next" : ""} is-disabled">`,
       `<span class="event-neighbor-label">${escapeHtml(label)}</span>`,
-      '<span class="event-neighbor-title">−</span>',
       '</span>'
     ].join("");
   }
@@ -167,7 +166,6 @@ function buildEventNeighborLinkHtml(item, direction) {
   return [
     `<a class="event-neighbor-link${isNext ? " is-next" : ""}" href="../detail_event/${encodeURIComponent(item.event_id)}.html">`,
     `<span class="event-neighbor-label">${escapeHtml(label)}</span>`,
-    `<span class="event-neighbor-title">${escapeHtml(item.event_name)}</span>`,
     '</a>'
   ].join("");
 }
