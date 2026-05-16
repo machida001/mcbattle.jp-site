@@ -28,13 +28,15 @@ function main() {
     return;
   }
 
+  const neighborMap = buildEventNeighborMap(detailMap);
+
   let generatedCount = 0;
 
   for (const eventId of eventIds) {
     const detail = detailMap[eventId];
     if (!detail || !detail.event) continue;
 
-    const html = buildEventHtml(template, eventId, detail, mcNameById);
+    const html = buildEventHtml(template, eventId, detail, mcNameById, neighborMap);
     const outPath = path.join(OUTPUT_DIR, `${eventId}.html`);
     fs.writeFileSync(outPath, html, "utf8");
     generatedCount += 1;
@@ -43,7 +45,7 @@ function main() {
   console.log(`大会静的ページ生成完了: ${generatedCount}件`);
 }
 
-function buildEventHtml(template, eventId, detail, mcNameById) {
+function buildEventHtml(template, eventId, detail, mcNameById, neighborMap) {
   const event = detail.event || {};
   const groupedMatches = Array.isArray(detail.grouped_matches) ? detail.grouped_matches.slice() : [];
   const totalMatches = Number(detail.total_matches || 0);
@@ -64,6 +66,7 @@ function buildEventHtml(template, eventId, detail, mcNameById) {
   const seoDescription = buildEventSeoDescription(event, eventTitle, eventDateLongText || eventDateText, winnerName, runnerUpName, totalMatches, groupedMatches, isTeamEvent);
 
   const eventInfoListItems = buildEventInfoListItems(detail, groupedMatches, mcNameById);
+  const eventNeighborNavHtml = buildEventNeighborNavHtml(eventId, neighborMap);
   const matchesHtml = isTeamEvent ? buildTeamMatchesHtml(groupedMatches, mcNameById) : buildMatchesHtml(groupedMatches);
   const matchesStatusHtml = totalMatches === 0
     ? '<p id="matches-status" class="muted">試合結果がありません</p>'
@@ -82,12 +85,112 @@ function buildEventHtml(template, eventId, detail, mcNameById) {
     .replaceAll("__EVENT_JSON_LD__", escapeScriptJson(eventJsonLd))
     .replaceAll("__EVENT_TITLE__", escapeHtml(eventTitle))
     .replaceAll("__EVENT_INFO_LIST_ITEMS__", eventInfoListItems)
+    .replaceAll("__EVENT_NEIGHBOR_NAV_HTML__", eventNeighborNavHtml)
     .replaceAll("__MATCHES_STATUS_HTML__", matchesStatusHtml)
     .replaceAll("__MATCHES_HTML__", matchesHtml)
     .replaceAll("__CONTACT_EVENT_NAME_URL__", escapeHtml(encodeURIComponent(eventTitle)));
 
   return html;
 }
+
+
+function buildEventNeighborMap(detailMap) {
+  const map = new Map();
+  const groups = new Map();
+
+  Object.keys(detailMap || {}).forEach((eventId) => {
+    const detail = detailMap[eventId];
+    const event = detail && detail.event ? detail.event : {};
+    const categoryId = safeString(event.category_id || "").trim();
+    const eventDate = safeString(event.event_date || "").trim();
+
+    if (!categoryId || !eventDate) return;
+
+    const item = {
+      event_id: eventId,
+      category_id: categoryId,
+      event_date: eventDate,
+      sort_time: getEventDateSortTime(eventDate),
+      event_name: safeString(event.event_name_full || event.event_name || event.event_name_simple || "大会名不明")
+    };
+
+    if (!Number.isFinite(item.sort_time)) return;
+
+    if (!groups.has(categoryId)) {
+      groups.set(categoryId, []);
+    }
+    groups.get(categoryId).push(item);
+  });
+
+  groups.forEach((items) => {
+    items.sort((a, b) => {
+      if (a.sort_time !== b.sort_time) return a.sort_time - b.sort_time;
+      return String(a.event_id).localeCompare(String(b.event_id));
+    });
+
+    items.forEach((item, index) => {
+      map.set(item.event_id, {
+        prev: index > 0 ? items[index - 1] : null,
+        next: index < items.length - 1 ? items[index + 1] : null
+      });
+    });
+  });
+
+  return map;
+}
+
+function buildEventNeighborNavHtml(eventId, neighborMap) {
+  const neighbors = neighborMap && neighborMap.get(String(eventId));
+  if (!neighbors || (!neighbors.prev && !neighbors.next)) return "";
+
+  return [
+    '<nav class="event-neighbor-nav" aria-label="同カテゴリの前後大会">',
+    buildEventNeighborLinkHtml(neighbors.prev, "prev"),
+    buildEventNeighborLinkHtml(neighbors.next, "next"),
+    '</nav>'
+  ].join("\n");
+}
+
+function buildEventNeighborLinkHtml(item, direction) {
+  const isNext = direction === "next";
+  const label = isNext ? "次の大会 →" : "← 前の大会";
+
+  if (!item) {
+    return [
+      `<span class="event-neighbor-link${isNext ? " is-next" : ""} is-disabled">`,
+      `<span class="event-neighbor-label">${escapeHtml(label)}</span>`,
+      '<span class="event-neighbor-title">−</span>',
+      '</span>'
+    ].join("");
+  }
+
+  return [
+    `<a class="event-neighbor-link${isNext ? " is-next" : ""}" href="../detail_event/${encodeURIComponent(item.event_id)}.html">`,
+    `<span class="event-neighbor-label">${escapeHtml(label)}</span>`,
+    `<span class="event-neighbor-title">${escapeHtml(item.event_name)}</span>`,
+    '</a>'
+  ].join("");
+}
+
+function getEventDateSortTime(value) {
+  const text = safeString(value || "").trim();
+  if (!text) return NaN;
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+    const d = new Date(`${text}T00:00:00`);
+    return d.getTime();
+  }
+
+  const dotMatch = text.match(/^(\d{4})[.\/](\d{1,2})[.\/](\d{1,2})$/);
+  if (dotMatch) {
+    const d = new Date(Number(dotMatch[1]), Number(dotMatch[2]) - 1, Number(dotMatch[3]));
+    return d.getTime();
+  }
+
+  const d = new Date(text);
+  return d.getTime();
+}
+
 
 function buildEventSeoTitle(event, eventTitle, winnerName, runnerUpName, isTeamEvent = false) {
   const seoBaseName = buildEventSeoBaseName(event, eventTitle);
