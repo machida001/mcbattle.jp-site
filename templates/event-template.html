@@ -915,55 +915,46 @@
 
 
     .event-neighbor-nav{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
       margin-top:14px;
       padding-top:13px;
       border-top:1px solid rgba(255,255,255,0.12);
     }
 
     .event-neighbor-link{
-      display:block;
-      min-width:0;
-      padding:11px 12px;
-      border:1px solid rgba(216,180,106,0.22);
-      border-radius:13px;
-      background:rgba(255,255,255,0.025);
-      color:inherit;
+      color:var(--accent);
+      font-size:0.88rem;
+      font-weight:900;
+      line-height:1.3;
+      letter-spacing:0.01em;
       text-decoration:none !important;
       transition:
-        transform 0.18s ease,
-        border-color 0.18s ease,
-        background-color 0.18s ease,
-        box-shadow 0.18s ease;
+        opacity 0.18s ease,
+        color 0.18s ease;
     }
 
     .event-neighbor-link:hover,
     .event-neighbor-link:focus-visible{
-      transform:translateY(-1px);
-      border-color:rgba(216,180,106,0.44);
-      background:rgba(216,180,106,0.075);
-      box-shadow:0 0 18px rgba(216,180,106,0.10);
+      color:#f3cf86;
+      opacity:1;
       outline:none;
     }
 
     .event-neighbor-link.is-next{
+      margin-left:auto;
       text-align:right;
     }
 
     .event-neighbor-label{
       display:block;
-      color:var(--accent);
-      font-size:0.86rem;
-      font-weight:900;
-      line-height:1.25;
-      letter-spacing:0.02em;
       white-space:nowrap;
     }
 
     .event-neighbor-link.is-disabled{
-      opacity:0.42;
+      opacity:0.35;
       pointer-events:none;
     }
 
@@ -1170,15 +1161,13 @@
 
 
       .event-neighbor-nav{
-        grid-template-columns:1fr 1fr;
-        gap:8px;
+        gap:12px;
         margin-top:12px;
         padding-top:11px;
       }
 
       .event-neighbor-link{
-        padding:10px 10px;
-        border-radius:12px;
+        font-size:0.80rem;
       }
 
       .event-neighbor-link.is-next{
@@ -1186,7 +1175,7 @@
       }
 
       .event-neighbor-label{
-        font-size:0.78rem;
+        font-size:0.80rem;
       }
 
     }
