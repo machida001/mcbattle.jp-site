@@ -53,11 +53,15 @@ function buildEventHtml(template, eventId, detail, mcNameById) {
 
   const eventTitle = safeString(event.event_name_full || event.event_name || "大会名不明");
   const eventDateText = formatDateJP(event.event_date || "");
+  const eventDateLongText = formatDateLongJP(event.event_date || "");
   const winnerName = safeString(event.winner_name || event.winner_team_name || "");
   const runnerUpName = safeString(event.runner_up_name || event.runner_up_team_name || "");
 
   const pageTitle = `${eventTitle} | 大会結果・優勝者・試合結果 | MCBattle.jp`;
   const metaDescription = buildMetaDescription(eventTitle, eventDateText, winnerName, runnerUpName, totalMatches, isTeamEvent);
+
+  const seoTitle = buildEventSeoTitle(event, eventTitle, winnerName, runnerUpName, isTeamEvent);
+  const seoDescription = buildEventSeoDescription(event, eventTitle, eventDateLongText || eventDateText, winnerName, runnerUpName, totalMatches, groupedMatches, isTeamEvent);
 
   const eventInfoListItems = buildEventInfoListItems(detail, groupedMatches, mcNameById);
   const matchesHtml = isTeamEvent ? buildTeamMatchesHtml(groupedMatches, mcNameById) : buildMatchesHtml(groupedMatches);
@@ -66,9 +70,11 @@ function buildEventHtml(template, eventId, detail, mcNameById) {
     : "";
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(eventId, eventTitle);
-  const eventJsonLd = buildEventJsonLd(eventId, event, eventTitle, metaDescription, winnerName, isTeamEvent);
+  const eventJsonLd = buildEventJsonLd(eventId, event, eventTitle, seoDescription || metaDescription, winnerName, isTeamEvent);
 
   const html = template
+    .replaceAll("__SEO_TITLE__", escapeHtml(seoTitle))
+    .replaceAll("__SEO_DESCRIPTION__", escapeHtml(seoDescription))
     .replaceAll("__PAGE_TITLE__", escapeHtml(pageTitle))
     .replaceAll("__META_DESCRIPTION__", escapeHtml(metaDescription))
     .replaceAll("__EVENT_ID__", escapeHtml(String(eventId)))
@@ -81,6 +87,117 @@ function buildEventHtml(template, eventId, detail, mcNameById) {
     .replaceAll("__CONTACT_EVENT_NAME_URL__", escapeHtml(encodeURIComponent(eventTitle)));
 
   return html;
+}
+
+function buildEventSeoTitle(event, eventTitle, winnerName, runnerUpName, isTeamEvent = false) {
+  const seoBaseName = buildEventSeoBaseName(event, eventTitle);
+  const winnerLabel = isTeamEvent ? "優勝チーム" : "優勝";
+  const runnerUpLabel = isTeamEvent ? "準優勝チーム" : "準優勝";
+
+  if (winnerName && runnerUpName) {
+    return `${seoBaseName} 結果 | ${winnerLabel} ${winnerName}・${runnerUpLabel} ${runnerUpName} | MCBattle.jp`;
+  }
+
+  if (winnerName) {
+    return `${seoBaseName} 結果 | ${winnerLabel} ${winnerName} | MCBattle.jp`;
+  }
+
+  return `${seoBaseName} 結果・試合結果 | MCBattle.jp`;
+}
+
+function buildEventSeoDescription(event, eventTitle, eventDateText, winnerName, runnerUpName, totalMatches, groupedMatches, isTeamEvent = false) {
+  const seoBaseName = buildEventSeoBaseName(event, eventTitle);
+  const seoSubName = buildEventSeoSubName(event, eventTitle);
+  const winnerLabel = isTeamEvent ? "優勝チーム" : "優勝";
+  const runnerUpLabel = isTeamEvent ? "準優勝チーム" : "準優勝";
+  const roundRange = buildRoundRangeText(groupedMatches);
+
+  const parts = [
+    `${seoBaseName}${seoSubName ? `（${seoSubName}）` : ""}の大会結果まとめ。`,
+    eventDateText ? `${eventDateText}開催、` : "",
+    winnerName ? `${winnerLabel}は${winnerName}` : "",
+    runnerUpName ? `、${runnerUpLabel}は${runnerUpName}` : "",
+    (winnerName || runnerUpName) ? "。" : "",
+    totalMatches > 0
+      ? `${roundRange ? `${roundRange}まで` : ""}全${totalMatches}試合の試合結果を掲載しています。`
+      : "試合結果を掲載しています。"
+  ];
+
+  return parts.filter(Boolean).join("");
+}
+
+function buildEventSeoBaseName(event, eventTitle) {
+  const fullName = safeString(eventTitle || "");
+  const simpleName = safeString(event.event_name_simple || event.event_name || "").trim();
+  const nameForYear = `${simpleName} ${fullName}`;
+  const year = extractEventYear(nameForYear);
+
+  if (isUmbGrandChampionship(fullName) || isUmbGrandChampionship(simpleName)) {
+    return year ? `UMB${year} 本戦` : "UMB 本戦";
+  }
+
+  if (/^UMB\s*\d{4}$/i.test(simpleName) && /本戦|Grand\s*Championship|Grand\s*Champion\s*Ship|Grand\s*Chanpion\s*Ship/i.test(fullName)) {
+    return `${simpleName.replace(/\s+/g, "")} 本戦`;
+  }
+
+  return normalizeSeoEventName(simpleName || fullName);
+}
+
+function buildEventSeoSubName(event, eventTitle) {
+  const fullName = safeString(eventTitle || "");
+  const simpleName = safeString(event.event_name_simple || event.event_name || "").trim();
+
+  if (isUmbGrandChampionship(fullName) || isUmbGrandChampionship(simpleName)) {
+    return "Grand Championship";
+  }
+
+  return "";
+}
+
+function isUmbGrandChampionship(value) {
+  const name = safeString(value || "");
+  return /UMB/i.test(name) && /Grand\s*Chanpion\s*Ship|Grand\s*Champion\s*Ship|Grand\s*Championship|本戦/i.test(name);
+}
+
+function normalizeSeoEventName(value) {
+  return safeString(value || "")
+    .replace(/Grand\s*Chanpion\s*Ship/ig, "Grand Championship")
+    .replace(/Grand\s*Champion\s*Ship/ig, "Grand Championship")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractEventYear(value) {
+  const text = safeString(value || "");
+  const umbYear = text.match(/UMB\s*(20\d{2}|19\d{2})/i);
+  if (umbYear) return umbYear[1];
+
+  const anyYear = text.match(/\b(20\d{2}|19\d{2})\b/);
+  if (anyYear) return anyYear[1];
+
+  return "";
+}
+
+function buildRoundRangeText(groupedMatches) {
+  const normalizedRounds = Array.isArray(groupedMatches)
+    ? groupedMatches.map((group) => normalizeRoundLabel(group.round_name)).filter(Boolean)
+    : [];
+
+  if (!normalizedRounds.length) return "";
+
+  const bestRounds = normalizedRounds
+    .map((round) => {
+      const match = round.match(/^Best(\d+)$/i);
+      return match ? Number(match[1]) : null;
+    })
+    .filter((value) => Number.isFinite(value));
+
+  if (!bestRounds.length) {
+    return normalizedRounds.includes("Final") ? "決勝" : "";
+  }
+
+  const maxBest = Math.max(...bestRounds);
+  return `Best${maxBest}から決勝`;
 }
 
 function buildMetaDescription(eventTitle, eventDateText, winnerName, runnerUpName, totalMatches, isTeamEvent = false) {
@@ -705,7 +822,7 @@ function buildEventJsonLd(eventId, event, eventTitle, description, winnerName, i
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventCompleted",
     image: [
-      "https://mcbattle.jp/ogp.PNG"
+      "https://mcbattle.jp/ogp.png?v=2"
     ]
   };
 
@@ -836,6 +953,19 @@ function formatDateJP(value) {
   const d = new Date(value);
   if (Number.isNaN(d.getTime())) return String(value);
   return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
+}
+
+function formatDateLongJP(value) {
+  if (!value) return "";
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) {
+    const text = String(value).trim();
+    const m = text.match(/^(\d{4})[.\-\/](\d{1,2})[.\-\/](\d{1,2})$/);
+    if (m) return `${m[1]}年${Number(m[2])}月${Number(m[3])}日`;
+    return text;
+  }
+
+  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
 }
 
 function escapeHtml(value) {
