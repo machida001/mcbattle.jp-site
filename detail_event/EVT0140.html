@@ -1716,6 +1716,12 @@
         } catch (error) {}
       }
 
+      function unsetLiked(commentId) {
+        try {
+          localStorage.removeItem(LIKED_STORAGE_PREFIX + commentId);
+        } catch (error) {}
+      }
+
       function setStatus(message, type) {
         if (!statusEl) return;
         statusEl.textContent = message || "";
@@ -1890,7 +1896,17 @@
         const commentId = button.getAttribute("data-comment-id");
         if (!commentId || isLiked(commentId)) return;
 
+        const countEl = button.querySelector("span");
+        const previousCount = Number(countEl && countEl.textContent ? countEl.textContent : 0);
+        const optimisticCount = previousCount + 1;
+
+        if (countEl) {
+          countEl.textContent = String(optimisticCount);
+        }
+
         button.disabled = true;
+        button.classList.add("is-liked");
+        setLiked(commentId);
 
         try {
           const payload = await jsonpRequest({
@@ -1904,17 +1920,19 @@
             throw new Error(payload.message || "いいねに失敗しました。");
           }
 
-          const countEl = button.querySelector("span");
-          const nextCount = payload && payload.like_count !== undefined
-            ? Number(payload.like_count)
-            : Number(countEl.textContent || 0) + 1;
-
-          countEl.textContent = String(nextCount);
-          button.classList.add("is-liked");
-          setLiked(commentId);
+          if (countEl && payload && payload.like_count !== undefined) {
+            const serverCount = Number(payload.like_count);
+            if (Number.isFinite(serverCount)) {
+              countEl.textContent = String(serverCount);
+            }
+          }
         } catch (error) {
+          if (countEl) {
+            countEl.textContent = String(previousCount);
+          }
+          button.classList.remove("is-liked");
           button.disabled = false;
-          return;
+          unsetLiked(commentId);
         }
       }
 
