@@ -2080,7 +2080,8 @@
 
           if (countEl && payload && payload.like_count !== undefined) {
             const serverCount = Number(payload.like_count);
-            if (Number.isFinite(serverCount)) {
+
+            if (Number.isFinite(serverCount) && serverCount > optimisticCount) {
               countEl.textContent = String(serverCount);
             }
           }
@@ -2088,6 +2089,7 @@
           if (countEl) {
             countEl.textContent = String(previousCount);
           }
+
           button.classList.remove("is-liked");
           button.disabled = false;
           unsetLiked(commentId);
