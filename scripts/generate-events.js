@@ -352,34 +352,96 @@ function buildPrizeSupplementHtml(detail) {
   const items = normalizeEventPrizeSupplements(detail);
   if (!items.length) return "";
 
-  const lines = items
-    .map((item) => {
-      const mcName = safeString(item.mc_name || "").trim();
-      const label = safeString(item.label || "").trim();
-      const amount = formatPrizeYen(item.amount);
-      const note = safeString(item.note || "").trim();
-
-      if (!amount) return "";
-
-      const mainText = mcName
-        ? `${mcName} ${amount}`
-        : label
-          ? `${label} ${amount}`
-          : amount;
-
-      const noteText = note ? `:${note}` : "";
-      return `${mainText}${noteText}`;
-    })
-    .filter(Boolean);
-
-  if (!lines.length) return "";
+  const groups = buildPrizeSupplementGroups(items);
+  if (!groups.length) return "";
 
   const prefix = "この大会は優勝以外にも賞金が発生します。";
 
   return [
-    `<span class="event-prize-note">${escapeHtml(prefix)}</span>`,
-    ...lines.map((line) => `<span class="event-prize-note">${escapeHtml(line)}</span>`)
-  ].join("<br>");
+    `<span class="event-prize-note" style="display:block;">${escapeHtml(prefix)}</span>`,
+    ...groups.map((group) => {
+      const namesHtml = group.names.length
+        ? group.names.map((name) => {
+            return `<span class="event-prize-name" style="display:block;line-height:1.45;">${escapeHtml(name)}</span>`;
+          }).join("")
+        : "";
+
+      return [
+        '<span class="event-prize-group" style="display:block;margin-top:8px;">',
+        `<span class="event-prize-group-head" style="display:block;color:var(--accent);font-weight:800;line-height:1.45;">［${escapeHtml(group.label)}］${escapeHtml(group.amount)}</span>`,
+        namesHtml,
+        '</span>'
+      ].join("");
+    })
+  ].join("");
+}
+
+function buildPrizeSupplementGroups(items) {
+  const groupMap = new Map();
+
+  items.forEach((item) => {
+    const amount = formatPrizeYen(item.amount);
+    if (!amount) return;
+
+    const rawLabel = safeString(item.label || "").trim();
+    const rawNote = safeString(item.note || "").trim();
+
+    const noteRoundLabel = normalizePrizeSupplementRoundLabel(rawNote);
+    const labelRoundLabel = normalizePrizeSupplementRoundLabel(rawLabel);
+    const roundLabel = noteRoundLabel || labelRoundLabel || rawNote || rawLabel || "その他";
+
+    let mcName = safeString(item.mc_name || "").trim();
+
+    if (!mcName && noteRoundLabel && rawLabel && !labelRoundLabel) {
+      mcName = rawLabel;
+    }
+
+    const key = `${roundLabel}__${amount}`;
+
+    if (!groupMap.has(key)) {
+      groupMap.set(key, {
+        label: roundLabel,
+        amount,
+        names: [],
+        order: getPrizeSupplementRoundOrder(roundLabel)
+      });
+    }
+
+    if (mcName && !groupMap.get(key).names.includes(mcName)) {
+      groupMap.get(key).names.push(mcName);
+    }
+  });
+
+  return Array.from(groupMap.values()).sort((a, b) => {
+    if (a.order !== b.order) return a.order - b.order;
+    return String(a.label).localeCompare(String(b.label), "ja");
+  });
+}
+
+function normalizePrizeSupplementRoundLabel(value) {
+  const text = safeString(value || "").trim();
+  if (!text) return "";
+
+  if (/準優勝|runner[\s_-]*up|second/i.test(text)) return "準優勝";
+
+  const bestMatch = text.match(/best\s*(\d+)/i) || text.match(/ベスト\s*(\d+)/);
+  if (bestMatch) return `Best${Number(bestMatch[1])}`;
+
+  if (/準決勝/.test(text)) return "Best4";
+  if (/準々決勝/.test(text)) return "Best8";
+
+  return "";
+}
+
+function getPrizeSupplementRoundOrder(label) {
+  const text = safeString(label || "").trim();
+
+  if (text === "準優勝") return 2;
+
+  const bestMatch = text.match(/^Best(\d+)$/i);
+  if (bestMatch) return Number(bestMatch[1]);
+
+  return 999999;
 }
 
 function normalizeEventPrizeSupplements(detail) {
@@ -394,7 +456,7 @@ function normalizeEventPrizeSupplements(detail) {
           amount: getPrizeSupplementAmount(item),
           note: getPrizeSupplementNote(item),
           mc_id: safeString(item.mc_id || "").trim(),
-          mc_name: safeString(item.mc_name || "").trim(),
+          mc_name: safeString(item.mc_name || item.name || item.mc || item.player_name || "").trim(),
           event_id: safeString(item.event_id || event.event_id || "").trim(),
           event_name: safeString(item.event_name || event.event_name_simple || event.event_name_full || event.event_name || "").trim(),
           event_date: safeString(item.event_date || event.event_date || "").trim()
@@ -467,10 +529,20 @@ function parsePrizeSupplementText(value) {
   if (!text) return [];
 
   return text
-    .split(/[\/／、,，]+/)
+    .split(/[\/／、，\n]+/)
     .map((part) => part.trim())
     .filter(Boolean)
     .map((part) => {
+      const rankedMatch = part.match(/^(.+?)\s*[¥￥]?\s*([0-9][0-9,]*)\s*円?\s*[:：]\s*(.+)$/);
+      if (rankedMatch) {
+        return {
+          label: rankedMatch[3].trim(),
+          amount: rankedMatch[2].trim(),
+          note: "",
+          mc_name: rankedMatch[1].trim()
+        };
+      }
+
       const match = part.match(/^(.+?)\s*[:：]?\s*[¥￥]?\s*([0-9][0-9,]*)\s*円?$/);
       if (!match) {
         return {
